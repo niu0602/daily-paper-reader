@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.07331v1/fig-001.webp",
+      "caption": "TABLE III: Quantitative results on datasets in Tab. II (lower is better). MPJPE is computed in the OptiTrack world frame; JAE is computed from parent–child bone directions (independent of global/root pose). In contrast to all other methods, SAM3D relies on an external calibrated camera and is therefore not a fair baseline. For SAM3D, MPJPE/JAE are computed only over frames with valid detections; its coverage is reported as recall in Tab. II.",
+      "page": 6,
+      "index": 1,
+      "width": 1014,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07331v1/fig-002.webp",
+      "caption": "Fig. 3: Qualitative 3D articulated pose results of our method and various IMU-based and third-person view-based methods, including ground truth from OptiTrack. Our method improves locomotion dynamics, foot skating and overall joint consistency compared to baselines that use IMUs or IMUs and the headset",
+      "page": 6,
+      "index": 2,
+      "width": 972,
+      "height": 589
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07331v1/fig-003.webp",
+      "caption": "Fig. 4: Deployment of the learned humanoid policy on the Unitree G1 robot. Left: robot carrying an Amazon package. Right: robot mimicking a tennis backhand racket swinging motion. We invite the reader to watch the supplementary video to see the robot in motion.",
+      "page": 7,
+      "index": 3,
+      "width": 512,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07331v1/fig-004.webp",
+      "caption": "Fig. 2: Overview of the RoSHI data pipeline. A user wears a low-cost, portable suit comprising nine IMU trackers (bottom left), and a Project Aria headset. Each tracker integrates a microcontroller, 9-axis IMU, battery management system, and LiPo battery within a compact enclosure. At a fixed, known offset, AprilTags are mounted on the enclosure to facilitate calibration. After an initial calibration procedure using an external iPhone, and custom APP, each IMU tracker provides bone orientations (two per arm and length, and pelvis) mapped to the pelvis world frame. Using the Project Aria SLAM poses as conditioning and IMU tracker outputs as guidance, we use the diffusion model in [29] to generate articulated human poses, in the local Aria camera frame. We finally use the SLAM poses to map these poses to a global frame.",
+      "page": 4,
+      "index": 4,
+      "width": 1052,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07331v1/fig-005.webp",
+      "caption": "TABLE II: Dataset composition and per-clip statistics. We report evaluation duration and SAM3D recall.",
+      "page": 5,
+      "index": 5,
+      "width": 500,
+      "height": 344
+    }
+  ]
+}

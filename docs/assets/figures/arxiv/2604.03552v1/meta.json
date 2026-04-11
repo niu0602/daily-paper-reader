@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-001.webp",
+      "caption": "Fig. 5: Real-world rollout trained on ACT of the PC (see Section VI-B), with the bottom-right corner of each image showing the progression of the task execution. Images are labeled in order of task progression.",
+      "page": 6,
+      "index": 1,
+      "width": 508,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-002.webp",
+      "caption": "Fig. 12: Object Color Conditions. Object color variations used for evaluation across each task. From top to bottom: Lift Roller (LR), Place Cans in Plasticbox (PC), and Stack Bowls (SB).",
+      "page": 11,
+      "index": 2,
+      "width": 514,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-003.webp",
+      "caption": "Fig. 11: Background Environments. Test background conditions used for evaluation: flower fabric (top left), rose fabric (top right), and no curtain (bottom left).",
+      "page": 11,
+      "index": 3,
+      "width": 510,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-004.webp",
+      "caption": "Fig. 9: Video Generation Quality Comparison. Generated video frames without (left) and with (right) a reference image capturing gripper-object contact. As seen in the blue bordered images, including gripper-object contact in the reference image leads to higher fidelity contact synthesis in the generated video.",
+      "page": 11,
+      "index": 4,
+      "width": 512,
+      "height": 376
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-005.webp",
+      "caption": "Fig. 10: Lighting Environments. Test lighting conditions used for evaluation: blue (top left), green (top right), red (bottom left), and yellow (bottom right) ambient illumination.",
+      "page": 11,
+      "index": 5,
+      "width": 510,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-006.webp",
+      "caption": "Fig. 6: Simulation Environments. Bimanual manipulation tasks adapted from RoboTwin [14], shown for the bimanual UR5 with WSG grippers (left) and the bimanual Franka Panda (right). Tasks from top to bottom: Lift Pot (LP), Place Cans in Plasticbox (PC), and Stack Bowls (SB).",
+      "page": 10,
+      "index": 6,
+      "width": 520,
+      "height": 478
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-007.webp",
+      "caption": "Fig. 7: Real-World Environments. Bimanual manipulation tasks adapted from RoboTwin [14], shown for the bimanual Franka Panda. Tasks from top to bottom: Lift Roller (LR), Place Cans in Plasticbox (PC), and Stack Bowls (SB). The left images show the initial state and the right images show the final states.",
+      "page": 10,
+      "index": 7,
+      "width": 510,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-008.webp",
+      "caption": "Fig. 2: Method Overview. (1) Trajectory Expansion: Real-world teleoperation data is first collected, and a digital twin pipeline transfers the objects and robot into simulation (Real2Sim). This simulation environment is then used for large-scale data generation. (2) Video Generation: The simulation trajectories are rendered into source videos and passed through a Canny-Edge Converter to extract structural edge representations, which are then combined with a realworld reference image and language instructions to condition a video diffusion model that synthesizes photorealistic video outputs. (3) Augmented Dataset Construction: The resulting generated videos support a wide range of visual variations, including object pose, lighting conditions, object color, background, cross-embodiment transfer, camera viewpoint, and combined wrist and third-person camera perspectives. (4) Generated Dataset: The synthesized videos are paired with action labels from the simulation trajectories, producing action-consistent demonstrations Dgen for downstream policy training.",
+      "page": 3,
+      "index": 8,
+      "width": 1069,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2604.03552v1/fig-009.webp",
+      "caption": "Fig. 3: Reference Image and Canny-edge Visualization. Examples of reference images used to condition the video diffusion model for different augmentation techniques: (1) A standard reference image of the scene capturing gripper-object contact, used to condition the video diffusion model. (2) An example Cannyedge frame extracted from the simulation source video Vc, used as structural control input. (3) A lighting-modified reference image generated using Veo3 [45] under green ambient illumination. (4) An empty table reference image with no objects, used for object color generation. (5) A tiled reference image combining a third-person view (top left), left wrist (top right), and right wrist (bottom left), with the fourth tile left blank, supporting up to four simultaneous camera viewpoints. Reference images include top and bottom padding (not shown).",
+      "page": 4,
+      "index": 9,
+      "width": 1062,
+      "height": 298
+    }
+  ]
+}

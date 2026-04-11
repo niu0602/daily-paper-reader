@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.15257v1/fig-001.webp",
+      "caption": "Fig. 1. HapticVLA is the first VLA model to enable tactile-aware manipulation without requiring force sensors on inference. Alongside vision, language, and state modalities it processes tactile reward enabling safe action generation for contact-rich manipulation. Our approach leverages tactile distillation to preserve haptic-aware reasoning while eliminating tactile modality through distillation.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 637
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15257v1/fig-002.webp",
+      "caption": "Fig. 4. (Left) Tactile array with 100 taxels. (Right) Example of 10 x 10 tactile map from the array during manipulation. Red/orange regions indicate high contact forces and blue regions low contact forces.",
+      "page": 6,
+      "index": 2,
+      "width": 512,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15257v1/fig-003.webp",
+      "caption": "Fig. 5. For our robotics platform we use two SO-101 robot arms as the main manipulation platform, an Intel Realsense D 435 as the main camera and wrist-mounted IMX335 cameras.",
+      "page": 7,
+      "index": 3,
+      "width": 512,
+      "height": 602
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15257v1/fig-004.webp",
+      "caption": "Fig. 6. Success rates for three contact-rich manipulation tasks: Jar, Waflles, and Egg pick-and-place. Results are averaged over 20 evaluations per task. We compare HapticVLA (ours) with SmolVLA, SmolVLA with SA-RWFM action expert, X-VLA, and VLA-0. Our model consistently achieves higher performance, which highlights the efficacy of tactile distillation in combination with safe-aware reward-weighted flow matching for precise contact-rich manipulation.",
+      "page": 8,
+      "index": 4,
+      "width": 1052,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15257v1/fig-005.webp",
+      "caption": "Fig. 2. Framework overview of HapticVLA. After dataset collection we perform offline tactile reward calculation for each episode based on manipulator state and tactile maps. During VLA training, along with language, vision and state modalities passed into VLM, this reward is passed as an additional condition directly into SA-RWFM action expert. To eliminate the need for tactile hardware, we further perform tactile distillation on our trained VLA. At inference, the distilled VLA predicts tactile representations solely from vision and state inputs enabling tactile-aware contact-rich manipulation.",
+      "page": 4,
+      "index": 5,
+      "width": 1054,
+      "height": 391
+    }
+  ]
+}

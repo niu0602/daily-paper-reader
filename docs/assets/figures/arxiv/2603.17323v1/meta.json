@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-001.webp",
+      "caption": "Fig. 1: System overview of DexEXO. (a) Full device worn on a user’s hand. (b) Demonstrations of piano playing, full-hand grasping, and scissors cutting. (c) Policy deployment on the robot.",
+      "page": 1,
+      "index": 1,
+      "width": 504,
+      "height": 673
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-002.webp",
+      "caption": "Fig. 7: Policy rollouts for the block pick and place, egg carton, and bottle tasks.",
+      "page": 6,
+      "index": 2,
+      "width": 505,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-003.webp",
+      "caption": "Fig. 2: Mechanical overview of DexEXO. DexEXO integrates a linkage-driven wearable exoskeleton, a passive data-capture hand, and an onboard sensing/power module. Insets highlight key subsystems: (a) passive finger slider for cross-user fit, (b) pose-tolerant thumb coupling interface, (c) parallel four-bar finger linkage for motion transmission, and (d) passive hand thumb that reproduces the intended thumb DOF",
+      "page": 3,
+      "index": 3,
+      "width": 944,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-004.webp",
+      "caption": "Fig. 3: Kinematic schematic of the exoskeleton thumb and its distal and metacarpal linkages. The four swivel joints (shown in purple) allow self-alignment between the exoskeleton frame E and the palm base frame B while maintaining fixed linkage lengths Ld and Lm.",
+      "page": 3,
+      "index": 4,
+      "width": 412,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-005.webp",
+      "caption": "Fig. 4: An overview of the full demonstration data modalities, policy training, and inference with visual-aligned observations.",
+      "page": 4,
+      "index": 5,
+      "width": 976,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-006.webp",
+      "caption": "Fig. 5: Subjective feedback results in user study (mean ± std.). † Finger independence is not applicable to teleoperation, as the user’s natural hand motion is unconstrained.",
+      "page": 5,
+      "index": 6,
+      "width": 508,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2603.17323v1/fig-007.webp",
+      "caption": "Fig. 6: Wiggle-space evaluation of the thumb interface. (a) and (b) Two views of the measured wiggle space. The fitted ellipsoid represents the covariance envelope of the sampled trajectory. The red point indicates the nominal fingertip position within the ellipsoid. (c) Experimental setup with reflective markers attached for motioncapture measurement.",
+      "page": 5,
+      "index": 7,
+      "width": 489,
+      "height": 273
+    }
+  ]
+}

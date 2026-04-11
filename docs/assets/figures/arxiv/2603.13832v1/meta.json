@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.13832v1/fig-001.webp",
+      "caption": "Fig. 1: Overview. From the same initialization, our GraspADMM framework generates robust grasps by optimizing contact points on the hand (red) and the object (yellow), while Dexonomy [13] simply fixes these points.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13832v1/fig-002.webp",
+      "caption": "Fig. 4: Performance on the Hard Benchmark. Grasp success rate and object success rate across varying tangential friction coefficients. Our method consistently outperforms Dexonomy.",
+      "page": 7,
+      "index": 2,
+      "width": 1052,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13832v1/fig-003.webp",
+      "caption": "Fig. 5: Robustness under Extreme Low Friction (µ = 0.1). While Dexonomy struggles to find more than a single stable grasp out of 100 attempts for the shown objects, GraspADMM reliably generates a diverse set of stable grasps.",
+      "page": 7,
+      "index": 3,
+      "width": 512,
+      "height": 531
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13832v1/fig-004.webp",
+      "caption": "Fig. 3: Visualization of Optimized Grasps. Comparison using the Allegro hand (blue) and Shadow hand (black). Given identical initializations, our method synthesizes more physically stable grasps than Dexonomy.",
+      "page": 5,
+      "index": 4,
+      "width": 512,
+      "height": 314
+    }
+  ]
+}

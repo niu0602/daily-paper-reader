@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-001.webp",
+      "caption": "Fig. 6. Sample Rollouts for the Dexterous Exercise. For fast-playing exercises, the arm-driven policy moves to unnatural positions, leading to energy-intensive and potentially dangerous positions. Finger-driven control without the contact curriculum is unable to effectively learn dexterous control, whereas adding the contact curriculum leads to the most natural, effective drum hits. The lighter-colored drum head denotes that the drum is being hit by the stick.",
+      "page": 6,
+      "index": 1,
+      "width": 437,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-002.webp",
+      "caption": "Fig. 1. DexDrummer: A hierarchical dexterous drumming framework trained in simulation and deployed in the real world. Left: Training in simulation. Our policy decomposes the task into a hierarchical controller. A high-level policy generates parameterized motion primitives that produce drumstick trajectories from musical inputs. A low-level policy then uses residual RL to learn corrective arm and hand actions for accurate trajectory tracking during fast transitions. Middle: Contact-targeted rewards. To handle contact-rich dynamics, we design rewards that target two types of interactions. In-hand contacts encourage stable finger–stick manipulation through fingertip contact rewards, a fulcrum reward between the thumb and index finger, and an arm energy penalty that promotes finger-dominant control. External contacts address stick–drum interactions with a trajectory guidance reward to encourage drum strikes and a contact curriculum that gradually introduces drum contact during training. Right: Real-world drumming. Policies trained in simulation transfer zero-shot to the real robot, enabling dexterous multi-drum playing over long horizons.",
+      "page": 2,
+      "index": 2,
+      "width": 948,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-003.webp",
+      "caption": "Fig. 8. Real World Rollouts. We visualize part of one closed-loop trajectory. The lighter colors for the cymbal and drum show when the robot hits them with the stick, and the arrows visualize the direction the stick was moving in. In this continuous rollout, we two cymbal hits and two drum hits. Notably, for the cymbal, which is not fixed and can rotate around the world vector, the robot strikes with a relatively loose grip (top). However, after hitting the drum pad, which is stable, the hand adjusts and forms a firmer grip (bottom), as shown by the movement of the index finger and thumb.",
+      "page": 7,
+      "index": 3,
+      "width": 437,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-004.webp",
+      "caption": "TABLE I REWARD FUNCTIONS AND CURRICULUM. ncontacts is the number of fingertip contacts, pthumb,pindex,pstick are positions, g(·) is a shaping function from [47] mapping distances to [0, 1], and 1 denotes indicator functions for grasp.",
+      "page": 3,
+      "index": 4,
+      "width": 1044,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-005.webp",
+      "caption": "TABLE II OBSERVATION SPACE. L denotes lookahead horizon.",
+      "page": 4,
+      "index": 5,
+      "width": 437,
+      "height": 461
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-006.webp",
+      "caption": "Fig. 4. Results for Dexterous Song-Playing. Left: Reactive grasp outperforms fixed grasp by a large margin in long-horizon contacts. Right: For more challenging songs requiring frequent drum-to-drum transitions, reactive grasp still improves performance, but with a smaller margin, primarily due to the reduced action space of fixed grasp.",
+      "page": 5,
+      "index": 6,
+      "width": 888,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2603.22263v1/fig-007.webp",
+      "caption": "Fig. 5. Results for Finger-Driven Control. Left: As tempo (beats per minute) increases, trajectory error for finger-driven control decreases and the gap to arm-driven control widens, showing the superior dexterity of finger-driven control. Energy consumption is also substantially lower compared to arm-driven control. Right: Without contact-targeted rewards, finger-driven control struggles to manage contact interactions effectively.",
+      "page": 5,
+      "index": 7,
+      "width": 888,
+      "height": 219
+    }
+  ]
+}

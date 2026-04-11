@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-001.webp",
+      "caption": "Figure 1. Visual data complexity comparison. (a) ImageNet [19]and (b) Kinetics-400 [36] feature predominantly objectcentric scenes with clear backgrounds or structured interactions. (c) Unconstrained egocentric videos [62] present substantially greater complexity, featuring dense object interactions, severe occlusions, and continuous ego-motion, which together pose unique challenges for learning persistent object representations.",
+      "page": 1,
+      "index": 1,
+      "width": 492,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-002.webp",
+      "caption": "Table 1. Comparison of EgoViT with prior methods on downstream tasks. Our default model, EgoViTZurich is trained on a single 65-minute video, while EgoViTWT-all is trained on the full Walking Tours dataset to evaluate scalability. Bold indicates the best result in each column. Numbers in parentheses (green) denote absolute gains of EgoViTZurich over DINO. All metrics are reported in %, and higher is better.",
+      "page": 6,
+      "index": 2,
+      "width": 1036,
+      "height": 188
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-003.webp",
+      "caption": "Figure 8. EgoViT maintains stable and distinct masks for the moving tram (red) and the pedestrian (green), effectively distinguishing them despite rapid camera panning and a cluttered background. When the pedestrian leaves the frame, the model seamlessly transitions to tracking the approaching car (also green). Additionally, EgoViT potentially exhibits partial capability in attending to small, distant objects, such as the signage (blue).",
+      "page": 21,
+      "index": 3,
+      "width": 1022,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-004.webp",
+      "caption": "Figure 9. EgoViT maintains identity-consistent masks for the walking person (green) and the trash bin (blue), even as illumination, viewpoint, and crowd density vary. The text on the signage (red) is also consistently segmented across frames.",
+      "page": 21,
+      "index": 4,
+      "width": 1017,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-005.webp",
+      "caption": "Figure 11. Example frames from the proposed Ego4D-mini benchmark. Row (a) shows cluttered kitchen scenes with strong hand– object interactions. Row (b) shows in-car driving sequences under low light and motion blur, with diverse dashboard and road objects. Row (c) shows domestic walking scenes. These clips are used only for evaluation; both DINO and EgoViT are pre-trained on a separate Zurich city-walk video.",
+      "page": 22,
+      "index": 5,
+      "width": 491,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-006.webp",
+      "caption": "Figure 10. Even when the camera turns and the target becomes partially occluded, EgoViT tends to preserve relatively distinct protoobjects, such as the store sign (red), the shoulder bag (blue), and the suitcase (green). This may indicate that the model is robust to moderate viewpoint changes and occlusions.",
+      "page": 22,
+      "index": 6,
+      "width": 1018,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-007.webp",
+      "caption": "Figure 3. Proto-object Delineation via Teacher Attention.",
+      "page": 3,
+      "index": 7,
+      "width": 483,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-008.webp",
+      "caption": "Figure 7. Ablation visualization of EgoViT.",
+      "page": 18,
+      "index": 8,
+      "width": 496,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-009.webp",
+      "caption": "Table 14. Conceptual comparison between DoRA and EgoViT.",
+      "page": 23,
+      "index": 9,
+      "width": 1036,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-010.webp",
+      "caption": "Figure 12. Qualitative comparison on the Kitchen clip. Each column corresponds to a different time step. From top to bottom: SAM2 pseudo boxes (red), DINO predictions (green), and EgoViT predictions (blue). EgoViT typically suppresses background clutter and localizes manipulated tools and food items near the hands, whereas DINO often locks onto larger static structures such as countertops or the sink area.",
+      "page": 23,
+      "index": 10,
+      "width": 489,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-011.webp",
+      "caption": "Table 6. Notation used throughout the paper. All variables are indexed by frame time t. For shapes, S denotes the number of spatial patch tokens. D1, D2, D3 are layer-specific feature dimensions for the backbone. D,Dq, Dk are the feature dimensions for patch embeddings and attention components.",
+      "page": 13,
+      "index": 11,
+      "width": 710,
+      "height": 638
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-012.webp",
+      "caption": "Figure 5. EgoViT achieves superior temporal attention stability. Compared to baselines (DINO, DoRA) that exhibit significant attention drift over time, our method maintains a coherent focus on the target object across the sequence, even through severe occlusion (see red circles for failure cases).",
+      "page": 8,
+      "index": 12,
+      "width": 484,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-013.webp",
+      "caption": "Table 11. Performance comparison of EgoViT against state-of-the-art methods across a range of downstream tasks. Our main model, EgoViTZurich, is trained on a single 65-minute video, while EgoViTWT-Sub5 is an additional model trained on five videos to demonstrate scalability. Models without an explicit subscript are trained on the default Zurich video unless otherwise noted. Except for PooDLe, which uses a ResNet-50 backbone (weights obtained from the official release), all other baselines and our models use a ViT-S architecture for fair comparison.",
+      "page": 19,
+      "index": 13,
+      "width": 1054,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-014.webp",
+      "caption": "Figure 14. Qualitative comparison on the HomeWalk clip. The layout is the same as in Fig. 12. Due to frequent egocentric selfocclusions by the wearer’s body and carried items, DINO often falls back to static background regions (walls, floors, furniture), whereas EgoViT maintains focus on object across occlusion and reappearance.",
+      "page": 24,
+      "index": 14,
+      "width": 490,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-015.webp",
+      "caption": "Figure 13. Qualitative comparison on the Driving clip. The layout is the same as in Fig. 12. Under low light and strong camera motion, DINO frequently drifts to dashboard edges or windshield borders, while EgoViT more reliably tracks salient traffic participants and in-cabin control elements over time.",
+      "page": 24,
+      "index": 15,
+      "width": 487,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2603.13912v1/fig-016.webp",
+      "caption": "Figure 4. (a) Depth Regularization: An auxiliary task, Ldepth, provides geometric constraint. (b) Proto-Object Learning: A distillation loss, Lproto, aligns student and teacher features in proto-level. Here, H(y′, y) denotes the cross-entropy between the softmax outputs of a teacher target y′ and a student prediction y. (c) Teacher-Filtered Temporal Consistency: A contrastive loss Ltemp is applied on reliable pairs filtered by the teacher to enforce temporal identity.",
+      "page": 5,
+      "index": 16,
+      "width": 1036,
+      "height": 258
+    }
+  ]
+}

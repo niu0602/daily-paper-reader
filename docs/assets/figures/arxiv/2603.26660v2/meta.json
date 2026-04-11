@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-001.webp",
+      "caption": "Figure 3: 2 DOF wrist kinematics. (A) The wrist provides two independent degrees of freedom: flexion/extension (red arrow) and radial/ulnar deviation (blue arrow), both actuated through independent linkage chains meeting at a common pivot point. (B) The intersecting rotation axes share a single geometric center defined by a passive spherical ball joint. Each DOF is driven by a dedicated forearm motor via a rectangular linkage, decoupling the two axes and minimizing cross-axis coupling during wrist motion.",
+      "page": 6,
+      "index": 1,
+      "width": 983,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-002.webp",
+      "caption": "Figure 9: Single arm teleoperated tasks. 11",
+      "page": 11,
+      "index": 2,
+      "width": 962,
+      "height": 1436
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-003.webp",
+      "caption": "Figure 13: Joint Angle Comparison. Comparison between expected angles 𝜃𝑒𝑥𝑝𝑒𝑐𝑡𝑒𝑑 and ground truth angles measured by the encoder.",
+      "page": 15,
+      "index": 3,
+      "width": 983,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-004.webp",
+      "caption": "Figure 1: (A) Ruka-v2 has an integrated 2 DOF decoupled parallel wrist, enabling motion in restricted areas, while also introducing finger abduction/adduction to expand dexterity. (B) Ruka-v2 has a mount attachment that is located at the side of wrist rather than the bottom, which makes it easier to attach them to table-top manipulators. (C) We designed and developed an attachable magnetic encoder to better detect the joint angle accuracy, removing the requirement for expensive motion capture gloves. (D) We equipped Ruka-v2 with e-flesh fingertips [1] body form factor for softer and compliant grip. This enables optional equipment of tactile sensors on the hand as well. Everything is open-source and accessible at our website: ruka-hand-v2.github.io",
+      "page": 2,
+      "index": 4,
+      "width": 983,
+      "height": 556
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-005.webp",
+      "caption": "Figure 4: Finger abduction/adduction mechanism. (Left) In the abducted state, the extension spring pulls the finger laterally outward, providing passive compliance and a well-defined neutral posture when the tendon is slack. (Right) Tendon-driven adduction: the adduction string is pulled by a forearm motor, rotating the knuckle module inward against the spring force. Blue arrows indicate the direction of applied force.",
+      "page": 7,
+      "index": 5,
+      "width": 787,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-006.webp",
+      "caption": "Figure 8: Bimanual teleoperated tasks.",
+      "page": 10,
+      "index": 6,
+      "width": 983,
+      "height": 519
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-007.webp",
+      "caption": "Table 4: Static payload performance of the hand under different joint and wrist loading conditions.",
+      "page": 14,
+      "index": 7,
+      "width": 643,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-008.webp",
+      "caption": "Figure 12: Finger load test setup. Static payload evaluation under representative loading conditions: finger DIP–PIP joint load (a), wrist in forearm supination with palm face-up (b), and wrist in sideways (radial/ulnar-side-up) orientation (c). In each trial, a bag with incrementally added weights was suspended from the hand, and the maximum load held stably for the specified duration was recorded.",
+      "page": 14,
+      "index": 8,
+      "width": 971,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-009.webp",
+      "caption": "Table 1: Comparison of dexterous robotic hands. Open-source: ✓=hardware & software fully public; ∼=partial; ✗=proprietary. Act.: T= tendon; DD=direct-drive. Tactile: opt.=optional add-on. †HW files public; SW closed. Costs are approx. USD list or material prices; –=not publicly documented. ‡Price not officially disclosed; figure reported by third-party sources only. SWuji Hand thermal throttling observed after ∼40 minutes of continuous operation in internal testing.",
+      "page": 3,
+      "index": 9,
+      "width": 921,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-010.webp",
+      "caption": "Figure 11: 5-hour thermal endurance. Finger motor temperatures (left) and wrist motor temperatures (right) over 5 hours of continuous operation. The wrist motors (Flex/Ext and Radial/Ulnar) gradually rise and stabilize near 44–45 °C, while the finger motors remain lower and largely stable throughout, with the thumb motor highest at ∼47 °C. No thermal limiting was observed during the 5-hour run.",
+      "page": 13,
+      "index": 10,
+      "width": 983,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-011.webp",
+      "caption": "Figure 6: Magnetic encoder motion. (A) The finger sensors hold two pieces that read the MCP, PIP and DIP of the index finger. (B) The abduction sensor is placed in the back to avoid interference with grasping tasks with the closed hand. (C) For the thumb, the CMC sensor is placed in the bottom section of the palm, and the other two are attached to the MCP and IP sections of the thumb.",
+      "page": 8,
+      "index": 11,
+      "width": 887,
+      "height": 295
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-012.webp",
+      "caption": "Figure 2: Ruka-v2 hardware overview. (A) Ruka-v2 features 18 degrees of freedom across the fingers and thumb, with joints at the DIP, PIP, MCP, and Adduction axes on each finger, and IP, MCP, and CMC joints on the thumb. An additional 2 DOF wrist provides flexion/extension and radial/ulnar deviation. (B) The independent knuckle module enables abduction/adduction at the MCP joints, allowing the fingers to splay and converge laterally. The middle finger remains fixed as a structural reference. (C) The 2 DOF wrist module supports near-human range of motion: flexion/extension (top) and radial/ulnar deviation (bottom), actuated independently via decoupled parallel linkages.",
+      "page": 4,
+      "index": 12,
+      "width": 983,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-013.webp",
+      "caption": "Figure 15: Ruka/Ruka-v2 user experience comparisons We observed a 51.3% reduction in mean completion time and a 21.2% increase in overall success rates across all tasks.",
+      "page": 17,
+      "index": 13,
+      "width": 983,
+      "height": 397
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-014.webp",
+      "caption": "Figure 10: Policy rollouts. Success rates for each starting position are reported out of 5, and total mean and standard deviation success rates are scaled to a 10 point scale.",
+      "page": 12,
+      "index": 14,
+      "width": 983,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-015.webp",
+      "caption": "Figure 7: Illustration of the linear controller",
+      "page": 9,
+      "index": 15,
+      "width": 935,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-016.webp",
+      "caption": "Table 2: The range of motion (↑) of each joint in Ruka-v2 in degrees compared to the human range of motion [5]. ✓= more or equal to human; ∼ = DOF exists but range of motion not reached; ✗= DOF does not exist.",
+      "page": 5,
+      "index": 16,
+      "width": 937,
+      "height": 486
+    },
+    {
+      "url": "assets/figures/arxiv/2603.26660v2/fig-017.webp",
+      "caption": "Figure 14: Effect of DIP–PIP coupling on motion repeatability. Angle versus commanded position for repeated flexion–extension sweeps, comparing the previous finger design (left) and the redesigned coupled DIP–PIP mechanism (right). Solid lines show forward motion; dashed lines show reverse. Shaded regions represent ±1 standard deviation across trials. The redesigned mechanism exhibits significantly reduced hysteresis and trial-to-trial variation, yielding a more consistent command-toangle relationship across the full range of motion.",
+      "page": 16,
+      "index": 17,
+      "width": 983,
+      "height": 345
+    }
+  ]
+}

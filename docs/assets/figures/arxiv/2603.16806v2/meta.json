@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-001.webp",
+      "caption": "Fig. 12: Barrett Hand graph construction and qualitative grasping examples.",
+      "page": 15,
+      "index": 1,
+      "width": 520,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-002.webp",
+      "caption": "Fig. 5: Simulated grasps of training hands on 5 diverse objects.",
+      "page": 7,
+      "index": 2,
+      "width": 498,
+      "height": 320
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-003.webp",
+      "caption": "Fig. 11: Representative failure cases on the three unseen hands. (a) LEAP, (b) Inspire, (c) Revo2.",
+      "page": 14,
+      "index": 3,
+      "width": 518,
+      "height": 566
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-004.webp",
+      "caption": "Fig. 10: Training curves in simulation for our MAGCN policy.",
+      "page": 14,
+      "index": 4,
+      "width": 500,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-005.webp",
+      "caption": "Fig. 2: Universal hand representation. (a) Morphology-Aligned State Graph Representation: nodes correspond to anatomical units, edges follow kinematic chains, yielding a hand-agnostic semantic graph structure. (b) Schematic of three motion primitives (Flexion, Abduction, Axial Rotation) on a Schunk hand, showing their physical motion effects at representative joints.",
+      "page": 3,
+      "index": 5,
+      "width": 464,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-006.webp",
+      "caption": "Fig. 8: Joint-to-primitive mapping for all hand embodiments used in this work. Each URDF joint is assigned to one motion primitive.",
+      "page": 13,
+      "index": 6,
+      "width": 497,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-007.webp",
+      "caption": "TABLE IV: Training and architecture hyperparameters.",
+      "page": 13,
+      "index": 7,
+      "width": 550,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-008.webp",
+      "caption": "TABLE III: Real-world zero-shot grasping success rate on unseen dexterous hands.",
+      "page": 8,
+      "index": 8,
+      "width": 510,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-009.webp",
+      "caption": "Fig. 3: Architecture of DexGrasp-Zero. At each time step t: (a) Morphology-Aligned Graph Encoder encodes hand-object state into node features Xh node,t and global feature xh g,t using a hand-specific graph (adjacency Ah); a GCN with per-layer physical priors produces embeddings Eh node,t and Eh g,t. (b) Physical Property Encoder parses hand URDF to build a physical graph Gh physical (joint limits, link lengths, etc.) and an activation mask Mh activation, encoded into Eh p and fused into every GCN layer. (c) Decoder outputs motion primitives αh prim: wrist 6-DoF commands from Eh g,t and wrist features, and joint actions from masked node embeddings; the latter are mapped via hand-specific Mh to executable joint commands αh physical,t.",
+      "page": 4,
+      "index": 9,
+      "width": 1066,
+      "height": 512
+    },
+    {
+      "url": "assets/figures/arxiv/2603.16806v2/fig-010.webp",
+      "caption": "Fig. 6: Morphology-aligned graph construction results for all hand embodiments used in this work.",
+      "page": 12,
+      "index": 10,
+      "width": 514,
+      "height": 345
+    }
+  ]
+}

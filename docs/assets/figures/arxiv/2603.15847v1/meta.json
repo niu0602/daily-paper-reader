@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-001.webp",
+      "caption": "Fig. 5: Learning contacts and action from forces. (a) Contact Understanding",
+      "page": 6,
+      "index": 1,
+      "width": 481,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-002.webp",
+      "caption": "Fig. 2: Forces reveal interaction dynamics. Representative sequences showing how force measurements disambiguate physical interactions. Left: Grasping and lifting a pan exhibits distinct force signatures with an onset at the end of the reach and a spike as the pan is lifted. Right: Stirring produces rhythmic force patterns reflecting cyclic manipulation.",
+      "page": 2,
+      "index": 2,
+      "width": 723,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-003.webp",
+      "caption": "Fig. 3: Contact detection from force measurements. Despite visual similarity across frames, force measurements precisely identify contact boundaries. Top: Raw sensor forces (pinky and middle finger dominate this grasp). Middle: Consolidated force with dual thresholds—above C threshold indicates contact, below NC threshold indicates non-contact, between is ambiguous (excluded). Forces enable scalable contact supervision without manual annotation of ambiguous visual transitions.",
+      "page": 3,
+      "index": 3,
+      "width": 723,
+      "height": 450
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-004.webp",
+      "caption": "Table 4: Action recognition results across all benchmarks. Top-1 accuracy for frozen and unfrozen settings across EPIC-Kitchens (verb/noun), SSV2, Ego-Exo4D, and Meccano. For each model, we compare standard pretraining (K710 for Hiera-B, Ego4D for EgoVideo-B) against the same weights further pretrained on FEEL’s force data. Bold denotes the better result within each model pair. Models pre-trained over FEEL’s data generally outperform the models pre-trained solely over Kinetics and Ego4D. We particularly observe this in the frozen evaluation setting compared to the unfrozen, end-to-end training.",
+      "page": 13,
+      "index": 4,
+      "width": 756,
+      "height": 641
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-005.webp",
+      "caption": "Fig. 7: Qualitative contact segmentation results. Each row shows an input image, ground truth, 100DOH prediction, and our prediction across FEEL, HOI4D, and VISOR. Right and left hand contacts are shown in red and blue respectively. Our model correctly identifies hand side (row 1), avoids confusing proximity for contact (rows 2-3), and handles simultaneous two-hand contacts (rows 4-5). Where our model produces partial segmentations (row 3), 100DOH (combined with SAM) confidently segments the wrong object entirely.",
+      "page": 12,
+      "index": 5,
+      "width": 723,
+      "height": 715
+    },
+    {
+      "url": "assets/figures/arxiv/2603.15847v1/fig-006.webp",
+      "caption": "Fig. 4: Force-sensing glove hardware. Leftmost: Palm-facing views of the left and right gloves, showing the six piezoresistive sensors (red) mounted at each fingertip and across the palm, the Arduino microcontroller case (blue) mounted at the wrist, and the on/off switch (green). Middle and right: Side and in-use views demonstrating the glove’s low-profile form factor during natural object manipulation.",
+      "page": 5,
+      "index": 6,
+      "width": 723,
+      "height": 277
+    }
+  ]
+}

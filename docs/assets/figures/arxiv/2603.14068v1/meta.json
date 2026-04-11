@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.14068v1/fig-001.webp",
+      "caption": "Fig. 2: Overview of Stiffness Copilot execution in the human-subjective experiment. Each row shows a representative situation. (A) We first collected contact forces in simulation to infer robot stiffness, which provided training data for Stiffness Copilot. (B) Stiffness Copilot was trained using simulated wrist-camera images (upper) and was deployed using real wrist-camera images (lower) during policy rollout, illustrating the sim-to-real gap. (C) Thirdperson views from our user study, where a participant teleoperated the robot. (D) Stiffness produced by Stiffness Copilot is visualized as a green ellipsoid, where a longer ellipsoid axis indicates larger translation stiffness in that direction. We also annotate the stiffness magnitude along each axis. In Vase Wiping (top two rows), despite different grasp poses, the robot remained compliant perpendicular to the contact surface and stiff in other directions. In Peg-in-Hole (middle two rows), the robot was stiff while picking up the block and compliant during peg insertion. In Door Opening (bottom two rows), despite different grasp poses, the robot was stiff along the opening direction and compliant in other directions.",
+      "page": 5,
+      "index": 1,
+      "width": 1055,
+      "height": 1250
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14068v1/fig-002.webp",
+      "caption": "Fig. 3: Visualization of our study results. For box and whisker plots, the top and bottom of each box represent the first and third quartiles, and the line inside each box is the statistical median of the data. The length of the box is defined as the interquartile range (IQR). The whiskers are within a maximum of 1.5 IQR. ∗/ ∗ ∗/∗∗∗ indicate significance levels p < .05/.01/.001. d is Cohen’s d for paired t-tests and r is the Wilcoxon effect size.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 870
+    },
+    {
+      "url": "assets/figures/arxiv/2603.14068v1/fig-003.webp",
+      "caption": "TABLE I SUMMARY OF USER STUDY RESULTS ACROSS STIFFNESS CONDITIONS. BEST VALUES ARE SHOWN IN BOLD.",
+      "page": 7,
+      "index": 3,
+      "width": 1060,
+      "height": 337
+    }
+  ]
+}

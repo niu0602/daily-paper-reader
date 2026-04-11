@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-001.webp",
+      "caption": "Figure 6. SHOW3D mobile capture setup. The rig includes eight exocentric fisheye cameras (green) providing wide-baseline views from diverse angles, and two egocentric fisheye cameras (blue) mounted on the headset. This configuration enables full-surround imaging of hand–object interactions. We use monochrome cameras instead of RGB as they are more robust to illumination variability.",
+      "page": 11,
+      "index": 1,
+      "width": 848,
+      "height": 658
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-002.webp",
+      "caption": "Table 7. Per-verb evaluation of text-driven 6DoF object pose forecasting, for a selected set of verbs. Reported are translation errors (mm, ↓) and the relative percentage improvement provided by text conditioning. The results are sorted by improvement at 30 frames. Our method shows robust gains on predictable actions (pouring, opening), but has limited impact on ambiguous ones (moving, inspecting).",
+      "page": 15,
+      "index": 2,
+      "width": 1036,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-003.webp",
+      "caption": "Figure 2. Our mobile multi-camera capture rig. Left: Annotated hardware layout showing five MoCap cameras (red), and eight exocentric monochrome cameras mounted in a half-dome configuration (green), and two egocentric monochrome cameras on the Meta Quest 3 headset (blue). The MoCap cameras are only used for headset pose tracking, by tracking optical markers rigidly attached to the headset. The ten total exocentric and egocentric monochrome cameras are used for marker-free annotation of 3D hand and object poses. Right: The rig in use during in-the-wild capture sessions, demonstrating its lightweight (about eight kilograms) and wearable design that allows natural interaction while maintaining stable, synchronized multi-view coverage under mostly unconstrained motion.",
+      "page": 2,
+      "index": 3,
+      "width": 877,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-004.webp",
+      "caption": "Table 3. Evaluation of text-driven 6DoF object pose forecasting. Reported are per-object and mean average translation errors (mm, ↓), with and without text conditioning. Conditioning on text leads to a consistent improvement across objects.",
+      "page": 7,
+      "index": 4,
+      "width": 1036,
+      "height": 180
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-005.webp",
+      "caption": "Figure 12. Our automated pipeline for 3D hand keypoint annotation. (a) Sapiens keypoints: we use the triangulated hand and forearm keypoints to define crop regions for hands. (b) Crop regions are used to generate 256x256 perspective crops [11] for both hands. (c) We apply InterNet [22] on the perspective crops, and fuse them with the initial Sapiens detections to obtain final 3D hand keypoints.",
+      "page": 14,
+      "index": 5,
+      "width": 1037,
+      "height": 628
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-006.webp",
+      "caption": "Figure 10. Simultaneous rig–dome capture for ground truth validation. To evaluate the accuracy of our mobile annotation pipeline, we captured sequences where the subject wears our mobile rig inside a high-fidelity stationary multi-camera dome. This allows for a direct comparison between our mobile-rig-derived annotations and the dome-derived “gold standard.”",
+      "page": 13,
+      "index": 6,
+      "width": 446,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-007.webp",
+      "caption": "Figure 5. Hand pose estimation on the SHOW3D test set. From left to right: results from models trained on UmeTrack + HOT3D + SHOW3D, HOT3D, and UmeTrack, respectively. Including training data from SHOW3D significantly improves robustness against object occlusion and background clutter.",
+      "page": 8,
+      "index": 7,
+      "width": 496,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-008.webp",
+      "caption": "Table 4. Evaluation of 3D hand pose estimation. The reported metric is Mean Keypoint Position Error (MKPE, in mm). Models trained on existing datasets, UmeTrack [11] and HOT3D [3], generalize noticeably worse to SHOW3D, highlighting the increased difficulty of in-the-wild data.",
+      "page": 8,
+      "index": 8,
+      "width": 492,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-009.webp",
+      "caption": "Figure 3. Our ego-exo pipeline for 3D hand and object pose annotation. (a) Multi-view fisheye images from our ego and exo cameras. (b) We detect 3D hand keypoints by fusing predictions from Sapiens [14] and InterNet [22], and fit personalized hand mesh via Inverse Kinematics. (c) CAD-based 3D object pose estimation using CNOS [24], FoundPose [28], and GoTrack [25]. (d) The resulting 3D ground-truth annotations are projected back into ego cameras, and can be used to train egocentric vision models.",
+      "page": 4,
+      "index": 9,
+      "width": 1036,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-010.webp",
+      "caption": "Figure 15. Object annotation failure case: Missed object under severe occlusion and outdoor illumination. Left: The raw image from egocentric view. Right: The projected 3D hand meshes (red/blue) overlaying the image. Although the hands are correctly tracked, the object is not detected due to occlusion from both hands and strong outdoor lighting, and thus is entirely not tracked.",
+      "page": 17,
+      "index": 10,
+      "width": 496,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-011.webp",
+      "caption": "Figure 14. Hand annotation failure cases. We visualize two common error modes in our automated annotation pipeline. Top row: Examples of inaccurate 3D pose estimation. While all entities are successfully detected, minor errors in the estimated 6DoF pose result in physically implausible interpenetrations (clipping) between the hand and object meshes. Bottom row: Examples of missed hand detections. In scenarios with severe occlusion—where a hand is significantly obstructed by the object or the opposing hand—our pipeline occasionally fails to detect the occluded hand entirely.",
+      "page": 17,
+      "index": 11,
+      "width": 496,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-012.webp",
+      "caption": "Figure 16. Object annotation failure case: Rotational ambiguity in symmetric objects. Left: The raw image from egocentric view. Right: The projected 3D object mesh (green) overlaying the image. Note that the pipeline correctly tracks the 3D position but fails to resolve the azimuthal rotation, incorrectly predicting the handle to be visible (“hallucinated”) despite not being present in the image.",
+      "page": 17,
+      "index": 12,
+      "width": 496,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-013.webp",
+      "caption": "Figure 7. Stationary configuration for inclusive capture. The rig can be mounted statically to allow for seated data collection. This setup eliminates the weight burden of the backpack, accommodating participants with limited mobility or physical endurance.",
+      "page": 12,
+      "index": 13,
+      "width": 446,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-014.webp",
+      "caption": "Figure 9. Examples of contact annotations. Egocentric frames from SHOW3D with annotated contact regions (yellow). For visual clarity, contact annotations are only shown between the left hand and the manipulated object.",
+      "page": 12,
+      "index": 14,
+      "width": 496,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-015.webp",
+      "caption": "Table 1. Comparison of SHOW3D against recent hand–object interaction datasets.",
+      "page": 5,
+      "index": 15,
+      "width": 1031,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2603.28760v1/fig-016.webp",
+      "caption": "Figure 13. Additional ground truth examples from SHOW3D: hand pose (red and blue), object pose (green), and text captions.",
+      "page": 16,
+      "index": 16,
+      "width": 910,
+      "height": 1311
+    }
+  ]
+}

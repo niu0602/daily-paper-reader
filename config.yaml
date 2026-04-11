@@ -25,3 +25,62 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: DexOp
+      description: 查询使用第一视角数据训练灵巧操作的相关论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: first-person data
+          keyword_cn: 第一视角数据
+          query: research on using first-person visual or sensory data for dexterous manipulation learning
+        - keyword: dexterous manipulation
+          keyword_cn: 灵巧操作
+          query: studies focusing on dexterous robotic or hand manipulation tasks
+        - keyword: egocentric vision
+          keyword_cn: 自我中心视觉
+          query: research on egocentric vision for robotic manipulation training
+        - keyword: robotic manipulation
+          keyword_cn: 机器人操作
+          query: robotic manipulation research leveraging first-person datasets
+        - keyword: manipulation dataset
+          keyword_cn: 操作数据集
+          query: benchmark datasets containing first-person recordings for manipulation learning
+        - keyword: policy learning
+          keyword_cn: 策略学习
+          query: policy learning methods for dexterous manipulation using first-person observations
+      intent_queries:
+        - query: papers on training dexterous manipulation using first person or egocentric data
+          query_cn: 使用第一视角或自我中心数据训练灵巧操作的论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: studies leveraging egocentric vision for robotic dexterous skill learning
+          query_cn: 利用自我中心视觉进行机器人灵巧技能学习的研究
+          enabled: true
+          source: manual
+          note: ''
+        - query: >-
+            research on imitation learning and representation learning methods for dexterous manipulation from first
+            person data
+          query_cn: 基于第一视角数据的灵巧操作模仿学习与表示学习研究
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-04-11T07:00:42.294Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq

@@ -1,0 +1,410 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-12T19:23:31.378279+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 8,
+    "quick_skim_target": 11,
+    "quick_selected": 8
+  },
+  "deep_dive": [
+    {
+      "id": "2604.08534v1",
+      "source": "arxiv",
+      "title": "ActiveGlasses: Learning Manipulation with Active Vision from Ego-centric Human Demonstration",
+      "abstract": "Large-scale real-world robot data collection is a prerequisite for bringing robots into everyday deployment. However, existing pipelines often rely on specialized handheld devices to bridge the embodiment gap, which not only increases operator burden and limits scalability, but also makes it difficult to capture the naturally coordinated perception-manipulation behaviors of human daily interaction. This challenge calls for a more natural system that can faithfully capture human manipulation and perception behaviors while enabling zero-shot transfer to robotic platforms. We introduce ActiveGlasses, a system for learning robot manipulation from ego-centric human demonstrations with active vision. A stereo camera mounted on smart glasses serves as the sole perception device for both data collection and policy inference: the operator wears it during bare-hand demonstrations, and the same camera is mounted on a 6-DoF perception arm during deployment to reproduce human active vision. To enable zero-transfer, we extract object trajectories from demonstrations and use an object-centric point-cloud policy to jointly predict manipulation and head movement. Across several challenging tasks involving occlusion and precise interaction, ActiveGlasses achieves zero-shot transfer with active vision, consistently outperforms strong baselines under the same hardware setup, and generalizes across two robot platforms.",
+      "authors": [
+        "Yanwen Zou",
+        "Chenyang Shi",
+        "Wenye Yu",
+        "Han Xue",
+        "Jun Lv",
+        "Ye Pan",
+        "Chuan Wen",
+        "Cewu Lu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T17:59:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.08534v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "learning robot manipulation from ego-centric human demonstrations with active vision",
+      "llm_evidence_cn": "通过主动视觉从第一视角人类演示中学习机器人操作",
+      "llm_evidence": "通过主动视觉从第一视角人类演示中学习机器人操作",
+      "canonical_evidence": "通过主动视觉从第一视角人类演示中学习机器人操作",
+      "llm_tldr_en": "A system using smart glasses to capture egocentric human data for zero-shot transfer to robotic manipulation.",
+      "llm_tldr_cn": "一种利用智能眼镜捕捉第一视角人类数据并零样本迁移至机器人操作的系统。",
+      "llm_tldr": "一种利用智能眼镜捕捉第一视角人类数据并零样本迁移至机器人操作的系统。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "papers on training dexterous manipulation using first person or egocentric data",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.03486v1",
+      "source": "arxiv",
+      "title": "VisionClaw: Always-On AI Agents through Smart Glasses",
+      "abstract": "We present VisionClaw, an always-on wearable AI agent that integrates live egocentric perception with agentic task execution. Running on Meta Ray-Ban smart glasses, VisionClaw continuously perceives real-world context and enables in-situ, speech-driven action initiation and delegation via OpenClaw AI agents. Therefore, users can directly execute tasks through the smart glasses, such as adding real-world objects to an Amazon cart, generating notes from physical documents, receiving meeting briefings on the go, creating events from posters, or controlling IoT devices. We evaluate VisionClaw through a controlled laboratory study (N=12) and a longitudinal deployment study (N=5). Results show that integrating perception and execution enables faster task completion and reduces interaction overhead compared to non-always-on and non-agent baselines. Beyond performance gains, deployment findings reveal a shift in interaction: tasks are initiated opportunistically during ongoing activities, and execution is increasingly delegated rather than manually controlled. These results suggest a new paradigm for wearable AI agents, where perception and action are continuously coupled to support situated, hands-free interaction.",
+      "authors": [
+        "Xiaoan Liu",
+        "DaeHo Lee",
+        "Eric J Gonzalez",
+        "Mar Gonzalez-Franco",
+        "Ryo Suzuki"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-04-03T22:17:10+00:00",
+      "link": "https://arxiv.org/pdf/2604.03486v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "wearable AI agent integrating live egocentric perception for task execution",
+      "llm_evidence_cn": "集成实时第一视角感知用于任务执行的穿戴式AI智能体",
+      "llm_evidence": "集成实时第一视角感知用于任务执行的穿戴式AI智能体",
+      "canonical_evidence": "集成实时第一视角感知用于任务执行的穿戴式AI智能体",
+      "llm_tldr_en": "Presents VisionClaw, a smart-glass agent that uses egocentric vision to initiate and execute real-world tasks.",
+      "llm_tldr_cn": "展示了VisionClaw，一种利用第一视角视觉启动并执行现实任务的智能眼镜代理。",
+      "llm_tldr": "展示了VisionClaw，一种利用第一视角视觉启动并执行现实任务的智能眼镜代理。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.07993v1",
+      "source": "arxiv",
+      "title": "HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation",
+      "abstract": "Humans achieve complex manipulation through coordinated whole-body control, whereas most Vision-Language-Action (VLA) models treat robot body parts largely independently, making high-DoF humanoid control challenging and often unstable. We present HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots. HEX introduces a humanoid-aligned universal state representation for scalable learning across heterogeneous embodiments, and incorporates a Mixture-of-Experts Unified Proprioceptive Predictor to model whole-body coordination and temporal motion dynamics from large-scale multi-embodiment trajectory data. To efficiently capture temporal visual context, HEX uses lightweight history tokens to summarize past observations, avoiding repeated encoding of historical images during inference. It further employs a residual-gated fusion mechanism with a flow-matching action head to adaptively integrate visual-language cues with proprioceptive dynamics for action generation. Experiments on real-world humanoid manipulation tasks show that HEX achieves state-of-the-art performance in task success rate and generalization, particularly in fast-reaction and long-horizon scenarios.",
+      "authors": [
+        "Shuanghao Bai",
+        "Meng Li",
+        "Xinyuan Lv",
+        "Jiawei Wang",
+        "Xinhua Wang",
+        "Fei Liao",
+        "Chengkai Hou",
+        "Langzhe Gu",
+        "Wanqi Zhou",
+        "Kun Wu",
+        "Ziluo Ding",
+        "Zhiyuan Xu",
+        "Lei Sun",
+        "Shanghang Zhang",
+        "Zhengping Che",
+        "Jian Tang",
+        "Badong Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T09:01:43+00:00",
+      "link": "https://arxiv.org/pdf/2604.07993v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "whole-body manipulation using temporal visual context and multi-embodiment trajectory data",
+      "llm_evidence_cn": "利用时间视觉上下文和多具身轨迹数据进行全身操作",
+      "llm_evidence": "利用时间视觉上下文和多具身轨迹数据进行全身操作",
+      "canonical_evidence": "利用时间视觉上下文和多具身轨迹数据进行全身操作",
+      "llm_tldr_en": "A framework for coordinated humanoid manipulation using state representations and temporal visual context.",
+      "llm_tldr_cn": "一种利用状态表示和时间视觉上下文进行协调的人形机器人操作框架。",
+      "llm_tldr": "一种利用状态表示和时间视觉上下文进行协调的人形机器人操作框架。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.04834v1",
+      "source": "arxiv",
+      "title": "E-VLA: Event-Augmented Vision-Language-Action Model for Dark and Blurred Scenes",
+      "abstract": "Robotic Vision-Language-Action (VLA) models generalize well for open-ended manipulation, but their perception is fragile under sensing-stage degradations such as extreme low light, motion blur, and black clipping. We present E-VLA, an event-augmented VLA framework that improves manipulation robustness when conventional frame-based vision becomes unreliable. Instead of reconstructing images from events, E-VLA directly leverages motion and structural cues in event streams to preserve semantic perception and perception-action consistency under adverse conditions. We build an open-source teleoperation platform with a DAVIS346 event camera and collect a real-world synchronized RGB-event-action manipulation dataset across diverse tasks and illumination settings. We also propose lightweight, pretrained-compatible event integration strategies and study event windowing and fusion for stable deployment. Experiments show that even a simple parameter-free fusion, i.e., overlaying accumulated event maps onto RGB images, could substantially improve robustness in dark and blur-heavy scenes: on Pick-Place at 20 lux, success increases from 0% (image-only) to 60% with overlay fusion and to 90% with our event adapter; under severe motion blur (1000 ms exposure), Pick-Place improves from 0% to 20-25%, and Sorting from 5% to 32.5%. Overall, E-VLA provides systematic evidence that event-driven perception can be effectively integrated into VLA models, pointing toward robust embodied intelligence beyond conventional frame-based imaging. Code and dataset will be available at https://github.com/JJayzee/E-VLA.",
+      "authors": [
+        "Jiajun Zhai",
+        "Hao Shi",
+        "Shangwei Guo",
+        "Kailun Yang",
+        "Kaiwei Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.MM",
+        "cs.RO",
+        "eess.IV"
+      ],
+      "published": "2026-04-06T16:35:57+00:00",
+      "link": "https://arxiv.org/pdf/2604.04834v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "event-augmented vision-language-action model for manipulation in adverse conditions",
+      "llm_evidence_cn": "用于恶劣条件下操作的事件增强型视觉-语言-动作模型",
+      "llm_evidence": "用于恶劣条件下操作的事件增强型视觉-语言-动作模型",
+      "canonical_evidence": "用于恶劣条件下操作的事件增强型视觉-语言-动作模型",
+      "llm_tldr_en": "Improves robotic manipulation robustness in dark or blurred scenes using event-based sensory data.",
+      "llm_tldr_cn": "利用事件相机数据提高机器人在黑暗或模糊场景下的操作鲁棒性。",
+      "llm_tldr": "利用事件相机数据提高机器人在黑暗或模糊场景下的操作鲁棒性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.08475v1",
+      "source": "arxiv",
+      "title": "LAMP: Lift Image-Editing as General 3D Priors for Open-world Manipulation",
+      "abstract": "Human-like generalization in open-world remains a fundamental challenge for robotic manipulation. Existing learning-based methods, including reinforcement learning, imitation learning, and vision-language-action-models (VLAs), often struggle with novel tasks and unseen environments. Another promising direction is to explore generalizable representations that capture fine-grained spatial and geometric relations for open-world manipulation. While large-language-model (LLMs) and vision-language-model (VLMs) provide strong semantic reasoning based on language or annotated 2D representations, their limited 3D awareness restricts their applicability to fine-grained manipulation. To address this, we propose LAMP, which lifts image-editing as 3D priors to extract inter-object 3D transformations as continuous, geometry-aware representations. Our key insight is that image-editing inherently encodes rich 2D spatial cues, and lifting these implicit cues into 3D transformations provides fine-grained and accurate guidance for open-world manipulation. Extensive experiments demonstrate that \\codename delivers precise 3D transformations and achieves strong zero-shot generalization in open-world manipulation. Project page: https://zju3dv.github.io/LAMP/.",
+      "authors": [
+        "Jingjing Wang",
+        "Zhengdong Hong",
+        "Chong Bao",
+        "Yuke Zhu",
+        "Junhan Sun",
+        "Guofeng Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-09T17:14:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.08475v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "3D priors for open-world manipulation and fine-grained spatial relations",
+      "llm_evidence_cn": "用于开放世界操作和细粒度空间关系的3D先验",
+      "llm_evidence": "用于开放世界操作和细粒度空间关系的3D先验",
+      "canonical_evidence": "用于开放世界操作和细粒度空间关系的3D先验",
+      "llm_tldr_en": "Lifts image-editing to 3D priors to enhance semantic reasoning and spatial awareness in robotic manipulation.",
+      "llm_tldr_cn": "将图像编辑提升为3D先验，以增强机器人操作中的语义推理和空间感知。",
+      "llm_tldr": "将图像编辑提升为3D先验，以增强机器人操作中的语义推理和空间感知。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.07335v1",
+      "source": "arxiv",
+      "title": "TAMEn: Tactile-Aware Manipulation Engine for Closed-Loop Data Collection in Contact-Rich Tasks",
+      "abstract": "Handheld paradigms offer an efficient and intuitive way for collecting large-scale demonstration of robot manipulation. However, achieving contact-rich bimanual manipulation through these methods remains a pivotal challenge, which is substantially hindered by hardware adaptability and data efficacy. Prior hardware designs remain gripper-specific and often face a trade-off between tracking precision and portability. Furthermore, the lack of online feasibility checking during demonstration leads to poor replayability. More importantly, existing handheld setups struggle to collect interactive recovery data during robot execution, lacking the authentic tactile information necessary for robust policy refinement. To bridge these gaps, we present TAMEn, a tactile-aware manipulation engine for closed-loop data collection in contact-rich tasks. Our system features a cross-morphology wearable interface that enables rapid adaptation across heterogeneous grippers. To balance data quality and environmental diversity, we implement a dual-modal acquisition pipeline: a precision mode leveraging motion capture for high-fidelity demonstrations, and a portable mode utilizing VR-based tracking for in-the-wild acquisition and tactile-visualized recovery teleoperation. Building on this hardware, we unify large-scale tactile pretraining, task-specific bimanual demonstrations, and human-in-the-loop recovery data into a pyramid-structured data regime, enabling closed-loop policy refinement. Experiments show that our feasibility-aware pipeline significantly improves demonstration replayability, and that the proposed visuo-tactile learning framework increases task success rates from 34% to 75% across diverse bimanual manipulation tasks. We further open-source the hardware and dataset to facilitate reproducibility and support research in visuo-tactile manipulation.",
+      "authors": [
+        "Longyan Wu",
+        "Jieji Ren",
+        "Chenghang Jiang",
+        "Junxi Zhou",
+        "Shijia Peng",
+        "Ran Huang",
+        "Guoying Gu",
+        "Li Chen",
+        "Hongyang Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-08T17:49:35+00:00",
+      "link": "https://arxiv.org/pdf/2604.07335v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "tactile-aware manipulation engine for contact-rich bimanual manipulation",
+      "llm_evidence_cn": "用于接触密集型双臂操作的触觉感知操作引擎",
+      "llm_evidence": "用于接触密集型双臂操作的触觉感知操作引擎",
+      "canonical_evidence": "用于接触密集型双臂操作的触觉感知操作引擎",
+      "llm_tldr_en": "A hardware and software system for collecting high-quality tactile and motion data for complex robot manipulation.",
+      "llm_tldr_cn": "一种用于收集复杂机器人操作中高质量触觉和运动数据的软硬件系统。",
+      "llm_tldr": "一种用于收集复杂机器人操作中高质量触觉和运动数据的软硬件系统。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.07517v1",
+      "source": "arxiv",
+      "title": "Grasp as You Dream: Imitating Functional Grasping from Generated Human Demonstrations",
+      "abstract": "Building generalist robots capable of performing functional grasping in everyday, open-world environments remains a significant challenge due to the vast diversity of objects and tasks. Existing methods are either constrained to narrow object/task sets or rely on prohibitively large-scale data collection to capture real-world variability. In this work, we present an alternative approach, GraspDreamer, a method that leverages human demonstrations synthesized by visual generative models (VGMs) (e.g., video generation models) to enable zero-shot functional grasping without labor-intensive data collection. The key idea is that VGMs pre-trained on internet-scale human data implicitly encode generalized priors about how humans interact with the physical world, which can be combined with embodiment-specific action optimization to enable functional grasping with minimal effort. Extensive experiments on the public benchmarks with different robot hands demonstrate the superior data efficiency and generalization performance of GraspDreamer compared to previous methods. Real-world evaluations further validate the effectiveness on real robots. Additionally, we showcase that GraspDreamer can (1) be naturally extended to downstream manipulation tasks, and (2) can generate data to support visuomotor policy learning.",
+      "authors": [
+        "Chao Tang",
+        "Jiacheng Xu",
+        "Haofei Lu",
+        "Bolin Zou",
+        "Wenlong Dong",
+        "Hong Zhang",
+        "Danica Kragic"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-08T18:52:16+00:00",
+      "link": "https://arxiv.org/pdf/2604.07517v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "imitating functional grasping from generated human demonstrations encoded in internet-scale data",
+      "llm_evidence_cn": "从互联网规模数据编码的生成人类演示中模仿功能性抓取",
+      "llm_evidence": "从互联网规模数据编码的生成人类演示中模仿功能性抓取",
+      "canonical_evidence": "从互联网规模数据编码的生成人类演示中模仿功能性抓取",
+      "llm_tldr_en": "Uses generative models to synthesize human demonstrations for zero-shot functional robotic grasping.",
+      "llm_tldr_cn": "利用生成模型合成人类演示，实现机器人零样本功能性抓取。",
+      "llm_tldr": "利用生成模型合成人类演示，实现机器人零样本功能性抓取。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.08342v1",
+      "source": "arxiv",
+      "title": "EgoEverything: A Benchmark for Human Behavior Inspired Long Context Egocentric Video Understanding in AR Environment",
+      "abstract": "Long context egocentric video understanding has recently attracted significant research attention, with augmented reality (AR) highlighted as one of its most important application domains. Nevertheless, the task remains highly challenging due to the need for reasoning over extended temporal contexts and diverse, unstructured activities. Although several benchmarks exist, most egocentric datasets rely on human worn cameras and focus mainly on visual content, with limited consideration of underlying user behavior when forming video-related queries. EgoEverything is a benchmark that explicitly considers human behavior by leveraging human attention signals, abstracted from gaze data, when generating questions. It comprises over 5,000 multiple choice question answer pairs, spanning more than 100 hours of video. By integrating human attention signals during question generation, it more faithfully captures natural human behavior and offers a realistic evaluation setting for long-context egocentric video understanding in AR.",
+      "authors": [
+        "Qiance Tang",
+        "Ziqi Wang",
+        "Jieyu Lin",
+        "Ziyun Li",
+        "Barbara De Salvo",
+        "Sai Qian Zhang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-09T15:13:36+00:00",
+      "link": "https://arxiv.org/pdf/2604.08342v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for long context egocentric video understanding using gaze data",
+      "llm_evidence_cn": "利用视线数据进行长上下文第一视角视频理解的基准",
+      "llm_evidence": "利用视线数据进行长上下文第一视角视频理解的基准",
+      "canonical_evidence": "利用视线数据进行长上下文第一视角视频理解的基准",
+      "llm_tldr_en": "Introduces a benchmark for egocentric video understanding inspired by human behavior and gaze.",
+      "llm_tldr_cn": "引入了一个受人类行为和视线启发的第一视角视频理解基准。",
+      "llm_tldr": "引入了一个受人类行为和视线启发的第一视角视频理解基准。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.08508v1",
+      "source": "arxiv",
+      "title": "Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation",
+      "abstract": "This paper presents a sim-to-real approach that enables legged robots to dynamically manipulate large and heavy objects with whole-body dexterity. Our key insight is that by performing test-time steering of a pre-trained whole-body control policy with a sample-based planner, we can enable these robots to solve a variety of dynamic loco-manipulation tasks. Interestingly, we find our method generalizes to a diverse set of objects and tasks with no additional tuning or training, and can be further enhanced by flexibly adjusting the cost function at test time. We demonstrate the capabilities of our approach through a variety of challenging loco-manipulation tasks on a Spot quadruped robot in the real world, including uprighting a tire heavier than the robot's nominal lifting capacity and dragging a crowd-control barrier larger and taller than the robot itself. Additionally, we show that the same approach can be generalized to humanoid loco-manipulation tasks, such as opening a door and pushing a table, in simulation. Project code and videos are available at \\href{https://sumo.rai-inst.com/}{https://sumo.rai-inst.com/}.",
+      "authors": [
+        "John Z. Zhang",
+        "Maks Sorokin",
+        "Jan Brüdigam",
+        "Brandon Hung",
+        "Stephen Phillips",
+        "Dmitry Yershov",
+        "Farzad Niroui",
+        "Tong Zhao",
+        "Leonor Fermoselle",
+        "Xinghao Zhu",
+        "Chao Cao",
+        "Duy Ta",
+        "Tao Pang",
+        "Jiuguang Wang",
+        "Preston Culbertson",
+        "Zachary Manchester",
+        "Simon Le Cléac'h"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T17:49:40+00:00",
+      "link": "https://arxiv.org/pdf/2604.08508v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Enables legged robots to perform dynamic loco-manipulation with whole-body dexterity.",
+      "llm_evidence_cn": "使足式机器人能够以全身灵巧性执行动态移动操作。",
+      "llm_evidence": "使足式机器人能够以全身灵巧性执行动态移动操作。",
+      "canonical_evidence": "使足式机器人能够以全身灵巧性执行动态移动操作。",
+      "llm_tldr_en": "A sim-to-real approach for dynamic whole-body loco-manipulation using pre-trained policies and planners.",
+      "llm_tldr_cn": "一种利用预训练策略和规划器实现动态全身移动操作的仿真到现实方法。",
+      "llm_tldr": "一种利用预训练策略和规划器实现动态全身移动操作的仿真到现实方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

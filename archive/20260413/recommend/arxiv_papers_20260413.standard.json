@@ -1,0 +1,499 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-13T19:57:38.426813+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 8,
+    "quick_skim_target": 11,
+    "quick_selected": 8
+  },
+  "deep_dive": [
+    {
+      "id": "2604.09294v1",
+      "source": "arxiv",
+      "title": "A Benchmark of Dexterity for Anthropomorphic Robotic Hands",
+      "abstract": "Dexterity is a central yet ambiguously defined concept in the design and evaluation of anthropomorphic robotic hands. In practice, the term is often used inconsistently, with different systems evaluated under disparate criteria, making meaningful comparisons across designs difficult. This highlights the need for a unified, performance-based definition of dexterity grounded in measurable outcomes rather than proxy metrics. In this work, we introduce POMDAR, a comprehensive dexterity benchmark that formalizes dexterity as task performance across a structured set of manipulation and grasping motions. The benchmark was systematically derived from established taxonomies in human motor control. It is implemented in both real-world and simulation and includes four manipulation configurations: vertical and horizontal configurations, continuous rotation, and pure grasping. The task designs contain mechanical scaffolding to constrain task motion, suppress compensatory strategies, and enable metrics to be measured unambiguously. We define a quantitative scoring metric combining task correctness and execution speed, effectively measuring dexterity as throughput. This enables objective, reproducible, and interpretable evaluation across different hand designs. POMDAR provides an open-source, standardized, and taxonomy-grounded benchmark for consistent comparison and evaluation of anthropomorphic robot hands to facilitate a systematic advancement of dexterous manipulation platforms. CAD, simulation files, and evaluation videos are publicly available at https://srl-ethz.github.io/POMDAR/.",
+      "authors": [
+        "Davide Liconti",
+        "Yuning Zhou",
+        "Yasunori Toshimitsu",
+        "Ronan Hinchet",
+        "Robert K. Katzschmann"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-10T13:04:28+00:00",
+      "link": "https://arxiv.org/pdf/2604.09294v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "comprehensive dexterity benchmark for anthropomorphic robotic hands",
+      "llm_evidence_cn": "仿人机器人手的综合灵巧性基准",
+      "llm_evidence": "仿人机器人手的综合灵巧性基准",
+      "canonical_evidence": "仿人机器人手的综合灵巧性基准",
+      "llm_tldr_en": "POMDAR is a unified benchmark for evaluating anthropomorphic robotic hand dexterity across various tasks.",
+      "llm_tldr_cn": "POMDAR是一个统一的基准，用于评估仿人机器人手在各种任务中的灵巧性。",
+      "llm_tldr": "POMDAR是一个统一的基准，用于评估仿人机器人手在各种任务中的灵巧性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.09535v1",
+      "source": "arxiv",
+      "title": "EgoTL: Egocentric Think-Aloud Chains for Long-Horizon Tasks",
+      "abstract": "Large foundation models have made significant advances in embodied intelligence, enabling synthesis and reasoning over egocentric input for household tasks. However, VLM-based auto-labeling is often noisy because the primary data sources lack accurate human action labels, chain-of-thought (CoT), and spatial annotations; these errors are amplified during long-horizon spatial instruction following. These issues stem from insufficient coverage of minute-long, daily household planning tasks and from inaccurate spatial grounding. As a result, VLM reasoning chains and world-model synthesis can hallucinate objects, skip steps, or fail to respect real-world physical attributes. To address these gaps, we introduce EgoTL. EgoTL builds a think-aloud capture pipeline for egocentric data. It uses a say-before-act protocol to record step-by-step goals and spoken reasoning with word-level timestamps, then calibrates physical properties with metric-scale spatial estimators, a memory-bank walkthrough for scene context, and clip-level tags for navigation instructions and detailed manipulation actions. With EgoTL, we are able to benchmark VLMs and World Models on six task dimensions from three layers and long-horizon generation over minute-long sequences across over 100 daily household tasks. We find that foundation models still fall short as egocentric assistants or open-world simulators. Finally, we finetune foundation models with human CoT aligned with metric labels on the training split of EgoTL, which improves long-horizon planning and reasoning, step-wise reasoning, instruction following, and spatial grounding.",
+      "authors": [
+        "Lulin Liu",
+        "Dayou Li",
+        "Yiqing Liang",
+        "Sicong Jiang",
+        "Hitesh Vijay",
+        "Hezhen Hu",
+        "Xuhai Xu",
+        "Zirui Liu",
+        "Srinivas Shakkottai",
+        "Manling Li",
+        "Zhiwen Fan"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-10T17:53:55+00:00",
+      "link": "https://arxiv.org/pdf/2604.09535v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "synthesis and reasoning over egocentric input for household tasks",
+      "llm_evidence_cn": "针对家庭任务的第一视角输入进行合成与推理",
+      "llm_evidence": "针对家庭任务的第一视角输入进行合成与推理",
+      "canonical_evidence": "针对家庭任务的第一视角输入进行合成与推理",
+      "llm_tldr_en": "EgoTL introduces a think-aloud capture pipeline for egocentric data to improve long-horizon task reasoning.",
+      "llm_tldr_cn": "EgoTL引入了第一视角数据的出声思维捕捉流水线，以改进长程任务推理。",
+      "llm_tldr": "EgoTL引入了第一视角数据的出声思维捕捉流水线，以改进长程任务推理。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.07993v1",
+      "source": "arxiv",
+      "title": "HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation",
+      "abstract": "Humans achieve complex manipulation through coordinated whole-body control, whereas most Vision-Language-Action (VLA) models treat robot body parts largely independently, making high-DoF humanoid control challenging and often unstable. We present HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots. HEX introduces a humanoid-aligned universal state representation for scalable learning across heterogeneous embodiments, and incorporates a Mixture-of-Experts Unified Proprioceptive Predictor to model whole-body coordination and temporal motion dynamics from large-scale multi-embodiment trajectory data. To efficiently capture temporal visual context, HEX uses lightweight history tokens to summarize past observations, avoiding repeated encoding of historical images during inference. It further employs a residual-gated fusion mechanism with a flow-matching action head to adaptively integrate visual-language cues with proprioceptive dynamics for action generation. Experiments on real-world humanoid manipulation tasks show that HEX achieves state-of-the-art performance in task success rate and generalization, particularly in fast-reaction and long-horizon scenarios.",
+      "authors": [
+        "Shuanghao Bai",
+        "Meng Li",
+        "Xinyuan Lv",
+        "Jiawei Wang",
+        "Xinhua Wang",
+        "Fei Liao",
+        "Chengkai Hou",
+        "Langzhe Gu",
+        "Wanqi Zhou",
+        "Kun Wu",
+        "Ziluo Ding",
+        "Zhiyuan Xu",
+        "Lei Sun",
+        "Shanghang Zhang",
+        "Zhengping Che",
+        "Jian Tang",
+        "Badong Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T09:01:43+00:00",
+      "link": "https://arxiv.org/pdf/2604.07993v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "coordinated whole-body manipulation and temporal visual context for humanoids",
+      "llm_evidence_cn": "人形机器人的协调全身操作和时序视觉上下文",
+      "llm_evidence": "人形机器人的协调全身操作和时序视觉上下文",
+      "canonical_evidence": "人形机器人的协调全身操作和时序视觉上下文",
+      "llm_tldr_en": "HEX enables coordinated whole-body humanoid manipulation using a universal state representation.",
+      "llm_tldr_cn": "HEX通过通用状态表示实现了人形机器人的协调全身操作。",
+      "llm_tldr": "HEX通过通用状态表示实现了人形机器人的协调全身操作。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.05672v2",
+      "source": "arxiv",
+      "title": "A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model",
+      "abstract": "Vision-Language-Action (VLA) models have emerged as a powerful paradigm for open-world robot manipulation, but their practical deployment is often constrained by cost: billion-scale VLM backbones and iterative diffusion/flow-based action heads incur high latency and compute, making real-time control expensive on commodity hardware. We present A1, a fully open-source and transparent VLA framework designed for low-cost, high-throughput inference without sacrificing manipulation success; Our approach leverages pretrained VLMs that provide implicit affordance priors for action generation. We release the full training stack (training code, data/data-processing pipeline, intermediate checkpoints, and evaluation scripts) to enable end-to-end reproducibility. Beyond optimizing the VLM alone, A1 targets the full inference pipeline by introducing a budget-aware adaptive inference scheme that jointly accelerates the backbone and the action head. Specifically, we monitor action consistency across intermediate VLM layers to trigger early termination, and propose Inter-Layer Truncated Flow Matching that warm-starts denoising across layers, enabling accurate actions with substantially fewer effective denoising iterations. Across simulation benchmarks (LIBERO, VLABench) and real robots (Franka, AgiBot), A1 achieves state-of-the-art success rates while significantly reducing inference cost (e.g., up to 72% lower per-episode latency for flow-matching inference and up to 76.6% backbone computation reduction with minor performance degradation). On RoboChallenge, A1 achieves an average success rate of 29.00%, outperforming baselines including pi0(28.33%), X-VLA (21.33%), and RDT-1B (15.00%).",
+      "authors": [
+        "Kaidong Zhang",
+        "Jian Zhang",
+        "Rongtao Xu",
+        "Yu Sun",
+        "Shuoshuo Xue",
+        "Youpeng Wen",
+        "Xiaoyu Guo",
+        "Minghao Guo",
+        "Weijia Liufu",
+        "Liu Zihou",
+        "Kangyi Ji",
+        "Yangsong Zhang",
+        "Jiarun Zhu",
+        "Jingzhi Liu",
+        "Zihang Li",
+        "Ruiyi Chen",
+        "Meng Cao",
+        "Jingming Zhang",
+        "Shen Zhao",
+        "Xiaojun Chang",
+        "Feng Zheng",
+        "Ivan Laptev",
+        "Xiaodan Liang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-07T10:18:40+00:00",
+      "link": "https://arxiv.org/pdf/2604.05672v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "VLA framework for open-world robot manipulation using pretrained VLMs for affordance priors",
+      "llm_evidence_cn": "用于开放世界机器人操作的VLA框架，利用预训练VLM提供动作先验",
+      "llm_evidence": "用于开放世界机器人操作的VLA框架，利用预训练VLM提供动作先验",
+      "canonical_evidence": "用于开放世界机器人操作的VLA框架，利用预训练VLM提供动作先验",
+      "llm_tldr_en": "A1 is an open-source, efficient Vision-Language-Action model designed for real-time robot manipulation control.",
+      "llm_tldr_cn": "A1是一个开源且高效的视觉-语言-动作模型，旨在实现低成本、高吞吐量的机器人实时操作控制。",
+      "llm_tldr": "A1是一个开源且高效的视觉-语言-动作模型，旨在实现低成本、高吞吐量的机器人实时操作控制。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.04690v1",
+      "source": "arxiv",
+      "title": "Pickalo: Leveraging 6D Pose Estimation for Low-Cost Industrial Bin Picking",
+      "abstract": "Bin picking in real industrial environments remains challenging due to severe clutter, occlusions, and the high cost of traditional 3D sensing setups. We present Pickalo, a modular 6D pose-based bin-picking pipeline built entirely on low-cost hardware. A wrist-mounted RGB-D camera actively explores the scene from multiple viewpoints, while raw stereo streams are processed with BridgeDepth to obtain refined depth maps suitable for accurate collision reasoning. Object instances are segmented with a Mask-RCNN model trained purely on photorealistic synthetic data and localized using the zero-shot SAM-6D pose estimator. A pose buffer module fuses multi-view observations over time, handling object symmetries and significantly reducing pose noise. Offline, we generate and curate large sets of antipodal grasp candidates per object; online, a utility-based ranking and fast collision checking are queried for the grasp planning. Deployed on a UR5e with a parallel-jaw gripper and an Intel RealSense D435i, Pickalo achieves up to 600 mean picks per hour with 96-99% grasp success and robust performance over 30-minute runs on densely filled euroboxes. Ablation studies demonstrate the benefits of enhanced depth estimation and of the pose buffer for long-term stability and throughput in realistic industrial conditions. Videos are available at https://mesh-iit.github.io/project-jl2-camozzi/",
+      "authors": [
+        "Alessandro Tarsi",
+        "Matteo Mastrogiuseppe",
+        "Saverio Taliani",
+        "Simone Cortinovis",
+        "Ugo Pattacini"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-06T13:56:57+00:00",
+      "link": "https://arxiv.org/pdf/2604.04690v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "wrist-mounted RGB-D camera for active exploration and bin picking",
+      "llm_evidence_cn": "腕部RGB-D相机用于主动探索和料箱抓取",
+      "llm_evidence": "腕部RGB-D相机用于主动探索和料箱抓取",
+      "canonical_evidence": "腕部RGB-D相机用于主动探索和料箱抓取",
+      "llm_tldr_en": "Pickalo uses a wrist-mounted camera for low-cost industrial bin picking through multi-view fusion.",
+      "llm_tldr_cn": "Pickalo利用腕部相机通过多视图融合实现低成本工业料箱抓取。",
+      "llm_tldr": "Pickalo利用腕部相机通过多视图融合实现低成本工业料箱抓取。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.08168v1",
+      "source": "arxiv",
+      "title": "ViVa: A Video-Generative Value Model for Robot Reinforcement Learning",
+      "abstract": "Vision-language-action (VLA) models have advanced robot manipulation through large-scale pretraining, but real-world deployment remains challenging due to partial observability and delayed feedback. Reinforcement learning addresses this via value functions, which assess task progress and guide policy improvement. However, existing value models built on vision-language models (VLMs) struggle to capture temporal dynamics, undermining reliable value estimation in long-horizon tasks. In this paper, we propose ViVa, a video-generative value model that repurposes a pretrained video generator for value estimation. Taking the current observation and robot proprioception as input, ViVa jointly predicts future proprioception and a scalar value for the current state. By leveraging the spatiotemporal priors of a pretrained video generator, our approach grounds value estimation in anticipated embodiment dynamics, moving beyond static snapshots to intrinsically couple value with foresight. Integrated into RECAP, ViVa delivers substantial improvements on real-world box assembly. Qualitative analysis across all three tasks confirms that ViVa produces more reliable value signals, accurately reflecting task progress. By leveraging spatiotemporal priors from video corpora, ViVa also generalizes to novel objects, highlighting the promise of video-generative models for value estimation.",
+      "authors": [
+        "Jindi Lv",
+        "Hao Li",
+        "Jie Li",
+        "Yifei Nie",
+        "Fankun Kong",
+        "Yang Wang",
+        "Xiaofeng Wang",
+        "Zheng Zhu",
+        "Chaojun Ni",
+        "Qiuping Deng",
+        "Hengtao Li",
+        "Jiancheng Lv",
+        "Guan Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-09T12:28:14+00:00",
+      "link": "https://arxiv.org/pdf/2604.08168v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "video-generative value model for robot manipulation reinforcement learning using current observations",
+      "llm_evidence_cn": "用于机器人操作强化学习的视频生成价值模型，利用当前观察进行预测",
+      "llm_evidence": "用于机器人操作强化学习的视频生成价值模型，利用当前观察进行预测",
+      "canonical_evidence": "用于机器人操作强化学习的视频生成价值模型，利用当前观察进行预测",
+      "llm_tldr_en": "ViVa repurposes video generators as value models to improve temporal dynamics and feedback in robot manipulation tasks.",
+      "llm_tldr_cn": "ViVa将视频生成器重新利用为价值模型，以改进机器人操作任务中的时间动态捕捉和反馈评估。",
+      "llm_tldr": "ViVa将视频生成器重新利用为价值模型，以改进机器人操作任务中的时间动态捕捉和反馈评估。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.08418v1",
+      "source": "arxiv",
+      "title": "Exploring Temporal Representation in Neural Processes for Multimodal Action Prediction",
+      "abstract": "Inspired by the human ability to understand and predict others, we study the applicability of Conditional Neural Processes (CNP) to the task of self-supervised multimodal action prediction in robotics. Following recent results regarding the ontogeny of the Mirror Neuron System (MNS), we focus on the preliminary objective of self-actions prediction. We find a good MNS-inspired model in the existing Deep Modality Blending Network (DMBN), able to reconstruct the visuo-motor sensory signal during a partially observed action sequence by leveraging the probabilistic generation of CNP. After a qualitative and quantitative evaluation, we highlight its difficulties in generalizing to unseen action sequences, and identify the cause in its inner representation of time. Therefore, we propose a revised version, termed DMBN-Positional Time Encoding (DMBN-PTE), that facilitates learning a more robust representation of temporal information, and provide preliminary results of its effectiveness in expanding the applicability of the architecture. DMBN-PTE figures as a first step in the development of robotic systems that autonomously learn to forecast actions on longer time scales refining their predictions with incoming observations.",
+      "authors": [
+        "Marco Gabriele Fedozzi",
+        "Yukie Nagai",
+        "Francesco Rea",
+        "Alessandra Sciutti"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-09T16:19:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.08418v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "self-supervised multimodal action prediction and visuo-motor sensory signal reconstruction",
+      "llm_evidence_cn": "自监督多模态动作预测与视觉-运动感觉信号重建",
+      "llm_evidence": "自监督多模态动作预测与视觉-运动感觉信号重建",
+      "canonical_evidence": "自监督多模态动作预测与视觉-运动感觉信号重建",
+      "llm_tldr_en": "Explores neural processes for multimodal action prediction and sensory signal reconstruction in robotics.",
+      "llm_tldr_cn": "探索了机器人多模态动作预测和感觉信号重建的神经过程。",
+      "llm_tldr": "探索了机器人多模态动作预测和感觉信号重建的神经过程。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.09330v1",
+      "source": "arxiv",
+      "title": "VAG: Dual-Stream Video-Action Generation for Embodied Data Synthesis",
+      "abstract": "Recent advances in robot foundation models trained on large-scale human teleoperation data have enabled robots to perform increasingly complex real-world tasks. However, scaling these systems remains difficult because collecting task-specific demonstrations is expensive and labor-intensive. Synthetic data, especially generated videos, offer a promising direction, but existing World Models (WMs) are not directly suitable for policy learning since they do not provide paired action trajectories. World-Action (WA) models partially address this by predicting actions with visual outputs, yet often lack strong video-action alignment, while two-stage pipelines that generate video first and then infer actions introduce inefficiency and error accumulation. To address these limitations, we propose VAG, a unified flow-matching-based dual-stream framework that jointly generates video and action under visual and language conditioning. By synchronizing denoising in both branches and using an adaptive 3D pooling mechanism to transfer compact global video context to the action branch, VAG improves cross-modal consistency during generation. Across both simulated and real-world settings, VAG produces aligned video-action pairs with competitive prediction quality, supports executable trajectory replay, and provides useful synthetic pretraining data that improves downstream policy generalization, indicating its potential as a practical world-action model for embodied data synthesis.",
+      "authors": [
+        "Xiaolei Lang",
+        "Yang Wang",
+        "Yukun Zhou",
+        "Chaojun Ni",
+        "Kerui Li",
+        "Jiagang Zhu",
+        "Tianze Liu",
+        "Jiajun Lv",
+        "Xingxing Zuo",
+        "Yun Ye",
+        "Guan Huang",
+        "Xiaofeng Wang",
+        "Zheng Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-10T13:59:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.09330v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "video-action generation for embodied data synthesis and policy learning",
+      "llm_evidence_cn": "用于具身数据合成和策略学习的视频-动作生成",
+      "llm_evidence": "用于具身数据合成和策略学习的视频-动作生成",
+      "canonical_evidence": "用于具身数据合成和策略学习的视频-动作生成",
+      "llm_tldr_en": "VAG generates paired video and action data to scale robot policy learning through synthetic demonstrations.",
+      "llm_tldr_cn": "VAG通过生成成对的视频和动作数据，利用合成演示来扩展机器人策略学习。",
+      "llm_tldr": "VAG通过生成成对的视频和动作数据，利用合成演示来扩展机器人策略学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.08664v1",
+      "source": "arxiv",
+      "title": "Generative Simulation for Policy Learning in Physical Human-Robot Interaction",
+      "abstract": "Developing autonomous physical human-robot interaction (pHRI) systems is limited by the scarcity of large-scale training data to learn robust robot behaviors for real-world applications. In this paper, we introduce a zero-shot \"text2sim2real\" generative simulation framework that automatically synthesizes diverse pHRI scenarios from high-level natural-language prompts. Leveraging Large Language Models (LLMs) and Vision-Language Models (VLMs), our pipeline procedurally generates soft-body human models, scene layouts, and robot motion trajectories for assistive tasks. We utilize this framework to autonomously collect large-scale synthetic demonstration datasets and then train vision-based imitation learning policies operating on segmented point clouds. We evaluate our approach through a user study on two physically assistive tasks: scratching and bathing. Our learned policies successfully achieve zero-shot sim-to-real transfer, attaining success rates exceeding 80% and demonstrating resilience to unscripted human motion. Overall, we introduce the first generative simulation pipeline for pHRI applications, automating simulation environment synthesis, data collection, and policy learning. Additional information may be found on our project website: https://rchi-lab.github.io/gen_phri/",
+      "authors": [
+        "Junxiang Wang",
+        "Xinwen Xu",
+        "Tiancheng Wu",
+        "Julian Millan",
+        "Nir Pechuk",
+        "Zackory Erickson"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T18:00:05+00:00",
+      "link": "https://arxiv.org/pdf/2604.08664v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-based imitation learning for physical human-robot interaction",
+      "llm_evidence_cn": "用于物理人机交互的基于视觉的模仿学习",
+      "llm_evidence": "用于物理人机交互的基于视觉的模仿学习",
+      "canonical_evidence": "用于物理人机交互的基于视觉的模仿学习",
+      "llm_tldr_en": "Generates synthetic pHRI datasets from text to train vision-based robot imitation policies.",
+      "llm_tldr_cn": "从文本生成合成pHRI数据集，用于训练基于视觉的机器人模仿策略。",
+      "llm_tldr": "从文本生成合成pHRI数据集，用于训练基于视觉的机器人模仿策略。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.08921v1",
+      "source": "arxiv",
+      "title": "TAIHRI: Task-Aware 3D Human Keypoints Localization for Close-Range Human-Robot Interaction",
+      "abstract": "Accurate 3D human keypoints localization is a critical technology enabling robots to achieve natural and safe physical interaction with users. Conventional 3D human keypoints estimation methods primarily focus on the whole-body reconstruction quality relative to the root joint. However, in practical human-robot interaction (HRI) scenarios, robots are more concerned with the precise metric-scale spatial localization of task-relevant body parts under the egocentric camera 3D coordinate. We propose TAIHRI, the first Vision-Language Model (VLM) tailored for close-range HRI perception, capable of understanding users' motion commands and directing the robot's attention to the most task-relevant keypoints. By quantizing 3D keypoints into a finite interaction space, TAIHRI precisely localize the 3D spatial coordinates of critical body parts by 2D keypoint reasoning via next token prediction, and seamlessly adapt to downstream tasks such as natural language control or global space human mesh recovery. Experiments on egocentric interaction benchmarks demonstrate that TAIHRI achieves superior estimation accuracy for task-critical body parts. We believe TAIHRI opens new research avenues in the field of embodied human-robot interaction. Code is available at: https://github.com/Tencent/TAIHRI.",
+      "authors": [
+        "Ao Li",
+        "Yonggen Ling",
+        "Yiyang Lin",
+        "Yuji Wang",
+        "Yong Deng",
+        "Yansong Tang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-10T03:33:51+00:00",
+      "link": "https://arxiv.org/pdf/2604.08921v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "3D human keypoints localization under the egocentric camera 3D coordinate for HRI",
+      "llm_evidence_cn": "第一视角相机3D坐标下的3D人体关键点定位，用于人机交互",
+      "llm_evidence": "第一视角相机3D坐标下的3D人体关键点定位，用于人机交互",
+      "canonical_evidence": "第一视角相机3D坐标下的3D人体关键点定位，用于人机交互",
+      "llm_tldr_en": "A VLM-based method for precise egocentric 3D human keypoint localization to support close-range interaction.",
+      "llm_tldr_cn": "一种基于VLM的精确第一视角3D人体关键点定位方法，支持近距离交互。",
+      "llm_tldr": "一种基于VLM的精确第一视角3D人体关键点定位方法，支持近距离交互。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.09036v1",
+      "source": "arxiv",
+      "title": "V-CAGE: Vision-Closed-Loop Agentic Generation Engine for Robotic Manipulation",
+      "abstract": "Scaling Vision-Language-Action (VLA) models requires massive datasets that are both semantically coherent and physically feasible. However, existing scene generation methods often lack context-awareness, making it difficult to synthesize high-fidelity environments embedded with rich semantic information, frequently resulting in unreachable target positions that cause tasks to fail prematurely. We present V-CAGE (Vision-Closed-loop Agentic Generation Engine), an agentic framework for autonomous robotic data synthesis. Unlike traditional scripted pipelines, V-CAGE operates as an embodied agentic system, leveraging foundation models to bridge high-level semantic reasoning with low-level physical interaction. Specifically, we introduce Inpainting-Guided Scene Construction to systematically arrange context-aware layouts, ensuring that the generated scenes are both semantically structured and kinematically reachable. To ensure trajectory correctness, we integrate functional metadata with a Vision-Language Model based closed-loop verification mechanism, acting as a visual critic to rigorously filter out silent failures and sever the error propagation chain. Finally, to overcome the storage bottleneck of massive video datasets, we implement a perceptually-driven compression algorithm that achieves over 90\\% filesize reduction without compromising downstream VLA training efficacy. By centralizing semantic layout planning and visual self-verification, V-CAGE automates the end-to-end pipeline, enabling the highly scalable synthesis of diverse, high-quality robotic manipulation datasets.",
+      "authors": [
+        "Yaru Liu",
+        "Ao-bo Wang",
+        "Nanyang Ye"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-10T06:56:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.09036v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "agentic framework for autonomous robotic data synthesis",
+      "llm_evidence_cn": "自主机器人数据合成的代理框架",
+      "llm_evidence": "自主机器人数据合成的代理框架",
+      "canonical_evidence": "自主机器人数据合成的代理框架",
+      "llm_tldr_en": "V-CAGE is an agentic system that synthesizes high-fidelity, physically feasible data for scaling VLA models.",
+      "llm_tldr_cn": "V-CAGE是一个代理系统，可合成高保真、物理可行的机器人操作数据以扩展VLA模型。",
+      "llm_tldr": "V-CAGE是一个代理系统，可合成高保真、物理可行的机器人操作数据以扩展VLA模型。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

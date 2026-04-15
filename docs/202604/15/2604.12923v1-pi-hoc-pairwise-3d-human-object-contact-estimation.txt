@@ -1,0 +1,565 @@
+Title: Pi-HOC: Pairwise 3D Human-Object Contact Estimation
+
+URL Source: https://arxiv.org/pdf/2604.12923v1
+
+Published Time: Wed, 15 Apr 2026 01:37:14 GMT
+
+Number of Pages: 18
+
+Markdown Content:
+# Pi-HOC: Pairwise 3D Human-Object Contact Estimation 
+
+## Sravan Chittupalli 1,2 Ayush Jain 1 Dong Huang 1,21Carnegie Mellon University, Robotics Institute 
+
+> 2
+
+## National Robotics Engineering Center 
+
+> {schittup,ayushj2,dghuang }@andrew.cmu.edu
+
+## Abstract 
+
+Resolving real-world human-object interactions in im-ages is a many-to-many challenge, in which disentangling fine-grained concurrent physical contact is particularly dif-ficult. Existing semantic contact estimation methods are ei-ther limited to single-human settings or require object ge-ometries (e.g., meshes) in addition to the input image. Cur-rent state-of-the-art leverages powerful VLM for category-level semantics but struggles with multi-human scenarios and scales poorly in inference. We introduce Pi-HOC, a single-pass, instance-aware framework for dense 3D se-mantic contact prediction of all human-object pairs . Pi-HOC detects instances, creates dedicated human-object (HO) tokens for each pair, and refines them using an Inter-actionFormer. A SAM-based decoder then predicts dense contact on SMPL human meshes for each human-object pair. On the MMHOI and DAMON datasets, Pi-HOC sig-nificantly improves accuracy and localization over state-of-the-art methods while achieving 20 × higher through-put. We further demonstrate that predicted contacts improve SAM-3D image-to-mesh reconstruction via a test-time op-timization algorithm and enable referential contact predic-tion from language queries without additional training. Our code and checkpoints can be found at the project website 
+
+https://pi-hoc.github.io/ .
+
+## 1. Introduction 
+
+Human interactions in real-world scenarios are rarely one-to-one. For example, two people may interact with the same wheelchair, one seated while another pushes (Fig. 1). Cap-turing such interactions is important for human–scene re-construction [7, 19, 31, 35] and human–object interaction understanding [4, 22, 30], with applications in augmented reality, robotics, and surveillance. Recent work has progressed from binary scene-level contact classification to dense contact localization in SMPL [20]. InteractVLM [5] further predicts semantic con-tacts for a human interacting with multiple objects. Given an image and object name, it uses a large VLM to guide an SAM-based decoder, and lifts the predicted contact to 3D. However, it is limited to single-human scenes. It can-not naturally disambiguate multiple instances of the same object category, and it is computationally expensive. We address these limitations with Pi-HOC, a single-pass instance-aware semantic contact model for all human– object pairs in a scene. Our object-centric approach detects all humans and objects, enumerates all pairs, and represents each pair with a dedicated human–object (HO) token. These tokens are jointly refined with image features using an In-teractionFormer, and a contact decoder predicts dense per-vertex contact on a canonical human mesh for every pair. This design enables efficient instance-level reasoning with-out large VLMs. We evaluated Pi-HOC on two complementary datasets. MMHOI [13] tests contact prediction in multi-person, multi-object scenes, where instance disambiguation is crit-ical. DAMON [28] contains in-the-wild images with a sin-gle human but multiple candidate objects, emphasizing fine-grained semantic contact. In both settings, Pi-HOC im-proves contact accuracy and localization while achieving substantially higher throughput than state-of-the-art meth-ods [5], making it practical for real-time use. We further demonstrate two downstream applications. First, we improve SAM3D [27, 32] image-to-mesh recon-struction by adding contact-based constraints at test time, correcting fine-grained errors such as missing hand–object contacts. Second, we show referential contact prediction: given a free-form natural-language query that specifies a human–object interaction, we predict contact only for the referenced pair in a zero-shot manner, without additional training. 
+
+Contributions. Our key contributions are as follows. • Multi-human, multi-object semantic contact. We tackle the task of predicting dense, per-vertex semantic contact for every human–object pair in a scene. • Single-pass, instance-aware model. We propose Pi-HOC, which forms HO pairs and refines them with an 1       
+
+> arXiv:2604.12923v1 [cs.CV] 14 Apr 2026 Figure 1. Instance-level contact (our Pi-HOC) vs. Category-level contact (InteractVLM). In a scene with concurrent interaction among multiple humans and objects, multiple contacts occur in the circled regions. Left: InteractVLM is unaware of instances of the same categories, and mixed up all concurrent contacts of three categories: human, flower, and wheelchair. Right: Pi-HOC correctly parses contacts over multiple human-object instance pairs, assigning each object contact to the correct person. Pi-HOC is also substantially faster (7.9FPS) than InteractVLM (0.15FPS).
+
+InteractionFormer and a SAM-based contact decoder, en-abling contact prediction for all human–object pairs in one forward pass. • State-of-the-art contact prediction and real-time effi-ciency. Experiments on MMHOI and DAMON show sig-nificant gains in semantic contact accuracy and localiza-tion (over 10% F1), with inference speeds around 20 ×
+
+faster than the previous state of the art [5]. • Applications beyond contact prediction. We demon-strate referential contact prediction and improvements to SAM-3D reconstruction using our predicted contact. We make our code publicly available at https://pi-hoc.github.io/ .
+
+## 2. Related work 
+
+2.1. Human–object interaction (HOI) detection 
+
+HOI detection aims to detect and recognize interactions as triplets ⟨human, object, verb ⟩ [1, 10, 11, 14, 15, 34]. Acommon pipeline first detects humans and objects using an off-the-shelf detector (e.g., DETR [2]), enumerates candi-date human–object pairs, and then classifies each pair with an interaction verb. While HOI detection provides inter-action semantics for human–object pairs in a scene, it of-fers limited supervision about where contact occurs on the human body surface. As a result, HOI predictions alone are often insufficient for downstream tasks such as 3D re-construction and fine-grained scene understanding, which require localized, surface-level contact cues [18, 22]. Pi-HOC addresses this gap by going beyond coarse interaction recognition and localizing fine-grained contact regions for each human–object pair. 
+
+2.2. Binary contact classification 
+
+Early contact estimation methods [3, 6–9, 21, 25, 28] fo-cus on binary contact prediction (contact vs. non-contact), rather than contact semantics. Representations range from 2D image-space masks to dense 3D per-vertex labels on the body mesh. HOT [3] provides crowd-sourced 2D contact annotations and predicts image-aligned contact heatmaps. Although easy to annotate, these labels do not establish di-rect correspondence on the 3D human surface. Later work predicts binary contact directly on SMPL vertices [20]. POSA [8] models contact conditioned on body pose using a conditional generative model(cVAE), while BSTRO [9] formulates contact as structured per-vertex prediction us-ing image features. RICH [9] supports this line of work with high-quality human–scene reconstructions indoors and outdoors, and DAMON/DECO [28] extend supervision and learning to in-the-wild human–object settings. Overall, these methods estimate dense binary contact but do not explicitly identify contacted object categories or instances. Our method addresses this gap with object-centric, vertex-level contact prediction tied to specific object instances. 
+
+2.3. Semantic contact estimation 
+
+In this paper, semantic contact refers to predicting (i) a bi-nary per-vertex contact label on the human body surface and (ii) the semantic category of the contacted object. CON-THO [22] incorporates contact cues when jointly reasoning about humans and objects for 3D reconstruction, predicting contact on both human and object surfaces. LEMON [33] exploits correlations between interaction counterparts to jointly predict human contact, object affordance, and 3D human–object spatial relations. Such approaches typically require paired supervision between human contact and ob-2ject affordance during training and often assume access to an object point cloud or mesh, in addition to the image, at inference time. InteractVLM [5] (closest to ours) uses a vision–language model (VLM) with a CLIP backbone, a 13B-parameter LLM, and an object-conditioned prompt, decoding a dedicated <HCONTACT> token to predict hu-man contact. However, object-conditioned prompting and the lack of unambiguous human/object references limit dis-ambiguation between multiple humans and object instances of the same category. It is also computationally expensive due to its large VLM and requires one forward pass for each human–object pair. In contrast, our lightweight model pre-dicts contact for multiple human–object pairs from a single image in one forward pass. 
+
+## 3. Method 
+
+Given an RGB image I, our model predicts fine-grained human–object contact on the human mesh. For each per-son, it identifies the contacted object instances and the cor-responding body-submesh contact regions. 
+
+3.1. Problem formulation 
+
+We decompose the task into two sub-problems: (1) resolv-ing instance-level contact among multiple human-object pairs and (2) localizing fine-grained contact regions on the human body. We define the key terms below. • Human and object instances. Let H and O denote the sets of human and object instances in input image I. For 
+
+h ∈ H and o ∈ O , their 2D boxes are bh ∈ R4 and 
+
+bo ∈ R4, with coordinates (xmin , y min , x max , y max ). Each object instance has a category label co ∈ C , where C is the set of object categories. • Human Body Mesh. Each human instance h is repre-sented as a SMPL mesh [20] with Nv = 6890 vertices. The vertex coordinates Vh ∈ RNv ×3 are in a canonical “star” pose. • Contact Mask. For each human–object pair (h, o ), our method predicts a binary per-vertex contact mask mh,o ∈{0, 1}Nv , where mh,o (j) = 1 indicates that the hu-man mesh vertex j is in contact with the object o, and 
+
+mh,o (j) = 0 otherwise. • Contact Instances. A person h and an object o in contact are defined as a contact instance 
+
+τ (h, o ) =  bh, bo, c o, mh,o 
+
+. (1) 
+
+Formulated problem. Based on the terminology above, our goal is to detect all contact instances {τ (h, o ) | h ∈H, o ∈ O} from an input image I.
+
+Model overview. Figure 2 summarizes the Pi-HOC pipeline. Given an input image I, we first apply a frozen DETR detector [2] to obtain human/object instances ( H, O)and their boxes ( bh, bo). We then enumerate candidate pairs (h, o ) and encode each as a human-object (HO) to-ken(Sec. 3.2). L InteractionFormer blocks (Sec. 3.3) jointly refine HO tokens, accompanied by image patch tokens. Fi-nally, the contact decoder (Sect. 3.4) predicts a binary per-vertex contact mask mh,o ∈ { 0, 1}Nv for each contact in-stance τ (h, o ) in Eq. (1). 
+
+3.2. HO Token Construction 
+
+Post-processing DETR detections. We start from DETR predictions and apply standard post-processing (confidence thresholding and non-maximum suppression) to obtain a fil-tered set of detections 
+
+D = (bk, s k, c k, qk) Nk=1 , (2) where bk ∈ R4 is the 2D bounding box, sk ∈ [0 , 1] is the confidence score, ck ∈ C is the category label and qk ∈
+
+RDDETR is the DETR query feature. Using class labels, we partition D into human detections Dh and object detections 
+
+Do (i.e., Dh ∩ D o = ∅). 
+
+Constructing Human–Object Pairs. We pair each hu-man with each object and prune non-overlapping boxes, since such pairs cannot be in contact. We define 
+
+P =
+
+n
+
+(h, o ) h ∈ D h, o ∈ D o, IoU( bh, bo) > γ 
+
+o
+
+, (3) where γ ≥ 0 is an IoU threshold (we use γ = 0 to keep overlapping pairs only). 
+
+Embedding Human–Object (HO) Tokens. To model instance-specific interactions, we explicitly bind each de-tected human to an object candidate. For each pair (h, o ) ∈P, we construct an HO token by projecting concatenated DETR query features: 
+
+th,o = ϕ [qh; qo] ∈ RDIF , (4) where [·; ·] denotes concatenation and ϕ is a small feed-forward MLP. Stacking all pair tokens yields T ∈ R|P|× DIF ,which is fed to InteractionFormer together with the image patch tokens (Fig. 2). 
+
+3.3. Refining HO Tokens 
+
+We use a transformer encoder, which we call Interaction-Former, to jointly refine the HO tokens and the image patch tokens via multi-head self-attention layers. Concretely, each InteractionFormer block is a standard Transformer en-coder layer (self-attention + MLP); we apply L blocks se-quentially. We initialize these blocks from pretrained DI-NOv2 [23] weights and fine-tune them for contact estima-tion. The intuition is that, although the initial HO token th,o 
+
+3Figure 2. Pi-HOC Architecture. Given an input image I, a frozen DETR detector localizes human and object instances. A human–object pair constructor enumerates candidate pairs and encodes them as HO tokens (orange). InteractionFormer jointly refines HO tokens and image patch tokens (green) over L blocks. A contact-presence MLP first filters non-contact pairs, and a contact decoder then predicts a per-vertex contact mask mh,o ∈ { 0, 1}Nv for each retained pair, yielding contact instances τ (h, o ) (Nv : number of human-mesh vertices). 
+
+Figure 3. InteractionFormer Attention Visualization. Attention maps show that each HO token, th,o , attends to the image regions corresponding to its associated human–object pair and also sur-rounding regions for additional context. The green bounding box indicates the human instance. The red bounding box indicates the object instance in the corresponding HO pair. 
+
+only binds a particular human h and an object o through detector features, repeated self-attention updates allow th,o 
+
+to attend to the relevant image evidence around the pair and encode (implicitly) the interaction type, involved body parts, and approximate contact location, making the HO to-kens interaction-aware. Figure 3 visualizes this behavior in the last InteractionFormer block using attention maps, showing that each HO token attends to the image regions corresponding to its associated human–object pair. We denote by Np the number of image patch tokens and by DIF the dimension of the InteractionFormer feature (in our implementation, DIF = 1024 ). Let X ∈ RNp×DIF de-note the image patch tokens extracted from I. We form the input token sequence Z(ℓ) in layer ℓ = 0 as 
+
+Z(0) = T(0) ; X, T(0) ≡ T, (5) where [·; ·] denotes sequence concatenation. For ℓ =0, . . . , L − 1, the token sequence is refined by the ℓ-th In-teractionFormer block, denoted by IF ℓ(·). Writing the se-quence explicitly as Z(ℓ) = [ T(ℓ); X(ℓ)], the update can be expressed as 
+
+T(ℓ+1) ; X(ℓ+1)  = IF ℓ
+
+T(ℓ); X(ℓ)) (6) where T(ℓ+1) ∈ R|P|× DIF corresponds to the first |P| out-put tokens (i.e., the HO-token subsequence). After L lay-ers, we obtain refined HO tokens T(L) that are interaction-aware through attention to relevant image context. 
+
+3.4. Contact Decoder 
+
+Given the refined HO tokens (Sec. 3.3), we predict a bi-nary per-vertex contact mask mh,o ∈ { 0, 1}Nv for each candidate pair (h, o ) ∈ P. Directly decoding all 6,890 SMPL vertices is computationally expensive. Following In-teractVLM [5], we decode HO tokens into multi-view 2D contact maps, where each map represents pixel-wise contact likelihood on a 2D projection of the SMPL mesh. We then lift these maps back to the 3D SMPL surface. Additional contact-decoder details are provided in the supplementary material. 
+
+Classifying Contact Presence. In practice, most candi-date pairs (h, o ) ∈ P are not in physical contact (e.g., overlapping background objects), so running the SAM de-coder for every pair is inefficient. We therefore attach a lightweight contact-presence head that predicts whether a pair is in contact. Specifically, the head is an MLP classi-fier fcp (·) on the refined HO token and produces a binary contact probability: 
+
+ph,o = fcp 
+
+ t(L)
+
+> h,o
+
+ ∈ [0 , 1] . (7) In inference, we keep only pairs that are prone to contact with ph,o > δ and run the SAM-based view decoder only 4Table 1. MMHOI Semantic Contact Results .Method F1 ↑ Prec ↑ Recall ↑ Geo. dist ↓
+
+InteractVLM-Crop Pretrained 43.68 39.23 62.13 0.2468 InteractVLM Trained 52.02 48.89 69.25 0.084 InteractVLM-Crop Trained 54.86 49.91 69.40 0.073 Pi-HOC (Ours) 61.09 58.76 71.98 0.0633 
+
+Table 2. DAMON Semantic Contact Results .F1 ↑ Prec ↑ Recall ↑ Geo. dist ↓             
+
+> Semantic DECO [28] 32.72 25.91 71.51 0.59 InteractVLM-w/o-body-parts 1[5] 59.48 59.36 68.06 0.095 Pi-HOC (Ours) 63.23 64.49 69.57 0.092
+
+for them, improving efficiency and focusing computation on likely contacts. 
+
+3.5. Training Objectives 
+
+Overview of Loss Terms. We optimize four loss compo-nents: (i) a view-wise 2D contact loss L2D , (ii) a vertex-level 3D contact loss L3D , (iii) a contact-presence loss 
+
+Lcp , and (iv) Following DECO [28], optional auxiliary scene/body-part segmentation losses Ls 
+
+> 2D
+
+and Lp 
+
+> 2D
+
+when segmentation GT is available. For completeness, L2D com-bines focal and Dice terms, while L3D combines a vertex focal term and a ℓ1 sparsity term. We defer full pixel-/vertex-level formulations and implementation details of these losses to the supplementary material. 
+
+Contact Presence Supervision. We additionally super-vise the contact presence classifier (Sec. 3.4) with a binary cross-entropy loss: 
+
+Lcp = X
+
+> (h,o )∈P
+
+BCE  ph,o , y cp 
+
+> h,o
+
+, (8) where ycp  
+
+> h,o
+
+∈ { 0, 1} indicates whether the pair (h, o ) is in contact. The total training loss is 
+
+L = L2D + L3D + λcp Lcp + IGT 
+
+
+
+λs Ls 
+
+> 2D
+
++ λp Lp
+
+> 2D
+
+
+
+, (9) where IGT ∈ { 0, 1} indicates whether segmentation GT supervision is present and λs, λ p are the corresponding loss weights. 
+
+## 4. Experiments 
+
+4.1. Experimental Setup 
+
+Datasets. We evaluated on two datasets: MMHOI [13] and DAMON [28]. MMHOI contains multiple humans (typically 2–3) that interact with one or more objects. Since 
+
+Table 3. Inference Speed Comparison. FPS as a function of the number of human–object pairs per image. # Pairs 1 2 3 5 7 9 11 InteractVLM [5] 0.30 0.15 0.096 0.057 0.041 0.032 0.026 Pi-HOC (Ours) 8.5 7.9 6.5 5.1 4.0 3.0 2.3 
+
+MMHOI does not provide contact annotations, we gener-ated contact annotations by thresholding the distance be-tween the human and object meshes at 2 cm. We split MMHOI into 18k training images and 4k test images. DA-MON consists of 4k training images and 800 test images, which were manually annotated with semantic contact la-bels. It is a standard dataset that is primarily used to eval-uate the performance of single-person contacts. Together, these datasets allow us to evaluate both challenging cases with multiple interacting person-object pairs (MMHOI) and single-person cases with multiple candidate objects (DA-MON). 
+
+Metrics. We report precision, recall, and F1 at a con-tact threshold of 0.5. Following [5, 9, 28], we also re-port geodesic distance on the SMPL surface as a geometry-aware localization error. For each predicted contact vertex, we compute the shortest geodesic distance to the nearest ground-truth contact vertex. Distant mislocalizations (e.g., contact in the hand vs. hips) are penalized more than nearby confusions (e.g., contact in the hand vs. forearm), providing a more informative measure of contact localization quality. Together, these metrics separate contact classification per-formance from spatial localization accuracy. 
+
+Baselines. We compare Pi-HOC against Semantic-DECO and InteractVLM-w/o-body-parts [5] 1. Semantic-DECO extends DECO [28] from predicting binary contact to pre-dicting semantic (multi-class) contact. On DAMON, which primarily contains single-person scenes, we directly report the performance of these methods. For MMHOI, which contains multiple humans and objects, we report num-bers on InteractVLM Trained , i.e., InteractVLM trained on MMHOI. Because InteractVLM is designed for a single human-object interaction conditioned on an image and an object name, we additionally define a multi-person base-line, InteractVLM-Crop . For each human-object pair, we crop the image to the tight region covering the union of the corresponding human and object bounding boxes (us-ing GT boxes) and query InteractVLM with the relevant ob-  
+
+> 1The original InteractVLM paper reported metrics that used GT contact body parts at inference, which is an evaluation bug that we verified using official GitHub codes and confirmed with the authors via email. Per their recommendation, we use the version w/o body parts for fair comparison. See the supplementary materials for the original and w/o-body-parts ver-sions that we reported in this section.
+
+5Figure 4. Qualitative Comparison. Left: InteractVLM, which is object-category conditioned, predicts contacts (red) but fails to dis-ambiguate multiple people or multiple instances of objects of the same category. Right: Pi-HOC correctly distinguishes individuals and predicts contacts for each human-object pair. Human instance id is shown next to each person, and contacted objects are circled in distinct colors. Table 4. Ablation Studies. (a) InteractionFormer initialization. (b) InteractionFormer layer depth. (c) Contact decoder design. (d) Auxiliary losses.  
+
+> (a) InteractionFormer Init.
+
+IF Init. F1 ↑ Prec ↑ Recall ↑
+
+Random Init. 56.44 51.95 71.32 CLIP-L 58.8 55.26 71.38 DINOV2-L 61.09 58.76 71.98  
+
+> (b) InteractionFormer Layer Depth
+
+IF depth Prec ↑ Recall ↑ Geo. dist ↓
+
+0 / 24 (none) 53.27 71.41 7.02 first 6 / 24 54.33 72.27 6.98 24 / 24 (full) 58.76 71.98 6.33  
+
+> (c) Contact Decoder Design
+
+Decoder Prec ↑ Recall ↑ Geo. dist ↓
+
+MLP 57.05 58.35 12.54 SAM Decoder 58.76 71.98 6.33  
+
+> (d) Auxiliary Losses
+
+Ls 
+
+> 2D
+
+Lp 
+
+> 2D
+
+F1 ↑ Geo. dist ↓× × 62.06 12.46 
+
+✓ × 62.35 11.79 
+
+× ✓ 62.66 10.49 
+
+✓ ✓ 63.28 9.24 
+
+ject name. We consider two variants of InteractVLM-Crop: 
+
+InteractVLM-Crop Pretrained (published pretrained weights) and InteractVLM-Crop Trained (trained on MMHOI with the same cropped inputs). 
+
+4.2. Semantic Human Contact 
+
+Multi-human multi-object scenarios. Multi-person, multi-object scenes require instance-aware reasoning to (i) associate each person with the correct object(s) and (ii) localize contact on the correct body instance. Prior methods such as InteractVLM are not designed for this setting and tend to mis-assign contact based only on object category. Table 1 shows that Pi-HOC outperforms all multi-person baselines on MMHOI. Relative to InteractVLM-Crop Trained ,it improves F1 by 11.4% (54.86 → 61.09) and reduces geodesic distance by 13.3% (0.073 → 0.0633; 1.15 ×
+
+6lower). We attribute this gap partly to the union-crop 
+
+strategy in InteractVLM-Crop: each crop can include extra people or nearby objects, creating ambiguity about the queried interaction and hurting both classification and localization (reflected by geodesic error). See Fig. 4 for qualitative examples. For more qualitative results, please check the supplementary file. 
+
+Single-human Multi-object Scenarios. Single-person scenes with multiple candidate objects are the main fo-cus of DAMON. As shown in Table 2, compared to Inter-actVLM, Pi-HOC improves F1 by 6.3% (59.48 to 63.23) and reduces the geodesic distance by 3.2% (0.095 to 0.092; 1.03 × lower), despite InteractVLM using a 13B-parameter language model and training on the same data. These gains indicate that Pi-HOC predicts contacts that are more accu-rate and spatially closer to the ground truth. We attribute this improvement in part to stronger spatial features from the pretrained DINOv2 backbone, which provides a finer localization than the CLIP backbone used by InteractVLM (Table 4a), especially when multiple objects are near. Addi-tional object-wise comparisons are provided in the supple-mentary material. 
+
+4.3. Inference Speed 
+
+Table 3 shows that Pi-HOC is consistently more than an order of magnitude faster than InteractVLM across all numbers of human–object pairs. For example, Pi-HOC reaches 8.5 vs. 0.30 FPS for one pair (28.3 × faster) and 2.3 vs. 0.026 FPS for 11 pairs (88.5 × faster). Pi-HOC also degrades more gracefully as pair count increases (8.5 →2.3 FPS, 3.7 × drop) than InteractVLM (0.30 →0.026 FPS, 11.5 × drop), indicating substantially better scalability in cluttered multi-person scenes. This trend is consistent with Pi-HOC’s batched pair processing, while InteractVLM re-quires repeated object-conditioned queries. As a result, Pi-HOC is better suited for latency-critical deployments such as AR/VR, robotics, and safety/service monitoring. 
+
+4.4. Ablation Study 
+
+We isolate the contribution of Pi-HOC components in ab-lation experiments below. All ablations are performed on MMHOI unless otherwise stated. 
+
+InteractionFormer Initialization. We compare three In-teractionFormer initializations: random, CLIP-L [24], and DINOv2-L. As shown in Table 4a, DINOv2-L yields the best overall performance. We attribute this gain to the stronger spatial location of the pretrained DINOv2 features, whereas the pretrained CLIP features are optimized pri-marily for global image–text alignment and object pres-ence [29, 36]. In contrast, random initialization lacks a useful structure at the beginning of training, making fine-grained contact localization more difficult and leading to lower precision. 
+
+InteractionFormer depth. We vary the number of Inter-actionFormer refinement blocks (including a variant that re-moves InteractionFormer entirely) and report the results in Table 4b. We observe that recall is relatively stable across depths, suggesting that the coarse interaction cues are based on object categories, which are already captured in the DETR detector features (eg, for person-chair interaction, the contact is generally on the hips). In contrast, increas-ing the number of refinement blocks consistently improves precision, indicating that HO tokens benefit from repeat-edly attending to localized image evidence to disambiguate whether (and where) contact occurs. 
+
+Contact decoder design. We ablate the mask decoder head by comparing the SAM-based decoder used in our model with an MLP-based decoder similar to DECO [28]. Table 4c shows that the SAM-based decoder substantially outperforms the MLP alternative, highlighting the impor-tance of a strong mask decoding head for fine-grained con-tact localization. 
+
+Auxiliary segmentation losses. Finally, we ablate the auxiliary 2D supervision terms on DAMON, since the scene and body part annotations are available only in this dataset. In Table 4d, adding either Ls 
+
+> 2D
+
+(scene) or Lp 
+
+> 2D
+
+(body-part) improves over the baseline. In particular, Lp 
+
+> 2D
+
+produces stronger gains, improving both the F1 and the geodesic dis-tance, suggesting better contact localization. Intuitively, the scene segmentation encourages stronger object-aware fea-tures, while body-part supervision sharpens localized, part-aligned representations that help disambiguate fine-grained contacts (e.g., left vs. right hand). 
+
+## 5. Applications 
+
+5.1. Improving SAM3D Reconstruction 
+
+SAM3D Object model [27] retrieves object meshes from images and places them in the scene. The SAM3D Body model [32] retrieves human meshes similarly. Although re-constructions are visually strong, they often violate contact (e.g., floating hands). We therefore propose a test-time re-finement that enforces plausible human–object contact. We initialize body pose and location from SAM3D Body, and object pose and mesh from SAM3D Object. We ap-ply Pi-HOC to detect contact for every human–object pair in the scene. We transfer contacts from the SMPL mesh to the MHR mesh produced by SAM3D. Given the strong SAM3D initialization, we also derive object-side contact by 7Figure 5. SAM-3D test-time refinement with Pi-HOC contact.     
+
+> Left: input image. Middle: SAM3D Body and Object initial-ization, which may violate plausible human–object contact (e.g., floating hands). Right: contact-guided refinement with Pi-HOC predictions, yielding more physically consistent interactions.
+
+mapping each human contact vertex to its nearest point on the object mesh. Following InteractVLM [5], we optimize rotation Rh ∈
+
+SO (3) , translation th ∈ R3, and scale sh ∈ R+ for each human mesh h to better satisfy contacts. At each iteration, we render the current human mesh using PyTorch3D and optimize a weighted objective that combines three cues: mask overlap (IoU), mask-center alignment, and contact consistency between predicted human and object contact regions. We jointly optimize all human–object pairs. The complete objective and equation-level details are provided in the supplementary material. We compare the original and refined results in Fig. 5 (More visualizations in the supplementary material). Be-fore refinement, the reconstructed human and the object are spatially close but do not make physical contact. Incorpo-rating our predicted contact during test-time optimization yields reconstructions with accurate, physically consistent contact. 
+
+5.2. Referential Contact Estimation 
+
+Given an image and a natural-language description of a human–object interaction (e.g., “person sitting on the chair”), the goal referential contact estimation is to pre-dict contact only for the referred human-object pair, rather than for all pairs in the scene. This setting is practically im-portant when downstream applications care about a specific interaction. To our knowledge, no existing dataset provides annotations for this task. Owing to our object-centric de-sign, Pi-HOC naturally supports this setting in a zero-shot manner. Given a language query, GroundingDINO [17] localizes the relevant human and object. We then match these boxes to Pi-HOC detections using maximum IoU, se-     
+
+> Figure 6. Referential contact estimation in multi-instance scenes. We compare InteractVLM and Pi-HOC under language queries that refer to specific interaction instances. Rows 1–2:
+> queries target different suitcase instances; InteractVLM predicts nearly identical contact and fails to disambiguate the referred suit-case, while Pi-HOC correctly shifts contact from the right hand (row 1) to the left hand (row 2). Rows 3–4: queries target dif-ferent people interacting with the same object (wheelchair); Inter-actVLM mixes contacts across both people, whereas Pi-HOC iso-lates the correct human instance (sitting vs. standing) and predicts pair-specific contact. Colored circles highlight contact regions for the queried interaction.
+
+lect the corresponding HO pair, and predict contact only for that pair. Qualitative results in Fig. 6 show accurate query-conditioned contact prediction for the human-object inter-action referred to compared to InteractVLM[5]. 
+
+## 6. Conclusion 
+
+We presented Pi-HOC , a single-pass, instance-aware framework for dense 3D semantic contact prediction in multi-human, multi-object scenes. Motivated by the many-to-many nature of real-world human–object interactions, we address key limitations of prior methods, including single-human assumptions, weak instance awareness, dependence on paired object geometry, reliance on large VLMs, and poor scalability as human–object pairs increase. Pi-HOC adopts an object-centric formulation that explicitly enumer-ates all human–object (HO) pairs and encodes each pair with a dedicated HO token, enabling efficient and scal-able instance-level reasoning. Beyond contact prediction, we show downstream applications: contact-aware test-time optimization to improve SAM-3D image-to-mesh recon-struction and referential contact prediction from language queries without additional training. These results highlight instance-level contact reasoning as a useful structural prior for human–scene understanding. In general, Pi-HOC pro-vides an efficient and scalable solution for predicting dense semantic contacts in complex scenes. We hope this work inspire further research on structured multi-entity interac-8tion modeling for physically grounded scene understanding in augmented reality, robotics, and beyond. 
+
+## References 
+
+[1] Yu Cao, Yang Li, Ke Zhang, Ziwei Liu, Yaojie Chen, Jian-feng Gao, and Hao Li. Unihoi: Detecting any human-object interaction relationship: Universal hoi detector with spatial prompt learning on foundation models. In Advances in Neu-ral Information Processing Systems (NeurIPS) , 2023. 2 [2] Nicolas Carion, Francisco Massa, Gabriel Synnaeve, Nicolas Usunier, Alexander Kirillov, and Sergey Zagoruyko. End-to-end object detection with transformers. In European Confer-ence on Computer Vision (ECCV) , 2020. 2, 3, 11 [3] Weitong Chen et al. Detecting human-object contact in im-ages. In arXiv preprint arXiv:2303.03373 , 2023. 2 [4] Alp´ ar Cseke, Shashank Tripathi, Sai Kumar Dwivedi, Ar-jun S. Lakshmipathy, Agniv Chatterjee, Michael J. Black, and Dimitrios Tzionas. Pico: Reconstructing 3d people in contact with objects. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , pages 1783–1794, 2025. 1 [5] A. Dwivedi et al. Interactvlm: Multi-object human contact reasoning with vision-language models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2025. 1, 2, 3, 4, 5, 8, 11, 12, 13, 14 [6] Mihai Fieraru, Mihai Zanfir, Elisabeta Oneata, Alin-Ionut Popa, Vlad Olaru, and Cristian Sminchisescu. Learning complex 3d human self-contact. In Proceedings of the AAAI Conference on Artificial Intelligence (AAAI) , pages 1343– 1351, 2021. 2 [7] Mohamed Hassan, Vasileios Choutas, Dimitrios Tzionas, and Michael J. Black. Resolving 3d human pose ambiguities with 3d scene constraints. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) , 2019. 1[8] Mohamed Hassan et al. Learning to dress: Pose and shape awareness for 3d human-scene contact. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2021. 2 [9] Chun-Hao P. Huang et al. Capturing and inferring dense full-body human-scene contact. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2022. 2, 5 [10] Bumsoo Kim, Jaeho Lee, Jaeho Jeong, and Gunhee Lee. Hotr: End-to-end human-object interaction detection with transformers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2021. 2[11] Hyunwoo Kim, Jangho Jeong, Bumsoo Kim, Jaeho Jeong, and Gunhee Lee. Lain: Locality-aware interaction net-work for human-object interaction detection. arXiv preprint arXiv:2505.19503, 2025. 2 [12] Alexander Kirillov, Eric Mintun, Nikhila Ravi, Hanzi Mao, Chloe Rolland, Laura Gustafson, Tete Xiao, Spencer White-head, Alexander C. Berg, Wan-Yen Lo, Piotr Doll´ ar, and Ross Girshick. Segment anything. In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) , 2023. 11 [13] Kaen Kogashi, Anoop Cherian, and Meng-Yu Jennifer Kuo. Mmhoi: Modeling complex 3d multi-human multi-object in-teractions, 2025. 1, 5, 11 [14] Ting Lei, Fabian Caba, Qingchao Chen, Hailin Ji, Yuxin Peng, and Yang Liu. Efficient adaptive human-object inter-action detection with concept-guided memory, 2023. 2 [15] Yu Li, Kang Li, Qian Wang, Wen Liu, Huazhu Xu, and Lingxi Xie. Bilateral adaptation for human-object interac-tion detection with occlusion-robustness. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2024. 2 [16] Tsung-Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Doll´ ar. Focal loss for dense object detection. In Pro-ceedings of the IEEE International Conference on Computer Vision (ICCV) , 2017. 12 [17] Shilong Liu, Zhaoyang Zeng, Tianhe Ren, Feng Li, Hao Zhang, Jie Yang, Chunyuan Li, Jianwei Yang, Hang Su, Jun Zhu, et al. Grounding dino: Marrying dino with grounded pre-training for open-set object detection. arXiv preprint arXiv:2303.05499 , 2023. 8 [18] Yumeng Liu, Xiaoxiao Long, Zemin Yang, Yuan Liu, Marc Habermann, Christian Theobalt, Yuexin Ma, and Wenping Wang. Easyhoi: Unleashing the power of large models for reconstructing hand-object interactions in the wild. arXiv preprint arXiv:2411.14280 , 2024. 2 [19] Zhizheng Liu, Joe Lin, Wayne Wu, and Bolei Zhou. Joint optimization for 4d human-scene reconstruction in the wild. 
+
+The Fourteenth International Conference on Learning Rep-resentations , 2026. 1 [20] Matthew Loper, Naureen Mahmood, Javier Romero, Gerard Pons-Moll, and Michael J. Black. Smpl: A skinned multi-person linear model. ACM Transactions on Graphics , 34(6): 248:1–248:16, 2015. 1, 2, 3, 11 [21] Lea M¨ uller, Ahmed A. A. Osman, Siyu Tang, Chun-Hao P. Huang, and Michael J. Black. On self-contact and human pose. In Proceedings of the IEEE/CVF Conference on Com-puter Vision and Pattern Recognition (CVPR) , pages 9990– 9999, 2021. 2 [22] Jaehyun Nam et al. Contho: Contact-aware 3d reconstruc-tion of interacting hands and objects from monocular rgb. In 
+
+arXiv preprint arXiv:2404.04819 , 2024. 1, 2 [23] Maxime Oquab, Timoth´ ee Darcet, Th´ eo Moutakanni, Huy Vo, Marc Szafraniec, Vasil Khalidov, Pierre Fernandez, Daniel Haziza, Francisco Massa, Alaa El-Nouby, et al. Di-nov2: Learning robust visual features without supervision. arXiv preprint arXiv:2304.07193, 2023. 3, 11 [24] Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. Learning transferable visual models from natural language supervision. In Proceedings of the 38th International Conference on Machine Learning ,2021. 7 [25] Soshi Shimada, Vladislav Golyanik, Zhi Li, Patrick P´ erez, Weipeng Xu, and Christian Theobalt. Hulc: 3d human mo-
+
+9tion capture with pose manifold sampling and dense con-tact guidance. In European Conference on Computer Vision (ECCV) , pages 516–533, 2022. 2 [26] Carole Helene Sudre, Wenqi Li, Tom Kamiel Magda Ver-cauteren, S´ ebastien Ourselin, and M. Jorge Cardoso. Gener-alised dice overlap as a deep learning loss function for highly unbalanced segmentations. Deep learning in medical im-age analysis and multimodal learning for clinical decision support : Third International Workshop, DLMIA 2017, and 7th International Workshop, ML-CDS 2017, held in conjunc-tion with MICCAI 2017 Quebec City, QC,... , 2017:240–248, 2017. 12 [27] SAM 3D Team, Xingyu Chen, Fu-Jen Chu, Pierre Gleize, Kevin J Liang, Alexander Sax, Hao Tang, Weiyao Wang, Michelle Guo, Thibaut Hardin, Xiang Li, Aohan Lin, Jiawei Liu, Ziqi Ma, Anushka Sagar, Bowen Song, Xiaodong Wang, Jianing Yang, Bowen Zhang, Piotr Doll´ ar, Georgia Gkioxari, Matt Feiszli, and Jitendra Malik. Sam 3d: 3dfy anything in images. 2025. 1, 7, 12 [28] Shashank Tripathi, Agniv Chatterjee, Jean-Claude Passy, Hongwei Yi, Dimitrios Tzionas, and Michael J. Black. DECO: Dense estimation of 3D human-scene contact in the wild. In Proceedings of the IEEE/CVF International Confer-ence on Computer Vision (ICCV) , pages 8001–8013, 2023. 1, 2, 5, 7, 11, 12, 14 [29] Size Wu, Wenwei Zhang, Lumin Xu, Sheng Jin, Xiangtai Li, Wentao Liu, and Chen Change Loy. Clipself: Vision trans-former distills itself for open-vocabulary dense prediction. 
+
+arXiv preprint arXiv:2310.01403 , 2023. 7 [30] Xianghui Xie, Bharat Lal Bhatnagar, and Gerard Pons-Moll. Chore: Contact, human and object reconstruction from a sin-gle rgb image. In European Conference on Computer Vision (ECCV) . Springer, 2022. 1 [31] Pradyumna Yalandur Muralidhar, Yuxuan Xue, Xianghui Xie, Margaret Kostyrko, and Gerard Pons-Moll. Physic: Physically plausible 3d human-scene interaction and contact from a single image. 2025. 1 [32] Xitong Yang, Devansh Kukreja, Don Pinkus, Anushka Sagar, Taosha Fan, Jinhyung Park, Soyong Shin, Jinkun Cao, Jiawei Liu, Nicolas Ugrinovic, Matt Feiszli, Jitendra Malik, Piotr Dollar, and Kris Kitani. Sam 3d body: Robust full-body hu-man mesh recovery. arXiv preprint arXiv:2602.15989 , 2026. 1, 7, 12 [33] Yuhang Yang, Wei Zhai, Hongchen Luo, Yang Cao, and Zheng-Jun Zha. Lemon: Learning 3d human-object in-teraction relation from 2d images. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 16284–16295, 2024. 2 [34] Aixin Zhang, Yi Wang, Guoliang Cai, Xinyu Ding, Jian Jin, Bin Wang, and Yuxin Wu. Unary-pairwise transformer for human-object interaction detection. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 2022. 2 [35] Kaifeng Zhao, Shaofei Wang, Yan Zhang, Thabo Beeler, and Siyu Tang. COINS: Compositional human-scene interaction synthesis with semantic control. In European conference on computer vision (ECCV) , 2022. 1 [36] Yiwu Zhong, Jianwei Yang, Pengchuan Zhang, Chun-yuan Li, Noel Codella, Liunian Harold Li, Luowei Zhou, Xiyang Dai, Lu Yuan, Yin Li, et al. Regionclip: Region-based language-image pretraining. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 16793–16803, 2022. 7 
+
+10 Appendix 
+
+Table 5. DAMON Semantic Contact Results .F1 ↑ Prec ↑ Recall ↑ Geo. dist ↓                
+
+> InteractVLM (+Part Sup., original eval) 71.2 72.91 76.29 0.075 InteractVLM (+Part Sup., corrected eval) 57.9 59.15 64.24 0.213 InteractVLM-w/o-body-parts 59.48 59.36 68.06 0.095 Pi-HOC (Ours) 63.23 64.49 69.57 0.092
+
+This supplementary document is organized as follows. In Sec. S.7, we present the corrected InteractVLM evalu-ation protocol. In Sec. S.8, we detail our method, includ-ing implementation details (Sec. S.8.1), the contact decoder (Sec. S.8.2), training objectives (Sec. S.8.3), and SAM3D test-time refinement (Sec. S.8.4). We then report object-wise semantic contact metrics in Sec. S.9, followed by qual-itative results in Sec. S.10 and failure cases in Sec. S.11. Fi-nally, in Sec. S.12, we visualize InteractionFormer attention maps to provide intuition about which regions the model re-lies on for contact prediction. 
+
+## S.7. InteractVLM Evaluation Protocol 
+
+InteractVLM [5] uses a VLM prior to predict an 
+
+<HCONTACT> token, which is then decoded into human-mesh contact. In the original release, the model trained with body-part supervision was reported to outperform the variant trained without body-part supervision, and this su-pervised variant was the one publicly released. During our re-evaluation, we identified a bug in the baseline evalua-tion pipeline: ground-truth contacted body parts were in-advertently used at test time, which leaked supervision into evaluation. We confirmed this issue with the InteractVLM authors via email. After correcting the evaluation pipeline, we observed that the model trained without body-part supervision per-forms better than the model trained with body-part supervi-sion. Therefore, in Table 5, we report three InteractVLM variants: InteractVLM (+Part Sup., original eval) , Inter-actVLM (+Part Sup., corrected eval) , and InteractVLM-w/o-body-parts . For all comparisons in the main paper and supplementary material, we use InteractVLM-w/o-body-parts as the InteractVLM baseline. 
+
+## S.8. Method Details 
+
+S.8.1. Implementation Details 
+
+We fine-tune the DETR detector [2] on the MMHOI [13] and DAMON [28] datasets. After running the DETR de-tector, we discard detections with confidence below 0.2,enumerate all candidate human–object pairs, and remove pairs whose human and object boxes have zero overlap (IoU 
+
+= 0 ). We initialize InteractionFormer from DINOv2-L [23] weights and fine-tune it jointly with the contact decoder and the contact-presence classifier. The contact decoder is ini-tialized from pretrained SAM weights [12]; we keep the SAM image encoder frozen and fine-tune only the SAM de-coder. We optimize all trainable components with AdamW. We use an initial learning rate of 5 × 10 −6 for DINOv2 parameters and 1 × 10 −4 for all other trainable parame-ters. We train for 20 epochs, including 4 warm-up epochs with a start factor of 10 −3. Unless stated otherwise, we use a batch size of 16 and train on 4 NVIDIA RTX A6000 GPUs. The query projection ϕ is implemented as a two-layer MLP that maps the concatenated DETR query features to DIF = 1024 . We set the loss weights to λ2dfocal = 4 .0,
+
+λdice = 1 .0, λ3dfocal = 4 .0, λsp = 0 .01 , and λcp = 1 .0.
+
+S.8.2. Contact Decoder 
+
+Given refined HO tokens T(L), we predict a binary per-vertex contact mask mh,o ∈ { 0, 1}Nv for each candidate pair (h, o ) ∈ P . Directly decoding all 6,890 SMPL ver-tices is expensive. Following InteractVLM [5], we instead decode HO tokens into multi-view 2D contact maps, where each map gives pixel-wise contact likelihood on a 2D pro-jection of the SMPL [20] mesh. We then lift these maps back to the 3D SMPL surface. 
+
+Projecting SMPL Mesh to 2D. For each human instance 
+
+h, we render its SMPL mesh (with vertices Vh ∈ RNv ×3)in V fixed viewpoints. For view v ∈ {1, . . . , V }, we obtain a rendered image I(v) 
+
+> h
+
+and a dense correspondence between image pixels and mesh vertices. We denote by 
+
+πv : {1, . . . , N v } → Ωv ∪ { ∅} the projection that maps a visible vertex index j to its pixel location πv (j) ∈ Ωv
+
+(and to ∅ if the vertex is not visible in view v). 
+
+Decoding View-wise Contact Maps. For each view v,we feed the rendered image I(v) 
+
+> h
+
+through the SAM im-age encoder to obtain image features. We then use the InteractionFormer-refined HO token t(L) 
+
+> h,o
+
+as the SAM ob-ject query and apply a shared SAM decoder head to predict a dense per-pixel contact probability map: 
+
+P(v) 
+
+> h,o
+
+= DSAM 
+
+
+
+ESAM (I(v) 
+
+> h
+
+), t(L)
+
+> h,o
+
+
+
+∈ [0 , 1] |Ωv |, (10) where ESAM (·) and DSAM (·) denote the SAM image en-coder and mask decoder, respectively, and t(L) 
+
+> h,o
+
+is the re-fined HO token for the human–object pair (h, o ) after L In-teractionFormer refinement blocks. We initialize ESAM and 11 DSAM from pretrained SAM weights and fine-tune only the decoder for our task. 
+
+Lifting Contact Maps to a 3D Mesh. We lift the view-wise contact predictions back to the 3D human surface by pooling, for each vertex, the contact probabilities from all rendered views where that vertex is visible. Let Vj = {v |
+
+πv (j)̸ = ∅} be the set of views where vertex j is visible. We compute the vertex contact probability as the mean of the corresponding per-view pixel probabilities: 
+
+ˆmh,o (j) = 1
+
+|V j |
+
+X
+
+> v∈V j
+
+P(v)
+
+> h,o
+
+(πv (j)) ∈ [0 , 1] . (11) 
+
+S.8.3. Training Objectives 
+
+2D Supervision. Let y(v)
+
+> h,o
+
+(u) ∈ { 0, 1} be the ground-truth contact label for pixel u ∈ Ωv , defined only on valid ren-dered pixels u ∈ Ωval  
+
+> v
+
+. We supervise the view-wise predic-tions with a focal loss [16] and a Dice loss [26]: 
+
+L2D = λ2dfocal Lfocal 2D + λdice Ldice 2D . (12) where λ2dfocal and λdice weight the focal and Dice losses, respectively. Here, Lfocal 2D denotes the standard focal loss and Ldice 2D denotes the standard Dice loss, computed between the predicted contact probabilities P(v) 
+
+> h,o
+
+and the 2D ground-truth masks y(v)
+
+> h,o
+
+.
+
+3D Supervision and Sparsity Loss. Let m∗
+
+> h,o
+
+(j) ∈{0, 1} be the ground-truth contact label for vertex j. We apply a focal loss on vertices and an ℓ1 sparsity penalty: 
+
+L3D = λ3dfocal Lfocal 3D + λsp Lsp , (13) where λ3dfocal and λsp weight the 3D focal loss and the spar-sity regularizer, respectively. We define the sparsity term 
+
+Lsp as the ℓ1 penalty obtained by summing the predicted vertex contact probabilities ˆmh,o (j) over all vertices j and all candidate pairs (h, o ) ∈ P . Here, Lfocal 3D denotes the standard focal loss between predicted vertex probabilities 
+
+ˆmh,o (j) and ground-truth labels m∗
+
+> h,o
+
+(j).
+
+Contact Presence Supervision. We additionally super-vise the contact presence classifier with a binary cross-entropy loss: 
+
+Lcp = X
+
+> (h,o )∈P
+
+BCE  ph,o , y cp 
+
+> h,o
+
+, (14) where ycp  
+
+> h,o
+
+∈ { 0, 1} indicates whether the pair (h, o ) is in contact. The total training loss is L = L2D + L3D + λcp Lcp .
+
+Auxiliary Segmentation Losses. When ground-truth (GT) annotations are available, we further supervise the InteractionFormer image tokens with auxiliary semantic-and part-segmentation heads, following DECO [28]. Con-cretely, we reshape the patch tokens X(L) into a 2D feature map and upsample it with a scene decoder Ds and a part decoder Dp. The scene decoder predicts a semantic seg-mentation map 
+
+¯Xs = Ds(X(L)) ∈ RH×W ×No , (15) where No is the number of classes of MS-COCO objects. Similarly, the part decoder predicts a human-part segmen-tation map 
+
+¯Xp = Dp(X(L)) ∈ RH×W ×(J+1) , (16) where J is the number of body parts, and the ex-tra channel corresponds to the background. Both de-coders are lightweight CNN heads implemented as a stack of transposed-convolution (ConvTranspose2D) layers that progressively upsample the patch-token feature map to the target resolution. We denote the corresponding 2D segmen-tation losses (e.g., pixel-wise cross-entropy) between pre-dictions and GT masks by Ls 
+
+> 2D
+
+and Lp
+
+> 2D
+
+. These auxiliary terms are added to the training objective only when the GT segmentation masks are available: 
+
+L = L2D + L3D + λcp Lcp + IGT 
+
+
+
+λs Ls 
+
+> 2D
+
++ λp Lp
+
+> 2D
+
+
+
+, (17) where IGT ∈ { 0, 1} indicates whether GT segmentation supervision is present and λs, λ p are loss weights. 
+
+S.8.4. Improving SAM3D Reconstruction 
+
+We initialize body pose and location from SAM3D Body [32], and object pose and mesh from SAM3D Ob-ject [27]. We apply Pi-HOC to detect contact for every human–object pair in the scene. We transfer contacts from the SMPL mesh to the MHR mesh produced by SAM3D. Given the strong SAM3D initialization, we also derive object-side contact by mapping each human contact vertex to its nearest point on the object mesh. Following InteractVLM [5], we optimize rotation Rh ∈
+
+SO (3) , translation th ∈ R3, and scale sh ∈ R+ for each human mesh h to better satisfy contacts. At each iteration, we render the current human mesh using PyTorch3D and minimize the objective 
+
+L = λiou Liou + λcen Lcen + λcon Lcon , (18) where (1) Liou is the mask IoU loss between the rendered mask and the ground-truth mask, (2) Lcen = ∥μ( ˆM ) −
+
+μ(M )∥2 aligns rendered and ground-truth mask centroids, and (3) Lcon is the contact loss: 
+
+Lcon =
+
+P 
+
+> i,j
+
+phi poj vhi − voj 2
+
+P 
+
+> i,j
+
+phi poj
+
+. (19) 12 Here, vhi and voj are vertices on the human and object meshes, and phi , p oj ∈ { 0, 1} are their contact indicators. The product phi poj gates each pair, so only vertices labeled as contact contribute to Lcon . We jointly optimize all human– object pairs. 
+
+## S.9. Semantic Contact Metrics - Object-Wise 
+
+Table 6 shows that Pi-HOC is robust across object cate-gories and generally achieves higher contact precision with lower geodesic error, indicating more fine-grained and ac-curate contact localization. 
+
+## S.10. Qualitative Results 
+
+We present qualitative results of our method. As shown in Fig. 7, it successfully detects contacting human–object pairs and colors the human mesh according to object-specific contact regions on the body surface. Compared with prior methods [5], which predict contacts one human–object pair at a time, our method predicts all contacts in a single for-ward pass. We also present additional results on SAM3D test-time refinement. We use the contact predictions from our model to optimize the SAM3D-initialized reconstructions. As shown in Fig. 8, the method removes artifacts such as float-ing hands and produces more physically plausible recon-structions. We also showcase that our model can be adapted to ref-erential contact estimation without additional training. As shown in Fig. 9, the method predicts contact only for the human and object instances specified by the text prompt. 
+
+## S.11. Failure Cases 
+
+Despite strong performance, our method fails in certain cases, as shown in Fig. 10. We observe three common fail-ure scenarios: (1) interactions that differ significantly from common interaction patterns, (2) missed DETR detections that prevent pair formation and therefore contact estimation, and (3) ambiguity between left and right hands when they are close together, which can lead to incorrect contact lo-calization. More robust DETR fine-tuning, or the use of a stronger detector, could help reduce these errors. For the test-time SAM3D refinement algorithm, fail-ures occur when the SAM3D-initialized reconstruction is severely misaligned and optimization cannot recover a plau-sible reconstruction. This happens because we keep the object position fixed and optimize only the human mesh rotation, translation, and scale. If the object placement in the initial reconstruction is incorrect, refinement often fails (Fig. 11). 
+
+## S.12. Attention Visualizations 
+
+We visualize attention maps from the last InteractionFormer layer for each contacting human–object pair in an image. As shown in Fig. 12, each pair token concentrates on spa-tially localized regions that are most informative for con-tact reasoning, such as hands, forearms, and the nearby object surface. This behavior provides useful intuition for why the model produces precise contact predictions. Rather than relying on global scene context alone, the token learns interaction-specific correspondences between human parts and object regions. 13 Table 6. DAMON category-wise semantic contact results. 
+
+Object Category Semantic DECO [28] InteractVLM-w/o-body-parts [5] Pi-HOC (Ours) F1 (%) ↑ Prec (%) ↑ Rec (%) ↑ Geo (cm) ↓ F1 (%) ↑ Prec (%) ↑ Rec (%) ↑ Geo (cm) ↓ F1 (%) ↑ Prec (%) ↑ Rec (%) ↑ Geo (cm) ↓
+
+Accessory 40.1 30.7 75.6 21.88 55.44 63.93 63.68 8.08 61.71 65.83 69.35 11.61 Daily Obj 26.5 20.1 52.3 60.34 53.23 53.86 65.05 10.96 58.00 57.85 69.43 10.66 
+
+Food 11.7 19.4 12.9 49.61 57.12 54.54 69.72 9.80 58.06 56.45 73.98 11.29 Furniture 24.5 15.8 83.7 29.17 51.09 53.80 49.50 4.49 53.57 52.78 52.96 6.07 Kitchen 27.7 24.7 37.2 52.34 57.07 55.81 67.00 23.79 63.32 62.82 69.78 22.98 
+
+Sports 36.4 30.4 80.1 79.21 65.57 56.26 71.51 10.49 68.29 66.30 68.62 10.30 
+
+Transport 52.0 39.1 93.7 31.78 68.22 67.83 75.80 4.07 70.86 69.51 80.77 2.87 
+
+Figure 7. Semantic Human Contact Estimation. We show semantic contact estimation on in-the-wild images. Each example shows all objects with which the human is in contact and the corresponding contact regions on the human mesh. 
+
+14 Figure 8. SAM3D Test-Time Refinement. 
+
+15 Figure 9. Pi-HOC Referential Contact. 
+
+16 Figure 10. Semantic Human Contact Failure Cases. Each row shows one failure case: (1) interactions that deviate strongly from common interaction patterns, (2) missed DETR detections that prevent human–object pair formation (e.g., row 2: the child–chair interaction in the left image and the woman–handbag contact on the right image), and (3) confusion between left and right hands when they are very close. Input Image  SAM3D before 
+
+ref inement 
+
+SAM3D after 
+
+ref inement (Ours) 
+
+Figure 11. SAM3D Refinement Failure Cases. If the SAM3D initialization is severely misaligned, the algorithm can fail because we keep the object fixed and optimize only the human rotation, translation, and scale. 
+
+17 Figure 12. InteractionFormer Attention Maps. Each row starts with the input image, followed by attention maps for individual contacting human–object pairs. The blue box denotes the human instance and the red box denotes the corresponding object instance. The visualizations show that each pair token focuses primarily on interaction-relevant body and object regions, while also attending to limited contextual cues. 
+
+18

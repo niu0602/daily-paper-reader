@@ -1,0 +1,496 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-16T19:56:49.632823+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "2604.10647v1",
+      "source": "arxiv",
+      "title": "OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction",
+      "abstract": "UMI-style interfaces enable scalable robot learning, but existing systems remain largely visuomotor, relying primarily on RGB observations and trajectory while providing only limited access to physical interaction signals. This becomes a fundamental limitation in contact-rich manipulation, where success depends on contact dynamics such as tactile interaction, internal grasping force, and external interaction wrench that are difficult to infer from vision alone. We present OmniUMI, a unified framework for physically grounded robot learning via human-aligned multimodal interaction. OmniUMI synchronously captures RGB, depth, trajectory, tactile sensing, internal grasping force, and external interaction wrench within a compact handheld system, while maintaining collection--deployment consistency through a shared embodiment design. To support human-aligned demonstration, OmniUMI provides dual-force feedback through bilateral gripper feedback and natural perception of external interaction wrench in the handheld embodiment. Built on this interface, we extend diffusion policy with visual, tactile, and force-related observations, and deploy the learned policy through impedance-based execution for unified regulation of motion and contact behavior. Experiments demonstrate reliable sensing and strong downstream performance on force-sensitive pick-and-place, interactive surface erasing, and tactile-informed selective release. Overall, OmniUMI combines physically grounded multimodal data acquisition with human-aligned interaction, providing a scalable foundation for learning contact-rich manipulation.",
+      "authors": [
+        "Shaqi Luo",
+        "Yuanyuan Li",
+        "Youhao Hu",
+        "Chenhao Yu",
+        "Chaoran Xu",
+        "Jiachen Zhang",
+        "Guocai Yao",
+        "Tiejun Huang",
+        "Ran He",
+        "Zhongyuan Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-12T13:48:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.10647v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "multimodal interaction framework for contact-rich manipulation using handheld interfaces",
+      "llm_evidence_cn": "用于接触密集型操作的多模态交互框架，使用手持式接口",
+      "llm_evidence": "用于接触密集型操作的多模态交互框架，使用手持式接口",
+      "canonical_evidence": "用于接触密集型操作的多模态交互框架，使用手持式接口",
+      "llm_tldr_en": "OmniUMI captures multimodal signals like tactile and force for physically grounded robot manipulation learning.",
+      "llm_tldr_cn": "OmniUMI通过捕获触觉和力等多种模态信号，实现基于物理落地的机器人操作学习。",
+      "llm_tldr": "OmniUMI通过捕获触觉和力等多种模态信号，实现基于物理落地的机器人操作学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.13001v1",
+      "source": "arxiv",
+      "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "abstract": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "authors": [
+        "Junming Wang",
+        "Teng Pu",
+        "Wingmun Fung",
+        "Jindong Wang",
+        "Shanchang Wang",
+        "Yuan Deng",
+        "Shuyuan Wang",
+        "Ziwei Liu",
+        "Kunhao Pan",
+        "Ping Yang",
+        "Peng Zhai",
+        "Yuxin Liang",
+        "Xiaofan Li",
+        "Jiabi Sun",
+        "Renchao Xu",
+        "Xiaotian Tian",
+        "Pengfei Yan",
+        "Guoqiang Ye",
+        "Liang Li",
+        "Qian Wang",
+        "Ruyi Gan",
+        "Hao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.13001v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "System for embodied data collection and policy learning for dexterous robot manipulation using VR interfaces and cameras.",
+      "llm_evidence_cn": "用于灵巧机器人操作的具身数据采集和策略学习系统，使用虚拟现实界面和摄像头。",
+      "llm_evidence": "用于灵巧机器人操作的具身数据采集和策略学习系统，使用虚拟现实界面和摄像头。",
+      "canonical_evidence": "用于灵巧机器人操作的具身数据采集和策略学习系统，使用虚拟现实界面和摄像头。",
+      "llm_tldr_en": "XRZero-G0 improves dexterous manipulation data collection efficiency using an ergonomic VR interface and dual grippers.",
+      "llm_tldr_cn": "XRZero-G0通过人体工程学VR界面和双夹持器提高了灵巧操作数据的采集效率。",
+      "llm_tldr": "XRZero-G0通过人体工程学VR界面和双夹持器提高了灵巧操作数据的采集效率。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.13015v1",
+      "source": "arxiv",
+      "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+      "abstract": "Humanoid robots promise general-purpose assistance, yet real-world humanoid loco-manipulation remains challenging because it requires whole-body stability, dexterous hands, and contact-aware perception under frequent contact changes. In this work, we study dexterous, contact-rich humanoid loco-manipulation. We first develop an RL-based whole-body controller that provides stable lower-body and torso execution during complex manipulation. Built on this controller, we develop a whole-body humanoid data collection system that combines VR-based teleoperation with human-to-humanoid motion mapping, enabling efficient collection of real-world demonstrations. We then propose Humanoid Transformer with Touch Dreaming (HTD), a multimodal encoder--decoder Transformer that models touch as a core modality alongside multi-view vision and proprioception. HTD is trained in a single stage with behavioral cloning augmented by touch dreaming: in addition to predicting action chunks, the policy predicts future hand-joint forces and future tactile latents, encouraging the shared Transformer trunk to learn contact-aware representations for dexterous interaction. Across five contact-rich tasks, Insert-T, Book Organization, Towel Folding, Cat Litter Scooping, and Tea Serving, HTD achieves a 90.9% relative improvement in average success rate over the stronger baseline. Ablation results further show that latent-space tactile prediction is more effective than raw tactile prediction, yielding a 30% relative gain in success rate. These results demonstrate that combining robust whole-body execution, scalable humanoid data collection, and predictive touch-centered learning enables versatile, high-dexterity humanoid manipulation in the real world. Project webpage: humanoid-touch-dream.github.io.",
+      "authors": [
+        "Yaru Niu",
+        "Zhenlong Fang",
+        "Binghong Chen",
+        "Shuai Zhou",
+        "Revanth Senthilkumaran",
+        "Hao Zhang",
+        "Bingqing Chen",
+        "Chen Qiu",
+        "H. Eric Tseng",
+        "Jonathan Francis",
+        "Ding Zhao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:54:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.13015v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "dexterous humanoid loco-manipulation with contact-aware perception and VR data collection",
+      "llm_evidence_cn": "具有接触感知和VR数据采集的灵巧人形机器人运动操作",
+      "llm_evidence": "具有接触感知和VR数据采集的灵巧人形机器人运动操作",
+      "canonical_evidence": "具有接触感知和VR数据采集的灵巧人形机器人运动操作",
+      "llm_tldr_en": "Develops a humanoid manipulation system using VR teleoperation and a Transformer model for dexterous tasks.",
+      "llm_tldr_cn": "开发了一种人形机器人操作系统，利用VR遥操作和Transformer模型处理灵巧任务。",
+      "llm_tldr": "开发了一种人形机器人操作系统，利用VR遥操作和Transformer模型处理灵巧任务。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.14089v1",
+      "source": "arxiv",
+      "title": "UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception",
+      "abstract": "We present UMI-3D, a multimodal extension of the Universal Manipulation Interface (UMI) for robust and scalable data collection in embodied manipulation. While UMI enables portable, wrist-mounted data acquisition, its reliance on monocular visual SLAM makes it vulnerable to occlusions, dynamic scenes, and tracking failures, limiting its applicability in real-world environments. UMI-3D addresses these limitations by introducing a lightweight and low-cost LiDAR sensor tightly integrated into the wrist-mounted interface, enabling LiDAR-centric SLAM with accurate metric-scale pose estimation under challenging conditions. We further develop a hardware-synchronized multimodal sensing pipeline and a unified spatiotemporal calibration framework that aligns visual observations with LiDAR point clouds, producing consistent 3D representations of demonstrations. Despite maintaining the original 2D visuomotor policy formulation, UMI-3D significantly improves the quality and reliability of collected data, which directly translates into enhanced policy performance. Extensive real-world experiments demonstrate that UMI-3D not only achieves high success rates on standard manipulation tasks, but also enables learning of tasks that are challenging or infeasible for the original vision-only UMI setup, including large deformable object manipulation and articulated object operation. The system supports an end-to-end pipeline for data acquisition, alignment, training, and deployment, while preserving the portability and accessibility of the original UMI. All hardware and software components are open-sourced to facilitate large-scale data collection and accelerate research in embodied intelligence: \\href{https://umi-3d.github.io}{https://umi-3d.github.io}.",
+      "authors": [
+        "Ziming Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-15T17:04:34+00:00",
+      "link": "https://arxiv.org/pdf/2604.14089v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Extends wrist-mounted data acquisition interface for robust data collection in embodied manipulation",
+      "llm_evidence_cn": "扩展了腕部安装的数据采集接口，用于具身操作中的稳健数据收集",
+      "llm_evidence": "扩展了腕部安装的数据采集接口，用于具身操作中的稳健数据收集",
+      "canonical_evidence": "扩展了腕部安装的数据采集接口，用于具身操作中的稳健数据收集",
+      "llm_tldr_en": "Presents UMI-3D, adding LiDAR to a wrist-mounted interface for improved data collection in manipulation.",
+      "llm_tldr_cn": "推出了 UMI-3D，在腕部接口中加入激光雷达，以改进机器人操作的数据收集。",
+      "llm_tldr": "推出了 UMI-3D，在腕部接口中加入激光雷达，以改进机器人操作的数据收集。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.07993v1",
+      "source": "arxiv",
+      "title": "HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation",
+      "abstract": "Humans achieve complex manipulation through coordinated whole-body control, whereas most Vision-Language-Action (VLA) models treat robot body parts largely independently, making high-DoF humanoid control challenging and often unstable. We present HEX, a state-centric framework for coordinated manipulation on full-sized bipedal humanoid robots. HEX introduces a humanoid-aligned universal state representation for scalable learning across heterogeneous embodiments, and incorporates a Mixture-of-Experts Unified Proprioceptive Predictor to model whole-body coordination and temporal motion dynamics from large-scale multi-embodiment trajectory data. To efficiently capture temporal visual context, HEX uses lightweight history tokens to summarize past observations, avoiding repeated encoding of historical images during inference. It further employs a residual-gated fusion mechanism with a flow-matching action head to adaptively integrate visual-language cues with proprioceptive dynamics for action generation. Experiments on real-world humanoid manipulation tasks show that HEX achieves state-of-the-art performance in task success rate and generalization, particularly in fast-reaction and long-horizon scenarios.",
+      "authors": [
+        "Shuanghao Bai",
+        "Meng Li",
+        "Xinyuan Lv",
+        "Jiawei Wang",
+        "Xinhua Wang",
+        "Fei Liao",
+        "Chengkai Hou",
+        "Langzhe Gu",
+        "Wanqi Zhou",
+        "Kun Wu",
+        "Ziluo Ding",
+        "Zhiyuan Xu",
+        "Lei Sun",
+        "Shanghang Zhang",
+        "Zhengping Che",
+        "Jian Tang",
+        "Badong Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-09T09:01:43+00:00",
+      "link": "https://arxiv.org/pdf/2604.07993v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Framework for coordinated whole-body manipulation on high-DoF humanoid robots",
+      "llm_evidence_cn": "高自由度人形机器人协调全身操作的框架",
+      "llm_evidence": "高自由度人形机器人协调全身操作的框架",
+      "canonical_evidence": "高自由度人形机器人协调全身操作的框架",
+      "llm_tldr_en": "Introduces HEX, a state-centric framework for coordinated whole-body manipulation in humanoid robots.",
+      "llm_tldr_cn": "介绍了 HEX，这是一个用于人形机器人协调全身操作的以状态为中心的框架。",
+      "llm_tldr": "介绍了 HEX，这是一个用于人形机器人协调全身操作的以状态为中心的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.11135v1",
+      "source": "arxiv",
+      "title": "AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps",
+      "abstract": "Pretrained video generation models provide strong priors for robot control, but existing unified world action models still struggle to decode reliable actions without substantial robot-specific training. We attribute this limitation to a structural mismatch: while video models capture how scenes evolve, action generation requires explicit reasoning about where to interact and the underlying manipulation intent. We introduce AIM, an intent-aware unified world action model that bridges this gap via an explicit spatial interface. Instead of decoding actions directly from future visual representations, AIM predicts an aligned spatial value map that encodes task-relevant interaction structure, enabling a control-oriented abstraction of future dynamics. Built on a pretrained video generation model, AIM jointly models future observations and value maps within a shared mixture-of-transformers architecture. It employs intent-causal attention to route future information to the action branch exclusively through the value representation. We further propose a self-distillation reinforcement learning stage that freezes the video and value branches and optimizes only the action head using dense rewards derived from projected value-map responses together with sparse task-level signals. To support training and evaluation, we construct a simulation dataset of 30K manipulation trajectories with synchronized multi-view observations, actions, and value-map annotations. Experiments on RoboTwin 2.0 benchmark show that AIM achieves a 94.0% average success rate, significantly outperforming prior unified world action baselines. Notably, the improvement is more pronounced in long-horizon and contact-sensitive manipulation tasks, demonstrating the effectiveness of explicit spatial-intent modeling as a bridge between visual world modeling and robot control.",
+      "authors": [
+        "Liaoyuan Fan",
+        "Zetian Xu",
+        "Chen Cao",
+        "Wenyao Zhang",
+        "Mingqi Yuan",
+        "Jiayu Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-04-13T07:48:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.11135v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "unified world action modeling for manipulation intent and scene evolution",
+      "llm_evidence_cn": "针对操作意图和场景演变的统一世界动作建模",
+      "llm_evidence": "针对操作意图和场景演变的统一世界动作建模",
+      "canonical_evidence": "针对操作意图和场景演变的统一世界动作建模",
+      "llm_tldr_en": "Introduces AIM, a world action model using spatial value maps to bridge video generation and robot manipulation.",
+      "llm_tldr_cn": "引入AIM，一种利用空间价值图连接视频生成与机器人操作的统一世界动作模型。",
+      "llm_tldr": "引入AIM，一种利用空间价值图连接视频生成与机器人操作的统一世界动作模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.12565v1",
+      "source": "arxiv",
+      "title": "Scalable Trajectory Generation for Whole-Body Mobile Manipulation",
+      "abstract": "Robots deployed in unstructured environments must coordinate whole-body motion -- simultaneously moving a mobile base and arm -- to interact with the physical world. This coupled mobility and dexterity yields a state space that grows combinatorially with scene and object diversity, demanding datasets far larger than those sufficient for fixed-base manipulation. Yet existing acquisition methods, including teleoperation and planning, are either labor-intensive or computationally prohibitive at scale. The core bottleneck is the lack of a scalable pipeline for generating large-scale, physically valid, coordinated trajectory data across diverse embodiments and environments. Here we introduce AutoMoMa, a GPU-accelerated framework that unifies AKR modeling, which consolidates base, arm, and object kinematics into a single chain, with parallelized trajectory optimization. AutoMoMa achieves 5,000 episodes per GPU-hour (over $80\\times$ faster than CPU-based baselines), producing a dataset of over 500k physically valid trajectories spanning 330 scenes, diverse articulated objects, and multiple robot embodiments. Prior datasets were forced to compromise on scale, diversity, or kinematic fidelity; AutoMoMa addresses all three simultaneously. Training downstream IL policies further reveals that even a single articulated-object task requires tens of thousands of demonstrations for SOTA methods to reach $\\approx 80\\%$ success, confirming that data scarcity -- not algorithmic limitations -- has been the binding constraint. AutoMoMa thus bridges high-performance planning and reliable IL-based control, providing the infrastructure previously missing for coordinated mobile manipulation research. By making large-scale, kinematically valid training data practical, AutoMoMa showcases generalizable whole-body robot policies capable of operating in the diverse, unstructured settings of the real world.",
+      "authors": [
+        "Yida Niu",
+        "Xinhai Chang",
+        "Xin Liu",
+        "Ziyuan Jiao",
+        "Yixin Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-14T10:47:06+00:00",
+      "link": "https://arxiv.org/pdf/2604.12565v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "coupled mobility and dexterity for whole-body mobile manipulation",
+      "llm_evidence_cn": "全身移动操作中的耦合移动性与灵巧性",
+      "llm_evidence": "全身移动操作中的耦合移动性与灵巧性",
+      "canonical_evidence": "全身移动操作中的耦合移动性与灵巧性",
+      "llm_tldr_en": "AutoMoMa is a framework for generating large-scale coordinated trajectory data for mobile manipulation.",
+      "llm_tldr_cn": "AutoMoMa是一个用于为移动操作生成大规模协调轨迹数据的框架。",
+      "llm_tldr": "AutoMoMa是一个用于为移动操作生成大规模协调轨迹数据的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.11302v1",
+      "source": "arxiv",
+      "title": "3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS",
+      "abstract": "We present 3D-Anchored Lookahead Planning (3D-ALP), a System 2 reasoning engine for robotic manipulation that combines Monte Carlo Tree Search (MCTS) with a 3D-consistent world model as the rollout oracle. Unlike reactive policies that evaluate actions from the current camera frame only, 3D-ALP maintains a persistent camera-to-world (c2w) anchor that survives occlusion, enabling accurate replanning to object positions that are no longer directly observable. On a 5-step sequential reach task requiring spatial memory (Experiment E3), 3D-ALP achieves 0.650 0.109 success rate on memory-required steps versus 0.006 0.008 for a greedy reactive baseline (Δ=+0.645), while step 5 success reaches 0.822 against 0.000 for greedy. An ablation study (30 episodes, 3 seeds) isolates tree search spatial memory as the primary driver (+0.533, 82% of gain) with additional benefit from deeper lookahead (+0.111, 17%). We also identify and resolve four structural failure modes in applying UCT-MCTS (Upper Confidence Bounds applied to Trees [10]) to continuous robotic manipulation.",
+      "authors": [
+        "Bronislav Sidik",
+        "Dror Mizrahi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-13T11:01:30+00:00",
+      "link": "https://arxiv.org/pdf/2604.11302v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Lookahead planning for robotic manipulation using 3D-consistent world models",
+      "llm_evidence_cn": "使用 3D 一致世界模型的机器人操作前瞻规划",
+      "llm_evidence": "使用 3D 一致世界模型的机器人操作前瞻规划",
+      "canonical_evidence": "使用 3D 一致世界模型的机器人操作前瞻规划",
+      "llm_tldr_en": "Presents 3D-ALP, a reasoning engine that uses MCTS and 3D world models for complex robotic manipulation.",
+      "llm_tldr_cn": "展示了 3D-ALP，一种利用 MCTS 和 3D 世界模型进行复杂机器人操作的推理引擎。",
+      "llm_tldr": "展示了 3D-ALP，一种利用 MCTS 和 3D 世界模型进行复杂机器人操作的推理引擎。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.13476v1",
+      "source": "arxiv",
+      "title": "RobotPan: A 360$^\\circ$ Surround-View Robotic Vision System for Embodied Perception",
+      "abstract": "Surround-view perception is increasingly important for robotic navigation and loco-manipulation, especially in human-in-the-loop settings such as teleoperation, data collection, and emergency takeover. However, current robotic visual interfaces are often limited to narrow forward-facing views, or, when multiple on-board cameras are available, require cumbersome manual switching that interrupts the operator's workflow. Both configurations suffer from motion-induced jitter that causes simulator sickness in head-mounted displays. We introduce a surround-view robotic vision system that combines six cameras with LiDAR to provide full 360$^\\circ$ visual coverage, while meeting the geometric and real-time constraints of embodied deployment. We further present \\textsc{RobotPan}, a feed-forward framework that predicts \\emph{metric-scaled} and \\emph{compact} 3D Gaussians from calibrated sparse-view inputs for real-time rendering, reconstruction, and streaming. \\textsc{RobotPan} lifts multi-view features into a unified spherical coordinate representation and decodes Gaussians using hierarchical spherical voxel priors, allocating fine resolution near the robot and coarser resolution at larger radii to reduce computational redundancy without sacrificing fidelity. To support long sequences, our online fusion updates dynamic content while preventing unbounded growth in static regions by selectively updating appearance. Finally, we release a multi-sensor dataset tailored to 360$^\\circ$ novel view synthesis and metric 3D reconstruction for robotics, covering navigation, manipulation, and locomotion on real platforms. Experiments show that \\textsc{RobotPan} achieves competitive quality against prior feed-forward reconstruction and view-synthesis methods while producing substantially fewer Gaussians, enabling practical real-time embodied deployment. Project website: https://robotpan.github.io/",
+      "authors": [
+        "Jiahao Ma",
+        "Qiang Zhang",
+        "Peiran Liu",
+        "Zeran Su",
+        "Pihai Sun",
+        "Gang Han",
+        "Wen Zhao",
+        "Wei Cui",
+        "Zhang Zhang",
+        "Zhiyuan Xu",
+        "Renjing Xu",
+        "Jian Tang",
+        "Miaomiao Liu",
+        "Yijie Guo"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-15T04:58:23+00:00",
+      "link": "https://arxiv.org/pdf/2604.13476v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "surround-view robotic vision system for embodied perception and loco-manipulation",
+      "llm_evidence_cn": "用于具身感知和移动操作的环视机器人视觉系统",
+      "llm_evidence": "用于具身感知和移动操作的环视机器人视觉系统",
+      "canonical_evidence": "用于具身感知和移动操作的环视机器人视觉系统",
+      "llm_tldr_en": "RobotPan provides 360-degree visual coverage to support robotic teleoperation and manipulation tasks.",
+      "llm_tldr_cn": "RobotPan提供360度全景视觉覆盖，支持机器人远程操作和操作任务。",
+      "llm_tldr": "RobotPan提供360度全景视觉覆盖，支持机器人远程操作和操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.13942v1",
+      "source": "arxiv",
+      "title": "Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection",
+      "abstract": "Recent vision-language-action (VLA) systems have demonstrated strong capabilities in embodied manipulation. However, most existing VLA policies rely on limited observation windows and end-to-end action prediction, which makes them brittle in long-horizon, memory-dependent tasks with partial observability, occlusions, and multi-stage dependencies. Such tasks require not only precise visuomotor control, but also persistent memory, adaptive task decomposition, and explicit recovery from execution failures. To address these limitations, we propose a dual-system framework for long-horizon embodied manipulation.   Our framework explicitly separates high-level semantic reasoning from low-level motor execution. A high-level planner, implemented as a VLM-based agentic module, maintains structured task memory and performs goal decomposition, outcome verification, and error-driven correction. A low-level executor, instantiated as a VLA-based visuomotor controller, carries out each sub-task through diffusion-based action generation conditioned on geometry-preserving filtered observations. Together, the two systems form a closed loop between planning and execution, enabling memory-aware reasoning, adaptive replanning, and robust online recovery. Experiments on representative RMBench tasks show that the proposed framework substantially outperforms representative baselines, achieving a 32.4% average success rate compared with 9.8% for the strongest baseline. Ablation studies further confirm the importance of structured memory and closed-loop recovery for long-horizon manipulation.",
+      "authors": [
+        "Zhen Liu",
+        "Xinyu Ning",
+        "Zhe Hu",
+        "Xinxin Xie",
+        "Weize Li",
+        "Zhipeng Tang",
+        "Chongyu Wang",
+        "Zejun Yang",
+        "Hanlin Wang",
+        "Yitong Liu",
+        "Zhongzhu Pu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-15T14:53:09+00:00",
+      "link": "https://arxiv.org/pdf/2604.13942v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Framework for long-horizon embodied manipulation tasks focusing on visuomotor control and adaptive planning.",
+      "llm_evidence_cn": "专注于视觉运动控制和自适应规划的长程具身操作任务框架。",
+      "llm_evidence": "专注于视觉运动控制和自适应规划的长程具身操作任务框架。",
+      "canonical_evidence": "专注于视觉运动控制和自适应规划的长程具身操作任务框架。",
+      "llm_tldr_en": "Goal2Skill is a dual-system framework that separates semantic reasoning from motor execution for long-horizon tasks.",
+      "llm_tldr_cn": "Goal2Skill是一个将语义推理与电机执行分离的双系统框架，用于长程具身操作任务。",
+      "llm_tldr": "Goal2Skill是一个将语义推理与电机执行分离的双系统框架，用于长程具身操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.13793v1",
+      "source": "arxiv",
+      "title": "From Synchrony to Sequence: Exo-to-Ego Generation via Interpolation",
+      "abstract": "Exo-to-Ego video generation aims to synthesize a first-person video from a synchronized third-person view and corresponding camera poses. While paired supervision is available, synchronized exo-ego data inherently introduces substantial spatio-temporal and geometric discontinuities, violating the smooth-motion assumptions of standard video generation benchmarks. We identify this synchronization-induced jump as the central challenge and propose Syn2Seq-Forcing, a sequential formulation that interpolates between the source and target videos to form a single continuous signal. By reframing Exo2Ego as sequential signal modeling rather than a conventional condition-output task, our approach enables diffusion-based sequence models, e.g. Diffusion Forcing Transformers (DFoT), to capture coherent transitions across frames more effectively. Empirically, we show that interpolating only the videos, without performing pose interpolation already produces significant improvements, emphasizing that the dominant difficulty arises from spatio-temporal discontinuities. Beyond immediate performance gains, this formulation establishes a general and flexible framework capable of unifying both Exo2Ego and Ego2Exo generation within a single continuous sequence model, providing a principled foundation for future research in cross-view video synthesis.",
+      "authors": [
+        "Mohammad Mahdi",
+        "Nedko Savov",
+        "Danda Pani Paudel",
+        "Luc Van Gool"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-04-15T12:32:25+00:00",
+      "link": "https://arxiv.org/pdf/2604.13793v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "synthesizing first-person (ego) video from third-person (exo) views for robotic data",
+      "llm_evidence_cn": "从第三视角合成第一视角视频，用于机器人数据生成",
+      "llm_evidence": "从第三视角合成第一视角视频，用于机器人数据生成",
+      "canonical_evidence": "从第三视角合成第一视角视频，用于机器人数据生成",
+      "llm_tldr_en": "Introduces Syn2Seq-Forcing to generate first-person videos from third-person views via sequential modeling.",
+      "llm_tldr_cn": "提出Syn2Seq-Forcing方法，通过序列建模从第三视角视频合成第一视角视频。",
+      "llm_tldr": "提出Syn2Seq-Forcing方法，通过序列建模从第三视角视频合成第一视角视频。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

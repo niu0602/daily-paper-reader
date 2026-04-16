@@ -6,67 +6,55 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-15
-- 运行时间：2026-04-15 20:31:42 UTC
+- 最新运行日期：2026-04-16
+- 运行时间：2026-04-16 19:58:30 UTC
 - 运行状态：成功
-- 本次总论文数：15
-- 精读区：6
-- 速读区：9
+- 本次总论文数：11
+- 精读区：4
+- 速读区：7
 
 ### 今日简报（AI）
-今天聚焦于具身智能与灵巧操作领域，共阅读 15 篇论文，深入精读 6 篇。  
-重点方向是提升多模态交互与三维语义理解，如 XRZero-G0 和 BLaDA 在机器人精细操控上展现突破潜力。  
-建议继续关注语言-动作融合与双臂协作任务的通用化进展，观察从实验到实际应用的落地成效。
-- 详情：[/202604/15/README](/202604/15/README)
+1) 今日聚焦多模态与全身操控的智能机器人学习，共精读与速读论文 11 篇。  
+2) OmniUMI 与 XRZero-G0 展示了人类对齐、物理落地的交互式学习潜力，是未来通用机器人的关键方向。  
+3) 建议关注新一代具备人类协作能力的具身智能研究，理解它如何重塑人机边界。
+- 详情：[/202604/16/README](/202604/16/README)
 
 ### 精读区论文标签
-1. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/15/2604.13001v1-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
-   标签：评分：10.0/10、query:dexop
-   evidence：使用顶视摄像头和虚拟现实接口进行灵巧机器人操作数据采集的系统
-2. [BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields](/202604/15/2604.08410v2-blada-bridging-language-to-functional-dexterous-actions-within-3dgs-fields)  
+1. [OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction](/202604/16/2604.10647v1-omniumi-towards-physically-grounded-robot-learning-via-human-aligned-multimodal-interaction)  
    标签：评分：9.0/10、query:dexop
-   evidence：3DGS场中的功能性灵巧动作与抓取
-3. [OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction](/202604/15/2604.10647v1-omniumi-towards-physically-grounded-robot-learning-via-human-aligned-multimodal-interaction)  
+   evidence：用于接触密集型操作的多模态交互框架，使用手持式接口
+2. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/16/2604.13001v1-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
    标签：评分：9.0/10、query:dexop
-   evidence：通过多模态交互进行物理接地机器人学习的UMI风格接口
-4. [Detecting Precise Hand Touch Moments in Egocentric Video](/202604/15/2604.12343v1-detecting-precise-hand-touch-moments-in-egocentric-video)  
+   evidence：用于灵巧机器人操作的具身数据采集和策略学习系统，使用虚拟现实界面和摄像头。
+3. [Learning Versatile Humanoid Manipulation with Touch Dreaming](/202604/16/2604.13015v1-learning-versatile-humanoid-manipulation-with-touch-dreaming)  
    标签：评分：9.0/10、query:dexop
-   evidence：在第一视角视频中检测精确的手部接触时刻以用于机器人学习
-5. [Learning Versatile Humanoid Manipulation with Touch Dreaming](/202604/15/2604.13015v1-learning-versatile-humanoid-manipulation-with-touch-dreaming)  
+   evidence：具有接触感知和VR数据采集的灵巧人形机器人运动操作
+4. [UMI-3D: Extending Universal Manipulation Interface from Vision-Limited to 3D Spatial Perception](/202604/16/2604.14089v1-umi-3d-extending-universal-manipulation-interface-from-vision-limited-to-3d-spatial-perception)  
    标签：评分：9.0/10、query:dexop
-   evidence：使用VR遥操作和多模态Transformer进行人形机器人灵巧操作
-6. [FastGrasp: Learning-based Whole-body Control method for Fast Dexterous Grasping with Mobile Manipulators](/202604/15/2604.12879v1-fastgrasp-learning-based-whole-body-control-method-for-fast-dexterous-grasping-with-mobile-manipulators)  
-   标签：评分：8.0/10、query:dexop
-   evidence：基于学习的移动操作员快速灵巧抓取框架
+   evidence：扩展了腕部安装的数据采集接口，用于具身操作中的稳健数据收集
 
 ### 速读区论文标签
-1. [Task-Aware Bimanual Affordance Prediction via VLM-Guided Semantic-Geometric Reasoning](/202604/15/2604.08726v1-task-aware-bimanual-affordance-prediction-via-vlm-guided-semantic-geometric-reasoning)  
+1. [HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation](/202604/16/2604.07993v1-hex-humanoid-aligned-experts-for-cross-embodiment-whole-body-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：双臂操作与任务感知赋能预测
-2. [MoRI: Mixture of RL and IL Experts for Long-Horizon Manipulation Tasks](/202604/15/2604.10165v1-mori-mixture-of-rl-and-il-experts-for-long-horizon-manipulation-tasks)  
+   evidence：高自由度人形机器人协调全身操作的框架
+2. [Scalable Trajectory Generation for Whole-Body Mobile Manipulation](/202604/16/2604.12565v1-scalable-trajectory-generation-for-whole-body-mobile-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于细粒度操作任务的强化学习与模仿学习专家系统
-3. [AffordGen: Generating Diverse Demonstrations for Generalizable Object Manipulation with Afford Correspondence](/202604/15/2604.10579v1-affordgen-generating-diverse-demonstrations-for-generalizable-object-manipulation-with-afford-correspondence)  
+   evidence：全身移动操作中的耦合移动性与灵巧性
+3. [RobotPan: A 360$^\circ$ Surround-View Robotic Vision System for Embodied Perception](/202604/16/2604.13476v1-robotpan-a-360circ-surround-view-robotic-vision-system-for-embodied-perception)  
    标签：评分：7.0/10、query:dexop
-   evidence：生成大规模操作轨迹用于视觉运动策略训练
-4. [HY-Embodied-0.5: Embodied Foundation Models for Real-World Agents](/202604/15/2604.07430v1-hy-embodied-05-embodied-foundation-models-for-real-world-agents)  
+   evidence：用于具身感知和移动操作的环视机器人视觉系统
+4. [From Synchrony to Sequence: Exo-to-Ego Generation via Interpolation](/202604/16/2604.13793v1-from-synchrony-to-sequence-exo-to-ego-generation-via-interpolation)  
+   标签：评分：7.0/10、query:dexop
+   evidence：从第三视角合成第一视角视频，用于机器人数据生成
+5. [AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps](/202604/16/2604.11135v1-aim-intent-aware-unified-world-action-modeling-with-spatial-value-maps)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于时空视觉感知和交互的具身大模型
-5. [HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation](/202604/15/2604.07993v1-hex-humanoid-aligned-experts-for-cross-embodiment-whole-body-manipulation)  
+   evidence：针对操作意图和场景演变的统一世界动作建模
+6. [3D-Anchored Lookahead Planning for Persistent Robotic Scene Memory via World-Model-Based MCTS](/202604/16/2604.11302v1-3d-anchored-lookahead-planning-for-persistent-robotic-scene-memory-via-world-model-based-mcts)  
    标签：评分：6.0/10、query:dexop
-   evidence：使用时间视觉上下文的人形机器人协调操作
-6. [AssemLM: Spatial Reasoning Multimodal Large Language Models for Robotic Assembly](/202604/15/2604.08983v1-assemlm-spatial-reasoning-multimodal-large-language-models-for-robotic-assembly)  
+   evidence：使用 3D 一致世界模型的机器人操作前瞻规划
+7. [Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection](/202604/16/2604.13942v1-goal2skill-long-horizon-manipulation-with-adaptive-planning-and-reflection)  
    标签：评分：6.0/10、query:dexop
-   evidence：细粒度机器人组装任务的空间推理
-7. [Vision-Language-Action Model, Robustness, Multi-modal Learning, Robot Manipulation](/202604/15/2604.10055v1-vision-language-action-model-robustness-multi-modal-learning-robot-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于机器人操作鲁棒性的视觉-语言-动作模型
-8. [Pi-HOC: Pairwise 3D Human-Object Contact Estimation](/202604/15/2604.12923v1-pi-hoc-pairwise-3d-human-object-contact-estimation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于交互理解的3D人机接触估计
-9. [Grasp in Gaussians: Fast Monocular Reconstruction of Dynamic Hand-Object Interactions](/202604/15/2604.12929v1-grasp-in-gaussians-fast-monocular-reconstruction-of-dynamic-hand-object-interactions)  
-   标签：评分：6.0/10、query:dexop
-   evidence：从单目视频中重建动态3D手物交互
+   evidence：专注于视觉运动控制和自适应规划的长程具身操作任务框架。
 
 
 <div class="dpr-home-promo-card">

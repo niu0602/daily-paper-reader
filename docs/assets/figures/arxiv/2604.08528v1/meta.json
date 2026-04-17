@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-001.webp",
+      "caption": "Fig. 6: Qualitative Evaluation of A-SLIP. Each row shows a different object; each column shows a sample evaluation frame with predicted (gray) and ground-truth (green) slip vectors overlaid on the contact image alongside per-channel log-mel spectrograms. A-SLIP accurately estimates slip direction and magnitude across objects with varying geometry and surface material, even under impulsive externally induced slip.",
+      "page": 6,
+      "index": 1,
+      "width": 514,
+      "height": 643
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-002.webp",
+      "caption": "TABLE II: Per-object slip prediction results. Binary slip accuracy (Det.). Slip direction MAE (Dir. MAE). Slip magnitude RMSE (Mag. RMSE).",
+      "page": 6,
+      "index": 2,
+      "width": 458,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-003.webp",
+      "caption": "Fig. 2: Design of the A-SLIP Sensor. (Left) Fabrication pipeline: silicone is cast in a 3D-printed mold to form a compliant contact pad, which is bonded to a rigid holder with embedded piezoelectric microphones. (Center) Contact surface variants: smooth and textured silicone pads; the textured surface introduces controlled asperities that produce more directionally informative vibrations during slip. (Right) Evaluated microphone placements: three twomicrophone layouts (centered, corners, and same-finger) and a fourmicrophone layout with two microphones per finger to increase contact-region coverage.",
+      "page": 3,
+      "index": 3,
+      "width": 512,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-004.webp",
+      "caption": "Fig. 3: A-SLIP Model Architecture. Log-mel spectrograms from synchronized microphones are normalized and fused via a learned channel attention module. The fused representation passes through 2D convolutional layers preserving temporal resolution, then 1D temporal convolutions modeling slip dynamics. A temporal attention pooling module aggregates features into a latent vector passed to three heads: a slip classification head predicting p(slip) ∈ [0, 1], a magnitude regression head predicting ∥v∥, and a direction head predicting v̂ ∈ S1.",
+      "page": 3,
+      "index": 4,
+      "width": 512,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-005.webp",
+      "caption": "Fig. 5: A-SLIP Dataset Distribution. (Top) Robot-induced slip data collected automatically via randomized robot motions sweeping the gripper across a stationary probe, with labels derived from robot states. (Bottom) Externally-induced slip data collected by manually perturbing grasped objects, with labels from OptiTracktracked rigid-body motion. Counts indicate the number of audio slices in the dataset.",
+      "page": 5,
+      "index": 5,
+      "width": 462,
+      "height": 693
+    },
+    {
+      "url": "assets/figures/arxiv/2604.08528v1/fig-006.webp",
+      "caption": "TABLE I: Slip prediction model comparison. Binary slip accuracy (Det.). Dir. MAE: Slip direction MAE (Dir. MAE). Slip magnitude RMSE (Mag. RMSE).",
+      "page": 5,
+      "index": 6,
+      "width": 487,
+      "height": 336
+    }
+  ]
+}

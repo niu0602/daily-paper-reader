@@ -1,0 +1,54 @@
+{
+  "label": "2026-04-18",
+  "date": "2026-04-18",
+  "generated_at": "2026-04-18T19:16:31",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202604/18/2604.13001v1-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios",
+      "section": "deep",
+      "title_en": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "authors": "Junming Wang, Teng Pu, Wingmun Fung, Jindong Wang, Shanchang Wang, Yuan Deng, Shuyuan Wang, Ziwei Liu, Kunhao Pan, Ping Yang, Peng Zhai, Yuxin Liang, Xiaofan Li, Jiabi Sun, Renchao Xu, Xiaotian Tian, Pengfei Yan, Guoqiang Ye, Liang Li, Qian Wang, Ruyi Gan, Hao Wang",
+      "date": "2026-04-14",
+      "pdf": "https://arxiv.org/pdf/2604.13001v1",
+      "score": "9.0",
+      "evidence": "灵巧机器人操作数据采集与策略学习系统",
+      "tldr": "XRZero-G0提出了一种硬件与软件协同设计的系统，用于提高灵巧机器人操作示范数据的采集质量和效率。通过VR界面、闭环采集与质量控制流程以及数据混合策略，该系统实现了高达85%的数据有效率，并以少量真实机器人数据结合大规模无机器人数据，在性能与成本间取得优异平衡，推动通用化机器人操作学习的发展。",
+      "tags": "query:dexop",
+      "abstract_en": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202604/18/2604.13001v2-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios",
+      "section": "deep",
+      "title_en": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "authors": "James Wang, Primo Pu, Zephyr Fung, Alex Wang, Sam Wang, Bender Deng, Kevin Wang, Zivid Liu, Chris Pan, Panda Yang, Andy Zhai, Lucy Liang, Shalfun Li, Johnny Sun, Jacky Xu, Will Tian, Kai Yan, Kohler Ye, Scott Li, Qian Wang, Roy Gan, Hao Wang",
+      "date": "2026-04-14",
+      "pdf": "https://arxiv.org/pdf/2604.13001v2",
+      "score": "9.0",
+      "evidence": "灵巧机器人操作数据采集与策略学习系统",
+      "tldr": "论文提出XRZero-G0系统，通过虚拟现实接口和闭环数据采集与训练流程优化了灵巧机器人操作数据的获取与学习，显著提高数据质量和效率，并验证了结合少量真实机器人数据与大规模虚拟数据的高效策略，实现低成本高性能的跨形态操作。",
+      "tags": "query:dexop",
+      "abstract_en": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202604/18/2604.13015v1-learning-versatile-humanoid-manipulation-with-touch-dreaming",
+      "section": "deep",
+      "title_en": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+      "authors": "Yaru Niu, Zhenlong Fang, Binghong Chen, Shuai Zhou, Revanth Senthilkumaran, Hao Zhang, Bingqing Chen, Chen Qiu, H. Eric Tseng, Jonathan Francis, Ding Zhao",
+      "date": "2026-04-14",
+      "pdf": "https://arxiv.org/pdf/2604.13015v1",
+      "score": "8.0",
+      "evidence": "灵巧且富接触的人形机器人运动操作与数据采集",
+      "tldr": "本文针对人形机器人在现实世界实现稳定灵巧操作的挑战，提出HTD模型，通过强化学习控制、VR远程采集和触觉梦想预测，融合视觉、触觉与本体感知，实现人形机器人在多种接触密集任务中显著性能提升。",
+      "tags": "query:dexop",
+      "abstract_en": "Humanoid robots promise general-purpose assistance, yet real-world humanoid loco-manipulation remains challenging because it requires whole-body stability, dexterous hands, and contact-aware perception under frequent contact changes. In this work, we study dexterous, contact-rich humanoid loco-manipulation. We first develop an RL-based whole-body controller that provides stable lower-body and torso execution during complex manipulation. Built on this controller, we develop a whole-body humanoid data collection system that combines VR-based teleoperation with human-to-humanoid motion mapping, enabling efficient collection of real-world demonstrations. We then propose Humanoid Transformer with Touch Dreaming (HTD), a multimodal encoder--decoder Transformer that models touch as a core modality alongside multi-view vision and proprioception. HTD is trained in a single stage with behavioral cloning augmented by touch dreaming: in addition to predicting action chunks, the policy predicts future hand-joint forces and future tactile latents, encouraging the shared Transformer trunk to learn contact-aware representations for dexterous interaction. Across five contact-rich tasks, Insert-T, Book Organization, Towel Folding, Cat Litter Scooping, and Tea Serving, HTD achieves a 90.9% relative improvement in average success rate over the stronger baseline. Ablation results further show that latent-space tactile prediction is more effective than raw tactile prediction, yielding a 30% relative gain in success rate. These results demonstrate that combining robust whole-body execution, scalable humanoid data collection, and predictive touch-centered learning enables versatile, high-dexterity humanoid manipulation in the real world. Project webpage: humanoid-touch-dream.github.io.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

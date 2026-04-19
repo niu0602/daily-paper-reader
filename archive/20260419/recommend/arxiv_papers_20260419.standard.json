@@ -1,0 +1,127 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-19T19:59:11.281173+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 0,
+    "quick_skim_target": 11,
+    "quick_selected": 0
+  },
+  "deep_dive": [
+    {
+      "id": "2604.13001v1",
+      "source": "arxiv",
+      "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "abstract": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "authors": [
+        "Junming Wang",
+        "Teng Pu",
+        "Wingmun Fung",
+        "Jindong Wang",
+        "Shanchang Wang",
+        "Yuan Deng",
+        "Shuyuan Wang",
+        "Ziwei Liu",
+        "Kunhao Pan",
+        "Ping Yang",
+        "Peng Zhai",
+        "Yuxin Liang",
+        "Xiaofan Li",
+        "Jiabi Sun",
+        "Renchao Xu",
+        "Xiaotian Tian",
+        "Pengfei Yan",
+        "Guoqiang Ye",
+        "Liang Li",
+        "Qian Wang",
+        "Ruyi Gan",
+        "Hao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.13001v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "data collection and policy learning for dexterous robot manipulation",
+      "llm_evidence_cn": "灵巧机器人操作的数据采集与策略学习",
+      "llm_evidence": "灵巧机器人操作的数据采集与策略学习",
+      "canonical_evidence": "灵巧机器人操作的数据采集与策略学习",
+      "llm_tldr_en": "XRZero-G0 is a VR-based system for efficient data collection and policy learning in dexterous manipulation.",
+      "llm_tldr_cn": "XRZero-G0是一个基于虚拟现实的系统，旨在提高灵巧机器人操作的数据采集效率和策略学习效果。",
+      "llm_tldr": "XRZero-G0是一个基于虚拟现实的系统，旨在提高灵巧机器人操作的数据采集效率和策略学习效果。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.13001v2",
+      "source": "arxiv",
+      "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "abstract": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "authors": [
+        "James Wang",
+        "Primo Pu",
+        "Zephyr Fung",
+        "Alex Wang",
+        "Sam Wang",
+        "Bender Deng",
+        "Kevin Wang",
+        "Zivid Liu",
+        "Chris Pan",
+        "Panda Yang",
+        "Andy Zhai",
+        "Lucy Liang",
+        "Shalfun Li",
+        "Johnny Sun",
+        "Jacky Xu",
+        "Will Tian",
+        "Kai Yan",
+        "Kohler Ye",
+        "Scott Li",
+        "Qian Wang",
+        "Roy Gan",
+        "Hao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.13001v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "data collection and policy learning for dexterous robot manipulation",
+      "llm_evidence_cn": "灵巧机器人操作的数据采集与策略学习",
+      "llm_evidence": "灵巧机器人操作的数据采集与策略学习",
+      "canonical_evidence": "灵巧机器人操作的数据采集与策略学习",
+      "llm_tldr_en": "XRZero-G0 is a VR-based system for efficient data collection and policy learning in dexterous manipulation.",
+      "llm_tldr_cn": "XRZero-G0是一个基于虚拟现实的系统，旨在提高灵巧机器人操作的数据采集效率和策略学习效果。",
+      "llm_tldr": "XRZero-G0是一个基于虚拟现实的系统，旨在提高灵巧机器人操作的数据采集效率和策略学习效果。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": []
+}

@@ -1,0 +1,249 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-20T20:20:06.668786+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2604.13001v1",
+      "source": "arxiv",
+      "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "abstract": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "authors": [
+        "Junming Wang",
+        "Teng Pu",
+        "Wingmun Fung",
+        "Jindong Wang",
+        "Shanchang Wang",
+        "Yuan Deng",
+        "Shuyuan Wang",
+        "Ziwei Liu",
+        "Kunhao Pan",
+        "Ping Yang",
+        "Peng Zhai",
+        "Yuxin Liang",
+        "Xiaofan Li",
+        "Jiabi Sun",
+        "Renchao Xu",
+        "Xiaotian Tian",
+        "Pengfei Yan",
+        "Guoqiang Ye",
+        "Liang Li",
+        "Qian Wang",
+        "Ruyi Gan",
+        "Hao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.13001v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "System for embodied data collection and policy learning for dexterous robotic manipulation using VR interfaces and cameras.",
+      "llm_evidence_cn": "用于灵巧机器人操作的具身数据采集和策略学习系统，采用虚拟现实接口和相机。",
+      "llm_evidence": "用于灵巧机器人操作的具身数据采集和策略学习系统，采用虚拟现实接口和相机。",
+      "canonical_evidence": "用于灵巧机器人操作的具身数据采集和策略学习系统，采用虚拟现实接口和相机。",
+      "llm_tldr_en": "XRZero-G0 improves dexterous manipulation data collection and policy learning via an ergonomic VR interface.",
+      "llm_tldr_cn": "XRZero-G0 通过符合人体工程学的虚拟现实接口，提升了灵巧操作的数据采集和策略学习效率。",
+      "llm_tldr": "XRZero-G0 通过符合人体工程学的虚拟现实接口，提升了灵巧操作的数据采集和策略学习效率。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.13001v2",
+      "source": "arxiv",
+      "title": "XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios",
+      "abstract": "The acquisition of high-quality, action-aligned demonstration data remains a fundamental bottleneck in scaling foundation models for dexterous robot manipulation. Although robot-free human demonstrations (e.g., the UMI paradigm) offer a scalable alternative to traditional teleoperation, current systems are constrained by sub-optimal hardware ergonomics, open-loop workflows, and a lack of systematic data-mixing strategies. To address these limitations, we present XRZero-G0, a hardware-software co-designed system for embodied data collection and policy learning. The system features an ergonomic, virtual reality interface equipped with a top-view camera and dual specialized grippers to directly improve collection efficiency. To ensure dataset reliability, we propose a closed-loop collection, inspection, training, and evaluation pipeline for non-proprioceptive data. This workflow achieves an 85% data validity rate and establishes a transparent mechanism for quality control. Furthermore, we investigate the empirical scaling behaviors and optimal mixing ratios of robot-free data. Extensive experiments indicate that combining a minimal volume of real-robot data with large-scale robot-free data (e.g., a 10:1 ratio) achieves performance comparable to exclusively real-robot datasets, while reducing acquisition costs by a factor of twenty. Utilizing XRZero-G0, we construct a 2,000-hour robot-free dataset that enables zero-shot cross-embodiment transfer to a target physical robot, demonstrating a highly scalable methodology for generalized real-world manipulation.Our project repository: https://github.com/X-Square-Robot/XRZero-G0",
+      "authors": [
+        "James Wang",
+        "Primo Pu",
+        "Zephyr Fung",
+        "Alex Wang",
+        "Sam Wang",
+        "Bender Deng",
+        "Kevin Wang",
+        "Zivid Liu",
+        "Chris Pan",
+        "Panda Yang",
+        "Andy Zhai",
+        "Lucy Liang",
+        "Shalfun Li",
+        "Johnny Sun",
+        "Jacky Xu",
+        "Will Tian",
+        "Kai Yan",
+        "Kohler Ye",
+        "Scott Li",
+        "Qian Wang",
+        "Roy Gan",
+        "Hao Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-14T17:34:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.13001v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "system for dexterous robotic manipulation data collection and policy learning using VR and top-view cameras",
+      "llm_evidence_cn": "使用虚拟现实和顶视摄像头的灵巧机器人操作数据采集与策略学习系统",
+      "llm_evidence": "使用虚拟现实和顶视摄像头的灵巧机器人操作数据采集与策略学习系统",
+      "canonical_evidence": "使用虚拟现实和顶视摄像头的灵巧机器人操作数据采集与策略学习系统",
+      "llm_tldr_en": "XRZero-G0 is a hardware-software system for efficient dexterous manipulation data collection and policy learning.",
+      "llm_tldr_cn": "XRZero-G0是一个软硬件协同系统，旨在提高灵巧操作数据采集与策略学习的效率。",
+      "llm_tldr": "XRZero-G0是一个软硬件协同系统，旨在提高灵巧操作数据采集与策略学习的效率。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.11135v1",
+      "source": "arxiv",
+      "title": "AIM: Intent-Aware Unified world action Modeling with Spatial Value Maps",
+      "abstract": "Pretrained video generation models provide strong priors for robot control, but existing unified world action models still struggle to decode reliable actions without substantial robot-specific training. We attribute this limitation to a structural mismatch: while video models capture how scenes evolve, action generation requires explicit reasoning about where to interact and the underlying manipulation intent. We introduce AIM, an intent-aware unified world action model that bridges this gap via an explicit spatial interface. Instead of decoding actions directly from future visual representations, AIM predicts an aligned spatial value map that encodes task-relevant interaction structure, enabling a control-oriented abstraction of future dynamics. Built on a pretrained video generation model, AIM jointly models future observations and value maps within a shared mixture-of-transformers architecture. It employs intent-causal attention to route future information to the action branch exclusively through the value representation. We further propose a self-distillation reinforcement learning stage that freezes the video and value branches and optimizes only the action head using dense rewards derived from projected value-map responses together with sparse task-level signals. To support training and evaluation, we construct a simulation dataset of 30K manipulation trajectories with synchronized multi-view observations, actions, and value-map annotations. Experiments on RoboTwin 2.0 benchmark show that AIM achieves a 94.0% average success rate, significantly outperforming prior unified world action baselines. Notably, the improvement is more pronounced in long-horizon and contact-sensitive manipulation tasks, demonstrating the effectiveness of explicit spatial-intent modeling as a bridge between visual world modeling and robot control.",
+      "authors": [
+        "Liaoyuan Fan",
+        "Zetian Xu",
+        "Chen Cao",
+        "Wenyao Zhang",
+        "Mingqi Yuan",
+        "Jiayu Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-04-13T07:48:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.11135v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "unified world action model for robot control using pretrained video generation models",
+      "llm_evidence_cn": "利用预训练视频生成模型的机器人控制统一世界动作模型",
+      "llm_evidence": "利用预训练视频生成模型的机器人控制统一世界动作模型",
+      "canonical_evidence": "利用预训练视频生成模型的机器人控制统一世界动作模型",
+      "llm_tldr_en": "AIM uses spatial value maps to bridge the gap between video models and robotic manipulation intent.",
+      "llm_tldr_cn": "AIM通过空间价值图弥合了视频模型与机器人操作意图之间的差距。",
+      "llm_tldr": "AIM通过空间价值图弥合了视频模型与机器人操作意图之间的差距。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.15215v1",
+      "source": "arxiv",
+      "title": "A Hierarchical Spatiotemporal Action Tokenizer for In-Context Imitation Learning in Robotics",
+      "abstract": "We present a novel hierarchical spatiotemporal action tokenizer for in-context imitation learning. We first propose a hierarchical approach, which consists of two successive levels of vector quantization. In particular, the lower level assigns input actions to fine-grained subclusters, while the higher level further maps fine-grained subclusters to clusters. Our hierarchical approach outperforms the non-hierarchical counterpart, while mainly exploiting spatial information by reconstructing input actions. Furthermore, we extend our approach by utilizing both spatial and temporal cues, forming a hierarchical spatiotemporal action tokenizer, namely HiST-AT. Specifically, our hierarchical spatiotemporal approach conducts multi-level clustering, while simultaneously recovering input actions and their associated timestamps. Finally, extensive evaluations on multiple simulation and real robotic manipulation benchmarks show that our approach establishes a new state-of-the-art performance in in-context imitation learning.",
+      "authors": [
+        "Fawad Javed Fateh",
+        "Ali Shah Ali",
+        "Murad Popattia",
+        "Usman Nizamani",
+        "Andrey Konin",
+        "M. Zeeshan Zia",
+        "Quoc-Huy Tran"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-16T16:47:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.15215v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "spatiotemporal action tokenizer for imitation learning in robotics",
+      "llm_evidence_cn": "用于机器人模仿学习的时空动作分词器",
+      "llm_evidence": "用于机器人模仿学习的时空动作分词器",
+      "canonical_evidence": "用于机器人模仿学习的时空动作分词器",
+      "llm_tldr_en": "HiST-AT uses hierarchical spatiotemporal tokenization to improve in-context imitation learning for robotics.",
+      "llm_tldr_cn": "HiST-AT 利用分层时空分词技术改进了机器人的上下文模仿学习。",
+      "llm_tldr": "HiST-AT 利用分层时空分词技术改进了机器人的上下文模仿学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.15938v1",
+      "source": "arxiv",
+      "title": "VADF: Vision-Adaptive Diffusion Policy Framework for Efficient Robotic Manipulation",
+      "abstract": "Diffusion policies are becoming mainstream in robotic manipulation but suffer from hard negative class imbalance due to uniform sampling and lack of sample difficulty awareness, leading to slow training convergence and frequent inference timeout failures. We propose VADF (Vision-Adaptive Diffusion Policy Framework), a vision-driven dual-adaptive framework that significantly reduces convergence steps and achieves early success in inference, with model-agnostic design enabling seamless integration into any diffusion policy architecture. During training, we introduce Adaptive Loss Network (ALN), a lightweight MLP-based loss predictor that quantifies per-step sample difficulty in real time. Guided by hard negative mining, it performs weighted sampling to prioritize high-loss regions, enabling adaptive weight updates and faster convergence. In inference, we design the Hierarchical Vision Task Segmenter (HVTS), which decomposes high-level task instructions into multi-stage low-level sub-instructions based on visual input. It adaptively segments action sequences into simple and complex subtasks by assigning shorter noise schedules with longer direct execution sequences to simple actions, and longer noise steps with shorter execution sequences to complex ones, thereby dramatically reducing computational overhead and significantly improving the early success rate.",
+      "authors": [
+        "Xinglei Yu",
+        "Zhenyang Liu",
+        "Shufeng Nan",
+        "Simo Wu",
+        "Yanwei Fu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-17T10:56:59+00:00",
+      "link": "https://arxiv.org/pdf/2604.15938v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-adaptive diffusion policy for efficient robotic manipulation",
+      "llm_evidence_cn": "用于高效机器人操作的视觉自适应扩散策略",
+      "llm_evidence": "用于高效机器人操作的视觉自适应扩散策略",
+      "canonical_evidence": "用于高效机器人操作的视觉自适应扩散策略",
+      "llm_tldr_en": "VADF accelerates diffusion policy training for robotic manipulation through vision-driven adaptive loss.",
+      "llm_tldr_cn": "VADF 通过视觉驱动的自适应损失加速了机器人操作的扩散策略训练。",
+      "llm_tldr": "VADF 通过视觉驱动的自适应损失加速了机器人操作的扩散策略训练。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "policy learning methods for dexterous manipulation using first-person observations",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

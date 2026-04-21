@@ -1,0 +1,740 @@
+Title: FLASH: Fast Learning via GPU-Accelerated Simulation for High-Fidelity Deformable Manipulation in Minutes
+
+URL Source: https://arxiv.org/pdf/2604.17513v1
+
+Published Time: Tue, 21 Apr 2026 01:28:24 GMT
+
+Number of Pages: 20
+
+Markdown Content:
+# FLASH : Fast Learning via GPU-Accelerated Simulation for 
+
+# High-Fidelity Deformable Manipulation in Minutes 
+
+Siyuan Luo 1†∗ , Bingyang Zhou 1∗, Chong Zhang 2∗, Xin Liu 1, Zhenhao Huang 1, Gang Yang 1,Zhengtao Han 3, Xiaotian Hu 4, Eric Yang 5, Rymon Yu 5, Ziqiu Zeng 1, and Fan Shi 1†
+
+> 1
+
+NUS Human-Centered Robotic Lab 2ETH 3ShanghaiTech University 4Independent Researcher 5Gradient 
+
+∗ Equal Contribution †Corresponding: sy.luo@nus.edu.sg, fan.shi@nus.edu.sg 
+
+Website: https://siyuanluo.com/flash 
+
+Submitted on Jan 30, 2026. First revision (current version) on Mar 23, 2026. (a)  (b.2)  (c.2) 
+
+(b.1)  (c.1) 
+
+Fig. 1: Overview of the FLASH framework for GPU-parallel simulation and robot policy learning. (a) A custom, GPU-native deformable simulator executes massively parallel rollouts; scalability is enabled by our physical solvers tailored for GPU-friendly parallelism. (b–c) Qualitative results of two deformable manipulation tasks in simulation and on real hardware, illustrating high-fidelity contact and deformation. FLASH achieves 100–300× end-to-end training speedup compared to realtime. 
+
+Abstract —Simulation frameworks such as Isaac Sim have enabled scalable robot learning for locomotion and rigid-body manipulation; however, contact-rich simulation remains a major bottleneck for deformable object manipulation. The continuously changing geometry of soft materials, together with large num-bers of vertices and contact constraints, makes it difficult to achieve high accuracy, speed, and stability required for large-scale interactive learning. We present FLASH, a GPU-native simulation framework for contact-rich deformable manipulation, built on an accurate NCP-based solver that enforces strict contact and deformation constraints while being explicitly designed for fine-grained GPU parallelism. Rather than porting conventional single-instruction-multiple-data (SIMD) solvers to GPUs, FLASH redesigns the physics engine from the ground up to leverage modern GPU architectures, including optimized collision han-dling and memory layouts. As a result, FLASH scales to over 3 million degrees of freedom at 30 FPS on a single RTX 5090, while accurately simulating physical interactions. Policies trained solely on FLASH-generated synthetic data in minutes achieve robust zero-shot sim-to-real transfer, which we validate on physical robots performing challenging deformable manipulation tasks such as towel folding and garment folding, without any real-world demonstration, providing a practical alternative to labor-intensive real-world data collection. 
+
+I. I NTRODUCTION 
+
+Deformable object manipulation is a long-standing chal-lenge in robotics, with broad applications in domestic services, healthcare, and industrial automation. Unlike rigid bodies, deformable objects exhibit high degrees of freedom and com-plex dynamics, making generalized manipulation exceptionally difficult. Learning-based methods offer a promising direction, but they are inherently data-hungry, often requires millions of environment interactions to cover space of possible be-haviors. Collecting such large-scale interaction data in the real world is inefficient and costly, and may provide limited physical diversity for robust policy generalization. This places significant demands on the underlying simulation platform: it must simultaneously delivery high physical fidelity and high computational throughput. Existing simulators, however, struggle to satisfy both re-quirements. CPU-based high-precision physics engines lack 
+
+> arXiv:2604.17513v1 [cs.RO] 19 Apr 2026
+
+TABLE I: Comparison of Robotics Simulation Platforms                                                                
+
+> Platform Deformable Dynamic Solver Contact Model Multi-Envs Training GPU Torch Support Realistic Render
+> Issac Sim[24] ✓XPBD, FEM Compliant ✓✓✓✓
+> Newton[29] ✓XPBD, VBD Compliant ✓✓✗✗
+> Physx[23] ✓XPBD, FEM Compliant ✗✓✗✗
+> Genesis[3] ✓PBD, MPM Compliant ✓✓✓✗
+> SOFA[45] ✓FEM LCP-PGS ✗✓✗✗
+> Pinocchio[8] ✗/NCP (rigid) ✗✗✗✗
+> Mujoco[42] ✗/CCP (rigid) ✓✓✓✗
+> Flash (Ours) ✓FEM NCP ✓✓✓✓
+> LCP/CCP/NCP: Linear/Cone/Nonlinear Complementarity Problem; PGS: Projected Gauss-Seidel method.
+
+scalability for large-scale parallel learning, while prior GPU-based approaches are often limited by architectural constraints such as insufficient solver-level parallelism and inefficient memory access patterns, failing to fully exploit GPU computa-tional potential. Consequently, developing a high-performance numerical framework tailored for deformable object simulation that is explicitly designed to leverage GPU parallelism is a critical prerequisite for scalable robot learning in deformable manipulation. To address these challenges, we introduce FLASH , a GPU-friendly framework for high-performance simulation, render-ing, and learning, enabling simulation-only training of deploy-able deformable manipulation policies. The key insight behind FLASH is that scalable learning for deformable manipulation requires solver-level and rendering-level designs that are co-optimized for GPU parallelism, rather than treating simulation and learning as separate components. At the simulation level, FLASH models deformable dynamics with coupled constraints and introduces a lightweight non-smooth Newton contact solver designed for massive GPU parallelism; a local–global strategy further improves robustness under long-horizon time steps. At the rendering level, FLASH tightly couples depth rendering and occlusion handling with simulation to minimize data movement and latency. At the learning level, FLASH exploits large-scale, diverse simulated interactions, generated through systematic physical randomization and state-based su-pervision, to train vision-based manipulation policies without real-world demonstrations. Together, these design principles bridge high-fidelity deformable physics and scalable policy learning, enabling robust sim-to-real transfer on contact-rich manipulation tasks. By unifying high-fidelity simulation, efficient rendering, and scalable policy learning, we make the following contributions: 1) High-Performance Deformable Simulation and Ren-dering. A GPU-optimized architecture built from the ground up, featuring with a custom non-smooth Newton solver achieves real-time (30fps) simulation of 3M+ DoF contact-rich deformable scenes, achieving 100-300 × reduction in clock time on a single consumer GPU. 2) High-Throughput Synthesized Data Training. A fully automated pipeline learns vision-based manipulation policies at scale without real-world demonstrations, leveraging massive simulated interactions, systematic domain randomization, and state-based supervision. 3) Zero-Shot Sim-to-Real Transfer. High-fidelity contact modeling and occlusion-aware depth rendering enable policies trained entirely in simulation to transfer directly to real robots, operating robustly under perceptual un-certainty. 4) Generality Across Objects and Settings. General framework supports multiple deformable objects (cloth and volumetric materials) and learning settings without task-specific simulator redesign. II. R ELATED WORKS 
+
+A. Deformable Objects Simulation 
+
+Physics simulation for deformable objects has evolved along two main directions. The first focuses on accuracy, exemplified by SOFA [45], which provides high-fidelity soft tissue mod-eling for medical applications. The second prioritizes speed for robot learning. Early efforts like MuJoCo [42] offered efficient rigid-body simulation but limited soft-body support. Recent GPU-accelerated platforms have made large-scale de-formable simulation practical: Isaac Sim [24] uses Position-based Dynamics (PBD) on GPUs for parallel policy training, Genesis [3] combines Material-Point Method (MPM) [40] and PBD solvers for diverse soft materials, and Newton [29] provides a unified differentiable framework with multi-physics coupling, including Projective Dynamics (PD) and Vertex Block Descent (VBD) [9]. Despite these advances, existing simulators still struggle to balance physical fidelity with the throughput needed for contact-rich manipulation learning. The performance of these simulators largely depends on their underlying numerical methods. The FEM [38] offers high accuracy by discretizing continuum mechanics equations, but its computational cost limits real-time applications. To address this, PBD [28] takes a different approach by directly updating positions through constraint projection, achieving faster and more stable simulation; however, its effective stiffness depends on iteration number, making it difficult to model stiff materials. Extended PBD (XPBD) [21] addresses this limitation by intro-ducing a compliance parameter that decouples stiffness from solver iterations. PD [47] offers another solution, combining FEM’s physical accuracy with PBD’s efficiency through a local-global optimization framework. 
+
+B. Sim-to-Real Learning of Deformable Manipulation 
+
+Sim-to-real learning offers a scalable alternative to costly real-world data collection [7, 31, 50]. Early works demon-strated that domain randomization [26, 12] or algorithmic supervisors [37] could enable policies trained in simulation to transfer to the real world without real-world demonstra-tions. To facilitate efficient learning from simulated physical interactions, many approaches simplify the control problem by restricting actions to robust primitives (such as quasi-static picking [46], flinging [15], or velocity-parameterized motions [5]) or use primitives to generate data for imitation learning [43, 20]. To tackle the complexity of manipulation tasks, prior work has also explored alternative formulations, such as predicting dense deformation flows [44], utilizing generative dynamics models [41], or integrating language-guided trajectory planners [10, 4]. To guide exploration in high-dimensional state spaces, some methods also rely on expert demonstrations [36]. However, a significant sim-to-real gap remains in both dynamics and perception. Recent benchmarks [35, 16] indi-cate that standard simulators struggle to faithfully reproduce dynamic fabric behaviors, often requiring complex real-to-sim parameter tuning [25] or learning residual delta dynamics to iteratively refine trajectories [11]. Regarding perception, re-searchers bridge the perception gap by either abstracting away appearance discrepancies using semantic keypoints [19, 14] or enhancing simulation fidelity via mesh-attached neural fields [13]. These efforts collectively show that (i) learning directly from simulation can transfer, but (ii) performance is often bounded by the simulator constraints: not only fidelity, but also runtime, stability, and scalability. Our work addresses this with fast and realistic simulation, enabling high-throughput learning of deployable policies directly from simulation with contact-rich physical interactions, and supporting broad domain ran-domization and generation of diverse recovery scenarios to improve real-world robustness. III. P RELIMINARY 
+
+Our simulation-learning framework builds upon the GPU-friendly local-global pipeline proposed in [47]. Given positions 
+
+qh and velocities vh at time t, the implicit Euler integration computes the updated positions q at time t + h by solving 
+
+q = arg min 
+
+> q′
+
+ 12h2 M 12 (q′ − ˜q) 2 
+
+> F
+
++ X 
+
+> i
+
+ψi(q′)
+
+
+
+, (1) where M is the mass matrix and ˜q = qh + hvh + h2M−1fext 
+
+denotes the predicted state. The function ψi represents the elastic energy associated with the i-th finite element. 
+
+A. Contact-Constrained Dynamics 
+
+To account for contact interactions, the Lagrange multiplier formulation [22] augments the dynamics by introducing con-tact forces λ as constraint multipliers. Differentiating the ob-jective in Eq.(1) under contact constraints yields the following system: 
+
+M(q − ˜q) − h2fint (q) − h2 X
+
+> j∈L
+
+H⊤ 
+
+> j
+
+λ = 0 (2a) 
+
+∀j ∈ L , ϕj (q, λ) = 0, (2b) where fint denotes implicit internal forces derived from the elastic energies, and L is the set of all Lagrangian constraints. The contact Jacobian H maps the generalized coordinates to the contact space, while ϕj encodes either bilateral conditions or Signorini–Coulomb contact laws, depending on the con-straint type. 
+
+B. Projective Internal Forces 
+
+Following the projective dynamics formulation [6, 30], internal elastic forces are evaluated via auxiliary projective states. For each local elastic constraint, a projective variable 
+
+pi is obtained by solving a proximal problem: 
+
+pi = arg min 
+
+> p′
+> i
+
+ wi
+
+2 ∥p′ 
+
+> i
+
+− Giq∥2 
+
+> F
+
++ ζi(p′
+
+> i
+
+, ξ i)
+
+
+
+(3a) 
+
+fint (q) = X 
+
+> i
+
+wiG⊤
+
+> i
+
+ pi − Giq, (3b) where wi ≥ 0 is the stiffness weight of the i-th constraint, 
+
+Gi is the linear mapping from the mechanical state to the pro-jection state, and ζi defines the constitutive manifold through its minimizers. Substituting Eq.(3) into Eq.(2) and assembling all con-straints, the deformable multi-body system can be written as 
+
+Aq − b − h2H⊤λ = 0 (4a) 
+
+ϕ(q, λ) = 0, (4b) where the system matrix and right-hand side are defined as 
+
+A = M+h2 X 
+
+> i
+
+wiG⊤ 
+
+> i
+
+Gi, b = M˜q+h2 X 
+
+> i
+
+wiG⊤ 
+
+> i
+
+pi.
+
+C. Non-Smooth Newton System 
+
+To solve Eq.(4), a non-smooth Newton method is employed. Let 
+
+J = ∂ϕ
+
+∂q , g = b + h2J⊤λk−1, (5a) 
+
+E = ∂ϕ
+
+∂λ , h = −ϕ(qk−1, λk−1) + Jq k−1, (5b) then each Newton iteration solves the saddle-point system 
+
+A −J⊤
+
+J E
+
+  q
+
+h2∆λ
+
+
+
+=
+
+gh
+
+
+
+. (6) Solving Eq.(6) within each local-global iteration involves three stages: (i) assembling J, E, g, and h, and forming the Schur complement 
+
+Z = JA −1J⊤ + E; (7) Training   
+
+> Deployable Policy
+> Real Robot + Sensors
+> Deployment (Sim -Real )
+> Policy / Skill Learning
+> Action
+> Teacher -Student Policy
+> Learnin g
+
+# FLASH Core  Policy Learning 
+
+> GPU -Accelerated
+> Simulation
+
+Teacher -Student Policy  State -based 
+
+teacher 
+
+actions    
+
+> State -Based
+> Teacher Actions Distill Student Policy
+> Privileged
+> Information
+> Deployable
+> Actions
+
+Deformable Objects 
+
+(Cloth, Soft Toys…)     
+
+> Training Proprioception | Perception | Geometry
+> (𝑞 ,𝑑𝑞 ,force…) (depth) (mesh)
+
+Fig. 2: An illustration of the FLASH System. FLASH is a GPU-accelerated high-fidelity deformable simulation framework that enables fast, large-scale learning for robotic manipulation. On top of FLASH, we build a learning and control pipeline that constructs observations from proprioception and perception, trains deployable policies via imitation learning, and transfers the learned policy to real robots for deformable manipulation tasks. (ii) solving for the constraint increment 
+
+∆λ = 1
+
+h2 Z−1 JA −1g − h; (8) and (iii) updating positions with constraint corrections 
+
+q = A−1 b + h2J⊤(λk−1 + ∆ λ). (9) A key observation in [47] is that the system inverse ad-mits a sparse factorization A−1 = S⊤S, where S = L−1
+
+is the explicit inverse of the Cholesky factor of A. This representation enables both global linear solves and Schur-complement evaluations to be expressed as sparse matrix multiplications, making the overall pipeline highly amenable to GPU acceleration. IV. FLASH SYSTEM 
+
+A. System Overview 
+
+In this section, we present the construction of FLASH, our simulation and learning platform specifically designed for contact-rich deformable manipulation. We separate this section into three parts. First, we describe the physics simulation core, including our non-smooth Newton solver, multi-environment parallelization and its GPU optimization (Sec. IV-B). Second, we explain the details of large-scale fast training (Sec. IV-C). Finally, we present the real-to-sim transfer(Sec. IV-D). 
+
+B. Simulation Core 
+
+The formulation described in Sec. III provides the compu-tational foundation of a high-performance hyperelastic simula-tion framework with friction-accurate contact, which has been proven effective for real-time deformable dynamics [47]. In this work, we aim to build upon this framework to develop an integrated soft-body and robotic manipulation platform that supports contact-rich interaction, parallel simulation and learning, and scalable real-to-sim transfer. While the original method [47], demonstrates excellent performance for general deformable simulation, applying it to robotic manipulation introduces additional challenges. Many soft-material manipulation tasks (e.g., cloth folding and sliding contact) produce rich contact with time-dependent behaviors. Such contact-rich configurations activate a large number of constraints, significantly expanding the dimensionality of the Lagrange multiplier space and increasing both the computa-tional cost and numerical difficulty of constraint resolution. As the system formulated, the inverse of the system matrix 
+
+A−1 is, in general, fully dense. Consequently, the associated Schur-complement Z = JA −1J⊤ + E also becomes fully dense in contact-dominated regimes. This density leads to a considerable computational burden when building Eq.(7) and solving Eq.(8) the constrained system, which becomes a major performance bottleneck in large-scale contact scenarios. The issue is further exacerbated in parallelized simulation settings commonly used for robot learning, where multiple environ-ments are simulated concurrently. In such cases, the cost of contact resolution scales unfavorably with both the number ALGORITHM 1: Multi-Env GPU-based Pipeline  
+
+> 1
+
+Assemble block-diagonal operators ¯A; 
+
+> 2
+
+¯L = Cholesky ( ¯A), ¯S = ¯L−1; 
+
+> 3
+
+while simulation do  
+
+> 4
+
+Collision detection (parallel across envs);  
+
+> 5
+
+¯˜q = ¯ qt + h ¯vt + h2 ¯M−1 ¯fext ; 
+
+> 6
+
+for k ∈ { 1, . . . , k max } do  
+
+> 7
+
+¯p = project ( ¯Gi ¯qk−1); // local projection, batched over envs  
+
+> 8
+
+Build ¯J, ¯E, ¯g, ¯h from ¯qk−1, ¯λk−1, and ¯p; 
+
+> 9
+
+¯Z = ¯J ¯M−1 ¯J⊤ + ¯E; 
+
+> 10
+
+∆¯λ = 1 
+
+> h2
+
+¯Z−1
+
+¯h − ¯J ¯S⊤ ¯S ¯g
+
+
+
+; 
+
+> 11
+
+¯λk = ¯λk−1 + ∆ ¯λ; 
+
+> 12
+
+¯qk = ¯S⊤ ¯S
+
+¯b + h2 ¯J⊤ ¯λk
+
+
+
+; 
+
+> 13
+
+end for  
+
+> 14
+
+¯qt+h = ¯ qkmax , ¯vt+h = 1
+
+> h
+
+ ¯qt+h − ¯qt
+
+; 
+
+> 15
+
+end while 
+
+of environments and the number of active contact constraints, severely limiting throughput and practical scalability. 
+
+1) A Lightweight Simulation System: Motivated by these observations, we propose a lightweight variant of the method in [47] that improves the sparsity of the Schur complement while preserving numerical robustness. Specifically, we ap-proximate 
+
+Z = JA −1J⊤ + E ≈ JM −1J⊤ + E. (10) This reformulation relaxes the fully implicit contact metric by adopting an inertia-dominated inverse, reducing global contact coupling while retaining the implicit treatment of elastic forces through projective dynamics. Similar mass-based or inertia-weighted contact metrics have been widely adopted in rigid-body and deformable contact formulations [39, 18] to improve sparsity and scalability. In contact-rich manipulation scenarios involving soft materials such as cloth or foam-like objects, elastic coupling typically dominates system behavior, whereas contact responses are largely governed by inertia and local geometry. Under these conditions, the proposed approximation provides a favorable balance between physical fidelity and computational efficiency. Crucially, the resulting sparsity is preserved throughout the non-smooth Newton iterations, enabling efficient and scalable simulation across multiple environments, as discussed next. For tasks that involve a small number of contacts but require strong global contact coupling, the original fully implicit formulation can be retained, allowing the contact metric to be selected flexibly based on task requirements. 
+
+2) Multi-Env Supporting: We first make the parallel struc-ture across environments explicit by defining the block-diagonal system matrix and the stacked primal variable 
+
+¯A =
+
+
+
+A1
+
+. . .
+
+An
+
+ , ¯q =
+
+
+
+q1
+
+...
+
+qn
+
+ , (11) where Ai and qi denote the system matrix and the primal vari-able associated with the i-th environment, respectively. Anal-ogously, all Jacobian- and system-related matrices are assem-bled in a block-diagonal manner across environments, while vector-valued quantities are stacked by concatenation. For example, ¯J = blkdiag( J1, . . . , Jn) and ¯λ = col( λ1, . . . , λn).Using the block-diagonal and stacked notation defined above, the non-smooth Newton system in Sec. III can be directly extended to parallel environments. Specifically, the saddle-point system in Eq.(6) is assembled as 
+
+ ¯A −¯J⊤
+
+¯J ¯E
+
+  ¯q
+
+h2∆¯λ
+
+
+
+=
+
+¯g
+
+¯h
+
+
+
+. (12) The corresponding Schur-complement system, constraint lin-ear system, and position corrections follow identically from the single-environment formulation (Equations (7)–(9)) by replacing scalar quantities with their block-diagonal or stacked counterparts. Algorithm1 summarizes the resulting lightweight simulation pipeline and its multi-environment implementation. 
+
+3) System-Level Parallelism: Owning to the proposed inertia-dominated approximation, all stages of the resulting simulation pipeline operate on sparse and block-structured lin-ear systems. In particular, the dense coupling induced by A−1
+
+in the fully implicit contact formulation is eliminated, ensuring that the system matrix, Schur-complement, and associated linear operators remain sparse throughout the non-smooth Newton iterations. This property enables multiple simulation environments to be seamlessly assembled into a single large-scale sparse system using the block-diagonal and stacked rep-resentations defined above. Importantly, no additional coupling is introduced beyond the block-diagonal assembly, allowing each environment to be processed independently within the same unified system. All core operations are expressed using standard sparse primitives, allowing hardware parallelism, load balancing, and scheduling to be handled automatically by the underlying numerical libraries. As a result, scalability is achieved at the system level rather than through manual parallelization. The computational cost scales linearly with the number of environments and active contact constraints, providing a robust foundation for large-scale contact-rich simulation and parallel robot learning. 
+
+4) Real-to-Sim Transfer and Rendering: To bridge the gap between simulation and reality, we construct a high-fidelity digital twin focusing on geometry, physics, and visual align-ment. Geometric Modeling: Mesh models for deformable objects are generated based on complexity: simple objects (e.g., square towels) are created procedurally, while complex garments (e.g., T-shirts) are reconstructed from 3D scans or from existing synthetic datasets [49]. Physical Calibration: 
+
+We tune key simulation parameters, such as Poisson’s ratio and Young’s modulus, to align the simulated deformation dynamics with real-world physical behaviors. Visual Render-ing: Leveraging standard hand-eye calibration, we generate simulated depth images with robot self-occlusion that are spatially aligned with real-world data. To further account for unmodeled discrepancies, we apply domain randomization to both physical dynamics and visual observations during policy learning. Details in appendix. F = 0.1 mg      
+
+> (c)
+> (a)
+> (b.1) (b.2)
+> F = 0.1 mg
+> μ=0.101
+> μ=0.099
+> F = 0.1 mg
+
+Fig. 3: Single environment simulation results. We per-formed simulation experiments within a single environment, (a) Friction validation demonstrating the simulator’s ability to distinguish coefficients with 0.001 precision. (b) Cloth simulation fidelity tested via cloth-chair collision. (c) A soft gripper grasping a soft cube via friction. 
+
+C. Policy Learning 
+
+We adopt a teacher-student distillation framework [27], as illustrated in Fig. 2. We first synthesize teachers using privileged state information and heuristic rules that command end-effectors to grasp and transport specific keypoints to target locations. These heuristics also include reactive recovery behaviors to handle grasp failures. For complex tasks like garment folding, we organize these primitives into multi-stage finite-state machines. Subsequently, we distill these behaviors into deployable student policies, which are conditioned on a stacked history of proprioceptive and visual observations. To ensure sim-to-real robustness, we apply extensive domain ran-domization during this distillation process. Further technical details are provided in the supplementary materials. 
+
+D. Sim-to-Real Transfer 
+
+We achieve zero-shot sim-to-real transfer by explicitly aligning the observation and action spaces between simulation and the physical world. The policy trained in simulation is directly deployed on the real robot without any fine-tuning. 
+
+Perception. We employ YOLOv8 [17] and SAM [33] to segment the target object from raw depth streams. This pipeline isolates the object of interest and filters out back-ground noise, ensuring the real-world visual input matches the clean observations used in simulation. 
+
+Control. The policy predicts end-effector actions at =(∆ p, w ) per arm, where ∆p ∈ R3 denotes the position delta. The continuous gripper parameter w ∈ R is discretized into a binary open/close command via a sigmoid function. Inte-grating the position delta yields the Cartesian targets, which are converted into joint positions using a numerical Inverse Kinematics (IK) solver and executed by a high-frequency low-level controller. For the dual-arm setup, the policy outputs 8-dimensional actions partitioned between the two arms. Further details are provided in the supplementary material. V. S IMULATOR & L EARNING RESULTS 
+
+We simulate cloth and volumes with frictional contact in Fig. 3. Then we evaluate high-fidelity cloth simulation on a challenging yet controlled T-shirt dual-sleeve folding task that closely mirrors real-world manipulation. A single-layer T-shirt rests on a planar table with Coulomb friction ( μ = 1 .0), and cloth self-collision is disabled to ensure fair cross-platform comparison. Two rigid cubic grippers are attached to the sleeve tips and driven in open-loop along identical Cartesian trajectories across all simulators: the left sleeve is folded across the midline and released, followed by a symmetric motion of the right sleeve. All experiments are executed on a single RTX 4090 GPU. Unless noted, gripper motions are slow and quasi-static (each fold lasts 5s with ∆t = 0 .01 , s), ensuring that differences in the final garment state arise solely from each simulator’s handling of contact, friction, material response, and numerical stability rather than control or dynamic effects. 
+
+A. Cross-simulator comparison Real  Ours  Genesis (PBD)  Issac Sim (FEM)  Newton (VBD) 
+
+> (a) Comparison with Real World and Baselines.
+> (b) Simulation Parameter Ablation.
+> control speed=1x,
+> bending=0.2,
+> iter=5, linear=10
+> control speed=10x ,
+> bending=0.2,
+> iter=5, linear=10
+> control speed=1x,
+> bending=2.0,
+> iter=5, linear=10
+> control speed=1x,
+> bending=4.0,
+> iter=5, linear=10
+> control speed=1x,
+> bending=0.2,
+> iter=2, linear=2
+> Reference
+
+Fig. 4: T-shirt dual-sleeve folding results. We compare the final results of different simulators and parameters after folding a T-shirt with a fixed trajectory. (a) Comparison with real world and baselines. We compare against representative GPU-capable simulators: Genesis (PBD), Isaac Sim (FEM), Newton (VBD), and real execution; FLASH most closely matches real behavior, producing smooth, symmetric folds that settle stably with accurate frictional sticking, while baselines exhibit various failure features. (b) Simulation parameter ablation (FLASH). With the trajectory fixed (Sec. V.A), varying control speed, bending stiffness, and solver iterations yields predictable changes. We compare FLASH against representative GPU-capable simulators: Isaac Sim (FEM), Newton (VBD), and Genesis Fig. 5: Learned policies in simulation. (a) A single arm folds the towel. (b) A humanoid folds the towel. (c) Two arms fold the towel together. (d) Two arms fold the T-shirt. (e) Two arms fold the shorts. (PBD), as well as real-world execution, with baseline pa-rameters carefully tuned to maximize inextensibility, allow compliant bending, and avoid solver under-convergence. Fig-ure 4 shows that FLASH most closely matches real behavior, producing smooth, symmetric folds that settle into a stable resting configuration with accurate frictional sticking and no spurious sliding or post-release motion. In contrast, Genesis exhibits large elastic snapping and poor frictional stability, leading to persistent sliding and failure to reach a stable fold. Isaac Sim struggles to couple stiff in-plane stretching with compliant bending, resulting in shear-like distortions and excessive wrinkling reminiscent of crumpling. Newton yields the strongest baseline result but remains overly stiff in bending: the folded sleeve fails to settle flush on the table and gradually elastically unfolds after release. These results highlight that realistic garment folding critically depends on simultaneously accurate frictional contact resolution and well-balanced stretch–bend coupling. Even small modeling or nu-merical artifacts can compound into qualitatively incorrect folds or unstable rest states, underscoring that high-fidelity contact-rich simulation is essential—not merely for visual realism, but for generating physically meaningful trajectories and states suitable for learning reliable manipulation policies. 
+
+B. Parameter ablation in FLASH 
+
+We evaluate the physical interpretability of FLASH under variations in motion speed, bending stiffness, and solver fi-delity (Fig. 4(b)). With slow manipulation and soft bending, FLASH produces smooth, symmetric folds that drape and settle stably. Increasing the gripper speed by 10 × induces stronger inertial coupling, drawing the shoulder region tighter toward the fold as expected in dynamic pulling. At fixed slow speed, increasing bending stiffness progressively lifts and widens the shoulder and increases elastic rebound, moving the sleeve cuff farther from the release point; at very high stiffness, the fold approaches over-flipping but remains stable due to gravity-elastic balance. We finally push the solver to an extreme low-iteration regime by setting both the local-global iterations and the linear-solver iterations to 2. This substantially weakens long-range elastic coupling, so the grip-pers’ local motions can no longer fold the shoulder region effectively, however, the simulation still remains numerically stable and maintains a robust frictional solution. Overall, TABLE II: Massively parallel throughput comparison (ms/step; lower is better). We vary the number of parallel environments from 1 to 256.                                
+
+> Simulator #1 #8 #32 #64 #128 #256 FLASH (ours) 5.68 9.67 24.79 50.43 90.41 185.10 Genesis (PBD) 5.97 6.07 N/A aN/A aN/A aN/A a
+> Isaac Sim (FEM) 18.02 18.46 19.88 22.62 29.04 47.81 Newton (VBD) 9.57 12.23 24.47 52.79 143.76 480.64
+> aSimulation exhibits numerical instability and fails to converge.
+
+FLASH parameters exhibit clear physical semantics, and re-duced accuracy degrades behavior in predictable, robotics-relevant ways rather than producing unstable artifacts. 
+
+C. Massively parallel throughput across simulators 
+
+We compare simulation throughput under large-scale par-allel execution by measuring per-step time as the number of parallel environments increases (Table II), using solver settings that yield quasi-static folding behavior consistent with real execution rather than maximizing raw FPS. Genesis becomes numerically unstable and diverges under multi-environment execution, preventing meaningful scaling. Isaac Sim achieves strong parallel efficiency, but its simulated garment behav-ior remains physically inaccurate with pronounced artifacts (Figure 4), limiting the usefulness of the generated data for learning. Newton sustains stable execution but is consis-tently slower than FLASH and produces less realistic folding, whereas FLASH maintains stable simulation and offers a better fidelity/throughput tradeoff for the garment folding task. 
+
+D. Learning Results in Simulation 
+
+To move beyond simple pre-defined tasks that can be solved with hand-crafted controllers, we target more general real-world settings with diverse task specifications and initial conditions, and rely on learning-based policies. As shown in Fig. 5, we use the proposed learning pipeline to train five cloth-folding tasks in simulation: single-arm towel folding with a desktop manipulator (a) and a humanoid robot (b), dual-arm towel folding (c), T-shirt folding (d), and shorts folding (e). The total wall-clock time (simulation plus learning) required to obtain deployable real-world policies on a single NVIDIA RTX 5090 is respectively 50 min for (a), 50 min for (b), 150 min for (c), 600 min for (d), and 600 min for (e). These policies are then validated in the following section. Fig. 6: Robustness to external disturbances. (a.1–a.3) Re-covery from unexpected displacement by human. (b.1–b.3) Recovery from the towel being pulled away . The system maintains task continuity without human intervention. VI. R EAL -R OBOT EXPERIMENTS 
+
+This section validates our approach on real robots. We begin by benchmarking efficiency and robustness on towel folding in Sec. VI-A, followed by a demonstration of handling complex garments in Sec. VI-B, highlighting the framework’s scalability to difficult manipulation scenarios. 
+
+Experimental Setup. We evaluate our method on two platforms shown in right part of Fig. 1: Airbot Play [1] (a pair of 6-DoF desktop arms with a parallel gripper) and 
+
+AdamU [32] (an upper-body humanoid with dual arms and dexterous hands). Both utilize a top-down ZED Mini for depth stream perception. Inference and control are handled by an external RTX 4090 workstation for Airbot, or an onboard Jetson Orin NX and Intel NUC for AdamU. The policy pre-dicts incremental end-effector positions and gripper open/close commands. These are executed via the manufacturer’s SDK (Airbot) or processed through a numerical IK solver [48] with low-level PID tracking (AdamU). 
+
+A. Folding Towel 1) Efficiency and Robustness Analysis: Training on a single NVIDIA RTX 5090, our framework yields a robust policy on the desktop Airbot Play manipulator in 50 minutes. Despite this rapid training, the closed-loop policy demonstrates: 
+
+Robust Initialization. The system tolerates significant placement uncertainty, succeeding under spatial translations of 
+
+±8 cm which effectively spans the reachable workspace and arbitrary azimuthal rotations. 
+
+Reactive Recovery. As shown in Fig. 6, the policy exhibits emergent recovery behaviors against dynamic disturbances:  
+
+> •
+
+Missed Grasps: Driven by continuous visual feedback, the robot naturally re-attempts grasp actions upon failure.  
+
+> •
+
+Human Interference: The policy dynamically adapts to external perturbations (e.g., dragging the towel away), ensuring task completion without reset. 
+
+2) Long-Duration Continuous Evaluation: We conducted a continuous one-hour evaluation on AdamU, utilizing both arms to assess system consistency. Over the course of 106 
+
+Fig. 7: Qualitative real-world results. (Left) Keyframe visu-alization of bimanual folding ( t1 → t3) for (a) shorts and (b) T-shirt. (Right) Snapshots from the continuous evaluation on AdamU at 20, 40, and 60 min (c.1–c.3). Main frames show egocentric camera observations; insets show the third-person view and clock time. back-to-back trials, a trial is considered successful if the robot aligns the towel corner within 5 cm of the goal pose in under 40 seconds. Under this metric, the system achieved an aggregate 85.8% success rate (91/106). Figure 7 visualizes these qualitative results by overlaying the transparent initial states with the opaque final states. This visualization confirms that despite significant initialization variance and accumulated cloth deformations, the policy consistently converges to the precise target configuration. Furthermore, inference latency remained stable throughout the extended operation. 
+
+B. Folding Tasks on Other Garments 
+
+To validate the generalization capability of our framework, we extend the experiments to garments with distinct topologies and dynamics. Here, we focus on the consistency between sim-ulation behaviors and real-world execution, shown in Fig. 7. 
+
+1) Folding Shorts: This experiment involves a folding task for short pants with a dual-leg topology. The robot first aligns and folds the two pant legs, followed by a lateral fold from one side. Qualitative results demonstrate a successful sim-to-real transfer, with the policy effectively handling the geometric split and physical complexity. Quantitatively, our system achieved a 60% success rate (12/20) under human evaluation. 
+
+2) Folding T-shirts: Folding T-shirts constitutes a longer-horizon task compared to single-step folding and introduces substantial variation during execution, making it particularly challenging. We demonstrate that the learned manipulation policy successfully performs the required multi-step folding sequence in the real world, closely matching its behavior in simulation. In experiments, the system achieved consecutive successful executions, indicating that our sim-to-real pipeline preserves trajectory coherence and physical plausibility even over long-horizon manipulation sequences. Quantitatively, our system achieved a 70% success rate (35/50) under human evaluation. 
+
+C. Failure Modes 
+
+We identify two dominant failure sources in deployment: 
+
+1) Perception bottleneck: We use segmented depth inputs to isolate dynamics transfer from the RGB visual gap. Depth sen-sor noise on thin fabrics and self occlusions cause occasional grasp misalignment, accounting for the majority of real-world failures and the imprecise final geometry. 
+
+2) Hardware abstraction gap: We abstract diverse hard-ware (AdamU, Airbot) into a unified binary grasp model with-out modeling motor level dynamics such as actuation delays and backlash. This enables zero-shot transfer but introduces tracking deviations that degrade final garment geometry. The lack of tactile feedback further limits the system’s ability to detect and correct these deviations. VII. C ONCLUSION AND DISCUSSION 
+
+In this paper, we presented FLASH, a GPU-native simula-tion platform for deformable simulation, rendering, and learn-ing. By coupling GPU-parallel simulation with efficient depth rendering and a scalable training pipeline, FLASH supports high-throughput data generation for deformable manipulation learning. Through a suite of garment manipulation tasks, we demonstrate that FLASH reduces the sim-to-real gap and enables simulation-only training across multiple contact-rich scenarios. Notably, our vision-based policies can be trained in minutes and transferred zero-shot to real hardware, ex-hibiting robust execution and recovery behaviors. Our results strengthen the case for using large-scale synthetic interaction data to train deformable manipulation policies, substantially reducing reliance on costly real-world data collection. How-ever, limitations remain. Our current implementation still incurs CPU–GPU transfer overhead in parts of the pipeline, leaving room for further optimization. In addition, handling more complex and longer-horizon garment manipulation will likely require improved learning formulations and supervision signals, including more effective reward or feedback design. ACKNOWLEDGMENT 
+
+This work was supported in part by the NUS Presidential Young Professorship grant (A-0009982-00-00) and the MOE AcRF Tier 1 24-1234-P0001 Funding. The authors would like to thank the Gradient and PranaLabs for their generous support and for providing the collaborative environment necessary to conduct this research. We also thanks the support from Swiss AI Initiative Small Grant, NVIDIA Academic Grant, and Google Research Funding. REFERENCES 
+
+[1] Airbot. Airbot play: 6-dof robotic arm. https://airbots. online, 2024. Accessed: 2026-01-24. [2] Sheldon Andrews, Kenny Erleben, and Zachary Fer-guson. Contact and friction simulation for computer graphics. In ACM SIGGRAPH 2022 Courses , SIG-GRAPH ’22, New York, NY, USA, 2022. Association for Computing Machinery. ISBN 9781450393621. doi: 10.1145/3532720.3535640. URL https://doi.org/10.1145/ 3532720.3535640. [3] Genesis Authors. Genesis: A generative and universal physics engine for robotics and beyond, December 2024. URL https://github.com/Genesis-Embodied-AI/Genesis. [4] Oriol Barbany, Adrià Colomé, and Carme Torras. Bifold: Bimanual cloth folding with language guidance. arXiv preprint arXiv:2501.16458 , 2025. [5] David Blanco-Mulero, Gokhan Alcan, Fares J Abu-Dakka, and Ville Kyrki. Qdp: Learning to sequentially optimise quasi-static and dynamic manipulation primi-tives for robotic cloth manipulation. In 2023 IEEE/RSJ International Conference on Intelligent Robots and Sys-tems (IROS) , pages 984–991. IEEE, 2023. [6] Sofien Bouaziz, Sebastian Martin, Tiantian Liu, Ladislav Kavan, and Mark Pauly. Projective dynamics: Fusing constraint projections for fast simulation. In Seminal Graphics Papers: Pushing the Boundaries, Volume 2 ,pages 787–797. 2023. [7] Qingwen Bu, Jisong Cai, Li Chen, Xiuqi Cui, Yan Ding, Siyuan Feng, Shenyuan Gao, Xindong He, Xuan Hu, Xu Huang, et al. Agibot world colosseo: A large-scale manipulation platform for scalable and intelligent embodied systems. arXiv preprint arXiv:2503.06669 ,2025. [8] Justin Carpentier, Guilhem Saurel, Gabriele Buondonno, Joseph Mirabel, Florent Lamiraux, Olivier Stasse, and Nicolas Mansard. The pinocchio c++ library – a fast and flexible implementation of rigid body dynamics algorithms and their analytical derivatives. In IEEE International Symposium on System Integrations (SII) ,2019. [9] Anka He Chen, Ziheng Liu, Yin Yang, and Cem Yuksel. Vertex block descent. ACM Transactions on Graphics (TOG) , 43(4):1–16, 2024. [10] Haonan Chen, Junxiao Li, Ruihai Wu, Yiwei Liu, Yi-wen Hou, Zhixuan Xu, Jingxiang Guo, Chongkai Gao, Zhenyu Wei, Shensi Xu, et al. Metafold: Language-guided multi-category garment folding framework via trajectory generation and foundation model. arXiv preprint arXiv:2503.08372 , 2025. [11] Cheng Chi, Benjamin Burchfiel, Eric Cousineau, Siyuan Feng, and Shuran Song. Iterative residual policy: for goal-conditioned dynamic manipulation of deformable objects. The International Journal of Robotics Research ,43(4):389–404, 2024. [12] Alexander Clegg, Zackory Erickson, Patrick Grady, Greg Turk, Charles C Kemp, and C Karen Liu. Learning to collaborate from simulation for robot-assisted dressing. 
+
+IEEE Robotics and Automation Letters , 5(2):2746–2753, 2020. [13] Donatien Delehelle, Darwin Caldwell, and Fei Chen. Garfield: Addressing the visual sim-to-real gap in gar-ment manipulation with mesh-attached radiance fields. In 2024 IEEE International Conference on Robotics and Biomimetics (ROBIO) , pages 77–84. IEEE, 2024. [14] Yuhong Deng and David Hsu. General-purpose clothes manipulation with semantic keypoints. In 2025 IEEE International Conference on Robotics and Automation (ICRA) , pages 13181–13187. IEEE, 2025. [15] Huy Ha and Shuran Song. Flingbot: The unreasonable effectiveness of dynamic manipulation for cloth unfold-ing. In Conference on Robot Learning , pages 24–33. PMLR, 2022. [16] Wenkang Hu, Xincheng Tang, Yitong Li, Zhengjie Shu, Wei Li, Huamin Wang, Ruigang Yang, et al. Real gar-ment benchmark (rgbench): A comprehensive benchmark for robotic garment manipulation featuring a high-fidelity scalable simulator. arXiv preprint arXiv:2511.06434 ,2025. [17] Glenn Jocher, Ayush Chaurasia, and Jing Qiu. Ultra-lytics YOLO, 2023. URL https://github.com/ultralytics/ ultralytics. Accessed: 2026-01-19. [18] Danny M. Kaufman, Shinjiro Sueda, Doug L. James, and Dinesh K. Pai. Staggered projections for frictional contact in multibody systems. ACM Trans. Graph. , 27 (5), December 2008. ISSN 0730-0301. doi: 10.1145/ 1409060.1409117. [19] Thomas Lips, Victor-Louis De Gusseme, and Francis Wyffels. Learning keypoints for robotic cloth manipula-tion using synthetic data. IEEE Robotics and Automation Letters , 9(7):6528–6535, 2024. [20] Haoran Lu, Ruihai Wu, Yitong Li, Sijie Li, Ziyu Zhu, Chuanruo Ning, Yan Zhao, Longzan Luo, Yuanpei Chen, and Hao Dong. Garmentlab: A unified simulation and benchmark for garment manipulation. Advances in Neu-ral Information Processing Systems , 37:11866–11903, 2024. [21] Miles Macklin, Matthias Müller, and Nuttapong Chen-tanez. Xpbd: position-based simulation of compliant constrained dynamics. In Proceedings of the 9th Inter-national Conference on Motion in Games , pages 49–54, 2016. [22] Miles Macklin, Kenny Erleben, Matthias Müller, Nut-tapong Chentanez, Stefan Jeschke, and Viktor Makoviy-chuk. Non-smooth newton methods for deformable multi-body dynamics. ACM Transactions on Graphics (TOG) , 38(5):1–20, 2019. [23] Miles Macklin, Kier Storey, Michelle Lu, Pierre Terdi-man, Nuttapong Chentanez, Stefan Jeschke, and Matthias Müller. Small steps in physics simulation. In Proceedings of the 18th Annual ACM SIGGRAPH/Eurographics Sym-posium on Computer Animation , SCA ’19, New York, NY, USA, 2019. Association for Computing Machinery. ISBN 9781450366779. doi: 10.1145/3309486.3340247. URL https://doi.org/10.1145/3309486.3340247. [24] Viktor Makoviychuk, Lukasz Wawrzyniak, Yunrong Guo, Michelle Lu, Kier Storey, Miles Macklin, David Hoeller, Nikita Rudin, Arthur Allshire, Ankur Handa, et al. Isaac gym: High performance gpu-based physics simulation for robot learning. arXiv preprint arXiv:2108.10470 , 2021. [25] Omey M Manyar, Hantao Ye, Siddharth Mayya, Fan Wang, and Satyandra K Gupta. Real-to-sim parameter learning for deformable packages using high-fidelity sim-ulators for robotic manipulation. In International Design Engineering Technical Conferences and Computers and Information in Engineering Conference , volume 89206, page V02AT02A004. American Society of Mechanical Engineers, 2025. [26] Jan Matas, Stephen James, and Andrew J. Davison. Sim-to-real reinforcement learning for deformable object manipulation. In Aude Billard, Anca Dragan, Jan Peters, and Jun Morimoto, editors, Proceedings of The 2nd Con-ference on Robot Learning , volume 87 of Proceedings of Machine Learning Research , pages 734–743. PMLR, 29–31 Oct 2018. [27] Takahiro Miki, Joonho Lee, Jemin Hwangbo, Lorenz Wellhausen, Vladlen Koltun, and Marco Hutter. Learning robust perceptive locomotion for quadrupedal robots in the wild. Science robotics , 7(62):eabk2822, 2022. [28] Matthias Müller, Bruno Heidelberger, Marcus Hennix, and John Ratcliff. Position based dynamics. Journal of Visual Communication and Image Representation , 18(2): 109–118, 2007. [29] Newton Project Contributors. Newton: An open-source, gpu-accelerated physics engine for robotics, 2025. URL https://github.com/newton-physics/newton. Initiated by Disney Research, Google DeepMind, and NVIDIA. [30] Matthew Overby, George E. Brown, Jie Li, and Rahul Narain. ADMM Projective Dynamics: Fast Simulation of Hyperelastic Models with Dynamic Constraints. IEEE Transactions on Visualization and Computer Graphics ,23(10):2222–2234, October 2017. ISSN 1077-2626. doi: 10.1109/TVCG.2017.2730875. URL http://ieeexplore. ieee.org/document/7990052/. [31] Abby O’Neill, Abdul Rehman, Abhiram Maddukuri, Ab-hishek Gupta, Abhishek Padalkar, Abraham Lee, Acorn Pooley, Agrim Gupta, Ajay Mandlekar, Ajinkya Jain, et al. Open x-embodiment: Robotic learning datasets and rt-x models: Open x-embodiment collaboration 0. In 2024 IEEE International Conference on Robotics and Automation (ICRA) , pages 6892–6903. IEEE, 2024. [32] PNDbotics. Adamu humanoid robot documenta-tion. https://wiki.pndbotics.com/half_robot/half_robot, 2024. Accessed: 2026-01-24. [33] Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Ro-man Rädle, Chloe Rolland, Laura Gustafson, et al. Sam 2: Segment anything in images and videos. arXiv preprint arXiv:2408.00714 , 2024. [34] Stéphane Ross, Geoffrey Gordon, and Drew Bagnell. A reduction of imitation learning and structured prediction to no-regret online learning. In Proceedings of the fourteenth international conference on artificial intelli-gence and statistics , pages 627–635. JMLR Workshop and Conference Proceedings, 2011. [35] Yingdong Ru, Lipeng Zhuang, Zhuo He, Florent PAudonnet, and Gerardo Aragon-Caramasa. Can real-to-sim approaches capture dynamic fabric behavior for robotic fabric manipulation? arXiv preprint arXiv:2503.16310 , 2025. [36] Gautam Salhotra, I-Chun Arthur Liu, Marcus Dominguez-Kuhne, and Gaurav S Sukhatme. Learning deformable object manipulation from expert demonstrations. IEEE Robotics and Automation Letters ,7(4):8775–8782, 2022. [37] Daniel Seita, Aditya Ganapathi, Ryan Hoque, Minho Hwang, Edward Cen, Ajay Kumar Tanwani, Ashwin Bal-akrishna, Brijen Thananjeyan, Jeffrey Ichnowski, Nawid Jamali, et al. Deep imitation learning of sequential fabric smoothing from an algorithmic supervisor. In 2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , pages 9651–9658. IEEE, 2020. [38] Eftychios Sifakis and Jernej Barbic. Fem simulation of 3d deformable solids: a practitioner’s guide to theory, discretization and model reduction. In Acm siggraph 2012 courses , pages 1–50. 2012. [39] D. E. Stewart and J. C. Trinkle. An Implicit Time-Stepping Scheme for Rigid Body Dynamics with Inelastic Collisions and Coulomb Friction. Inter-national Journal for Numerical Methods in Engi-neering , 39(15):2673–2691, 1996. ISSN 1097-0207. doi: 10.1002/(SICI)1097-0207(19960815)39:15<2673:: AID-NME972>3.0.CO;2-I. [40] Alexey Stomakhin, Craig Schroeder, Lawrence Chai, Joseph Teran, and Andrew Selle. A material point method for snow simulation. ACM Transactions on Graphics (TOG) , 32(4):1–10, 2013. [41] Tongxuan Tian, Haoyang Li, Bo Ai, Xiaodi Yuan, Zhiao Huang, and Hao Su. Diffusion dynamics models with generative state estimation for cloth manipulation. arXiv preprint arXiv:2503.11999 , 2025. [42] Emanuel Todorov, Tom Erez, and Yuval Tassa. Mujoco: A physics engine for model-based control. In 2012 IEEE/RSJ international conference on intelligent robots and systems , pages 5026–5033. IEEE, 2012. [43] Yuran Wang, Ruihai Wu, Yue Chen, Jiarui Wang, Jiaqi Liang, Ziyu Zhu, Haoran Geng, Jitendra Malik, Pieter Abbeel, and Hao Dong. Dexgarmentlab: Dexterous garment manipulation environment with generalizable policy. arXiv preprint arXiv:2505.11032 , 2025. [44] Thomas Weng, Sujay Man Bajracharya, Yufei Wang, Khush Agrawal, and David Held. Fabricflownet: Bi-manual cloth manipulation with a flow-based policy. In 
+
+Conference on Robot Learning , pages 192–202. PMLR, 2022. [45] J Westwood et al. SOFA—an open source framework for medical simulation , volume 125. IOS Press Amsterdam, The Netherlands, 2007. [46] Yilin Wu, Wilson Yan, Thanard Kurutach, Lerrel Pinto, and Pieter Abbeel. Learning to manipulate deformable objects without demonstrations. In Robotics: Science and Systems , 2020. [47] Ziqiu Zeng, Siyuan Luo, Fan Shi, and Zhongkai Zhang. Fast but accurate: A real-time hyperelastic simulator with robust frictional contact. 44(4), July 2025. ISSN 0730-0301. doi: 10.1145/3730834. URL https://doi.org/10. 1145/3730834. [48] Sheng Zhong, Thomas Power, Ashwin Gupta, and Pe-ter Mitrano. PyTorch Kinematics. https://github. com/UM-ARM-Lab/pytorch_kinematics, 2024. doi: 10.5281/zenodo.7700587. [49] Bingyang Zhou, Haoyu Zhou, Tianhai Liang, Qiaojun Yu, Siheng Zhao, Yuwei Zeng, Jun Lv, Siyuan Luo, Qiancai Wang, Xinyuan Yu, Haonan Chen, Cewu Lu, and Lin Shao. Clothesnet: An information-rich 3d garment model repository with simulated clothes environment. In 
+
+Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) , pages 20428–20438, Octo-ber 2023. [50] Brianna Zitkovich, Tianhe Yu, Sichun Xu, Peng Xu, Ted Xiao, Fei Xia, Jialin Wu, Paul Wohlhart, Stefan Welker, Ayzaan Wahid, et al. Rt-2: Vision-language-action models transfer web knowledge to robotic control. In Conference on Robot Learning , pages 2165–2183. PMLR, 2023. SUPPLEMENTARY MATERIALS 
+
+VIII. S IMULATION SYSTEM SPECIFICATION 
+
+To demonstrate the usability and modularity of our simulation framework, we provide the complete implementation details for the bimanual shirt folding example presented in Fig. 8. Our system adopts a hybrid architecture: the core physics engine is implemented in highly optimized C++ and CUDA to ensure maximum efficiency on the GPU, while the user interface is exposed via Python bindings (pybind11) to facilitate rapid prototyping and ease of use. As shown in Fig. 9, the simulation workflow is structured into two logical components: 
+
+1) Simulation Configuration: We configure the underlying physics engine through two distinct specifications: one establishes global simulation settings (e.g., gravity, timestep), static boundaries (e.g., plane collisions), and numerical solvers, while the other defines object-specific attributes (e.g., initial transformation and mechanical properties).  
+
+> •
+
+Scene Configuration (Fig. 9 (a)): This file establishes the global numerical environment and static boundaries. It defines fundamental simulation constants such as timestep and gravity , alongside environmental primitives like 
+
+planecollisions . Crucially, it configures the solver, specifically the LiteNonSmoothNewton_CUDA constraint solver, while exposing convergence parameters (e.g., iterations , tolerance ) to control the precision of the solver.  
+
+> •
+
+Asset Properties (Fig. 9 (b)): This file defines the object’s geometric initialization and constitutive behavior. It specifies the initial kinematic state via the transformation field and selects the discretization element type (e.g., TRIANGLE and 
+
+TETRAHEDRON ). Mechanical fidelity is strictly governed by the mechanical_props part, where we specify the elastic energy type (e.g. TRI_ARAP for As-Rigid-As-Possible energy) and parameters such as obj_mass and bending stiffness are explicitly assigned to determine deformation characteristics. 
+
+2) High-Level Python Interface: Fig. 9 (c) demonstrates how to use the Python API to drive the simulation. The workflow proceeds as follows:  
+
+> •
+
+Initialization: The script first loads the scene configuration using sim.load_config() and sets the parallel environment count via sim.set_envs() . The C++ backend parses the JSON files and automatically initializes the specified number of parallel environments, allocating necessary GPU memory.  
+
+> •
+
+Task Setup: We add manipulators using high-level commands like sim.add_ee() . Additionally, we also provide rendering-related API like setting up cameras.  
+
+> •
+
+Control Loop: In the main loop, the system takes as input kinematic targets (e.g., via policy output) and sends commands via sim.move_ee() and sim.grasp_ee() . The sim.step() function then invokes the physics engine of FLASH to advance the simulation state for all parallel environments simultaneously. 
+
+Fig. 8: Snapshots from the bimanual shirt folding example, simulated using our FLASH simulator. The dual end-effectors execute a sequential folding strategy: the left gripper first manipulates the left sleeve to the center and releases it, followed by the right gripper completing the fold for the opposing sleeve. The end-effector trajectories are generated via kinematic interpolation through a sequence of pre-defined heuristic waypoints. {" timestep ": 0.01 , " gravity ": [0 , -9.81 , 0] , " linearsolver ": { " type ": " SPARSE_INVERSE_CUDA " }, " constraintsolver ": {" type ": " LiteNonSmoothNewton_CUDA ", " maxforce ": 1E +10 , " iterations ": 10 , " tolerance ": 1E -9 }, " planecollisions ": { ... }, " objects ": {" cloth ": " path / to / cloth . json " }}
+
+(a) Scene Configuration (scene.json)                
+
+> {" mesh ": " path / to / cloth . obj ", " element_type ": " TRIANGLE ", " transformation ": {" trans ": [0 , 0, 0] , " rotation ": [0 , 0, 0] }, " mechanical_props ": {" obj_mass ": 1000 , " young ": 3E +4 , " poisson ": 0.4 , " constitutive ": " TRI_ARAP ", " bending ": 0.2 }}
+
+(b) Asset Properties (cloth.json) 
+
+import flash_sim # 1. Initialize Simulator sim = flash_sim . RealtimeSim () sim . load_config (" path / to / scene . json ") # Load config defined in (a) sim . set_envs ( n_envs =128) # Activate parallel environments sim . initialize () # 2. Setup Dual End - Effectors sim . add_ee (" left " , start_pose_l , size =[0.05]*3) sim . add_ee (" right " , start_pose_r , size =[0.05]*3) # 3. Simulation Loop 
+
+for step in range (1000) : # Trajectory generation pose_l , grasp_l = compute_fold_trajectory ( step , side =" left ") pose_r , grasp_r = compute_fold_trajectory ( step , side =" right ") sim . move_ee (" left " , pose_l ) sim . grasp_ee (" left " , grasp_l ) sim . move_ee (" right " , pose_r ) sim . grasp_ee (" right " , grasp_r ) sim . step () 
+
+(c) Control Script (Python) 
+
+Fig. 9: Implementation overview for the bimanual shirt folding example (Fig. 8). (a) The scene configuration defines GPU-accelerated solvers and environment settings. (b) The asset configuration defines the object’s initial transformation and physical properties (e.g., bending stiffness). (c) The high-level Python API allows users to drive massively parallel simulations (e.g., 128 ) with concise control logic. Note that auxiliary code (e.g., imports, trajectory interpolation) is omitted for clarity. IX. R EAL -TO -S IM DETAILS 
+
+To construct a high-fidelity simulation environment that minimizes the reality gap, we address two critical aspects: geometric consistency and dynamic fidelity. We first detail the extrinsic alignment of the robot workcell to ensure spatial correspondence. Subsequently, we describe the system identification process used to tune the physical parameters of the deformable object. 
+
+1) Extrinsic Alignment: We present the specific calibration procedures and validation results for our two experimental setups below. 
+
+a) AdamU Setup (Eye-in-Hand): To achieve a comprehensive top-down view, we mounted a ZED Mini camera via a custom rigid extension above the robot’s head. Since the camera moves with the neck joints (yaw and pitch), we formulated the alignment as an eye-in-hand calibration problem. We collected approximately 40 RGB-D frames of a static checkerboard from diverse viewpoints and solved for the kinematic transformation. Validation via dense point cloud accumulation (Fig. 10) demonstrates high consistency; the superimposed checkerboard pattern remains sharp and planar across all views, confirming precise alignment. Note that minor geometric artifacts at the periphery are attributable to the intrinsic depth distortion of the ZED Mini sensor at oblique angles rather than calibration error. Fig. 10: Visualization of Extrinsic Alignment and Scene Calibration. (a.1) & (b.1) Real-world Validation: The accumulated point clouds for Adam-U (a.1) and the sub-pixel reprojection errors ( < 0.05 px) for Airbot (b.1) confirm high-precision geometric alignment. (a.2) & (b.2) Simulation Alignment: The corresponding digital twin environments are shown on the right. In both setups, the calibrated camera frame is visualized overhead, where the blue arrow explicitly denotes the Z-axis aligned with the optical axis. 
+
+b) Airbot Setup (Eye-to-Hand): For the Airbot platform, we employ an eye-to-hand configuration with a fixed external top-down camera. The robot’s end-effector grasps a lightweight (100g) calibration board featuring a single 9 cm ArUco marker. Following a standard eye-to-hand calibration pipeline, we collect a series of RGB images paired with end-effector poses retrieved directly from the Airbot API. We validate the calibration accuracy by comparing the marker’s geometric center and corners, computed via the robot’s forward kinematics and the solved extrinsics, against their ground-truth pixel coordinates detected in the image. As illustrated in Figure 10, the projected corners align closely with the visually detected ones, demonstrating minimal reprojection error and precise spatial registration. For our dual-arm configuration, this procedure is performed independently for each manipulator. By registering both robot bases relative to the shared fixed camera frame, we effectively unify the entire workspace into a single global coordinate system, enabling precise bi-manual coordination. 
+
+2) System Identification: We aim to identify the physical parameters of the deformable object that minimize the behavioral discrepancy between simulation and reality. We focus on tuning the material properties governing deformation, specifically Young’s modulus and Poisson’s ratio. 
+
+a) Data Collection: We design a canonical "corner lift" interaction to fully excite the material’s dynamic properties. The robot grasps one corner of the fabric and executes a lifting trajectory to induce complex deformations. To capture the ground truth geometry, we record the sequence using a depth camera. We segment the cloth from the background to extract the dynamic point cloud sequence. Note that parts of the real-world cloth point cloud may be incomplete due to occlusions caused by the robot gripper during the lift. 
+
+b) Parameter Optimization: We employ an open-loop replay strategy to reproduce the experiment in simulation. Specifically, we drive the simulated robot using the exact end-effector trajectory recorded from the real world. We perform a grid search over Young’s modulus and Poisson’s ratio (while keeping density and friction fixed based on physical measurements). For each parameter set, we generate a simulated mesh sequence. The optimal parameters are selected by minimizing the geometric alignment error between the real and simulated states. We quantify this error using the average point-to-mesh distance between the segmented real-world point clouds and the simulated surface at synchronized keyframes. As visualized in Figure 11, the simulated mesh (red) exhibits strong spatial alignment with the observed real-world point cloud (blue) under the identified parameters, illustrating the geometric correspondence achieved by our dynamic modeling. 
+
+3) Depth Simulation and Perception Augmentation: To ensure the policy transfers zero-shot to the real world, the perception pipeline in simulation must mimic both the sensor-level imperfections and the semantic-level segmentation errors observed in Fig. 11: Visualization of System Identification. (a) Real-world experimental setup for data collection. (b) Spatial alignment between the simulated mesh (red) and real-world observation (blue) at a synchronized timestamp. Note that the missing upper region of the real-world point cloud is due to occlusion by the robot gripper. real-world experiments. Figure 12 visualizes the alignment of depth observations between the physical setup and the simulation environment. The left side depicts the hardware setup with an overhead RGB-D camera. We visualize the segmented RGB observation (bottom left) to intuitively display the robot’s configuration and occlusion challenges; however, strictly speaking, our policy operates solely on the corresponding segmented depth images . As shown in the comparison, the raw real-world data presents obvious artifacts, including robot self-occlusion and imperfect segmentation boundaries. To bridge this gap, our simulation pipeline (right) systematically introduces synthetic perturbations—including random blockout, boundary jitter, and kinematic-based self-occlusion—generating a composite augmented observation that closely matches the real-world distribution. In addition to mitigating the depth rendering gap between simulation and the real world, it is also crucial to maintain high computational efficiency to facilitate massively parallel reinforcement learning. We implement a versatile ray-casting pipeline that generates depth maps, instance segmentation masks, and point clouds directly from the simulation state. To accommodate diverse hardware infrastructures, our system supports both a GPU-based backend utilizing the NVIDIA OptiX and a CPU-based backend powered by Intel Embree. As shown in Table III, we evaluate the rendering overhead across increasing environment counts. While the current rendering time scales linearly with the number of environments due to the present engineering implementation of the ray-casting batches, the absolute latency remains sufficiently low to meet the high-throughput requirements of policy learning. This linear trend is primarily driven by the overhead of dynamic vertex update, where future implementations utilizing batched geometry updates will further reduce rendering latency. TABLE III: Depth rendering overload over massively parallel environments. We evaluate on the AdamU towel-folding scene ( 32k vertices, 13k faces).           
+
+> Num. Envs 1832 64 128
+> Time (ms) 0.75 2.23 7.20 14.18 27.31
+
+Fig. 12: Real-Sim Observation Alignment and Depth Augmentation. Left: The physical hardware setup featuring an overhead RGB-D camera and the resulting segmented RGB observation . Note that the real observation (bottom left) presents obvious robot arm occlusions. Right: Our simulation rendering pipeline designed to bridge this domain gap. We sequentially apply random blockout to mimic segmentation imperfections, boundary jitter & noise to match sensor characteristics, and robot self-occlusion to reproduce the physical setup. The final composite augmentation (bottom right) serves as the robust input for policy training. X. T EACHER -S TUDENT LEARNING DESIGNS 
+
+1) Teacher Synthesis: We generate teacher actions from cloth-state information using a hierarchical finite-state machine design. As illustrated in Fig. 13, we design a low-level pattern for the end-effector (EE) to grasp and transport keypoints via:  
+
+> •
+
+an Approach primitive that maintains a vertical hover while moving laterally until the EE is horizontally aligned with the keypoint vertex,  
+
+> •
+
+a Grasp primitive that reaches down and closes the EE,  
+
+> •
+
+and a Transport primitive that moves the grasped keypoint toward the target. When a grasp fails, the teacher goes back to the Approach phase to recover. The high-level sequencing of these primitives is adapted to each task’s topology (Table IV). For towel folding tasks, the teacher performs direct single-stage folds. For T-shirt and shorts folding, we use a multi-stage procedure that includes dragging to exploit the limited workspace and complete the fold. The corresponding motion patterns are also shown in our videos. We specify stage-dependent thresholds to detect failures and trigger a return to earlier stages when necessary. 
+
+2) Student Architecture: Our student policy architecture is illustrated in Fig. 14. We concatenate five-step histories of both proprioceptive and perceptual inputs. Perception is encoded with a convolutional neural network (CNN), while the remaining components are implemented with multilayer perceptrons (MLPs). We additionally train the model to reconstruct state variables, which helps automatic fulfillment and termination detection during deployment. 
+
+3) Training Details: We apply DAgger [34] to distill teacher actions into deployable student policies, using the mean-absolute error (MAE) loss for position delta and the log-probability loss for EE open/close logits. In addition to the action distillation objectives, we include an auxiliary mean-squared error (MSE) loss for state reconstruction. During training, we apply domain randomization to the cloth dynamics parameters ( 0.5× ∼ 1.5×), the initial cloth and EE states, proprioceptive observations (uniform noise calibrated to empirical control precision), and perception (camera pose jitter, edge noise, and random occlusions). The implementation will be open sourced for reproducibility. 
+
+1. Approach 
+
+2. Grasp 
+
+3. Transport 
+
+Keypoint 
+
+Target 
+
+2. GRASP 
+
+(Reach down & Close EE) 
+
+1. APPROACH 
+
+(EE Open) 
+
+3. TRANSPORT 
+
+(EE Closed) 
+
+Horizontal Dist 
+
+< Threshold 
+
+EE Closed & Contact Detected 
+
+Object Dropped (Recovery) 
+
+(a) Illustration of teacher EE trajectory (b) Low-level primitive state machine 
+
+Fig. 13: Low-level teacher primitives. Our teachers use the depicted low-level primitives to grasp and transport specific keypoints to target locations. TABLE IV: High-Level Teacher Scheduling for Cloth Folding Tasks 
+
+Task Stage EE Keypoint Target 
+
+Towel (1 arm) 1 Left Left-top corner Right-bottom corner Towel (2 arm) 1 Left Distant left corner Adjacent left corner Right Distant right corner Adjacent right corner T-Shirt 1 Left Left hem Right hem Right Left sleeve Right sleeve 2 Left No grasp Point in mid-air Right Neckline Point on the right 3 Right Neckline Center hem Shorts 1 Left Left opening Right opening Right Left waist Right waist 2 Left No grasp Point in mid-air Right Center waist Point on the front-right 3 Right Center waist Right opening  
+
+> *
+
+All designs can be mirrored for left- versus right-sided execution. Perception: 
+
+> The past 5 frames of object-segmented depth images
+> Proprioception :
+> The past 5 frames of (EE poses, grasp states, and previous actions)
+
+MLP 
+
+> [→256]
+
+MLP 
+
+> [→256→256→256→action_dim]
+
+MLP 
+
+> [→256→128→state_dim]
+> Actions
+> State Reconstruction:
+> Prediction of keypoint/target positions and grasp states
+
+CNN 
+
+> [Conv2D k=3 s=2 p=1 C:→8→16→32
+> & AdaptiveAvgPool(5×5) & Flatten & Linear (→64)]
+
+Fig. 14: Student policy architecture. Our student policy outputs actions and state reconstruction from proprioception and perception observations. XI. S IM -TO -R EAL DETAILS 
+
+1) Online Segmentation Pipeline: We adopt a streamlined combination of YOLO [17] and SAM 2 [33] for real-time background removal. First, a lightweight YOLO detector, fine-tuned on a small set of real-world images, identifies the target object’s bounding box. This box is then used as a spatial prompt for SAM 2 to generate a precise pixel-level mask in a zero-shot manner. Finally, the resulting binary mask is applied to the depth image to isolate the target geometry, serving as the clean observation for the control policy. 
+
+2) Policy Deployment and Action Execution: a) AdamU Deployment: For the real-robot deployment of AdamU, we implement an onboard asynchronous multi-threading mechanism across a heterogeneous computing platform, consisting of an NVIDIA Jetson Orin NX (high-level controller) and an Intel NUC (low-level controller).  
+
+> •
+
+Perception and Inference: The ZED Mini camera is connected to the Orin NX, which serves as the unit for visual perception. The depth streams, acting as exteroceptive observations, are processed on the Orin NX. The policy, trained in simulation, is exported as an ONNX model for efficient deployment. Policy inference is executed on the Orin NX at approximately 1–2 Hz, predicting end-effector (EE) position increments and dexterous hand states (open/closed), which are then converted into target EE poses.  
+
+> •
+
+Control and Feedback: Data transmission between the Orin NX and Intel NUC is handled via ROS2. The Intel NUC receives the target EE poses, computes joint angles via the inverse kinematics (IK) solver, and commands the joint motors and dexterous hands at 100 Hz using a PID controller. Simultaneously, the NUC retrieves joint states, calculates actual EE poses via forward kinematics (FK), and streams this proprioceptive data back to the Orin NX at 100 Hz for closed-loop policy inference. 
+
+b) Airbot Deployment: The Airbot Play also utilizes an asynchronous multi-threading framework, with all high-level processing centralized on an external RTX 4090 workstation.  
+
+> •
+
+Perception and Inference: For this setup, the ZED Mini is connected to the RTX 4090 workstation. Proprioceptive states (EE poses) are retrieved at 200 Hz via the manufacturer’s SDK. Similar to AdamU, the policy is deployed using the ONNX framework, performing inference at 2 Hz to generate EE position increments and target poses.  
+
+> •
+
+Control and Feedback: Control commands for the Airbot’s EE poses and gripper states are sent directly through the manufacturer’s SDK to the robot base, ensuring low-latency execution. XII. C ROSS -S IMULATOR EXPERIMENTAL SETUP 
+
+We carefully tune baseline simulators to ensure numerical stability, maximize inextensibility, allow compliant bending, and avoid solver under-convergence. The specific physical properties and solver parameters for each simulator are detailed in Tables V, VI, VII, and VIII. TABLE V: Parameters of FLASH.      
+
+> Cloth Physical Properties
+> Bending stiffness 0.2 Young’s modulus 3e4 Poisson’s ratio 0.4
+> FLASH Solver Parameters
+> Linear-solver iterations 10 Local-global iterations 5
+
+XIII. B ILATERAL CONSTRAINT FOR CLOTH CONTROL IN FLASH We model the interaction between the virtual gripper and the cloth using position-level bilateral constraints [2]. Unlike penalty-based collision methods, bilateral constraints provide a stiff and stable attachment, effectively locking the selected cloth vertices to the gripper’s trajectory. Formally, let xi ∈ R3 denote the position of the i-th vertex of the cloth mesh, and pgrip (t) denote the target position of the virtual gripper at time t. For a set of grasped vertices Sgrip , we impose the following equality constraint for each vertex 
+
+i ∈ S grip :
+
+C(xi, t ) = xi − pgrip (t) = 0 (13) TABLE VI: Parameters of Genesis. 
+
+Cloth Physical Properties 
+
+Bending compliance 0.1 Stretch compliance 1e-7 Bending relaxation 0.1 Stretch relaxation 0.3 Air resistance 0
+
+PBD Solver Parameters 
+
+Max. bending solver iterations 10 Max. stretch solver iterations 40 Max. density solver iterations 10 Max. viscosity solver iterations 10 
+
+TABLE VII: Parameters of Isaac Sim. 
+
+Cloth Physical Properties 
+
+Surface thickness 1e-3 Surface bending stiffness 0.2 Surface stretch stiffness 1e3 Young’s modulus 3e4 Poisson’s ratio 0.4 
+
+PGS Solver Parameters 
+
+Min. position solver iterations 100 Max. position solver iterations 255 Min. velocity solver iterations 100 Max. velocity solver iterations 255 
+
+TABLE VIII: Parameters of Newton. 
+
+Cloth Physical Properties 
+
+Bending stiffness 0.2 Bending damping 0Triangular elastic stiffness 1e3 Triangular area stiffness 1e3 Triangular damping stiffness 1e-7 
+
+VBD Solver Parameters 
+
+Solver iterations 100 
+
+This constraint enforces that the relative distance between the cloth vertex and the gripper anchor remains zero, effectively creating a zero-length rigid link. To simulate the grasping and releasing actions, we dynamically update the set Sgrip . When the gripper is activated, vertices within a proximity threshold are added to Sgrip (constraint activation). Conversely, to release the fabric, the corresponding indices are discarded from Sgrip (constraint deactivation), restoring the vertices’ degrees of freedom governed solely by internal elastic forces and gravity. void BilateralizedSolver :: setConstraintLinearSolverDense ( linearsolver :: dense :: TypeDenseLinearSolver type ) {
+
+switch ( type ) {... < linearsolver :: DENSE_CHOLESKY_EIGEN >... ... < linearsolver :: DENSE_CG >... 
+
+case linearsolver :: dense :: DENSE_PCG_JACOBI : {_constraintlinearsolver = std :: make_shared < linearsolver :: iterative :: DenseJacobiPCGSolver >( _maxIter , _tol , false ); 
+
+break ;}
+
+case linearsolver :: dense :: DENSE_CR : {_constraintlinearsolver = std :: make_shared < linearsolver :: iterative :: DenseCRSolver >( _maxIter , _tol , false ); 
+
+break ;}... < linearsolver :: DENSE_PCR_JACOBI >... }}
+
+Fig. 15: Code snippet demonstrating the initialization of our dense linear solver. The system supports dynamic switching between various algorithms (e.g., DENSE_PCG_JACOBI, DENSE_CR) to strictly enforce bilateral constraints while maintaining numerical stability during complex gripper-cloth interactions.

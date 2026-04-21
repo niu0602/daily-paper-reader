@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-001.webp",
+      "caption": "Fig. 4: T-shirt dual-sleeve folding results. We compare the final results of different simulators and parameters after folding a T-shirt with a fixed trajectory. (a) Comparison with real world and baselines. We compare against representative GPU-capable simulators: Genesis (PBD), Isaac Sim (FEM), Newton (VBD), and real execution; FLASH most closely matches real behavior, producing smooth, symmetric folds that settle stably with accurate frictional sticking, while baselines exhibit various failure features. (b) Simulation parameter ablation (FLASH). With the trajectory fixed (Sec. V.A), varying control speed, bending stiffness, and solver iterations yields predictable changes.",
+      "page": 6,
+      "index": 1,
+      "width": 474,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-002.webp",
+      "caption": "Fig. 11: Visualization of System Identification. (a) Real-world experimental setup for data collection. (b) Spatial alignment between the simulated mesh (red) and real-world observation (blue) at a synchronized timestamp. Note that the missing upper region of the real-world point cloud is due to occlusion by the robot gripper.",
+      "page": 15,
+      "index": 2,
+      "width": 860,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-003.webp",
+      "caption": "TABLE I: Comparison of Robotics Simulation Platforms",
+      "page": 2,
+      "index": 3,
+      "width": 1076,
+      "height": 255
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-004.webp",
+      "caption": "Fig. 5: Learned policies in simulation. (a) A single arm folds the towel. (b) A humanoid folds the towel. (c) Two arms fold the towel together. (d) Two arms fold the T-shirt. (e) Two arms fold the shorts.",
+      "page": 7,
+      "index": 4,
+      "width": 968,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-005.webp",
+      "caption": "Fig. 10: Visualization of Extrinsic Alignment and Scene Calibration. (a.1) & (b.1) Real-world Validation: The accumulated point clouds for Adam-U (a.1) and the sub-pixel reprojection errors (< 0.05 px) for Airbot (b.1) confirm high-precision geometric alignment. (a.2) & (b.2) Simulation Alignment: The corresponding digital twin environments are shown on the right. In both setups, the calibrated camera frame is visualized overhead, where the blue arrow explicitly denotes the Z-axis aligned with the optical axis.",
+      "page": 14,
+      "index": 5,
+      "width": 648,
+      "height": 556
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-006.webp",
+      "caption": "TABLE V: Parameters of FLASH.",
+      "page": 18,
+      "index": 6,
+      "width": 586,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-007.webp",
+      "caption": "Fig. 9: Implementation overview for the bimanual shirt folding example (Fig. 8). (a) The scene configuration defines GPU-accelerated solvers and environment settings. (b) The asset configuration defines the object’s initial transformation and physical properties (e.g., bending stiffness). (c) The high-level Python API allows users to drive massively parallel simulations (e.g., 128) with concise control logic. Note that auxiliary code (e.g., imports, trajectory interpolation) is omitted for clarity.",
+      "page": 13,
+      "index": 7,
+      "width": 1090,
+      "height": 897
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-008.webp",
+      "caption": "Fig. 6: Robustness to external disturbances. (a.1–a.3) Recovery from unexpected displacement by human. (b.1–b.3) Recovery from the towel being pulled away. The system maintains task continuity without human intervention.",
+      "page": 8,
+      "index": 8,
+      "width": 500,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-009.webp",
+      "caption": "Fig. 2: An illustration of the FLASH System. FLASH is a GPU-accelerated high-fidelity deformable simulation framework that enables fast, large-scale learning for robotic manipulation. On top of FLASH, we build a learning and control pipeline that constructs observations from proprioception and perception, trains deployable policies via imitation learning, and transfers the learned policy to real robots for deformable manipulation tasks.",
+      "page": 4,
+      "index": 9,
+      "width": 1106,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-010.webp",
+      "caption": "TABLE IV: High-Level Teacher Scheduling for Cloth Folding Tasks",
+      "page": 17,
+      "index": 10,
+      "width": 594,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-011.webp",
+      "caption": "Fig. 14: Student policy architecture. Our student policy outputs actions and state reconstruction from proprioception and perception observations.",
+      "page": 17,
+      "index": 11,
+      "width": 1040,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-012.webp",
+      "caption": "Fig. 13: Low-level teacher primitives. Our teachers use the depicted low-level primitives to grasp and transport specific keypoints to target locations.",
+      "page": 17,
+      "index": 12,
+      "width": 956,
+      "height": 423
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-013.webp",
+      "caption": "Fig. 8: Snapshots from the bimanual shirt folding example, simulated using our FLASH simulator. The dual end-effectors execute a sequential folding strategy: the left gripper first manipulates the left sleeve to the center and releases it, followed by the right gripper completing the fold for the opposing sleeve. The end-effector trajectories are generated via kinematic interpolation through a sequence of pre-defined heuristic waypoints.",
+      "page": 12,
+      "index": 13,
+      "width": 1076,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-014.webp",
+      "caption": "Fig. 15: Code snippet demonstrating the initialization of our dense linear solver. The system supports dynamic switching between various algorithms (e.g., DENSE_PCG_JACOBI, DENSE_CR) to strictly enforce bilateral constraints while maintaining numerical stability during complex gripper-cloth interactions.",
+      "page": 20,
+      "index": 14,
+      "width": 1090,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17513v1/fig-015.webp",
+      "caption": "Fig. 12: Real-Sim Observation Alignment and Depth Augmentation. Left: The physical hardware setup featuring an overhead RGB-D camera and the resulting segmented RGB observation. Note that the real observation (bottom left) presents obvious robot arm occlusions. Right: Our simulation rendering pipeline designed to bridge this domain gap. We sequentially apply random blockout to mimic segmentation imperfections, boundary jitter & noise to match sensor characteristics, and robot self-occlusion to reproduce the physical setup. The final composite augmentation (bottom right) serves as the robust input for policy training.",
+      "page": 16,
+      "index": 15,
+      "width": 648,
+      "height": 627
+    }
+  ]
+}

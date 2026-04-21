@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-001.webp",
+      "caption": "Figure 5. Qualitative comparison on Epic100 and Bridge. Intermediate frames (i = 4, 8, 12) from the generated sequences are shown.",
+      "page": 6,
+      "index": 1,
+      "width": 1023,
+      "height": 420
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-002.webp",
+      "caption": "Figure 1. Examples of diverse generated object state transition sequences under different textual and visual conditions: (a) different action instructions with the same initial and target states; (b) different target states with the same initial state and action instruction; (c) the same action instruction, initial state, and target state; (d) different action instructions and target states with the same initial state.",
+      "page": 2,
+      "index": 2,
+      "width": 1036,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-003.webp",
+      "caption": "Table 1. Quantitative comparison on Epic100, EgoFHO, DualArm, and Bridge, reporting the FVD, VTQ, VTC, and VIC scores.",
+      "page": 7,
+      "index": 3,
+      "width": 1026,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-004.webp",
+      "caption": "Figure 2. Illustration of the proposed EgoIn framework. EgoIn works in two stages: (1) transition process modeling using the tuned TransitionVLM and (2) intermediate frame generation based on the transition conditions. Additionally, Object-aware Auxiliary Supervision is designed to localize key objects involved in actions and works with the frame reconstruction loss to promote model learning.",
+      "page": 3,
+      "index": 4,
+      "width": 1025,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-005.webp",
+      "caption": "Figure 6. Ablation on the components of EgoIn.",
+      "page": 8,
+      "index": 5,
+      "width": 513,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-006.webp",
+      "caption": "Figure 7. Ablation on the effectiveness of TransitionVLM in video generation.",
+      "page": 8,
+      "index": 6,
+      "width": 519,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-007.webp",
+      "caption": "Figure 3. Illustration of the tuning process for the proposed TransitionVLM: (a) shows the data curation process used to obtain state-aware and transition-aware information by providing a specific input to GPT-4o. (b) illustrates the VLM tuning process using the curated data.",
+      "page": 4,
+      "index": 7,
+      "width": 1034,
+      "height": 495
+    },
+    {
+      "url": "assets/figures/arxiv/2604.17749v1/fig-008.webp",
+      "caption": "Figure 4. Illustration of the Transition Conditioning (TC) module, which consists of two components: (a) Multi-modal Semantic State Encoding, which extracts state-aware features grounded in visual semantics; and (b) Range-Aware Transition Encoding, which generates and refines transition-aware features for each frame based on the inferred step ranges.",
+      "page": 5,
+      "index": 8,
+      "width": 495,
+      "height": 720
+    }
+  ]
+}

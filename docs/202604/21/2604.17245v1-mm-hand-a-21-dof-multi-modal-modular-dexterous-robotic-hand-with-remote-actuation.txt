@@ -1,0 +1,256 @@
+Title: MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation
+
+URL Source: https://arxiv.org/pdf/2604.17245v1
+
+Published Time: Tue, 21 Apr 2026 01:05:57 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+> 1
+
+# MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation 
+
+Zhuoheng Li 1, Qingquan Lin 1, Checheng Yu 1, Qiangyu Chen 2, Zhiqian Lan 1, Lutong Zhang 3, Hongyang Li 1, and Ping Luo 1
+
+Abstract —High-DOF dexterous hands require compact actua-tion, rich sensing, and reliable thermal behavior, but conventional designs often occupy valuable in-hand space, increase end-effector mass, and suffer from heat accumulation near the hand. Remote tendon-driven actuation offers an alternative by relocating motors to the robot base or an external motor hub, thereby freeing the fingers and palm for additional degrees of freedom, sensing modules, and maintainable mechanical structures. This paper presents MM-Hand, a 21-DOF Multimodal Modular dexterous hand based on remote tendon-driven actuation. The hand integrates spring-return tendon-driven fingers, modular 3D-printed finger and palm structures, quick tendon connectors for maintenance, and a multimodal sensing system including joint angle sensors, tactile sensors, motor-side feedback, and in-palm stereo vision. We further analyze tendon-sheath length variation and friction loss to guide the design of the routing, motor hub, and closed-loop joint control. Experiments validate the transmission, output force, sensing, and control capability of the system. The fingertip force reaches 25N under a 1m remote sheath transmission, demonstrating practical load capacity despite long-distance tendon routing. Closed-loop joint-level experiments further evaluate command tracking with a static arm and during arm motion. These results show that MM-Hand provides a lightweight, sensor-rich, and maintainable hardware platform for dexterous manipulation research. To support the community, all hardware designs and software frameworks are made fully open-source at https://mmlab.hk/research/MM-Hand .
+
+Index Terms —Dexterous Hand, Remote Tendon-Driven Ac-tuation, Modular Robotics, Open-Source Hardware, Dexterous Manipulation 
+
+I. I NTRODUCTION 
+
+Dexterous hands capable of human-like in-hand manipulation remain a central challenge in robotics. The human hand combines high degree-of-freedom complexity with rich tactile sensing, enabling versatile grasping, contact transition, and fine object reorientation [1]. Reproducing even part of this capability is important for humanoid robotics, teleoperation, prosthetics, and learning-based dexterous manipulation. At the same time, dexterous hand design is constrained by several tightly coupled factors, including actuation density, end-effector inertia, sensing integration, thermal management, manufacturability, and long-term maintainability [2], [3]. Existing dexterous hands can be broadly categorized by transmission principle into rigid and compliant transmission. Rigid transmission, including direct-driven and linkage-driven 
+
+> 1
+
+Zhuoheng Li, Qingquan Lin, Checheng Yu, Zhiqian Lan, Hongyang Li, and Ping Luo are with The University of Hong Kong, Hong Kong SAR, China. 
+
+> 2
+
+Qiangyu Chen is with City University of Hong Kong, Hong Kong SAR, China. 
+
+> 3
+
+Lutong Zhang is with XiFengGu Ltd., China. 
+
+Fig. 1: Overview of MM-Hand System. designs, offers short transmission paths and high control accuracy [4], [5], [6], [7], but embedding motors and reducers inside the hand increases mass and inertia of the hand, occupies internal volume, and worsens heat dissipation and impact robustness. Compliant transmission uses non-rigid transmission elements to convey force, including tendon-driven, artificial-muscle, and fluidic actuation. Among these, tendon-driven actuation is particularly practical for high-DoF dexterous hands because it preserves anthropomorphic morphology and spatially decouples actuators from joints, while remaining cost-effective [8]. Artificial-muscle, pneumatic, and hydraulic systems offer high compliance and high force density [9], [10], [11], but require demanding sealing and fabrication processes under high-load conditions. Within tendon-driven systems, proximal actuation places motors in the palm or forearm, reducing finger inertia compared with fully integrated actuation and enabling effective research platforms [12], [13], [14], [15]. However, proximal actuation still imposes strict constraints on the payload capacity of robotic arms, heat dissipation within the hand, and actuator size. Remote tendon-driven actuation pushes this decoupling further by relocating the actuators to a standalone motor hub and transmitting power through long tendon-sheath paths to the hand [16], [17]. This architecture is attractive for lightweight humanoid and mobile platforms because it can substantially 
+
+> arXiv:2604.17245v1 [cs.RO] 19 Apr 2026 2
+
+Fig. 2: Hand structure, sensors, and degree of freedom distribution of MM-Hand. A-A denotes abduction-adduction, and F-E denotes flexion-extension. 
+
+Fig. 3: Path length and friction analysis. reduce hand mass and free valuable in-hand volume for sensing and structural design. However, the long tendon-sheath transmission introduces increased friction and arm-motion-dependent variations in tendon path length, both of which affect the control of finger joint angles. The tendon sheath also has a non-negligible weight. In this work, we present MM-Hand , a modular and multimodal-sensing dexterous robotic hand designed for remote tendon-driven actuation. The main contributions of this paper are as follows:  
+
+> •
+
+We establish an analytical framework for remote tendon-driven transmission, capturing arm-motion-induced cou-pling disturbance and long-distance friction loss.  
+
+> •
+
+We develop a 21-DoF, 3D-printed, modular hand structure that reserves internal space for tendon routing, sensing, and maintenance.  
+
+> •
+
+We integrate a multimodal sensing and feedback system with joint encoders, tactile sensing, and in-palm stereo vision, forming an open and extensible hardware platform for dexterous manipulation research. We also explore tendon tension sensing in our designs. II. T HEORETICAL ANALYSIS OF REMOTE ACTIVATION 
+
+Remote tendon-driven actuation can be realized through two tendon-routing architectures. In the first, tendons are routed directly through the interior of the robotic arm. This architecture offers relatively low transmission friction and has been explored in tendon-driven arms, such as LIMS2-AMBIDEX [18] and recent humanoid platforms including Astribot S1 and 1X NEO [19], [20]. However, the tendon path length from the remote actuation unit to the hand becomes highly sensitive to robotic arm joint motion. Mitigating this coupling typically requires specially designed hollow-joint arms, limiting compatibility with general-purpose platforms. In another architecture shown in Fig. 3, each tendon is routed through a sheath to form a Bowden-cable transmission mounted along the outer surface of the robotic arm. This approach has been adopted in remote tendon-driven hands such as the Pantheon Hand [16] and ABCDL Hand [17]. It greatly reduces arm-motion-induced tendon length variation and improves platform compatibility, but introduces higher tendon-sheath friction. This section analyzes the tendon length variation and transmission friction of this architecture. Consider a curved sheath shown in Fig. 3 of length L,parameterized by arc length s ∈ [0 , L ], with curvature κ(s) and corresponding radius ρ = 1 /κ . For an infinitesimal segment, the geometric relation satisfies ds = ρ dθ .Assuming the tendon remains taut and in continuous contact with the inner wall on the bending side, its centerline is offset from the sheath centerline by e = ( D−d)/2. The corresponding tendon segment length can thus be written as dl t = ( ρ−e) dθ =(1 − eκ ) ds .Integrating along the sheath gives the total tendon length 
+
+lt =
+
+Z L
+
+> 0
+
+(1 − eκ (s)) ds = L − e
+
+Z L
+
+> 0
+
+κ(s) ds, (1) where ϕ = R L 
+
+> 0
+
+κ(s) ds denotes the accumulated bending angle. This yields 
+
+lt = L − D − d
+
+2 ϕ. (2) The induced joint variation is therefore 
+
+∆q = ∆lt
+
+r = − D − d
+
+2r ∆ϕ, (3) where r is the effective transmission radius. This result shows that tendon length variation depends linearly on the total bending angle ϕ. In practice, since ϕ varies nonlinearly with the robotic arm configuration, this introduces configuration-dependent transmission error. 
+
+A. Friction Analysis of the Tendon Inside the Sheath 
+
+Consider an infinitesimal tendon segment corresponding to a turning angle dθ . The change in tension direction induces a normal contact force that can be approximated as dN ≈ T dθ .Assuming Coulomb sliding friction with coefficient μ
+
+between the tendon and the sheath, the corresponding friction force is dF f ≈ μT dθ , which leads to a local tension drop 
+
+dT ≈ μT dθ . This yields the differential relation 
+
+dT T = μ dθ. (4) 3MCP Abduction –adduction (A -A)  MCP Flexion –extension (F -E) 
+
+> PIP Flexion –extension (F -E)
+> DIP Flexion –extension (F -E)
+> CMC1 rotation
+> MCP A -A
+> MCP F -E
+> PIP F -E
+> DIP F -E
+> Spring
+
+Fig. 4: Finger structure. (a) Long finger structure with split phalanges and tendon–spring actuation. (b) Explosion view of a long finger. Dashed lines denote tendon routing paths, and solid lines denote joint-axis directions. (c) Thumb structure. 
+
+Fig. 5: Software-based tendon pretensioning for spring-return joints. TABLE I: Joint range of motion of the MM-Hand .                                             
+
+> Joint Thumb Index Middle Ring Little CMC1 rotation 90 ◦////CMC2 A-A 90 ◦////CMC3 F-E 90 ◦////MCP A-A /80 ◦100 ◦95 ◦85 ◦
+> MCP F-E 85 ◦90 ◦90 ◦90 ◦90 ◦
+> PIP F-E /85 ◦85 ◦85 ◦85 ◦
+> DIP F-E /90 ◦90 ◦90 ◦90 ◦
+> IP F-E 90 ◦////
+
+Integrating over the total bending angle ϕ gives 
+
+T (L) = T (0) exp( μϕ ). (5) The total friction-induced tension loss is therefore 
+
+Ff, tot = |T (L) − T (0) | = T (0)  eμϕ − 1 . (6) This exponential relation is consistent with the capstan-type friction model [21]. It indicates that both the friction coefficient 
+
+μ and the accumulated bending angle ϕ strongly affect transmission loss, highlighting the importance of minimizing sheath curvature and selecting low-friction materials. III. S YSTEM DESIGN 
+
+A. Finger Design 
+
+In total, MM-Hand has 21 Degree-of-Freedom (Dof) and 5 fingers. The motion range of each joint is shown in Table. I. The four long fingers (index, middle, ring, and little) share an identical modular architecture to simplify fabrication, assembly, and replacement. Each finger provides four DoFs, including an abduction / abduction joint of MCP and three flexion joints at MCP, PIP, and DIP. All joints adopt a single-tendon, spring-return actuation scheme, in which tendon pulling generates flexion and passive elastic elements provide extension. As shown in Fig. 4, each finger uses a vertically split multi-piece phalanx design. The distal phalanx is divided into two longitudinal parts, while the intermediate and proximal phalanges are each divided into three parts and fastened by bolts. This design improves manufacturability for 3D printing by allowing better print orientation for smoother internal tendon channels, while also facilitating tendon installation and internal routing of sensor wires. The thumb is designed as the main source of opposition and provides five DoFs. Its distal, middle, and proximal phalanges reuse the same split modular construction as the long fingers, while the thumb base is redesigned to accommodate an additional basal rotation DoF. Unlike other joints, multiple upstream tendons cannot be routed through the thumb base center (CMC1 joint), leading to larger parasitic torques. Thus, antagonistic dual-tendon actuation instead of a spring-return mechanism is used in this joint, as shown in Fig. 4. 
+
+B. Hand Design 
+
+The palm adopts a two-part enclosure with a top cover and a bottom cover, as shown in Fig. 2. An in-palm quick tendon connector box is integrated into the bottom cover to centrally manage all tendon lines from the fingers and the remote motor hub. By separating the hand-side and arm-side tendon segments through detachable connectors, this design enables rapid finger or sheath replacement without re-routing the entire transmission, thereby improving modularity and maintainability. 
+
+C. Motor Hub and Tendon Tension 
+
+For spring-return joints, Eq. (6) shows that tendon–sheath friction can be exponentially amplified toward the motor-hub side during release. To ensure reliable spring-driven reset, the motor hub minimizes additional hub-side resistance: each tendon leaves the spool tangentially and enters the sheath directly, without extra bends or redirection inside the hub. We also explored two hardware tensioning and tension-sensing mechanisms in earlier prototypes, including a pulley-based tensioner and a concentric dual-spool design. However, both increased assembly complexity and were not suitable for an open-source, easily reproducible platform. MM-Hand therefore adopts software-based pretensioning (Fig. 5): each spring-return joint is initialized with a predefined pretension an-gle, and the motor reels the tendon back whenever the measured joint angle indicates slack. This removes dedicated tensioning 4IP                
+
+> MCP
+> CMC3
+> Fingertip
+> CMC2
+> CMC1
+> Distal
+> Phalanx
+> Proximal
+> phalanx
+> Thumb
+> IP
+> MCP
+> Fingertip
+> Distal
+> Phalanx
+> Proximal
+> phalanx
+> Index /Middle / Ring / Little
+> MCP
+> F-E
+> MCP
+> A-A
+> ✖4
+> SPI 1
+> SPI 2
+> ESP32 -S3 ESP32 -P4
+> Tactile
+> Joint
+> CAN
+> Palm PCB Motor Control PCB
+> Power Supply PCB
+> In -Palm
+> Camera
+> USB
+> USB
+> TTL/CAN
+> External
+> Power
+> Supply
+> +12V
+> +12V
+> +12V
+> I2CFor Users
+> 22 motors
+
+Fig. 6: System-level electronics architecture of MM-Hand, including multimodal sensing (joint encoders, tactile sensors, and in-palm cameras), SPI-based finger sensor buses, palm and motor control PCBs, and CAN/USB communication interfaces. hardware while maintaining basic tendon engagement during the operation. 
+
+D. Sensors and Electronics 
+
+MM-Hand integrates joint angle sensing, tactile sensing, in-palm stereo vision, and motor-side encoder feedback for multimodal perception. As shown in Fig. 6, each finger carries joint encoders and tactile sensors. Joint angles are measured by AMS AS5047P encoders, while tactile sensing uses PaXini Elite sensors, with S2015 at the fingertips and S1610 at the phalanges. To reduce wiring complexity, the finger sensors are organized into two shared SPI buses, one for encoders and one for tactile sensors, and all buses are aggregated on the palm PCB. Although SPI is not typically used in this manner, the encoders are connected through an SPI daisy chain, while the tactile sensors share a managed SPI bus with dedicated chip-select control. The palm PCB collects sensor data and sends them via CAN to the motor control PCB. Motor-side encoders provide additional feedback, and the system communicates with the host computer through USB. This design enables synchronized multimodal sensing with low wiring overhead and good scalability for high-DoF dexterous hands. 
+
+E. Feedback Control 
+
+MM-Hand is driven by long tendon transmissions, where most joints use serial-bus motors (e.g., Feetech ST3215-12V or other TTL/CAN-based actuators) with passive spring return, while thumb rotation is driven by an antagonistic tendon 
+
+Fig. 7: Setup of Sheath-Tendon Friction Measurement. 
+
+Fig. 8: Setup of Fingertip Force Measurement. pair. Compared with short-tendon systems, this architecture introduces stronger transmission nonlinearity and uncertainty. As described in Eq. (3) , the total sheath bending angle varies nonlinearly with the robotic arm pose, leading to a configuration-dependent mapping between motor rotation and joint motion. Friction and tendon stretch further introduce hys-teresis and disturbance, making accurate feedforward modeling impractical. We therefore adopt a sensor-based closed-loop strategy using joint-mounted absolute encoders. Control is performed directly in joint space, with the encoder error used to compensate for transmission loss and hysteresis through PID control. To avoid tendon slack during rapid release, the motor release speed is limited so that it does not exceed the spring recovery rate. In addition, motor current is monitored for abnormal load detection. If a current spike is inconsistent with encoder motion, the system immediately stops to prevent tendon failure or structural damage. IV. E XPERIMENTS 
+
+We evaluate MM-Hand through several groups of ex-periments: sheath-tendon friction measurement, single-finger fingertip force measurement, control accuracy, and in-palm stereo vision. These experiments are designed to validate the core properties of the system, including transmission loss in the remote actuation mechanism, output capability, control robustness, and sensing functionality. We use Dyneema tendon with 1mm diameter in our setting. 
+
+A. Sheath-Tendon Friction Measurement 
+
+The friction test setup is shown in Fig. 7. One end of the tendon was connected to a handheld force sensor, while the other end was loaded by a 2 kg weight plate. The tendon was routed around circular disks to impose wrap angles of 0◦–180 ◦5
+
+Fig. 9: Friction test results for the four sheath types. (a) Average kinetic friction versus bending angle with disk diameter 100mm. Dashed lines indicate exponential fits based on Eq. (6) . Error bars denote standard variations. (b) Average kinetic friction at a wrap angle of 180 ◦ versus curvature radius. and disk diameters of 10–100 mm. For each test condition, the tendon was pulled at an approximately constant speed and the quasi-steady portion of a single force-gauge trace is recorded. The mean friction was obtained by subtracting the 2 kg load from the mean measured tension. Four sheath types were tested: Shimano SP41 lubricated shift housing, a standard PTFE tube, a metal spring tube, and a Bambu printer feeder tube reinforced by an outer spring sheath. Their dimensions are listed in Fig. 9. As shown in Fig. 9, kinetic friction generally follows the exponential trend predicted by Eq. (6) . Although PTFE is intrinsically low-friction, the standard PTFE tube exhibited relatively high friction, likely due to ordinary extrusion quality and inner-surface finish. The Bambu feeder tube is also PTFE-based but uses a higher-quality extrusion process, resulting in lower friction. The metal spring tube showed similarly low friction, likely because its corrugated structure reduces tendon contact to discrete points. Although Shimano SP41 had low kinetic friction but usually shows high static friction, which is not desirable for control. Thus, the metal spring tube was selected for subsequent experiments for its simplicity and balanced performance. 
+
+B. Fingertip Load Performance 
+
+Fig. 8 shows the single-finger fingertip force test. The finger was fixed on a rigid fixture, with the fingertip pressed against a push–pull force gauge. The base joint was driven by a servo through a metal spring sheath. Two sheath lengths, 1 m and 0.1 m, were tested to compare remote and proximal actuation. As shown in Fig. 10 (a), the 0.1 m sheath reached a higher peak force of about 33 N, compared with about 25 N for the 1 m sheath. The 8 N difference mainly reflects the additional friction loss in the longer and slightly curved sheath. In both cases, the force gradually decreased after the peak, likely due to slow sheath deformation under load while the servo command remained fixed. 
+
+C. Controlling Accuracy 
+
+Each DoF is equipped with a joint encoder for real-time feedback, and the measured joint angle is used in a PID-based 
+
+Fig. 10: (a) Fingertip Force Measurement. (b) Measured joint angle static error given a step input. 0.0 2.5 5.0 7.5 10.0 12.5 15.0 17.5 20.0         
+
+> Time (s)
+> 20
+> 30
+> 40
+> 50
+> 60
+> 70
+> Angle (deg)
+> Joint-0 Control Response When the Robotic Arm Is Stationary
+> Target Angle
+> Actual Angle
+> 0.0 2.5 5.0 7.5 10.0 12.5 15.0 17.5 20.0
+> Time (s)
+> 20
+> 30
+> 40
+> 50
+> 60
+> 70
+> Angle (deg)
+> Joint-0 Control Response During Fixed-Trajectory Motion
+> Target Angle
+> Actual Angle
+
+Fig. 11: Tracking performance of Joint 0 under a 0.5hz reference input with amplitude ranging from 25 ◦ to 55 ◦. (a) The manipulator remains stationary. (b) The manipulator executes motion throughout the workspace. closed-loop motor position controller. We evaluate the controller using two tests. In the step-response test, Joint 0 is commanded by a step input to assess static positioning accuracy. As shown in Fig. 10 (b), the proposed controller achieves a steady-state error below 0.1°, while the tendon–sheath friction introduces an approximately 0.2 s delay between the onset of motor actuation and the actual onset of joint motion. We further evaluate dynamic tracking using a 0.5hz sinu-soidal reference input on Joint 0 with over 20 s. The robotic hand is mounted on a 6-DoF Agilex Piper manipulator. In one setting, the manipulator remains stationary; in the other, it simul-taneously executes a circular trajectory through the workspace to introduce transmission disturbances. The purpose of this experiment is to evaluate the effect of manipulator-induced disturbances on tendon-driven motion, and consequently on joint angle tracking performance. As shown in Fig. 12, a similar delay is observed in sinusoidal tracking. Although the tracking accuracy degrades under manipulator motion, the results show that friction-introduced delay has more impact on controlling performance. 6
+
+Fig. 12: Stereo depth estimation from the in-palm cameras. 
+
+D. In-Palm Stereo Depth Sensing 
+
+In parallel, the in-palm stereo camera pair provides dense depth sensing during manipulation. A pretrained RAFT-Stereo network [22] estimates disparity from the rectified image pair, which is converted to metric depth via the calibrated baseline and focal length. The result is shown in Fig. 12. V. C ONCLUSION 
+
+This paper presented MM-Hand, a 21-DoF remote tendon-driven dexterous hand with modular mechanics and multimodal sensing. Theoretical analysis guided the tendon-sheath rout-ing and control design, while experiments validated friction behavior, fingertip force, sensing, and joint control. 
+
+Discussions & Limitations. Current limitations include delay because of tendon friction, tendon wear reliability, insufficient spring-return force for abduction-adduction joints, and a still-large palm size. An updated design, MM-Hand 1.1, is being tested to address these issues. REFERENCES [1] L. A. Jones and S. J. Lederman, Human Hand Function . New York: Oxford University Press, 2006. [Online]. Available: https: //doi.org/10.1093/acprof:oso/9780195173154.001.0001 [2] OpenAI, I. Akkaya, M. Andrychowicz, M. Chociej, M. Litwin, B. McGrew, A. Petron, A. Paino, M. Plappert, G. Powell et al. ,“Learning dexterous in-hand manipulation,” The International Journal of Robotics Research , vol. 39, no. 1, pp. 3–20, 2020. [Online]. Available: https://doi.org/10.1177/0278364919887447 [3] A. Billard and D. Kragic, “Trends and challenges in robot manipulation,” 
+
+Science , vol. 364, no. 6446, p. eaat8414, 2019. [Online]. Available: https://doi.org/10.1126/science.aat8414 [4] D.-H. Lee, J.-H. Park, S.-W. Park, M.-H. Baeg, and J.-H. Bae, “Kitech-hand: A highly dexterous and modularized robotic hand,” 
+
+IEEE/ASME Transactions on Mechatronics , vol. 22, no. 2, pp. 876–887, 2017. [Online]. Available: https://doi.org/10.1109/TMECH.2016.2634602 [5] K. Shaw, A. Agarwal, and D. Pathak, “LEAP Hand: Low-cost, efficient, and anthropomorphic hand for robot learning,” in 
+
+Robotics: Science and Systems (RSS) , 2023. [Online]. Available: https://doi.org/10.15607/rss.2023.xix.089 [6] Sharpa, “Wave,” 2025. [Online]. Available: https://www.sharpa.com/ pages/wave [7] PsiBot, “Psi-h1,” 2025. [Online]. Available: https://www.psibot.ai/en/ products/product_psibot-h1/ [8] E. Nazma and S. Mohd, “Tendon driven robotic hands: A review,” 
+
+International Journal of Mechanical Engineering and Robotics Research ,vol. 1, no. 3, pp. 350–357, October 2012. [Online]. Available: https://www.ijmerr.com/uploadfile/2015/0409/20150409024829230.pdf [9] J. Shintake, V. Cacucciolo, D. Floreano, and H. Shea, “Soft robotic grippers,” Advanced Materials , vol. 30, no. 29, p. 1707035, 2018. [Online]. Available: https://doi.org/10.1002/adma.201707035 [10] J. Zhou, J. Huang, Q. Dou, P. Abbeel, and Y. Liu, “A dexterous and compliant (DexCo) hand based on soft hydraulic actuation for human-inspired fine in-hand manipulation,” IEEE Transactions on Robotics , vol. 41, pp. 666–686, 2025. [Online]. Available: https://doi.org/10.1109/TRO.2024.3508932 [11] Sanctuary AI, “Sanctuary ai technology,” 2025. [Online]. Available: https://www.sanctuary.ai/technology [12] Y. Toshimitsu, B. Forrai, B. G. Cangan, U. Steger, M. Knecht, S. Weirich, and R. K. Katzschmann, “Getting the ball rolling: Learning a dexterous policy for a biomimetic tendon-driven hand with rolling contact joints,” in 2023 IEEE-RAS 22nd International Conference on Humanoid Robots (Humanoids) , 2023, pp. 1–7. [Online]. Available: https://doi.org/10.1109/HUMANOIDS57100.2023.10375231 [13] J. Yuan, H. Zhu, J. Dai, and S. Yi, “Development of the bioinspired tendon-driven dexhand 021 with proprioceptive compliance control,” arXiv preprint arXiv:2511.03481 , 2025. [Online]. Available: https://arxiv.org/abs/2511.03481 [14] C. C. Christoph, M. Eberlein, F. Katsimalis, A. Roberti, A. Sympetheros, M. R. Vogt, D. Liconti, C. Yang, B. G. Cangan, R. J. Hinchet, and R. K. Katzschmann, “Orca: An open-source, reliable, cost-effective, anthropomorphic robotic hand for uninterrupted dexterous task learning,” arXiv preprint arXiv:2504.04259 , 2025. [Online]. Available: https://arxiv.org/abs/2504.04259 [15] A. Zorin, I. Guzey, B. Yan, A. Iyer, L. Kondrich, N. X. Bhattasali, and L. Pinto, “RUKA: Rethinking the design of humanoid hands with learning,” arXiv preprint arXiv:2504.13165 , 2025. [Online]. Available: https://arxiv.org/abs/2504.13165 [16] Stella Robot, “Pantheon hand,” 2025. [Online]. Available: https: //www.stella-robot.com/en/h-col-108.html [17] S. Min, H. Kim, and D. H. Shim, “Antagonistic bowden-cable actuation of a lightweight robotic hand: Toward dexterous manipulation for payload constrained humanoids,” arXiv preprint arXiv:2512.24657 , 2025. [Online]. Available: https://arxiv.org/abs/2512.24657 [18] H. Song, Y.-S. Kim, J. Yoon, S.-H. Yun, J. Seo, and Y.-J. Kim, “Development of low-inertia high-stiffness manipulator LIMS2 for high-speed manipulation of foldable objects,” in 2018 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2018, pp. 4145–4151. [Online]. Available: https://doi.org/10.1109/IROS.2018.8594005 [19] Astribot, “Astribot S1,” 2025. [Online]. Available: https://www.astribot. com/en/product/ [20] 1X, “NEO Home Robot,” 2025. [Online]. Available: https://www.1x. tech/neo [21] S. W. Attaway, “The mechanics of friction in rope rescue,” in 
+
+Proceedings of the International Technical Rescue Symposium (ITRS ’99) , Fort Collins, CO, USA, 1999. [Online]. Available: https://web.mit. edu/sp255/www/reference_vault/Friction%20Large%20Format.pdf [22] L. Lipson, Z. Teed, and J. Deng, “Raft-stereo: Multilevel recurrent field transforms for stereo matching,” in International Conference on 3D Vision (3DV) , 2021. [Online]. Available: https://doi.org/10.1109/ 3dv53792.2021.00032

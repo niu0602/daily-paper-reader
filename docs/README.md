@@ -6,64 +6,64 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-21
-- 运行时间：2026-04-21 19:50:02 UTC
+- 最新运行日期：2026-04-22
+- 运行时间：2026-04-22 20:49:42 UTC
 - 运行状态：成功
 - 本次总论文数：14
 - 精读区：3
 - 速读区：11
 
 ### 今日简报（AI）
-深入研究了 14 篇关于具身智能与灵巧机器人操控的前沿论文。  
-XRZero-G0 系列在交互设计与高质量灵巧操作上表现突出，是当前最具突破性的方向。  
-建议持续关注具身世界建模与虚拟仿真融合，了解机器人自主学习的最新进展。
-- 详情：[/202604/21/README](/202604/21/README)
+深入研读 XRZero-G0 等 3 篇论文，速览 11 篇涵盖机器人控制与视觉生成的最新成果。  
+最值得关注的是 XRZero-G0 在高精度灵巧操作界面上的突破，以及 StableIDM 对操纵器稳定性的优化思路。  
+建议继续跟进 XR 系列在实际机器人操作与多模态交互上的应用进展。
+- 详情：[/202604/22/README](/202604/22/README)
 
 ### 精读区论文标签
-1. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/21/2604.13001v1-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
+1. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/22/2604.13001v1-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
+   标签：评分：10.0/10、query:dexop
+   evidence：用于灵巧机器人操作的具身数据采集和策略学习的软硬件协同设计系统
+2. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/22/2604.13001v2-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
+   标签：评分：10.0/10、query:dexop
+   evidence：用于灵巧机器人操作的第一视角数据采集
+3. [UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling](/202604/22/2604.19734v1-unit-toward-a-unified-physical-language-for-human-to-humanoid-policy-learning-and-world-modeling)  
    标签：评分：9.5/10、query:dexop
-   evidence：使用虚拟现实和摄像头的灵巧机器人操作数据采集与策略学习系统
-2. [XRZero-G0: Pushing the Frontier of Dexterous Robotic Manipulation with Interfaces, Quality and Ratios](/202604/21/2604.13001v2-xrzero-g0-pushing-the-frontier-of-dexterous-robotic-manipulation-with-interfaces-quality-and-ratios)  
-   标签：评分：9.0/10、query:dexop
-   evidence：用于灵巧机器人操作数据采集和策略学习的软硬件系统
-3. [SpaceDex: Generalizable Dexterous Grasping in Tiered Workspaces](/202604/21/2604.17888v1-spacedex-generalizable-dexterous-grasping-in-tiered-workspaces)  
-   标签：评分：8.5/10、query:dexop
-   evidence：受限3D环境中的通用灵巧抓取
+   evidence：使用海量第一视角人类数据进行类人机器人策略学习
 
 ### 速读区论文标签
-1. [DexWorldModel: Causal Latent World Modeling towards Automated Learning of Embodied Tasks](/202604/21/2604.16484v1-dexworldmodel-causal-latent-world-modeling-towards-automated-learning-of-embodied-tasks)  
+1. [StableIDM: Stabilizing Inverse Dynamics Model against Manipulator Truncation via Spatio-Temporal Refinement](/202604/22/2604.17887v1-stableidm-stabilizing-inverse-dynamics-model-against-manipulator-truncation-via-spatio-temporal-refinement)  
    标签：评分：7.0/10、query:dexop
-   evidence：引入因果潜世界模型，用于具身操作任务的自动化学习
-2. [Leveraging VR Robot Games to Facilitate Data Collection for Embodied Intelligence Tasks](/202604/21/2604.16903v1-leveraging-vr-robot-games-to-facilitate-data-collection-for-embodied-intelligence-tasks)  
+   evidence：将视觉观察映射到动作指令的逆动力学模型
+2. [EgoMotion: Hierarchical Reasoning and Diffusion for Egocentric Vision-Language Motion Generation](/202604/22/2604.19105v1-egomotion-hierarchical-reasoning-and-diffusion-for-egocentric-vision-language-motion-generation)  
    标签：评分：7.0/10、query:dexop
-   evidence：基于虚拟现实的人形机器人控制，用于具身交互数据收集
-3. [MM-Hand: A 21-DOF Multi-modal Modular Dexterous Robotic Hand with Remote Actuation](/202604/21/2604.17245v1-mm-hand-a-21-dof-multi-modal-modular-dexterous-robotic-hand-with-remote-actuation)  
-   标签：评分：7.0/10、query:dexop
-   evidence：21 自由度多模态模块化灵巧机器人手
-4. [Ego-InBetween: Generating Object State Transitions in Ego-Centric Videos](/202604/21/2604.17749v1-ego-inbetween-generating-object-state-transitions-in-ego-centric-videos)  
-   标签：评分：7.0/10、query:dexop
-   evidence：在第一视角视频中生成物体状态转换以进行动作建模
-5. [AnchorRefine: Synergy-Manipulation Based on Trajectory Anchor and Residual Refinement for Vision-Language-Action Models](/202604/21/2604.17787v1-anchorrefine-synergy-manipulation-based-on-trajectory-anchor-and-residual-refinement-for-vision-language-action-models)  
-   标签：评分：7.0/10、query:dexop
-   evidence：高精度操作和局部执行校正
-6. [Periodic Steady-State Control of a Handkerchief-Spinning Task Using a Parallel Anti-Parallelogram Tendon-driven Wrist](/202604/21/2604.17863v1-periodic-steady-state-control-of-a-handkerchief-spinning-task-using-a-parallel-anti-parallelogram-tendon-driven-wrist)  
-   标签：评分：7.0/10、query:dexop
-   evidence：用于带摩擦接触的手帕旋转任务的灵巧腕部
-7. [CLASP: Closed-loop Asynchronous Spatial Perception for Open-vocabulary Desktop Object Grasping](/202604/21/2604.11320v1-clasp-closed-loop-asynchronous-spatial-perception-for-open-vocabulary-desktop-object-grasping)  
+   evidence：第一视角视觉语言运动生成与第一视角视觉观察
+3. [R3D: Revisiting 3D Policy Learning](/202604/22/2604.15281v1-r3d-revisiting-3d-policy-learning)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于机器人操作的多模态感知闭环框架
-8. [$π_{0.7}$: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities](/202604/21/2604.15483v1-07-a-steerable-generalist-robotic-foundation-model-with-emergent-capabilities)  
+   evidence：针对挑战性操作基准的3D策略学习
+4. [A Mechanistic Analysis of Sim-and-Real Co-Training in Generative Robot Policies](/202604/22/2604.13645v1-a-mechanistic-analysis-of-sim-and-real-co-training-in-generative-robot-policies)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于挑战性操作任务的通用机器人基础模型
-9. [Chain Of Interaction Benchmark (COIN): When Reasoning meets Embodied Interaction](/202604/21/2604.16886v1-chain-of-interaction-benchmark-coin-when-reasoning-meets-embodied-interaction)  
+   evidence：结合真实世界数据与模拟或跨具身机器人数据进行生成式机器人策略的协同训练
+5. [From Seeing to Simulating: Generative High-Fidelity Simulation with Digital Cousins for Generalizable Robot Learning and Evaluation](/202604/22/2604.15805v1-from-seeing-to-simulating-generative-high-fidelity-simulation-with-digital-cousins-for-generalizable-robot-learning-and-evaluation)  
    标签：评分：6.0/10、query:dexop
-   evidence：机器人操作任务中交互式推理的基准测试
-10. [FLASH: Fast Learning via GPU-Accelerated Simulation for High-Fidelity Deformable Manipulation in Minutes](/202604/21/2604.17513v1-flash-fast-learning-via-gpu-accelerated-simulation-for-high-fidelity-deformable-manipulation-in-minutes)  
+   evidence：用于泛化机器人学习的生成式实对虚映射
+6. [Refinement of Accelerated Demonstrations via Incremental Iterative Reference Learning Control for Fast Contact-Rich Imitation Learning](/202604/22/2604.16850v1-refinement-of-accelerated-demonstrations-via-incremental-iterative-reference-learning-control-for-fast-contact-rich-imitation-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于高接触变形操作的GPU加速仿真
-11. [DART: Learning-Enhanced Model Predictive Control for Dual-Arm Non-Prehensile Manipulation](/202604/21/2604.17833v1-dart-learning-enhanced-model-predictive-control-for-dual-arm-non-prehensile-manipulation)  
+   evidence：快速接触密集型操作的模仿学习
+7. [A Rapid Deployment Pipeline for Autonomous Humanoid Grasping Based on Foundation Models](/202604/22/2604.17258v1-a-rapid-deployment-pipeline-for-autonomous-humanoid-grasping-based-on-foundation-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：服务机器人的双臂非抓取式操作
+   evidence：自主类人机器人抓取与操作流水线
+8. [OFlow: Injecting Object-Aware Temporal Flow Matching for Robust Robotic Manipulation](/202604/22/2604.17876v1-oflow-injecting-object-aware-temporal-flow-matching-for-robust-robotic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：具有物体感知时间流匹配的鲁棒机器人操作 VLA 模型
+9. [SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy](/202604/22/2604.18557v1-synagent-generalizable-cooperative-humanoid-manipulation-via-solo-to-cooperative-agent-synergy)  
+   标签：评分：6.0/10、query:dexop
+   evidence：人形机器人操作以及从人机交互中进行技能迁移
+10. [HELM: Harness-Enhanced Long-horizon Memory for Vision-Language-Action Manipulation](/202604/22/2604.18791v1-helm-harness-enhanced-long-horizon-memory-for-vision-language-action-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：视觉-语言-动作操作框架
+11. [AI-Enabled Image-Based Hybrid Vision/Force Control of Tendon-Driven Aerial Continuum Manipulators](/202604/22/2604.18961v1-ai-enabled-image-based-hybrid-visionforce-control-of-tendon-driven-aerial-continuum-manipulators)  
+   标签：评分：6.0/10、query:dexop
+   evidence：手眼单目相机用于视觉/力控制
 
 
 <div class="dpr-home-promo-card">

@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.18236v1/fig-001.webp",
+      "caption": "Fig. 4: CNN-based policy network used to illustrate imitation learning on our data",
+      "page": 3,
+      "index": 1,
+      "width": 1051,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18236v1/fig-002.webp",
+      "caption": "Fig. 1: Jessie, the robot used for data collection",
+      "page": 1,
+      "index": 2,
+      "width": 512,
+      "height": 685
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18236v1/fig-003.webp",
+      "caption": "Fig. 5: Predicted vs. ground-truth actions of the CNN policy",
+      "page": 4,
+      "index": 3,
+      "width": 1052,
+      "height": 252
+    }
+  ]
+}

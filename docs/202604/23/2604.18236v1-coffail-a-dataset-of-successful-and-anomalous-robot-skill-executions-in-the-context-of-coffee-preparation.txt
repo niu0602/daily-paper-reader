@@ -1,0 +1,80 @@
+Title: COFFAIL: A Dataset of Successful and Anomalous Robot Skill Executions in the Context of Coffee Preparation
+
+URL Source: https://arxiv.org/pdf/2604.18236v1
+
+Published Time: Tue, 21 Apr 2026 02:56:29 GMT
+
+Number of Pages: 4
+
+Markdown Content:
+# COFFAIL: A Dataset of Successful and Anomalous Robot Skill Executions in the Context of Coffee Preparation 
+
+Alex Mitrevski §,† and Ayush Salunke ‡
+
+Abstract — In the context of robot learning for manipulation, curated datasets are an important resource for advancing the state of the art; however, available datasets typically only include successful executions or are focused on one particu-lar type of skill. In this short paper, we briefly describe a dataset of various skills performed in the context of coffee preparation. The dataset, which we call COFFAIL, includes both successful and anomalous skill execution episodes collected with a physical robot in a kitchen environment, a couple of which are performed with bimanual manipulation. In addition to describing the data collection setup and the collected data, the paper illustrates the use of the data in COFFAIL to learn a robot policy using imitation learning. 
+
+I. INTRODUCTION Robot skill execution datasets are an important resource that simplifies the investigation of robot learning and gen-eralisation techniques, thereby enabling the development of flexible learning-based robot execution pipelines [1], [2]. The public availability of robot learning datasets has significantly increased in the last few years; however, large-scale learning datasets include only (or primarily) successful executions [3], [4]. This makes such datasets suitable for learning policy models, but makes it challenging to use them for developing techniques for failure detection and recovery, which are also essential for guaranteeing robust execution. There are nu-merous datasets that include anomalous data, but they focus on either industrial applications [5], [6], [7], [8] or specific everyday skills, such as pouring [9], object handover [10], object placement [11], or handle grasping [12]. There are a few datasets that include a larger variety of skills, including anomalies [13], [14]; however, [13] is primarily simulation-based (only a subset of the data is from a real robot), and both of these only include skills performed with a single manipulator. RoboMIND [15] is another large dataset that includes data from numerous skills performed by four robot embodiments; RoboMIND includes anomalous executions, but not ones where the operation of the robot is deliberately obstructed, which are useful to consider for everyday robots. Most existing dataset also require an external camera setup, which limits a robot’s operational environment significantly.                 
+
+> ∗This work was supported by a starting research grant for Alex Mitrevski provided by Bonn-Rhein-Sieg University of Applied Sciences (project KEROL).
+> †Alex Mitrevski is with the Division of Systems and Control, Chalmers University of Technology, Gothenburg, Sweden; alemitr@chalmers.se
+> †Ayush Salunke is with the Autonomous Systems Group, Bonn-Rhein-Sieg University of Applied Sciences, Sankt Augustin, Germany;
+> ayush.salunke@smail.inf.h-brs.de
+> §Corresponding author
+
+Parallel jaw gripper Vacuum gripper Head camera Wrist cameras 
+
+Fig. 1: Jessie, the robot used for data collection In this short paper, we describe a dataset collected in the context of a domestic task, concretely that of coffee preparation; for this reason, we refer to the dataset as COFFAIL. COFFAIL is publicly available 1,2, and includes both successful and anomalous skill executions; most of the skills are performed by a single manipulator, but a few are bimanual skills. Below, we provide a brief description of the data collection setup and the collected data, and illustrate the use of the data for imitation learning. II. DATASET DESCRIPTION Our dataset was collected in a kitchen environment with a robot that is referred to as Jessie, shown in Fig. 1. 3 Jessie    
+
+> 1Public dataset link: https://doi.org/10.5281/zenodo.18212316
+> 2Dataset processing utilities: https://github.com/KEROL-project/ coffail-utils
+> 3https://www.h-brs.de/en/a2s/robots
+> arXiv:2604.18236v1 [cs.RO] 20 Apr 2026
+
+is a bimanual mobile manipulator with a KELO ROBILE mobile base 4 and two UFactory xArm 6 manipulators 5; one of the arms is equipped with a parallel jaw gripper, while the other arm has a vacuum gripper. The robot has three Intel RealSense RGB-D cameras (one head camera, which provides global scene view, and two wrist cameras, attached above the wrist of each arm), though we only collect the RGB images for our dataset. The robot’s base is manually positioned in front of the location of interest before each execution episode, and does not move during execution. COFFAIL includes seven skills that are relevant in the context of domestic tasks. The skills, along with the number of collected episodes per skill, are summarised in Tab. I. All episodes were collected by demonstration; most demonstra-tions were performed through hand-coded execution scripts that guarantee the desired behaviour, but some were collected using kinaesthetic teaching for increased variability. The anomalous episodes include various types of anomalies, such as missing objects, temporarily blocked cameras, collisions, or failed executions. The global scene was mostly static throughout the execution of each skill, but the positions of the objects and the starting position of the robot were varied between episodes. For each skill, we recorded (i) camera images (ii) propri-oceptive joint data, (iii) end effector positions (with respect to the each arm’s base), and (iv) delta end effector actions performed at each step. For the skills performed by a single manipulator, only the head camera image and the image of the respective wrist camera are collected; the images of the idle arm are excluded. Fig. 2 and Fig. 3 illustrate successful executions of the cup pickup and pouring skills from the perspective of the robot’s head camera. 6 For the anomalous executions, we include manually extracted annotations in the form of start and end points for the anomalies, along with textual comments on the anomalies. III. IMITATION LEARNING ILLUSTRATION As COFFAIL includes both successful and anomalous executions, it can be used for different purposes, such as imitation learning, anomaly detection, and perhaps even failure recovery. To illustrate the use for imitation learning (using only the successful executions), we show some results on the cup pickup skill, for which we trained a convolutional neural network (CNN)-based policy as shown in Fig. 4. The network has multiple convolutional layers for feature extraction, such that leaky ReLU is used as activation in the feature extractor, and batch normalisation layers are included for improved training stability; in the linear layers, tanh is used as activation. Let at ∈ A be a ground-truth action (represented as a delta end effector pose) and ˆat = π(It),where It is the image observation at time t. The policy π is 
+
+> 4https://shop.kelo-robotics.com/product/standard-configuration/
+> 5https://www.ufactory.cc/xarm-collaborative-robot/
+> 6It should be noted that, for safety reasons, liquid was not used in the pouring skill; we used small noodles instead.
+
+trained with a mean squared error (MSE) loss: 
+
+L = 1
+
+T
+
+> T
+
+X
+
+> t=1
+
+∥at − ˆat∥2
+
+Training of this policy was done for 30 epochs using the Adam optimiser [16] with a learning rate of 10 −5. Plots of the predicted and ground-truth actions are shown in Fig. 5. This is an example of training done in the context of one skill, but it illustrates that our dataset can be used for prototyping and investigating learning algorithms. IV. DISCUSSION The COFFAIL dataset was collected with the intention of providing a resource for learning robot policies that take both successes and failures into account; thus, our hope is that it can be of use to researchers that aim to develop robust, failure-aware robot learning algorithms. In our own work, we are currently investigating how to use the dataset for learning predictive execution models as well as for extracting execution rules that can then be used for execution monitor-ing, but we also plan to investigate how we can perform failure diagnosis and learn recovery skills with the help of the collected data. Ultimately, we are interested in creating a continuous human-in-the-loop learning procedure, where diagnosis can inform operators about the type of additional data that may be needed for increasing the robustness of a particular skill. This may increase the usability of learning-based techniques, particularly in domains where operators may not have extensive experience with robots. REFERENCES [1] O. Kroemer, S. Niekum, and G. Konidaris, “A Review of Robot Learn-ing for Manipulation: Challenges, Representations, and Algorithms,”                                                         
+
+> Journal Machine Learning Research , vol. 22, pp. 1–82, 2021. [2] R. Firoozi et al. ,“Foundation models in robotics: Applications, challenges, and the future,” Int. Journal Robotics Research , vol. 44, no. 5, pp. 701–739, 2025. [3] A. O’Neill et al. , “Open X-Embodiment: Robotic Learning Datasets and RT-X Models,” in Proc. IEEE Int. Conf. Robotics and Automation (ICRA) , 2024, pp. 6892–6903. [4] H. Walke et al. , “BridgeData V2: A Dataset for Robot Learning at Scale,” in Proc. 7th Conf. Robot Learning (CoRL) , 2023. [5] D. Sliwowski et al. , “Demonstrating REASSEMBLE: A Multimodal Dataset for Contact-rich Robotic Assembly and Disassembly,” in Proc. Robotics: Science and Systems (RSS) , 2025. [6] N. Hudson et al. ,“Stow: Robotic Packing of Items into Fabric Pods,” CoRR ,vol. abs/2505.04572, 2025. [Online]. Available: https://arxiv.org/abs/2505.04572 [7] C. Mitash et al. , “ARMBench: An Object-centric Benchmark Dataset for Robotic Manipulation,” in Proc. IEEE Int. Conf. Robotics and Automation (ICRA) , 2023, pp. 9132–9139. [8] B. Leporowski, D. Tola, C. Hansen, and A. Iosifidis, “AURSAD: Universal Robot Screwdriving Anomaly Detection Dataset,” CoRR ,vol. abs/2102.01409, 2021. [Online]. Available: https://arxiv.org/abs/ 2102.01409 [9] D. Sliwowski and D. Lee, “ConditionNET: Learning Preconditions and Effects for Execution Monitoring,” IEEE Robotics and Automation Letters (RA-L) , vol. 10, no. 2, pp. 1337–1344, 2025. [10] S. Thoduka, N. Hochgeschwender, J. Gall, and P. G. Pl¨ oger, “A Multimodal Handover Failure Detection Dataset and Baselines,” in
+> Proc. IEEE Int. Conf. Robotics and Automation (ICRA) , 2024, pp. 17 013–17 019. [11] S. Thoduka, J. Gall, and P. G. Pl¨ oger, “Using Visual Anomaly Detection for Task Execution Monitoring,” in Proc. IEEE/RSJ Int. Conf. Intelligent Robots and Systems (IROS) , 2021, pp. 4604–4610.
+
+TABLE I: A summary of the number of successful ( ✓) and failed ( ✗) episodes for each skill in the dataset 
+
+Skill Cup pickup Moving a cup Pouring Cup placing Spoon pickup Stirring Placing a spoon in a sink Total 
+
+✓episodes 15 12 12 10 10 10 10 79 
+
+✗ episodes 6 8 10 6 8 4 6 48 
+
+Fig. 2: Illustration of the skill for picking up a cup 
+
+Fig. 3: Illustration of the bimanual pouring skill (the left arm holds the cup and the right arm pours) 16 
+
+## Δx
+
+## Δθ
+
+# 32 32 512 64 128 64 616 
+
+Fig. 4: CNN-based policy network used to illustrate imitation learning on our data 
+
+[12] A. Mitrevski, P. G. Pl¨ oger, and G. Lakemeyer, “Robot Action Diagno-sis and Experience Correction by Falsifying Parameterised Execution Models,” in Proc. IEEE Int. Conf. Robotics and Automation (ICRA) ,2021, pp. 11 025–11 031. [13] Z. Liu, A. Bahety, and S. Song, “REFLECT: Summarizing Robot Experiences for Failure Explanation and Correction,” in Proc. 7th Conf. Robot Learning (CoRL) , 2023, pp. 3468–3484. [14] A. Inceoglu, E. E. Aksoy, A. Cihan Ak, and S. Sariel, “FINO-Net: A Deep Multimodal Sensor Fusion Framework for Manipulation Failure Detection,” in Proc. IEEE/RSJ Int. Conf. Intelligent Robots and Systems (IROS) , 2021, pp. 6841–6847. [15] K. Wu et al. , “RoboMIND: Benchmark on Multi-embodiment Intel-Fig. 5: Predicted vs. ground-truth actions of the CNN policy 
+
+ligence Normative Data for Robot Manipulation,” in Proc. Robotics: Science and Systems (RSS) , 2025. [16] D. P. Kingma and J. Ba, “Adam: A Method for Stochastic Optimiza-tion,” in Proc. Int. Conf. Learning Representations (ICLR) , 2015.

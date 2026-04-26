@@ -1,0 +1,810 @@
+Title: Kinematic Optimization of Phalanx Length Ratios in Robotic Hands Using Potential Dexterity
+
+URL Source: https://arxiv.org/pdf/2604.20686v1
+
+Published Time: Thu, 23 Apr 2026 01:07:43 GMT
+
+Number of Pages: 12
+
+Markdown Content:
+# Kinematic Optimization of Phalanx Length Ratios in Robotic Hands Using Potential Dexterity 
+
+# HyoJae Kang 1, Joonho Lee 1, Jeongdo Ahn 1, and Dong Il Park 1,∗
+
+> 1
+
+# Advanced Robotics Research Center, Korea Institute of Machinery & Materials (KIMM) 
+
+> ∗
+
+# Corresponding author 
+
+# Abstract 
+
+In the design stage of robotic hands, it is not straight-forward to quantitatively evaluate the effect of phalanx length ratios on dexterity without defining specific objects or manipulation tasks. Therefore, this study presents a framework for optimizing the phalanx length ratios of a five-finger robotic hand based on potential dexterity within a kinematic structure. The proposed method em-ploys global manipulability, workspace volume, overlap workspace volume, and fingertip sensitivity as evaluation metrics, and identifies optimal design configurations us-ing a weighted objective function under given constraints. The reachable workspace is discretized using a voxel-based representation, and joint motions are discretized at uniform intervals for evaluation. The optimization is performed over design sets for both the thumb and the other fingers, and design combinations that do not gen-erate overlap workspace are excluded. The results show that each phalanx does not contribute equally to the over-all dexterity, and the factors influencing each phalanx are identified. In addition, it is observed that the selection of weighting coefficients does not necessarily lead to the direct maximization of individual performance metrics, due to the non-uniform distribution of evaluation mea-sures within the design space. The proposed framework provides a systematic approach to analyze the trade-offs among reachability, dexterity, and controllability, and can serve as a practical guideline for the kinematic design of multi-fingered robotic hands. 
+
+# 1 Introduction 
+
+The human hand enables a wide range of interactions with the environment through its complex kinematic struc-ture and functional capabilities [1, 2]. It is regarded as one of the most sophisticated biological systems for per-forming both power and precision tasks [3]. Inspired by these characteristics, robotic systems have developed end-effectors that serve similar roles, allowing interaction with objects in diverse environments [4]. These robotic hands have been widely utilized in applications involving repet-itive, labor-intensive, and hazardous tasks [5–7]. 
+
+> 0This manuscript has been submitted for possible publication.
+
+To achieve such functionalities, various types of robotic end-effectors have been developed, ranging from low-degree-of-freedom two-finger grippers to multi-finger grip-pers and anthropomorphic robotic hands. Recently, there has been an increasing demand for robotic systems capa-ble of operating in human-centered environments, where collaboration with humans and handling of objects with diverse geometries are required [8]. In such scenarios, higher dexterity becomes a key requirement. Dexterity is widely used to describe the skillfulness of robotic hands. Previous studies [9] categorize dexterity into three main types: potential dexterity, grasp dex-terity, and manipulability dexterity. Potential dexterity refers to the set of reachable configurations without con-sidering object interaction, and is typically characterized by kinematic redundancy and thumb opposability. It re-flects the diversity of achievable postures and represents the inherent capability of the hand prior to interaction [9]. Kinematic redundancy indicates the number of possible joint configurations that can achieve a given pose, while thumb opposability can be evaluated through overlap re-gions between the thumb and other fingers [10, 11] or through metrics such as the Kapandji test [12]. Grasp dexterity evaluates the set of stable static config-urations when grasping objects, typically based on grasp taxonomies [9, 13–15]. These approaches focus on the number and diversity of feasible grasp types, and may also consider the ability to switch between different grasping modes [9]. Manipulability dexterity refers to the ability to reposition and reorient a grasped object within the workspace, reflecting the capability for in-hand manipu-lation [1]. In the design stage of robotic hands, general-purpose functionality is often desired unless a specific task is pre-defined. However, generality makes it difficult to define representative objects or manipulation tasks for evalua-tion. Some approaches attempt to address this issue by selecting object sets or primitive manipulation tasks, but these methods still struggle to comprehensively evaluate the overall capability of the hand. To address this limitation, this paper focuses on poten-tial dexterity, which does not require predefined objects or tasks, and proposes a method for optimizing the kine-matic structure of a five-finger robotic hand. Specifically, 1
+
+> arXiv:2604.20686v1 [cs.RO] 22 Apr 2026
+
+the optimization problem is formulated to determine the phalanx length ratios of the thumb and fingers within a predefined kinematic structure. The proposed framework evaluates multiple aspects of dexterity while excluding transmission mechanisms and actuation strategies, and instead focuses on structural characteristics such as de-grees of freedom (DoF) and link length distributions. The main contributions of this paper are summarized as follows: 
+
+• A potential dexterity-based optimization framework for designing five-finger robotic hand kinematic structures without relying on object-specific tasks. 
+
+• A systematic evaluation method that integrates workspace, thumb opposability, manipulability, and sensitivity into a unified design criterion. 
+
+• An analysis of how individual design parameters, particularly phalanx length ratios, influence differ-ent aspects of dexterity, providing practical design guidelines. The remainder of this paper is organized as follows. Section 2 reviews existing research on five-finger robotic hands and related evaluation methods. Section 3 intro-duces the kinematic structure of the robotic hand. Sec-tion 4 describes the proposed optimization algorithm. Section 5 presents the optimization process, and Section 6 provides the results and analysis. 
+
+# 2 Related Works 
+
+Stable grasping of objects typically requires at least three contact points, which corresponds to the use of three or more fingers [16]. However, for more complex tasks such as in-hand manipulation and dexterous operations, a larger number of fingers and more sophisticated struc-tures are often required. To address these demands, var-ious robotic end-effectors have been developed, including anthropomorphic hands, in-hand manipulation-oriented grippers [17], and reconfigurable or multi-modal grippers capable of adapting to different tasks [18, 19]. Compared to conventional grippers, dexterous robotic hands provide significant advantages in human-centered environments. In particular, their ability to handle ob-jects designed for human use makes them suitable for collaborative applications. Numerous studies have ex-plored five-finger anthropomorphic robotic hands [20–27], demonstrating a wide range of actuation methods, trans-mission mechanisms, and DoF configurations. The performance of these robotic hands has been eval-uated using various approaches. Experimental validation based on grasp taxonomies is commonly used to assess the range of feasible grasp types. In addition, in-hand ma-nipulation experiments, motion-based evaluations such as the Kapandji test, and force or manipulability analyses have been employed to verify performance. These ap-proaches provide meaningful insights into the functional capabilities of robotic hands and are widely adopted in existing studies. However, most of these approaches focus on post-design evaluation, where the performance is assessed after the hand has already been developed. Relatively less atten-tion has been given to the question of how the kinematic structure itself should be designed in the early stages, particularly when no specific task or object is predefined. From a design perspective, key factors related to po-tential dexterity, such as workspace, thumb opposability, and manipulability, are strongly influenced by the kine-matic structure of the hand, including phalanx length ra-tios, DoF, and joint motion ranges. Therefore, optimizing these structural parameters in the absence of predefined tasks can provide a more general and robust foundation for designing high-performance robotic hands. In this context, this paper proposes a method for opti-mizing the potential dexterity of a robotic hand composed of four DoF fingers and a five DoF thumb. The proposed approach not only evaluates the overall dexterity but also analyzes how individual design parameters affect different performance metrics, providing insights into the relation-ship between kinematic structure and dexterity. 
+
+# 3 Kinematic Structure of Dexter-ous Hand 
+
+In this section, the kinematic structure of the five-finger robotic hand to be evaluated in this study is introduced. The proposed hand consists of four 4-DoF fingers and one 5-DoF thumb. Each 4-DoF finger is composed of three DoFs for flexion/extension (F/E) motion and one DoF for adduction/abduction (A/A) motion, while the 5-DoF thumb is composed of three DoFs for F/E mo-tion, one DoF for A/A motion, and one DoF for opposi-tion/reposition (O/R) motion. Figure 1 shows the kinematic structure of the five-finger dexterous hand. Although various hand configura-tions have been studied in previous works, the objective of this study is not to identify the best overall configura-tion, but to present a method for optimizing the phalanx lengths in a given configuration. Therefore, the structure shown in Figure 1, which implements multiple motions except for palm motion, was adopted. Accordingly, de-pending on the designer’s research purpose, it is necessary to adjust the kinematic parameters, offsets, and initial in-stallation angles. Figure 1 illustrates the structural arrangement of each finger. The initial postures of the thumb and the other fingers, as well as the coordinate frames and angular vari-ables of each joint ( θi, θ ′
+
+> i
+
+), are also indicated. Figure 2(a) illustrates a human hand, with the joints of each finger and the thumb explicitly indicated. For the fingers, the joints are defined—starting from the fin-2Figure 1: Kinematic structure and initial configuration of the five-finger robotic hand considered in this study 
+
+Figure 2: Kinematic structure of the hand (a) Joint con-figuration of a human hand, (b) Key parameters of the simplified structure gertip—as the distal interphalangeal (DIP), proximal in-terphalangeal (PIP), and metacarpophalangeal (MCP) joints. For the thumb, the corresponding joints consist of the interphalangeal (IP), MCP, and carpometacarpal (CMC) joints. Figure 2(b) presents the key geometric parameters ob-tained after structural simplification of the hand model. In this study, for the purpose of structural abstraction, the index to little fingers are assumed to share identical kinematic parameters. Furthermore, the thumb is mod-eled to be longer than the other fingers, and a uniform spacing between adjacent fingers is maintained. In the proposed kinematic structure, the overall hand length is normalized to 1. Based on this, the length of each phalanx is expressed as a ratio. Let the thumb length be denoted by lt and the length of the other fingers by 
+
+lf . The thumb was set to be at least 10% longer than the index finger, and the dimensions were discretized in units of 0.01 so that the total length could be evenly distributed into three phalanges. Let the distance from the index finger to the little finger be defined as hand width (HW). Then, by taking the average ratio of hand width to hand length (HL) in study [28], the following relationship is obtained: HW = 3 a2, (1a) HL = d1 + lf , (1b) HW = 0 .54HL . (1c) In this study, the design variables of primary inter-est correspond to the phalanges in which F/E motion occurs. As shown in Figure 1, these correspond to 
+
+a3, a 4, a 5, a ′
+
+> 2
+
+, a ′
+
+> 4
+
+, and a′
+
+> 5
+
+, whereas other offset dimensions such as a′ 
+
+> 0
+
+and a′ 
+
+> 1
+
+were set arbitrarily. The resulting kine-matic parameters are summarized in Table 1. Table 1: Kinematic parameter lengths of the five-finger robotic hand, with the hand length normalized to 1. HL HW lt lf a1 a′ 
+
+> 0
+
+a′ 
+
+> 1
+
+d1
+
+1 0.54 0.51 0.45 0.18 0.10 0.10 0.55 Based on the above description, the coordinates of each fingertip can be represented with respect to the base frame {Po, x o, y o, z o}. The fingertip position was com-puted using homogeneous transformation matrices. The transformation from link i to i + 1 is expressed as: 
+
+T i+1  
+
+> i
+
+=
+
+Ri+1  
+
+> i
+
+pi+1 
+
+> i
+
+0 1
+
+
+
+. (2) where Ri+1  
+
+> i
+
+is the rotation matrix and pi+1  
+
+> i
+
+is the dis-placement vector between links. The overall transforma-tion matrix is obtained by multiplying the transforma-tions of each link: 
+
+T ji = T i+1  
+
+> i
+
+T i+2  
+
+> i+1
+
+· · · T j−1 
+
+> j−2
+
+T jj−1. (3) Each transformation matrix can be derived using the DH parameter tables in Tables 2 and 3. Table 2presents the five DoF thumb, and Table 3 presents the four DoF middle finger. For the fingers other than the middle finger, the structure can be represented by mod-ifying the offsets. Using the DH parameter convention, the joints of the fingers are represented as being inter-connected through a kinematic chain of links [29]. By multiplying each transformation matrix, the transforma-tion from frame 0 to the fingertip can be obtained. Using this, the fingertip position pe with respect to the base frame poxoyozo is computed as: 
+
+pe = T e 
+
+> 0
+
+po. (4) In addition, the joint angle ranges of the thumb and the other fingers were set as shown in Tables 4 and 5, respectively. Based on these settings, the reachable regions of the thumb and the other fingers can be identified and ana-lyzed according to the joint angle ranges. In addition, the reachable workspace and kinematic characteristics vary depending on the length ratio of each phalanx. 3Table 2: DH parameters of the five DoF thumb 
+
+i αi−1 ai−1 di θi
+
+1 0◦ a′ 
+
+> 0
+
+0 θ′
+
+> 1
+
+2 −90 ◦ a′ 
+
+> 1
+
+0 θ′
+
+> 2
+
+3 90 ◦ a′ 
+
+> 2
+
+0 θ′
+
+> 3
+
+4 −90 ◦ 0 0 θ′
+
+> 4
+
+5 0◦ a′ 
+
+> 4
+
+0 θ′
+
+> 5
+
+6 0◦ a′ 
+
+> 5
+
+0 0Table 3: DH parameters of the four DoF middle finger 
+
+i αi−1 ai−1 di θi
+
+1 90 ◦ 0 0 90 ◦
+
+2 90 ◦ a1 d2 θ2
+
+3 −90 ◦ 0 0 θ3
+
+4 0◦ a3 0 θ4
+
+5 0◦ a4 0 θ5
+
+6 0◦ a5 0 0
+
+# 4 Potential Dexterity Evaluation Factors 
+
+In this study, a sampling-based analysis method on a joint grid was employed to quantitatively evaluate the poten-tial dexterity based on the kinematic structure of the fin-ger. The analysis process consists of five main steps: (1) workspace sampling based on forward kinematics, (2) ma-nipulability computation, (3) voxel-based workspace vol-ume estimation, (4) workspace overlap computation be-tween fingers, and (5) sensitivity evaluation of the finger. 
+
+# 4.1 Workspace Sampling 
+
+In this study, the workspace of the fingertip was evaluated by sampling on a discretized joint grid. The fingertip position is computed using forward kinematics derived from the kinematic structure described in Section 4. Each joint variable is sampled uniformly within its predefined range: 
+
+qi ∈ qi, 1, q i, 2, · · · , q i,n i , q i,k = qi, min + ( k − 1)∆ qi. (5) where ni is the number of discretization steps and ∆ qi
+
+is the step size. The overall joint configuration set Q
+
+is constructed as a Cartesian product, and a workspace point set is generated for all sampled configurations: 
+
+P = p1, p 2, · · · , p Nq . (6) This process is independently applied to the thumb and each of the other four fingers, and Algorithm A 1 shows the workspace sampling process. Table 4: Range of motion settings for each actuated joint of the thumb 
+
+θ′ 
+
+> 1
+
+θ′ 
+
+> 2
+
+θ′ 
+
+> 3
+
+θ′ 
+
+> 4
+
+and θ′
+
+> 5
+
+−30 ◦ to 90 ◦ −90 ◦ to 30 ◦ −60 ◦ to 60 ◦ −90 ◦ to 0 ◦
+
+Table 5: Range of motion settings for each actuated joint of the fingers 
+
+θ2 θ3 θ4 and θ5
+
+−30 ◦ to 30 ◦ −90 ◦ to 30 ◦ −90 ◦ to 0 ◦
+
+# 4.2 Manipulability 
+
+The kinematic manipulability at each joint configuration was computed using manipulability [30]. The Jacobian matrix J(q) relates the fingertip velocity and joint veloc-ity as: ˙pe = J(q) ˙ q. (7) The manipulability is defined as: 
+
+w(q) = 
+
+q
+
+det( JJ T ). (8) In this study, the manipulability was computed using the analytical Jacobian, and the global manipulability was defined as the average value over all sampled con-figurations on the joint grid: 
+
+wg = 1
+
+Nq
+
+X
+
+> q∈Q
+
+w(q). (9) Algorithm A 2 shows the manipulability evaluation pro-cess described above. When the manipulability evaluation result is denoted as z1, the index finger to the little finger share the same design dimension. Therefore, the global manipulability of the thumb Wg,t and the global manipulability of the index finger Wg,i are equally weighted as: 
+
+z1 = 0 .5Wg,t + 0 .5Wg,i . (10) 
+
+Algorithm 1 A1 Workspace Sampling using Joint Grid 
+
+Require: Design parameters d, joint grid Q
+
+Ensure: Workspace point set P 
+
+> 1:
+
+Initialize P ← ∅  
+
+> 2:
+
+for each q ∈ Q do  
+
+> 3:
+
+Compute fingertip position pe = f (q; d) using for-ward kinematics  
+
+> 4:
+
+P ← P ∪ { pe} 
+
+> 5:
+
+end for  
+
+> 6:
+
+return P
+
+4Algorithm 2 A2 Global Manipulability Evaluation 
+
+Require: Design parameters d, joint grid Q
+
+Ensure: Global manipulability wg 
+
+> 1:
+
+s ← 0, N ← 0 
+
+> 2:
+
+for each q ∈ Q do  
+
+> 3:
+
+Compute Jacobian J(q) 
+
+> 4:
+
+Compute w(q) = pdet( JJ T ) 
+
+> 5:
+
+s ← s + w(q) 
+
+> 6:
+
+N ← N + 1  
+
+> 7:
+
+end for  
+
+> 8:
+
+wg ← sN 
+
+> 9:
+
+return wg
+
+# 4.3 Workspace volume 
+
+Workspace volume was estimated using a voxel-based dis-cretization approach, where occupied voxels were iden-tified from sampled workspace points and summed to obtain the total volume [31]. A study evaluating the reachable workspace of manipulators using voxel-based discretization of joint motions has been presented [32]. The workspace volume was computed using a voxel-based space partitioning method. First, the workspace point set was divided into a voxel grid, and for each workspace point p = ( x, y, z ), the voxel index is defined as: 
+
+vx = ⌊ x
+
+∆ ⌋, v y = ⌊ y
+
+∆ ⌋, v z = ⌊ z
+
+∆ ⌋. (11) Each point is mapped to a voxel index v = ( vx, v y , v z ), and points belonging to the same voxel are treated as a single spatial cell. Let Ve denote the set of occupied voxels, then the workspace volume is computed as: 
+
+Vw = |Ve|∆3. (12) Algorithm A 3 shows the workspace volume estimation process. 
+
+Algorithm 3 A3 Workspace Volume using Voxelization 
+
+Require: Workspace point set P , voxel size ∆ 
+
+Ensure: Workspace volume Vw, occupied voxel set Ve 
+
+> 1:
+
+Ve ← ∅  
+
+> 2:
+
+for each p = ( x, y, z ) ∈ P do  
+
+> 3:
+
+vx ← ⌊ x/ ∆⌋ 
+
+> 4:
+
+vy ← ⌊ y/ ∆⌋ 
+
+> 5:
+
+vz ← ⌊ z/ ∆⌋ 
+
+> 6:
+
+Ve ← Ve ∪ { (vx, v y , v z )} 
+
+> 7:
+
+end for  
+
+> 8:
+
+Vw ← | Ve|∆3 
+
+> 9:
+
+return Vw, V e
+
+The workspace volume term z2w is defined as the weighted sum of the workspace volumes of the thumb and the index finger, with equal weighting applied to both, as follows: 
+
+z2w = 0 .5Vw,t + 0 .5Vw,i . (13) 
+
+# 4.4 Overlap workspace volume 
+
+To analyze the region that can be simultaneously reached by the thumb and other fingers, the workspace overlap was computed. Let Vt be the voxel set of the thumb workspace, and Vf be the voxel set of the other fingers (f = i, m, r, l ). The overlap voxel set Vovr,f and overlap volume V vol ovr,f are defined as: 
+
+Vovr,f = Vt ∩ Vf , (14a) 
+
+V vol ovr,f = |Vovr,f |∆3. (14b) This value represents the volume of space that can be simultaneously reached by two fingers. Algorithm A 4 shows the overlap computation process. 
+
+Algorithm 4 A4 Workspace Overlap Computation 
+
+Require: Thumb voxel set Vt, finger voxel set Vf
+
+Ensure: Overlap volume V vol ovr,f and total overlap V vol ovr  
+
+> 1:
+
+V vol ovr ← 0 
+
+> 2:
+
+for each finger f ∈ { i, m, r, l } do  
+
+> 3:
+
+Vovr,f ← Vt ∩ Vf 
+
+> 4:
+
+V vol ovr,f ← | Vovr,f |∆3 
+
+> 5:
+
+V vol ovr ← V vol ovr + V vol ovr,f  
+
+> 6:
+
+end for  
+
+> 7:
+
+return V vol ovr,f , V vol ovr 
+
+The overlap workspace volume term z2o is defined as the sum of the overlap volumes between the thumb and each of the other fingers, as follows: 
+
+z2o = 0 .25 X V vol ovr,f . (15) Since both maximizing workspace volume and improv-ing thumb opposability are related to workspace proper-ties, the final workspace-related term is defined as: 
+
+z2 = 0 .5z2w + 0 .5z2o. (16) 
+
+# 4.5 Sensitivity 
+
+Sensitivity is defined to quantify how strongly the finger-tip position responds to actuation at the distal F/E joint. To isolate this effect, only F/E motions were considered, while all non-flexion joints were fixed. For each sampled configuration, the analytical Jacobian was computed, and the norm of the column corresponding to the distal joint was used as the instantaneous sensitivity measure: 
+
+sd(q) = ∥J(: ,k )( q)∥. (17) where k denotes the distal joint index. The sensitivity was obtained by averaging this value over all sampled F/E configurations Qf e :5¯sd = 1
+
+|Q f e |
+
+X
+
+> q∈Q f e
+
+|| J(: ,k )(q)|| . (18) This procedure corresponds to Algorithm A 5, where the sensitivity is accumulated over the sampled configu-ration set and normalized by the total number of samples. 
+
+Algorithm 5 A5 Sensitivity Evaluation 
+
+Require: Design parameters d, configuration set QFE 
+
+Ensure: Average distal sensitivity ¯ sd 
+
+> 1:
+
+S ← 0, N ← 0 
+
+> 2:
+
+for each q ∈ Q FE do  
+
+> 3:
+
+Fix all non-flexion joints  
+
+> 4:
+
+Compute Jacobian J(q, d ) 
+
+> 5:
+
+sd(q) ← ∥ J(: ,k )(q)∥ 
+
+> 6:
+
+S ← S + sd(q) 
+
+> 7:
+
+N ← N + 1  
+
+> 8:
+
+end for  
+
+> 9:
+
+¯sd ← S/N  
+
+> 10:
+
+return ¯sd
+
+The sensitivity evaluation term z3 is defined as follows: 
+
+z3 = ¯ sd. (19) 
+
+# 5 Phalanx Length Ratio Opti-mization 
+
+The goal of the optimization problem is to determine the dimensions of the hand elements while simultaneously optimizing multiple objective functions under given con-straints. The design variables are defined as: 
+
+x = ( a3, a 4, a 5, a ′
+
+> 2
+
+, a ′
+
+> 4
+
+, a ′
+
+> 5
+
+). (20) where a3, a 4, a 5, a ′
+
+> 2
+
+, a ′
+
+> 4
+
+, a ′ 
+
+> 5
+
+are the hand design parame-ters used in the kinematic modeling. Based on these de-sign variables, the global manipulability, workspace vol-ume, overlap workspace volume, and sensitivity are ob-tained. Therefore, the objective function f (x) is defined by assigning weighting coefficients c1, c 2, c 3 to each eval-uation term as follows: 
+
+f (x) = c1z1
+
+zm
+
++ c2z2
+
+zw
+
+− c3z3
+
+zs
+
+. (21) The objective function is formulated such that larger values of workspace volume and manipulability increase the objective value, while smaller values of sensitivity in-crease the objective value. Here, zm denotes the max-imum manipulability achievable within the given finger length constraints, zw denotes the sum of the maxi-mum workspace volume z2w and the maximum overlap workspace volume z2o, and zs denotes the maximum fin-gertip sensitivity. These values are used to normalize each evaluation term. The goal is to derive the optimal length ratios of the design variables that maximize the objective function un-der different weighting coefficients. Since the weighting coefficients represent relative importance, they satisfy: 
+
+c1 + c2 + c3 = 1 (22) In this study, the weighting coefficients are adjusted to investigate how emphasizing specific evaluation factors affects the resulting optimal design. The constraints are defined such that the phalanx lengths decrease monotonically toward the fingertip. In addition, the total length of the index finger is set to 0.45, and the total length of the thumb is set to 0.51. Each pha-lanx is constrained to have a minimum length of 0.10 to prevent degenerate configurations. 
+
+a3 + a4 + a5 = 0 .45 , a 3 ≥ a4 ≥ a5 ≥ 0.10 , (23a) 
+
+a′ 
+
+> 2
+
++ a′ 
+
+> 4
+
++ a′ 
+
+> 5
+
+= 0 .51 , a ′ 
+
+> 2
+
+≥ a′ 
+
+> 4
+
+≥ a′ 
+
+> 5
+
+≥ 0.10 . (23b) These constraints can be rewritten as: 
+
+a3 = 0 .45 − a4 − a5, (24a) 
+
+a′ 
+
+> 2
+
+= 0 .51 − a′ 
+
+> 4
+
+− a′
+
+> 5
+
+. (24b) Next, the optimization procedure is described. Let D
+
+denote the set of feasible designs satisfying the finger length constraints. For each design candidate d ∈ D,the workspace point set and global manipulability are computed using Algorithm A 1 and A 2. The voxelized workspace volume is then computed from the generated workspace point set using Algorithm A 3. The same procedure is applied to the thumb and the other four fingers. Using the voxel sets obtained from each design, the overlap workspace volumes between the thumb and each of the four fingers are computed using Algorithm A 4. Design combinations that produce zero overlap workspace volume are excluded from further con-sideration. Based on this process, the optimization procedure for maximizing the objective function is described in Algo-rithm A 6. For each design configuration, the workspace volume, global manipulability, and voxel sets are stored. This process is applied to both the thumb and the four fingers. Then, for each combination of thumb and fin-ger designs, the overlap workspace volume is computed. The evaluation terms are normalized using their corre-sponding maximum values, and the objective function is evaluated. Finally, the optimal design combination that maximized the objective function under the given weight-ing coefficients is selected. The maximum values zm, z w, z s used for normalization can be obtained by setting the weighting coefficients in Al-gorithm A 6 to consider only a single evaluation term at a time. In this process, the minimum length constraints are applied while removing the phalanx length ordering 6Algorithm 6 A6 Searching for Optimal Design Pair 
+
+Require: Thumb design set Dt, Finger design set Df ,voxel size ∆, weight coefficients c1, c 2, c 3, normaliza-tion values zm, z w, z s, Thumb joint grid Qt, Finger joint grid Qf
+
+Ensure: Optimal thumb design d∗ 
+
+> t
+
+, Optimal finger de-sign d∗ 
+
+> f
+
+, Maximum objective value f ∗ 
+
+> 1:
+
+Generate feasible design set of thumb Dt and finger 
+
+Df 
+
+> 2:
+
+for each dt ∈ Dt do  
+
+> 3:
+
+Generate workspace point set using A 1  
+
+> 4:
+
+Compute global manipulability using A 2  
+
+> 5:
+
+Compute workspace volume and voxel set using A 3  
+
+> 6:
+
+Compute distal sensitivity using A 5  
+
+> 7:
+
+Store ( dt, V t, W t, V vox t , S t) 
+
+> 8:
+
+end for  
+
+> 9:
+
+for each df ∈ Df do  
+
+> 10:
+
+Generate workspace point set using A 1  
+
+> 11:
+
+Compute global manipulability using A 2  
+
+> 12:
+
+Compute workspace volume and voxel set using A 3  
+
+> 13:
+
+Compute distal sensitivity using A 5  
+
+> 14:
+
+Store ( df , V f , W f , V vox f , S f ) 
+
+> 15:
+
+end for  
+
+> 16:
+
+Initialize f ∗ ← −∞  
+
+> 17:
+
+for each stored thumb result rt do  
+
+> 18:
+
+for each stored finger result rf do  
+
+> 19:
+
+Compute overlap volume using A 4  
+
+> 20:
+
+if any overlap volume is zero then  
+
+> 21:
+
+continue  
+
+> 22:
+
+end if  
+
+> 23:
+
+Compute normalized objective: 
+
+f (x) = c1z1
+
+zm
+
++ c2z2
+
+zw
+
+− c3z3
+
+zs 
+
+> 24:
+
+if f (x) > f ∗ then  
+
+> 25:
+
+f ∗ ← f (x) 
+
+> 26:
+
+d∗ 
+
+> t
+
+← dt, d∗ 
+
+> f
+
+← df 
+
+> 27:
+
+end if  
+
+> 28:
+
+end for  
+
+> 29:
+
+end for  
+
+> 30:
+
+return d∗ 
+
+> t
+
+, d ∗ 
+
+> f
+
+, f ∗
+
+constraints. Through this approach, the normalization values are computed globally, while the actual optimiza-tion process is performed under the full set of constraints. 
+
+# 6 Results and Analysis 
+
+In this section, the pre-defined settings used for the op-timization are described, and the optimization results obtained under different weighting coefficients are pre-sented. In addition, the influence of each evaluation fac-tor on the finger phalanx length ratios is analyzed based on the results. Furthermore, the relationships between the evaluation factors and the resulting design tendencies are discussed. 
+
+# 6.1 Voxel and Resolution 
+
+The voxel size ∆ must be determined for workspace and overlap workspace analysis. To determine ∆, an appro-priate resolution is required. The resolution refers to how finely the joint motion ranges are discretized. In this study, both the resolution and ∆ were determined by observing the variation in the results after setting all phalanx lengths corresponding to the design variables to equal values. The resolution was selected at the point where the variation became less than 2%. When the total hand length is set to 1, the thumb pha-lanx lengths are assigned as 0.17, 0.17, and 0.17 for the metacarpal, proximal, and distal segments, respectively. The phalanx lengths of the other fingers are assigned as 0.15, 0.15, and 0.15 for the proximal, middle, and distal segments, respectively. The workspace volume was then evaluated while decreasing the joint angle resolution from 30 ◦.At this stage, the voxel size was set to four different values: 0.05, 0.025, 0.01, and 0.005. The significant points were observed at resolutions of 5 ◦ and 3 ◦ for the thumb with voxel sizes of 0.05 and 0.025, and at resolutions of 3◦ and 2 ◦ for the fingers with the same voxel sizes. Table 6: Workspace volumes of the thumb and fingers at different sampling resolutions Voxel Thumb Finger (∆) 5◦ 3◦ 3◦ 2◦
+
+0.05 0.35825 0.36388 0.08575 0.08600 0.025 0.29347 0.30130 0.06245 0.06295 Table 6 shows the workspace volume according to voxel size and resolution. The results indicate that, for ∆ = 0 .05, the change in volume remains within 2% for both the thumb and the fingers as the resolution changes. As the voxel size decreases, the occupied volume de-creases, whereas larger voxel sizes assign larger volumes even with fewer occupied points. Additionally, higher res-olution leads to a larger computed volume due to denser sampling; however, the variation becomes negligible be-yond a certain point. Therefore, the voxel size was set to ∆ = 0 .05, with a resolution of 5 ◦ for the thumb and 3 ◦
+
+for the other fingers. 
+
+# 6.2 Optimization Results 
+
+Before performing the optimization, the number of fea-sible designs is determined by applying the minimum length constraint and the ordering constraint among pha-lanx lengths. As a result, there are 48 possible thumb designs and 27 possible designs for the other fingers. 7The optimization results obtained by evaluating all combinations of these design candidates are presented. First, seven combinations of weighting coefficients were defined, as shown in Table 7. Case 1 corresponds to equal weighting, Case 2, 3 and 4 emphasize a single eval-uation factor, and the remaining three cases (Case 5, 6, and 7) emphasize two evaluation factors. Table 7: Classification of cases defined by seven different weighting coefficients Case c1 c2 c3
+
+1 0.33 0.33 0.33 2 0.8 0.1 0.1 3 0.1 0.8 0.1 4 0.1 0.1 0.8 5 0.4 0.4 0.2 6 0.4 0.2 0.4 7 0.2 0.4 0.4 In Case 1, where the weighting coefficients are equal, design configurations with zero overlap between the thumb and the other fingers were excluded. The distri-bution of the objective function is shown in Figure 3(a). Within the feasible design space, the variation of workspace and manipulability is relatively smaller com-pared to that of sensitivity. Since workspace and manip-ulability are proportional to the objective function and sensitivity is inversely proportional, the objective func-tion is observed to be most sensitive to the variation of sensitivity. Figure 3(b) shows Case 2, where the weighting coef-ficient for workspace is increased while those for manip-ulability and sensitivity are reduced. In this case, the variation in workspace dominates the objective function by a factor of approximately eight compared to the other terms, resulting in a design biased toward maximizing workspace volume. Figure 4 presents the workspace and overlap workspace for Cases 1 and 2. Although no significant visual dif-ference is observed in Fig. 4(a) and (b), the actual workspace volume increased by 8.27% for the thumb and 3.21% for the finger, while the overlap volume increased by 20.96%. The overall results for Cases 1 to 7 are summarized in a single distribution, as shown in Figure 5. Although not all possible weighting combinations were exhaustively explored, the seven cases can be categorized into four dis-tinct groups. In Figure 5, group A corresponds to Cases 1, 4, 6, and 7, group B corresponds to Case 5, group C corresponds to Case 3, and group D corresponds to Case 2. Cases 1, 4, 6, and 7 exhibit behavior dominated by sensitivity, which has relatively larger variation. Cases with high weighting on workspace, manipulability, or both show distinct results. In particular, when com-
+
+Figure 3: Distribution of workspace volume, manipula-bility, and sensitivity for each design satisfying the op-timization constraints, along with the corresponding ob-jective function values under different weighting coeffi-cients: (a) Case 1 - w1 = w2 = w3 = 0 .33, (b) Case 2 -
+
+w1 = 0 .8, w 2 = w3 = 0 .1paring Case 3 (high manipulability weight) with Case 1 (equal weights), the manipulability increased by 0.82% for the thumb and 3.30% for the finger. Although Case 2 yields higher manipulability values, this is influenced by the relative variation magnitudes of each evaluation factor within the feasible design space. Figure 6 shows the phalanx length ratios of the thumb and fingers for groups A to D. For the thumb, groups A and C yield identical length ratios, while group B re-sults in a longer distal phalanx. Group D produces equal lengths across all phalanges. For the fingers, all groups (A to D) produce different results. In groups A and B, the proximal phalanx is the longest, with group C produc-ing the shortest distal phalanx. Group C yields a more balanced distribution compared to group A, and group D results in equal phalanx lengths. 8Figure 4: Workspace and overlap workspace correspond-ing to the designs with the highest objective function val-ues: (a) Case 1, (b) Case 2 
+
+Figure 5: Distribution of objective function values for each design under seven different weighting coefficient configurations, along with four representative optimized results (A, B, C, and D) 
+
+# 6.3 Analysis 
+
+The optimization results indicate that assigning weight-ing coefficients does not necessarily lead to maximizing the corresponding evaluation factor. This is because the distribution of evaluation values within the feasible de-sign space is not uniform. Additionally, each evaluation factor tends to bias the phalanx length ratios in different ways. 
+
+Figure 6: Phalanx length ratios of the thumb and fingers for the four optimized design groups (A, B, C, and D) Workspace volume and overlap workspace volume are evaluated based on reachable points and voxel represen-tation. The results show that a longer distal phalanx leads to a larger reachable region, resulting in a larger workspace volume. For overlap workspace, since it eval-uates voxels simultaneously occupied by the thumb and other fingers, a longer distal phalanx is advantageous for generating a wider overlapping reachable region between opposing fingers. Manipulability depends on joint motion ranges. When the motion ranges are identical, manipulability is more influenced by joints with larger motion ranges. However, this effect is limited to joints sharing the same motion di-rection. In the case of fingers, this corresponds to the three joints performing F/E motion. In the proposed model, the F/E motion ranges differ among the Metacar-pophalangeal, Proximal Interphalangeal, and Distal In-terphalangeal joints, which results in a tendency for ma-nipulability to favor longer proximal phalanges. However, if identical motion ranges are assumed for all joints, the manipulability is maximized when all phalanx lengths are equal. Sensitivity represents how much the fingertip position changes with respect to joint motion variations. Lower sensitivity indicates smaller positional changes for the same joint variation, enabling more precise control. From the optimization results, it is observed that a shorter distal phalanx tends to reduce positional varia-tion. In addition, within the proposed kinematic struc-ture, large-scale motion is mainly contributed by the proximal and middle phalanges, whereas the distal pha-lanx plays a more significant role in fine manipulation. This observation is consistent with the relationship be-tween link length and sensitivity in the proposed evalua-tion framework. This result indicates that the finger structure inher-ently separates the roles of gross motion and fine manipu-lation, where proximal segments contribute to workspace expansion and distal segments contribute to precision control. 97 Discussions 
+
+Potential dexterity does not, by itself, guarantee the abil-ity to grasp or manipulate objects. However, it can be useful for evaluating and referencing potential perfor-mance at the design stage without requiring information about specific objects or manipulation tasks. Further-more, it can contribute to modifying kinematic param-eters according to the design objective and prioritizing potential performance in specific directions. In the proposed study, the evaluation was conducted based on the reachable workspace of the hand, thumb opposability through the overlap workspace, distal sensi-tivity, and global manipulability. During the optimiza-tion process, a minimum finger length was imposed, and a constraint was applied such that the phalanx lengths become shorter or equal toward the fingertip to resemble the human hand. In the process of extracting the maxi-mum value for each factor, the minimum finger length was maintained while removing the phalanx length ordering constraints. Under this condition, the workspace volume was maximized when the distal phalanx was the longest. This indicates that a single-factor approach based solely on maximizing workspace volume is not appropriate. Global manipulability was influenced by the joint range of motion. In cases where identical motions are gener-ated—such as the three F/E motions of the fingers—when the joint ranges are equal, configurations with equal pha-lanx lengths were dominant. When the range of motion of a specific joint was larger, the phalanx closer to that joint tended to be longer. This indicates that the config-uration of joint ranges of motion also affects the phalanx length ratios. Finally, sensitivity represents the geometric responsive-ness of the fingertip position to joint variations. A higher sensitivity corresponds to a larger displacement of the fin-gertip with respect to joint motion. When deriving the maximum value, the phalanx length ordering constraints were removed similarly to the workspace case, and the re-sults showed that the distal phalanx became the longest. Therefore, when sensitivity is reduced, the distal phalanx becomes shorter, enabling finer motion at the fingertip joint, while the other phalanges become relatively longer, adjusting the structure toward configurations suitable for larger-scale motions. In this study, not all weighting coefficients were exhaus-tively explored during the optimization process based on the evaluation factors. However, the results obtained by adjusting the weights were categorized into four groups. These optimization results indicate that, depending on which performance factor is prioritized, the resulting pha-lanx length ratios vary accordingly. This provides a useful reference for designers when determining the finger length ratios based on the intended performance. Despite these findings, several limitations exist in this study. The present analysis is based purely on kine-matic properties and does not consider contact mechan-ics, friction, or force transmission. Therefore, the pro-posed design implications should be interpreted as ge-ometric and kinematic guidelines rather than complete predictors of grasp stability or force-based manipulation performance. In addition, the use of discretized joint sampling and voxel-based workspace approximation in-troduces resolution-dependent effects. While these may influence quantitative results, they are not expected to significantly affect the overall qualitative trends observed in this study. Furthermore, this study does not include geometric information such as finger thickness or width. For kinematic simplification in the analysis, the base po-sitions of the fingers, except for the thumb, were assigned with the same height offset, and the lengths of the four fingers were set to be identical. In future work, an extended model incorporating ge-ometric factors such as finger thickness and width will be considered. In addition, evaluations will be conducted by allowing different finger lengths even under the opti-mized length ratios, and the effects of variations in the metacarpal joint positions and orientations on potential dexterity will be analyzed. Through this, it is expected that the proposed approach will contribute to construct-ing the kinematic structure of robotic hands during the design process and provide a more practical framework for kinematic parameter optimization in real robotic hand design. 
+
+# 8 Conclusions 
+
+This paper presented a framework for optimizing pha-lanx length ratios in a five-finger robotic hand based on potential dexterity. The proposed method evaluates can-didate designs using global manipulability, workspace vol-ume, overlap workspace volume, and sensitivity, and de-termines optimal configurations through a weighted ob-jective formulation. The results demonstrate that the phalanx lengths do not contribute equally to the over-all dexterity. Instead, the optimization reveals that each phalanx plays a distinct functional role within the kine-matic structure. In particular, the distal segment sig-nificantly influences sensitivity and precision, while the proximal structure primarily contributes to workspace formation. In addition, the study shows that the selec-tion of weighting coefficients does not directly guaran-tee the maximization of individual evaluation factors due to the non-uniform distribution of performance metrics within the feasible design space. Nevertheless, consistent structural tendencies observed across different weighting configurations provide meaningful design insights. The proposed framework offers a systematic approach to ex-ploring design trade-offs between reachability, dexterity, and controllability. As a result, it can serve as a use-ful guideline for the kinematic design of multi-fingered robotic hands, particularly in the early stages of design where object-specific or force-based considerations are not 10 yet incorporated. 
+
+# References 
+
+[1] Kashef, S. R., Amini, S., and Akbarzadeh, A., 2020, “Robotic hand: A review on linkage-driven finger mechanisms of prosthetic hands and evaluation of the performance criteria,” Mechanism and Machine Theory, 145 , p. 103677. [2] Mohammed, R. A., Soud, W. A., and Baqer, I. A., 2021, “Kinematic Analysis of Underactuated Robotic Finger Design,” IOP Conference Series: Materials Science and Engineering , Vol. 1094, IOP Publishing, Paper No. 1, p. 012070. [3] Tang, X., Luo, C., He, K., and Du, R., 2011, “Digi-tal design of low-cost 3-DOF prosthetic hand,” 2011 IEEE International Conference on Information and Automation , IEEE, pp. 309–314. [4] Kang, H., Han, D., Son, K., and Kang, M.-S., 2026, “Design and Kinematic Analysis of a 6-DoA AIRO-Hand with a Translation–Rotation-Coupled Thumb for Workspace Expansion,” International Journal of Control, Automation, and Systems, pp. 1–14. [5] Yu, Q., Shang, W., Zhao, Z., Cong, S., and Li, Z., 2020, “Robotic grasping of unknown objects us-ing novel multilevel convolutional neural networks: From parallel gripper to dexterous hand,” IEEE Transactions on Automation Science and Engineer-ing, 18 (4), pp. 1730–1741. [6] Zhu, H., Li, X., Chen, W., Li, X., Ma, J., Teo, C. S., Teo, T. J., and Lin, W., 2021, “Weight imprinting classification-based force grasping with a variable-stiffness robotic gripper,” IEEE Transactions on Au-tomation Science and Engineering, 19 (2), pp. 969– 981. [7] Cheng, M., Fan, S., Yang, D., and Jiang, L., 2020, “Design of an underactuated finger based on a novel nine-bar mechanism,” Journal of Mechanisms and Robotics, 12 (6), p. 065001. [8] Meijneke, C., Kragten, G., and Wisse, M., 2011, “Design and performance assessment of an underac-tuated hand for industrial applications,” Mechanical Sciences, 2(1), pp. 9–15. [9] Lin, Y.-Y., Raj, R., and Juang, J.-Y., 2025, “A com-prehensive review of dexterous robotic hands: De-sign, implementation, and evaluation,” Bioinspira-tion & Biomimetics, 20 (4), p. 041003. [10] Mei, D., Yu, X., Tang, G., Liu, S., Zhao, X., Zhao, C., Li, C., and Wang, Y., 2023, “Blue hand: A novel type of soft anthropomorphic hand based on pneu-matic series-parallel mechanism,” IEEE Robotics and Automation Letters, 8(11), pp. 7615–7622. [11] Wei, W., Zhuang, Z., An, W., and Dai, J., 2021, “A Three-Fingered Humanoid Dexterous Hand Based on a Six-Bar Metamorphic Palm Structural Design and Performance Research,” 2021 6th International Conference on Robotics and Automation Engineering (ICRAE) , IEEE, pp. 168–179. [12] Kapandji, A. I., 1992, “Clinical evaluation of the thumb’s opposition,” Journal of Hand Therapy, 5(2), pp. 102–106. [13] Cutkosky, M. R. et al., 1989, “On grasp choice, grasp models, and the design of hands for manufacturing tasks.” IEEE Transactions on robotics and automa-tion, 5(3), pp. 269–279. [14] Feix, T., Pawlik, R., Schmiedmayer, H.-B., Romero, J., and Kragic, D., 2009, “A comprehensive grasp taxonomy,” Robotics, science and systems: work-shop on understanding the human hand for advanc-ing robotic manipulation , Vol. 2, Seattle, WA, USA;, Paper No. 2.3, pp. 2–3. [15] Feix, T., Romero, J., Schmiedmayer, H.-B., Dollar, A. M., and Kragic, D., 2015, “The grasp taxonomy of human grasp types,” IEEE Transactions on human-machine systems, 46 (1), pp. 66–77. [16] Sun, B.-Y., Gong, X., Liang, J., Chen, W.-B., Xie, Z.-L., Liu, C., and Xiong, C.-H., 2021, “Design prin-ciple of a dual-actuated robotic hand with anthropo-morphic self-adaptive grasping and dexterous manip-ulation abilities,” IEEE Transactions on Robotics, 
+
+38 (4), pp. 2322–2340. [17] Rahman, N., Carbonari, L., D’Imperio, M., Canali, C., Caldwell, D. G., and Cannella, F., 2016, “A dexterous gripper for in-hand manipulation,” 2016 IEEE international conference on advanced intelli-gent mechatronics (AIM) , IEEE, pp. 377–382. [18] Kang, H., Han, D., Son, K., and Kang, M.-S., 2026, “Design of a reconfigurable three-finger gripper for versatile grasping tasks,” Robotics and Autonomous Systems, 196 , p. 105264. [19] Townsend, W., 2000, “The BarrettHand grasper– programmably flexible part handling and assembly,” Industrial Robot: an international journal, 27 (3), pp. 181–188. [20] Fang, B., Sun, F., Chen, Y., Zhu, C., Xia, Z., and Yang, Y., 2019, “A tendon-driven dexterous hand design with tactile sensor array for grasping and ma-nipulation,” 2019 IEEE International Conference on Robotics and Biomimetics (ROBIO) , IEEE, pp. 203– 210. [21] Puhlmann, S., Harris, J., and Brock, O., 2022, “RBO hand 3: A platform for soft dexterous manipulation,” IEEE Transactions on Robotics, 38 (6), pp. 3434– 3449. 11 [22] Hernando, M., Morillo, C., Guffanti, D., and Brunete, A., 2023, “Mechatronic design of aself-contained dexterous robotic hand for gestu-ral communication,” International Journal of Social Robotics, 15 (2), pp. 221–231. [23] “Shadow,” Shadow Robot co., accessed March. 10, 2026, https://shadowrobot.com/ dexterous-hand-series/ 
+
+[24] Yang, H., Wei, G., Ren, L., Qian, Z., Wang, K., Xiu, H., and Liang, W., 2021, “A low-cost linkage-spring-tendon-integrated compliant anthro-pomorphic robotic hand: MCR-Hand III,” Mecha-nism and Machine Theory, 158 , p. 104210. [25] “MM Hand 1.0,” MMLab, accessed March. 10, 2026, 
+
+https://mmlab.hk/research/MM-Hand 
+
+[26] Grebenstein, M., Chalon, M., Roa, M. A., and Borst, C., 2019, DLR Multi-fingered Hands , Springer Netherlands, Dordrecht, pp. 481–522. [27] Knutti, D., 1984, “The Utah/MIT Dexterous Hand: Work in Progrss,” International Journal of Robotics Research, 3(4), pp. 21–50. [28] Clerke, A. M., Clerke, J. P., and Adams, R. D., 2005, “Effects of hand shape on maximal isometric grip strength and its reliability in teenagers,” Journal of hand therapy, 18 (1), pp. 19–29. [29] Liu, L., Sun, N., and Li, K., 2024, “System De-sign and Kinematic Analysis of a Dexterous Hand with Humanoid Characteristics,” 2024 WRC Sympo-sium on Advanced Robotics and Automation (WRC SARA) , IEEE, pp. 163–169. [30] Yoshikawa, T., 1985, “Manipulability of robotic mechanisms,” The international journal of Robotics Research, 4(2), pp. 3–9. [31] Bullock, I. M., Feix, T., and Dollar, A. M., 2014, “Dexterous workspace of human two-and three-fingered precision manipulation,” 2014 IEEE Hap-tics Symposium (HAPTICS) , IEEE, pp. 41–47. [32] Anderson-Sprecher, P. and Simmons, R., 2012, “Voxel-based motion bounding and workspace esti-mation for robotic manipulators,” 2012 IEEE In-ternational Conference on Robotics and Automation ,IEEE, pp. 2141–2146. 12

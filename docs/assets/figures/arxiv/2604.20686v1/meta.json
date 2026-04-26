@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-001.webp",
+      "caption": "Figure 1: Kinematic structure and initial configuration of the five-finger robotic hand considered in this study",
+      "page": 3,
+      "index": 1,
+      "width": 512,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-002.webp",
+      "caption": "Figure 2: Kinematic structure of the hand (a) Joint configuration of a human hand, (b) Key parameters of the simplified structure",
+      "page": 3,
+      "index": 2,
+      "width": 491,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-003.webp",
+      "caption": "Figure 3: Distribution of workspace volume, manipulability, and sensitivity for each design satisfying the optimization constraints, along with the corresponding objective function values under different weighting coefficients: (a) Case 1 - w1 = w2 = w3 = 0.33, (b) Case 2 - w1 = 0.8, w2 = w3 = 0.1",
+      "page": 8,
+      "index": 3,
+      "width": 491,
+      "height": 762
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-004.webp",
+      "caption": "Figure 4: Workspace and overlap workspace corresponding to the designs with the highest objective function values: (a) Case 1, (b) Case 2",
+      "page": 9,
+      "index": 4,
+      "width": 491,
+      "height": 483
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-005.webp",
+      "caption": "Figure 5: Distribution of objective function values for each design under seven different weighting coefficient configurations, along with four representative optimized results (A, B, C, and D)",
+      "page": 9,
+      "index": 5,
+      "width": 491,
+      "height": 434
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20686v1/fig-006.webp",
+      "caption": "Figure 6: Phalanx length ratios of the thumb and fingers for the four optimized design groups (A, B, C, and D)",
+      "page": 9,
+      "index": 6,
+      "width": 491,
+      "height": 321
+    }
+  ]
+}

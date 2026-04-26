@@ -1,0 +1,586 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-26T20:17:49.685819+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "2604.20100v1",
+      "source": "arxiv",
+      "title": "JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy",
+      "abstract": "Robotic autonomy in open-world environments is fundamentally limited by insufficient data diversity and poor cross-embodiment generalization. Existing robotic datasets are often limited in scale and task coverage, while relatively large differences across robot embodiments impede effective behavior knowledge transfer. To address these challenges, we propose JoyAI-RA, a vision-language-action (VLA) embodied foundation model tailored for generalizable robotic manipulation. JoyAI-RA presents a multi-source multi-level pretraining framework that integrates web data, large-scale egocentric human manipulation videos, simulation-generated trajectories, and real-robot data. Through training on heterogeneous multi-source data with explicit action-space unification, JoyAI-RA effectively bridges embodiment gaps, particularly between human manipulation and robotic control, thereby enhancing cross-embodiment behavior learning. JoyAI-RA outperforms state-of-the-art methods in both simulation and real-world benchmarks, especially on diverse tasks with generalization demands.",
+      "authors": [
+        "Tianle Zhang",
+        "Zhihao Yuan",
+        "Dafeng Chi",
+        "Peidong Liu",
+        "Dongwei Li",
+        "Kejun Hu",
+        "Likui Zhang",
+        "Junnan Nie",
+        "Ziming Wei",
+        "Zengjue Chen",
+        "Yili Tang",
+        "Jiayi Li",
+        "Zhiyuan Xiang",
+        "Mingyang Li",
+        "Tianci Luo",
+        "Hanwen Wan",
+        "Ao Li",
+        "Linbo Zhai",
+        "Zhihao Zhan",
+        "Yuzheng Zhuang",
+        "Liang Lin",
+        "Xiaodong Bai",
+        "Jiakun Cai",
+        "Peng Cao",
+        "Kangliang Chen",
+        "Siang Chen",
+        "Yixiang Dai",
+        "Shuai Di",
+        "Nan Duan",
+        "Yicheng Gong",
+        "Chenguang Gui",
+        "Yucheng Guo",
+        "Peng Hao",
+        "Qingrong He",
+        "Haoyang Huang",
+        "Kunrui Huang",
+        "Zhixuan Huang",
+        "Shibo Jin",
+        "Yixiang Jin",
+        "Anson Li",
+        "Dongjiang Li",
+        "Jiawei Li",
+        "Ruodai Li",
+        "Yihang Li",
+        "Yuzhen Li",
+        "Jiaming Liang",
+        "Fangsheng Liu",
+        "Jing Long",
+        "Mingxi Luo",
+        "Xing Pan",
+        "Hui Shen",
+        "Xiaomeng Tian",
+        "Daming Wang",
+        "Song Wang",
+        "Junwu Xiong",
+        "Hang Xu",
+        "Wanting Xu",
+        "Zhengcheng Yu",
+        "He Zhang",
+        "Jiyao Zhang",
+        "Lin Zhao",
+        "Chen Zhou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T01:51:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.20100v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "integrates large-scale egocentric human manipulation videos for dexterous skill learning",
+      "llm_evidence_cn": "整合大规模第一视角人类操作视频用于灵巧技能学习",
+      "llm_evidence": "整合大规模第一视角人类操作视频用于灵巧技能学习",
+      "canonical_evidence": "整合大规模第一视角人类操作视频用于灵巧技能学习",
+      "llm_tldr_en": "A foundation model for robotic autonomy pretrained on multi-source data including egocentric human videos.",
+      "llm_tldr_cn": "一种在包括第一视角人类视频在内的多源数据上预训练的机器人自主基础模型。",
+      "llm_tldr": "一种在包括第一视角人类视频在内的多源数据上预训练的机器人自主基础模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.20100v2",
+      "source": "arxiv",
+      "title": "JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy",
+      "abstract": "Robotic autonomy in open-world environments is fundamentally limited by insufficient data diversity and poor cross-embodiment generalization. Existing robotic datasets are often limited in scale and task coverage, while relatively large differences across robot embodiments impede effective behavior knowledge transfer. To address these challenges, we propose JoyAI-RA, a vision-language-action (VLA) embodied foundation model tailored for generalizable robotic manipulation. JoyAI-RA presents a multi-source multi-level pretraining framework that integrates web data, large-scale egocentric human manipulation videos, simulation-generated trajectories, and real-robot data. Through training on heterogeneous multi-source data with explicit action-space unification, JoyAI-RA effectively bridges embodiment gaps, particularly between human manipulation and robotic control, thereby enhancing cross-embodiment behavior learning. JoyAI-RA outperforms state-of-the-art methods in both simulation and real-world benchmarks, especially on diverse tasks with generalization demands.",
+      "authors": [
+        "Tianle Zhang",
+        "Zhihao Yuan",
+        "Dafeng Chi",
+        "Peidong Liu",
+        "Dongwei Li",
+        "Kejun Hu",
+        "Likui Zhang",
+        "Junnan Nie",
+        "Ziming Wei",
+        "Zengjue Chen",
+        "Yili Tang",
+        "Jiayi Li",
+        "Zhiyuan Xiang",
+        "Mingyang Li",
+        "Tianci Luo",
+        "Hanwen Wan",
+        "Ao Li",
+        "Linbo Zhai",
+        "Zhihao Zhan",
+        "Xiaodong Bai",
+        "Jiakun Cai",
+        "Peng Cao",
+        "Kangliang Chen",
+        "Siang Chen",
+        "Yixiang Dai",
+        "Shuai Di",
+        "Yicheng Gong",
+        "Chenguang Gui",
+        "Yucheng Guo",
+        "Peng Hao",
+        "Qingrong He",
+        "Haoyang Huang",
+        "Kunrui Huang",
+        "Zhixuan Huang",
+        "Shibo Jin",
+        "Yixiang Jin",
+        "Anson Li",
+        "Dongjiang Li",
+        "Jiawei Li",
+        "Ruodai Li",
+        "Yihang Li",
+        "Yuzhen Li",
+        "Jiaming Liang",
+        "Fangsheng Liu",
+        "Jing Long",
+        "Mingxi Luo",
+        "Xing Pan",
+        "Hui Shen",
+        "Xiaomeng Tian",
+        "Daming Wang",
+        "Song Wang",
+        "Junwu Xiong",
+        "Hang Xu",
+        "Wanting Xu",
+        "Zhengcheng Yu",
+        "He Zhang",
+        "Jiyao Zhang",
+        "Lin Zhao",
+        "Chen Zhou",
+        "Nan Duan",
+        "Yuzheng Zhuang",
+        "Liang Lin"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T01:51:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.20100v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "integrates large-scale egocentric human manipulation videos for robotic autonomy",
+      "llm_evidence_cn": "整合大规模第一视角人类操作视频用于机器人自主性",
+      "llm_evidence": "整合大规模第一视角人类操作视频用于机器人自主性",
+      "canonical_evidence": "整合大规模第一视角人类操作视频用于机器人自主性",
+      "llm_tldr_en": "JoyAI-RA is a foundation model trained on egocentric videos and multi-source data for generalizable manipulation.",
+      "llm_tldr_cn": "JoyAI-RA是一个利用第一视角视频和多源数据训练的通用机器人操作基础模型。",
+      "llm_tldr": "JoyAI-RA是一个利用第一视角视频和多源数据训练的通用机器人操作基础模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.21331v1",
+      "source": "arxiv",
+      "title": "FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception",
+      "abstract": "The current practice of dexterous manipulation generally relies on a single wrist-mounted view, which is often occluded and limits performance on tasks requiring multi-view perception. In this work, we present FingerViP, a learning system that utilizes a visuomotor policy with fingertip visual perception for dexterous manipulation. Specifically, we design a vision-enhanced fingertip module with an embedded miniature camera and install the modules on each finger of a multi-fingered hand. The fingertip cameras substantially improve visual perception by providing comprehensive, multi-view feedback of both the hand and its surrounding environment. Building on the integrated fingertip modules, we develop a diffusion-based whole-body visuomotor policy conditioned on a third-view camera and multi-view fingertip vision, which effectively learns complex manipulation skills directly from human demonstrations. To improve view-proprioception alignment and contact awareness, each fingertip visual feature is augmented with its corresponding camera pose encoding and per-finger joint-current encoding. We validate the effectiveness of the multi-view fingertip vision and demonstrate the robustness and adaptability of FingerViP on various challenging real-world tasks, including pressing buttons inside a confined box, retrieving sticks from an unstable support, retrieving objects behind an occluding curtain, and performing long-horizon cabinet opening and object retrieval, achieving an overall success rate of 80.8%. All hardware designs and code will be fully open-sourced.",
+      "authors": [
+        "Zhen Zhang",
+        "Weinan Wang",
+        "Hejia Sun",
+        "Qingpeng Ding",
+        "Xiangyu Chu",
+        "Guoxin Fang",
+        "K. W. Samuel Au"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-23T06:37:22+00:00",
+      "link": "https://arxiv.org/pdf/2604.21331v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "fingertip visual perception with embedded miniature cameras for dexterous manipulation",
+      "llm_evidence_cn": "利用嵌入式微型摄像头的指尖视觉感知进行灵巧操作",
+      "llm_evidence": "利用嵌入式微型摄像头的指尖视觉感知进行灵巧操作",
+      "canonical_evidence": "利用嵌入式微型摄像头的指尖视觉感知进行灵巧操作",
+      "llm_tldr_en": "FingerViP uses fingertip-mounted cameras to provide multi-view egocentric feedback for dexterous manipulation.",
+      "llm_tldr_cn": "FingerViP系统通过指尖嵌入式摄像头提供多视角第一人称反馈，显著提升灵巧操作性能。",
+      "llm_tldr": "FingerViP系统通过指尖嵌入式摄像头提供多视角第一人称反馈，显著提升灵巧操作性能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.20689v2",
+      "source": "arxiv",
+      "title": "FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation",
+      "abstract": "Dexterous robotic manipulation requires comprehensive perception across all phases of interaction: pre-contact, contact initiation, and post-contact. Such continuous feedback allows a robot to adapt its actions throughout interaction. However, many existing tactile sensors, such as GelSight and its variants, only provide feedback after contact is established, limiting a robot's ability to precisely initiate contact. We introduce FingerEye, a compact and cost-effective sensor that provides continuous vision-tactile feedback throughout the interaction process. FingerEye integrates binocular RGB cameras to provide close-range visual perception with implicit stereo depth. Upon contact, external forces and torques deform a compliant ring structure; these deformations are captured via marker-based pose estimation and serve as a proxy for contact wrench sensing. This design enables a perception stream that smoothly transitions from pre-contact visual cues to post-contact tactile feedback. Building on this sensing capability, we develop a vision-tactile imitation learning policy that fuses signals from multiple FingerEye sensors to learn dexterous manipulation behaviors from limited real-world data. We further develop a digital twin of our sensor and robot platform to improve policy generalization. By combining real demonstrations with visually augmented simulated observations for representation learning, the learned policies become more robust to object appearance variations. Together, these design aspects enable dexterous manipulation across diverse object properties and interaction regimes, including coin standing, chip picking, letter retrieving, and syringe manipulation. The hardware design, code, appendix, and videos are available on our project website: https://nus-lins-lab.github.io/FingerEyeWeb/",
+      "authors": [
+        "Zhixuan Xu",
+        "Yichen Li",
+        "Xuanye Wu",
+        "Tianyu Qiu",
+        "Lin Shao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T15:37:34+00:00",
+      "link": "https://arxiv.org/pdf/2604.20689v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "FingerEye provides continuous vision-tactile feedback for dexterous manipulation using integrated cameras",
+      "llm_evidence_cn": "FingerEye 通过集成摄像头为灵巧操作提供连续的视觉-触觉反馈",
+      "llm_evidence": "FingerEye 通过集成摄像头为灵巧操作提供连续的视觉-触觉反馈",
+      "canonical_evidence": "FingerEye 通过集成摄像头为灵巧操作提供连续的视觉-触觉反馈",
+      "llm_tldr_en": "FingerEye is a vision-tactile sensor using binocular cameras to provide feedback for dexterous robotic manipulation.",
+      "llm_tldr_cn": "FingerEye 是一种利用双目摄像头为机器人灵巧操作提供视觉-触觉反馈的传感器。",
+      "llm_tldr": "FingerEye 是一种利用双目摄像头为机器人灵巧操作提供视觉-触觉反馈的传感器。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.19092v1",
+      "source": "arxiv",
+      "title": "RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation",
+      "abstract": "Recent advances in large-scale video world models have enabled increasingly realistic future prediction, raising the prospect of leveraging imagined videos for robot learning. However, visual realism does not imply physical plausibility, and behaviors inferred from generated videos may violate dynamics and fail when executed by embodied agents. Existing benchmarks begin to incorporate notions of physical plausibility, but they largely remain perception- or diagnostic-oriented and do not systematically evaluate whether predicted behaviors can be translated into executable actions that complete the intended task. To address this gap, we introduce RoboWM-Bench, a manipulation-centric benchmark for embodiment-grounded evaluation of video world models. RoboWM-Bench converts generated behaviors from both human-hand and robotic manipulation videos into embodied action sequences and validates them through robotic execution. The benchmark spans diverse manipulation scenarios and establishes a unified protocol for consistent and reproducible evaluation. Using RoboWM-Bench, we evaluate state-of-the-art video world models and find that reliably generating physically executable behaviors remains an open challenge. Common failure modes include errors in spatial reasoning, unstable contact prediction, and non-physical deformations. While finetuning on manipulation data yields improvements, physical inconsistencies still persist, suggesting opportunities for more physically grounded video generation for robots.",
+      "authors": [
+        "Feng Jiang",
+        "Yang Chen",
+        "Kyle Xu",
+        "Yuchen Liu",
+        "Haifeng Wang",
+        "Zhenhao Shen",
+        "Jasper Lu",
+        "Shengze Huang",
+        "Yuanfei Wang",
+        "Chen Xie",
+        "Ruihai Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-04-21T05:09:56+00:00",
+      "link": "https://arxiv.org/pdf/2604.19092v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "manipulation-centric benchmark for evaluating world models",
+      "llm_evidence_cn": "以操作为中心的评估世界模型基准",
+      "llm_evidence": "以操作为中心的评估世界模型基准",
+      "canonical_evidence": "以操作为中心的评估世界模型基准",
+      "llm_tldr_en": "Introduces RoboWM-Bench to evaluate the physical plausibility and task completion of video world models.",
+      "llm_tldr_cn": "推出RoboWM-Bench基准，用于评估视频世界模型在机器人操作中的物理合理性和任务完成度。",
+      "llm_tldr": "推出RoboWM-Bench基准，用于评估视频世界模型在机器人操作中的物理合理性和任务完成度。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.17876v1",
+      "source": "arxiv",
+      "title": "OFlow: Injecting Object-Aware Temporal Flow Matching for Robust Robotic Manipulation",
+      "abstract": "Robust robotic manipulation requires not only predicting how the scene evolves over time, but also recognizing task-relevant objects in complex scenes. However, existing VLA models face two limitations. They typically act only on the current frame, while future prediction and object-aware reasoning are often learned in separate latent spaces. We propose OFlow (injecting Object-Aware Temporal Flow Matching into VLAs), a framework that addresses both limitations by unifying temporal foresight and object-aware reasoning in a shared semantic latent space. Our method forecasts future latents with temporal flow matching, factorizes them into object-aware representations that emphasize physically relevant cues while filtering task-irrelevant variation, and conditions continuous action generation on these predictions. By integrating OFlow into VLA pipelines, our method enables more reliable control under distribution shifts. Extensive experiments across LIBERO, LIBERO-Plus, MetaWorld, and SimplerEnv benchmarks and real-world tasks demonstrate that object-aware foresight consistently enhances robustness and success.",
+      "authors": [
+        "Kuanning Wang",
+        "Ke Fan",
+        "Chenhao Qiu",
+        "Zeyu Shangguan",
+        "Yuqian Fu",
+        "Yanwei Fu",
+        "Daniel Seita",
+        "Xiangyang Xue"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-20T06:38:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.17876v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "object-aware temporal flow matching for robust robotic manipulation",
+      "llm_evidence_cn": "用于鲁棒机器人操作的对象感知时间流匹配",
+      "llm_evidence": "用于鲁棒机器人操作的对象感知时间流匹配",
+      "canonical_evidence": "用于鲁棒机器人操作的对象感知时间流匹配",
+      "llm_tldr_en": "Proposes OFlow to unify temporal foresight and object-aware reasoning in a shared latent space for manipulation.",
+      "llm_tldr_cn": "提出OFlow框架，在共享语义潜空间中统一时间预测和对象感知推理，提升机器人操作鲁棒性。",
+      "llm_tldr": "提出OFlow框架，在共享语义潜空间中统一时间预测和对象感知推理，提升机器人操作鲁棒性。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.20444v1",
+      "source": "arxiv",
+      "title": "VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation",
+      "abstract": "Embodied intelligence has advanced rapidly in recent years; however, bimanual manipulation-especially in contact-rich tasks remains challenging. This is largely due to the lack of datasets with rich physical interaction signals, systematic task organization, and sufficient scale. To address these limitations, we introduce the VTOUCH dataset. It leverages vision based tactile sensing to provide high-fidelity physical interaction signals, adopts a matrix-style task design to enable systematic learning, and employs automated data collection pipelines covering real-world, demand-driven scenarios to ensure scalability. To further validate the effectiveness of the dataset, we conduct extensive quantitative experiments on cross-modal retrieval as well as real-robot evaluation. Finally, we demonstrate real-world performance through generalizable inference across multiple robots, policies, and tasks.",
+      "authors": [
+        "Qianxi Hua",
+        "Xinyue Li",
+        "Zheng Yan",
+        "Yang Li",
+        "Chi Zhang",
+        "Yongyao Li",
+        "Yufei Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.DB",
+        "cs.LG"
+      ],
+      "published": "2026-04-22T11:08:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.20444v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "multimodal dataset with vision-based tactile enhancement for bimanual manipulation",
+      "llm_evidence_cn": "具有基于视觉的触觉增强的双手操作多模态数据集",
+      "llm_evidence": "具有基于视觉的触觉增强的双手操作多模态数据集",
+      "canonical_evidence": "具有基于视觉的触觉增强的双手操作多模态数据集",
+      "llm_tldr_en": "VTouch++ provides a large-scale multimodal dataset for contact-rich bimanual manipulation tasks.",
+      "llm_tldr_cn": "VTouch++ 为接触密集型双手操作任务提供了一个大规模多模态数据集。",
+      "llm_tldr": "VTouch++ 为接触密集型双手操作任务提供了一个大规模多模态数据集。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.17880v1",
+      "source": "arxiv",
+      "title": "ST-$π$: Structured SpatioTemporal VLA for Robotic Manipulation",
+      "abstract": "Vision-language-action (VLA) models have achieved great success on general robotic tasks, but still face challenges in fine-grained spatiotemporal manipulation. Typically, existing methods mainly embed spatiotemporal knowledge into visual and action representations, and directly perform a cross-modal mapping for step-level action prediction. However, such spatiotemporal reasoning remains largely implicit, making it difficult to handle multiple sequential behaviors with explicit spatiotemporal boundaries. In this work, we propose ST-$π$, a structured spatiotemporal VLA model for robotic manipulation. Our model is guided by two key designs: 1) Spatiotemporal VLM. We encode 4D observations and task instructions into latent spaces, and feed them into the LLM to generate a sequence of causally ordered chunk-level action prompts consisting of sub-tasks, spatial grounding and temporal grounding. 2) Spatiotemporal action expert. Conditioned on chunk-level action prompts, we design a structured dual-generator guidance to jointly model spatial dependencies and temporal causality, thus predicting step-level action parameters. Within this structured framework, the VLM explicitly plans global spatiotemporal behavior, and the action expert further refines local spatiotemporal control. In addition, we propose a real-world robotic dataset with structured spatiotemporal annotations for fine-tuning. Extensive experiments have been conducted to demonstrate the effectiveness of our model. Our code link: https://github.com/chuanhaoma/ST-pi.",
+      "authors": [
+        "Chuanhao Ma",
+        "Hanyu Zhou",
+        "Shihan Peng",
+        "Yan Li",
+        "Tao Gu",
+        "Luxin Yan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-20T06:48:47+00:00",
+      "link": "https://arxiv.org/pdf/2604.17880v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "VLA model for fine-grained spatiotemporal manipulation",
+      "llm_evidence_cn": "用于细粒度时空操作的VLA模型",
+      "llm_evidence": "用于细粒度时空操作的VLA模型",
+      "canonical_evidence": "用于细粒度时空操作的VLA模型",
+      "llm_tldr_en": "A structured spatiotemporal VLA model designed to improve fine-grained robotic manipulation performance.",
+      "llm_tldr_cn": "一种结构化时空VLA模型，旨在提升细粒度机器人操作的性能。",
+      "llm_tldr": "一种结构化时空VLA模型，旨在提升细粒度机器人操作的性能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.19683v1",
+      "source": "arxiv",
+      "title": "Mask World Model: Predicting What Matters for Robust Robot Policy Learning",
+      "abstract": "World models derived from large-scale video generative pre-training have emerged as a promising paradigm for generalist robot policy learning. However, standard approaches often focus on high-fidelity RGB video prediction, this can result in overfitting to irrelevant factors, such as dynamic backgrounds and illumination changes. These distractions reduce the model's ability to generalize, ultimately leading to unreliable and fragile control policies. To address this, we introduce the Mask World Model (MWM), which leverages video diffusion architectures to predict the evolution of semantic masks instead of pixels. This shift imposes a geometric information bottleneck, forcing the model to capture essential physical dynamics and contact relations while filtering out visual noise. We seamlessly integrate this mask dynamics backbone with a diffusion-based policy head to enable robust end-to-end control. Extensive evaluations demonstrate the superiority of MWM on the LIBERO and RLBench simulation benchmarks, significantly outperforming the state-of-the-art RGB-based world models. Furthermore, real-world experiments and robustness evaluation (via random token pruning) reveal that MWM exhibits superior generalization capabilities and robust resilience to texture information loss.",
+      "authors": [
+        "Yunfan Lou",
+        "Xiaowei Chi",
+        "Xiaojie Zhang",
+        "Zezhong Qian",
+        "Chengxuan Li",
+        "Rongyu Zhang",
+        "Yaoxu Lyu",
+        "Guoyu Song",
+        "Chuyao Fu",
+        "Haoxuan Xu",
+        "Pengwei Wang",
+        "Shanghang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-21T17:05:37+00:00",
+      "link": "https://arxiv.org/pdf/2604.19683v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "predicting semantic masks for robust robot policy learning",
+      "llm_evidence_cn": "预测语义掩码以进行鲁棒的机器人策略学习",
+      "llm_evidence": "预测语义掩码以进行鲁棒的机器人策略学习",
+      "canonical_evidence": "预测语义掩码以进行鲁棒的机器人策略学习",
+      "llm_tldr_en": "Introduces Mask World Model to capture physical dynamics via semantic masks for robust robot policy learning.",
+      "llm_tldr_cn": "引入掩码世界模型（MWM），通过预测语义掩码演变来捕捉物理动力学，提高策略泛化能力。",
+      "llm_tldr": "引入掩码世界模型（MWM），通过预测语义掩码演变来捕捉物理动力学，提高策略泛化能力。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.20348v1",
+      "source": "arxiv",
+      "title": "Bimanual Robot Manipulation via Multi-Agent In-Context Learning",
+      "abstract": "Language Models (LLMs) have emerged as powerful reasoning engines for embodied control. In particular, In-Context Learning (ICL) enables off-the-shelf, text-only LLMs to predict robot actions without any task-specific training while preserving their generalization capabilities. Applying ICL to bimanual manipulation remains challenging, as the high-dimensional joint action space and tight inter-arm coordination constraints rapidly overwhelm standard context windows. To address this, we introduce BiCICLe (Bimanual Coordinated In-Context Learning), the first framework that enables standard LLMs to perform few-shot bimanual manipulation without fine-tuning. BiCICLe frames bimanual control as a multi-agent leader-follower problem, decoupling the action space into sequential, conditioned single-arm predictions. This naturally extends to Arms' Debate, an iterative refinement process, and to the introduction of a third LLM-as-Judge to evaluate and select the most plausible coordinated trajectories. Evaluated on 13 tasks from the TWIN benchmark, BiCICLe achieves up to 71.1% average success rate, outperforming the best training-free baseline by 6.7 percentage points and surpassing most supervised methods. We further demonstrate strong few-shot generalization on novel tasks.",
+      "authors": [
+        "Alessio Palma",
+        "Indro Spinelli",
+        "Vignesh Prasad",
+        "Luca Scofano",
+        "Yufeng Jin",
+        "Georgia Chalvatzaki",
+        "Fabio Galasso"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-04-22T08:51:07+00:00",
+      "link": "https://arxiv.org/pdf/2604.20348v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "bimanual robot manipulation and coordinated control",
+      "llm_evidence_cn": "双臂机器人操作与协调控制",
+      "llm_evidence": "双臂机器人操作与协调控制",
+      "canonical_evidence": "双臂机器人操作与协调控制",
+      "llm_tldr_en": "A framework enabling LLMs to perform few-shot bimanual manipulation via multi-agent in-context learning.",
+      "llm_tldr_cn": "一种通过多智能体上下文学习使大语言模型能够执行少样本双臂操作的框架。",
+      "llm_tldr": "一种通过多智能体上下文学习使大语言模型能够执行少样本双臂操作的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.20686v1",
+      "source": "arxiv",
+      "title": "Kinematic Optimization of Phalanx Length Ratios in Robotic Hands Using Potential Dexterity",
+      "abstract": "In the design stage of robotic hands, it is not straightforward to quantitatively evaluate the effect of phalanx length ratios on dexterity without defining specific objects or manipulation tasks. Therefore, this study presents a framework for optimizing the phalanx length ratios of a five-finger robotic hand based on potential dexterity within a kinematic structure. The proposed method employs global manipulability, workspace volume, overlap workspace volume, and fingertip sensitivity as evaluation metrics, and identifies optimal design configurations using a weighted objective function under given constraints. The reachable workspace is discretized using a voxel-based representation, and joint motions are discretized at uniform intervals for evaluation. The optimization is performed over design sets for both the thumb and the other fingers, and design combinations that do not generate overlap workspace are excluded. The results show that each phalanx does not contribute equally to the overall dexterity, and the factors influencing each phalanx are identified. In addition, it is observed that the selection of weighting coefficients does not necessarily lead to the direct maximization of individual performance metrics, due to the non-uniform distribution of evaluation measures within the design space. The proposed framework provides a systematic approach to analyze the trade-offs among reachability, dexterity, and controllability, and can serve as a practical guideline for the kinematic design of multi-fingered robotic hands.",
+      "authors": [
+        "HyoJae Kang",
+        "Joonho Lee",
+        "Jeongdo Ahn",
+        "Dong Il Park"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-22T15:34:33+00:00",
+      "link": "https://arxiv.org/pdf/2604.20686v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "kinematic optimization of phalanx length ratios for robotic hand dexterity",
+      "llm_evidence_cn": "机器人手部指骨长度比例的运动学优化以提升灵巧性",
+      "llm_evidence": "机器人手部指骨长度比例的运动学优化以提升灵巧性",
+      "canonical_evidence": "机器人手部指骨长度比例的运动学优化以提升灵巧性",
+      "llm_tldr_en": "This study optimizes robotic hand design parameters to maximize potential dexterity and workspace.",
+      "llm_tldr_cn": "该研究优化了机器人手的设计参数，以最大化潜在的灵巧性和工作空间。",
+      "llm_tldr": "该研究优化了机器人手的设计参数，以最大化潜在的灵巧性和工作空间。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

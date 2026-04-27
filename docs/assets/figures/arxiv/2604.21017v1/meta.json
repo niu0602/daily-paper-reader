@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-001.webp",
+      "caption": "Figure 4: SutureBot data efficiency evaluation. Task success rate at 33% and 100% fine-tuning data on SutureBot (n = 10 per subtask). At 33% data, GR00T-H matches ACT while GR00T-N1.6 underperforms both. At 100% data, GR00T-H outperforms all baselines, indicating that Open-H post-training enables both data-efficient learning and stronger scaling. Clopper-Pearson 95% confidence intervals are represented as error bars.",
+      "page": 15,
+      "index": 1,
+      "width": 736,
+      "height": 867
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-002.webp",
+      "caption": "Figure 2: Composition of the Open-H-Embodiment dataset. (A) Dataset hours by robot platform. (B) Distribution of dataset hours by environment type. (C) Distribution of dataset hours across task families. Together, these panels summarize the current distribution of contributed data across embodiments, collection environments, and task families in OpenH-Embodiment.",
+      "page": 10,
+      "index": 2,
+      "width": 960,
+      "height": 625
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-003.webp",
+      "caption": "Figure 1: Open-H-Embodiment overview. (A) Geographic distribution of the 49 participating institutions across North America, Europe, the Middle East, and Asia. (B) The 20 healthcare robotic platforms represented in the dataset, spanning surgical systems (da Vinci Si, da Vinci Xi, dVRK, dVRK-Si, MIRA, Versius, BiTrack, Maestro, Torin), generalpurpose manipulators adapted for clinical use (Franka Panda, UR5e, Kuka Med 14), and emerging platforms. (C) Representative frames from the dataset illustrating the diversity of tasks, viewpoints, and tissue types covered, including robotic surgery, robotic ultrasound, and related healthcare manipulation tasks. (D) The dataset comprises 770 hours of synchronized multimodal demonstrations spanning language annotations, video observations, and kinematic trajectories. This corpus supports two downstream directions: training GR00T-H, a healthcare-focused vision-language-action model targeting surgical autonomy, and training Cosmos-H-Surgical-Simulator, a multi-embodiment, action-conditioned world model for surgical scene synthesis.",
+      "page": 3,
+      "index": 3,
+      "width": 946,
+      "height": 522
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-004.webp",
+      "caption": "Figure 7: Quantitative evaluation of Cosmos-H-Surgical-Simulator. Per-frame L1 and SSIM for benchtop vs. tissue-based datasets. Mean L1 error and SSIM as a function of generated frame index across 72 autoregressively generated frames (6 chunks × 12 frames each). Mean over 3 generation seeds, each averaged across all evaluated episodes within the category; shaded bands indicate 1 standard deviation across seeds. Left: benchtop datasets (phantom and bench procedures). Right: tissue-based datasets (clinical, cadaver, and ex vivo tissue).",
+      "page": 18,
+      "index": 4,
+      "width": 966,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-005.webp",
+      "caption": "Figure 3: SutureBot end-to-end and out-of-distribution evaluation. Top: Task survival for GR00T-H on the SutureBot end-to-end suturing task compared to GR00T-N1.6, ACT, and LingBot-VA. GR00T-H improves end-to-end performance with a long-horizon success rate of 25%, showing better handling of compounding errors. Bottom: Out-ofdistribution evaluation on SutureBot with an unseen wound configuration under varied lighting (n = 20 per subtask). GR00T-H achieves a 3-task average of 54%, outperforming GR00T-N1.6 (30%) and ACT (5%). Clopper-Pearson 95% confidence intervals are represented as error bars.",
+      "page": 13,
+      "index": 5,
+      "width": 882,
+      "height": 856
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-006.webp",
+      "caption": "Table 1: Open-H-Embodiment compared with prior surgical robotics datasets containing kinematic data. Open-H is the first dataset to span multiple embodiments while exceeding prior work by more than an order of magnitude in duration.",
+      "page": 8,
+      "index": 6,
+      "width": 532,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-007.webp",
+      "caption": "Figure 6: Ex vivo suturing evaluation across 29 subtasks. (n = 10 per subtask, n = 290 total). Tasks span needle manipulation, wound opening, suture passing, knot tying, and suture cutting. GR00T-H achieves an average success rate of ≈64%, with near-perfect performance on structured manipulation primitives and lower success on fine-contact and cutting steps. The rightmost bar shows the overall average across all subtasks. ClopperPearson 95% confidence intervals are represented as error bars.",
+      "page": 17,
+      "index": 7,
+      "width": 976,
+      "height": 434
+    },
+    {
+      "url": "assets/figures/arxiv/2604.21017v1/fig-008.webp",
+      "caption": "Figure 5: Multi-Embodiment Performance Comparison. Evaluation of the GR00TH foundational VLA (post-trained on Open-H) versus the GR00T-N1.6 base policy across three surgical platforms: the da Vinci Research Kit Si (dVRK-Si), CMR Versius, and Virtual Incision MIRA. GR00T-H demonstrates significant performance gains across all robot embodiments and sub-tasks, with the overall average success rate showing a statistically significant improvement (p < 0.001). Error bars represent the Clopper-Pearson 95% confidence intervals across trials.",
+      "page": 16,
+      "index": 8,
+      "width": 976,
+      "height": 396
+    }
+  ]
+}

@@ -6,55 +6,58 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-26
-- 运行时间：2026-04-26 20:20:14 UTC
+- 最新运行日期：2026-04-27
+- 运行时间：2026-04-27 20:42:50 UTC
 - 运行状态：成功
-- 本次总论文数：11
-- 精读区：4
-- 速读区：7
+- 本次总论文数：12
+- 精读区：3
+- 速读区：9
 
 ### 今日简报（AI）
-今天聚焦机器人自主与操控智能，精读与速读共计 11 篇论文。  
-最值得关注的是 JoyAI-RA 基础模型的突破，以及基于世界模型与多模态触觉的操控新方向。  
-下步建议多关注智能体自适应学习与多感官协同，让机器人更懂环境、更懂人。
-- 详情：[/202604/26/README](/202604/26/README)
+今天聚焦机器人自主基础模型与微型视觉语言行动系统，共精读与速读论文12篇。  
+重点关注JoyAI-RA在通用机器人自治能力上的突破，以及Pocket与Omni系列在小型、多模态理解上的快速迭代。  
+建议普通读者关注机器人如何更聪明地感知与行动，这是未来智能体发展的关键方向。
+- 详情：[/202604/27/README](/202604/27/README)
 
 ### 精读区论文标签
-1. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/26/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
-   标签：评分：10.0/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于灵巧技能学习
-2. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/26/2604.20100v2-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
-   标签：评分：10.0/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于机器人自主性
-3. [FingerViP: Learning Real-World Dexterous Manipulation with Fingertip Visual Perception](/202604/26/2604.21331v1-fingervip-learning-real-world-dexterous-manipulation-with-fingertip-visual-perception)  
-   标签：评分：10.0/10、query:dexop
-   evidence：利用嵌入式微型摄像头的指尖视觉感知进行灵巧操作
-4. [FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation](/202604/26/2604.20689v2-fingereye-continuous-and-unified-vision-tactile-sensing-for-dexterous-manipulation)  
+1. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/27/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
    标签：评分：9.0/10、query:dexop
-   evidence：FingerEye 通过集成摄像头为灵巧操作提供连续的视觉-触觉反馈
+   evidence：整合大规模第一视角人类操作视频用于机器人操作预训练
+2. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/27/2604.20100v2-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
+   标签：评分：9.0/10、query:dexop
+   evidence：整合大规模第一视角人类操作视频用于机器人操作预训练
+3. [GazeVLA: Learning Human Intention for Robotic Manipulation](/202604/27/2604.22615v1-gazevla-learning-human-intention-for-robotic-manipulation)  
+   标签：评分：8.0/10、query:dexop
+   evidence：利用人类数据和注视作为机器人操作的意图表示
 
 ### 速读区论文标签
-1. [RoboWM-Bench: A Benchmark for Evaluating World Models in Robotic Manipulation](/202604/26/2604.19092v1-robowm-bench-a-benchmark-for-evaluating-world-models-in-robotic-manipulation)  
+1. [PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance](/202604/27/2604.20834v1-pokevla-empowering-pocket-sized-vision-language-action-model-with-comprehensive-world-knowledge-guidance)  
+   标签：评分：7.5/10、query:dexop
+   evidence：用于具身操作的VLA模型，使用多模态数据集进行空间定位和推理
+2. [OmniVLA-RL: A Vision-Language-Action Model with Spatial Understanding and Online RL](/202604/27/2604.17706v1-omnivla-rl-a-vision-language-action-model-with-spatial-understanding-and-online-rl)  
    标签：评分：7.0/10、query:dexop
-   evidence：以操作为中心的评估世界模型基准
-2. [VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation](/202604/26/2604.20444v1-vtouch-a-multimodal-dataset-with-vision-based-tactile-enhancement-for-bimanual-manipulation)  
+   evidence：具有空间理解和动作精度的具身智能VLA模型
+3. [Can Explicit Physical Feasibility Benefit VLA Learning? An Empirical Study](/202604/27/2604.17896v1-can-explicit-physical-feasibility-benefit-vla-learning-an-empirical-study)  
    标签：评分：7.0/10、query:dexop
-   evidence：具有基于视觉的触觉增强的双手操作多模态数据集
-3. [OFlow: Injecting Object-Aware Temporal Flow Matching for Robust Robotic Manipulation](/202604/26/2604.17876v1-oflow-injecting-object-aware-temporal-flow-matching-for-robust-robotic-manipulation)  
+   evidence：考虑物理可行性和运动学约束的机器人动作VLA学习
+4. [Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision](/202604/27/2604.21461v1-do-mllms-understand-pointing-benchmarking-and-enhancing-referential-reasoning-in-egocentric-vision)  
+   标签：评分：7.0/10、query:dexop
+   evidence：自我中心视角下AI智能体的指代推理
+5. [EgoMAGIC- An Egocentric Video Field Medicine Dataset for Training Perception Algorithms](/202604/27/2604.22036v1-egomagic--an-egocentric-video-field-medicine-dataset-for-training-perception-algorithms)  
+   标签：评分：7.0/10、query:dexop
+   evidence：用于训练感知算法的第一视角医疗活动数据集
+6. [OmniVLA-RL: A Vision-Language-Action Model with Spatial Understanding and Online RL](/202604/27/2604.17706v2-omnivla-rl-a-vision-language-action-model-with-spatial-understanding-and-online-rl)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于鲁棒机器人操作的对象感知时间流匹配
-4. [ST-$π$: Structured SpatioTemporal VLA for Robotic Manipulation](/202604/26/2604.17880v1-st--structured-spatiotemporal-vla-for-robotic-manipulation)  
+   evidence：具有空间理解能力的机器人基准VLA模型
+7. [ReFineVLA: Multimodal Reasoning-Aware Generalist Robotic Policies via Teacher-Guided Fine-Tuning](/202604/27/2604.17800v1-refinevla-multimodal-reasoning-aware-generalist-robotic-policies-via-teacher-guided-fine-tuning)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于细粒度时空操作的VLA模型
-5. [Mask World Model: Predicting What Matters for Robust Robot Policy Learning](/202604/26/2604.19683v1-mask-world-model-predicting-what-matters-for-robust-robot-policy-learning)  
+   evidence：用于复杂长程操作任务的VLA模型
+8. [Learning Hybrid-Control Policies for High-Precision In-Contact Manipulation Under Uncertainty](/202604/27/2604.19677v1-learning-hybrid-control-policies-for-high-precision-in-contact-manipulation-under-uncertainty)  
    标签：评分：6.0/10、query:dexop
-   evidence：预测语义掩码以进行鲁棒的机器人策略学习
-6. [Bimanual Robot Manipulation via Multi-Agent In-Context Learning](/202604/26/2604.20348v1-bimanual-robot-manipulation-via-multi-agent-in-context-learning)  
+   evidence：用于高精度操作的混合位置-力控制策略
+9. [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](/202604/27/2604.21017v1-open-h-embodiment-a-large-scale-dataset-for-enabling-foundation-models-in-medical-robotics)  
    标签：评分：6.0/10、query:dexop
-   evidence：双臂机器人操作与协调控制
-7. [Kinematic Optimization of Phalanx Length Ratios in Robotic Hands Using Potential Dexterity](/202604/26/2604.20686v1-kinematic-optimization-of-phalanx-length-ratios-in-robotic-hands-using-potential-dexterity)  
-   标签：评分：6.0/10、query:dexop
-   evidence：机器人手部指骨长度比例的运动学优化以提升灵巧性
+   evidence：带有同步运动学的大规模医疗机器人视频数据集
 
 
 <div class="dpr-home-promo-card">

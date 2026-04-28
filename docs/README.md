@@ -6,58 +6,67 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-27
-- 运行时间：2026-04-27 20:42:50 UTC
+- 最新运行日期：2026-04-28
+- 运行时间：2026-04-28 21:05:46 UTC
 - 运行状态：成功
-- 本次总论文数：12
-- 精读区：3
-- 速读区：9
+- 本次总论文数：15
+- 精读区：5
+- 速读区：10
 
 ### 今日简报（AI）
-今天聚焦机器人自主基础模型与微型视觉语言行动系统，共精读与速读论文12篇。  
-重点关注JoyAI-RA在通用机器人自治能力上的突破，以及Pocket与Omni系列在小型、多模态理解上的快速迭代。  
-建议普通读者关注机器人如何更聪明地感知与行动，这是未来智能体发展的关键方向。
-- 详情：[/202604/27/README](/202604/27/README)
+聚焦机器人与视觉语言模型前沿，今日共阅读15篇论文。  
+EgoLive与JoyAI-RA最具亮点，展示从真实人类任务到通用自主体的突破。  
+建议持续关注小模型多模态融合与自适应控制的最新进展。
+- 详情：[/202604/28/README](/202604/28/README)
 
 ### 精读区论文标签
-1. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/27/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
+1. [EgoLive: A Large-Scale Egocentric Dataset from Real-World Human Tasks](/202604/28/2604.23570v1-egolive-a-large-scale-egocentric-dataset-from-real-world-human-tasks)  
+   标签：评分：10.0/10、query:dexop
+   evidence：专门用于机器人操作学习的大规模第一视角数据集
+2. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/28/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
    标签：评分：9.0/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于机器人操作预训练
-2. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/27/2604.20100v2-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
+   evidence：整合大规模第一视角人类操作视频进行VLA预训练
+3. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/28/2604.20100v2-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
    标签：评分：9.0/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于机器人操作预训练
-3. [GazeVLA: Learning Human Intention for Robotic Manipulation](/202604/27/2604.22615v1-gazevla-learning-human-intention-for-robotic-manipulation)  
+   evidence：使用大规模第一视角人类操作视频进行VLA模型预训练
+4. [Learning Human-Intention Priors from Large-Scale Human Demonstrations for Robotic Manipulation](/202604/28/2604.24681v1-learning-human-intention-priors-from-large-scale-human-demonstrations-for-robotic-manipulation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：大规模人类演示与以手为中心的过滤
+5. [BridgeACT: Bridging Human Demonstrations to Robot Actions via Unified Tool-Target Affordances](/202604/28/2604.23249v1-bridgeact-bridging-human-demonstrations-to-robot-actions-via-unified-tool-target-affordances)  
    标签：评分：8.0/10、query:dexop
-   evidence：利用人类数据和注视作为机器人操作的意图表示
+   evidence：通过示能性直接从人类视频中学习机器人操作
 
 ### 速读区论文标签
-1. [PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance](/202604/27/2604.20834v1-pokevla-empowering-pocket-sized-vision-language-action-model-with-comprehensive-world-knowledge-guidance)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于具身操作的VLA模型，使用多模态数据集进行空间定位和推理
-2. [OmniVLA-RL: A Vision-Language-Action Model with Spatial Understanding and Online RL](/202604/27/2604.17706v1-omnivla-rl-a-vision-language-action-model-with-spatial-understanding-and-online-rl)  
+1. [PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance](/202604/28/2604.20834v1-pokevla-empowering-pocket-sized-vision-language-action-model-with-comprehensive-world-knowledge-guidance)  
    标签：评分：7.0/10、query:dexop
-   evidence：具有空间理解和动作精度的具身智能VLA模型
-3. [Can Explicit Physical Feasibility Benefit VLA Learning? An Empirical Study](/202604/27/2604.17896v1-can-explicit-physical-feasibility-benefit-vla-learning-an-empirical-study)  
+   evidence：具有空间感知能力的具身操作基础模型
+2. [VistaBot: View-Robust Robot Manipulation via Spatiotemporal-Aware View Synthesis](/202604/28/2604.21914v1-vistabot-view-robust-robot-manipulation-via-spatiotemporal-aware-view-synthesis)  
    标签：评分：7.0/10、query:dexop
-   evidence：考虑物理可行性和运动学约束的机器人动作VLA学习
-4. [Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision](/202604/27/2604.21461v1-do-mllms-understand-pointing-benchmarking-and-enhancing-referential-reasoning-in-egocentric-vision)  
+   evidence：通过时空合成实现视角鲁棒的机器人操作
+3. [RL Token: Bootstrapping Online RL with Vision-Language-Action Models](/202604/28/2604.23073v1-rl-token-bootstrapping-online-rl-with-vision-language-action-models)  
    标签：评分：7.0/10、query:dexop
-   evidence：自我中心视角下AI智能体的指代推理
-5. [EgoMAGIC- An Egocentric Video Field Medicine Dataset for Training Perception Algorithms](/202604/27/2604.22036v1-egomagic--an-egocentric-video-field-medicine-dataset-for-training-perception-algorithms)  
+   evidence：微调VLA模型以实现精确的现实世界操作技能
+4. [Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation](/202604/28/2604.23620v1-move-then-operate-behavioral-phasing-for-human-like-robotic-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于训练感知算法的第一视角医疗活动数据集
-6. [OmniVLA-RL: A Vision-Language-Action Model with Spatial Understanding and Online RL](/202604/27/2604.17706v2-omnivla-rl-a-vision-language-action-model-with-spatial-understanding-and-online-rl)  
+   evidence：用于类人机器人操作和关键接触交互的视觉-语言-动作框架
+5. [HELM: Harness-Enhanced Long-horizon Memory for Vision-Language-Action Manipulation](/202604/28/2604.18791v1-helm-harness-enhanced-long-horizon-memory-for-vision-language-action-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：具有空间理解能力的机器人基准VLA模型
-7. [ReFineVLA: Multimodal Reasoning-Aware Generalist Robotic Policies via Teacher-Guided Fine-Tuning](/202604/27/2604.17800v1-refinevla-multimodal-reasoning-aware-generalist-robotic-policies-via-teacher-guided-fine-tuning)  
+   evidence：使用情节记忆进行长程操作的VLA框架
+6. [PokeVLA: Empowering Pocket-Sized Vision-Language-Action Model with Comprehensive World Knowledge Guidance](/202604/28/2604.20834v2-pokevla-empowering-pocket-sized-vision-language-action-model-with-comprehensive-world-knowledge-guidance)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于复杂长程操作任务的VLA模型
-8. [Learning Hybrid-Control Policies for High-Precision In-Contact Manipulation Under Uncertainty](/202604/27/2604.19677v1-learning-hybrid-control-policies-for-high-precision-in-contact-manipulation-under-uncertainty)  
+   evidence：使用多模态数据集的具身操作基础模型
+7. [QDTraj: Exploration of Diverse Trajectory Primitives for Articulated Objects Robotic Manipulation](/202604/28/2604.22551v1-qdtraj-exploration-of-diverse-trajectory-primitives-for-articulated-objects-robotic-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于高精度操作的混合位置-力控制策略
-9. [Open-H-Embodiment: A Large-Scale Dataset for Enabling Foundation Models in Medical Robotics](/202604/27/2604.21017v1-open-h-embodiment-a-large-scale-dataset-for-enabling-foundation-models-in-medical-robotics)  
+   evidence：使用多样化低级轨迹原语操作关节物体的方法
+8. [Learning from the Best: Smoothness-Driven Metrics for Data Quality in Imitation Learning](/202604/28/2604.23000v1-learning-from-the-best-smoothness-driven-metrics-for-data-quality-in-imitation-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：带有同步运动学的大规模医疗机器人视频数据集
+   evidence：模仿学习与操作轨迹的数据质量
+9. [Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines](/202604/28/2604.23001v1-vision-language-action-in-robotics-a-survey-of-datasets-benchmarks-and-data-engines)  
+   标签：评分：6.0/10、query:dexop
+   evidence：具身学习和VLA模型的数据库与基准综述
+10. [Tube Diffusion Policy: Reactive Visual-Tactile Policy Learning for Contact-rich Manipulation](/202604/28/2604.23609v1-tube-diffusion-policy-reactive-visual-tactile-policy-learning-for-contact-rich-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于接触密集型操作的反应式视觉-触觉策略
 
 
 <div class="dpr-home-promo-card">

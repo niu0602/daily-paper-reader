@@ -6,43 +6,43 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-29
-- 运行时间：2026-04-29 20:45:21 UTC
+- 最新运行日期：2026-04-30
+- 运行时间：2026-04-30 20:47:30 UTC
 - 运行状态：成功
 - 本次总论文数：7
-- 精读区：4
-- 速读区：3
+- 精读区：1
+- 速读区：6
 
 ### 今日简报（AI）
-聚焦机器人自主与操作智能，今日完成 7 篇论文精速读。  
-重点推荐 JoyAI-RA 与 HANDFUL，两项模型展现类人操作与资源觉察的突破。  
-建议读者关注仿生操控与多模态感知，并观察它们在真实场景的落地进展。
-- 详情：[/202604/29/README](/202604/29/README)
+聚焦机器人自主与操作智能，今日共研读 7 篇前沿论文。  
+最值得关注的是《JoyAI-RA 0.1》提出的通用自主基础模型，为机器人从感知到任务执行带来突破。  
+建议读者持续关注机器人通用模型和人类式操作策略的融合趋势。
+- 详情：[/202604/30/README](/202604/30/README)
 
 ### 精读区论文标签
-1. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/29/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
+1. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/30/2604.20100v1-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
    标签：评分：9.5/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于VLA
-2. [HANDFUL: Sequential Grasp-Conditioned Dexterous Manipulation with Resource Awareness](/202604/29/2604.25126v1-handful-sequential-grasp-conditioned-dexterous-manipulation-with-resource-awareness)  
-   标签：评分：9.5/10、query:dexop
-   evidence：基于机器人手的顺序抓取条件灵巧操作
-3. [JoyAI-RA 0.1: A Foundation Model for Robotic Autonomy](/202604/29/2604.20100v2-joyai-ra-01-a-foundation-model-for-robotic-autonomy)  
-   标签：评分：8.5/10、query:dexop
-   evidence：整合大规模第一视角人类操作视频用于机器人操作训练
-4. [Variational Neural Belief Parameterizations for Robust Dexterous Grasping under Multimodal Uncertainty](/202604/29/2604.25897v1-variational-neural-belief-parameterizations-for-robust-dexterous-grasping-under-multimodal-uncertainty)  
-   标签：评分：8.5/10、query:dexop
-   evidence：多模态不确定性下的鲁棒灵巧抓取
+   evidence：集成大规模第一视角人类操作视频用于机器人操作基础模型
 
 ### 速读区论文标签
-1. [Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation](/202604/29/2604.23620v1-move-then-operate-behavioral-phasing-for-human-like-robotic-manipulation)  
-   标签：评分：7.5/10、query:dexop
-   evidence：针对接触关键型机器人操作和类人运动模式的视觉-语言-动作框架
-2. [GS-Playground: A High-Throughput Photorealistic Simulator for Vision-Informed Robot Learning](/202604/29/2604.25459v1-gs-playground-a-high-throughput-photorealistic-simulator-for-vision-informed-robot-learning)  
+1. [Move-Then-Operate: Behavioral Phasing for Human-Like Robotic Manipulation](/202604/30/2604.23620v1-move-then-operate-behavioral-phasing-for-human-like-robotic-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：视觉引导机器人学习与操作的模拟器
-3. [Egocentric Tactile and Proximity Sensors as Observation Priors for Humanoid Collision Avoidance](/202604/29/2604.25554v1-egocentric-tactile-and-proximity-sensors-as-observation-priors-for-humanoid-collision-avoidance)  
+   evidence：将机器人操作解耦为重新定位和关键接触交互。
+2. [World2VLM: Distilling World Model Imagination into VLMs for Dynamic Spatial Reasoning](/202604/30/2604.26934v1-world2vlm-distilling-world-model-imagination-into-vlms-for-dynamic-spatial-reasoning)  
+   标签：评分：7.0/10、query:dexop
+   evidence：为视觉语言模型想象场景在第一视角运动下的演变
+3. [$M^2$-VLA: Boosting Vision-Language Models for Generalizable Manipulation via Layer Mixture and Meta-Skills](/202604/30/2604.24182v1-m2-vla-boosting-vision-language-models-for-generalizable-manipulation-via-layer-mixture-and-meta-skills)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于人形机器人观测的第一视角触觉和接近传感器
+   evidence：用于通用机器人操作的VLA模型。
+4. [Hi-WM: Human-in-the-World-Model for Scalable Robot Post-Training](/202604/30/2604.21741v1-hi-wm-human-in-the-world-model-for-scalable-robot-post-training)  
+   标签：评分：6.0/10、query:dexop
+   evidence：机器人操作策略的人机协同后期训练。
+5. [ATLAS: An Annotation Tool for Long-horizon Robotic Action Segmentation](/202604/30/2604.26637v1-atlas-an-annotation-tool-for-long-horizon-robotic-action-segmentation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于长程机器人动作分割和操作策略学习的标注工具
+6. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202604/30/2604.26848v1-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：具有时空交互的机器人操作世界建模
 
 
 <div class="dpr-home-promo-card">

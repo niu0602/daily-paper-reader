@@ -1,0 +1,1173 @@
+Title: MUSIC: Learning Muscle-Driven Dexterous Hand Control
+
+URL Source: https://arxiv.org/pdf/2604.23886v1
+
+Published Time: Tue, 28 Apr 2026 01:28:50 GMT
+
+Number of Pages: 20
+
+Markdown Content:
+# MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control 
+
+# PEI XU ∗, Stanford University, USA 
+
+# YUFEI YE ∗, Stanford University, USA 
+
+# SHUCHUN SUN, Clemson University, USA 
+
+# YU DING, Stanford University, USA 
+
+# ELIZABETH SCHUMANN, Stanford University, USA 
+
+# C. KAREN LIU, Stanford University, USA 
+
+Fig. 1. Our musculoskeletal hand model (left) and diverse hand poses (right) produced by our muscle-driven motion synthesis models during piano playing. The muscle-tendon units are visualized by blue lines, with the activated ones highlighted in red. The semi-transparent shell indicates the outer skin (collision geometry) of the hand model. 
+
+We present a data-driven approach for physics-based, muscle-driven dex-terous control that enables musculoskeletal hands to perform precise piano playing for novel pieces of music outside the reference dataset. Our approach combines high-frequency muscle-level control with low-frequency latent-space coordination in a hierarchical architecture. At the low level, general single-hand policies are trained via reinforcement learning to generate dy-namic muscle-tendon activations while tracking trajectories from a large reference motion dataset. The resulting tracking policies are then distilled into variational autoencoder (VAE) models, yielding smooth and structured latent spaces that abstract away low-level muscle dynamics. For the high level, we train piece-specific policies to operate in this latent space, coordi-nating bimanual motions based on specific goals, denoted by note events extracted from given musical scores, to synthesize performances beyond the reference data. High-level control is formulated as a decentralized multi-agent reinforcement learning problem combined with adversarial learning for motion imitation. In addition, we present an enhanced musculoskele-tal hand model that supports fine control of fingers for accurate low-level motion tracking and diverse high-level motion synthesis. We evaluate the control pipeline of our approach on a diverse piano repertoire spanning multiple musical styles and technical demands. Results demonstrate that our approach can synthesize coordinated bimanual motions with accurate key presses, and achieve the state-of-the-art performance of piano playing in physics-based dexterous control, while generalizing to sheet music that is not presented in the reference dataset. We also show that our musculoskeletal 
+
+> ∗
+
+Both authors contributed equally to this research. Authors’ Contact Information: Pei Xu, Stanford University, USA, peixu@stanford.edu; Yufei Ye, Stanford University, USA; Shuchun Sun, Clemson University, USA; Yu Ding, Stanford University, USA; Elizabeth Schumann, Stanford University, USA; C. Karen Liu, Stanford University, USA. 
+
+This work is licensed under a Creative Commons Attribution 4.0 International License. 
+
+© 2026 Copyright held by the owner/author(s). ACM 1557-7368/2026/7-ART https://doi.org/10.1145/3811402 
+
+hand model demonstrates superior biomechanical stability and tracking pre-cision compared to the existing model, and validate that our musculoskeletal hand model and muscle-driven controller can generate physiologically plau-sible activation patterns that align with human electromyography (EMG) recordings when subjects perform multiple tasks. CCS Concepts: • Computing methodologies → Animation ; Physical simulation ; Reinforcement learning .Additional Key Words and Phrases: character animation, physics-based control, motion synthesis, hierarchical reinforcement learning 
+
+ACM Reference Format: 
+
+Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu. 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control. ACM Trans. Graph. 45, 4 (July 2026), 20 pages. https://doi.org/10.1145/3811402 
+
+1 Introduction 
+
+Physically synthesizing human motion has a wide range of ap-plications in character animation, embodied AI, AR/VR, robotics, and biomechanics. Within these domains, musculoskeletal models represent a distinctive and valuable research direction. Unlike tra-ditional joint-actuated models, muscle-driven simulation provides a more faithful modeling of biological human musculoskeletal sys-tems bounded by physiological constraints. Besides improving the realism of character animation, effective control of muscle-driven models offers unique opportunities to analyze muscle fatigue, quan-tify injury risk, and optimize motion performance, contributing to biomechanics and biomedical engineering and providing insights and control solutions to biorobotics. This work advances the control and modeling of muscle-driven dexterous manipulation through the lens of elite piano performance. Piano playing exemplifies peak human dexterity, requiring extreme precision, rapid bimanual coordination, and sophisticated motor control, all while operating within strict physiological constraints imposed by muscle–tendon dynamics. Prior research has explored 
+
+ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026.   
+
+> arXiv:2604.23886v1 [cs.GR] 26 Apr 2026 2•Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+
+synthesizing piano performance in digital agents. While some ap-proaches [Gan et al . 2024; Liu et al . 2025] focus on generating hand motions in kinematic space, another line of research [Wang et al .2024; Zakka et al . 2023] synthesizes piano playing through physical simulation to generate physically plausible motions. However, ex-isting state-of-the-art systems rely exclusively on control over the joint space, ignoring the underlying muscle dynamics and frequently producing biologically unrealistic joint poses. In this work, we take a first step toward muscle-driven hand motion synthesis for elite-level piano performance. Given a mu-sical score denoted by note events, our method directly controls bimanual, muscle-actuated hands to execute the required notes with high precision. This task is particularly challenging because muscle-driven systems are naturally over-actuated and exhibit complex nonlinear dynamics with unidirectional actuatable drivers (muscu-lotendon units). While reinforcement learning is a common way to solve physics-based control, those characteristics result in an action space, which is not friendly to reinforcement learning, and also demand a high-frequency control system to provide precise coordination of hand and finger poses. To address these challenges, we propose a two-level hierarchical control architecture that separates general muscle coordination from music-specific decision making. Specifically, our framework consists of: (1) a low-level controller that directly actuates musculotendon units by outputting activations at high frequency, trained to imitate poses in a large-scale piano performance dataset; and (2) a high-level policy, trained per musical piece, that translates musical score input into target behaviors while remaining agnostic to the underlying muscle control. The high-level policy operates at a lower frequency without needing to know the low-level states of the muscle-tendon units, largely increasing training efficiency. Instead of coupling the two controllers via explicit physical quantities such as joint targets or torques, we introduce an implicit latent-space interface through variational autoencoder (VAE) models. This design mitigates out-of-distribution exploration in the high-dimensional physical state space and promotes stable, physically plausible motion synthesis. In parallel, we enhance the musculoskeletal hand model to sup-port the high-precision demands of piano playing. While current models may be sufficient for common grasping and in-hand manip-ulation tasks, we find that they cannot meet the dexterity demands of piano performance. In particular, we identify several critical mus-cles missing from existing models, leading to inadequate abduction-adduction and flexion strength in fingers. Guided by biomechanics literature, we augment the hand model with additional muscles at the lateral sides of the palm, improving fine-grained control of the thumb and pinky fingers and the overall stability of hand posing. By integrating our hierarchical control algorithm with the en-hanced musculoskeletal model, we present the first system capable of synthesizing hand motions for piano performance that are both physically and biomechanically plausible. Our method demonstrates high precision of dexterous control, achieving F1 scores above 0.9 on a challenging testing repertoire. To validate our design, we perform additional experiments to evaluate the hand musculoskeletal model, and conduct extensive sensitivity analysis to verify the latent-space interface of the hierarchical control. 
+
+2 Related Work 
+
+Early research into animating musical performance primarily re-lied on heuristics and kinematic optimization to solve for feasible postures of instrument playing [ElKoura and Singh 2003; Zhu et al .2013]. In recent years, data-driven approaches using generative mod-els [Canales and Jörg 2025; Chen et al . 2023; Gan et al . 2024; Kao and Su 2020; Kyriakou et al . 2025; Li et al . 2018; Liu et al . 2020, 2025; Qiu et al . 2025; Shlizerman et al . 2018] have drawn lots of attention. How-ever, due to the lack of physical constraints, those methods working on kinematics motion generation often suffer from the problem of artifacts. Our work follows the literature of physics-based dexterous manipulation with a focus on muscle-driven control to generate high-fidelity and physically plausible motions. 
+
+2.1 Dexterous Control for Musical Performance 
+
+Prior work on dexterous control has primarily focused on two broad categories: object grasping and relocation [Liu 2009; Xie et al . 2023; Zhao et al . 2013] and in-hand manipulation [Andrychowicz et al .2020; Yang et al . 2022; Zhang et al . 2021]. Musical performance in-troduces a distinct and more demanding form of dexterous control, where fine-grained finger articulation must be tightly synchronized with precise timing, continuous contact, and coordinated bimanual motion. Previous studies have explored the tasks of playing gui-tar [Luo et al . 2024b; Xu and Wang 2024], drum [Shahid et al . 2025], and piano [Wang et al . 2024; Xu et al . 2022; Zakka et al . 2023]. Due to the complexity of the task, for piano playing, Xu et al . [2022] only considers one hand playing on a simplified piano; Zakka et al .[2023] needs human-annotated fingering to guide policy learning; and Wang et al . [2024] relies on a diffusion model to generate refer-ence motions to facilitate policy training. Our approach can directly synthesize bimanual piano-playing motions from a large-scale ref-erence dataset of more than 10 hours, without requiring fingering annotations or auxiliary motion generators. 
+
+2.2 Physics-based Muscle-driven Control 
+
+For muscle-driven control, early work largely relied on nonlinear optimization, analytical models, and hand-crafted heuristics to per-form control [Ackermann and Van den Bogert 2010; Anderson and Pandy 2001; Dembia et al . 2020; Falisse et al . 2019; Geijtenbeek et al . 2013; Geyer and Herr 2010; Jiang et al . 2019; Lee et al . 2014; Ong et al . 2019; Sachdeva et al . 2015; Song and Geyer 2015, 2018; Sueda et al . 2008; Tsang et al . 2005; Wang et al . 2012; Waterval et al .2021]. Recently, reinforcement learning has emerged as a powerful alternative, enabling impressive progress in muscle-driven control by learning activation strategies through interaction with physics simulators. However, the over-actuation nature of musculoskeletal systems imposes additional challenges. Several approaches [Berg et al . 2024; He et al . 2024; Zuo et al . 2024] exploit muscle synergies to reduce the action space. While effective for training stabilization, such approaches constrain multiple musculotendon units to fixed ac-tivation patterns, thereby limiting expressiveness and fine-grained control. Another line of work converts muscle activations into joint-space control via intermediate joint-level policies [Lee et al . 2019; Park et al . 2022], or employs a PD controller over tendon length to generate activations [Feng et al . 2023; Si et al . 2014]. Those methods     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •3Dec right
+> h
+
+πright 
+
+> Reference
+> Motions
+> track
+
+π
+
+> qtarget
+> t
+> ht
+> track
+
+π
+
+qθ
+
+> Dec
+> zt
+> Dec
+> high
+
+π
+
+> ht
+
+G
+
+> zt
+
+G  
+
+> Imitation
+> Rewards
+> Goal
+> Rewards
+> left zt
+> right ,
+> at
+> left at
+> right ,
+> qtarget
+> t
+
+Motion Tracking  Latent Distillation 
+
+> stst
+
+Music-Conditioned Motion Synthesis 
+
+> at
+> ¯at
+> at
+> st
+> left
+> st
+> right
+> left
+> left
+
+60Hz 
+
+480Hz 
+
+> gt
+> Qt
+
+" Ê #
+
+> ! !
+
+## $
+
+> !
+
+Fig. 2. System Overview. The whole system of our framework is trained in three stages. First, we learn a single-hand tracking policy 𝜋 track that outputs high-frequency muscle activations for direct muscle-driven control (Sec. 4). Second, we perform on-policy distillation to obtain a VAE decoder as a low-level servo for muscle control, while taking as input the well-structured latent action z𝑡 (Sec. 5). Lastly, we train a piece-specific high-level controller over the latent to synthesize motions for piano playing (Sec. 6). While the first and third stages are conducted through reinforcement learning, the second stage is performed through supervised training. Specifically, for high-level controller training in the third stage, we adopt a decentralized multi-agent setting to treat two hands as individual agents associated with independent policies 𝜋 left high and 𝜋 right high , while taking a shared kinematic observation of two hands for coordinated control. 
+
+explicitly leverage muscle dynamics equations during training or control. In contrast, our approach treats muscle dynamics as a black box and learns control policies purely through interaction with the simulator, making the learning process independent of the simula-tor’s internal muscle model and avoiding the need to solve muscle inverse dynamics. Moreover, while the prior literature focuses on motion tracking or locomotion, our method enables the synthesis of complex, high-precision bimanual motions with strict spatial and temporal requirements, as exemplified by piano performance. 
+
+2.3 Hierarchical Control for Physics-Based Animation 
+
+Hierarchical control has been explored in physics-based character animation to address high-dimensional control and long-horizon be-haviors. Methods such as MotionVAE [Ling et al . 2020], PULSE [Luo et al . 2024a], MaskedMimic [Tessler et al . 2024], and PhysicsVAE [Won et al . 2022] learn latent spaces for high-level, task-directed control while relying on low-level controllers for motion execution, and FreeMusco [Kim and Lee 2025] extends this idea to muscle-driven characters. Other works, including Won et al . [2021] and Zhu et al .[2023], employ hierarchical structures for multi-agent interaction, while MCP [Peng et al . 2019] and Learn-to-Ball [Xu et al . 2025] focus on policy composition. In contrast, our approach targets muscle-driven dexterous manipulation with strict precision requirements. We introduce a dual-frequency hierarchical design with latent-space distillation to decouple high-level motion synthesis from low-level dynamic control of muscles. The low-level controller is treated as a general-purpose musculotendon controller rather than a generator of fixed motion patterns, and we incorporate imitation learning during high-level training. This design enables stable control and scales to coordinated, contact-rich bimanual tasks. 
+
+3 Overview 
+
+Given a musical score, our framework generates muscle activations to actuate bimanual musculoskeletal hand models. As illustrated in Fig. 2, the system is organized as a hierarchical architecture with components operating at different temporal resolutions, and is trained in three stages. In the first stage, for each hand, we train a general-purpose tracking policy that imitates poses from a large-scale piano performance dataset. The policy takes as input target poses and the current proprioceptive state of the hand, and out-puts high-frequency muscle activations that directly actuate the simulated model. In the second stage, the tracking policies are dis-tilled into Variational Autoencoders (VAEs), each of which maps the high-dimensional target state space for a single hand into a compact latent representation updated at a lower frequency. In the third stage, we train a decentralized high-level controller that takes as input kinematic hand states and musical goals represented as sequences of note events, and outputs latent actions at a lower frequency. This latent interface enables the high-level controller to coordinate bi-manual motion while remaining decoupled from low-level muscle dynamics. In addition, we introduce a more functional and biomechani-cally realistic musculoskeletal hand model (Sec. 7). Based on prior work [Caggiano et al . 2022], we augment the model with additional musculotendon units located along the lateral regions of the palm. These additions improve abduction–adduction capability and fine control of the thumb and pinky, leading to more stable and accurate hand postures during dexterous manipulation. 
+
+4 General Muscle-Driven Tracking 
+
+In the first stage, we train a general muscle-driven policy to track any given target trajectory qtarget  
+
+> 𝑡
+
+indicating desired hand poses in 𝐻   
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 4•Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+
+frames. The policy, denoted as 𝜋 track (a𝑡 |s𝑡 , h𝑡 ), is jointly learned with a network G : qtarget  
+
+> 𝑡
+
+↦ → h𝑡 , which encodes the target trajectory into a pose embedding h𝑡 . The policy maps the current proprioception s𝑡 
+
+and the encoded target pose h𝑡 to muscle activations a𝑡 at 480Hz, which is at the same frequency as the physics simulation. To ensure stable state initialization and faster convergence, the tracking policy is trained purely for motion tracking in an environ-ment without the piano. We train the policy on FürElise [Wang et al .2024], a large-scale dataset featuring elite piano performances, com-prising approximately 10 hours of hand motions. The dataset follows a long-tail distribution with specialized techniques like glissando and uncommon palm-up gestures, while most trajectories consist of various finger lifting and pressing motions for piano playing. 
+
+Dual-Frequency Tracking Policy. We design the tracking policy to operate at two different frequencies. The policy outputs muscle activations at a high frequency of 480Hz, while the target poses over 
+
+𝐻 frames are updated at a lower frequency of 60Hz, resulting in 
+
+qtarget  
+
+> 𝑡
+
+containing an 𝐻 -frame trajectory with a sampling interval of 
+
+𝑛 = 8 frames. This dual-frequency design is critical for meeting the high-frequency control demands of the hand musculoskeletal sys-tem, while allowing the subsequent high-level controller to operate at a lower frequency for improved training and inference efficiency. 
+
+Observation Space. In addition to the target pose embedding h𝑡 ,the network 𝜋 track receives the proprioceptive state s𝑡 as input. This state comprises link positions, orientations, and linear and angular velocities, as well as each musculotendon unit’s current length, ve-locity, and activation. While tendon length and velocity are needed to evaluate the Force–Length–Velocity (FLV) relationship [Uchida and Delp 2021], the current activation is also required, as the result-ing activation depends on both the existing activations and newly applied inputs through activation dynamics governed by time con-stants [Millard et al. 2013]. 
+
+Reward Definition. The tracking policy is optimized to achieve precise motion imitation while minimizing energy expenditure. To that end, we define a tracking reward regularized to generate sparse muscle activations: 
+
+𝑟 𝑡 = 0.9𝑟 tracking + 0.1𝑟 act , (1) where 
+
+𝑟 tracking = 0.5𝑟 pos + 0.5𝑟 orient 
+
+𝑟 pos = 0.7 exp (− 50 𝑒 𝑝 ) + 0.3 exp (− 3𝑒 𝑝 )
+
+𝑟 orient = exp (− 3𝑒 𝑜 )
+
+𝑟 act = exp (−|| a𝑡 || 44/dim a𝑡 ).
+
+(2) The position error 𝑒 𝑝 = Í𝑖 𝜅 𝑖 || ptarget  
+
+> 𝑖
+
+− p𝑖 || measures the distance of each link to its immediate target, and the orientation error 𝑒 𝑜 =
+
+Í𝑖 𝜔 𝑖 (rtarget  
+
+> 𝑖
+
+⊖ r𝑖 )2 measures the squared angle difference between two orientations, with weights 𝜅 𝑖 and 𝜔 𝑖 . The two terms in 𝑟 pos allow the reward to capture both long-distance errors and millimeter-scale precision, accounting for the large spatial range of a piano keyboard (approximately 122 cm) relative to the small width of individual keys (1.7–2.35 cm). We omit the subscript 𝑡 in the equations for clarity. Chunk 1 
+
+> Chunk 2
+> Chunk 3
+> rt
+> Fig. 3. A demonstration trajectory is divided into three overlapping chunks. The shadowed regions indicate the sampling regions of each chunk. The top bars exhibit the policy’s tracking performance per frame. Our MCMC sampling scheme lets the frames near the sampling region of each chunk contribute more to the performance estimation, and thus help localize the chunk that starts with badly performed frames. For example, here, Chunk 2 will have a lower running performance estimation than Chunk 1, because the badly tracked frames are in the sampling region of Chunk 2, though also covered by Chunk 1.
+
+During simulation, the action a𝑡 is clipped to the range [0, 1],consistent with the standard definition of muscle activations. How-ever, its raw, unclipped value is used during reward computation in 𝑟 act . The fourth-order norm in 𝑟 act penalizes large activations, while remaining tolerant to small ones. This formulation discour-ages excessive muscle exertion without forcing the policy to trade off tracking accuracy when approaching the target pose. While the network is allowed to provide sparse control signals by outputting negative values, we penalize large negative values in a𝑡 , preventing the learning process from drifting toward biased negative regions. Overall, our tracking policy can produce sparse, human-like activa-tion patterns while keeping high precision of motion tracking. 
+
+Adaptive Sampling. To effectively learn from the diverse reference data, we adopt an adaptive sampling strategy based on a power-scaled MCMC scheme. As shown in Fig. 3, we first partition each reference trajectory (thousands of frames) into overlapping chunks which are roughly equally long with a maximal length of 𝐶 frames. During training, a chunk is sampled, and the agent is initialized at a state with target poses drawn uniformly from the chunk’s non-overlapping region. The training episode will end early if it reaches the end of that chunk, or terminate unsuccessfully if the tracking error becomes too large, resulting in an episode with 𝐿 frames long, where 𝐿 ≤ 𝐶 . We track the policy’s running performance ¯𝑟 ′ 
+
+> 𝑖
+
+through an MCMC approach. For a given chunk 𝑖 , we estimate the policy’s performance online by calculating the discounted cumulative re-ward ¯𝑟 ′ 
+
+> 𝑖
+
+= 𝐶 𝐿 
+
+Í𝐿 𝑡 =0 𝜁 𝑡 𝑟 𝑡 , where 𝜁 is a discount factor. If the episode terminates unsuccessfully, we assign 𝑟 𝑡 = 0 for all the remaining frames. The recorded performance ¯𝑟 𝑖 is updated through a moving average at the end of each episode, i.e., ¯𝑟 𝑖 ← ( 1 − 𝛼 ) ¯𝑟 𝑖 + 𝛼 ¯𝑟 ′ 
+
+> 𝑖
+
+.The sampling weight of chunk 𝑖 is decided by 
+
+𝑤 𝑖 = 1
+
+𝑍 
+
+ 𝑟 max − 𝑟 min + 𝜖 
+
+¯𝑟 𝑖 − 𝑟 min + 𝜖 
+
+𝜂 
+
+− 1 + 𝜀 
+
+
+
+(3) where 𝑍 is a normalization factor, and 𝜂 ≥ 1 controls the sharpness of the distribution, amplifying the probability for chunks with low 
+
+¯𝑟 𝑖 . The terms 𝑟 max and 𝑟 min represent the theoretical reward bounds, while 𝜖 and 𝜀 are small constants added for numerical stability. All ¯𝑟 𝑖 
+
+values are initialized using a small positive constant before training. This sampling strategy ensures that the policy explicitly practices the specific chunks starting with badly performed frames, as the discounted reward heavily weighs these initial frames.     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •5
+
+5 Latent Distillation 
+
+While the target pose embedding h could be directly leveraged to drive the tracking policy, our experiments indicate that the latent defined in the unconstrained space of h is still too large to provide densely distributed valid control points for efficient exploration by a high-level controller. Therefore, we further distill this embedding into a smooth manifold z to facilitate high-level controller training. We distill the tracking policy through a VAE model, where the decoder mimics the tracking policy 𝜋 track by mapping a slow latent 
+
+z𝑡 to high-frequency muscle activations. Following 𝛽 -VAE [Higgins et al . 2017], we perform distillation by minimizing the loss function 
+
+L = E𝑡 
+
+h 𝑛 −1∑︁ 
+
+> 𝛿 =0
+
+|| Dec (s𝑡 +𝛿 , z𝑡 ) − ¯a𝑡 +𝛿 || 2 + 𝛽𝐷 𝐾𝐿 (𝑞 𝜃 (z𝑡 |s𝑡 , h𝑡 )|| 𝑝 )
+
+i
+
+(4) where ¯a𝑡 +𝛿 = Clip (a𝑡 +𝛿 , 0, 1) with a𝑡 +𝛿 ∼ 𝜋 track (·| s𝑡 +𝛿 , h𝑡 ), which is the target action provided by the tracking policy at the high frequency, z𝑡 ∼ 𝑞 𝜃 (·| s𝑡 , h𝑡 ) is the latent code sampled every 𝑛 frame from the encoder posterior 𝑞 𝜃 , modeled as multi-variate Gaussian, 
+
+Dec denotes the decoder network, and 𝑝 is the prior. We use a standard normal prior 𝑝 := N ( 0, I), which performs slightly better than a conditional prior 𝑝 (·| s𝑡 ) during our experiments. While the decoder is trained as a deterministic model to imitate the behavior of 𝜋 track , we adopt a hybrid on-policy distillation strat-egy to improve robustness. While the target pose embedding h𝑡 is always sampled from the reference motion data through G( qtarget  
+
+> 𝑡
+
+),the simulation state s𝑡 is dynamically unrolled using activations provided by the VAE decoder and those from 𝜋 track in a mixture way. This unrolling exposes the VAE to its own execution errors, encour-aging recovery behaviors and improving control robustness, while mitigating excessive state drift by applying activations from 𝜋 track 
+
+with a 20% probability. We refer to the supplementary materials for additional details. Although we do not explicitly regularize muscle coactivation during distillation, the hierarchical architecture introduces a low-dimensional latent representation that implicitly regularizes control and encourages coordinated activation patterns. 
+
+6 Music-Conditioned Motion Synthesis 
+
+With the low-level muscle-driven controller trained for each hand through latent distillation, we learn a piece-specific high-level con-troller to coordinate bimanual motion generation for piano per-formance. Unlike the low-level controllers, which are trained in isolation for two hands, we train the high-level controller with two hands in a shared environment that includes a piano. While the low-level controllers were trained purely on motion tracking without a piano, they generalize effectively to this contact-rich envi-ronment, successfully executing the physical interactions required for pressing keys. Instead of training a centralized controller to out-put actions for both hands, we optimize separate policies for each hand in a decentralized manner. Specifically, for high-level control, we employ two policies corresponding to the left and right hands, 
+
+𝜋 left high and 𝜋 right high , respectively, each paired with its own low-level controller, while sharing a common kinematic observation to enable coordinated bimanual control. Under this decentralized design, each hand acts as an independent agent that greedily maximizes its own t01000100100 100010010000  01000001100  000010010001  000100010001  100010001000 
+
+> t
+> 000000000000
+
+Fig. 4. Demonstration of our music goal representation g𝑡 . The green boxes indicate the upcoming target keys. Instead of showing the target keys in a fixed number of frames, we use the next 𝑁 target key-pressing patterns as the goal input to the policy network to increase the policy’s observation horizon. The dashed lines divide the target into different patterns. The annotation under each pattern denotes its encoded representation, while g𝑡 
+
+represents the full keyboard with 88 keys, augmented with an additional 
+
++/− sign to indicate hand assignment. 
+
+reward while sharing kinematic pose information within the ob-servation space. This design significantly reduces the action-space complexity, leading to efficient policy training. 
+
+Observation Space. Each single-hand policy takes the same in-put of the note events as the goal g𝑡 , alongside the kinematics of both hands Q𝑡 to coordinate bimanual motion and prevent colli-sions, i.e., 𝜋 ℎ 
+
+> high
+
+(zℎ𝑡 |Q𝑡 , g𝑡 ) where ℎ ∈ { left , right }. The kinematics 
+
+Q𝑡 comprise a two-frame historical observation, including the po-sition, orientation and velocities of each link of two hands. The goal g𝑡 ∈ R𝑁 × ( 88 +1) is represented as an indicator vector of the next 𝑁 target key-pressing patterns (cf. Fig. 4), concatenated with a timer variable indicating the duration of each pattern [Wang et al .2024; Xu and Wang 2024]. To distinguish target hands, we use a ternary representation instead of the binary representation used in prior work. The goal based on note events provides a significantly longer horizon than a fixed-timestep target goal, allowing the high-level controller to anticipate and plan for upcoming notes more effectively. 
+
+Reward Definition. To ensure natural movement, we use imitation-based reinforcement learning while incorporating a GAN-like ar-chitecture [Xu and Karamouzas 2021] to perform motion imitation, and adopt a multi-objective learning framework [Xu et al . 2023] to balance motion imitation and goal-directed control. In the decentral-ized multi-agent setting, rewards must be computed separately for each hand, which requires knowledge of hand-level key assignments. In our implementation, we use a clef-based heuristic to determine hand assignment from a given musical score, following the common convention that the bass clef is assigned to the left hand and the treble clef to the right hand. The task reward for each hand consists of positive terms 𝑟 + 
+
+> 𝑘
+
+that encourage correct key presses and negative terms 𝑟 − 
+
+> 𝑘
+
+that penalize unintended presses: 
+
+𝑟 𝑡,ℎ = 1
+
+|K ℎ |∑︁ 𝑘 ∈ K ℎ
+
+𝑟 + 
+
+> 𝑘
+
+− 0.2∑︁ 
+
+> 𝑘 ∉K
+
+𝑟 − 
+
+> 𝑘
+
+(5) where Kℎ represents the set of target keys for hand ℎ.For each target key 𝑘 ∈ K ℎ , we minimize the distance ∥d𝑘,𝑖 ∥
+
+between the key and the nearest finger 𝑖 while taking into account   
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 6•Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+
+finger occupancy and spans, and encourage key depression: 
+
+𝑟 + 
+
+> 𝑘
+
+= 0.6𝑟 dist  
+
+> 𝑘
+
++ 0.4𝑟 press 
+
+> 𝑘
+
+𝑟 dist  
+
+> 𝑘
+
+= 0.8 exp (− 500 || d𝑘,𝑖 || 2) + 0.2 exp (− 5|| d𝑘,𝑖 ||) 
+
+𝑟 press  
+
+> 𝑘
+
+= (𝑑 𝑘 /𝐷 𝑘 )3I𝑘,𝑖 
+
+(6) where 𝑑 𝑘 is the current rotation angle of key 𝑘 , and 𝐷 𝑘 is its maxi-mum rotation range. Specially, when Kℎ = ∅, the positive reward is set to 1. We consider an effective key pressing (generating sound) if 𝑑 𝑘 /𝐷 𝑘 > 𝜏 . Specifically, to discourage intermittent pressing, we penalize temporary key release and set 𝑟 press  
+
+> 𝑘
+
+= 0 if 𝑑 𝑘 /𝐷 𝑘 > 𝜏 at timestep 𝑡 − 1 but 𝑑 𝑘 /𝐷 𝑘 ≤ 𝜏 at timestep 𝑡 . We set 𝜏 = 0.9 in our implementation and assume a maximal depth displacement of 1cm when a key is fully pressed down [Van den Berghe et al . 1995]. No-tably, our approach can also support predefined finger-level key assignment when desired by replacing the nearest-finger heuristic with specified target fingers during reward computation, and by explicitly encoding the assigned finger index for each target key in the goal vector g𝑡 .For non-target keys, we penalize the normalized depression 𝑟 − 
+
+> 𝑘
+
+=
+
+(𝑑 𝑘 /𝐷 𝑘 )6. The higher power encourages rapid release and penalizes deep presses while tolerating light resting contact. The negative terms are computed over all non-target keys across two hands, i.e. 
+
+K = ∪ℎ Kℎ . We adopt this holistic penalty, since attributing incorrect presses to individual hands is non-trivial. To ensure natural movement, we additionally incorporate a GAN-like architecture [Xu and Karamouzas 2021] to perform imitation learning from the reference motion data, and adopt a multi-objective learning framework [Xu et al . 2023] to balance multiple imitation and goal-directed objectives. We refer to the supplementary materi-als for the details of high-level controller training. 
+
+Adaptive Sampling. To improve the training efficiency, we adopt the adaptive sampling strategy elaborated in Sec. 4, but at a note level. We estimate the high-level controller’s performance by 
+
+¯𝑟 𝑖 = 𝐶 𝐿 
+
+> 𝐿
+
+∑︁ 
+
+> 𝑡 =0
+
+𝜁 𝑡 min {Recall left  
+
+> 𝑡
+
+, Recall right  
+
+> 𝑡
+
+}. (7) Here, we utilize the recall score as the driver for adaptive sampling, as the policy generally achieves high precision easily. In each train-ing episode, we use weights derived from Eq. 3 to sample a starting note from the given musical score. Each episode is 𝐶 -frame long, but terminates early, resulting in an 𝐿 -frame episode, if it reaches the end of the music score. This sampling strategy focuses the learn-ing process on difficult passages where the keys are often missed, ensuring more robust performance across the entire piece. 
+
+7 Musculoskeletal Hand Model 
+
+Our hand model is adapted from MyoHand [Caggiano et al . 2022], which provides anatomically grounded muscle–tendon structures and joint configurations based on previous work in biological mod-eling [Lee et al . 2015; McFarland et al . 2019]. We keep the forearm in the model while removing the rest skeletal bodies, as many muscles responsible for finger and wrist motion originate there. A free root is introduced at the elbow position with 6 DoFs actuated through direct torque and force control. In addition, we augment the model   
+
+> Fig. 5. Illustration of our enhanced musculoskeletal hand model (left hand) with the added musculotendon units highlighted in red. The right subfigure from Gray’s Anatomy visualizes the volumes and locations of the muscles.
+
+with five tendon units, including FPB, AdP, APB, FDM, and ADM, located along the lateral regions of the palm, as highlighted in Fig. 5. The resulting model comprises 44 actuatable musculotendon units, 23 movable joints, and 34 rigid body links, yielding a total of 50 con-trollable DoFs per hand (44 muscle activations and 6 root DoFs). The left-hand model is obtained by mirroring the right hand. Additional details regarding anatomical modifications and control implications of our hand models are provided in the supplementary materials. We rely on MuJoCo to simulate muscle–tendon dynamics, where muscles and tendons are coupled as musculotendon units during simulation rather than explicitly modeling elastic tendons as in OpenSim [Delp et al . 2007]. We also rely on MuJoCo’s implementa-tion for activation dynamics [Millard et al . 2013]. The model uses default activation and deactivation time constants of 10 ms and 40 ms, governing how quickly muscle activation rises and falls in response to controller inputs rather than assuming instantaneous muscle response. 
+
+8 Experiments 
+
+We use MuJoCo [Todorov et al . 2012] as the physics simulator, which provides built-in support for musculotendon simulation and actua-tion. All simulations are performed using the XLA-based MuJoCo implementation (MJX) with GPU computation support through JAX. The neural networks are implemented using PyTorch. Additional analyses about the key design choices of our approach are provided in the supplementary materials. 
+
+8.1 Muscle-Driven Motion Tracking 
+
+We first show our general low-level tracking policy 𝜋 track capable of tracking all motions in the long-tail distributed reference dataset. The length of tracking trajectories varies from 20s (1,200 frames) to 18m (64,742 frames). Such long trajectory lengths impose an additional challenge on motion tracking, since the tracking error would accumulate. The performance of the tracking policy 𝜋 track 
+
+using our enhanced hand model is illustrated in Table 1 (Ours). The tracking policy achieves an average error of less than 4mm for all end-effector fingertips and the wrists on this challenging dataset. In 
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026.
+
+MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control • 7
+
+Fig. 6. Examples of our tracking policy reproducing long-tail distributed, uncommon poses and trajectories in the reference dataset. The shown examples include challenging behaviors of glissando, where the hand slides across the keyboard, wrist supination, and hand clasping. 
+
+Fig. 7. Comparison of Myohand (top) and our enhanced hand model (bot-tom) while tracking challenging poses with extreme adduction (squeezing), abduction (spreading), and flexion (finger pressing). The red spheres indicate the tracking targets of finger joints and tips. Table 1. Tracking errors of the wrists and fingertips, averaged over frames. Results are reported as mean ± std in millimeters (mm). In each cell, the top and bottom values correspond to the left and right hands, respectively. 
+
+unit: mm wrist thumb index middle ring pinky MyoHand 3.7 ± 2.2 11 .2 ± 8.3 4.9 ± 6.3 3.9 ± 5.9 3.7 ± 4.9 6.4 ± 6.02.9 ± 1.6 12 .1 ± 8.0 4.1 ± 4.1 3.7 ± 4.1 3.1 ± 3.2 5.1 ± 4.4
+
+Ours 1.5 ± 1.8 2.4 ± 4.3 3.2 ± 3.3 3.1 ± 3.0 3.3 ± 3.0 3.5 ± 2.61.4 ± 1.4 2.3 ± 3.3 3.7 ± 3.8 3.1 ± 2.7 3.1 ± 3.1 3.8 ± 2.1
+
+Fig. 6, we visualize tracking results of challenging behaviors in the reference dataset. By incorporating adaptive sampling, the tracking policy is able to spend more training on those underrepresented and poorly tracked trajectories, enabling accurate tracking across the entire dataset. A quantitative ablation study regarding the adaptive sampling is provided in the supplementary materials. 
+
+Evaluation on Musculoskeletal Hand Models. To demonstrate the effectiveness of our enhanced hand model, we train an additional tracking policy using identical training setups, but the original Myo-Hand. The quantitative results are summarized in Table 1. As shown in the table, the policy trained with MyoHand exhibits larger track-ing errors on the reference dataset, particularly for the thumb and pinky fingertips, where errors exceed 1 cm and 5 mm, respectively. Figure 7 compares the models on challenging poses beyond pi-ano playing. MyoHand (top row) often fails under these extreme configurations. Specifically, the PIP and DIP joints of the thumb and pinky frequently over-bend and fail to return to a neutral con-figuration after strong abduction (left column) and flexion (right column). MyoHand also displays locking phenomena where a joint Pieces  
+
+> 0.0 0.2 0.4 0.6 0.8 0.9 1.0
+> F1 Score
+> Muscle-driven Joint-driven
+> Beethoven, F¨ ur Elise Chopin, Waltz Op. 64 No. 2 Grieg, Lyric Pieces Op. 38 No. 1 Brahms, Rhapsodie Op. 79 No. 2 Mozart, Piano Sonata K. 545 in C major Beethoven, Piano Sonata No. 23. Joplin, Maple Leaf Rag Mozart, Piano Sonata K. 280 in F major Scriabin, Piano Sonata No. 5 Bach, French Suite No. 3 Minuet Beethoven, Piano Sonata No. 3 Bach, English Suite No. 2 Prelude Scarlatti, Sonata in A major K. 208 Debussy, Suite Bergamasque Passpied Mussorgsky, Pictures at an Exhibition Bydlo
+
+Fig. 8. F1 scores of our muscle-driven control policy on the 15 testing pieces (blue). As a baseline, the performance of control policies trained with a joint-driven hand model actuated through PD servos is shown in red. 
+
+remains stuck in near-full flexion (middle column). In contrast, our enhanced model reaches target postures naturally and accurately without joint locking or pathological configurations, demonstrating superior biomechanical stability and controllability. We refer to the supplementary video for animated results. 
+
+8.2 High-Level Motion Synthesis 
+
+We evaluate our approach on 15 music scores excerpted from pieces outside the reference dataset to assess its ability to synthesize biman-ual motions for novel pieces. All evaluated scores are listed in Fig. 8. Their durations range from 15s to 32s, with note counts varying from 100 to 354. Together, they span a broad range of musical styles and technical demands, including arpeggios, hand overlapping, and large leaps. 
+
+ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 8 • Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu 
+
+Fig. 9. Diverse finger poses when multiple keys are pressed at the same time. Our testing repertoire challenges the system with diverse dexterous behaviors, such as rapid finger alternation (e.g., Chopin, Waltz Op. 64 No. 2 ), sustained chordal control and voicing (e.g., Brahms, Rhapsodie Op. 79 No. 2 , and Mussorgsky, Pictures at an Exhibition ), large-scale arm–hand coordination (e.g., Beethoven, Piano Sonata No.3, 2nd mov. ). 
+
+Fig. 10. Our policy can infer fingering while taking into account finger occupancy for future key-pressing targets. Two screenshots in each group illustrate the key-pressing states for two consecutive targets. Our policy can ensure that all the targets are pressed correctly without the common keys being released. 
+
+Fig. 11. Finger poses during playing arpeggios of Bach suites. The top row shows an example from French Suite , and the bottom row from English Suite .
+
+Metrics and Baselines. We report F1 score in Fig. 8. To contextu-alize these results, we compare against a joint-driven baseline that shares the same morphological definition and joint configuration as our musculoskeletal model, while adopting the identical training se-tups in Sec. 6. Given its reduced actuation complexity, this baseline represents the performance ceiling of the high-level controllers. 
+
+Results. As shown in the Fig. 8, the joint-driven baseline achieves near-perfect performance, with F1 scores above 0.96 for all tested scores. Our muscle-driven model attains F1 scores above 0.9 across all pieces, with an average score of 0.94. Despite the increased com-plexity introduced by muscle dynamics, it matches the performance of the joint-driven model on several pieces, including Beethoven, Piano Sonata No. 23 , Bach, French Suite No. 3 Minuet , and Scarlatti, Sonata in A major K. 208 . These results demonstrate the effectiveness of our approach for motion synthesis and muscle-driven control. 
+
+Emergent Behaviors. Figures 1 and 9 showcase the diverse finger configurations emerging during complex multi-key presses. Our pipeline generates independent finger motions while maintaining stable wrist postures, despite the contact-rich interactions. Notably, as the low-level tracker and latent manifold were trained in open space without a piano, the high-level controller has to learn to man-age these contacts entirely through exploration within the latent     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •9
+
+Fig. 12. Two-hand coordination with overlapping and crossover (the rightmost). 
+
+Fig. 13. Demonstrations of large hand leaps. The left and middle screenshots show the left hand leaping over the right hand and back. 
+
+space. The policy also demonstrates an emergent ability to infer fin-gering without explicit supervision (Fig. 10). Similarly, during arpeg-gios (Fig. 11), the policy naturally selects optimal fingering to min-imize wrist movement while traversing sequential notes. Though trained through a decentralized multi-agent setting, the high-level controller successfully synthesizes challenging coordinated biman-ual behaviors. In scenarios where hands spatially overlap (Fig. 12), the policies resolve potential inter-hand collisions to maintain ef-fective pressing. Even during rapid, large-scale leaps across the keyboard (Fig. 13), the model demonstrates the spatial awareness and timing precision necessary to accurately localize and strike target keys. 
+
+8.3 Model Validation 
+
+We evaluate the physiological fidelity of our model by comparing muscle activation patterns generated by the tracking policy with electromyography (EMG) recordings from a human subject. 
+
+Experimental Setup. In the top row of Fig. 14, we show the EMG sensor placement. For intrinsic muscles (which originate and insert within the hand), we target the ADM and FDM group, as these are superficial and accessible. For extrinsic muscles (located in the forearm), we measure the EDC and FDP+FDS groups. Given the anatomical proximity of these muscles, we assume surface EMG measurements reflect their combined activity rather than distinct, muscle-specific signals. During data collection, the subject performs a sequence of tasks, including isolated finger flexion/extension, hand abduction, and key pinches, repeating each task three times. We record hand kinematics and EMG signals simultaneously to ensure temporal alignment between motion and muscle activity. 
+
+Results. To ensure the validity of the comparison, we first verify that the tracking policy faithfully reproduces the subject’s motion. The policy achieves high accuracy, with average tracking errors of 0.1 for the wrist and 0.9, 2.5, 2.6, and 1.8 for the thumb, index, middle, 0.0 0.5 1.0                
+
+> EDC
+> 0.0 0.5 1.0
+> FDP+FDS
+> 036912 15 18 21 24 27 30 33 36 39 42
+> t[s]
+> 0.0 0.5 1.0
+> ADM+FDM
+
+Fig. 14. Comparison of EMG recordings collected from a human subject (shadow regions) and the activations (blue lines) generated by our model during motion tracking. Top: illustrations of the EMG sensor placement. 
+
+ring, and pinky fingertips, respectively, in the unit of mm. We nor-malize the raw, noisy EMG signals using standard post-processing, including full-wave rectification and low-pass filtering. Fig. 14 dis-plays the processed EMG measurements (gray shade) alongside the activation generated by the tracking policy (blue curve). The model-generated activations are consistent with the overall tempo-ral patterns of the measured EMG signals. This consistency aligns with the underlying motion tasks (separated by dashed lines): from left to right, the phases correspond to flexion/extension of the pinky, ring, middle, and index fingers, followed by an idle period, and finally hand spreading and squeezing. The three consecutive repeti-tions of each motion appear as three distinct peaks in the generated activations. While we observe minor discrepancies in certain seg-ments—expected due to inter-subject anatomical variability, habitual                                                                     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 10 •Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+> Table 2. Performance of the tracking policies trained with adaptive sampling (ours) and those without the adaptive sampling (w/o A.S.) The reported numbers are the tracking errors of the wrists and fingertips in the form of mean ±std, averaged over all frames in the reference dataset. In each cell, the top and bottom values correspond to the left and right hands, respectively.
+> unit: mm wrist thumb index middle ring pinky Ours 1.5±1.82.4±4.33.2±3.33.1±3.03.3±3.03.5±2.61.4±1.42.3±3.33.7±3.83.1±2.73.1±3.23.8±2.1
+> w/o A.S. 16 .7±4.7 98 .3±18 .3 68 .2±10 .7 22 .2±8.0 30 .8±9.5 65 .9±12 .017 .0±3.4 94 .4±18 .0 74 .0±12 .1 22 .8±6.4 19 .3±6.0 41 .6±13 .8
+
+motor strategies, and the inherent limitations of surface EMG—the strong agreement in activation trends supports the physiological relevance of our proposed muscle-driven controller. 
+
+9 Sensitivity Analysis 
+
+In this section, we conduct a series of sensitivity analyses to evaluate the key components within our approach. 
+
+9.1 Adaptive Sampling 
+
+Table 2 compares the tracking performance of policies trained on our enhanced musculoskeletal hand model with and without the proposed adaptive sampling strategy. All policies are trained us-ing identical network architectures and hyperparameters, differing only in whether adaptive sampling is employed. The results show that incorporating the MCMC-based adaptive sampling substan-tially improves tracking accuracy across the entire reference dataset. Without adaptive sampling, the policy exhibits average tracking errors on the order of centimeters with large standard deviations, in-dicating poor coverage of challenging motion segments. In contrast, adaptive sampling effectively focuses training on poorly tracked trajectories, reducing the average tracking error to below 4mm and enabling accurate and stable tracking over the full dataset. Figure 15 illustrates the learning performance, measured by F1 scores, when adaptive sampling is used during high-level training, compared to uniform sampling. Adaptive sampling biases training toward poorly performed notes, which may lead to lower running performance during training but results in improved evaluation performance at test time, as shown in the figure. Overall, during high-level controller training, adaptive sampling improves conver-gence speed by approximately 5–10%, particularly in the later stages of training when only a small subset of notes remains challenging. 
+
+9.2 Control Space 
+
+Figure 16 compares learning performance in terms of F1 scores when different control spaces are used to train the high-level controller. The corresponding network architectures are shown in Fig. 17. We omit the baseline that directly uses the tracking latent h, as this representation does not support effective high-level policy learning in our experiments. Instead, we introduce a variant of the tracking policy that uses a normalized latent h/|| h|| as the goal representa-tion. This normalization constrains the latent to the surface of a unit hypersphere Sdim h, yielding a space with more densely and uniformly distributed valid points. Owing to our dual-frequency 0 2 4 6                                           
+
+> ×10 60.00.51.0F1 Score F¨ ur Elise 0.00.51.01.5
+> ×10 70.00.51.0Rhapsodie Op. 79 No. 2 0.00 0.25 0.50 0.75 1.00 Samples ×10 70.00.51.0F1 Score Lyric Pieces Op. 38 No. 1 02468Samples ×10 60.00.51.0Maple Leaf Rag ours w/o A.S.
+> Fig. 15. Learning performance of the high-level controllers with adaptive sampling (ours) and that using uniform sampling (w/o A.S.).
+
+architecture, the high-level controller can operate over h/∥ h∥ at a low frequency while directly leveraging the tracking policy as a low-level muscle controller without an explicit distillation stage. We additionally evaluate a baseline in which the control space is defined explicitly at the joint level. The objective of this baseline is to approximate a PD-servo-like controller for muscle-driven sys-tems, while taking an immediate target joint pose btarget  
+
+> 𝑡
+
+for the next frame as input. For reference, we also include a joint-driven hand model actuated by PD servos in the comparison. As illustrated in the figure, both our proposed approach using the VAE latent z and the normalized latent h/|| h|| achieve strong per-formance in high-level policy training, with the VAE latent yielding slightly higher F1 scores overall. While quantitative performance is comparable, we observe that motions generated through h/|| h|| 
+
+often exhibit noticeable jitter, whereas those synthesized through the VAE latent are substantially smoother and more stable. We refer to the supplementary video for visual comparisons. The joint-space baseline using b, however, performs poorly. Al-though we apply the same on-policy distillation strategy, the result-ing low-level controller D𝑏 exhibits limited generalization. While it can track reference trajectories with moderate accuracy, it fre-quently loses control of the hand when driven by stochastic actions provided by the high-level controller. In addition, analogous to PD servos, we also experimented with a tracking policy that conditions only on a one-frame future target pose. However, this setting results in jittery motions and large tracking errors. We note that although the number of training samples required for high-level policy learning is not quite large, muscle–tendon simulation is substantially more expensive than joint-driven simula-tion. In our experiments, muscle-driven simulation is approximately twice as slow as joint-driven PD control, leading to a high-level policy training of roughly one week on an NVIDIA RTX Pro 6000 GPU. Additionally, Fig. 18 compares the performance of our approach using a vanilla VAE for latent distillation with that of a conditional                          
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •11 02468
+> ×10 6
+> 0.00.51.0
+> F1 Score F¨ ur Elise
+> 0.00.51.01.5
+> ×10 7
+> 0.00.51.0
+> Rhapsodie Op. 79 No. 2
+> 0.00 0.25 0.50 0.75 1.00
+> Samples ×10 7
+> 0.00.51.0
+> F1 Score Lyric Pieces Op. 38 No. 1
+> 02468
+> Samples ×10 6
+> 0.00.51.0
+> Maple Leaf Rag
+> z(ours) h/|| h|| bPD (joint-driven)
+
+Fig. 16. Learning performance of the high-level controllers while using dif-ferent control spaces. PD refers to the baseline using a joint-driven hand model. The joint-driven model has the same morphology and joint configu-rations as our musculoskeletal model, but is actuated by PD servos. Dec     
+
+> zt
+> ht
+> ||ht||
+> h
+> st
+> gt
+> at
+> track
+
+## π
+
+> st
+> at
+
+G
+
+D
+
+> track
+
+## π ¯at
+
+> 480Hz 60Hz
+> gt
+> at
+> st
+> qtarget
+> t
+> btarget
+> t
+> MSE Loss
+> b
+> bt
+> gt
+> at
+> st
+
+Db 
+
+> ①②
+> ③
+
+QtQt
+
+Qt
+
+Fig. 17. Network architectures with different latent spaces. From 1○ to 3○, the latent spaces are (1) the VAE latent used in our approach, (2) the goal embedding of the tracking policy, constrained on the surface of a unit sphere, and (3) an explicit space defined by the joint pose b𝑡 , respectively. Additionally, the subfigure at the bottom left illustrates the diagram to distill a tracking policy into an explicit joint-pose space. While 𝑞 target  
+
+> 𝑡
+
+includes the target poses of body links in 𝐻 frames, btarget  
+
+> 𝑡
+
+only contains the immediate target joint pose at timestep 𝑡 . We follow the dual-frequency hierarchical architecture, and let the high-level controllers for motion synthesis (green boxes) run at a lower frequency of 60Hz to ensure the training efficiency. 
+
+VAE. In the latter case, we adopt the same distillation objective (Eq. 4) but replace the prior with a state-conditioned prior 𝑝 (·| s𝑡 ). While prior work [Ling et al . 2020; Luo et al . 2024a; Tessler et al . 2024] reports improved performance with conditional VAEs in physics-based control tasks, we observe slightly better results with a vanilla VAE in our setting, along with faster inference due to its simpler architecture. We attribute this difference to the desynchronized time scales in our hierarchical design: the encoder produces latent codes 0 2 4 6     
+
+> ×10 60.00.51.0F1 Score
+
+F¨ ur Elise 0. 0 0. 5 1. 0 1. 5     
+
+> ×10 70.00.51.0
+
+Rhapsodie Op. 79 No. 2 0. 00 0. 25 0. 50 0. 75 1. 00 Samples × 10 70. 00. 51. 0F1 Score Lyric Pieces Op. 38 No. 1 0 2 4 6 8Samples × 10 60. 00. 51. 0Maple Leaf Rag VAE (ours) Conditional VAE 
+
+Fig. 18. Learning performance of the high-level controllers using a vanilla VAE to perform distillation and that using a conditional VAE. 
+
+at a low frequency based on s𝑡 , whereas the decoder operates at a higher frequency to generate muscle activations from instantaneous states based on s𝑡 +𝛿 (cf. Eq. 4). Introducing a state-conditioned prior in this setting may create a temporal mismatch between latent infer-ence and control execution, which can negatively impact training stability. 
+
+9.3 Decentralized Control vs. Centralized Control 
+
+Figure 19 compares the performance of our decentralized multi-agent reinforcement learning (MARL) formulation with a central-ized alternative for high-level policy training. In the centralized baseline, a single policy network controls both hands jointly, while receiving the same observations as the decentralized policies. To en-sure a fair comparison, we adopt the same multi-objective learning framework for policy training in the centralized setup, but involving the imitation and task-directed objectives for the two hands at the same time. As shown in the figure, the decentralized multi-agent formulation yields a clear and consistent advantage over centralized control. In particular, MARL, with reduced action space complex-ity, leads to substantially faster convergence during training and achieves higher final performance. As described in Sec. 6, the decentralized setup requires knowing the hand-level key assignment to perform reward computation, though the detailed fingering is unnecessary. In the case where the hand-level annotation is unavailable, we can still perform training, using the nearest finger heuristic. However, the separation of single hands can destabilize training. For example, one hand may avoid all key assignments to maximize its own reward by staying far away from all the target keys. In such cases, a centralized controller governing both hands yields better performance. 
+
+10 Conclusion 
+
+We present a hierarchical, muscle-driven control system for dex-terous piano performance that enables physically simulated hands to synthesize motions for pieces of music outside the reference           
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 12 •Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu 0246
+> ×10 60.00.51.0F1 Score
+
+F¨ ur Elise 0. 0 0. 5 1. 0 1. 5     
+
+> ×10 70.00.51.0
+
+Rhapsodie Op. 79 No. 2 0. 00 0. 25 0. 50 0. 75 1. 00 Samples × 10 70. 00. 51. 0F1 Score Lyric Pieces Op. 38 No. 1 0 2 4 6 8Samples × 10 60. 00. 51. 0Maple Leaf Rag MARL (ours) Centralized 
+
+Fig. 19. Learning performance of the high-level controllers using a multi-agent setup (MARL) and that using a centralized policy for bimanual control (Centralized). The Centralized setup typically needs around 30% more train-ing iterations to reach the same final performance as MARL. 
+
+dataset. By combining high-frequency muscle-level control with low-frequency latent-space coordination, our approach bridges biome-chanically grounded actuation and high-level goal-directed motion synthesis. We obtain the operating latent space by distilling a muscle-driven tracking policy into a VAE model. Over this latent space, the control system can generate diverse and dynamic motions while remaining agnostic to the underlying complexity of muscle–tendon dynamics, resulting in efficient policy training and inference process. Though focusing on piano playing tasks in this paper, the frame-work of our approach has the potential to be applied to other forms of muscle-driven dexterous and whole-body control. We enhance the musculoskeletal hand modeling to provide better support for fine control of fingers. As demonstrated by our validation against human EMG recordings, our hand model and control policy gener-ate physiologically plausible activation patterns with high fidelity to human motor strategies. This suggests the possibility of applying our approach to biomechanical analysis of human performance. As an approach to physics-based dexterous control for the task of piano playing, our framework models the bimanual control problem through multi-agent reinforcement learning, and obtains state-of-the-art performance. Nevertheless, our approach is still limited to generating binary-represented sound, which is triggered only when a key is fully pressed. An interesting direction for further work is to improve piano modeling, allowing the generation of realistic sounds that are crucial for expressive performance. For example, we could introduce a physics-based sound generation mechanism or augment the simulation with a key-velocity-based sound model. We also observe occasional abrupt or stiff movements in the synthesized motions. This behavior may stem from the absence of higher-level constraints, such as muscle fatigue modeling or perception-based ve-locity control, which could otherwise regularize motion smoothness and temporal consistency. Although our approach can synthesize motions without requiring detailed fingering annotations, the clef-based heuristic may deviate from optimal hand usage in practice, and we also observe rare cases where the control policy becomes trapped in local minima during fingering inference. Incorporating more advanced heuristics beyond the simple nearest-finger rule could help mitigate these issues. In addition, the reference dataset does not include forearm motion. During retargeting, we therefore infer elbow poses heuristically (see the supplementary materials for details), which can lead to unnatural elbow configurations that are subsequently imitated by the control policies. Incorporating arm motion capture into the dataset is a promising direction for improving motion naturalness in future work. 
+
+Acknowledgments 
+
+This work was supported by the Wu-Tsai Human Performance Alliance, the Stanford Institute for Human-Centered Artificial In-telligence (HAI) Google Cloud Credits program, and the National Institutes of Health under Grant No.: R01 5R01LM014154-04. The authors thank Prof. Scott L. Delp, Dr. Jennifer Hicks, and Dr. Nick Bianco (Stanford University) for insightful discussions on hand modeling; Jichao Zhao (Clemson University) for assistance with EMG data collection; and Ruocheng Wang and Haocheng Shi for reproducing the results of Für Elise. 
+
+References                        
+
+> Marko Ackermann and Antonie J Van den Bogert. 2010. Optimality principles for model-based prediction of human gait. Journal of biomechanics 43, 6 (2010), 1055– 1060. Frank C Anderson and Marcus G Pandy. 2001. Dynamic optimization of human walking.
+> J. Biomech. Eng. 123, 5 (2001), 381–390. OpenAI: Marcin Andrychowicz, Bowen Baker, Maciek Chociej, Rafal Jozefowicz, Bob McGrew, Jakub Pachocki, Arthur Petron, Matthias Plappert, Glenn Powell, Alex Ray, et al .2020. Learning dexterous in-hand manipulation. The International Journal of Robotics Research 39, 1 (2020), 3–20. Cameron Berg, Vittorio Caggiano, and Vikash Kumar. 2024. Sar: Generalization of physiological agility and dexterity via synergistic action representation. Autonomous Robots 48, 8 (2024), 28. Rhonda Boyle, Robin Boyle, and Erica Booker. 2015. Pianist hand spans: gender and ethnic differences and implications for piano playing. In Australasian Piano Pedagogy Conference, Melbourne .Vittorio Caggiano, Huawei Wang, Guillaume Durandau, Massimo Sartori, and Vikash Kumar. 2022. MyoSuite–A contact-rich simulation suite for musculoskeletal motor control. arXiv preprint arXiv:2205.13600 (2022). Ryan Canales and Sophie Jörg. 2025. Real-time Hand Motion Synthesis for Playing a Virtual Guitar. In Proceedings of the 2025 18th ACM SIGGRAPH Conference on Motion, Interaction, and Games . 1–11. Jiali Chen, Changjie Fan, Zhimeng Zhang, Gongzheng Li, Zeng Zhao, Zhigang Deng, and Yu Ding. 2023. A Music-Driven Deep Generative Adversarial Model for Guzheng Playing Animation. IEEE Transactions on Visualization and Computer Graphics 29, 2 (2023), 1400–1414. Francesco Del Santo, Francesca Gelli, Federica Ginanneschi, Traian Popa, and Alessan-dro Rossi. 2007. Relation between isometric muscle force and surface EMG in intrinsic hand muscles as function of the arm geometry. Brain research 1163 (2007), 79–85. Scott L Delp, Frank C Anderson, Allison S Arnold, Peter Loan, Ayman Habib, Chand T John, Eran Guendelman, and Darryl G Thelen. 2007. OpenSim: open-source software to create and analyze dynamic simulations of movement. IEEE transactions on biomedical engineering 54, 11 (2007), 1940–1950. Christopher L Dembia, Nicholas A Bianco, Antoine Falisse, Jennifer L Hicks, and Scott L Delp. 2020. Opensim moco: Musculoskeletal optimal control. PLOS Computational Biology 16, 12 (2020), e1008493. George ElKoura and Karan Singh. 2003. Handrix: animating the human hand. In Proceed-ings of the 2003 ACM SIGGRAPH/Eurographics symposium on Computer animation .110–119. Antoine Falisse, Gil Serrancolí, Christopher L Dembia, Joris Gillis, Ilse Jonkers, and Friedl De Groote. 2019. Rapid predictive simulations with complex musculoskeletal models suggest that diverse healthy and pathological human gaits can emerge from ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026.
+
+MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control • 13 
+
+similar control strategies. Journal of The Royal Society Interface 16, 157 (2019), 20190402. Yusen Feng, Xiyan Xu, and Libin Liu. 2023. Musclevae: Model-based controllers of muscle-actuated characters. In SIGGRAPH Asia 2023 Conference Papers . 1–11. Qijun Gan, Song Wang, Shengtao Wu, and Jianke Zhu. 2024. Pianomotion10m: Dataset and benchmark for hand motion generation in piano performance. arXiv preprint arXiv:2406.09326 (2024). Thomas Geijtenbeek, Michiel Van De Panne, and A Frank Van Der Stappen. 2013. Flexible muscle-based locomotion for bipedal creatures. ACM Transactions on Graphics (TOG) 32, 6 (2013), 1–11. Hartmut Geyer and Hugh Herr. 2010. A muscle-reflex model that encodes principles of legged mechanics produces human walking dynamics and muscle activities. IEEE Transactions on neural systems and rehabilitation engineering 18, 3 (2010), 263–273. Sten Grillner. 1985. Neurobiological bases of rhythmic motor acts in vertebrates. Science 
+
+228, 4696 (1985), 143–149. Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, and Aaron Courville. 2017. Improved training of Wasserstein GANs. arXiv preprint arXiv:1704.00028 (2017). Kaibo He, Chenhui Zuo, Chengtian Ma, and Yanan Sui. 2024. DynSyn: Dynamical syn-ergistic representation for efficient learning and control in overactuated embodied systems. arXiv preprint arXiv:2407.11472 (2024). Irina Higgins, Loic Matthey, Arka Pal, Christopher Burgess, Xavier Glorot, Matthew Botvinick, Shakir Mohamed, and Alexander Lerchner. 2017. beta-vae: Learning basic visual concepts with a constrained variational framework. In International conference on learning representations .Katherine RS Holzbaur, Wendy M Murray, and Scott L Delp. 2005. A model of the upper extremity for simulating musculoskeletal surgery and analyzing neuromuscular control. Annals of biomedical engineering 33, 6 (2005), 829–840. Yifeng Jiang, Tom Van Wouwe, Friedl De Groote, and C Karen Liu. 2019. Synthesis of biologically realistic human motion using joint torque actuation. ACM Transactions On Graphics (TOG) 38, 4 (2019), 1–12. Hsuan-Kai Kao and Li Su. 2020. Temporally guided music-to-body-movement gen-eration. In Proceedings of the 28th ACM International Conference on Multimedia .147–155. Minkwan Kim and Yoonsang Lee. 2025. FreeMusco: Motion-Free Learning of Latent Control for Morphology-Adaptive Locomotion in Musculoskeletal Characters. In 
+
+Proceedings of the SIGGRAPH Asia 2025 Conference Papers . 1–11. Diederik P. Kingma and Jimmy Ba. 2017. Adam: A Method for Stochastic Optimization. arXiv:1412.6980 [cs.LG] Theodoros Kyriakou, Panayiotis Charalambous, and Andreas Aristidou. 2025. DRUMS: Drummer Reconstruction Using Midi Sequences. In Proceedings of the 2025 18th ACM SIGGRAPH Conference on Motion, Interaction, and Games . 1–7. Jong Hwa Lee, Deanna S Asakawa, Jack T Dennerlein, and Devin L Jindrich. 2015. Finger muscle attachments for an OpenSim upper-extremity model. PloS one 10, 4 (2015), e0121712. Seunghwan Lee, Moonseok Park, Kyoungmin Lee, and Jehee Lee. 2019. Scalable muscle-actuated human simulation and control. ACM Transactions On Graphics (TOG) 38, 4 (2019), 1–13. Yoonsang Lee, Moon Seok Park, Taesoo Kwon, and Jehee Lee. 2014. Locomotion control for many-muscle humanoids. ACM Transactions on Graphics (TOG) 33, 6 (2014), 1–11. Bochen Li, Akira Maezawa, and Zhiyao Duan. 2018. Skeleton Plays Piano: Online Generation of Pianist Body Movements from MIDI Performance.. In ISMIR . 218– 224. Jae Hyun Lim and Jong Chul Ye. 2017. Geometric GAN. arXiv preprint arXiv:1705.02894 
+
+(2017). Hung Yu Ling, Fabio Zinno, George Cheng, and Michiel Van De Panne. 2020. Character controllers using motion vaes. ACM Transactions on Graphics (TOG) 39, 4 (2020), 40–1. C Karen Liu. 2009. Dextrous manipulation from a grasping pose. In ACM SIGGRAPH 2009 papers . 1–6. Jun-Wei Liu, Hung-Yi Lin, Yu-Fen Huang, Hsuan-Kai Kao, and Li Su. 2020. Body Move-ment Generation for Expressive Violin Performance Applying Neural Networks. 
+
+International Conference on Acoustics, Speech and Signal Processing (ICASSP) (2020), 3787–3791. Zihao Liu, Mingwen Ou, Zunnan Xu, Jiaqi Huang, Haonan Han, Ronghui Li, and Xiu Li. 2025. Separate to Collaborate: Dual-Stream Diffusion Model for Coordinated Piano Hand Motion Synthesis. In Proceedings of the 33rd ACM International Conference on Multimedia . 9743–9752. Chaoyi Luo, Pengbin Tang, Yuqi Ma, and Dongjin Huang. 2024b. Learning to Play Guitar with Robotic Hands. In Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation . 1–14. Zhengyi Luo, Jinkun Cao, Josh Merel, Alexander Winkler, Jing Huang, Kris M Kitani, and Weipeng Xu. 2024a. Universal Humanoid Motion Representations for Physics-Based Control. In The Twelfth International Conference on Learning Representations .Daniel C McFarland, Emily M McCain, Michael N Poppo, and Katherine R Saul. 2019. Spatial dependency of glenohumeral joint stability during dynamic unimanual and bimanual pushing and pulling. Journal of biomechanical engineering 141, 5 (2019), 051006. Matthew Millard, Thomas Uchida, Ajay Seth, and Scott L Delp. 2013. Flexing compu-tational muscle: modeling and simulation of musculotendon dynamics. Journal of biomechanical engineering 135, 2 (2013), 021005. Carmichael F Ong, Thomas Geijtenbeek, Jennifer L Hicks, and Scott L Delp. 2019. Pre-dicting gait adaptations due to ankle plantarflexor muscle weakness and contracture using physics-based musculoskeletal simulations. PLoS computational biology 15, 10 (2019), e1006993. Jungnam Park, Sehee Min, Phil Sik Chang, Jaedong Lee, Moon Seok Park, and Jehee Lee. 2022. Generative gaitnet. In ACM SIGGRAPH 2022 Conference Proceedings . 1–9. Xue Bin Peng, Michael Chang, Grace Zhang, Pieter Abbeel, and Sergey Levine. 2019. Mcp: Learning composable hierarchical control with multiplicative compositional policies. Advances in neural information processing systems 32 (2019). Zhiping Qiu, Yitong Jin, Yuan Wang, Yi Shi, Chao Tan, Chongwu Wang, Xiaobing Li, Feng Yu, Tao Yu, and Qionghai Dai. 2025. ELGAR: Expressive Cello Performance Motion Generation for Audio Rendition. In Proceedings of the Special Interest Group on Computer Graphics and Interactive Techniques Conference Conference Papers . 1–9. Johannes Wilhelm Rohen, Chihiro Yokochi, and Elke Lütjen-Drecoll. 2006. Color atlas of anatomy: a photographic study of the human body . Schattauer Verlag. Prashant Sachdeva, Shinjiro Sueda, Susanne Bradley, Mikhail Fain, and Dinesh K Pai. 2015. Biomechanical simulation and control of hands and tendinous systems. ACM Transactions on Graphics (TOG) 34, 4 (2015), 1–10. John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov. 2017. Proximal policy optimization algorithms. arXiv preprint arXiv:1707.06347 (2017). Asad Ali Shahid, Francesco Braghin, and Loris Roveda. 2025. Robot Drummer: Learning Rhythmic Skills for Humanoid Drumming. arXiv preprint arXiv:2507.11498 (2025). Charles Scott Sherrington. 1910. Flexion-reflex of the limb, crossed extension-reflex, and reflex stepping and standing. The Journal of physiology 40, 1-2 (1910), 28. Eli Shlizerman, Lucio Dery, Hayden Schoen, and Ira Kemelmacher-Shlizerman. 2018. Audio to body dynamics. In Proceedings of the IEEE conference on computer vision and pattern recognition . 7574–7583. Weiguang Si, Sung-Hee Lee, Eftychios Sifakis, and Demetri Terzopoulos. 2014. Realistic biomechanical simulation and control of human swimming. ACM Transactions on Graphics (TOG) 34, 1 (2014), 1–15. Seungmoon Song and Hartmut Geyer. 2015. A neural circuitry that emphasizes spinal feedback generates diverse behaviours of human locomotion. The Journal of physi-ology 593, 16 (2015), 3493–3511. Seungmoon Song and Hartmut Geyer. 2018. Predictive neuromechanical simulations indicate why walking performance declines with ageing. The Journal of physiology 
+
+596, 7 (2018), 1199–1210. Susan Standring, Harold Ellis, J Healy, D Johnson, A Williams, P Collins, and C Wigley. 2005. Gray’s anatomy: the anatomical basis of clinical practice. American journal of neuroradiology 26, 10 (2005), 2703. Shinjiro Sueda, Andrew Kaufman, and Dinesh K Pai. 2008. Musculotendon simulation for hand animation. In ACM SIGGRAPH 2008 papers . 1–8. Chen Tessler, Yunrong Guo, Ofir Nabati, Gal Chechik, and Xue Bin Peng. 2024. Masked-mimic: Unified physics-based character control through masked motion inpainting. 
+
+ACM Transactions On Graphics (TOG) 43, 6 (2024), 1–21. Lena H Ting and J Lucas McKay. 2007. Neuromechanics of muscle synergies for posture and movement. Current opinion in neurobiology 17, 6 (2007), 622–628. Emanuel Todorov, Tom Erez, and Yuval Tassa. 2012. MuJoCo: A physics engine for model-based control. In 2012 IEEE/RSJ International Conference on Intelligent Robots and Systems . IEEE, 5026–5033. Matthew C Tresch and Anthony Jarc. 2009. The case for and against muscle synergies. 
+
+Current opinion in neurobiology 19, 6 (2009), 601–607. Winnie Tsang, Karan Singh, and Eugene Fiume. 2005. Helping hand: an anatomically accurate inverse dynamics solution for unconstrained hand motion. In Proceedings of the 2005 ACM SIGGRAPH/Eurographics symposium on Computer animation . 319–328. Thomas K Uchida and Scott L Delp. 2021. Biomechanics of movement: the science of sports, robotics, and rehabilitation . Mit Press. Guido Van den Berghe, Bart De Moor, and Willem Minten. 1995. Modeling a grand piano key action. Computer Music Journal 19, 2 (1995), 15–22. Jack M Wang, Samuel R Hamner, Scott L Delp, and Vladlen Koltun. 2012. Optimizing locomotion controllers using biologically-based actuators and objectives. ACM Transactions on Graphics (TOG) 31, 4 (2012), 1–11. Ruocheng Wang, Pei Xu, Haochen Shi, Elizabeth Schumann, and C Karen Liu. 2024. Fürelise: Capturing and physically synthesizing hand motion of piano performance. In SIGGRAPH Asia 2024 Conference Papers . 1–11. NFJ Waterval, K Veerkamp, T Geijtenbeek, J Harlaar, F Nollet, MA Brehm, and MM van der Krogt. 2021. Validation of forward simulations to predict the effects of bilateral plantarflexor weakness on gait. Gait & Posture 87 (2021), 33–42. Jungdam Won, Deepak Gopinath, and Jessica Hodgins. 2021. Control strategies for physically simulated characters performing two-player competitive sports. ACM 
+
+ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 14 • Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu                              
+
+> Transactions on Graphics (TOG) 40, 4 (2021), 1–11. Jungdam Won, Deepak Gopinath, and Jessica Hodgins. 2022. Physics-based character controllers using conditional vaes. ACM Transactions on Graphics (TOG) 41, 4 (2022), 1–12. Zhaoming Xie, Jonathan Tseng, Sebastian Starke, Michiel van de Panne, and C Karen Liu. 2023. Hierarchical planning and control for box loco-manipulation. Proceedings of the ACM on Computer Graphics and Interactive Techniques 6, 3 (2023), 1–18. Huazhe Xu, Yuping Luo, Shaoxiong Wang, Trevor Darrell, and Roberto Calandra. 2022. Towards learning to play piano with dexterous hands and touch. In International Conference on Intelligent Robots and Systems (IROS) . IEEE, 10410–10416. Pei Xu and Ioannis Karamouzas. 2021. A GAN-Like Approach for Physics-Based Imitation Learning and Interactive Character Control. Proceedings of the ACM on Computer Graphics and Interactive Techniques 4, 3 (2021), 1–22. doi:10.1145/3480148 Pei Xu, Xiumin Shang, Victor Zordan, and Ioannis Karamouzas. 2023. Composite motion learning with task control. ACM Transactions on Graphics (TOG) 42, 4 (2023), 1–16. Pei Xu and Ruocheng Wang. 2024. Synchronize dual hands for physics-based dexterous guitar playing. In SIGGRAPH Asia 2024 Conference Papers . 1–11. Pei Xu, Zhen Wu, Ruocheng Wang, Vishnu Sarukkai, Kayvon Fatahalian, Ioannis Karamouzas, Victor Zordan, and C Karen Liu. 2025. Learning to Ball: Composing Policies for Long-Horizon Basketball Moves. ACM Transactions on Graphics (TOG)
+> 44, 6 (2025), 1–14. Zeshi Yang, Kangkang Yin, and Libin Liu. 2022. Learning to use chopsticks in diverse gripping styles. ACM Transactions on Graphics (TOG) 41, 4 (2022), 1–17. Kevin Zakka, Philipp Wu, Laura Smith, Nimrod Gileadi, Taylor Howell, Xue Bin Peng, Sumeet Singh, Yuval Tassa, Pete Florence, Andy Zeng, et al .2023. Robopi-anist: Dexterous piano playing with deep reinforcement learning. arXiv preprint arXiv:2304.04150 (2023). He Zhang, Yuting Ye, Takaaki Shiratori, and Taku Komura. 2021. Manipnet: neural manipulation synthesis with a hand-object spatial representation. ACM Transactions on Graphics (ToG) 40, 4 (2021), 1–14. Wenping Zhao, Jianjie Zhang, Jianyuan Min, and Jinxiang Chai. 2013. Robust realtime physics-based motion control for human grasping. ACM Transactions on Graphics (TOG) 32, 6 (2013), 1–12. Qingxu Zhu, He Zhang, Mengting Lan, and Lei Han. 2023. Neural categorical priors for physics-based character control. ACM Transactions on Graphics (TOG) 42, 6 (2023), 1–16. Yuanfeng Zhu, Ajay Sundar Ramakrishnan, Bernd Hamann, and Michael Neff. 2013. A system for automatic animation of piano performances. Computer Animation and Virtual Worlds 24, 5 (2013), 445–457. Chenhui Zuo, Kaibo He, Jing Shao, and Yanan Sui. 2024. Self model for embodied intelligence: Modeling full-body human musculoskeletal system and locomotion control with hierarchical low-dimensional representation. In 2024 IEEE International Conference on Robotics and Automation (ICRA) . IEEE, 13062–13069.
+
+A Musculoskeletal Hand Model 
+
+Accurately modeling the human hand remains a challenging prob-lem due to its highly complex musculoskeletal structure, which involves dozens of muscle-tendon units with subtle and coordi-nated functions. While MyoHand [Caggiano et al . 2022] provides an anatomically grounded model of muscle-tendon structures and joint configurations based on previous work in biological modeling [Lee et al . 2015; McFarland et al . 2019]. We augment the original Myo-Hand model with five intrinsic muscle-tendon units located in the thumb-side and little-finger-side regions of the palm: FPB (flexor pollicis brevis), APB (abductor pollicis brevis), AdP (adductor polli-cis), FDM (flexor digiti minimi brevis), and ADM (abductor digiti minimi), as shown in Fig. 5. These muscles are selected to enhance the abduction-adduction and flexion of the thumb and the pinky fin-ger, allowing their independent control. This combination of flexion and lateral spreading is critical for wide-span configurations and dexterous finger coordination in piano performance. Each added muscle-tendon unit is implemented using the same abstraction as in MyoHand. Specifically, each muscle is modeled as an independent actuator with a single activation variable, simplified straight-line routing, and via points where necessary to approx-imate physiological moment arms. These attachments are added 0.0 0.1 0.2 0.3 0.4 0.5
+
+t [s] 
+
+> 0.00.51.0
+> Activation
+
+EDC FDP FDS 
+
+Fig. S1. Top: Activation patterns generated by the agonist-antagonist mus-cle pair of EDC, FDP, and FDS during playing Rhapsodie Op.79 No.2 . The functions of EDC, FDP and FDS for finger control are illustrated in the subfigure at the bottom. While muscles can only generate unidirectional forces shown by the arrows in red and blue, the finger movement is decided by the relative force generated by these muscles. Our model can generate sparse activations with staggered peaks, which reflect an energy-efficient, human-like control strategy for agonist and antagonist muscles. 
+
+to the existing skeletal model without altering the original joint definitions. The added intrinsic actuators share the same activation dynamics, force-length-velocity relationships, and parameter scal-ing rules as the original MyoHand muscles, ensuring consistency and reproducibility within the existing simulation framework. Key muscle properties, such as peak force and optimal fiber length, were derived from prior literature [Del Santo et al . 2007; Holzbaur et al .2005], and scaled following the conventions used for other muscles in the MyoHand model, while muscle attachment sites were defined based on standard anatomical atlases [Rohen et al . 2006; Standring et al . 2005]. The impact of our newly added muscle-tendon units on dexterous control is highlighted in the experiment section. We refer to the supplementary video for animated results. Besides, following MyoHand, to balance anatomical fidelity and computational tractability, our model adopts a simplified represen-tation that focuses on task-relevant structures and motions. As a result, certain degrees of freedom associated with palmar bones and palm-level articulations, whose motions are typically small, are not explicitly modeled. In real biological systems, muscles can generate force only through contraction (pulling) and cannot actively produce force in the op-posite direction (pushing). This characteristic is reflected during simulation by only allowing a musculotendon actuator to generate unidirectional force. Consequently, movements that require bidirec-tional control - such as flexion and extension - have to be achieved by using pairs of muscles with opposing mechanical actions, com-monly referred to as agonist and antagonist muscle groups. Because human motor control is generally optimized for energy efficiency, agonist and antagonist muscles are typically not strongly activated                          
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •15 036912 15 18 21 0.00.51.0
+> EDC
+> 036912 15 18 21 0.00.51.0
+> FDP+FDS
+> 036912 15 18 21
+> t [s]
+> 0.00.51.0
+> ADM+FDM
+
+Fig. S2. Comparison of EMG recordings collected from a human subject (shadow regions) during the performance of Mary Had a Little Lamb , and the activations (blue lines) generated by our model while tracking the motions. 
+
+simultaneously, resulting in a relatively sparse and alternating acti-vation pattern [Grillner 1985; Sherrington 1910; Ting and McKay 2007; Tresch and Jarc 2009]. Such behavior is reflected in the control strategy learned by our reinforcement learning policy. As shown in Fig. S1, a clear antagonistic relationship emerges between the flexor muscles (FDP and FDS) and the extensor muscle (EDC). Specifically, when FDP and FDS exhibit large activation, EDC activity remains at a relatively low level, and vice versa. The resulting muscle coor-dination closely resembles physiological motor control, in which agonist and antagonist muscles are activated in an energy-efficient manner. Notably, these results are generated by our high-level con-trol policy, which is isolated from the musculotendon states and performs control by operating the latent. This indicates that the learned low-level policy captures a biologically plausible control strategy while serving as a stable low-level muscle-driven controller. To further evaluate the physiological fidelity of our model, we perform an additional comparison in Fig. S2, where EMG recordings were collected while a subject performed the simple piece Mary Had a Little Lamb , consisting of 26 key strokes. We refer to Sec. 8.3 for details on sensor placement. While noticeable noise is present in the EDC and ADM+FDM channels, due to wrist motion and the inherent limitations of surface EMG in resolving individual muscle contributions, the generated activations still broadly align with the recorded signals. In the FDP+FDS channel, the synthesized activa-tions closely capture the key stroke events, exhibiting 26 distinct peaks that correspond well with the EMG measurements. These re-sults suggest that our model is capable of producing physiologically consistent activation patterns that reflect the underlying structure of human muscle activity during piano performance. 
+
+B Data Preprocessing 
+
+Our reference motion data are extracted from FürElise [Wang et al .2024]. We retarget the original motions to our musculoskeletal hand models, and filter out segments with large jittering and invalid joint rotations and those only containing still hand motions. The resulting dataset contains 651 minutes of two-hand motion data. While the source dataset provides annotations from the wrist to fingers, it lacks whole-body context, omitting elbow and shoulder positioning as well as wrist abduction and flexion. However, our hand model has the forearm, as many muscles responsible for finger and wrist motion originate there. Our retargeting recovers elbow 
+
+Table S1. Joint parameters used during simulation. The hand joint parame-ters follow MyoHand [Caggiano et al . 2022], while the piano key parameters are adopted from RoboPianist [Zakka et al . 2023]. We refer to FürElise [Wang et al. 2024] for the geometric dimensions of the piano. 
+
+Hand Joint Piano Key damping 0.05 0.05 
+
+stiffness 0 2
+
+armature 0.0001 0.001 
+
+solref 0.02 1 0.01 1 
+
+solimp 0.8 0 .8 0 .01 0.95 0 .99 0 .001 
+
+Table S2. Implementation details of motion retargeting.                                    
+
+> Stage Iters. LR Loss Param. I1000 0.01 Lrecon +0.01 Lsmooth qhand
+> II 1000 0.01 Lrecon +0.01 Lsmooth + L elbow qelbow
+> III 1000 0.001 Ltip + L delta +10 Lviolation qhand ,qelbow
+> IV 2000 0.001 Ltip +0.01 Lsmooth + L delta +10 Lviolation qhand ,qelbow
+
+Table S3. Definitions of the loss terms for motion retargeting. 
+
+Lrecon 
+
+Í𝑡 
+
+Í𝑗 ∈ M 𝑎𝑙𝑙 ∥x𝑗 𝑡 − 𝐹𝐾 (q𝑡 )∥ 2
+
+Ltip 
+
+Í𝑡 
+
+Í𝑗 ∈ M 𝑡𝑖𝑝 ∥x𝑗 𝑡 − 𝐹𝐾 (q𝑡 )∥ 2
+
+Lsmooth 
+
+Í𝑡 ∥ ¥𝐹𝐾 (q𝑡 )∥ 2
+
+Ldelta 
+
+Í𝑡 ∥q𝑡 − ˆq𝑡 ∥2
+
+Lviol 
+
+Í𝑡 (∥ [ qmin − q𝑡 ]+ ∥1 + ∥ [ q𝑡 − qmax ]+ ∥1)Lelbow 
+
+Í𝑡 (𝑧 elbow  
+
+> 𝑡
+
+− ℎpiano )2
+
+motion by constraining it to the approximate height of the keyboard while penalizing excessive shoulder displacement. The retargeting pipeline employs a four-stage optimization to produce natural motion from the elbow to fingertips. Implemen-tation details, including optimized parameters, iteration number, learning rates (LR), and loss terms, are detailed in Table S2. The de-tailed definitions of the loss terms are presented in Table S3. where 
+
+𝐹𝐾 (·) denotes a differentiable operator of forward kinematics of the hand model, x𝑗 𝑡 represents the annotated position of joint 𝑗 in the original dataset, and ˆq corresponds to the initial configuration before the current optimization stage, while qmin and qmax define the joint limits. 
+
+C Implementation Details 
+
+We provide additional implementation details regarding policy train-ing and adaptive sampling in this section. 
+
+C.1 Tracking Policy Training 
+
+The hyperparameters used during tracking policy training are listed in Table S4. In Table S5, we summarize the weights for position and orientation error computation used in the reward function (c.f. Eq. 1). All weights will be normalized such that Í𝑖 𝜔 𝑖 = 1 and Í𝑖 𝜅 𝑖 = 1
+
+before incorporated in the reward function. The position error is computed only for the elbow, wrist and end-effector fingertips, except for the thumb and pinky, which additionally take into account   
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 16 •Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+> Table S4. Hyperparameters
+
+Parameter Value 
+
+General Reinforcement Learning Settings 
+
+policy network learning rate 5 × 10 −6
+
+critic network learning rate 1 × 10 −4
+
+reward discount factor ( 𝛾 ) 0.95 
+
+GAE discount factor ( 𝜆 ) 0.95 
+
+surrogate clip range ( 𝜖 ) 0.2
+
+PPO batch size 256 
+
+PPO optimization epochs 5
+
+Tracking Policy Training 
+
+simulation instances (number of environments) 8192 
+
+rollout length 32 
+
+tracking target horizon ( 𝐻 ) 4
+
+adaptive sampling discount factor ( 𝜁 ) 0.99 adaptive sampling power scale factor ( 𝜂 ) 5adaptive sampling moving average coefficient ( 𝛼 ) 0.5 episode length ( 𝐶 ) 1440 latent dimension ( dim h𝑡 ) 32 
+
+VAE Training 
+
+learning rate 3 × 10 −4
+
+KL weighting coefficient ( 𝛽 ) 0.005 
+
+batch size 4096 
+
+simulation instances 4096 
+
+latent dimension ( dim z𝑡 ) 32 
+
+High-Level Controller Training 
+
+simulation instances (number of environments) 2048 
+
+rollout length 8
+
+target key horizon ( 𝑁 ) 5
+
+adaptive sampling discount factor ( 𝜁 ) 0.95 adaptive sampling power scale factor ( 𝜂 ) 8adaptive sampling moving average coefficient ( 𝛼 ) 0.5 episode length ( 𝐶 ) 150 discriminator learning rate 1 × 10 −5
+
+discriminator batch size 512 
+
+gradient penalty coefficient ( 𝜆 𝐺𝑃 ) 10 
+
+goal-directed objective weight for key press 0.8
+
+imitation objective weight (wrist and elbow) 0.05 
+
+imitation objective weight (fingers) 0.15 
+
+the distal phalanx to improve their flexion performance. We use a multilayer perceptron with hidden neurons of 1024, 1024, and 512 at each layer in the target pose encoder G, while the same architecture is adopted by the tracking policy 𝜋 track and the VAE encoder and decoder. The hidden latent h𝑡 is fed into 𝜋 track by concatenating with the proprioception state s𝑡 . We use a standard implementation of PPO-Clip [Schulman et al . 2017] (no clipping on the state value estimation) to perform training. All networks are updated using Adam optimizers [Kingma and Ba 2017]. 
+
+> Table S5. Weights of each body link, named by the corresponding bone, for tracking error computation. For each finger, we consider the three associated parts of proximal, middle, and distal phalanges, highlighted in purple, blue, and green, respectively. Specially, the thumb has a controllable metacarpal (orange), while it does not have the middle phalanx. Therefore, we use the metacarpal, and proximal and distal phalanges for the thumb instead. The wrist position is decided by the lunate bone, which is highlighted in red. The elbow, which is a free joint with 6 DoFs, is located at the ulna. The other bones inside the palm are modeled as immovable. All weights will be normalized by L-1 before used for reward computation.
+
+Bone Name 𝜔 𝑖 𝜅 𝑖 
+
+ulna 0.1 0.1 radius 0.05 0lunate 0.2 0.1 proximal phalanx 0.1 0middle phalanx 0.1 0distal phalanx 0.1 0metacarpal (thumb) 0.1 0proximal phalanx (thumb) 0.1 0distal phalanx (thumb) 0.1 0.1 distal phalanx (pinky) 0.1 0.1 fingertips 0 0.2 
+
+C.2 Latent Distillation 
+
+We adopt on-policy distillation in a hybrid manner. Specifically, rather than relying exclusively on the actions generated by the VAE model to actuate the hand during online simulation, we advance the simulation, with a 20% chance, using actions from the tracking pol-icy. This hybrid scheme stabilizes training by preventing frequent simulation failures caused by stochastic or poorly generalized VAE actions in early stages of training, while still allowing the VAE to learn under realistic on-policy state distributions. An early termina-tion will be triggered if the tracking error is too large (greater than 
+
+0.5m) during distillation. The pseudocode of the distillation process is provided in Algorithm 1. 
+
+C.3 High-Level Motion Synthesis 
+
+Similar to the tracking policy, the high-level controller for motion synthesis is trained using PPO [Schulman et al . 2017] as the back-bone reinforcement learning algorithm. The hyperparameters used for policy training are listed in Table S4 and the network structures are illustrated in Fig. S3. We take a GAN-like architecture [Xu and Karamouzas 2021] to incorporate imitation rewards. Instead of di-rectly imitating whole hand motions, we use two discriminators for each hand to perform motion imitation: one monitors the global positioning of the wrist and elbow relative to the piano, while the other focuses on the local pose of the fingers relative to the wrist. In such a way, the policy is allowed to freely combine finger poses with various wrist placements. This imitation learning setup, plus     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •17
+
+ALGORITHM 1: Hybrid On-Policy VAE Distillation  
+
+> 1
+
+Initialize 𝑁 environments running in parallel where 𝑁 is the batch size for network updating;  
+
+> 2
+
+while training does not converge do  
+
+> 3
+
+s𝑡 , qtarget  
+
+> 𝑡
+
+← env.state(), env.tracking_target();  
+
+> 4
+
+z𝑡 ∼ 𝑞 𝜃 (· | s𝑡 , h𝑡 ) where h𝑡 = G ( qtarget  
+
+> 𝑡
+
+); 
+
+> 5
+
+for each substep 𝛿 do  
+
+> 6
+
+ˆa𝑡 +𝛿 = Dec (s𝑡 +𝛿 , z𝑡 ); 
+
+> 7
+
+¯a𝑡 +𝛿 = Clip (a𝑡 +𝛿 ) where a𝑡 +𝛿 ∼ 𝜋 track (· | s𝑡 +𝛿 , h𝑡 ); 
+
+> 8
+
+Update Dec and 𝑞 𝜃 using Eq. 4;  
+
+> 9
+
+if rand() < 0.2 then 
+
+// Step environment using actions from 𝜋 track . 
+
+> 10
+
+s𝑡 +𝛿 +1 ← env.step( ¯a𝑡 +𝛿 ).  
+
+> 11
+
+else 
+
+// Step environment using actions from VAE.  
+
+> 12
+
+s𝑡 +𝛿 +1 ← env.step( ˆa𝑡 +𝛿 ). 
+
+end end 
+
+the goal-directed reward (Eq. 5), results in three optimization ob-jectives. We perform multi-objective learning using the framework from prior literature [Xu et al . 2023], and employ a multi-head critic network to estimate the advantage associated with each objective. The optimization function of reinforcement learning can be written as 
+
+max E
+
+"∑︁ 
+
+> 𝑘
+
+𝑤 𝑘 ¯𝐴 𝑡,𝑘 log 𝜋 ℎ 
+
+> high
+
+(z𝑡 |Q𝑡 , g𝑡 )
+
+#
+
+(S1) where ¯𝐴 𝑡,𝐾 is the standardized advantage that is estimated according to the reward associated with each objective 𝑘 , 𝑤 𝑘 is the associated weights (see Table S4), and ℎ ∈ { left , right } indicating the target hand. The imitation reward provided by the discriminator is ob-tained by 
+
+𝑟 imit  
+
+> 𝑡
+
+(q𝑖 𝑡 , q𝑖 𝑡 +1) = 1
+
+𝑀 
+
+> 𝑀
+
+∑︁ 
+
+> 𝑚 =1
+
+Clip  𝐷 𝑖 𝑚 (q𝑖 𝑡 , q𝑖 𝑡 +1), −1, 1 (S2) where the subscript 𝑖 indicates the different imitation objective. While the policy input Q𝑡 is the set of each body link’s pose (position and orientation in Cartesian space) and linear and angular velocities of the two hands with a 2-frame historical horizon, the input to the discriminator ( q𝑖 𝑡 and q𝑖 𝑡 +1) denotes the partial observation of the link poses associated with the imitation objective 𝑖 and the policy observation Q𝑡 and Q𝑡 +1, i.e., the partial link poses at the timesteps from 𝑡 −1 to 𝑡 +1. Here, we take an ensemble of 𝑀 = 32 discriminators to evaluate imitation performance. The discriminator is trained using hinge loss [Lim and Ye 2017] with gradient penalty [Gulrajani et al . 2017]. We refer to the previous literature [Xu and Karamouzas 2021] for details of discriminator training. 
+
+C.4 Adaptive Sampling 
+
+To improve the efficiency of adaptive sampling, the interval between chunks is expected to be small. Such that we can have more densely distributed chunks, enabling precise localization of segments where tracking performance degrades. However, the increased number of chunks requires a longer sampling period to update the performance gt
+
+μt log σt
+
+> FC
+> (1024)
+> FC
+> (512)
+
+GRU 
+
+rDi 
+
+> t
+> FC
+> (256)
+> FC
+> (128) …
+> FC
+> (1024)
+> FC
+> (1024)
+> FC
+> (256)
+
+v1 v3v2
+
+GRU 
+
+gt
+
+> FC
+> (1024)
+> FC
+> (512)
+> FC
+> (1024)
+> FC
+> (1024)
+> FC
+> (256)
+
+GRU 
+
+QtQt qi 
+
+> t
+
+qi
+
+> t+1
+
+Fig. S3. Network structures used by the high-level motion synthesis policy. From left to right, the policy network, value network, and discriminator network. We use ⊕ denoting the add operator and ⊖ denoting the average operator. The value network employs a multi-head architecture to esti-mate the state values associated with the goal-directed objective and two imitation objectives separately. A similar architecture is applied to the dis-criminator network, which serves as a discriminator ensemble by providing a multi-dimensional output. 
+
+Fig. S4. Reference axis and position definitions of piano keys. The key positions p𝑘 used during reward computation are defined on the top surface of the key, and marked by cross symbols in the window at the bottom-left. At the beginning of each training episode, the hands will be initialized above the keyboard via a fixed pose to avoid penetration with the keyboard model. 
+
+estimates of all chunks. In our approach, the number of chunks, which determines the chunk overlapping given that all chunks are equally long, is chosen based on the following formula: 
+
+#{epochs } ≈ #{chunks }
+
+#{environments } × chunk length rollout length . (S3) This formula approximates the number of training epochs required to update performance estimates of all chunks when multiple sim-ulation environments run in parallel and sampling weights are approximately uniform. In our implementation, we take 20 as the desired number of updating epochs to decide the number of chunks. For high-level policy training, we simply perform chunking at the note level. The estimated policy performance is updated online during policy training through a moving average: 
+
+¯𝑟 𝑖 ← ( 1 − 𝛼 ) ¯𝑟 𝑖 + 𝛼 ¯𝑟 ′ 
+
+> 𝑖
+
+(S4)                     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 18 •Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu 0246
+> ×10 6
+> 0.00.51.0
+> F1 Score F¨ ur Elise
+> 0.00.51.01.5
+> ×10 7
+> 0.00.51.0
+> Rhapsodie Op. 79 No. 2
+> 0.00 0.25 0.50 0.75 1.00
+> Samples ×10 7
+> 0.00.51.0
+> F1 Score Lyric Pieces Op. 38 No. 1
+> 02468
+> Samples ×10 6
+> 0.00.51.0
+> Maple Leaf Rag MARL+P.Ref MARL (ours) Centralized
+
+Fig. S5. Learning performance of the high-level controllers using a multi-agent setup (MARL) and that using a centralized policy for bimanual control (Centralized). MARAL+P.Ref indicates the baseline using our multi-agent setup with prior reference motions provided by a joint-driven policy (Sec. D.) The Centralized setup typically needs around 30% more training iterations to reach the same final performance as MARL. Dec 
+
+zt
+
+gt
+
+at
+
+st
+
+# G
+
+qref 
+
+> t
+
+# qθ
+
+st
+
+## Qt
+
+Fig. S6. Diagram to incorporate prior reference motions to facilitate high-level policy training. ⊕ denotes the add operation. In Fig. 19, we show a baseline using a joint-driven control policy to provide the prior reference 𝑞 ref  
+
+> 𝑡
+
+.Similar approaches can be applied while using reference motions generated by other models, e.g., a diffusion model [Wang et al. 2024]. 
+
+where the coefficient 𝛼 should be large enough to avoid sluggish updates. We take 𝛼 = 0.5 in our implementation for both the tracking policy and the high-level motion synthesis policy training. 
+
+C.5 Piano Model 
+
+The piano model follows a standard design, with an octave span of 16.5 cm (6.5 in). Our hand model can span approximately eight white keys between the thumb and pinky, corresponding to the average hand size reported for female pianists [Boyle et al . 2015]. However, this span is smaller than that required by some piano repertoire. Consequently, our experiments focus on repertoire that does not require a larger hand span. To improve simulation speed, we modify the underlying collision detection implementation of MuJoCo-MJX, and adopt a dynamic collision configuration for piano keys. Specifically, before each sim-ulation step, we compute the bounding box defined by the fingertips 
+
+Fig. S7. Visualization of the VAE latent used by the high-level policies to perform motion synthesis. The gray dots denote the latent used by the high-level policies across all our tested musical pieces, with the highlighted ones indicating those used for the specific piece of music. The visualization is achieved using the multidimensional scaling technique to project the latent of two hands from 32 × 2 dimensions to 2 dimensions. 
+
+and wrist, and enable collisions only for the 18 keys (including both white and black keys) directly below the bounding box, while one octave has seven white keys and five black keys. This configuration will bring about an improvement of around 20% on simulation speed, and largely reduce the GPU memory needed by the simulator to process contact. In the reward term presented in Eq. 6, the distance between a target key 𝑘 and the associated finger 𝑖 is defined as d𝑘,𝑖 = p𝑘 − p𝑖 ,where p𝑖 is the position of the fingertip 𝑖 and p𝑘 is the position of the key 𝑘 in the Cartesian space. Given the bounding box of a key defined via the lower bound (𝑥 0, 𝑦 0, 𝑧 0) and upper bound (𝑥 1, 𝑦 1, 𝑧 1),we define p𝑘 := (0.5(𝑥 0 + 𝑥 1), 𝑦 0 + 0.9(𝑦 1 − 𝑦 0), 𝑧 1). Referring to the axis definition illustrated in Fig. S4, the key position corresponds to the lateral center on the top surface of each key and at the 90%-th position longitudinally towards the performer. Specially, to allow a flexible approach along the longitudinal side, the 𝑦 -axis distance is downscaled by 90% when the finger is above the keyboard, i.e., 
+
+𝑑 𝑦 𝑘,𝑖 = 0.1(𝑝 𝑦 𝑘 −𝑝 𝑦 𝑖 ) if finger 𝑖 is over the keyboard. The 𝑧 -axis distance is ignored if the finger is already pressing the target key, i.e., 𝑑 𝑧 𝑘,𝑖 = 0
+
+if 𝑝 𝑧 𝑖 < 𝑝 𝑧 𝑘 and I𝑘,𝑖 = 1, where I𝑘,𝑖 is an indicator evaluating if finger 𝑖 
+
+lies over the key 𝑘 by checking the fingertip’s position and the key’s bounding box on the 𝑥𝑦 -plane. 
+
+D Incorporation of Prior Reference Motion 
+
+We further explore an extension of our approach by introducing a prior reference to facilitate high-level policy learning, as illustrated in Fig. S6. Correspondingly, in Fig. S5, we include an additional baseline (MARL+P.Prior) that leverages motions generated by the joint-driven control policy (c.f. Fig. 16) as the prior reference. The prior is incorporated within the same training framework of multi-agent reinforcement learning and serves as an auxiliary guide for exploration. As shown in the figure, incorporating this prior acceler-ates convergence and yields a modest but consistent improvement in final performance. This suggests that prior motion references can     
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. MUSIC: Learning Mus cle-Dr iven Dexterous Hand Control •19
+
+ECRL 
+
+ECRB 
+
+ECU 
+
+FCR 
+
+FCU 
+
+PL 
+
+PT 
+
+PQ 
+
+FDS5 
+
+FDS4 
+
+FDS3 
+
+FDS2 
+
+FDP5 
+
+FDP4 
+
+FDP3 
+
+FDP2 
+
+EDC5 
+
+EDC4 
+
+EDC3 
+
+EDC2 
+
+EDM 
+
+EIP 
+
+EPL 
+
+EPB 
+
+FPL 
+
+APL 
+
+OP 
+
+FPB 
+
+AdP 
+
+APB 
+
+FDM 
+
+ADM 
+
+RI2 
+
+LU RB2 
+
+UI UB2 
+
+RI3 
+
+LU RB3 
+
+UI UB3 
+
+RI4 
+
+LU RB4 
+
+UI UB4 
+
+RI5 
+
+LU RB5 
+
+UI UB5 
+
+Fig. S8. Muscle activations generated for left hand control during the policy playing Für Elise .  
+
+> ACM Trans. Graph., Vol. 45, No. 4, Article . Publication date: July 2026. 20 •Pei Xu, Yufei Ye, Shuchun Sun, Yu Ding, Elizabeth Schumann, and C. Karen Liu
+> Fig. S9. Additional demonstrations of diverse finger poses when multiple keys are pressed at the same time.
+
+complement our latent-space control formulation, while the core advantages of decentralized multi-agent learning remain dominant. 
+
+E Additional Results 
+
+Figure S7 visualizes the distribution of VAE latent variables z, with highlights indicating the subsets of latents used for specific music scores. The latent space exhibits a broadly structured organization, where latents corresponding to the same music score tend to form coherent clusters. This behavior suggests that the VAE captures piece-specific motion patterns while maintaining a shared latent structure that supports smooth interpolation and generalization across different musical contexts. In Fig. S8, we show the muscle activations, while the high-level controller plays the tested score of Für Elise . While abstracted away from detailed muscle states, the high-level controller can effectively rely on the low-level controller to generate sparse activations, re-sulting in energy-efficient control, while synthesizing motions to accurately play the piece of music outside the reference data. We refer to the supplementary video for animated results of the tested repertoire.

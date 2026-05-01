@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-001.webp",
+      "caption": "Fig. 5. Illustration of our enhanced musculoskeletal hand model (left hand) with the added musculotendon units highlighted in red. The right subfigure from Gray’s Anatomy visualizes the volumes and locations of the muscles.",
+      "page": 6,
+      "index": 1,
+      "width": 502,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-002.webp",
+      "caption": "Fig. 18. Learning performance of the high-level controllers using a vanilla VAE to perform distillation and that using a conditional VAE.",
+      "page": 11,
+      "index": 2,
+      "width": 506,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-003.webp",
+      "caption": "Fig. 16. Learning performance of the high-level controllers while using different control spaces. PD refers to the baseline using a joint-driven hand model. The joint-driven model has the same morphology and joint configurations as our musculoskeletal model, but is actuated by PD servos.",
+      "page": 11,
+      "index": 3,
+      "width": 502,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-004.webp",
+      "caption": "Fig. 6. Examples of our tracking policy reproducing long-tail distributed, uncommon poses and trajectories in the reference dataset. The shown examples include challenging behaviors of glissando, where the hand slides across the keyboard, wrist supination, and hand clasping.",
+      "page": 7,
+      "index": 4,
+      "width": 510,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-005.webp",
+      "caption": "Fig. 7. Comparison of Myohand (top) and our enhanced hand model (bottom) while tracking challenging poses with extreme adduction (squeezing), abduction (spreading), and flexion (finger pressing). The red spheres indicate the tracking targets of finger joints and tips.",
+      "page": 7,
+      "index": 5,
+      "width": 510,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-006.webp",
+      "caption": "Fig. 15. Learning performance of the high-level controllers with adaptive sampling (ours) and that using uniform sampling (w/o A.S.).",
+      "page": 10,
+      "index": 6,
+      "width": 506,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-007.webp",
+      "caption": "Fig. 2. System Overview. The whole system of our framework is trained in three stages. First, we learn a single-hand tracking policy 𝜋track that outputs high-frequency muscle activations for direct muscle-driven control (Sec. 4). Second, we perform on-policy distillation to obtain a VAE decoder as a low-level servo for muscle control, while taking as input the well-structured latent action z𝑡 (Sec. 5). Lastly, we train a piece-specific high-level controller over the latent to synthesize motions for piano playing (Sec. 6). While the first and third stages are conducted through reinforcement learning, the second stage is performed through supervised training. Specifically, for high-level controller training in the third stage, we adopt a decentralized multi-agent setting to treat two hands as individual agents associated with independent policies 𝜋 left high and 𝜋 right",
+      "page": 3,
+      "index": 7,
+      "width": 954,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-008.webp",
+      "caption": "Fig. 11. Finger poses during playing arpeggios of Bach suites. The top row shows an example from French Suite, and the bottom row from English Suite.",
+      "page": 8,
+      "index": 8,
+      "width": 1064,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-009.webp",
+      "caption": "Fig. 9. Diverse finger poses when multiple keys are pressed at the same time. Our testing repertoire challenges the system with diverse dexterous behaviors, such as rapid finger alternation (e.g., Chopin, Waltz Op. 64 No. 2), sustained chordal control and voicing (e.g., Brahms, Rhapsodie Op. 79 No. 2, and Mussorgsky, Pictures at an Exhibition), large-scale arm–hand coordination (e.g., Beethoven, Piano Sonata No.3, 2nd mov.).",
+      "page": 8,
+      "index": 9,
+      "width": 1064,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-010.webp",
+      "caption": "Fig. 19. Learning performance of the high-level controllers using a multiagent setup (MARL) and that using a centralized policy for bimanual control (Centralized). The Centralized setup typically needs around 30% more training iterations to reach the same final performance as MARL.",
+      "page": 12,
+      "index": 10,
+      "width": 505,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23886v1/fig-011.webp",
+      "caption": "Fig. 14. Comparison of EMG recordings collected from a human subject (shadow regions) and the activations (blue lines) generated by our model during motion tracking. Top: illustrations of the EMG sensor placement.",
+      "page": 9,
+      "index": 11,
+      "width": 510,
+      "height": 357
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of the proposed sensorized robotic hand. (a) Fully integrated hand with 16 joint sensor modules and one tactile sensor module. The locations of the modules and the MCU board with the interface board are indicated. (b) Complete electrical hardware of the sensor system. (c) Custom MCU interface board with a Teensy 4.1 for pulse generation, clocking, and analog signal acquisition at a maximum full-scan rate of 1.5 kHz.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 687
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-002.webp",
+      "caption": "TABLE I CHARACTERIZATION RESULTS OF THE JOINT SENSOR MODULE AND READOUT SYSTEM.",
+      "page": 6,
+      "index": 2,
+      "width": 508,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-003.webp",
+      "caption": "Fig. 6. Characterization of the tactile sensor module. (a) CNC-based motorized experimental setup for data collection using a load cell and a 3D-printed indenter. (b) Predefined contact locations used for dataset collection. (c) Example sequence from the training or validation dataset, in which contact locations 1–4 are pressed sequentially; the top plot shows the ground-truth force and contact locations, and the bottom plot shows the raw sensor outputs. (d) Test set result, showing the estimated force and contact location together with the corresponding ground truth.",
+      "page": 6,
+      "index": 3,
+      "width": 514,
+      "height": 764
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-004.webp",
+      "caption": "Fig. 7. Evaluation of the proposed sensorized robotic hand. (a) Experimental setup with vision-based joint angle measurement and force torque (F-T) sensing during fingertip interaction. (b) Calibration result for compensating the motor-based joint estimation, showing the relationship between the motor-based estimation and the joint sensor output for the MCP and PIP joints. (c) Joint angle estimation during interaction, showing the motor-based estimation, joint sensor output, and vision-based ground truth for the MCP and PIP joints. (d) Tactile force estimation result compared with the F-T sensor measurement. In (c) and (d), only the first two and last two cycles of the 100-cycle experiment are shown.",
+      "page": 7,
+      "index": 4,
+      "width": 514,
+      "height": 752
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-005.webp",
+      "caption": "Fig. 3. Configuration and hardware implementation of the proposed sensor readout system. (a) Sensor system configuration of the robotic hand. (b) Circuit of a single sensing unit composed of a D flip-flop, analog switch, and base sensor. (c) Base sensors used for the joint (top) and tactile (bottom) sensing units. (d) Fabricated joint sensor module. (e) Fabricated tactile sensor module. (f) Oscilloscope measurements of the signal lines in the fully integrated system at a 1 kHz full-scan rate, showing the multiplexed analog output (top) and the corresponding clock and pulse signals (bottom).",
+      "page": 3,
+      "index": 5,
+      "width": 512,
+      "height": 970
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-006.webp",
+      "caption": "Fig. 4. Mechanical integration of the sensor system into the robotic hand. (a) Front view of the index finger showing the integrated sensing regions. (b) Enlarged view of the joint region. (c) Cross-sectional view A–A of the joint sensor structure. (d) Exploded view of the joint sensor assembly. (e) Enlarged view of the fingertip. (f) Cross-sectional view B–B of the tactile sensor structure. (g) Exploded view of the tactile sensor assembly.",
+      "page": 4,
+      "index": 6,
+      "width": 1054,
+      "height": 495
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01434v1/fig-007.webp",
+      "caption": "Fig. 5. Experimental setup for characterization of the joint sensor module and readout system. Motorized experimental setup with (a) the full sensor system configuration, consisting of 16 joint sensor modules and one tactile sensor module (four Hall-effect sensors), and (b) the simplified configuration, consisting of only the three joint sensor modules of the middle finger. (c) Representative sensor output as a function of joint angle change from one of the five trials under the experimental condition corresponding to index 2 in Table I, together with the fitted slope and the reference slope.",
+      "page": 5,
+      "index": 7,
+      "width": 512,
+      "height": 445
+    }
+  ]
+}

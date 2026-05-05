@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.01666v1/fig-001.webp",
+      "caption": "Fig. 2. Main user study results of IMPACT-HOI. (a) shows efficiency and final event quality. (b) shows supervisory behavior and safety outcomes. (c) compares subjective workload between Manual and Full Assist across the six NASA-TLX dimensions. The radial scale (1–7) indicates the intensity of each demand; a smaller enclosed area suggests a more balanced human–AI collaborative workflow.",
+      "page": 6,
+      "index": 1,
+      "width": 790,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01666v1/fig-002.webp",
+      "caption": "TABLE II BEHAVIORAL ANALYSIS OF THE TRUST-CALIBRATED SUPERVISORY CONTROLLER UNDER FULL ASSIST .",
+      "page": 6,
+      "index": 2,
+      "width": 508,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2605.01666v1/fig-003.webp",
+      "caption": "Fig. 1. IMPACT-HOI starts with a partial event state and video evidence. The Lock-aware Partial Event Completion (LPEC) module resolves open fields through joint onset and semantic prediction, refined by Statistics-guided Cooperative Refinement and re-decoding under human-confirmed locks. The Trust-Calibrated Supervisory Controller (TSC) selects actions, either eliciting human responses or applying safe updates. Human responses and logged traces feed back into the event state and controller, forming a closed annotation loop.",
+      "page": 3,
+      "index": 3,
+      "width": 831,
+      "height": 425
+    }
+  ]
+}

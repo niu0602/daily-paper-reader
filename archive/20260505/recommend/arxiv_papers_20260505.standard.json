@@ -1,0 +1,617 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-05T20:09:22.833659+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 17,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2605.01666v1",
+      "source": "arxiv",
+      "title": "IMPACT-HOI: Supervisory Control for Onset-Anchored Partial HOI Event Construction",
+      "abstract": "We present IMPACT-HOI, a mixed-initiative framework for annotating egocentric procedural video by constructing structured event graphs for Human-Object Interactions (HOI), motivated by the need for high-quality structured supervision for learning robot manipulation from human demonstration. IMPACT-HOI frames this task as the incremental resolution of a partially specified, onset-anchored event state. A trust-calibrated controller selects among direct queries, human-confirmed suggestions, and conservative completions based on empirical annotator behavior and evidence quality. A risk-bounded execution protocol, utilizing atomic rollback, ensures that human-confirmed decisions are preserved against conflicting automated updates. A user study with 9 participants shows a 13.5% reduction in manual annotation actions, a 46.67% event match rate, and zero confirmed-field violations under the studied protocol. The code will be made publicly available at https://github.com/541741106/IMPACT_HOI.",
+      "authors": [
+        "Haoshen Zhang",
+        "Di Wen",
+        "Kunyu Peng",
+        "David Schneider",
+        "Zeyun Zhong",
+        "Alexander Jaus",
+        "Zdravko Marinov",
+        "Jiale Wei",
+        "Ruiping Liu",
+        "Junwei Zheng",
+        "Yufan Chen",
+        "Yufeng Zhang",
+        "Yuanhao Luo",
+        "Lei Qi",
+        "Rainer Stiefelhagen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.RO"
+      ],
+      "published": "2026-05-03T01:37:40+00:00",
+      "link": "https://arxiv.org/pdf/2605.01666v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "annotating egocentric procedural video for learning robot manipulation",
+      "llm_evidence_cn": "标注第一视角过程视频以学习机器人操作",
+      "llm_evidence": "标注第一视角过程视频以学习机器人操作",
+      "canonical_evidence": "标注第一视角过程视频以学习机器人操作",
+      "llm_tldr_en": "A framework for annotating egocentric videos to provide structured supervision for learning robot manipulation.",
+      "llm_tldr_cn": "一种标注第一视角视频的框架，为学习机器人操作提供结构化监督。",
+      "llm_tldr": "一种标注第一视角视频的框架，为学习机器人操作提供结构化监督。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.00307v1",
+      "source": "arxiv",
+      "title": "A Model-based Visual Contact Localization and Force Sensing System for Compliant Robotic Grippers",
+      "abstract": "Grasp force estimation can help prevent robots from damaging delicate objects during manipulation and improve learning-based robotic control. Integrating force sensing into deformable grippers negotiates trade-offs in cost, complexity, mechanical robustness, and performance. With the growing integration of RGB-D wrist cameras into robotic systems for control purposes, camera-based techniques are a promising solution for indirect visual force estimation. Current approaches mostly utilize end-to-end deep learning, which can be brittle when generalizing to new scenarios, while existing model-based approaches are unsuited to grasping and modern grasper geometries. To address these challenges, we developed a model-based visual force sensing approach integrating an iterative contact localization with generalization to unseen objects. The system extracts structural key points from wrist camera RGB-D images of deforming fin-ray-shaped soft grippers, and uses these key points to define parameters of an inverse finite element analysis simulation in Simulation Open Framework Architecture. The iterative contact localization sub-system utilizes a deep learning-based online 3D reconstruction and pose estimation pipeline to dynamically update contact location, and is robust to visual occlusion and unseen objects. Our system demonstrated an average root mean square error of 0.23 N and normalized root mean square deviation of 2.11% during the load phase, and 0.48 N and 4.34% over the entire grasping process when interacting with different objects under various conditions, showcasing its potential for real-time model-based indirect force sensing of soft grippers.",
+      "authors": [
+        "Kaiwen Zuo",
+        "Shuyuan Yang",
+        "Zonghe Chua"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-05-01T00:34:19+00:00",
+      "link": "https://arxiv.org/pdf/2605.00307v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visual force sensing using RGB-D wrist cameras for robotic control",
+      "llm_evidence_cn": "使用RGB-D腕部相机进行视觉力感知以用于机器人控制",
+      "llm_evidence": "使用RGB-D腕部相机进行视觉力感知以用于机器人控制",
+      "canonical_evidence": "使用RGB-D腕部相机进行视觉力感知以用于机器人控制",
+      "llm_tldr_en": "Develops a model-based visual force sensing system using wrist cameras for compliant robotic grasping.",
+      "llm_tldr_cn": "开发了一种利用腕部相机进行视觉力感知的系统，用于柔性机器人抓取。",
+      "llm_tldr": "开发了一种利用腕部相机进行视觉力感知的系统，用于柔性机器人抓取。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.01434v1",
+      "source": "arxiv",
+      "title": "High-Speed, Scalable Sensor Readout for Dexterous Robotic Hands via Shift-Register Multiplexing",
+      "abstract": "Dexterous robotic hands require high-speed multimodal sensing across many degrees of freedom, yet existing readout architectures often impose trade-offs between sensor count, wiring complexity, and sampling bandwidth. This paper presents a scalable analog sensor readout architecture based on a serial-in parallel-out (SIPO) shift-register principle. The proposed architecture supports versatile integration of heterogeneous analog-output sensors, scalable expansion using only three signal lines between sensor modules, and fast, configurable sampling. We validate the approach on a tendon-driven robotic hand integrating 16 joint sensor modules and one four-channel tactile sensor module, enabling acquisition of 20 sensor channels at a full-scan rate of 1 kHz, with stable operation up to 1.5 kHz. Joint sensor characterization showed a maximum slope absolute percentage error (APE) of 0.446% and sub-degree estimation error, indicating that the proposed readout system does not significantly degrade sensing performance. For tactile sensing, LSTM-based models achieved an RMSE of 0.125 N for force estimation and 93.4% accuracy for five-class contact-location classification, and were deployed for real-time inference at 1 kHz. System-level experiments showed that the joint sensors provide more accurate feedback than motor-based estimation during interaction, while the tactile sensor enables responsive force estimation in contact. The proposed architecture offers a practical path toward fully sensorized robotic hands for dexterous manipulation.",
+      "authors": [
+        "Jaehoon Kim",
+        "Lazaros Christoforidis",
+        "Michalis Papadakis",
+        "Victor Kartsch",
+        "Robert K. Katzschmann"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-02T13:14:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.01434v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "high-speed multimodal sensing for dexterous robotic hands",
+      "llm_evidence_cn": "灵巧机器人手的高速多模态传感",
+      "llm_evidence": "灵巧机器人手的高速多模态传感",
+      "canonical_evidence": "灵巧机器人手的高速多模态传感",
+      "llm_tldr_en": "A scalable sensor readout architecture for dexterous robotic hands to handle high-speed multimodal data.",
+      "llm_tldr_cn": "一种用于灵巧机器人手的可扩展传感器读取架构，可处理高速多模态数据。",
+      "llm_tldr": "一种用于灵巧机器人手的可扩展传感器读取架构，可处理高速多模态数据。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.01518v1",
+      "source": "arxiv",
+      "title": "VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids",
+      "abstract": "The ability to push large objects in a goal-directed manner using onboard egocentric perception is an essential skill for humanoid robots to perform complex tasks such as material handling in warehouses. To robustly manipulate heavy objects to arbitrary goal configurations, the robot must cope with unknown object mass and ground friction, noisy onboard perception, and actuation errors; all in a real-time feedback loop. Existing solutions either rely on privileged object-state information without onboard perception or lack robustness to variations in goal configurations and object physical properties. In this work, we present VOFA, a visual goal-conditioned humanoid loco-manipulation system capable of pushing objects with unknown physical properties to arbitrary goal positions. VOFA consists of a two-level hierarchical architecture with a high-level visuomotor policy and a low-level force-adaptive whole-body controller. The high-level policy processes noisy onboard observations and generates goal-conditioned commands to operate in closed loop across diverse object-goal configurations, while the low-level whole-body controller provides robustness to variations in object physical properties. VOFA is extensively evaluated in both simulation and real-world experiments on the Booster T1 humanoid robot. Our results demonstrate strong performance, achieving over 90% success in simulation and over 80% success in real-world trials. Moreover, VOFA successfully pushes objects weighing up to 17kg, exceeding half of the Booster T1's body weight.",
+      "authors": [
+        "Zichao Hu",
+        "Zifan Xu",
+        "Dongsik Chang",
+        "He Yin",
+        "Linh Tran",
+        "Roberto Martín-Martín",
+        "Peter Stone",
+        "Jingyu Qiao",
+        "Joydeep Biswas"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-02T16:16:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.01518v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "onboard egocentric perception for humanoid manipulation",
+      "llm_evidence_cn": "用于类人机器人操作的车载第一视角感知",
+      "llm_evidence": "用于类人机器人操作的车载第一视角感知",
+      "canonical_evidence": "用于类人机器人操作的车载第一视角感知",
+      "llm_tldr_en": "A humanoid system using egocentric perception for goal-directed object pushing with force-adaptive control.",
+      "llm_tldr_cn": "一种利用第一视角感知进行目标导向物体推搡的类人机器人系统，具备力自适应控制。",
+      "llm_tldr": "一种利用第一视角感知进行目标导向物体推搡的类人机器人系统，具备力自适应控制。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.26450v1",
+      "source": "arxiv",
+      "title": "Reactive Motion Generation via Phase-varying Neural Potential Functions",
+      "abstract": "Dynamical systems (DS) methods for Learning-from-Demonstration (LfD) provide stable, continuous policies from few demonstrations. First-order dynamical systems (DS) are effective for many point-to-point and periodic tasks, as long as a unique velocity is defined for each state. For tasks with intersections (e.g., drawing an \"8\"), extensions such as second-order dynamics or phase variables are often used. However, by incorporating velocity, second-order models become sensitive to disturbances near intersections, as velocity is used to disambiguate motion direction. Moreover, this disambiguation may fail when nearly identical position-velocity pairs correspond to different onward motions. In contrast, phase-based methods rely on open-loop time or phase variables, which limit their ability to recover after perturbations. We introduce Phase-varying Neural Potential Functions (PNPF), an LfD framework that conditions a potential function on a phase variable which is estimated directly from state progression, rather than on open-loop temporal inputs. This phase variable allows the system to handle state revisits, while the learned potential function generates local vector fields for reactive and stable control. PNPF generalizes effectively across point-to-point, periodic, and full 6D motion tasks, outperforms existing baselines on trajectories with intersections, and demonstrates robust performance in real-time robotic manipulation under external disturbances.",
+      "authors": [
+        "Ahmet Tekden",
+        "Dimitrios Kanoulas",
+        "Aude Billard",
+        "Yasemin Bekiroglu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-29T09:05:27+00:00",
+      "link": "https://arxiv.org/pdf/2604.26450v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "reactive motion generation for robotic manipulation tasks",
+      "llm_evidence_cn": "机器人操作任务的反应式运动生成",
+      "llm_evidence": "机器人操作任务的反应式运动生成",
+      "canonical_evidence": "机器人操作任务的反应式运动生成",
+      "llm_tldr_en": "Develops phase-varying neural potential functions for stable reactive motion generation in manipulation.",
+      "llm_tldr_cn": "开发了相位变化的神经势函数，用于在操作中生成稳定的反应式运动。",
+      "llm_tldr": "开发了相位变化的神经势函数，用于在操作中生成稳定的反应式运动。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.27792v1",
+      "source": "arxiv",
+      "title": "MotuBrain: An Advanced World Action Model for Robot Control",
+      "abstract": "Vision-Language-Action (VLA) models achieve strong semantic generalization but often lack fine-grained modeling of world dynamics. Recent work explores video generation models as a foundation for world modeling, leading to unified World Action Models (WAMs) that jointly model visual dynamics and actions. We present MotuBrain, a unified multimodal generative model that jointly models video and action under a UniDiffuser formulation with a three-stream Mixture-of-Transformers architecture. A single model supports multiple inference modes, including policy learning, world modeling, video generation, inverse dynamics, and joint video-action prediction, while scaling to heterogeneous multimodal data such as video-only and cross-embodiment robot data. To improve real-world applicability, MotuBrain introduces a unified multiview representation, explicit language-action coupling, and an efficient inference stack, achieving over 50x speedup for real-time deployment.",
+      "authors": [
+        "MotuBrain Team",
+        "Chendong Xiang",
+        "Fan Bao",
+        "Haitian Liu",
+        "Hengkai Tan",
+        "Hongzhe Bi",
+        "James Li",
+        "Jiabao Liu",
+        "Jingrui Pang",
+        "Kiro Jing",
+        "Louis Liu",
+        "Mengchen Cai",
+        "Rongxu Cui",
+        "Ruowen Zhao",
+        "Runqing Wang",
+        "Shuhe Huang",
+        "Yao Feng",
+        "Yinze Rong",
+        "Zeyuan Wang",
+        "Jun Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-30T12:34:44+00:00",
+      "link": "https://arxiv.org/pdf/2604.27792v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "world action model for robot control scaling to heterogeneous data",
+      "llm_evidence_cn": "用于机器人控制的世界动作模型，可扩展至异构数据",
+      "llm_evidence": "用于机器人控制的世界动作模型，可扩展至异构数据",
+      "canonical_evidence": "用于机器人控制的世界动作模型，可扩展至异构数据",
+      "llm_tldr_en": "Presents MotuBrain, a unified world action model for robot control and visual dynamics prediction.",
+      "llm_tldr_cn": "提出了MotuBrain，一个用于机器人控制和视觉动力学预测的统一世界动作模型。",
+      "llm_tldr": "提出了MotuBrain，一个用于机器人控制和视觉动力学预测的统一世界动作模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.24661v1",
+      "source": "arxiv",
+      "title": "Agent-Centric Visual Reinforcement Learning under Dynamic Perturbations",
+      "abstract": "Visual reinforcement learning aims to empower an agent to learn policies from visual observations, yet it remains vulnerable to dynamic visual perturbations, such as unpredictable shifts in corruption types. To systematically study this, we introduce the Visual Degraded Control Suite (VDCS), a benchmark extending DeepMind Control Suite with Markov-switching degradations to simulate non-stationary real-world perturbations. Experiments on VDCS reveal severe performance degradation in existing methods. We theoretically prove via information-theoretic analysis that this failure stems from reconstruction-based objectives inevitably entangling perturbation artifacts into latent representations. To mitigate this negative impact, we propose Agent-Centric Observations with Mixture-of-Experts (ACO-MoE) to robustify visual RL against perturbations. The proposed framework leverages unique agent-centric restoration experts, achieving restoration from corruptions and task-relevant foreground extraction, thereby decoupling perception from perturbation before being processed by the RL agent. Extensive experiments on VDCS show our ACO-MoE outperforms strong baselines, recovering 95.3% of clean performance under challenging Markov-switching corruptions. Moreover, it achieves SOTA results on DMControl Generalization with random-color and video-background perturbations, demonstrating a high level of robustness.",
+      "authors": [
+        "Zhengru Fang",
+        "Yu Guo",
+        "Fei Liu",
+        "Yuang Zhang",
+        "Yihang Tao",
+        "Senkang Hu",
+        "Wenbo Ding",
+        "Yuguang Fang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-27T16:24:40+00:00",
+      "link": "https://arxiv.org/pdf/2604.24661v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Agent-centric visual reinforcement learning from visual observations under perturbations",
+      "llm_evidence_cn": "在扰动下基于视觉观测的以智能体为中心的视觉强化学习",
+      "llm_evidence": "在扰动下基于视觉观测的以智能体为中心的视觉强化学习",
+      "canonical_evidence": "在扰动下基于视觉观测的以智能体为中心的视觉强化学习",
+      "llm_tldr_en": "Introduces a benchmark and method for robust agent-centric visual reinforcement learning.",
+      "llm_tldr_cn": "引入了鲁棒的以智能体为中心的视觉强化学习基准和方法。",
+      "llm_tldr": "引入了鲁棒的以智能体为中心的视觉强化学习基准和方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.27792v2",
+      "source": "arxiv",
+      "title": "MotuBrain: An Advanced World Action Model for Robot Control",
+      "abstract": "Vision-Language-Action (VLA) models generalize semantically well but often lack fine-grained modeling of world dynamics. We present MotuBrain, a unified World Action Model that jointly models video and action under a UniDiffuser formulation with a three-stream Mixture-of-Transformers architecture. A single model supports policy learning, world modeling, video generation, inverse dynamics, and joint video-action prediction, while scaling to heterogeneous multimodal data such as video-only, task-agnostic, and cross-embodiment robot data. Building on Motus, MotuBrain further introduces unified multiview modeling, an independent text stream for stronger language-action coupling, a shared cross-embodiment action representation, and an efficient post-training and deployment recipe for long-horizon real-world control. Our inference stack combines step reduction, compilation, FP8 quantization, DiT caching, V2A-style action-only inference, and real-time chunked closed-loop execution, achieving over 50x speedup over a naive baseline and up to 11 Hz inference. Experimentally, MotuBrain achieves 95.8% and 96.1% average success on RoboTwin 2.0 under clean and randomized settings, respectively, attains the strongest reported EWMScore in our WorldArena comparison, and adapts to new humanoid embodiments with only 50--100 trajectories. These results show that unified world action models can scale in generality, predictive accuracy, and real-world deployability.",
+      "authors": [
+        "MotuBrain Team",
+        "Chendong Xiang",
+        "Fan Bao",
+        "Haitian Liu",
+        "Hengkai Tan",
+        "Hongzhe Bi",
+        "James Li",
+        "Jiabao Liu",
+        "Jingrui Pang",
+        "Kiro Jing",
+        "Louis Liu",
+        "Mengchen Cai",
+        "Rongxu Cui",
+        "Ruowen Zhao",
+        "Runqing Wang",
+        "Shuhe Huang",
+        "Yao Feng",
+        "Yinze Rong",
+        "Zeyuan Wang",
+        "Jun Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-30T12:34:44+00:00",
+      "link": "https://arxiv.org/pdf/2604.27792v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "unified world action model for robot control with cross-embodiment data",
+      "llm_evidence_cn": "跨具身数据的机器人控制统一世界动作模型",
+      "llm_evidence": "跨具身数据的机器人控制统一世界动作模型",
+      "canonical_evidence": "跨具身数据的机器人控制统一世界动作模型",
+      "llm_tldr_en": "MotuBrain is a unified World Action Model supporting policy learning and video-action prediction for robots.",
+      "llm_tldr_cn": "MotuBrain是一个支持机器人策略学习和视频动作预测的统一世界动作模型。",
+      "llm_tldr": "MotuBrain是一个支持机器人策略学习和视频动作预测的统一世界动作模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.26848v2",
+      "source": "arxiv",
+      "title": "STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation",
+      "abstract": "Robotic manipulation requires reasoning about future spatial-temporal interactions and geometric constraints, yet existing Vision-Language-Action (VLA) policies often leave predictive representation weakly coupled with action execution, causing failures in tasks requiring precise spatial-temporal coordination. We propose STARRY, a world-model-enhanced action-generation policy that aligns spatial-temporal prediction and action generation by jointly denoising future spatial-temporal latents and actions through a unified diffusion process. To bridge 2D visual tokens and 3D metric control, STARRY introduces Geometry-Aware Selective Attention Modulation (GASAM), which converts predicted depth and end-effector geometry into token-aligned weights for selective action-attention modulation. On RoboTwin 2.0, STARRY achieves 93.82% / 93.30% average success under Clean and Randomized settings across 50 bimanual tasks. Real-world experiments show that STARRY improves average success from 42.5% to 70.8% compared with $π_{0.5}$. These results demonstrate the effectiveness of action-centric spatial-temporal world modeling for spatially and temporally demanding robotic manipulation.",
+      "authors": [
+        "Yuxuan Tian",
+        "Yurun Jin",
+        "Bin Yu",
+        "Yukun Shi",
+        "Hao Wu",
+        "Chi Harold Liu",
+        "Kai Chen",
+        "Cong Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-04-29T16:13:39+00:00",
+      "link": "https://arxiv.org/pdf/2604.26848v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "spatial-temporal world modeling for robotic manipulation aligning vision and action",
+      "llm_evidence_cn": "用于机器人操作的时空世界建模，对齐视觉与动作",
+      "llm_evidence": "用于机器人操作的时空世界建模，对齐视觉与动作",
+      "canonical_evidence": "用于机器人操作的时空世界建模，对齐视觉与动作",
+      "llm_tldr_en": "STARRY aligns spatial-temporal prediction and action generation for precise robotic manipulation coordination.",
+      "llm_tldr_cn": "STARRY对齐了时空预测和动作生成，以实现精确的机器人操作协调。",
+      "llm_tldr": "STARRY对齐了时空预测和动作生成，以实现精确的机器人操作协调。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.28192v1",
+      "source": "arxiv",
+      "title": "LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models",
+      "abstract": "Vision-Language-Action (VLA) models have increasingly incorporated reasoning mechanisms for complex robotic manipulation. However, existing approaches share a critical limitation: whether employing explicit linguistic reasoning that suffers from latency and discretization, or utilizing more expressive continuous latent reasoning, they are predominantly confined to static imitation learning that limits adaptability and generalization. While online reinforcement learning (RL) has been introduced to VLAs to enable trial-and-error exploration, current methods exclusively optimize the vanilla action space, bypassing the underlying physical reasoning process. In this paper, we present \\textbf{LaST-R1}, a unified VLA framework that integrates latent Chain-of-Thought (CoT) reasoning over physical dynamics prior to action execution, along with a tailored RL post-training paradigm. Specifically, we propose \\textbf{Latent-to-Action Policy Optimization (LAPO)}, a novel RL algorithm that jointly optimizes the latent reasoning process and the action generation. By bridging reasoning and control, LAPO improves the representation of physical world modeling and enhances robustness in interactive environments. Furthermore, an \\textbf{adaptive latent CoT mechanism} is introduced to allow the policy to dynamically adjust its reasoning horizon based on environment complexity. Extensive experiments show that LaST-R1 achieves a near-perfect 99.8\\% average success rate on the LIBERO benchmark with only one-shot supervised warm-up, significantly improving convergence speed and performance over prior state-of-the-art methods. In real-world deployments, LAPO post-training yields up to a 44\\% improvement over the initial warm-up policy across four complex tasks, including both single-arm and dual-arm settings. Finally, LaST-R1 demonstrates strong generalization across simulated and real-world environments.",
+      "authors": [
+        "Hao Chen",
+        "Jiaming Liu",
+        "Zhonghao Yan",
+        "Nuowei Han",
+        "Renrui Zhang",
+        "Chenyang Gu",
+        "Jialin Gao",
+        "Ziyu Guo",
+        "Siyuan Qian",
+        "Yinxi Wang",
+        "Peng Jia",
+        "Chi-Wing Fu",
+        "Shanghang Zhang",
+        "Pheng-Ann Heng"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-04-30T17:59:52+00:00",
+      "link": "https://arxiv.org/pdf/2604.28192v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "VLA framework for complex robotic manipulation with latent reasoning",
+      "llm_evidence_cn": "用于复杂机器人操作的VLA框架，包含潜空间推理",
+      "llm_evidence": "用于复杂机器人操作的VLA框架，包含潜空间推理",
+      "canonical_evidence": "用于复杂机器人操作的VLA框架，包含潜空间推理",
+      "llm_tldr_en": "Introduces LaST-R1, a VLA framework using adaptive physical latent reasoning for robotic manipulation.",
+      "llm_tldr_cn": "介绍了LaST-R1，一个利用自适应物理潜空间推理进行机器人操作的VLA框架。",
+      "llm_tldr": "介绍了LaST-R1，一个利用自适应物理潜空间推理进行机器人操作的VLA框架。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.00333v1",
+      "source": "arxiv",
+      "title": "Borrowed Geometry: Computational Reuse of Frozen Text-Pretrained Transformer Weights Across Modalities",
+      "abstract": "Frozen Gemma 4 31B weights pretrained exclusively on text tokens, unmodified, transfer across modality boundaries through a thin trainable interface. (1) OGBench scene-play-singletask-task1-v0: $+4.33$pt over published GCIQL at $n=3$ with std 0.74 -- a published-SOTA win on a robotic manipulation task the substrate has never seen. (2) D4RL Walker2d-medium-v2: Decision-Transformer parity ($76.2 \\pm 0.8$, $n=3$) at $0.43\\times$ DT's trainable count, with the frozen substrate compressing to a 5L slice ($+1.66$pt over the 6L baseline at $n=3$). (3) Associative recall as the cleanest pretraining-load-bearing case: the frozen slice + a 113K-parameter linear interface reaches L30 best-checkpoint per-bit error 0.0505 ($n=2$); a 6.36M-parameter from-scratch trained transformer at matched capacity ($1/\\sqrt{d_k}$ scaling, two seeds, LR sweep) cannot solve the task at all under the protocol (best L30 = 0.4395), an $8.7\\times$ advantage. Architecture-alone falsifications: a frozen random transformer with correct $1/\\sqrt{d_k}$ scaling stays at random-chance loss for 50k steps; a random-init Gemma slice fails OGBench cube-double-play-task1 entirely (0.89% across $n=3$ where pretrained reaches 60%). A dual-measurement protocol -- text-activation probing on 95 English sentences plus task-ablation on a non-language target -- names individual heads independently identifiable on both protocols: head L26.28 scores $3.7\\times$ the slice mean for English token-copying and is the #2 most-critical head for binary copy ablation ($Δ$ L30 $= +0.221$); three further heads (L27.28, L27.2, L27.3) classify by the same protocol. The mechanism is single-model and the cross-modality results are single-task within their respective benchmarks; cross-model replication is structurally constrained because Gemma 4 31B is the only model on the small-scale Pareto frontier as of April 2026.",
+      "authors": [
+        "Abay Bektursun"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "published": "2026-05-01T01:23:37+00:00",
+      "link": "https://arxiv.org/pdf/2605.00333v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "SOTA win on a robotic manipulation task using text-pretrained transformer weights",
+      "llm_evidence_cn": "在机器人操作任务上使用文本预训练Transformer权重取得SOTA成果",
+      "llm_evidence": "在机器人操作任务上使用文本预训练Transformer权重取得SOTA成果",
+      "canonical_evidence": "在机器人操作任务上使用文本预训练Transformer权重取得SOTA成果",
+      "llm_tldr_en": "Explores reusing frozen text-pretrained weights for robotic manipulation and control tasks.",
+      "llm_tldr_cn": "探索将冻结的文本预训练权重重用于机器人操作和控制任务。",
+      "llm_tldr": "探索将冻结的文本预训练权重重用于机器人操作和控制任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.01581v1",
+      "source": "arxiv",
+      "title": "Hydra-DP3: Frequency-Aware Right-Sizing of 3D Diffusion Policies for Visuomotor Control",
+      "abstract": "Diffusion-based visuomotor policies perform well in robotic manipulation, yet current methods still inherit image-generation-style decoders and multi-step sampling. We revisit this design from a frequency-domain perspective. Robot action trajectories are highly smooth, with most energy concentrated in a few low-frequency discrete cosine transform modes. Under this structure, we show that the error of the optimal denoiser is bounded by the low-frequency subspace dimension and residual high-frequency energy, implying that denoising error saturates after very few reverse steps. This further suggests that action denoising requires a much simpler denoising model than image generation. Motivated by this insight, we propose Hydra-DP3(HDP3), a pocket-scale 3D diffusion policy with a lightweight Diffusion Mixer decoder that supports two-step DDIM inference. Our synthetic experiments validate the theory and support the sufficiency of two-step denoising. Futhermore, across RoboTwin2.0, Adroit, MetaWorld, and real-world tasks, HDP3 achieves state-of-the-art performance with fewer than 1% of the parameters of prior 3D diffusion-based policies and substantially lower inference latency.",
+      "authors": [
+        "Jinhao Zhang",
+        "Zhexuan Zhou",
+        "Huizhe Li",
+        "Yichen Lai",
+        "Wenlong Xia",
+        "Haoming Song",
+        "Youmin Gong",
+        "Jie Mei"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-02T19:07:09+00:00",
+      "link": "https://arxiv.org/pdf/2605.01581v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "diffusion policies for visuomotor control in robotic manipulation",
+      "llm_evidence_cn": "机器人操作中视觉运动控制的扩散策略",
+      "llm_evidence": "机器人操作中视觉运动控制的扩散策略",
+      "canonical_evidence": "机器人操作中视觉运动控制的扩散策略",
+      "llm_tldr_en": "Optimizes 3D diffusion policies for robotic visuomotor control using frequency-domain insights.",
+      "llm_tldr_cn": "利用频域见解优化了用于机器人视觉运动控制的3D扩散策略。",
+      "llm_tldr": "利用频域见解优化了用于机器人视觉运动控制的3D扩散策略。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.01232v1",
+      "source": "arxiv",
+      "title": "A Principled Approach for Creating High-fidelity Synthetic Demonstrations for Imitation Learning",
+      "abstract": "Recent advances in 3D Gaussian Splatting (3DGS) have enabled visually realistic demonstration generation from a single expert trajectory and a short multi-view scan. However, existing 3DGS-based synthesis pipelines typically generate new motions using sampling-based planners or trajectory optimization, which often deviate substantially from the expert's demonstrated path. While such deviations may be acceptable for tasks insensitive to motion shape, they discard subtle spatial and temporal structure that is critical for contact-rich and shape-sensitive manipulation, causing increased demonstration diversity to harm downstream policy learning. We argue that demonstration synthesis should treat the expert trajectory as a strong prior. Building on this principle, we propose a framework that synthesizes diverse task demonstrations while explicitly preserving expert motion structure. We model the expert trajectory using Dynamic Movement Primitives (DMPs) and retarget it to new goals, object configurations, and viewpoints within a reconstructed 3DGS scene, yielding phase-consistent, shape-preserving motion by construction. To safely realize this expert-preserving diversity in cluttered scenes, we introduce an analytic obstacle-aware DMP formulation that operates directly on the continuous density field induced by the 3DGS representation. This enables collision avoidance while minimally perturbing the nominal expert motion, unifying photorealistic rendering and geometric reasoning without additional scene representations. We evaluate our approach on a Spot mobile manipulator across three manipulation tasks with increasing sensitivity to trajectory fidelity. Compared to planner- and optimization-based synthesis, our method produces trajectories with lower deviation and collision rates and yields higher task success when training diffusion-based visuomotor policies.",
+      "authors": [
+        "Moniruzzaman Akash",
+        "Momotaz Begum"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-02T04:09:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.01232v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "creates synthetic demonstrations for imitation learning in contact-rich manipulation",
+      "llm_evidence_cn": "为高接触性操作的模仿学习创建合成演示数据",
+      "llm_evidence": "为高接触性操作的模仿学习创建合成演示数据",
+      "canonical_evidence": "为高接触性操作的模仿学习创建合成演示数据",
+      "llm_tldr_en": "This paper proposes a method using 3D Gaussian Splatting to create high-fidelity demonstrations for imitation learning.",
+      "llm_tldr_cn": "该研究提出了一种利用3D高斯泼溅技术为模仿学习创建高保真合成演示的方法。",
+      "llm_tldr": "该研究提出了一种利用3D高斯泼溅技术为模仿学习创建高保真合成演示的方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.01448v1",
+      "source": "arxiv",
+      "title": "Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation",
+      "abstract": "Cross-task generalization is a core challenge in open-world robotic manipulation, and the key lies in extracting transferable manipulation knowledge from seen tasks. Recent in-context learning approaches leverage seen task demonstrations to generate actions for unseen tasks without parameter updates. However, existing methods provide only low-level continuous action sequences as context, failing to capture composable skill knowledge and causing models to degenerate into superficial trajectory imitation. We propose Decompose and Recompose, a skill reasoning framework using atomic skill-action pairs as intermediate representations. Our approach decomposes seen demonstrations into interpretable skill--action alignments, enabling the model to recompose these skills for unseen tasks through compositional reasoning. Specifically, we construct a task-adaptive dynamic demonstration library via visual-semantic retrieval combined with skill sequences from a planning agent, complemented by a coverage-aware static library to fill missing skill patterns. Together, these yield skill-comprehensive demonstrations that explicitly elicit compositional reasoning for skill composition and execution ordering. Experiments on the AGNOSTOS benchmark and real-world environments validate our method's zero-shot cross-task generalization capability.",
+      "authors": [
+        "Xitie Zhang",
+        "Aming Wu",
+        "Yahong Han"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-05-02T13:55:28+00:00",
+      "link": "https://arxiv.org/pdf/2605.01448v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "cross-task robotic manipulation and skill reasoning",
+      "llm_evidence_cn": "跨任务机器人操作与技能推理",
+      "llm_evidence": "跨任务机器人操作与技能推理",
+      "canonical_evidence": "跨任务机器人操作与技能推理",
+      "llm_tldr_en": "This framework decomposes demonstrations into atomic skills to improve cross-task robotic generalization.",
+      "llm_tldr_cn": "该框架将演示分解为原子技能，以提高机器人的跨任务泛化能力。",
+      "llm_tldr": "该框架将演示分解为原子技能，以提高机器人的跨任务泛化能力。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

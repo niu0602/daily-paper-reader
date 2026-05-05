@@ -6,58 +6,64 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-04
-- 运行时间：2026-05-04 20:38:52 UTC
+- 最新运行日期：2026-05-05
+- 运行时间：2026-05-05 20:13:31 UTC
 - 运行状态：成功
-- 本次总论文数：12
-- 精读区：1
+- 本次总论文数：14
+- 精读区：3
 - 速读区：11
 
 ### 今日简报（AI）
-聚焦机器人视频世界模型与沉浸式操控数据引擎，今日共研读 12 篇论文。  
-最值得关注的是基于自我视角视频的世界-动作潜变量建模，以及视觉尺度变化下的实时操控注意机制。  
-建议读者后续重点追踪世界模型在真实机器人操作中的泛化性能与 XR 数据生成效率。
-- 详情：[/202605/04/README](/202605/04/README)
+聚焦机器人交互与感知控制，今日研读 14 篇论文。  
+最亮点在于「人机交互事件构建」与「柔顺抓取力感知」模型，呈现智能触觉与动作协调新突破。  
+推荐读者关注交互算法与感知系统结合的应用趋势，以理解下一代机器人控制的核心方向。
+- 详情：[/202605/05/README](/202605/05/README)
 
 ### 精读区论文标签
-1. [Being-H0.7: A Latent World-Action Model from Egocentric Videos](/202605/04/2605.00078v1-being-h07-a-latent-world-action-model-from-egocentric-videos)  
-   标签：评分：9.0/10、query:dexop
-   evidence：基于第一视角视频的潜在世界动作模型用于机器人控制
+1. [IMPACT-HOI: Supervisory Control for Onset-Anchored Partial HOI Event Construction](/202605/05/2605.01666v1-impact-hoi-supervisory-control-for-onset-anchored-partial-hoi-event-construction)  
+   标签：评分：8.5/10、query:dexop
+   evidence：标注第一视角过程视频以学习机器人操作
+2. [A Model-based Visual Contact Localization and Force Sensing System for Compliant Robotic Grippers](/202605/05/2605.00307v1-a-model-based-visual-contact-localization-and-force-sensing-system-for-compliant-robotic-grippers)  
+   标签：评分：8.0/10、query:dexop
+   evidence：使用RGB-D腕部相机进行视觉力感知以用于机器人控制
+3. [High-Speed, Scalable Sensor Readout for Dexterous Robotic Hands via Shift-Register Multiplexing](/202605/05/2605.01434v1-high-speed-scalable-sensor-readout-for-dexterous-robotic-hands-via-shift-register-multiplexing)  
+   标签：评分：8.0/10、query:dexop
+   evidence：灵巧机器人手的高速多模态传感
 
 ### 速读区论文标签
-1. [Thinking in Text and Images: Interleaved Vision--Language Reasoning Traces for Long-Horizon Robot Manipulation](/202605/04/2605.00438v1-thinking-in-text-and-images-interleaved-vision--language-reasoning-traces-for-long-horizon-robot-manipulation)  
+1. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/05/2605.01518v1-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
    标签：评分：7.5/10、query:dexop
-   evidence：用于长程机器人操作的视觉语言推理
-2. [Stereo Multistage Spatial Attention for Real-Time Mobile Manipulation Under Visual Scale Variation and Disturbances](/202605/04/2605.00471v1-stereo-multistage-spatial-attention-for-real-time-mobile-manipulation-under-visual-scale-variation-and-disturbances)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于移动操作的车载视觉感知
-3. [Lucid-XR: An Extended-Reality Data Engine for Robotic Manipulation](/202605/04/2605.00244v1-lucid-xr-an-extended-reality-data-engine-for-robotic-manipulation)  
+   evidence：用于类人机器人操作的车载第一视角感知
+2. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/05/2604.27792v1-motubrain-an-advanced-world-action-model-for-robot-control)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于训练机器人操作的多模态数据生成引擎
-4. [MSACT: Multistage Spatial Alignment for Stable Low-Latency Fine Manipulation](/202605/04/2605.00475v1-msact-multistage-spatial-alignment-for-stable-low-latency-fine-manipulation)  
+   evidence：用于机器人控制的世界动作模型，可扩展至异构数据
+3. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/05/2604.27792v2-motubrain-an-advanced-world-action-model-for-robot-control)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于稳定精细操作的空间对齐
-5. [$M^2$-VLA: Boosting Vision-Language Models for Generalizable Manipulation via Layer Mixture and Meta-Skills](/202605/04/2604.24182v1-m2-vla-boosting-vision-language-models-for-generalizable-manipulation-via-layer-mixture-and-meta-skills)  
+   evidence：跨具身数据的机器人控制统一世界动作模型
+4. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/05/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
+   标签：评分：7.0/10、query:dexop
+   evidence：用于复杂机器人操作的VLA框架，包含潜空间推理
+5. [Hydra-DP3: Frequency-Aware Right-Sizing of 3D Diffusion Policies for Visuomotor Control](/202605/05/2605.01581v1-hydra-dp3-frequency-aware-right-sizing-of-3d-diffusion-policies-for-visuomotor-control)  
+   标签：评分：7.0/10、query:dexop
+   evidence：机器人操作中视觉运动控制的扩散策略
+6. [Reactive Motion Generation via Phase-varying Neural Potential Functions](/202605/05/2604.26450v1-reactive-motion-generation-via-phase-varying-neural-potential-functions)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于通用机器人操作的VLA模型
-6. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202605/04/2604.26848v1-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：机器人操作的时空世界建模
-7. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202605/04/2604.26848v2-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：使用视觉标记进行机器人操作的世界模型增强动作生成策略
-8. [ANCHOR: A Physically Grounded Closed-Loop Framework for Robust Home-Service Mobile Manipulation](/202605/04/2604.25323v1-anchor-a-physically-grounded-closed-loop-framework-for-robust-home-service-mobile-manipulation)  
+   evidence：机器人操作任务的反应式运动生成
+7. [Agent-Centric Visual Reinforcement Learning under Dynamic Perturbations](/202605/05/2604.24661v1-agent-centric-visual-reinforcement-learning-under-dynamic-perturbations)  
    标签：评分：6.0/10、query:dexop
-   evidence：家庭服务移动操作的闭环框架
-9. [Atomic-Probe Governance for Skill Updates in Compositional Robot Policies](/202605/04/2604.26689v1-atomic-probe-governance-for-skill-updates-in-compositional-robot-policies)  
+   evidence：在扰动下基于视觉观测的以智能体为中心的视觉强化学习
+8. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202605/05/2604.26848v2-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：组合式机器人操作策略中的技能更新
-10. [World Model for Robot Learning: A Comprehensive Survey](/202605/04/2605.00080v1-world-model-for-robot-learning-a-comprehensive-survey)  
+   evidence：用于机器人操作的时空世界建模，对齐视觉与动作
+9. [Borrowed Geometry: Computational Reuse of Frozen Text-Pretrained Transformer Weights Across Modalities](/202605/05/2605.00333v1-borrowed-geometry-computational-reuse-of-frozen-text-pretrained-transformer-weights-across-modalities)  
    标签：评分：6.0/10、query:dexop
-   evidence：机器人策略学习和数据生成的世界模型综述
-11. [E$^2$DT: Efficient and Effective Decision Transformer with Experience-Aware Sampling for Robotic Manipulation](/202605/04/2605.00159v1-e2dt-efficient-and-effective-decision-transformer-with-experience-aware-sampling-for-robotic-manipulation)  
+   evidence：在机器人操作任务上使用文本预训练Transformer权重取得SOTA成果
+10. [A Principled Approach for Creating High-fidelity Synthetic Demonstrations for Imitation Learning](/202605/05/2605.01232v1-a-principled-approach-for-creating-high-fidelity-synthetic-demonstrations-for-imitation-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于长程机器人操作任务的决策Transformer
+   evidence：为高接触性操作的模仿学习创建合成演示数据
+11. [Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](/202605/05/2605.01448v1-decompose-and-recompose-reasoning-new-skills-from-existing-abilities-for-cross-task-robotic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：跨任务机器人操作与技能推理
 
 
 <div class="dpr-home-promo-card">

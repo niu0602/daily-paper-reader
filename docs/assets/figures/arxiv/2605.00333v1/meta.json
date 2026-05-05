@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-001.webp",
+      "caption": "Figure 13. Cube-task1 substrate isolation training curves (𝑛 = 3 seeds each). Pretrained Gemma L26 (purple, 𝑛 = 3 mean ± std) climbs to ~65% over 100K iters; pretrained L24 (red) reaches ~45%; NC1 random Gemma (gray) stays flat near zero throughout. The +59pt L26-vs-NC1 gap is annotated. GCIQL=74% reference (green dashed) shown for absolute-performance context.",
+      "page": 6,
+      "index": 1,
+      "width": 817,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-002.webp",
+      "caption": "Figure 3. FrozenRandom-GPT2 architecture-alone control. Training-loss trajectories (EMA-smoothed) on CA Rule 90, copy, and addition. FrozenRandom-GPT2 (gray) — a frozen random transformer with standard 1/ √ 𝑑𝑘 attention scaling — never escapes the random-chance BCE band on CA R90 (0.693). On copy and addition, FrozenRandom-GPT2 produces some learning but plateaus well above Gemma (red), the parameter-matched LSTM (blue), and the trained matched-capacity transformer (Trained-Transformer, green; CA R90 + copy only). Six FrozenGemma-L24-29 / LSTMNTM-small / FrozenRandom-GPT2 data points across three tasks × two seeds.",
+      "page": 11,
+      "index": 2,
+      "width": 964,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-003.webp",
+      "caption": "Figure 5. Distillation circuit-prediction. AR per-bit error vs. length. DS-PROC multi-hint at s42 closes to within 24% of online Gemma (1.24× ratio at L30) at zero Gemma inference cost.",
+      "page": 25,
+      "index": 3,
+      "width": 818,
+      "height": 512
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-004.webp",
+      "caption": "Figure 4. Dyck-2 plateau on frozen Gemma; cracked by matched-capacity trained transformer. Dyck-2 L30 bestcheckpoint per-bit error across 12 methods. All five extraction surfaces on frozen Gemma plus three frozen-stack depths cluster in the 0.024–0.036 band. LSTM 256 (0.56M) and matched-capacity Trained-Transformer (6.36M) both reach the band’s lower edge or below. The frozen-Gemma plateau is robust across surface and depth but is not an architectural ceiling.",
+      "page": 15,
+      "index": 4,
+      "width": 821,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-005.webp",
+      "caption": "Figure 14. OGBench cube-double-play-task1 layer ablation. Per-layer success rate (single-layer frozen substrate, IQL heads). Red bars: best-ckpt mean across seeds (𝑛 = 3 for L24 + L26; 𝑛 = 1 for the rest). Blue bars: last-3-mean (paper protocol). GCIQL per-task baseline (74%) shown as green dashed line. L26 (the §4.3 named-head-triple layer containing L26.28) is the cube-task1 winner — 𝑛 = 3 last-3-mean 60.22% with high seed variance (s42=96, s1337=88, s2024=24); s42 alone reaches 96% peak, exceeding GCIQL. L24 (edge-of-slice, 𝑛 = 3 mean 42.44%) is the secondary peak. L25 / L27 / L28 / L29 cluster lower (0–24% last-3-mean). Same substrate, different layer recruitment per task.",
+      "page": 7,
+      "index": 5,
+      "width": 818,
+      "height": 517
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-006.webp",
+      "caption": "Figure 7. Sparse, task-specific criticality. Head-ablation impact Δ per task, normalized by task-maximum. Each panel is 6 layers × 32 heads = 192 heads. Different tasks select different dominant heads on the same physical layer L27 — L27.28 for copy and addition, L27.2 for AR, L27.3 for CA R90.",
+      "page": 22,
+      "index": 6,
+      "width": 965,
+      "height": 397
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-007.webp",
+      "caption": "Figure 12. Gemma 4 31B occupies a Pareto frontier in performance vs scale. LMArena Text Elo (April 2026) vs total parameter count (log scale) for ten open-weight LLMs spanning ~30B to ~1T parameters. Gemma 4 31B-thinking and Gemma 4 26B-A4B-thinking (red) reach within ~10 Elo of the strongest 600B–1000B+ models (glm-5 745B, kimi-k2.5-thinking ~1T, qwen3.5-397b-a17b) at roughly an order of magnitude fewer parameters. Pareto-frontier region shaded blue. Source: LMArena Text leaderboard (https://arena.ai/leaderboard/text), accessed 2026-04-26; parameter counts from official model cards. Active-parameter counts for MoE models are smaller than the totals shown.",
+      "page": 18,
+      "index": 7,
+      "width": 676,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-008.webp",
+      "caption": "Figure 1. Computational exaptation. Each point is one (layer, head) × (task) critical ablation. X-axis: head’s TxtCopy probe score on 95 English sentences, as a ratio to the L24–L29 slice mean. Y-axis: head’s task-ablation impact Δ (per-bit error increase when the head is zeroed) on one of four non-language tasks. Stars mark the four named heads. L26.28 scores 3.7× slice baseline on English text (4th of 192 heads) and ranks #2 critical for binary copy at Δ = +0.221. L27.28 scores 2.6× on text and ranks #1 critical on both copy and addition. Two independent measurements, two different input distributions, same heads.",
+      "page": 13,
+      "index": 8,
+      "width": 962,
+      "height": 696
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-009.webp",
+      "caption": "Figure 6. Walker2d 𝑛 = 3 result. Gemma-DT D4RL normalized score: per-seed best-checkpoint trajectories (s42, s1337, s2024). All three seeds reach DT-parity; peak iterations are dispersed across the training budget. Reference lines: BC (63.9), DT 1.2M (74.0), IQL (78.3). Trainable parameters: 521K (vs DT 1.2M).",
+      "page": 9,
+      "index": 9,
+      "width": 818,
+      "height": 461
+    },
+    {
+      "url": "assets/figures/arxiv/2605.00333v1/fig-010.webp",
+      "caption": "Figure 2. Length-OOD profile on CA Rule 90. Left: best-checkpoint per-bit error vs. sequence length for seven controls, trained on lengths 3–20 inclusive. Green band marks the training-edge length L20. Trained-Transformer is a matchedcapacity from-scratch trained transformer (6.36M, 1/ √ 𝑑𝑘 scaling, 𝑛 = 2 seeds, run at its best lr=1e-4); other controls at canonical lr=3e-4. Right: per-bit error ratio of each alternative to FrozenGemma-L24-29. Training-edge (L20) advantage survives both controls — FrozenGemma-L24-29 beats LSTM-matched by 492× (𝑛 = 2 mean) and matched-capacity Trained-Transformer by 148× at L20. At L30 the picture flips: Trained-Transformer beats FrozenGemma-L24-29 by 1.54×.",
+      "page": 20,
+      "index": 10,
+      "width": 964,
+      "height": 450
+    }
+  ]
+}

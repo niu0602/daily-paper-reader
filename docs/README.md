@@ -6,64 +6,73 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-05
-- 运行时间：2026-05-05 20:13:31 UTC
+- 最新运行日期：2026-05-06
+- 运行时间：2026-05-06 21:02:32 UTC
 - 运行状态：成功
-- 本次总论文数：14
-- 精读区：3
+- 本次总论文数：17
+- 精读区：6
 - 速读区：11
 
 ### 今日简报（AI）
-聚焦机器人交互与感知控制，今日研读 14 篇论文。  
-最亮点在于「人机交互事件构建」与「柔顺抓取力感知」模型，呈现智能触觉与动作协调新突破。  
-推荐读者关注交互算法与感知系统结合的应用趋势，以理解下一代机器人控制的核心方向。
-- 详情：[/202605/05/README](/202605/05/README)
+聚焦机器人控制与生成式策略，今日共阅读 17 篇论文，其中精读 6 篇。  
+最亮眼的是《OGPO》和《RLDX-1》，展示了在生成控制策略与端到端强化学习上的高效全微调方法。  
+建议继续跟进生成策略与世界模型结合的进展，关注其在实际机器人操作中的泛化表现。
+- 详情：[/202605/06/README](/202605/06/README)
 
 ### 精读区论文标签
-1. [IMPACT-HOI: Supervisory Control for Onset-Anchored Partial HOI Event Construction](/202605/05/2605.01666v1-impact-hoi-supervisory-control-for-onset-anchored-partial-hoi-event-construction)  
-   标签：评分：8.5/10、query:dexop
-   evidence：标注第一视角过程视频以学习机器人操作
-2. [A Model-based Visual Contact Localization and Force Sensing System for Compliant Robotic Grippers](/202605/05/2605.00307v1-a-model-based-visual-contact-localization-and-force-sensing-system-for-compliant-robotic-grippers)  
+1. [OGPO: Sample Efficient Full-Finetuning of Generative Control Policies](/202605/06/2605.03065v1-ogpo-sample-efficient-full-finetuning-of-generative-control-policies)  
+   标签：评分：9.0/10、query:dexop
+   evidence：在灵巧控制任务上达到了最先进的性能
+2. [RLDX-1 Technical Report](/202605/06/2605.03269v1-rldx-1-technical-report)  
+   标签：评分：9.0/10、query:dexop
+   evidence：使用多流模态的通用灵巧操作机器人策略
+3. [Learning Reactive Dexterous Grasping via Hierarchical Task-Space RL Planning and Joint-Space QP Control](/202605/06/2605.03363v1-learning-reactive-dexterous-grasping-via-hierarchical-task-space-rl-planning-and-joint-space-qp-control)  
+   标签：评分：9.0/10、query:dexop
+   evidence：反应式灵巧抓取的分层控制框架
+4. [BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation](/202605/06/2605.03452v1-bifrostumi-bridging-robot-free-demonstrations-and-humanoid-whole-body-manipulation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：记录腕部视觉数据用于人形机器人操作的无机器人数据采集
+5. [SigLoMa: Learning Open-World Quadrupedal Loco-Manipulation from Ego-Centric Vision](/202605/06/2605.03846v1-sigloma-learning-open-world-quadrupedal-loco-manipulation-from-ego-centric-vision)  
+   标签：评分：9.0/10、query:dexop
+   evidence：完全板载的基于第一视角视觉的取放框架
+6. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/06/2605.01518v2-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
    标签：评分：8.0/10、query:dexop
-   evidence：使用RGB-D腕部相机进行视觉力感知以用于机器人控制
-3. [High-Speed, Scalable Sensor Readout for Dexterous Robotic Hands via Shift-Register Multiplexing](/202605/05/2605.01434v1-high-speed-scalable-sensor-readout-for-dexterous-robotic-hands-via-shift-register-multiplexing)  
-   标签：评分：8.0/10、query:dexop
-   evidence：灵巧机器人手的高速多模态传感
+   evidence：人形机器人使用车载第一视角感知进行视觉目标物体推拽
 
 ### 速读区论文标签
-1. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/05/2605.01518v1-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于类人机器人操作的车载第一视角感知
-2. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/05/2604.27792v1-motubrain-an-advanced-world-action-model-for-robot-control)  
+1. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202605/06/2604.26848v2-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
+   标签：评分：8.0/10、query:dexop
+   evidence：机器人操作的空间-时间以动作为中心的世界建模
+2. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/06/2604.27792v1-motubrain-an-advanced-world-action-model-for-robot-control)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于机器人控制的世界动作模型，可扩展至异构数据
-3. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/05/2604.27792v2-motubrain-an-advanced-world-action-model-for-robot-control)  
+   evidence：联合建模视频和动作以实现跨具身机器人控制
+3. [Hydra-DP3: Frequency-Aware Right-Sizing of 3D Diffusion Policies for Visuomotor Control](/202605/06/2605.01581v1-hydra-dp3-frequency-aware-right-sizing-of-3d-diffusion-policies-for-visuomotor-control)  
    标签：评分：7.0/10、query:dexop
-   evidence：跨具身数据的机器人控制统一世界动作模型
-4. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/05/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
+   evidence：用于机器人操作的基于扩散的视觉运动策略
+4. [Bridging the Embodiment Gap: Disentangled Cross-Embodiment Video Editing](/202605/06/2605.03637v1-bridging-the-embodiment-gap-disentangled-cross-embodiment-video-editing)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于复杂机器人操作的VLA框架，包含潜空间推理
-5. [Hydra-DP3: Frequency-Aware Right-Sizing of 3D Diffusion Policies for Visuomotor Control](/202605/05/2605.01581v1-hydra-dp3-frequency-aware-right-sizing-of-3d-diffusion-policies-for-visuomotor-control)  
+   evidence：从人类视频中学习机器人操作与表示学习
+5. [Parameter-Efficient Multi-View Proficiency Estimation: From Discriminative Classification to Generative Feedback](/202605/06/2605.03848v1-parameter-efficient-multi-view-proficiency-estimation-from-discriminative-classification-to-generative-feedback)  
    标签：评分：7.0/10、query:dexop
-   evidence：机器人操作中视觉运动控制的扩散策略
-6. [Reactive Motion Generation via Phase-varying Neural Potential Functions](/202605/05/2604.26450v1-reactive-motion-generation-via-phase-varying-neural-potential-functions)  
-   标签：评分：6.5/10、query:dexop
-   evidence：机器人操作任务的反应式运动生成
-7. [Agent-Centric Visual Reinforcement Learning under Dynamic Perturbations](/202605/05/2604.24661v1-agent-centric-visual-reinforcement-learning-under-dynamic-perturbations)  
+   evidence：在Ego-Exo4D数据集上的多视角熟练度评估
+6. [2D and 3D Grasp Planners for the GET Asymmetrical Gripper](/202605/06/2604.26212v1-2d-and-3d-grasp-planners-for-the-get-asymmetrical-gripper)  
    标签：评分：6.0/10、query:dexop
-   evidence：在扰动下基于视觉观测的以智能体为中心的视觉强化学习
-8. [STARRY: Spatial-Temporal Action-Centric World Modeling for Robotic Manipulation](/202605/05/2604.26848v2-starry-spatial-temporal-action-centric-world-modeling-for-robotic-manipulation)  
+   evidence：非对称夹持器的抓取规划器及操作实验
+7. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/06/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于机器人操作的时空世界建模，对齐视觉与动作
-9. [Borrowed Geometry: Computational Reuse of Frozen Text-Pretrained Transformer Weights Across Modalities](/202605/05/2605.00333v1-borrowed-geometry-computational-reuse-of-frozen-text-pretrained-transformer-weights-across-modalities)  
+   evidence：具有物理推理能力的复杂机器人操作VLA框架
+8. [Sentinel-VLA: A Metacognitive VLA Model with Active Status Monitoring for Dynamic Reasoning and Error Recovery](/202605/06/2605.01191v1-sentinel-vla-a-metacognitive-vla-model-with-active-status-monitoring-for-dynamic-reasoning-and-error-recovery)  
    标签：评分：6.0/10、query:dexop
-   evidence：在机器人操作任务上使用文本预训练Transformer权重取得SOTA成果
-10. [A Principled Approach for Creating High-fidelity Synthetic Demonstrations for Imitation Learning](/202605/05/2605.01232v1-a-principled-approach-for-creating-high-fidelity-synthetic-demonstrations-for-imitation-learning)  
+   evidence：具有主动状态监测的具身操作VLA模型
+9. [Embody4D: A Generalist 4D World Model for Embodied AI](/202605/06/2605.01799v1-embody4d-a-generalist-4d-world-model-for-embodied-ai)  
    标签：评分：6.0/10、query:dexop
-   evidence：为高接触性操作的模仿学习创建合成演示数据
-11. [Decompose and Recompose: Reasoning New Skills from Existing Abilities for Cross-Task Robotic Manipulation](/202605/05/2605.01448v1-decompose-and-recompose-reasoning-new-skills-from-existing-abilities-for-cross-task-robotic-manipulation)  
+   evidence：具身场景和空间推理的视频到视频世界模型
+10. [Phone2Act: A Low-Cost, Hardware-Agnostic Teleoperation System for Scalable VLA Data Collection](/202605/06/2605.01948v1-phone2act-a-low-cost-hardware-agnostic-teleoperation-system-for-scalable-vla-data-collection)  
    标签：评分：6.0/10、query:dexop
-   evidence：跨任务机器人操作与技能推理
+   evidence：用于可扩展VLA数据采集的低成本遥操作，包含多摄像头流
+11. [VILAS: A VLA-Integrated Low-cost Architecture with Soft Grasping for Robotic Manipulation](/202605/06/2605.02037v1-vilas-a-vla-integrated-low-cost-architecture-with-soft-grasping-for-robotic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于VLA策略学习和部署的机器人操作平台
 
 
 <div class="dpr-home-promo-card">

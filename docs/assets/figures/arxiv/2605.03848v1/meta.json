@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.03848v1/fig-001.webp",
+      "caption": "Figure 1: End-to-end architectures, both built on a TimeSformer backbone. (a) SkillFormer: LoRA-adapted backbone, CrossViewFusion, classification head. (b) ProfVLM: frozen backbone, AGP projector into a LoRAadapted SmolLM2-135M producing label and feedback.",
+      "page": 3,
+      "index": 1,
+      "width": 943,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2605.03848v1/fig-002.webp",
+      "caption": "Figure 2: Multi-view fusion modules. (a) CrossViewFusion: multi-head cross-attention, per-view scalar gates, adaptive self-calibration. (b) AGP: cross-view attention, mean-pooled fusion, per-token sigmoid gate, projection into the language-backbone embedding.",
+      "page": 3,
+      "index": 2,
+      "width": 943,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2605.03848v1/fig-003.webp",
+      "caption": "Table 3 Quality of the natural-language feedback produced by ProfVLM [6] (AGP variant) across view configurations. No prior work in proficiency estimation reports a comparable evaluation.",
+      "page": 4,
+      "index": 3,
+      "width": 951,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2605.03848v1/fig-004.webp",
+      "caption": "Table 1 Top-1 accuracy (%) on Ego-Exo4D. The rightmost column distinguishes discriminative classifiers, which predict a label through a classification head, from generative models, which produce the label as text. Bold: best; underline: second-best.",
+      "page": 4,
+      "index": 4,
+      "width": 856,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2605.03848v1/fig-005.webp",
+      "caption": "Table 2 Per-scenario top-1 accuracy (%) by view configuration. Bold: best per scenario; underline: second-best.",
+      "page": 4,
+      "index": 5,
+      "width": 758,
+      "height": 361
+    }
+  ]
+}

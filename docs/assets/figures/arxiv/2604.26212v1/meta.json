@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-001.webp",
+      "caption": "Fig. 1. (a) Using a single top-down RGB-D observation of an object, (b) the planner receives a 2D segmentation mask and point cloud, samples grasps, and computes grasp wrench space metrics. GET-2D-1.0 plans grasps on a 2D polygon footprint of the object and GET-3D-1.0 plans on a 3D mesh. (c) A UR5e robot arm equipped with the GET gripper executes the highestrated grasp.",
+      "page": 1,
+      "index": 1,
+      "width": 482,
+      "height": 710
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-002.webp",
+      "caption": "Fig. 3. Conceptual visualization of the Grasp Wrench Space (GWS) and the Ferrari-Canny metric (ε-distance) for a high-quality grasp (top) and a low-quality grasp (bottom). Gripper fingers appear as blue circles with each contact point marked by a red X. Torque normalized by object length is plotted along the vertical axis. The radius of the yellow ellipse is the Ferrari-Canny metric, and the red circle denotes the origin. A grasp is in force closure when the origin is contained in the interior of the GWS.",
+      "page": 2,
+      "index": 2,
+      "width": 487,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-003.webp",
+      "caption": "Fig. 4. (a) The 2D grasp planner begins by capturing an overhead RGB-D image of the object. (b) The object is converted to a binary mask via color thresholding. (c) The planner extracts the contours of the mask and uses the Teh-Chin and Ramer-Douglas-Peucker algorithms to transform the contours to a simplified polygon. (d) Then, the planner generates candidate grasps and evaluates their force closure, number of contacts made (n), and Ferrari-Canny metrics (ε) across multiple positional perturbations, and averages the results to obtain the force closure rate, average number of contacts made, and average epsilon metric. (e) The grasp scored highest by the metrics is chosen to be executed.",
+      "page": 3,
+      "index": 3,
+      "width": 1046,
+      "height": 253
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-004.webp",
+      "caption": "Fig. 5. GET-2D-1.0: The 2D grasp planner models the GET gripper using three equally sized circles shown in blue. From their resulting contact points and contact normals shown in red, the planner computes grasp wrench space metrics. The planner samples perturbed positions from the original candidate grasp and computes the percentage of those perturbed grasps in force closure and the average Ferrari-Canny metric across those positions. The grasp on the right is an example where the original candidate has a high Ferrari-Canny metric (0.13), but because the contacts are very close to sharp vertices, the metrics averaged over perturbed grasps are much lower. This causes a different grasp to be selected.",
+      "page": 4,
+      "index": 4,
+      "width": 1046,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-005.webp",
+      "caption": "Fig. 6. GET-3D-1.0: The planner samples a gripper pose parallel to an object face and casts rays from the contact surfaces to determine where the gripper will make contact with the mesh. The resulting contact points shown as red spheres are used to compute force closure and the FerrariCanny metric.",
+      "page": 4,
+      "index": 5,
+      "width": 510,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26212v1/fig-006.webp",
+      "caption": "Fig. 7. Experimental setup for evaluating grasp quality. (Left) Robot arm executes a dynamic shake test at 4.5π rad/s to verify stability. (Right) For grasps that survive the shake test, a digital force gauge measures resistance to an external force.",
+      "page": 5,
+      "index": 6,
+      "width": 504,
+      "height": 289
+    }
+  ]
+}

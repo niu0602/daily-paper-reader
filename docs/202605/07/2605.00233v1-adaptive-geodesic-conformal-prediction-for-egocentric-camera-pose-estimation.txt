@@ -1,0 +1,139 @@
+Title: Adaptive Geodesic Conformal Prediction for Egocentric Camera Pose Estimation
+
+URL Source: https://arxiv.org/pdf/2605.00233v1
+
+Published Time: Mon, 04 May 2026 00:14:45 GMT
+
+Number of Pages: 4
+
+Markdown Content:
+# Adaptive Geodesic Conformal Prediction for Egocentric Camera Pose Estimation 
+
+## Aishani Pathak Arizona State University 
+
+> ajpathak@asu.edu
+
+## Hasti Seifi Arizona State University 
+
+> hasti.seifi@asu.edu
+
+## Abstract 
+
+Egocentric pose estimation for Augmented Reality (AR) and assistive devices requires not just accurate predic-tions but guaranteed uncertainty regions. Conformal pre-diction (CP) provides such guarantees without retraining, but we show that standard CP with a single fixed thresh-old achieves nominal 90% overall coverage while cover-ing only ∼60% of the hardest 25% of frames (Q4) — a ∼30 percentage-point conditional coverage gap consis-tent across 12 participants, 3 predictors, and 3 horizons (108 evaluations) on EPIC-Fields. We further show that a geodesic SE(3) nonconformity score identifies physically harder frames than Euclidean scoring, with only 15–26% Q4 overlap and 2–3 × higher ground-truth camera dis-placement for geodesic Q4 frames. To close the coverage gap, we propose DINOv2-Bridge adaptive CP: a two-stage difficulty estimator trained on a single source participant that transfers cross-participant without any images at test time, improving Q4 coverage from ∼0.75 to ∼0.93 while maintaining overall coverage at the 90% target. 
+
+## 1. Introduction 
+
+Wearable cameras in AR glasses and assistive devices must know where they are pointing at every moment. This cam-era localization, called egocentric pose estimation, is essen-tial for AR systems to overlay guidance, track objects, and support real-time decision-making. For safety-critical ap-plications such as surgical assistance, industrial task guid-ance, and eldercare support, a single best-guess location is not enough. The system must also know how reliable that guess is. While some visual odometry (VO) methods pro-duce heuristic confidence scores or learned covariance es-timates, these lack formal statistical coverage guarantees: they do not ensure that the true pose falls within the reported uncertainty region with a specified probability. Conformal prediction (CP) [2, 12] addresses this by wrapping any pre-trained model with a distribution-free, model-agnostic un-certainty region — no retraining required — guaranteed to contain the true pose with probability at least 1 − α. CP first runs on a held-out calibration set to find a threshold ˆq at the 
+
+(1 − α) quantile of nonconformity scores (scalar prediction errors); at test time, it reports all outputs whose error falls below ˆq.CP has recently been applied to pose estimation across several domains. Yang and Pavone [14] apply CP to 6D ob-ject pose via keypoint prediction sets with Euclidean non-conformity scores, where keypoint uncertainty is translated into pose uncertainty by using the known geometric rela-tionship between image keypoints and the object’s 3D posi-tion. Yang and Pavone [15] extend this to geodesic uncer-tainty sets on SE(3) (the Lie group of rigid-body motions combining rotation and translation) for static object pose. Stutts et al. [9] present a conformalized VO framework for edge robotics using per degree-of-freedom Euclidean pre-diction intervals. Despite these advances, three critical gaps remain: (i) none address egocentric camera localization from continuous video; (ii) all evaluate only marginal cov-erage — the average guarantee over all test inputs, which can mask systematic failures on specific subgroups such as fast-moving frames — without examining whether cover-age holds for the hardest inputs specifically; and (iii) none consider cross-participant generalization, where a system must provide reliable uncertainty for people it has never cal-ibrated on. The choice of nonconformity score is an important factor in CP. Camera poses lie on SE(3), where Euclidean distance distorts true prediction error: a small Euclidean difference in rotation matrices can correspond to a large physical rota-tion. Amiri Shahbazi and Baheri [1] propose using geodesic distance for geomagnetic forecasting on S2 (the 2-sphere, manifold of unit-norm vectors in R3), but do not address SE(3) or cross-participant generalization. In this work, we apply split CP with a geodesic SE(3) nonconformity score to egocentric camera pose estimation on EPIC-Fields [11] and demonstrate the need for adaptive CP. Even with the geometrically correct score, a single fixed threshold — which we term standard CP — achieves nomi-nal 90% overall coverage but covers only ∼60% of the hard-est 25% of frames (Q4). This ∼30 percentage-point con-ditional coverage gap is consistent across 12 participants, 
+
+> arXiv:2605.00233v1 [cs.CV] 30 Apr 2026
+
+3 pose predictors, and 3 prediction horizons (108 evalua-tions), revealing that the failure is not a property of any particular predictor or score, but of using a single thresh-old across frames of wildly varying difficulty. We further show that geodesic and Euclidean Q4 frame sets overlap only 15–26% for feature-matching predictors, and geodesic Q4 frames have 2–3 × higher camera translation — confirm-ing geodesic scoring identifies physically harder frames. To close the gap, we propose adaptive CP for egocentric pose estimation. Standard CP assigns a single fixed thresh-old to every test input regardless of difficulty; adaptive CP instead assigns a per-frame difficulty-weighted threshold, expanding prediction regions for hard frames and shrink-ing them for easy ones. Implementing adaptive CP re-quires a per-frame difficulty score σi. We estimate σi via DINOv2-Bridge: a model trained on a single source partic-ipant (P01, 56K frames) that predicts frame difficulty from visual appearance using DINOv2 features, then distills this into pose-kinematic features for image-free inference at test time. We apply DINOv2-Bridge to the constant-velocity predictor because its residuals are driven by motion kine-matics — velocity and acceleration — which align natu-rally with the kinematic features the Bridge uses to esti-mate difficulty. DINOv2-Bridge improves coverage on the hardest frames (Q4) from ∼0.75 to ∼0.93 across two cross-participant splits, each with four unseen test participants, while maintaining overall coverage at the 90% target. 
+
+Contributions: (i) First characterization of the conditional coverage gap for egocentric SE(3) pose CP on EPIC-Fields — ∼30pp Q4 shortfall consistent across 12 participants, 3 predictors, 3 horizons (108 evaluations), with Q1–Q3 at nominal cov-erage and Q4 at ∼60%. 
+
+(ii) Geometric analysis showing geodesic SE(3) scoring cor-rectly identifies physically hard frames while Euclidean scoring does not, with only 15–26% Q4 overlap. 
+
+(iii) DINOv2-Bridge adaptive CP for the constant-velocity predictor, trained on one participant (P01, 56K frames), generalizing cross-participant without retraining and closing Q4 from ∼0.75 to ∼0.93. 
+
+## 2. Geodesic Conformal Prediction on SE(3) 
+
+Split conformal prediction. Let {(xi, y i)}ni=1 be a held-out calibration set where yi ∈ SE (3) is a ground-truth cam-era pose and ˆyi is the predictor’s estimate. Split CP com-putes a nonconformity score si = d(ˆ yi, y i) for each cali-bration point, where d is a distance function on the output space. The threshold is set as: 
+
+ˆq = Quantile 
+
+
+
+{si}ni=1 , ⌈(1 −α)( n+1) ⌉
+
+> n
+
+
+
+(1) At test time, the prediction set C(x) = {y : d(ˆ y, y ) ≤ ˆq}
+
+contains the true pose with probability at least 1 − α over the calibration randomness [2]. 
+
+Geodesic nonconformity score on SE(3). Standard CP ap-plied to pose estimation typically uses Euclidean or Frobe-nius distance as d, implicitly treating SE(3) as flat space. We instead use the geodesic distance on SE(3), which cor-rectly accounts for the Riemannian geometry of rotation: 
+
+dgeo (ˆ y, y ) = 
+
+q
+
+WR ∥ log( R⊤ ˆR)∥2 + WT ∥t − ˆt∥2 (2) where R, ˆR ∈ SO (3) are true and predicted rotations, t, ˆt ∈
+
+R3 are translations, log( ·) is the SO(3) logarithmic map, and 
+
+WR, W T are scale weights. This score correctly measures rotation error as arc length on the unit sphere rather than chord length in matrix space. 
+
+Adaptive CP via DINOv2-Bridge. Standard CP assigns the same threshold ˆq to every test input, regardless of diffi-culty. Following the normalized score approach of Romano et al. [8], we replace si with difficulty- weighted scores 
+
+˜si = si/σ i, where σi > 0 is a predicted difficulty for in-put i. The adaptive threshold ˜q is computed on {˜si} and applied as C(x) = {y : dgeo (ˆ y, y ) ≤ ˜q · σ}, yielding larger regions for hard inputs and smaller ones for easy inputs. We estimate σ via a two-stage Bridge: a DINOv2-MLP trained on a source participant (e.g., P01) maps visual features to difficulty scores, and a lightweight Bridge multilayer per-ceptron (MLP) learns to predict these difficulty scores from pose features alone, enabling difficulty estimation at test time without any image access. 
+
+## 3. Experiments 
+
+Setup. We evaluate on EPIC-Fields [11], which pro-vides ground-truth camera trajectories using COLMAP [7](Structure-from-Motion pipeline for multi-view 3D reconstruction) for EPIC-KITCHENS [3] participants recorded in kitchen environments. This benchmark is well-suited for our study because COLMAP provides millimeter-accurate ground-truth poses across diverse kitchen activi-ties, and the multi-participant structure enables both within-participant and cross-participant evaluation of generaliza-tion. We use 12 participants (P01–P12), 3 pose predic-tors namely, constant-velocity (const-vel), LightGlue [6], and MonoDepth2 [4] and 3 prediction horizons k ∈{10 , 20 , 30 } frames, with α = 0 .10 (targeting 90% cov-erage) throughout. 
+
+Evaluation protocol. We consider two settings. In the 
+
+within-participant setting (Sec. 3.1–3.2), each participant’s sequences are split chronologically: the first 50% form the calibration set and the last 50% form the test set. In the 
+
+cross-participant setting (Sec. 3.3), one participant’s full sequence is used for calibration and a disjoint set of par-ticipants forms the test set. 
+
+Q4 definition. For each predictor and participant, we com-pute the geodesic nonconformity score si = dgeo (ˆ yi, y i)Table 1. Within-participant Q4 coverage ( α = 0 .10 ). Target: 0.90. All 108 participant-predictor-prediction horizon combinations fall below target.                                                                                                                                    
+
+> k= 10 k= 20 k= 30
+> PLG MD2 CV LG MD2 CV LG MD2 CV
+> P01 0.628 0.591 0.589 0.626 0.582 0.588 0.641 0.593 0.591 P02 0.532 0.512 0.489 0.534 0.533 0.484 0.581 0.573 0.481 P03 0.614 0.675 0.615 0.614 0.688 0.621 0.615 0.677 0.627 P04 0.682 0.733 0.777 0.645 0.693 0.758 0.627 0.672 0.753 P05 0.500 0.494 0.409 0.502 0.486 0.475 0.472 0.478 0.510 P06 0.620 0.859 0.852 0.637 0.793 0.850 0.643 0.747 0.857 P07 0.631 0.611 0.576 0.609 0.608 0.571 0.592 0.591 0.573 P08 0.520 0.485 0.468 0.586 0.549 0.475 0.618 0.588 0.470 P09 0.591 0.555 0.431 0.593 0.571 0.432 0.591 0.567 0.442 P10 0.279 0.379 0.249 0.333 0.428 0.240 0.415 0.525 0.238 P11 0.640 0.678 0.693 0.632 0.661 0.695 0.631 0.655 0.681 P12 0.726 0.701 0.648 0.737 0.755 0.621 0.731 0.741 0.617
+> Mean 0.580 0.606 0.566 0.587 0.612 0.567 0.596 0.617 0.570
+
+(Eq. ?? ) on the test set and partition frames into quar-tiles by score magnitude. Q4 denotes the hardest 25% of frames meaning those with the largest geodesic nonconfor-mity score. We validate this computationally over all test frames: for each quartile we compute mean Euclidean cam-era displacement ∥ti −ti−1∥ from ground-truth EPIC-Fields trajectories, where ti is the ground-truth translation at frame 
+
+i. Q4 frames consistently exhibit higher displacement than Q1–Q3 frames across participants and predictors (e.g., P07: Q4 mean 1.69 vs. Q1–Q3 mean 0.70; P08: Q4 mean 3.70 vs. Q1–Q3 mean 2.04), confirming they correspond to fast, difficult camera motions. 
+
+3.1. Conditional Coverage Gap 
+
+Table 1 reports within-participant Q4 coverage for cam-era pose prediction across all 12 participants and 3 pre-dictors at the kth future frame ( k ∈ { 10 , 20 , 30 }). To in-vestigate whether the Q4 coverage gap is driven by partici-pants with inherently fast motion or is a universal failure of single-threshold CP, we stratify participants by motion level based on their median const-vel calibration score: High (median >50: P01, P06–P08, P10, P12) and Low ( <50: P02–P05, P09, P11). These thresholds are in the units of Eq. ?? and correspond to a natural gap in the distribution of per-participant median scores (Low group: 8.0–34.5; High group: 70.9–141.1). We define Standard CP as split CP with geodesic SE(3) nonconformity score and a single fixed threshold. This achieves nominal overall coverage ( ∼0.91) but fails consistently on Q4, with coverage ranging from 0.25 to 0.85 and never reaching the 0.90 target. Crucially, the gap is not specific to high-motion participants: it is uni-versal across all 108 participant-predictor-prediction hori-zon combinations, confirming it is a fundamental property of single-threshold CP rather than an artifact of any partic-ular predictor or motion regime. 
+
+3.2. Geodesic vs. Euclidean Scoring 
+
+We compare geodesic and Euclidean nonconformity scores across all 10 participants with available residuals, report-ing detailed coverage for a representative cross-participant split (cal=P06, test=P07+P08), chosen as the three highest-median-residual participants ( ˜s = 141 .1, 86.2, 112.7 re-spectively). The two scores identify systematically different hard frames: geodesic and Euclidean Q4 sets disagree 74–75% of the time across participants for both LightGlue and Mon-oDepth2. To determine which set corresponds to genuinely hard frames, we measure mean ground-truth displacement 
+
+∥ti − ti−1∥. Geodesic Q4 frames have 2–3 × larger dis-placement than Euclidean Q4 frames (P07: 1.69 vs. 0.57, P08: 3.70 vs. 2.32), confirming that geodesic scoring iden-tifies physically hard frames while Euclidean scoring does not. Consequently, geodesic CP achieves Q4 coverage of 0.873 vs. Euclidean CP’s 0.704 for LightGlue at k = 10 ;results for k = 20 , 30 follow the same trend (Table 2). 
+
+> Table 2. Cross-participant Q4 coverage: geodesic vs. Euclidean (cal=P06, test=P07+P08). Q4 defined by each score’s own residu-als.
+
+k = 10 k = 20 k = 30 
+
+Predictor Geo Euc Geo Euc Geo Euc 
+
+LightGlue 0.873 0.705 0.833 0.700 0.807 0.701 MonoDepth2 0.605 0.524 0.567 0.550 0.565 0.553 Const-vel 0.647 0.647 0.639 0.638 0.633 0.632 3.3. Adaptive CP via DINOv2-Bridge 
+
+We replace the single fixed threshold of standard CP with a per-frame difficulty-weighted threshold, adapt-ing Amiri Shahbazi and Baheri [1] from S2 to SE(3) egocentric pose with the additional challenge of cross-participant generalization: the difficulty estimator must transfer to unseen participants without any RGB frames at deployment time. We estimate per-frame difficulty σ via a two-stage pipeline. Kinematic features alone are an incomplete dif-ficulty signal: a frame can have slow motion yet be vi-sually unlocalizeable due to reflective surfaces or texture-poor regions. Stage 1 (DINOv2-MLP) maps RGB frames to predicted geodesic nonconformity score magnitude ˆs,trained on P01 (56K frames) at k = 10 ; the learned sig-nal generalizes across horizons since visual difficulty is a property of the frame, not the prediction horizon. Stage 2 (Bridge MLP) distills this into 20-dim kinematic pose fea-tures (velocity, acceleration, higher-order motion statistics), enabling image-free difficulty estimation on unseen partici-pants at test time. We evaluate on the constant-velocity predictor, as kine-matic residuals align naturally with the Bridge’s input fea-tures; extension to LightGlue and MonoDepth2 is left to fu-ture work. Table 3 shows Bridge closes Q4 from 0.73–0.78 to 0.88–0.93 across both splits and all k, while maintaining overall coverage at the 90% target. 
+
+Table 3. Adaptive CP results (const-vel, α = 0 .10 , Train=P01). Overall (Ovr) and Q4 coverage. Bridge (ours). 
+
+k = 10 k = 20 k = 30 
+
+Method Ovr Q4 Ovr Q4 Ovr Q4 
+
+Cal=P06, Test=P07, P08, P10, P12 
+
+Std CP 0.938 0.751 0.935 0.738 0.932 0.728 Bridge (ours) 0.935 0.929 0.931 0.924 0.927 0.893 
+
+Cal=P10, Test=P06, P07, P08, P12 
+
+Std CP 0.939 0.754 0.942 0.768 0.945 0.780 Bridge (ours) 0.929 0.934 0.934 0.928 0.945 0.879 
+
+## 4. Discussion 
+
+Limitations & Future Work. DINOv2-Bridge is evalu-ated only on the constant-velocity predictor; extending to LightGlue and MonoDepth2 is non-trivial due to residual scale mismatch and remains future work. Bridge also re-lies on P01 as sole training source, and performance may vary with different participants or environments. Natu-ral extensions include applying Bridge to stronger pre-dictors (DROID-SLAM [10], MAC-VO [13]) and eval-uating on Ego-Exo4D [5] for cross-domain generaliza-tion. 
+
+## References 
+
+[1] Marzieh Amiri Shahbazi and Ali Baheri. Geometry-aware uncertainty quantification via conformal prediction on man-ifolds. arXiv:2602.16015 , 2026. 1, 4 [2] Anastasios N. Angelopoulos and Stephen Bates. A gentle in-troduction to conformal prediction and distribution-free un-certainty quantification. Foundations and Trends in Machine Learning , 16(4):494–591, 2023. 1, 2 [3] Dima Damen, Hazel Doughty, Giovanni Maria Farinella, et al. Rescaling egocentric vision: Collection, pipeline and challenges for EPIC-KITCHENS-100. International Journal of Computer Vision , 130:33–55, 2022. 2 [4] Cl´ ement Godard, Oisin Mac Aodha, Michael Firman, and Gabriel Brostow. Digging into self-supervised monocular depth estimation. In ICCV , 2019. 2 [5] Kristen Grauman, Andrew Westbury, et al. Ego-Exo4D: Understanding skilled human activity from first- and third-person perspectives. In CVPR , 2024. 4 [6] Philipp Lindenberger, Paul-Edouard Sarlin, and Marc Polle-feys. LightGlue: Local feature matching at light speed. In 
+
+ICCV , 2023. 2 [7] Linfei Pan, D´ aniel Bar´ ath, Marc Pollefeys, and Johannes L. Sch¨ onberger. Global structure-from-motion revisited, 2024. 2[8] Yaniv Romano, Evan Patterson, and Emmanuel Cand` es. Conformalized quantile regression. In NeurIPS , 2019. 2 [9] Alex C. Stutts, Danilo Erricolo, Theja Tulabandhula, and Amit Ranjan Trivedi. Lightweight, uncertainty-aware con-formalized visual odometry. In CVPR Workshops , 2023. 1 [10] Zachary Teed and Jia Deng. DROID-SLAM: Deep visual SLAM for monocular, stereo, and RGB-D cameras. In 
+
+NeurIPS , 2021. 4 [11] Vadim Tschernezki, Ahmad Sherburn, Andrew J. Davison, and Dima Damen. EPIC-Fields: Marrying 3D geometry and video understanding. In NeurIPS , 2023. 1, 2 [12] Vladimir Vovk, Alex Gammerman, and Glenn Shafer. Algo-rithmic Learning in a Random World . Springer, 2005. 1 [13] Yuheng Wang et al. MAC-VO: Metrics-aware covariance for learning-based stereo visual odometry. In ICRA , 2025. 4 [14] Heng Yang and Marco Pavone. Object pose estimation with statistical guarantees: Conformal keypoint detection and ge-ometric uncertainty propagation. In CVPR , pages 8947– 8958, 2023. 1 [15] Heng Yang and Marco Pavone. CLOSURE: Fast quantifi-cation of pose uncertainty sets. In Robotics: Science and Systems , 2024. 1

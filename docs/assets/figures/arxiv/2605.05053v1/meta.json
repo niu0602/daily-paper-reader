@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.05053v1/fig-001.webp",
+      "caption": "Fig. 1: (a) The bunny presses against a soft elastomer, deforming its surface under illumination from multiple LEDs. The camera beneath captures modulated RGB reflections, encoding high-resolution 3D contact geometry. (b) Our method reconstructs fine-scale surface details, such as hair-like textures on a 3D bunny model, directly from our reduced-order model, achieving high tactile geometric fidelity. (c) Our physical experiment contains a UR5e robot with a GelSight Mini sensor that contacts the bunny, enabling direct validation of simulation accuracy against real-world tactile data.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05053v1/fig-002.webp",
+      "caption": "Fig. 2: This figure illustrates our pipeline. The top row depicts the transformation from a high-dimensional full-space MPM simulation (left, red particles) to a low-dimensional subspace representation, and then back to a sample of the reduced-order model (ROM) MPM simulation. The bottom row demonstrates the tactile rendering process: when a complex surface is pressed against an elastomer, our method generates deformation maps at varying force levels.",
+      "page": 2,
+      "index": 2,
+      "width": 529,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05053v1/fig-003.webp",
+      "caption": "Fig. 3: Comparison of Gelsight press simulation results. We present an evaluation of Tacchi [9], TacIPC [7], and our proposed method under identical pressure conditions and equivalent element counts, while the red model is the input complex surface. Our simulation results demonstrate superior fidelity in capturing the complex surface morphology, outperforming previous work.",
+      "page": 3,
+      "index": 3,
+      "width": 529,
+      "height": 565
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05053v1/fig-004.webp",
+      "caption": "Fig. 4: We denote the input complex surface geometry in white and render tactile depth maps using Tacchi, TacIPC, and our reducedorder neural method. While Tacchi [9] and TacIPC [7] suffer from smoothing artifacts and loss of fine-scale features (e.g., wrinkles, ridges), our approach preserves high fidelity details, even from a low-dimensional latent state. Crucially, it generates realistic tactile images directly via learned geometric reconstruction, eliminating the need for full-resolution MPM simulation.",
+      "page": 4,
+      "index": 4,
+      "width": 529,
+      "height": 242
+    }
+  ]
+}

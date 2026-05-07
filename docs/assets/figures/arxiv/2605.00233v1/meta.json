@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.00233v1/fig-001.webp",
+      "caption": "Table 1. Within-participant Q4 coverage (α = 0.10). Target: 0.90. All 108 participant-predictor-prediction horizon combinations fall below target.",
+      "page": 3,
+      "index": 1,
+      "width": 594,
+      "height": 388
+    }
+  ]
+}

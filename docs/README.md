@@ -6,64 +6,73 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-07
-- 运行时间：2026-05-07 20:05:24 UTC
+- 最新运行日期：2026-05-08
+- 运行时间：2026-05-08 20:07:50 UTC
 - 运行状态：成功
-- 本次总论文数：14
-- 精读区：3
+- 本次总论文数：17
+- 精读区：6
 - 速读区：11
 
 ### 今日简报（AI）
-今日聚焦多模态行动模型与自适应推理，精读与速读共 14 篇论文。  
-重点关注 RLDX-1 技术报告及 LaST-R1 系列在强化动作与物理潜变量方面的进展。  
-建议读者后续深入了解 VLA 模型在实时计算与自主控制方向的应用前景。
-- 详情：[/202605/07/README](/202605/07/README)
+1) 今日聚焦机器人智能操作与动作生成，共完成 17 篇论文研读。  
+2) 最突出成果来自《DexSynRefine》和《RLDX-1》，前者显著提升人机交互动作的物理可行性，后者巩固Dex手技术体系。  
+3) 建议读者关注机器人自主操作与多模态奖励对齐的最新趋势，洞察下一代具身智能的突破。
+- 详情：[/202605/08/README](/202605/08/README)
 
 ### 精读区论文标签
-1. [RLDX-1 Technical Report](/202605/07/2605.03269v1-rldx-1-technical-report)  
-   标签：评分：9.5/10、query:dexop
-   evidence：使用物理传感的通用灵巧操作机器人策略
-2. [RLDX-1 Technical Report](/202605/07/2605.03269v2-rldx-1-technical-report)  
+1. [DexSynRefine: Synthesizing and Refining Human-Object Interaction Motion for Physically Feasible Dexterous Robot Actions](/202605/08/2605.05925v1-dexsynrefine-synthesizing-and-refining-human-object-interaction-motion-for-physically-feasible-dexterous-robot-actions)  
+   标签：评分：10.0/10、query:dexop
+   evidence：从人机交互数据中学习灵巧操作
+2. [RLDX-1 Technical Report](/202605/08/2605.03269v1-rldx-1-technical-report)  
    标签：评分：9.0/10、query:dexop
-   evidence：用于灵巧操作的通用机器人策略，集成了异构模态
-3. [Reduced-order Neural Modeling with Differentiable Simulation for High-Detail Tactile Perception](/202605/07/2605.05053v1-reduced-order-neural-modeling-with-differentiable-simulation-for-high-detail-tactile-perception)  
+   evidence：集成异构模态的灵巧操作机器人策略
+3. [DexSim2Real: Foundation Model-Guided Sim-to-Real Transfer for Generalizable Dexterous Manipulation](/202605/08/2605.05241v1-dexsim2real-foundation-model-guided-sim-to-real-transfer-for-generalizable-dexterous-manipulation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：通用灵巧操作的仿真到现实迁移
+4. [EgoEMG: A Multimodal Egocentric Dataset with Bilateral EMG and Vision for Hand Pose Estimation](/202605/08/2605.05712v1-egoemg-a-multimodal-egocentric-dataset-with-bilateral-emg-and-vision-for-hand-pose-estimation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：包含视觉和肌电信号的多模态第一视角手部姿态估计数据集
+5. [VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids](/202605/08/2605.01518v3-vofa-visual-object-goal-pushing-with-force-adaptive-control-for-humanoids)  
    标签：评分：8.0/10、query:dexop
-   evidence：触觉感知是神经建模灵巧操作的关键
+   evidence：类人机器人操作的车载第一视角感知
+6. [MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware](/202605/08/2605.05945v1-mobileego-anywhere-open-infrastructure-for-long-horizon-egocentric-data-on-commodity-hardware)  
+   标签：评分：8.0/10、query:dexop
+   evidence：长程第一视角数据的基础设施
 
 ### 速读区论文标签
-1. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/07/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
+1. [LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning](/202605/08/2604.28192v3-last-r1-reinforcing-robotic-manipulation-via-adaptive-physical-latent-reasoning)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于复杂机器人操作且具有潜空间推理的VLA模型
-2. [LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning](/202605/07/2604.28192v2-last-r1-reinforcing-robotic-manipulation-via-adaptive-physical-latent-reasoning)  
+   evidence：通过VLA模型中的潜空间推理增强机器人操作
+2. [RoboAlign-R1: Distilled Multimodal Reward Alignment for Robot Video World Models](/202605/08/2605.03821v1-roboalign-r1-distilled-multimodal-reward-alignment-for-robot-video-world-models)  
    标签：评分：7.0/10、query:dexop
-   evidence：通过潜空间推理进行机器人操作的强化学习
-3. [VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model](/202605/07/2605.01194v1-vla-attc-adaptive-test-time-compute-for-vla-models-with-relative-action-critic-model)  
+   evidence：包含1万个机器人操作视频指令对的基准测试
+3. [TriRelVLA: Triadic Relational Structure for Generalizable Embodied Manipulation](/202605/08/2605.05714v1-trirelvla-triadic-relational-structure-for-generalizable-embodied-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：具有自适应测试时计算的具身操作VLA模型
-4. [ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved Robot Manipulation](/202605/07/2605.02347v1-shapegrasp-simultaneous-visuo-haptic-shape-completion-and-grasping-for-improved-robot-manipulation)  
+   evidence：具身操作中的物体-手-任务关系结构
+4. [RobotEQ: Transitioning from Passive Intelligence to Active Intelligence in Embodied AI](/202605/08/2605.06234v1-roboteq-transitioning-from-passive-intelligence-to-active-intelligence-in-embodied-ai)  
    标签：评分：7.0/10、query:dexop
-   evidence：机器人操作中的视触觉形状补全与抓取
-5. [Pro$^2$Assist: Continuous Step-Aware Proactive Assistance with Multimodal Egocentric Perception for Long-Horizon Procedural Tasks](/202605/07/2605.04227v1-pro2assist-continuous-step-aware-proactive-assistance-with-multimodal-egocentric-perception-for-long-horizon-procedural-tasks)  
-   标签：评分：7.0/10、query:dexop
-   evidence：利用AR眼镜进行多模态第一视角感知以处理程序性任务
-6. [From Reach to Insert: Tactile-Augmented Precision Assembly under Sub-Millimeter Tolerances](/202605/07/2605.04649v1-from-reach-to-insert-tactile-augmented-precision-assembly-under-sub-millimeter-tolerances)  
-   标签：评分：7.0/10、query:dexop
-   evidence：触觉增强的精密装配与操作
-7. [Atomic-Probe Governance for Skill Updates in Compositional Robot Policies](/202605/07/2604.26689v2-atomic-probe-governance-for-skill-updates-in-compositional-robot-policies)  
-   标签：评分：6.5/10、query:dexop
-   evidence：robosuite操作任务和双臂插孔任务
-8. [Uni-HOI:A Unified framework for Learning the Joint distribution of Text and Human-Object Interaction](/202605/07/2604.27491v1-uni-hoia-unified-framework-for-learning-the-joint-distribution-of-text-and-human-object-interaction)  
+   evidence：包含1900张第一视角图像的具身类别数据集
+5. [PRTS: A Primitive Reasoning and Tasking System via Contrastive Representations](/202605/08/2604.27472v1-prts-a-primitive-reasoning-and-tasking-system-via-contrastive-representations)  
    标签：评分：6.0/10、query:dexop
-   evidence：学习人机交互和运动分布的统一框架
-9. [MotuBrain: An Advanced World Action Model for Robot Control](/202605/07/2604.27792v1-motubrain-an-advanced-world-action-model-for-robot-control)  
+   evidence：通过目标条件强化学习实现机器人控制的VLA基础模型
+6. [LaST-R1: Reinforcing Action via Adaptive Physical Latent Reasoning for VLA Models](/202605/08/2604.28192v1-last-r1-reinforcing-action-via-adaptive-physical-latent-reasoning-for-vla-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：扩展到异构多模态数据，如跨具身机器人数据
-10. [Adaptive Geodesic Conformal Prediction for Egocentric Camera Pose Estimation](/202605/07/2605.00233v1-adaptive-geodesic-conformal-prediction-for-egocentric-camera-pose-estimation)  
+   evidence：用于复杂机器人操作的VLA模型与强化学习
+7. [LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning](/202605/08/2604.28192v2-last-r1-reinforcing-robotic-manipulation-via-adaptive-physical-latent-reasoning)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于AR和辅助设备的视角相机位姿估计
-11. [Robotic Desk Organization: A Multi-Primitive Approach to Manipulating Heterogeneous Objects via Environmental Constraints](/202605/07/2605.02135v1-robotic-desk-organization-a-multi-primitive-approach-to-manipulating-heterogeneous-objects-via-environmental-constraints)  
+   evidence：通过自适应物理潜空间推理强化机器人操作
+8. [Sentinel-VLA: A Metacognitive VLA Model with Active Status Monitoring for Dynamic Reasoning and Error Recovery](/202605/08/2605.01191v1-sentinel-vla-a-metacognitive-vla-model-with-active-status-monitoring-for-dynamic-reasoning-and-error-recovery)  
    标签：评分：6.0/10、query:dexop
-   evidence：通过环境约束操作异构物体
+   evidence：具有主动状态监控的具身操作VLA模型
+9. [VLA-ATTC: Adaptive Test-Time Compute for VLA Models with Relative Action Critic Model](/202605/08/2605.01194v1-vla-attc-adaptive-test-time-compute-for-vla-models-with-relative-action-critic-model)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于具身操作的VLA模型
+10. [Good in Bad (GiB): Sifting Through End-user Demonstrations for Learning a Better Policy](/202605/08/2605.01529v1-good-in-bad-gib-sifting-through-end-user-demonstrations-for-learning-a-better-policy)  
+   标签：评分：6.0/10、query:dexop
+   evidence：从非专家演示中进行机器人技能的模仿学习
+11. [ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](/202605/08/2605.05126v1-consisvla-4d-advancing-spatiotemporal-consistency-in-efficient-3d-perception-and-4d-reasoning-for-robotic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：机器人操作中的跨视图物体语义一致性
 
 
 <div class="dpr-home-promo-card">

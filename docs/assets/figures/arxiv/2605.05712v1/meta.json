@@ -1,0 +1,158 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-001.webp",
+      "caption": "Figure 4: EMGFormer architecture for EMG-to-pose. Bilateral EMG is encoded by a TDS-style temporal convolutional frontend, decoded by a Transformer with RoPE positional encoding, and projected to joint angles including wrist articulation.",
+      "page": 6,
+      "index": 1,
+      "width": 617,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-002.webp",
+      "caption": "Figure 12: Per-gesture vision-only vs. fusion MAE on EgoEMG (F-RN18+S). Each point is one gesture class; point size reflects sample count; color indicates the semantic gesture family. The diagonal marks parity; points below the diagonal indicate fusion improvement. Top-4 most-improved gestures and the most notably worsened gestures are annotated.",
+      "page": 26,
+      "index": 2,
+      "width": 446,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-003.webp",
+      "caption": "Figure 13: Fusion benefit as a function of hand self-occlusion on the EgoEMG test set (17,168 samples, stride reduced to 1 4 of the evaluation window for denser coverage). (a) Mean joint-angle MAE of vision-only and EMG+Vision fusion across fixed-width (0.05) occlusion bins. The annotated ∆ values indicate the fusion gain at the lowest and highest occlusion bins. (b) Per-bin fusion gain (∆ = MAEvision − MAEfusion) with LOESS trend line (Spearman ρ = 0.049, p = 0.001). Error bands in (a) and the trend confidence in (b) denote ±1 SEM.",
+      "page": 26,
+      "index": 3,
+      "width": 706,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-004.webp",
+      "caption": "Table 4: Complete gesture vocabulary of EgoEMG (60 classes) with per-gesture descriptions.",
+      "page": 15,
+      "index": 4,
+      "width": 736,
+      "height": 1185
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-005.webp",
+      "caption": "Figure 11: Mesh reprojection and visualization of UmeTrack and MANO mesh reconstruction on EgoEMG. The reconstructed MANO meshes (from markers2mano) are overlaid on egocentric RGB frames, demonstrating accurate hand pose reconstruction and realistic mesh-to-image alignment.",
+      "page": 21,
+      "index": 5,
+      "width": 748,
+      "height": 471
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-006.webp",
+      "caption": "Figure 6: EMG+vision fusion baseline. Vision branch predicts yv; EMG branch predicts residual ∆yemg (zero-initialized head).",
+      "page": 7,
+      "index": 6,
+      "width": 655,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-007.webp",
+      "caption": "Table 8: Vision backbone configuration. All models take 256× 256 center-frame crops as input and are evaluated on the same 22-DoF center-frame target. Generic ResNet/ViT models share the same MLP prediction head; WiLoR uses its native hand-pose backbone with a 22-DoF regression head.",
+      "page": 22,
+      "index": 7,
+      "width": 577,
+      "height": 217
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-008.webp",
+      "caption": "Figure 1: Data collection setup for EgoEMG. Bilateral EMG wristbands, head-mounted egocentric RGB, external ZED 2i RGB-D, and optical motion capture with hand markers for pose labels.",
+      "page": 3,
+      "index": 8,
+      "width": 660,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-009.webp",
+      "caption": "Figure 10: Composition of the markers2mano training data. Left: original frame counts of 11 public datasets (log scale), spanning 76K to 183M frames. Each dataset is assigned a sampling ratio by scale tier—0.14% (GigaHand, 100M+), 1.5% (1M+), or 15–20% (100K+)—shown as annotations. Right: target distribution of the training mixture after applying the tiered sampling ratios, yielding approximately 0.7M training meshes.",
+      "page": 18,
+      "index": 9,
+      "width": 739,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-010.webp",
+      "caption": "Table 9: Per-hand EMG-to-pose MAE on EgoEMG. MAE is reported in degrees; lower is better. Left and right hands are processed independently with shared model weights, and left-hand EMG is mirrored to the right-hand convention. Rows are grouped by method family; shaded rows highlight EMGFormer variants.",
+      "page": 23,
+      "index": 10,
+      "width": 340,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-011.webp",
+      "caption": "Table 3: Vision-only and EMG+vision fusion results on EgoEMG. MAE is reported in degrees; lower is better. Subscripts denote standard deviation across users. Avg is the per-sample weighted mean MAE across all test splits. Shaded rows highlight EMG+vision fusion baselines. Bold indicates the better result within each matched vision-only/fusion pair. Underlines mark the strongest generic vision-only backbone.",
+      "page": 8,
+      "index": 11,
+      "width": 522,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-012.webp",
+      "caption": "Table 1: Comparison of EgoEMG with representative public EMG datasets. “EMG Ch.” counts total channels across both wrists (per-wrist×2 for bilateral datasets); “Bilateral” indicates dual-wrist EMG capture; “Wrist labels” indicates explicit wrist articulation labels; “Pose labels” indicates continuous hand pose annotations.",
+      "page": 4,
+      "index": 12,
+      "width": 660,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-013.webp",
+      "caption": "Figure 2: Representative synchronized samples from EgoEMG. Each row (3.9 s window) shows GT hand pose, bilateral EMG, egocentric RGB at window center, and external RGB-D.",
+      "page": 4,
+      "index": 13,
+      "width": 656,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-014.webp",
+      "caption": "Table 15: Full per-gesture modality breakdown on EgoEMG using F-RN18+S fusion. MAE is in degrees. ∆ = MAEvis −MAEfus. Gestures are grouped by family and sorted by descending ∆ within each family. Gesture descriptions are provided in Appendix A.1.",
+      "page": 27,
+      "index": 14,
+      "width": 394,
+      "height": 1106
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-015.webp",
+      "caption": "Table 11: EMG-only baseline results on EMG2Pose test splits. MAE is reported in degrees; lower is better. EMGFormer values report per-user mean ± standard deviation across users (n=158 for Stage, n=20 for User and User+Stage). † Numbers reported in the original papers; all evaluated on the full dataset. ‡Evaluated on a 12-subject subset of EMG2Pose (12/27 stages); not directly comparable to full-dataset results. Shaded rows highlight EMGFormer variants; bold indicates the best EMGFormer value per column.",
+      "page": 24,
+      "index": 15,
+      "width": 668,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-016.webp",
+      "caption": "Figure 7: Qualitative comparison on EgoEMG. The fused model (green) recovers articulation closer to GT under motion blur, self-occlusion, and depth ambiguity.",
+      "page": 9,
+      "index": 16,
+      "width": 582,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-017.webp",
+      "caption": "Table 6: Complete 22-DoF joint angle target semantics. Each dimension is reported in degrees. FE = flexion/extension, AA = abduction/adduction. Indices 0–3 cover the thumb, 4–7 the index finger, 8–11 the middle finger, 12–15 the ring finger, and 16–19 the pinky.",
+      "page": 20,
+      "index": 17,
+      "width": 318,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-018.webp",
+      "caption": "Figure 3: (a) MANO shape diversity across EgoEMG participants (82 hands). (b) Evaluation splits on the participant–gesture matrix (Train, Gesture/User/Both).",
+      "page": 5,
+      "index": 18,
+      "width": 814,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05712v1/fig-019.webp",
+      "caption": "Table 5: Per-dimension MANO shape coefficient statistics across EgoEMG participants. MANO shape parameters are PCA-derived and have no fixed semantic interpretation.",
+      "page": 16,
+      "index": 19,
+      "width": 590,
+      "height": 276
+    }
+  ]
+}

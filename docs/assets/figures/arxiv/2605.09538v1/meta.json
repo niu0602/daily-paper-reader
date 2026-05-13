@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-001.webp",
+      "caption": "Figure 3. Qualitative comparisons on (1) reconstruction and resimulation, and (2) future prediction. Yellow circles indicate regions where object simulations are less accurately aligned with the ground-truth observations or with the interacting hand contacts. Compared to all the baselines, our method produces more accurate object simulations. More qualitative results are provided in the supplementary video.",
+      "page": 7,
+      "index": 1,
+      "width": 881,
+      "height": 970
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-002.webp",
+      "caption": "Figure 5. Captured sequences in PhysTwin (Jiang et al., 2025) and DENSEHDI. The sequences in DENSEHDI feature denser hand–object contacts.",
+      "page": 14,
+      "index": 2,
+      "width": 1004,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-003.webp",
+      "caption": "Figure 1. PHYSHANDI models physically plausible hand–deformable object interactions. In our interaction model, each hand is represented by the MANO model (Romero et al., 2017), and each object is represented by a spring–mass model (Liu et al., 2013). Their interaction is modeled by simulating object deformations driven by interaction forces derived from the reconstructed 3D hand motions. Our interaction model can be learned from sparse-view RGB-D videos through three stages: (1) hand reconstruction, (2) object reconstruction, and (3) hand refinement.",
+      "page": 3,
+      "index": 3,
+      "width": 860,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-004.webp",
+      "caption": "Table 4. Robustness analysis under perturbations applied to depth input, CoTracker (Karaev et al., 2024) trajectories, and hand-pose controller parameters. We compare PhysTwin (Jiang et al., 2025) and our method under the same settings. Values in parentheses denote performance changes relative to the clean-input baseline.",
+      "page": 8,
+      "index": 4,
+      "width": 492,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-005.webp",
+      "caption": "Table 10. Sensitivity to initial hyperparameters used in the zero-order optimization of the object reconstruction stage on the double_stretch_sloth sequence (reconstruction and resimulation with multi-view RGB-D inputs). Row B is our default setting. Rows C–E vary the initial connection radius δ while fixing dmax = 3; rows F–H vary the initial maximum number of connected nodes dmax while fixing δ = 0.002. Our method remains robust within a reasonable range of initial values.",
+      "page": 17,
+      "index": 5,
+      "width": 691,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-006.webp",
+      "caption": "Figure 4. Comparisons in reconstructed spring–mass model topology and force. (1) Topology reconstruction. PhysTwin (Jiang et al., 2025)’s sparser hand points tend to result in excessively long virtual spring lengths to maintain contact coverage, whereas ours based on dense hand points precisely localizes contacts without unnecessary spring elongation—considered a more optimal topology in prior works (Silling & Askari, 2005; Silling et al., 2007; Wang et al., 2023a). (2) Control force visualization. PhysTwin’s broader spring coverage disperses forces across non-contact regions, whereas ours concentrates forces at the actual contact, favoring local, detailed manipulation. Visualization key. Yellow line segments depict virtual-springs Evirtual. Blue spheres denote object nodes N and red spheres denote control nodes V ′. Red arrows visualize control-force vectors induced on object nodes by virtual springs.",
+      "page": 9,
+      "index": 6,
+      "width": 950,
+      "height": 464
+    },
+    {
+      "url": "assets/figures/arxiv/2605.09538v1/fig-007.webp",
+      "caption": "Table 7. Per-sequence CDdyn comparison on representative sequences from the PhysTwin-full dataset (Jiang et al., 2025). Results are reported for reconstruction and resimulation with multi-view RGB-D inputs. CDdyn is measured in millimeters.",
+      "page": 16,
+      "index": 7,
+      "width": 823,
+      "height": 182
+    }
+  ]
+}

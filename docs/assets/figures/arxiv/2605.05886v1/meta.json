@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.05886v1/fig-001.webp",
+      "caption": "Figure 3: Details of visual prompt in ContactPrompt. The visual prompt consists of hand part indices and part-wise vertex grids. Hand part indices associate each region with its numeric label. The vertex grid shows row structure, where each row starts with a dot, vertices are connected by lines, and consecutive rows are linked to indicate sequential ordering between rows of the grid.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 320
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05886v1/fig-002.webp",
+      "caption": "Figure 1: Overall pipeline of ContactPrompt. Given an input image I and text prompt T(0), we first perform free-form reasoning with MLLMs to produce a global interaction description z. Next, part-level contact prediction is performed using I, z, a text prompt T(1), and hand part segmentation Spart to obtain predicted contact parts P̂ . Moreover, dense vertex-level contact is estimated by providing I, T(2), P̂ , z, the full visual prompt Sfull, and the part-wise vertex grid specification QP̂ , producing part-wise grid outputs Ĝ. Lastly, the output Ĝ is mapped to final dense hand contact map.",
+      "page": 3,
+      "index": 2,
+      "width": 816,
+      "height": 320
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05886v1/fig-003.webp",
+      "caption": "Figure 4: Qualitative comparison of dense hand contact estimation with BSTRO [18], DECO [36], HACO [19] on MOW [5] dataset. We emphasize exemplar regions, where ContactPrompt outperforms previous methods, in red circles.",
+      "page": 8,
+      "index": 3,
+      "width": 825,
+      "height": 440
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05886v1/fig-004.webp",
+      "caption": "Figure 2: Comparison of hand part segmentation definition with DIGIT [7]. Our ContactPrompt provides more detailed hand part segmentation that is aligned with the function of hand parts.",
+      "page": 5,
+      "index": 4,
+      "width": 820,
+      "height": 295
+    }
+  ]
+}

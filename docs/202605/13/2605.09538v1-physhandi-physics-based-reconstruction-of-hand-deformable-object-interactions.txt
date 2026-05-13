@@ -1,0 +1,571 @@
+Title: PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions
+
+URL Source: https://arxiv.org/pdf/2605.09538v1
+
+Published Time: Tue, 12 May 2026 01:36:28 GMT
+
+Number of Pages: 18
+
+Markdown Content:
+# PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+Jihyun Lee * 1 Changmin Lee * 1 Donghwan Kim 1 Tae-Kyun Kim 1
+
+## Abstract 
+
+While existing methods for reconstructing hand–object interactions have made impressive progress, they either focus on rigid or part-wise rigid objects—limiting their ability to model real-world objects (e.g., cloth, stuffed animals) that exhibit highly non-rigid deformations—or model deformable objects without full 3D hand reconstruction. To bridge this gap, we present PHYS HAN DI ( Phys ics-based Reconstruction of 
+
+Hand and Deformable Object Interactions), a framework that enables full 3D reconstruction of both interacting hands and non-rigid objects. Our key idea is to physically simulate object de-formations driven by forces induced from densely reconstructed 3D hand motions, ensuring that the reconstructed object dynamics are both physically plausible and coherent with the interacting hand movements. Furthermore, we demonstrate that such simulation of object deformations can, in turn, refine and improve hand reconstruction via inverse physics. In experiments, P HYS HAN DI outperforms the state-of-the-art baseline across reconstruction and future prediction. 
+
+## 1. Introduction 
+
+The hand is our primary tool for interacting with objects, enabling a wide range of everyday object manipulation tasks (e.g., picking up a cell phone, folding clothes). Effective modeling of such hand–object interactions in 3D is cru-cial for enabling machines to perceive and reason about human actions, which in turn is important for applications such as immersive AR/VR experiences, robot learning from human demonstrations, and teleoperation. Owing to this im-portance, numerous studies have investigated the modeling hand–object interactions and reconstructing them from di-verse sensing modalities, such as RGB images, depth maps, 
+
+> *
+
+Equal contribution 1School of Computing, KAIST, Daejeon, South Korea. Correspondence to: Tae-Kyun Kim <kim-taekyun@kaist.ac.kr>. 
+
+Proceedings of the 43 rd International Conference on Machine Learning , Seoul, South Korea. PMLR 306, 2026. Copyright 2026 by the author(s). 
+
+and RGB-D data (Hampali et al., 2020; Chao et al., 2021; Hasson et al., 2019; Mueller et al., 2017; Garcia-Hernando et al., 2018; Brahmbhatt et al., 2020; Taheri et al., 2020; Fan et al., 2023; Swamy et al., 2023; Corona et al., 2020; Damen et al., 2022; Brahmbhatt et al., 2019; Garcia-Hernando et al., 2020; Antotsiou et al., 2021; Kim & Kim, 2024a). While these existing approaches have shown impressive progress, most of them are limited to modeling interactions with rigid objects . Although many real-world objects (e.g., cloth, charger cables) exhibit highly non-rigid deformation, most existing methods consider rigid or part-wise rigid ob-jects in interaction (Hampali et al., 2020; Chao et al., 2021; Brahmbhatt et al., 2020; Taheri et al., 2020; Fan et al., 2023; Swamy et al., 2023; Corona et al., 2020; Damen et al., 2022; Brahmbhatt et al., 2019; Lee et al., 2024; 2023; Kim & Kim, 2024b; Cho et al., 2024). Modeling and reconstruct-ing such object dynamics is indeed straightforward, as they can be represented by a small set of rigid transformations corresponding to each rigid body. In contrast, non-rigid deformation involves complex, spa-tially varying dynamics with substantially higher degrees of freedom, making it harder to learn reliable dynamics from in-put data. While a few works have tackled hand–deformable object interaction modeling (Xie et al., 2023a; Qi et al., 2025; Jiang et al., 2025), most of them (Xie et al., 2023a; Qi et al., 2025) are limited to only small, localized defor-mations from finger pressure and do not readily extend to more general, large-scale non-rigid deformations. The most relevant work is PhysTwin (Jiang et al., 2025), which is capable of modeling large non-rigid deformations through 
+
+physical simulation . Its focus, however, is primarily on reconstructing deformable objects without full 3D hand re-construction . Instead, controllers are represented by only a sparse set of points (whose cardinality is about 30) directly sampled from depth maps, which may limit the precision of interaction force modeling and lead to suboptimal model topology reconstruction for simulation, as discussed later. To address this, we introduce P HYS HAN DI ( Phys ics-based Reconstruction of Hand and Deformable Object 
+
+Interactions), a framework that enables dense 3D recon-struction of interacting hands and non-rigid objects through physics-based simulation. We represent hands using a dense 1
+
+> arXiv:2605.09538v1 [cs.CV] 10 May 2026 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions
+
+parametric model (MANO model (Romero et al., 2017)) and objects using a classical physics-based model (Spring–Mass model (Liu et al., 2013; Jiang et al., 2025)) capable of simu-lating the dynamics of deformable objects. In particular, the simulation of object deformation is driven by forces induced from dense motions of MANO hand meshes, enabling the modeling of object dynamics that is both physically plausi-ble and also coherent with the fully reconstructed interacting hand movements. We propose an optimization pipeline to reconstruct this 3D dense hand–deformable object interaction model from sparse-view RGB-D videos. The pipeline consists of three stages: (1) hand reconstruction, (2) object reconstruction, and (3) hand refinement. In the hand reconstruction stage, we fit the MANO model (Romero et al., 2017) to the input RGB-D observations. In the object reconstruction stage, we fit the parameters of the Spring-Mass model (Liu et al., 2013; Jiang et al., 2025) conditioned on the reconstructed 3D hands. In particular, we simulate object deformations via spring–mass system (Liu et al., 2013; Jiang et al., 2025) driven by interaction forces induced from the reconstructed hand motions, and the resulting simulated object geometry is compared against the input RGB-D observations for pa-rameter optimization. In the final hand refinement stage, we refine the initial hand reconstructions via inverse physics, leveraging the physics-based object model fitted in the pre-vious stage. This refinement enforces that the reconstructed hands produce object simulations that are more consistent with the input observations. While we empirically find that the initial hand reconstruction stage is already sufficient to achieve state-of-the-art results with multi-view RGB-D inputs, this hand refinement stage proves especially effec-tive when inference is performed from sparser inputs (e.g., future prediction in a single-view setting). To the best of our knowledge, this is the first work to demonstrate that in-verse physics, guided by a physics-based deformable object model, can enhance hand reconstruction. To experimentally validate the effectiveness of our method, we compare it against state-of-the-art baselines (Jiang et al., 2025; Zhang et al., 2024a; Zhong et al., 2024) for physics-based reconstruction of deformable objects, and demon-strate that our method outperforms them in reconstruction and future prediction. Our contributions can be summarized as follows: • We present P HYS HAN DI, a framework for recon-structing hand–deformable object interactions through physical simulation. To the best of our knowledge, PHYS HAN DI is the first approach to achieve dense 3D reconstruction of both hands and deformable objects from sparse-view RGB-D videos. • For deformable objet reconstruction, we propose to simulate object deformations driven by interaction forces induced from fully reconstructed 3D hand mo-tions to achieve more accurate simulation than the ex-isting state-of-the-art (Jiang et al., 2025) based on a sparse hand representation. • For hand reconstruction, we refine the initial MANO (Romero et al., 2017) fitting through in-verse physics, leveraging the previously reconstructed physics-based object model. To the best of our knowl-edge, this is the first work to show that inverse physics, guided by a physics-based deformable object model, can improve hand reconstruction. • We achieve new state-of-the-art performance compared to our most relevant approach, PhysTwin (Jiang et al., 2025), in reconstruction and future prediction. 
+
+## 2. Related Work 
+
+2.1. 3D Hand-Object Interaction Modeling Hand and rigid object interaction. There are numerous works on modeling and reconstructing hand–object inter-actions from various types of inputs, e.g., RGB, depth, or RGB-D (Chen et al., 2021; Liu et al., 2021; Doosti et al., 2020; Hasson et al., 2020; 2019; Hampali et al., 2022; Tekin et al., 2019; Chen et al., 2022b; 2023), or on estimating hand-object contacts to support such reconstruction (Tse et al., 2022; Jung & Lee, 2025). Most of these methods assume a rigid object in interaction, where the object dy-namics is represented with a reference shape (e.g., a given template shape or a reconstructed shape from the first frame) with global rigid transformation (Chen et al., 2021; Liu et al., 2021; Doosti et al., 2020; Hasson et al., 2020; 2019; Ham-pali et al., 2022; Tekin et al., 2019; Chen et al., 2022b; 2023). Recently, there have been efforts to model part-wise rigid objects under hand interactions, where the object is additionally represented with part labels and per-part rigid transformations (Fan et al., 2023; Zhu et al., 2024; Zhang et al., 2025). While this enables more expressive defor-mation modeling than prior works with a global rigidity assumption, these methods remain non-trivial to extend to more general real-world objects (e.g., cloth, charger cables) that exhibit non-rigid deformations. 
+
+Hand and non-rigid object interaction. There are only a few works that attempt to model and reconstruct hand– non-rigid object interactions. HMDO (Xie et al., 2023a) pro-poses a pipeline for markerless capture of hand–deformable object interactions from multi-view images. However, its main focus is on modeling localized deformations driven by finger pressure , and “ the interacting objects in [its] dataset do not have large deformations, such as 180-degree twisting or bending ” (Xie et al., 2023a). Therefore, it is non-trivial to apply this method to our targeted hand–object interaction datasets, where large, global non-rigid deformations occur (e.g., bending a doll’s arms). Similarly, a recent work on gen-erating hand–deformable object interactions (Qi et al., 2025) 2PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions Object Node     
+
+> Hand -Deformable Object Interaction Model (Sec. 3.1) Learning from Sparse -View RGB -D Videos (Sec. 3.2)
+> Spring -Mass Model
+> MANO Model
+> Hand
+> Deformable Object
+> Interaction Modeling
+> Hand Vertex
+> Virtual Spring
+> Force
+> Transfer
+> Fit the Model
+> to Input RGB -D
+> 1. Hand Reconstruction
+> 2. Object Reconstruction
+> 3. Hand Refinement
+> Interacting
+> 3D Hands Prior
+> Physics -Based
+> Object Prior
+
+Figure 1. PHYS HAN DI models physically plausible hand–deformable object interactions. In our interaction model, each hand is represented by the MANO model (Romero et al., 2017), and each object is represented by a spring–mass model (Liu et al., 2013). Their interaction is modeled by simulating object deformations driven by interaction forces derived from the reconstructed 3D hand motions. Our interaction model can be learned from sparse-view RGB-D videos through three stages: (1) hand reconstruction, (2) object reconstruction, and (3) hand refinement. 
+
+also assumes that object deformations are locally driven by finger pressure, based on the HMDO dataset. A concurrent line of work on hand–object contact estimation for nonrigid objects (Xie et al., 2023b) similarly targets localized contact regions rather than modeling global deformation dynamics. The most related work to ours is PhysTwin (Jiang et al., 2025), a recent state-of-the-art method for physics-based deformable object reconstruction from multi-view RGB-D videos that can handle non-localized deformations. While it can address hand–deformable object interaction scenarios, its main focus is on object modeling, with the interactee represented only by sparse points directly fetched from input depth maps; in this case, true hand–object contact points are unobservable due to contact occlusions. In Sec. 4, we further demonstrate that our method produces more accurate object reconstruction, and that the reconstructed object model can, in turn, refine the initial hand reconstruction—mutually benefiting each other. 
+
+2.2. Deformable Object Modeling Dynamic reconstruction-based modeling. Dynamic reconstruction-based methods recover 3D representations (e.g., Occupancy Functions (Mescheder et al., 2019), Neu-ral Radiance Fields (Mildenhall et al., 2020), 3D Gaussian Splats (Park et al., 2020)) from inputs such as RGB (At-tal et al., 2023; Kratimenos et al., 2024; Li et al., 2023b; Luiten et al., 2024; Park et al., 2021a;b; Pumarola et al., 2021; Wang et al., 2023b; Xian et al., 2021; Yu et al., 2023; Tretschk et al., 2021; Chu et al., 2022), depth (Curless & Levoy, 1996; Li et al., 2008), or RGB-D (Newcombe et al., 2015) data. Most recent methods typically reconstruct a canonical representation (e.g., at the first frame) and learn deformation fields to capture object dynamics (Park et al., 2021a;b; Kratimenos et al., 2024; Xian et al., 2021). Despite differences in exact modeling approaches, they share a key limitation: the focus remains on reconstructing 3D repre-sentations that match observed inputs, without explicitly modeling physical properties—thereby limiting their abil-ity to support future prediction or generalization to unseen predictions, as also discussed in (Jiang et al., 2025). 
+
+Simulation-based modeling. Simulation-based methods enable the modeling of object dynamics in a physically plau-sible manner, while also allowing generalization to unseen interactions. Early works relied on pre-scanned static ob-jects and clean point clouds (Wang et al., 2015; Qiao et al., 2021; Du et al., 2021; Geilinger et al., 2020; Murthy et al., 2020), or were constrained to synthetic data or highly dense viewpoints (Zhang et al., 2024b; Li et al., 2023a; Chen et al., 2022a; Zhong et al., 2024; Qiao et al., 2022). More recent methods (Zhang et al., 2024a; Jiang et al., 2025; Yang et al., 2025; Xu et al., 2026) take sparse-view real RGB-D images as input, thereby reducing the burden of expensive capture setups. However, none of these methods explicitly model the full 3D geometry of the interactee; instead, hand–object interactions are represented through sparse control signals, which can adversely affect the fidelity of deformable object reconstruction under complex contact scenarios. 
+
+## 3. P HYS HAN DI 
+
+In this section, we first introduce our physics-based model for dense hand–deformable object interaction (Sec. 3.1). We then describe how this model can be reconstructed from sparse-view RGB-D videos (Sec. 3.2). 
+
+3.1. Physics-Based Interaction Modeling 
+
+We now present our approach to physically based model-ing of hand–deformable object interactions. We first de-scribe how the hand and object are each represented, and then elaborate on how their interaction is modeled through physics-based simulation. 
+
+Hand Representation: MANO Model (Romero et al., 2017). We represent each hand by the parameters of MANO model (Romero et al., 2017), a widely used PCA-based hand model. It maps a pose parameter θ ∈ R45 , a shape parame-ter β ∈ R10 , a global rotation R ∈ SO (3) and a translation 3PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+t ∈ R3 to a dense 3D hand mesh M = ( V, F) with vertices 
+
+V = {vi}778  
+
+> i=1
+
+and triangular faces F = {fi}1554  
+
+> i=1
+
+. Since the model provides a prior that constrains the solution space of 3D hand meshes within the low-dimensional parameter space, it has been widely adopted to reduce ill-posedness in various hand reconstruction problems (e.g., interacting hand and rigid object reconstruction). 
+
+Object Representation: Spring-Mass Model (Liu et al., 2013; Jiang et al., 2025). We represent each deformable object using a spring-mass model (Liu et al., 2013; Jiang et al., 2025), a classical physics-based model capable of simulating the dynamic behavior of deformable objects. It models an object as a graph O = ( N , E). N = {ni}Ni=1 
+
+denotes a set of N number of mass nodes, where each mass node ni is parameterized by its position xi ∈ R3 and velocity vi ∈ R31, and mass mi ∈ R2. E = {(i, j ) | i, j ∈{1, ..., N }} denotes a set of springs connecting the mass nodes, where i and j are the indices of the mass nodes connected by each spring. In this spring-mass model, each mass node can be simulated in response to the force acting on it. In particular, the force on each mass node ni is modeled as: 
+
+Fi = X
+
+> (i,j )∈E
+
+Fspring  
+
+> i,j
+
++ Fdamping  
+
+> i,j
+
++ Fexternal  
+
+> i
+
+. (1) The first term Fspring  
+
+> i,j
+
+= sij (∥xj − xi∥ − rij ) xj −xi  
+
+> ∥xj−xi∥
+
+rep-resents the spring force between the connected mass nodes 
+
+ni and nj based on Hooke’s law, where sij is the stiff-ness parameter, and rij is the rest length of the spring 
+
+(i, j ). This term encourages the spring-mass system to maintain the rest length of each spring. The second term 
+
+Fdamping  
+
+> i,j
+
+= −γij (vi − vj ) is a dashpot damping force be-tween ni and nj , where γij is the dashpot damping coeffi-cient of the spring (i, j ). It penalizes relative velocity along the spring direction, stabilizing the system and preventing oscillations. The final term Fexternal  
+
+> i
+
+models external forces acting on the mass node, such as gravity. Given the force Fi computed from the above modeling equation (Eq. 1) at each time t, the updated position xi of node i at time t + 1 is obtained by numerically integrating Newton’s second law over time, such that vt+1  
+
+> i
+
+= vti +∆t Fi 
+
+> mi
+
+and xt+1  
+
+> i
+
+= xti + ∆ t vt+1  
+
+> i
+
+.
+
+Hand-Deformable Object Interaction Modeling. Given these hand and deformable object representations, we now describe how their interaction is modeled by simulating object deformation with a spring–mass system, driven by forces induced by the motions of MANO hand meshes. 
+
+> 1
+
+While the hand mesh vertex is also denoted by vi, we allow a slight abuse of notation to remain consistent with notation conventions used in related work. 
+
+> 2
+
+Directly following prior work (Jiang et al., 2025), we assign a unit mass to all nodes in the spring–mass system, since ground-truth mass values are not available in our setting. Spring -Mass  
+
+> Simulation
+> Observation Object Model
+> Spring -Mass Model
+> Hand Model
+> MANO Model
+> Simulation Output
+> Forward Pass
+> Physical Simulation
+> Backprop. (Object Reconstruction)
+> Inverse Physics
+> Backprop. (Hand Refinemen t)
+> Inverse Physics
+
+Figure 2. Illustration of inverse physics for object reconstruc-tion and hand refinement. Our spring–mass simulation is driven by the spring–mass object model and the MANO hand model. In the object reconstruction stage, the object model is fitted via inverse physics given the initial MANO models, while in the subse-quent hand refinement stage, the initial MANO models are refined given the reconstructed object model. L denotes our loss function, composed of Lch and Ltr .
+
+We follow the common strategy for modeling interaction forces in the spring–mass system (Liu et al., 2013), where 
+
+virtual springs are connected between object nodes and the interactee (MANO hand vertices in our case) that are detected to be in contact within a connection radius δ (left subfigure of Fig. 1). Formally, in our final spring–mass system, the mass nodes are defined as N ∪ V ′, which is the superset of the object nodes N and the virtual hand nodes V′. Since these vir-tual hand nodes are used to induce forces for simulating object deformation, their positions and velocities are deter-mined by the tracked MANO vertices V, and then fixed as a boundary condition throughout the simulation. The virtual springs are then defined as E ∪ E virtual , which is the super-set of the object springs E and the virtual springs Evirtual 
+
+connecting the contacted object and hand nodes. Note that, during simulation, these virtual springs encourage the ob-ject regions in contact with the hand to smoothly deform according to the fixed hand vertex motion, as the spring and dashpot damping forces in the spring–mass system ( Fspring 
+
+> i,j
+
+and Fdamping  
+
+> i,j
+
+in Eq. 1) act to maintain the contact topology (i.e., the rest length of the virtual springs between hand ver-tices and object nodes). This ensures object dynamics that are physically plausible and coherent with the interacting hand movements, while being capable of modeling large and complex non-rigid deformations. 
+
+3.2. Learning from Sparse-View RGB-D Videos 
+
+We now explain how the physics-based hand–deformable object interaction model described in Sec. 3.1 can be re-constructed from sparse-view RGB-D video inputs. Our learning pipeline consists of three stages: (1) hand recon-struction, (2) object reconstruction, and (3) hand refinement. 
+
+Hand Reconstruction. In this stage, we fit the MANO hand model (Romero et al., 2017) to multi-view RGB-D videos. Our optimization target for each frame is the MANO parameters Θh = {θ, β, R, t}, where θ ∈ R45 and β ∈
+
+R10 are pose and shape parameters, and R ∈ SO (3) and 
+
+t ∈ R3 are global rotation and translation. Our optimization objective is formulated as: 
+
+min 
+
+> Θh
+
+L2D (Θ h, U)+ λd Ld(Θ h, D)+ λt Lt(Θ h, Θprev  
+
+> h
+
+), (2) 4PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+where L2D measures the reprojection error between the pro-jected MANO keypoints and the 2D keypoint supervision 
+
+U ∈ RV ×21 ×2 for each of the V views. Ld measures the discrepancy between the rendered MANO depth and the ob-served depth maps D ∈ RV ×H×W , where H and W denote the depth map resolution, and Lt regularizes the temporal smoothness of the MANO parameters with respect to those fitted in the previous frame, Θprev  
+
+> h
+
+. The coefficients λ2D , λd,and λt control the relative weight of each loss term. 
+
+Object Reconstruction. Conditioned on the fitted 3D hands, we now fit the spring–mass model representing the deformable object under interaction. For this stage, we mainly follow the object model fitting pipeline of PhysT-win (Jiang et al., 2025), though it only considers the sparse controller points as the interactee. At a high level, the ob-ject’s 3D geometry at t = 0 is first obtained using an image-to-3D generative model (Xiang et al., 2025). The object dy-namics for t ∈ [1 , T ] are then simulated with a spring–mass system, and the physical parameters (e.g., sij , γij and δ in Sec. 3.1) are optimized so that the simulated geometries better match the input observations. The optimization objec-tive is formulated as minimizing two terms: (1) Lch , which measures the Chamfer distance between the simulated node positions and the observed 3D point clouds lifted from the input depth maps, and (2) Ltr , an ℓ2 loss between the simu-lated node positions and the pseudo–ground-truth 3D points tracked by CoTracker3 (Karaev et al., 2024). While we kindly refer the reader to our supplementary mate-rial or (Jiang et al., 2025) for more details on this stage, we highlight a key difference in our spring–mass simulations: our approach models interaction forces from the dense 3D hand geometry fitted with the MANO model in the previous stage, whereas PhysTwin approximates these forces using sparse points sampled from input depth maps, where true hand–object contact points are unobservable due to contact occlusions. As this may limit the precision of interaction force modeling during simulation, our method achieves more accurate simulation results, as discussed in Sec. 4. In Sec. 4.4, we also provide numerical analysis showing that our dense hand interactee enables the spring–mass model topology to be reconstructed more optimally than PhysTwin in the view of peridynamics (Silling & Askari, 2005; Silling et al., 2007; Wang et al., 2023a). 
+
+Hand Refinement. After the object reconstruction stage, we can leverage the reconstructed physics-based object model as an additional prior to further refine the initial hand model fitting, enforcing it to produce object simula-tions better aligned with the input observation. Specifically, we reuse the same Lch and Ltr losses from the object re-construction stage to measure the discrepancy between the simulated object nodes, and the ground-truth observations at each timestep t. In this stage, however, we apply them to fine-tune the MANO model parameters via inverse physics (see Fig. 2), using gradient-descent-based optimization. Let 
+
+St(·) denote the function that returns the simulated object nodes at timestep t given the MANO hand parameters. The refined hand parameters ˜Θh are then optimized as: 
+
+˜Θh = arg min 
+
+> Θh
+
+1
+
+T
+
+> T
+
+X
+
+> t=1
+
+L(Θ h, P, T), (3) 
+
+L(Θ h, P, T) = Lch (St(Θ h), P) + λtr Ltr (St(Θ h), T), (4) where P and T denote the ground-truth lifted point cloud and tracked points, respectively. This inverse-physics–based refinement is particularly effective when the hand obser-vation is highly ill-posed; while we empirically find that the initial hand reconstruction stage is already sufficient to achieve state-of-the-art results with multi-view RGB-D inputs, this hand refinement stage proves especially effec-tive when inference is performed from sparser inputs (e.g., future prediction in a single-view setting). To the best of our knowledge, this is the first work to demonstrate that hand model fitting accuracy can be improved through the inverse physics of deformable object simulation. 
+
+## 4. Experiments 
+
+In this section, we experimentally evaluate the effective-ness of our method. We first describe our experimental settings in Sec. 4.1, and then present the comparison results in Sec. 4.2. We additionally evaluate robustness under noisy input signals in Sec. 4.3, and provide a comparative analysis of the spring–mass model topology between our method and PhysTwin (Jiang et al., 2025) in Sec. 4.4. 
+
+4.1. Experiment Settings Datasets. We use the PhysTwin dataset (Jiang et al., 2025), which consists of three-view RGB-D videos of hand–deformable object interactions. In the original Phys-Twin dataset, a non-negligible portion of the sequences contains only very sparse point-based contacts between the hand and the object (e.g., fingers pinching the object), which are less common in practical scenarios. Since we are inter-ested in modeling more realistic hand–object interactions, we primarily perform evaluation on a subset of the PhysTwin dataset that excludes such sequences with only point-based contacts, which we term the PhysTwin-dense dataset – while also presenting full results in the supplementary material. In addition, we newly collect 19 sequences specifically de-signed to capture denser hand–object contacts, which we refer to as the D ENSE HDI dataset. This dataset is col-lected using the same data acquisition protocol as (Jiang et al., 2025) and includes 10 additional objects (e.g., pouch, towel, paper cup, and hat; see the supplementary material for details). Upon publication, we will release this dataset to facilitate future research on modeling hand–deformable object interactions. 5PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions Method Reconstruction & Resimulation Future Prediction 3D Metrics 2D Metrics 3D Metrics 2D Metrics                                                            
+
+> CD dyn ↓CD full ↓Track Err. ↓IoU ↑PSNR ↑CD dyn ↓CD full ↓Track Err. ↓IoU ↑PSNR ↑
+> Spring-Gaus (Zhong et al., 2024) 27.79 38.84 4.65 0.55 21.41 37.38 56.51 7.69 0.42 19.91 GS-Dynamics (Zhang et al., 2024a) 33.37 13.67 1.81 0.74 23.12 56.79 33.99 4.50 0.51 18.97 PhysTwin (Jiang et al., 2025) 10.78 5.90 1.00 0.84 25.23 16.32 11.45 2.10 0.70 22.07
+> PHYS HAN DI (Ours) 8.32 5.30 0.89 0.85 25.62 14.35 10.57 2.05 0.73 22.84
+
+Table 1. Reconstruction & Resimulation and Future Prediction results on the PhysTwin-dense dataset (Jiang et al., 2025) . Our method outperforms the state-of-the-art (Jiang et al., 2025) on all metrics. CD is measured in millimeters, and Track Err. is scaled by 
+
+×100 for readability.                                    
+
+> Method Reconstruction & Resimulation Future Prediction 3D Metrics 2D Metrics 3D Metrics 2D Metrics
+> CD ↓Track Err. ↓IoU ↑PSNR ↑CD ↓Track Err. ↓IoU ↑PSNR ↑
+> PhysTwin (Jiang et al., 2025) 5.59 1.58 0.76 21.22 7.98 2.42 0.63 19.76 PHYS HAN DI (Ours) 5.06 1.50 0.78 21.61 7.54 2.40 0.65 19.75
+
+Table 2. Reconstruction & Resimulation and Future Prediction results on the D ENSE HDI dataset . Our method outperforms the state-of-the-art (Jiang et al., 2025) on most metrics, demonstrating its effectiveness. CD is measured in millimeters, and Track Err. is scaled by ×100 for readability. 
+
+Tasks and Baselines. We follow the evaluation protocol used in PhysTwin (Jiang et al., 2025) and consider two evaluation tasks: (1) reconstruction and resimulation and (2) future prediction. We also report results on generalization to unseen interactions in the supplementary material. For baselines, we compare against PhysTwin (Jiang et al., 2025), Spring-Gaus (Zhong et al., 2024), and GS-Dynamics (Zhang et al., 2024a), which are the current state of the arts in physics-based object reconstruction. Note that for Spring-Gaus, we use the controller-augmented variant adopted in the PhysTwin’s comparisons, as its original formulation does not support external control inputs. 
+
+Evaluation metrics. We again follow the evaluation metrics used in PhysTwin (Jiang et al., 2025) to ensure fair compar-isons. In particular, we use metrics that evaluate geometric and photometric discrepancies between the reconstructed objects and the ground truth—either in 3D space (Chamfer Distance, Tracking Error) or in projected 2D space (IoU, PSNR). To enable the use of photometric metrics (PSNR), we follow PhysTwin by learning surrogate Gaussian splats bounded to the object model, which allows rendering of the reconstructed object dynamics for evaluation. We also note that the optimization-based reconstruction pipelines in both PhysTwin (Jiang et al., 2025) and our method (Sec. 3.2) involve stochasticity (e.g., random parameter initialization). Therefore, we run the official implementation of PhysT-win and compare the average results over 10 runs for more reliable comparisons. 
+
+4.2. Experimental Comparisons 
+
+4.2.1. R ECONSTRUCTION & R ESIMULATION 
+
+In the reconstruction and resimulation experiments, we eval-uate reconstruction accuracy on the seen frames used during physics-based object model fitting, following the protocol in (Jiang et al., 2025). Tab. 1 (left) presents our quantitative re-sults on the PhysTwin-dense dataset. For this dataset, we ob-serve that many sequences contain large static regions, with only small local regions undergoing meaningful deforma-tion (e.g., the cloth region fixed on the table in Fig. 3(a)). To more clearly measure accuracy in the dynamically deform-ing regions—which are the primary focus of physics-based reconstruction—we report two versions of the Chamfer Dis-tance; CD full , which is the standard Chamfer Distance com-puted over all object points, whereas CD dyn evaluates only the points that exhibit non-negligible deformation. Formally, given pseudo-ground-truth point trajectories x1: T obtained from CoTracker and depth input, we assign a point in the deforming set if ∥xi − x1∥2 > τ dyn , where τdyn is a motion-magnitude threshold. In the table, our method outperforms Spring-Gaus and GS-Dynamics by a large margin across all metrics, and also outperforms PhysTwin on all metrics. The qualitative comparisons in Fig. 3 and the supplementary video further demonstrate that our method achieves more accurate reconstruction and resimulation. Note that Spring-Gaus was originally proposed for input settings with denser viewpoints; under our three-view sparse-input configuration, its simulation becomes unstable, leading to broken object geometry, as shown in the qualitative results. GS-Dynamics is designed to leverage long motion sequences through its GNN-based motion representation; consequently, it fails to capture meaningful deformation behavior in shorter se-quences and instead models only subtle motions. For PhysT-win, interaction forces during simulation are approximated from sparse points (with a cardinality of around 30) sampled from depth maps. This can lead to less accurate simulations because (1) the precision of interaction force modeling is limited, as true hand–object contact points cannot be fully observed from depth sensors due to mutual occlusion, and (2) the reconstructed model topology used for simulation is 6PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions Ours PhysTwin 
+
+(a) Qualitative comparisons on PhysTwin dataset (Jiang et al., 2025) .
+
+(b) Qualitative comparisons on DenseHDI dataset. 
+
+> Observation  Ours PhysTwin  Observation SpringGaus GSDynamics
+
+Recon & Resim Future Prediction Recon & Resim Future Prediction 
+
+Recon & Resim Future Prediction Recon & Resim Future Prediction   
+
+> Figure 3. Qualitative comparisons on (1) reconstruction and resimulation, and (2) future prediction. Yellow circles indicate regions where object simulations are less accurately aligned with the ground-truth observations or with the interacting hand contacts. Compared to all the baselines, our method produces more accurate object simulations. More qualitative results are provided in the supplementary video.
+
+suboptimal, as analyzed in Sec. 4.4. In Tab. 2 (left), we additionally report results on our D ENSE -HDI dataset, which mainly captures dense hand–object in-teractions. Here, our method again outperforms the baseline on all metrics, further validating its effectiveness in model-ing dense hand–deformable object interactions through full 3D hand modeling. 4.2.2. F UTURE PREDICTION 
+
+In the future prediction experiments, we evaluate recon-struction quality on future frames that were unseen during physics-based object model fitting. 
+
+Three-View RGB-D Inputs. In Tables 1 and 2 (right), we present future prediction results on the PhysTwin and DENSE HDI datasets, respectively. Our method outperforms Spring-Gaus (Zhong et al., 2024) and GS-Dynamics (Zhang et al., 2024a) by a substantial margin across all metrics, and outperforms PhysTwins (Jiang et al., 2025) on most metrics, demonstrating its effectiveness for future prediction as well. Our qualitative comparisons in Fig. 3 and our supplementary video also show that our approach produces future predictions that are more accurately aligned with the 7PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+ground-truth observations. 
+
+Single-View RGB-D Inputs. We additionally report future prediction results on single-view RGB-D inputs , which repre-sent a more challenging scenario than the multi-view setting considered in the existing state-of-the-art (PhysTwin (Jiang et al., 2025)). In this setting, PhysTwin must approximate interaction forces from sparse hand points sampled from a 
+
+single-view depth map, which are highly partial. We empiri-cally observed that its object simulation frequently fails due to errors in identifying hand–object contact points (deter-mined by the threshold δ in Sec. 3.1), and therefore could not be included in our comparisons. As shown in Tab. 3, our method robustly addresses the challenging task of single-view future prediction by leveraging full 3D reconstruction from partial inputs. The table also compares our results without inverse physics-based hand refinement, where our refinement is shown to be significantly effective when the input view is highly sparse to sufficiently constrain hand model fitting. To further evaluate hand fitting accuracy, we additionally report the metric Hand CD in the table, which measures the Chamfer Distance between the fitted hand meshes and the ground-truth 3D hand point cloud lifted from the multi-view depth maps available in the dataset. 3 Our hand refinement also noticeably improves this hand fitting accuracy met-ric; to the best of our knowledge, this is the first work to demonstrate that a physics-based deformable object prior can benefit hand reconstruction.                      
+
+> Method 3D Metrics 2D Metrics
+> CD ↓Track Err. ↓Hand CD ↓IoU ↑PSNR ↑
+> PHYS HAN DI (Ours) - Hand Ref. 42.8 7.36 7.57 0.49 19.50
+> PHYS HAN DI (Ours) 33.5 6.75 7.17 0.51 19.67
+
+Table 3. Single-view future prediction results on the PhysTwin-full dataset (Jiang et al., 2025). Notably, our hand refinement using the physics-based object prior is effective in enhancing hand reconstruction quality. 
+
+4.3. Robustness Analysis 
+
+We also compare the robustness of our method and PhysT-win (Jiang et al., 2025) under perturbed input signals, includ-ing input depth, CoTracker (Karaev et al., 2024) tracking results, and MANO (Romero et al., 2017)-based hand fitting results. Specifically, we add 1 mm noise to the input depth, 1 px perturbation to the CoTracker tracks, and perturbations to the MANO parameters such that the resulting hand pose has an MPJPE of 10 mm. In Tab. 4, PhysTwin exhibits larger performance degradation across all settings, particularly under perturbed tracking sig-nals. In contrast, our method shows noticeably smaller per-formance drops. This robustness comes from using denser 
+
+> 3
+
+Note that in other multi-view experiments, these multi-view depth maps are used as inputs during training and are therefore not treated as ground truth for evaluation. We kindly refer the reader to our supplementary for detailed discussion. 
+
+hand reconstruction, which provides more reliable contact cues and mitigates the impact of upstream noise; as a result, perturbations to depth, tracking, or controller parameters lead to only modest accuracy changes. These results high-light the potential of our method to scale to real-world ap-plications using monocular or multi-view RGB-only videos, where our model would be fitted to depth or hand estimates 
+
+predicted from RGB, since our simulated noise levels re-main within the accuracy range of current RGB-based state-of-the-art estimators.                                                      
+
+> Method PhysTwin-dense PhysTwin-full
+> CD ↓Track Err. ↓CD ↓Track Err. ↓
+> (a) Clean Input
+> PhysTwin 5.90 1.00 5.52 0.97
+> Ours 5.30 0.89 5.40 0.96 (b) Perturbed Depth
+> PhysTwin 6.93 (1.03) 1.12 (0.12) 6.34 (0.82) 1.12 (0.15)
+> Ours 6.19 (0.89 )1.00 (0.11 )6.10 (0.70 )1.05 (0.09 )
+> (c) Perturbed Tracking Signal
+> PhysTwin 9.60 (3.70) 1.46 (0.46) 8.32 (2.80) 1.34 (0.37)
+> Ours 5.56 (0.26 )0.86 (-0.03 )5.50 (0.10 )0.92 (-0.04 )
+> (d) Perturbed Controller
+> PhysTwin 7.54 (1.64) 1.25 (0.25) 6.89 ( 1.37 )1.25 (0.28 )
+> Ours 6.44 (1.14 )1.08 (0.19 )6.79 (1.39) 1.29 (0.33)
+
+Table 4. Robustness analysis under perturbations applied to depth input, CoTracker (Karaev et al., 2024) trajectories, and hand-pose controller parameters. We compare PhysTwin (Jiang et al., 2025) and our method under the same settings. Values in parentheses denote performance changes relative to the clean-input baseline. 
+
+4.4. Contact Topology Analysis 
+
+In this section, we further discuss why our object simulation achieves better performance than the current state-of-the-art method, PhysTwin (Jiang et al., 2025), as empirically shown in the previous subsections. Specifically, we examine differences in the optimized spring-mass model topology, since “the behavior of the [spring-mass] model is dependent on the topology” (Nealen et al., 2006). As discussed in Sec. 3, the connection radius δ is the primary factor defining the model topology in both our method and PhysTwin, thus we present a numerical analysis of the fitted 
+
+δ. In particular, we refer to practical analyses of particle-based models with radius-limited neighbor interactions (e.g., peridynamics) (Silling & Askari, 2005; Silling et al., 2007; Wang et al., 2023a), as our spring-mass model likewise restricts interactions to neighbors within a distance cutoff δ.They show that, given the spatial discretization resolution 
+
+∆x of the object 4, the ratio δ/ ∆x should remain close to a small constant r, and that “values much larger than this may result in excessive wave dispersion and require very large computer run times.” (Silling & Askari, 2005) 
+
+> 4
+
+In our case, ∆x is approximated as the mean distance to each node’s four nearest neighbors, averaged across all nodes. 
+
+8PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions PhysTwin    
+
+> (Jiang et al., 2025)
+> Input Data
+
+Input Data  Reconstruction    
+
+> PhysTwin
+> (Jiang et al., 2025)
+
+Control Force  
+
+> PhysHanDI
+> (Ours) PhysHanDI
+> (Ours)
+
+Figure 4. Comparisons in reconstructed spring–mass model topology and force. (1) Topology reconstruction . PhysTwin (Jiang et al., 2025)’s sparser hand points tend to result in excessively long virtual spring lengths to maintain contact coverage, whereas ours based on dense hand points precisely localizes contacts without unnecessary spring elongation—considered a more optimal topology in prior works (Silling & Askari, 2005; Silling et al., 2007; Wang et al., 2023a). (2) Control force visualization. PhysTwin’s broader spring coverage disperses forces across non-contact regions, whereas ours concentrates forces at the actual contact, favoring local, detailed manipulation. Visualization key . Yellow line segments depict virtual-springs Evirtual . Blue spheres denote object nodes N and red spheres denote control nodes V′. Red arrows visualize control-force vectors induced on object nodes by virtual springs. 
+
+Inspired by this, we introduce a simple measure of devia-tion from this recommended ratio of connection radius to discretization resolution. Specifically, we report the Radius-to-Resolution Deviation ( RRD ),
+
+RRD = |(δ/ ∆x)/r − 1|, (5) where we use r = 3 as the reference value, reflecting a value commonly acknowledged as plausible in the prior works (Silling & Askari, 2005; Silling et al., 2007; Wang et al., 2023a). As shown in Tab. 5, our method yields about 2× lower RRD for object springs and over 7 × lower RRD 
+
+for virtual springs compared to PhysTwin (Jiang et al., 2025), indicating that our model topology is more optimal accord-ing to the analyses in the aforementioned literature. Related to these results, we also show the topology and contact visualization in Fig. 4, where PhysTwin’s sparser control points are likely to result in excessively long virtual-spring lengths to maintain contact coverage, whereas our denser hand reconstruction precisely localizes contacts without unnecessarily elongating the springs. In addition, the control force visualization (right column of Fig. 4) shows that PhysTwin’s wider virtual-spring coverage dif-fuses forces over a larger area, weakening local actuation around the true contact. In contrast, ours concentrates forces only where contact actually occurs, which is preferable for fine manipulation. These analyses suggest that dense hand reconstruction improves topology optimization of the spring–mass model, yielding a smaller, resolution-matched connection radius and more reliable dynamics. 
+
+Method RRD object ↓ RRD virtual ↓
+
+PhysTwin (Jiang et al., 2025) 0.64 2.63 
+
+PHYS HAN DI (Ours) 0.32 0.35 
+
+Table 5. Radius-to-Resolution Deviation ( RRD ) for object and virtual springs (lower is better). RRD = |(δ/ ∆x)/r − 1|. Our method achieves about 2 × lower RRD for object springs and over 7× lower for virtual springs compared to PhysTwin (Jiang et al., 2025). 
+
+## 5. Conclusion 
+
+We presented P HYS HAN DI, a physics-based framework for modeling and reconstructing hand–object interactions involving highly non-rigid objects. By incorporating phys-ical priors and simulating object deformations driven by forces from the fully reconstructed 3D hands, our method produces reconstructions that are both physically plausible and consistent with interacting hand dynamics. Through a reconstruction pipeline based on sparse-view RGB-D in-puts, P HYS HAN DI demonstrates superior performance over existing baselines in reconstruction, future prediction, and generalization to unseen interactions. This work takes a step toward more general and robust modeling of everyday hand–object interactions, opening up new opportunities for applications in embodied AI and digital human modeling. 9PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+## Impact Statement 
+
+This paper presents a physics-based framework for recon-structing hand–deformable object interactions from sparse-view RGB-D data, with the goal of advancing 3D perception and physical reasoning in machine learning. The proposed method may enable downstream applications in areas such as embodied AI, digital human modeling, and immersive AR/VR content creation. Compared to prior work in RGB-D capture and human–object interaction modeling, our ap-proach does not introduce new data modalities or privacy risks beyond those already present in existing vision-based reconstruction systems. 
+
+## Acknowledgement 
+
+This work was supported by NST grant (CRC 21015, MSIT), IITP grant (RS-2023-00228996, RS-2024-00459749, RS-2025-25443318, RS-2025-25441313, RS-2026-25526850, RS-2026-25522885, MSIT), KOCCA grant (RS-2024-00442308, MCST) and InnoCORE program (N10260110, MSIT). 
+
+## References 
+
+Antotsiou, D., Ciliberto, C., and Kim, T.-K. Adversarial imitation learning with trajectorial augmentation and cor-rection. In ICRA , 2021. Attal, B., Huang, J.-B., Richardt, C., Zollhoefer, M., Kopf, J., O’Toole, M., and Kim, C. Hyperreel: High-fidelity 6-dof video with ray-conditioned sampling. In CVPR ,2023. Brahmbhatt, S., Ham, C., Kemp, C. C., and Hays, J. Con-tactdb: Analyzing and predicting grasp contact via ther-mal imaging. In CVPR , 2019. Brahmbhatt, S., Tang, C., Twigg, C. D., Kemp, C. C., and Hays, J. Contactpose: A dataset of grasps with object contact and hand pose. In ECCV , 2020. Chao, Y.-W., Yang, W., Xiang, Y., Molchanov, P., Handa, A., Tremblay, J., Narang, Y. S., Van Wyk, K., Iqbal, U., Birchfield, S., et al. Dexycb: A benchmark for capturing hand grasping of objects. In CVPR , 2021. Chen, H.-y., Tretschk, E., Stuyck, T., Kadlecek, P., Kavan, L., Vouga, E., and Lassner, C. Virtual elastic objects. In 
+
+CVPR , 2022a. Chen, Y., Tu, Z., Kang, D., Chen, R., Bao, L., Zhang, Z., and Yuan, J. Joint hand-object 3d reconstruction from a single image with cross-branch feature fusion. TIP , 2021. Chen, Z., Hasson, Y., Schmid, C., and Laptev, I. Alignsdf: Pose-aligned signed distance fields for hand-object recon-struction. In ECCV , 2022b. Chen, Z., Chen, S., Schmid, C., and Laptev, I. gsdf: Geometry-driven signed distance functions for 3d hand-object reconstruction. In CVPR , 2023. Cho, W., Lee, J., Yi, M., Kim, M., Woo, T., Kim, D., Ha, T., Lee, H., Ryu, J.-H., Woo, W., et al. Dense hand-object (ho) graspnet with full grasping taxonomy and dynamics. In ECCV , 2024. Chu, M., Liu, L., Zheng, Q., Franz, A., Seidel, H.-P., Theobalt, C., and Zayer, R. Physics informed neural fields for smoke reconstruction with sparse data. ACM TOG , 2022. Corona, E., Pumarola, A., Alenya, G., Moreno-Noguer, F., and Rogez, G. Ganhand: Predicting human grasp affordances in multi-object scenes. In CVPR , 2020. Curless, B. and Levoy, M. A volumetric method for building complex models from range images. In SIGGRAPH ,1996. Damen, D., Doughty, H., Farinella, G. M., Furnari, A., Kazakos, E., Ma, J., Moltisanti, D., Munro, J., Perrett, T., Price, W., et al. Rescaling egocentric vision: Collec-tion, pipeline and challenges for epic-kitchens-100. IJCV ,2022. Dong, H., Chharia, A., Gou, W., Vicente Carrasco, F., and De la Torre, F. D. Hamba: Single-view 3d hand re-construction with graph-guided bi-scanning mamba. In 
+
+NeurIPS , 2024. Doosti, B., Naha, S., Mirbagheri, M., and Crandall, D. J. Hope-net: A graph-based model for hand-object pose estimation. In CVPR , 2020. Du, T., Wu, K., Ma, P., Wah, S., Spielberg, A., Rus, D., and Matusik, W. Diffpd: Differentiable projective dynamics. 
+
+ACM TOG , 2021. Fan, Z., Taheri, O., Tzionas, D., Kocabas, M., Kaufmann, M., Black, M. J., and Hilliges, O. ARCTIC: A dataset for dexterous bimanual hand-object manipulation. In CVPR ,2023. Garcia-Hernando, G., Yuan, S., Baek, S., and Kim, T.-K. First-person hand action benchmark with rgb-d videos and 3d hand pose annotations. In CVPR , 2018. Garcia-Hernando, G., Johns, E., and Kim, T.-K. Physics-based dexterous manipulations with estimated hand poses and residual reinforcement learning. In IROS , 2020. Geilinger, M., Hahn, D., Zehnder, J., Bächer, M., Thomaszewski, B., and Coros, S. Add: Analytically differentiable dynamics for multi-body systems with fric-tional contact. ACM TOG , 2020. 10 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+Grady, P., Tang, C., Twigg, C. D., Vo, M., Brahmbhatt, S., and Kemp, C. C. Contactopt: Optimizing contact to improve grasps. In CVPR , 2021. Hampali, S., Rad, M., Oberweger, M., and Lepetit, V. Hon-notate: A method for 3d annotation of hand and object poses. In CVPR , 2020. Hampali, S., Sarkar, S. D., Rad, M., and Lepetit, V. Keypoint transformer: Solving joint identification in challenging hands and object interactions for accurate 3d pose estima-tion. In CVPR , 2022. Hasson, Y., Varol, G., Tzionas, D., Kalevatykh, I., Black, M. J., Laptev, I., and Schmid, C. Learning joint recon-struction of hands and manipulated objects. In CVPR ,2019. Hasson, Y., Tekin, B., Bogo, F., Laptev, I., Pollefeys, M., and Schmid, C. Leveraging photometric consistency over time for sparsely supervised hand-object reconstruction. In CVPR , 2020. Jiang, H., Hsu, H.-Y., Zhang, K., Yu, H.-N., Wang, S., and Li, Y. Phystwin: Physics-informed reconstruction and simulation of deformable objects from videos. In ICCV ,2025. Jung, D. S. and Lee, K. M. Learning dense hand con-tact estimation from imbalanced data. In CoRR , volume arXiv:2505.11152, 2025. Karaev, N., Makarov, I., Wang, J., Neverova, N., Vedaldi, A., and Rupprecht, C. Cotracker3: Simpler and better point tracking by pseudo-labelling real videos. arXiv:2410.11831, 2024. Kim, D. and Kim, T.-K. Multi-hypotheses conditioned point cloud diffusion for 3d human reconstruction from occluded images. In NeurIPS , 2024a. Kim, M. and Kim, T.-K. Bitt: Bi-directional texture recon-struction of interacting two hands from a single image. In 
+
+CVPR , 2024b. Kingma, D. P. Adam: A method for stochastic optimization. In ICLR , 2014. Kratimenos, A., Lei, J., and Daniilidis, K. Dynmf: Neural motion factorization for real-time dynamic view synthesis with 3d gaussian splatting. In ECCV , 2024. Lee, J., Sung, M., Choi, H., and Kim, T.-K. Im2hands: Learning attentive implicit representation of interacting two-hand shapes. In CVPR , 2023. Lee, J., Saito, S., Nam, G., Sung, M., and Kim, T.-K. Inter-handgen: Two-hand interaction generation via cascaded reverse diffusion. In CVPR , 2024. Li, H., Sumner, R. W., and Pauly, M. Global correspondence optimization for non-rigid registration of depth scans. In 
+
+CGF , 2008. Li, J., Xu, C., Chen, Z., Bian, S., Yang, L., and Lu, C. Hybrik: A hybrid analytical-neural inverse kinematics solution for 3d human pose and shape estimation. In 
+
+CVPR , 2021. Li, X., Qiao, Y.-L., Chen, P. Y., Jatavallabhula, K. M., Lin, M., Jiang, C., and Gan, C. Pac-nerf: Physics augmented continuum neural radiance fields for geometry-agnostic system identification. In ICLR , 2023a. Li, Z., Wang, Q., Cole, F., Tucker, R., and Snavely, N. Dynibar: Neural dynamic image-based rendering. In 
+
+CVPR , 2023b. Liu, S., Jiang, H., Xu, J., Liu, S., and Wang, X. Semi-supervised 3d hand-object poses estimation with interac-tions in time. In CVPR , 2021. Liu, S., Zhou, Y., Yang, J., Gupta, S., and Wang, S. Contact-gen: Generative contact modeling for grasp generation. In ICCV , 2023. Liu, T., Bargteil, A. W., O’Brien, J. F., and Kavan, L. Fast simulation of mass-spring systems. ACM TOG , 2013. Loshchilov, I. and Hutter, F. Decoupled weight decay regu-larization. In CoRR , volume abs/1711.05101, 2017. Lozano, J. A. Towards a new evolutionary computation: ad-vances on estimation of distribution algorithms , volume 192. 2006. Lugaresi, C., Tang, J., Nash, H., McClanahan, C., Uboweja, E., Hays, M., Zhang, F., Chang, C.-L., Yong, M., Lee, J., Chang, W.-T., Hua, W., Georg, M., and Grundmann, M. Mediapipe: A framework for perceiving and processing reality. In CVPRW , 2019. Luiten, J., Kopanas, G., Leibe, B., and Ramanan, D. Dy-namic 3d gaussians: Tracking by persistent dynamic view synthesis. In 3DV , 2024. Mescheder, L., Oechsle, M., Niemeyer, M., Nowozin, S., and Geiger, A. Occupancy networks: Learning 3d recon-struction in function space. In CVPR , 2019. Mildenhall, B., Srinivasan, P. P., Tancik, M., Barron, J. T., Ramamoorthi, R., and Ng, R. Nerf: Representing scenes as neural radiance fields for view synthesis. In ECCV ,2020. Mueller, F., Mehta, D., Sotnychenko, O., Sridhar, S., Casas, D., and Theobalt, C. Real-time hand tracking under occlusion from an egocentric rgb-d sensor. In ICCV ,2017. 11 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+Murthy, J. K., Macklin, M., Golemo, F., Voleti, V., Petrini, L., Weiss, M., Considine, B., Parent-Lévesque, J., Xie, K., Erleben, K., et al. gradsim: Differentiable simulation for system identification and visuomotor control. In ICLR ,2020. Nealen, A., Müller, M., Keiser, R., Boxerman, E., and Carl-son, M. Physically based deformable models in computer graphics. In Computer graphics forum , 2006. Newcombe, R. A., Fox, D., and Seitz, S. M. Dynamicfusion: Reconstruction and tracking of non-rigid scenes in real-time. In CVPR , 2015. Park, G., Kim, T.-K., and Woo, W. 3d hand pose estimation with a single infrared camera via domain transfer learning. In ISMAR , 2020. Park, K., Sinha, U., Barron, J. T., Bouaziz, S., Goldman, D. B., Seitz, S. M., and Martin-Brualla, R. Nerfies: De-formable neural radiance fields. In ICCV , 2021a. Park, K., Sinha, U., Hedman, P., Barron, J. T., Bouaziz, S., Goldman, D. B., Martin-Brualla, R., and Seitz, S. M. Hy-pernerf: a higher-dimensional representation for topolog-ically varying neural radiance fields. ACM TOG , 2021b. Pumarola, A., Corona, E., Pons-Moll, G., and Moreno-Noguer, F. D-nerf: Neural radiance fields for dynamic scenes. In CVPR , 2021. Qi, M., Zhao, Z., and Ma, H. Human grasp generation for rigid and deformable objects with decomposed vq-vae. 
+
+arXiv preprint arXiv:2501.05483 , 2025. Qiao, Y., Liang, J., Koltun, V., and Lin, M. Differentiable simulation of soft multi-body systems. In NeurIPS , 2021. Qiao, Y.-L., Gao, A., and Lin, M. Neuphysics: Editable neural geometry and physics from monocular videos. In 
+
+NeurIPS , 2022. Romero, J., Tzionas, D., and Black, M. J. Embodied hands: modeling and capturing hands and bodies together. ACM TOG , 2017. Silling, S. A. and Askari, E. A meshfree method based on the peridynamic model of solid mechanics. Computers & structures , 2005. Silling, S. A., Epton, M., Weckner, O., Xu, J., and Askari, E. Peridynamic states and constitutive modeling. Journal of elasticity , 2007. Swamy, A., Leroy, V., Weinzaepfel, P., Baradel, F., Galaaoui, S., Brégier, R., Armando, M., Franco, J.-S., and Rogez, G. Showme: Benchmarking object-agnostic hand-object 3d reconstruction. In ICCV , 2023. Taheri, O., Ghorbani, N., Black, M. J., and Tzionas, D. Grab: A dataset of whole-body human grasping of objects. In 
+
+ECCV 2020 , 2020. Tekin, B., Bogo, F., and Pollefeys, M. H+o: Unified egocen-tric recognition of 3d hand-object poses and interactions. In CVPR , 2019. Tretschk, E., Tewari, A., Golyanik, V., Zollhöfer, M., Lass-ner, C., and Theobalt, C. Non-rigid neural radiance fields: Reconstruction and novel view synthesis of a dynamic scene from monocular video. In ICCV , 2021. Tse, T. H. E., Zhang, Z., Kim, K. I., Leonardis, A., Zheng, F., and Chang, H. J. S2 contact: Graph-based network for 3d hand-object contact estimation with semi-supervised learning. In ECCV , 2022. Wang, B., Wu, L., Yin, K., Ascher, U. M., Liu, L., and Huang, H. Deformation capture and modeling of soft objects. ACM TOG , 2015. Wang, B., Oterkus, S., and Oterkus, E. Determination of horizon size in state-based peridynamics. Continuum Mechanics and Thermodynamics , 2023a. Wang, C., MacDonald, L. E., Jeni, L. A., and Lucey, S. Flow supervision for deformable nerf. In CVPR , 2023b. Xian, W., Huang, J.-B., Kopf, J., and Kim, C. Space-time neural irradiance fields for free-viewpoint video. In CVPR , 2021. Xiang, J., Lv, Z., Xu, S., Deng, Y., Wang, R., Zhang, B., Chen, D., Tong, X., and Yang, J. Structured 3d latents for scalable and versatile 3d generation. In CVPR , 2025. Xie, W., Yu, Z., Zhao, Z., Zuo, B., and Wang, Y. Hmdo: Markerless multi-view hand manipulation capture with deformable objects. Graph. Models , 2023a. Xie, W., Zhao, Z., Li, S., Zuo, B., and Wang, Y. Non-rigid object contact estimation with regional unwrapping transformer. In ICCV , 2023b. Xu, Q., Liu, J., Yu, S., Wang, Y., Zhou, Y., Zhou, J., Cui, J., Ong, Y.-S., and Zhang, H. Neuspring: Neural spring fields for reconstruction and simulation of deformable objects from videos. In AAAI , 2026. Yang, Y., Zhang, Z., Zhang, X., Zeng, Y., Li, H., and Zuo, W. Physworld: From real videos to world models of deformable objects via physics-aware demonstration syn-thesis. arXiv preprint arXiv:2510.21447 , 2025. Yu, H., Julin, J., Milacski, Z. A., Niinuma, K., and Jeni, L. A. Dylin: Making light field networks dynamic. In 
+
+CVPR , 2023. 12 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+Zhang, M., Zhang, K., and Li, Y. Dynamic 3d gaussian tracking for graph-based neural dynamics modeling. In 
+
+CoRL , 2024a. Zhang, T., Yu, H.-X., Wu, R., Feng, B. Y., Zheng, C., Snavely, N., Wu, J., and Freeman, W. T. Physdreamer: Physics-based interaction with 3d objects via video gen-eration. In ECCV , 2024b. Zhang, W., Dabral, R., Golyanik, V., Choutas, V., Alvarado, E., Beeler, T., Habermann, M., and Theobalt, C. Bimart: A unified approach for the synthesis of 3d bimanual inter-action with articulated objects. In CVPR , 2025. Zhong, L., Yu, H.-X., Wu, J., and Li, Y. Reconstruction and simulation of elastic objects with spring-mass 3d gaussians. In ECCV , 2024. Zhu, Z., Wang, J., Qin, Y., Sun, D., Jampani, V., and Wang, X. Contactart: Learning 3d interaction priors for category-level articulated object and hand poses estimation. In 3DV ,2024. 13 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+## A. Dataset Details 
+
+In this section, we present the details of our newly captured dataset, D ENSE HDI, introduced in Sec. 4.1. For data acquisition and pre-processing, we follow the same protocol as PhysTwin (Jiang et al., 2025), using three RealSense D455 RGB-D cameras to record three-view videos of hand–deformable object interactions. In total, we collect 19 sequences, each lasting 2–8 seconds, spanning 10 object types (e.g., swimming cap, cloth, pouch, towel). The dataset includes diverse interactions, such as folding a pouch or towel and squeezing a cloth. We note that the existing PhysTwin dataset (Jiang et al., 2025) primarily captures sparse, point-like hand–object contacts (e.g., pointing at or pushing with one finger, or pinching with two fingers), whereas our dataset focuses on capturing denser hand–object contacts, such as wiping with a dishcloth or folding a pouch using the palm. Visualizations of these captured sequences are provided in Fig. 5. (a) PhysTwin (Jiang et al., 2025) (b) DenseHDI (ours)  
+
+> Figure 5. Captured sequences in PhysTwin (Jiang et al., 2025) and D ENSE HDI . The sequences in D ENSE HDI feature denser hand–object contacts.
+
+## B. Method Details 
+
+In this section, we provide additional details on reconstructing our dense hand–deformable object interaction model from sparse-view RGB-D video inputs, as discussed in Sec. 3.2. 
+
+B.1. Hand Reconstruction 
+
+In the hand reconstruction stage, we fit the MANO model (Romero et al., 2017) to the input multi-view RGB-D videos using the loss function defined in Eq. 2 (Sec. 3.2). L2D , Ld, and Lt are defined as L2 losses, with λd and λt set to 1 × 10 2
+
+and 5 × 10 5, respectively. To obtain 2D keypoint supervision for computing L2D , we use an off-the-shelf estimator (MediaPipe (Lugaresi et al., 2019)). However, we empirically observe that it yields missing or implausible predictions for heavily occluded hand joints, which degrade the MANO fitting results—particularly in our sparse-view setting. To mitigate this, we additionally obtain 2D keypoint supervision Umano from a monocular MANO parameter estimator (Dong et al., 2024), which yields plausible predictions constrained by the MANO space, though with less precise 2D alignment. 5 We empirically find that combining discrepancy losses with respect to U2D (from MediaPipe (Lugaresi et al., 2019)) and Umano yields more robust MANO fitting, with the loss weight for Umano set to 0.5. For optimizing the MANO parameters based on the aforementioned loss, we use the AdamW optimizer (Loshchilov & Hutter, 2017) for 1500 steps with a learning rate of 2 × 10 −3, decaying by a factor of 0.98 every 40 steps. The MANO   
+
+> 5See related discussions in prior works, e.g., (Li et al., 2021). Although the MANO-based estimator predicts full 3D hand shapes and poses, we use only its 2D projections since its depth estimates are ambiguous due to the monocular setting (e.g., projective ambiguity, scale–depth trade-off).
+
+14 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+parameters at each frame are initialized from the fitting results of the previous frame, while the first frame is initialized randomly. 
+
+B.2. Object Reconstruction 
+
+After the hand reconstruction stage, we fit the spring–mass model (Liu et al., 2013; Jiang et al., 2025) representing the deformable object, conditioned on the previously fitted 3D hands. Directly following (Jiang et al., 2025), we adopt a hierarchical optimization scheme with (1) a sparse (zero-order) stage followed by (2) a dense (first-order) stage. 
+
+Sparse (zero-order) stage. We optimize the coarse, non-differentiable spring–mass model parameters Θ0 = {T , s global , η },where T denotes the spring–mass topology parameterized by a connection radius δ and a maximum number of connected nodes dmax , sglobal is the global spring stiffness (assuming homogeneity at this stage), and η represents collision parameters. 
+
+Dense (first-order) stage. With Θ0 fixed, we refine the differentiable per-spring parameters Θ1 = {sij , γ ij }(i,j )∈E∪E virtual ,where sij and γij denote per-spring stiffness and damping parameters. The optimization objective at each stage k ∈ { 0, 1} (where k = 0 and k = 1 correspond to the sparse and dense stages, respectively) can be written as: 
+
+min 
+
+> Θk
+
+1
+
+T
+
+> T
+
+X
+
+> t=1
+
+Lch (ˆSt, St) + λLtr (ˆSt, St) s.t. ˆSt = f (ˆSt−1, Θ0, Θ1, Θh), ˆS0 = S0, (6) Here, ˆSt denotes the simulated state, St denote the observed state from the inputs, and f denote a simulation forward function based on the spring-mass system. As discussed in Sec. 3.2, Lch measures the Chamfer distance to encourage simulated nodes to remain close to the 3D point cloud lifted from the input depth maps, while Ltr measures the ℓ2 discrepancy to per-frame 3D tracked points obtained from CoTracker3 (Karaev et al., 2024). For the sparse stage, we use zero-order optimization (Lozano, 2006) for 100 iterations, with initialization values of δ, dmax ,and sglobal set to 0.002 and 3, respectively. For the dense stage, we use the Adam optimizer (Kingma, 2014) for 200 iterations with an initial learning rate of 1 × 10 −3. All other hyperparameters are kept identical to (Jiang et al., 2025). 
+
+B.3. Hand Refinement 
+
+In this stage, we refine the initial MANO parameters Θh to produce object simulations better aligned with the input observations, using the spring–mass model fitted in the previous stage. An overview of this stage, including the loss function, is provided in Sec. 3.2. For the loss function in Eq. 2, we set λtr = 1 . Optimization is performed with the Adam optimizer (Kingma, 2014) with 40 optimization steps. The MANO parameters are initialized from the fitting results of the initial hand reconstruction stage, with an initial learning rate of 2 × 10 −5 decayed by 0.99 at each iteration. 
+
+## C. Quantitative Results on the PhysTwin-full Dataset 
+
+Tab. 6 reports quantitative results on the PhysTwin-full dataset (Jiang et al., 2025). As discussed in Sec. 4.1, most sequences in this dataset involve sparse point-based hand–object contacts, which are less representative of realistic interactions but can favor PhysTwin due to its reliance on a sparse point-based controller. In this setting, our method still mostly ourperforms the baselines (Jiang et al., 2025; Zhong et al., 2024; Zhang et al., 2024a).                                                                
+
+> Method Reconstruction & Resimulation Future Prediction 3D Metrics 2D Metrics 3D Metrics 2D Metrics
+> CD dyn ↓CD full ↓Track Err. ↓IoU ↑PSNR ↑CD dyn ↓CD full ↓Track Err. ↓IoU ↑PSNR ↑
+> Spring-Gaus (Zhong et al., 2024) 26.39 33.60 4.07 0.62 21.24 49.29 46.54 6.61 0.48 19.59 GS-Dynamics (Zhang et al., 2024a) 24.73 13.79 2.18 0.72 24.01 52.96 38.84 6.88 0.46 19.38 PhysTwin (Jiang et al., 2025) 7.63 5.52 0.97 0.84 26.32 14.42 12.26 2.44 0.69 22.80
+> PHYS HAN DI (Ours) 7.30 5.40 0.96 0.84 26.44 13.63 12.04 2.41 0.68 22.96
+
+Table 6. Reconstruction & Resimulation and Future Prediction results on the PhysTwin-full dataset (Jiang et al., 2025) . Our method outperforms the state-of-the-art (Jiang et al., 2025) on most metrics. CD is measured in millimeters, and Track Err. is scaled by ×100 for readability. 
+
+15 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+We additionally provide a per-sequence breakdown on representative sequences from the PhysTwin-full dataset in Tab. 7, where the sequences are categorized into dense - and sparse -contact groups. As shown in the table, our method consistently improves over PhysTwin across all sequences, with substantially larger gains on dense-contact sequences (e.g., CD dyn 
+
+of 6.23 vs. 21.30 on double_stretch_sloth ). This per-sequence analysis confirms that the prior state of the art, PhysTwin (Jiang et al., 2025), performs well for sparse point-based hand-object contacts due to its sparse controller representation, but is less robust to dense contacts. In contrast, our method remains robust in both sparse- and dense-contact settings. 
+
+Contact Type Sequence PhysTwin (Jiang et al., 2025) PHYS HAN DI (Ours) 
+
+Dense 
+
+double_lift_cloth_3 12.21 6.70 
+
+double_lift_sloth 5.33 4.39 
+
+double_stretch_sloth 21.30 6.23 
+
+Sparse 
+
+single_lift_cloth_1 10.55 10.47 
+
+single_lift_cloth_4 6.73 5.87 
+
+single_push_rope 3.81 3.61 
+
+Table 7. Per-sequence CD dyn comparison on representative sequences from the PhysTwin-full dataset (Jiang et al., 2025). Results are reported for reconstruction and resimulation with multi-view RGB-D inputs. CD dyn is measured in millimeters. 
+
+## D. Generalization to Unseen Interactions 
+
+In this section, we evaluate reconstruction quality on novel interaction sequences performed on the same object but with different interaction types, following the evaluation protocol of (Jiang et al., 2025). As shown in Tab. 8, our method outperforms PhysTwin on all metrics, demonstrating strong generalizability to unseen interaction actions. 
+
+Method 3D Metrics 2D Metrics 
+
+CD ↓ Track Err. ↓ IoU ↑ PSNR ↑
+
+PhysTwin (Jiang et al., 2025) 8.94 1.77 0.79 25.44 
+
+PHYS HAN DI (Ours) 8.38 1.70 0.82 25.89 
+
+Table 8. Generalization to unseen interactions on the PhysTwin-full dataset (Jiang et al., 2025). Our method demonstrates superior generalizability compared to the state of the art (Jiang et al., 2025). 
+
+## E. Contact Consistency Analysis 
+
+In this section, we provide a quantitative evaluation of contact consistency in the reconstructed hand–deformable-object interactions. We follow common evaluation protocols from prior hand–rigid-object interaction works (Grady et al., 2021; Liu et al., 2023) and construct pseudo contact labels based on the spatial proximity between object and hand points, using distance thresholds of d < 5 mm and 10 mm. We then measure Contact Accuracy as the agreement rate between the predicted hand–object contacts and these pseudo labels. As shown in Tab. 9, our method achieves higher Contact Accuracy than PhysTwin at both the 5 mm and 10 mm contact distance thresholds, indicating more consistent contact estimation. This observation aligns with our qualitative results in Fig. 4 and Sec. 4.4, where dense hand reconstruction enables more accurately localized virtual-spring connections at true contact regions. 
+
+Method Acc.@5 mm (%) ↑ Acc.@10 mm (%) ↑
+
+PhysTwin (Jiang et al., 2025) 97.0 97.5 
+
+PHYS HAN DI (Ours) 98.2 98.3 
+
+Table 9. Quantitative comparison on contact consistency. Contact Accuracy (%) is computed against pseudo contact labels constructed from the spatial proximity between object and hand points, with distance thresholds of 5 mm and 10 mm—following protocols similar in spirit to (Grady et al., 2021; Liu et al., 2023). Our method achieves higher accuracy than PhysTwin (Jiang et al., 2025) at both thresholds, indicating more precise and localized contact estimation. 
+
+16 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+## F. Sensitivity to Initial Hyperparameters 
+
+We additionally analyze the sensitivity of our method to the initial hyperparameters used in the zero-order optimization during the object reconstruction stage (Sec. B.2): the initial connection radius δ and the maximum number of connected nodes dmax . Tab. 10 reports the results, where row B corresponds to our default setting ( δ = 0 .002 , dmax = 3 ). Rows C–E and F–H correspond to settings with varying δ and dmax , respectively. We observe that our method remains robust within a reasonable range of initial values. 
+
+Row Method Initial δ Initial dmax CD full ↓ PSNR ↑
+
+A PhysTwin (Jiang et al., 2025) 0.040 50 8.86 22.48 B PHYS HAN DI (Ours, default) 0.002 3 4.44 24.60 
+
+C PHYS HAN DI (Ours) 0.001 3 6.81 22.62 D PHYS HAN DI (Ours) 0.020 3 4.62 24.18 E PHYS HAN DI (Ours) 0.040 3 5.26 23.98 F PHYS HAN DI (Ours) 0.002 1 4.47 24.24 G PHYS HAN DI (Ours) 0.002 10 4.90 24.09 H PHYS HAN DI (Ours) 0.002 50 6.15 23.59 
+
+Table 10. Sensitivity to initial hyperparameters used in the zero-order optimization of the object reconstruction stage on the 
+
+double_stretch_sloth sequence (reconstruction and resimulation with multi-view RGB-D inputs). Row B is our default setting. Rows C–E vary the initial connection radius δ while fixing dmax = 3 ; rows F–H vary the initial maximum number of connected nodes 
+
+dmax while fixing δ = 0 .002 . Our method remains robust within a reasonable range of initial values. 
+
+## G. Computational Cost Comparison 
+
+We provide a detailed runtime breakdown of our method and PhysTwin (Jiang et al., 2025). Tab. 11 reports the average per-frame runtime of each stage in both pipelines. Our method introduces additional computation time for hand reconstruction and refinement, which PhysTwin does not perform but which are essential for accurate full 3D hand modeling and inverse-physics-based hand refinement that benefits both hand and object reconstruction (Sec. 4.2.2). In contrast, our object reconstruction stages and inference-time simulation are slightly faster than the corresponding stages of PhysTwin. This is related to our spring-mass topology analysis in Sec. 4.4: PhysTwin’s sparse control points require an excessively large connection radius to maintain contact coverage, which prior literature notes can result in “excessive wave dispersion and require very large computer run times” (Silling & Askari, 2005).                
+
+> Method Training Inference
+> Hand Recon. Object Recon. (Zero-order) Object Recon. (First-order) Hand Refine. PhysTwin (Jiang et al., 2025) –13.80 21.22 –0.14
+> PHYS HAN DI (Ours) 27.38 12.24 17.63 12.32 0.11
+
+Table 11. Average per-frame runtime breakdown (in seconds) of our method and PhysTwin (Jiang et al., 2025). Our object reconstruction stages, including zero-order and first-order optimization, and inference-time simulation are slightly faster than the corresponding stages of PhysTwin. The remaining overhead in our pipeline comes from the additional Hand Reconstruction and Hand Refinement stages, which PhysTwin does not perform. 
+
+## H. Discussions & Limitations 
+
+Evaluation of multi-view hand reconstruction. Although we directly evaluated hand reconstruction accuracy in the single-view setting (Sec. 4.2.2) using ground-truth hand point clouds lifted from multi-view depth maps, this evaluation is not possible in the main multi-view experiments since those depth maps are used as inputs during training and more precise hand annotations are unavailable. Indeed, in prior work (e.g., (Hampali et al., 2020)), MANO fitting to multi-view RGB-D is often treated as a way to annotate ground-truth 3D hand meshes in datasets lacking such labels, and fitting quality is typically assessed indirectly via downstream applications. Motivated by this, we evaluate hand fitting quality primarily through physics-based deformable object reconstruction, where more accurate hands directly yield more accurate object simulations. Nonetheless, a direct evaluation would be valuable—for example, by capturing denser-view ground-truth 3D hands and comparing them against our sparse multi-view reconstructions, if such a capture system is available. 17 PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions 
+
+Handling dynamic contact changes. As discussed in Sec. 3.1, our interaction force is modeled to encourage the maintenance of the contact topology (i.e., the rest length of the virtual springs between hand vertices and object nodes). This modeling assumes that the hand–object contact topology remains static within a sequence. While this assumption is also common in existing hand-rigid-object interaction reconstruction methods (Hampali et al., 2020; Cho et al., 2024), handling dynamic hand–object contact changes would be an important direction for future research. In addition, such interaction force modeling does not account for the actual force (e.g., finger pressure) but instead serves as a boundary condition to drive the simulation of the spring–mass model. Explicitly modeling the actual hand force would be non-trivial, yet an interesting future research direction with potential applications in haptics. 18

@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-001.webp",
+      "caption": "Fig. 4. Influence of arm on hand-joint occlusion accuracy (ARCTIC dataset). Adding the arm consistently improves hand pose (RS-MJE), camera-space accuracy (CS-MJE), and temporal stability (RS-ACC, CS-ACC).",
+      "page": 6,
+      "index": 1,
+      "width": 494,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-002.webp",
+      "caption": "Fig. 18. Robustness to calibration mismatch on HOT3D. As cameraintrinsic perturbation increases, CS-MJE remains stable and even improves slightly under moderate mismatch, despite increasing camera-geometry error; performance degrades clearly only under large mismatches, indicating robustness to moderate calibration error.",
+      "page": 21,
+      "index": 2,
+      "width": 508,
+      "height": 716
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-003.webp",
+      "caption": "Fig. 19. Qualitative camera-space results on egocentric datasets.We compare our method against UmeTrack [Han et al. 2022] on three datasets with widely different camera intrinsics. Predicted left and right limb meshes are shown in red and blue, respectively, with ground truth highlighted in gray.",
+      "page": 22,
+      "index": 3,
+      "width": 1049,
+      "height": 534
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-004.webp",
+      "caption": "Fig. 9. Camera-space hand mesh projections on egocentric datasets. We project predicted hand meshes onto images from three camera types: HOT3D (fisheye), H2O/HO3D (perspective), and ARCTIC (distorted perspective). Our method maintains accurate projections under challenging conditions such as motion blur (H2O) and hand-object occlusions (HOT3D, HO3D, ARCTIC).",
+      "page": 10,
+      "index": 4,
+      "width": 1058,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-005.webp",
+      "caption": "Fig. 12. Influence of Crop Intrinsics Tokens (CIT). CIT encodes cropspecific intrinsics as tokens for the hand-arm crop inputs feed to the transformer. This enables explicit local camera-geometry reasoning and reduces camera-space mesh error, leading to closer alignment with ground truth.",
+      "page": 14,
+      "index": 5,
+      "width": 505,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-006.webp",
+      "caption": "Fig. 13. Camera-space lifting techniques. Lifting via monocular depth estimators is brittle in the near field of the camera, where small depth errors lead to large camera-space misplacements. HandDGP’s DGP module can yield plausible 2D projections while placing the 3D hand mesh far from the ground truth. In contrast, our RSS produces both accurate 2D projections and camera-space mesh placements that closely match ground truth.",
+      "page": 14,
+      "index": 6,
+      "width": 506,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-007.webp",
+      "caption": "Fig. 2. EgoForce processes a monocular egocentric RGB frame by extracting hand and forearm crops, tokenizing them, and conditioning the features on crop intrinsics (CIT). A transformer jointly infers hand–arm features to predict 2D keypoints (with confidences) and root-relative 3D hand and arm poses, which are lifted to camera-space meshes via the ray space solver. When the forearm is out of view, arm tokens are replaced with missing-arm tokens, and a hand-conditioned variational prior infers a plausible arm representation. We apply this workflow independently to the left and right hand–forearm crops.",
+      "page": 3,
+      "index": 7,
+      "width": 1064,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-008.webp",
+      "caption": "Fig. 10. Camera-space hand-arm mesh projections on egocentric datasets. We project predicted hand and arm meshes onto images from three camera types: HOT3D (fisheye), H2O (perspective), and ARCTIC (distorted perspective). Our method maintains accurate projections under challenging conditions such as motion blur (H2O) and hand-object occlusions (HOT3D, ARCTIC).",
+      "page": 13,
+      "index": 8,
+      "width": 1064,
+      "height": 946
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-009.webp",
+      "caption": "Fig. 7. Influence of the variational arm prior.Without the variational prior, the forearm is often mislocalized when it is heavily occluded. With the prior, the model infers a plausible forearm pose; in this example, the forearm is entirely out of view, yet the predicted position and orientation closely match ground truth.",
+      "page": 8,
+      "index": 9,
+      "width": 506,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-010.webp",
+      "caption": "Fig. 8. Qualitative camera-space results on egocentric datasets.We compare our method against three state-of-the-art camera-space 3D hand pose methods on three datasets with widely different camera intrinsics. Predicted left and right limb meshes are shown in red and blue, respectively, with ground truth highlighted in gray.",
+      "page": 9,
+      "index": 10,
+      "width": 1057,
+      "height": 1066
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-011.webp",
+      "caption": "Fig. 16. Right-hand camera-space trajectory for a HOT3D sequence.Our approach produces a more accurate hand trajectory in camera space, particularly along the depth (z-axis), compared to competing approaches. We visualize 160 frames from the sequence.",
+      "page": 20,
+      "index": 11,
+      "width": 1062,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-012.webp",
+      "caption": "Fig. 17. Qualitative results on HO3D and in-the-wild data. Our approach produces accurate hand pose estimates even under hand–object occlusions on HO3D (a), and it generalizes to in-the-wild videos despite not being explicitly trained on those data distributions (b).",
+      "page": 20,
+      "index": 12,
+      "width": 1064,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-013.webp",
+      "caption": "Fig. 3. The Ray Space Solver is a cross-camera (calibration-conditioned) module that recovers camera-space translation from 2D–3D correspondences, enabling deployment across devices with different optics.",
+      "page": 5,
+      "index": 13,
+      "width": 510,
+      "height": 469
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12498v1/fig-014.webp",
+      "caption": "Fig. 14. Unified hand–arm mesh. We attach the FARM at the MANO wrist and apply a small elbow-direction offset to avoid overlap and ensure a clean, anatomically consistent connection.",
+      "page": 16,
+      "index": 14,
+      "width": 510,
+      "height": 258
+    }
+  ]
+}

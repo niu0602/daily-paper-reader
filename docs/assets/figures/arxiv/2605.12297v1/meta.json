@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-001.webp",
+      "caption": "Fig. 5: Overall pipeline of the proposed EgoEV-HandPose. Synchronized left and right event streams are converted to LNES [10] and processed by the EgoBlaze backbone to extract 2D heatmaps (Hms), segmentation masks (Seg), and local features. These 2D cues are subsequently fed into the KeypointBEV module. During the Iterative Refinement Loop, the module generates intermediate predictions, including J2dLRefine, J2dRRefine, and J3d_Refine, which are utilized for calculating intermediate supervision losses. Upon completion of the iterations, the module produces the Final_3D pose and its corresponding 2D reprojections (Final_L and Final_R). Finally, a temporal action classification branch is employed for gesture recognition.",
+      "page": 6,
+      "index": 1,
+      "width": 1076,
+      "height": 815
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-002.webp",
+      "caption": "Fig. 8: Confusion matrix of gesture recognition on the EgoEVHands dataset.",
+      "page": 11,
+      "index": 2,
+      "width": 541,
+      "height": 513
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-003.webp",
+      "caption": "Fig. 9: Evolution of 3D and 2D MPJPE across iterative refinement stages. Left axis: 3D-MPJPE (mm). Right axis: 2DMPJPE (pixels) for left and right views. X-axis: four stages {Initialization, Iter0, Iter1, Iter2}. This figure summarizes how iterative refinement reduces 3D and 2D errors across stages and complements the numeric ablation results reported in the text.",
+      "page": 11,
+      "index": 3,
+      "width": 529,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-004.webp",
+      "caption": "Fig. 10: PCK curve on the full EgoEVHands test set. The fused model (solid blue) achieves AUC = 0.589, compared with the initial triangulation baseline (dashed orange) with AUC = 0.436, with thresholds = 50mm.",
+      "page": 11,
+      "index": 4,
+      "width": 542,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-005.webp",
+      "caption": "Fig. 7: Qualitative comparison between our method and stateof-the-art baselines. The zoomed-in view on the left hand highlights the superiority of our method in localizing finegrained finger joints, especially in challenging regions with occlusions and sparse observations.",
+      "page": 10,
+      "index": 5,
+      "width": 529,
+      "height": 894
+    },
+    {
+      "url": "assets/figures/arxiv/2605.12297v1/fig-006.webp",
+      "caption": "TABLE I: Dataset comparison with key attributes.",
+      "page": 3,
+      "index": 6,
+      "width": 450,
+      "height": 354
+    }
+  ]
+}

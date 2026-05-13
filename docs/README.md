@@ -6,70 +6,67 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-12
-- 运行时间：2026-05-12 20:19:40 UTC
+- 最新运行日期：2026-05-13
+- 运行时间：2026-05-13 20:37:01 UTC
 - 运行状态：成功
-- 本次总论文数：16
-- 精读区：5
+- 本次总论文数：15
+- 精读区：4
 - 速读区：11
 
 ### 今日简报（AI）
-今天聚焦机器人视觉与视频生成，精读与速读共 16 篇论文。  
-零样本现实迁移操控与生成式日常辅助视频成为最具突破的研究方向。  
-建议关注视觉-语言-动作一体化模型在真实环境中的泛化能力与可复现性。
-- 详情：[/202605/12/README](/202605/12/README)
+今日聚焦移动端自中心感知与机器人操控智能，共精读4篇、速读11篇论文。  
+移动端长时序视觉采集与语义增强机器人操作成为亮点，展示低成本硬件与数据驱动策略的潜力。  
+建议关注开源自中心视觉平台与语义感知操控结合的最新实践，预判其在智能交互设备中的应用突破。
+- 详情：[/202605/13/README](/202605/13/README)
 
 ### 精读区论文标签
-1. [Zero-Shot Sim-to-Real Robot Learning: A Dexterous Manipulation Study on Reactive Catching](/202605/12/2605.09789v1-zero-shot-sim-to-real-robot-learning-a-dexterous-manipulation-study-on-reactive-catching)  
+1. [MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware](/202605/13/2605.05945v2-mobileego-anywhere-open-infrastructure-for-long-horizon-egocentric-data-on-commodity-hardware)  
    标签：评分：9.0/10、query:dexop
-   evidence：反应式接球灵巧操作研究及仿真到现实的迁移
-2. [VISTA: A Generative Egocentric Video Framework for Daily Assistance](/202605/12/2605.10579v1-vista-a-generative-egocentric-video-framework-for-daily-assistance)  
-   标签：评分：8.5/10、query:dexop
-   evidence：生成高保真第一视角视频作为AI智能体的训练和评估数据
-3. [A Visuo-Tactile Data Collection System with Haptic Feedback for Coarse-to-Fine Imitation Learning](/202605/12/2605.08757v1-a-visuo-tactile-data-collection-system-with-haptic-feedback-for-coarse-to-fine-imitation-learning)  
+   evidence：长时程第一视角数据的基础设施
+2. [SEVO: Semantic-Enhanced Virtual Observation for Robust VLA Manipulation via Active Illumination and Data-Centric Collection](/202605/13/2605.11114v1-sevo-semantic-enhanced-virtual-observation-for-robust-vla-manipulation-via-active-illumination-and-data-centric-collection)  
+   标签：评分：9.0/10、query:dexop
+   evidence：用于操作的机载固定摄像头和第一视角虚拟观测
+3. [DexTwist: Dexterous Hand Retargeting for Twist Motion via Mixed Reality-based Teleoperation](/202605/13/2605.12182v1-dextwist-dexterous-hand-retargeting-for-twist-motion-via-mixed-reality-based-teleoperation)  
    标签：评分：8.0/10、query:dexop
-   evidence：用于模仿学习的带手内传感器的视触觉数据采集
-4. [Monocular Biomechanical Tracking of Fingers with Inverse Kinematics to Foundation Models](/202605/12/2605.09258v1-monocular-biomechanical-tracking-of-fingers-with-inverse-kinematics-to-foundation-models)  
+   evidence：通过基于混合现实的远程操作进行扭转动作的灵巧手重定向
+4. [EgoForce: Forearm-Guided Camera-Space 3D Hand Pose from a Monocular Egocentric Camera](/202605/13/2605.12498v1-egoforce-forearm-guided-camera-space-3d-hand-pose-from-a-monocular-egocentric-camera)  
    标签：评分：8.0/10、query:dexop
-   evidence：用于日常生活活动的单目手指生物力学追踪
-5. [SABER: A Scalable Action-Based Embodied Dataset for Real-World VLA Adaptation](/202605/12/2605.09613v1-saber-a-scalable-action-based-embodied-dataset-for-real-world-vla-adaptation)  
-   标签：评分：8.0/10、query:dexop
-   evidence：来自头戴式摄像机的第一视角零售机器人动作数据集
+   evidence：用于操作任务的单目第一视角相机3D手部姿态恢复
 
 ### 速读区论文标签
-1. [TriRelVLA: Triadic Relational Structure for Generalizable Embodied Manipulation](/202605/12/2605.05714v1-trirelvla-triadic-relational-structure-for-generalizable-embodied-manipulation)  
-   标签：评分：7.5/10、query:dexop
-   evidence：操作动作取决于物体-手-任务的关系结构
-2. [AT-VLA: Adaptive Tactile Injection for Enhanced Feedback Reaction in Vision-Language-Action Models](/202605/12/2605.07308v1-at-vla-adaptive-tactile-injection-for-enhanced-feedback-reaction-in-vision-language-action-models)  
-   标签：评分：7.5/10、query:dexop
-   evidence：在VLA模型中加入触觉信号用于接触密集型操作
-3. [BrickCraft: Visuomotor Skill Composition with Situated Manual Guidance for Long-Horizon Interlocking Brick Assembly](/202605/12/2605.07605v1-brickcraft-visuomotor-skill-composition-with-situated-manual-guidance-for-long-horizon-interlocking-brick-assembly)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于互锁积木组装的细粒度操作
-4. [StereoPolicy: Improving Robotic Manipulation Policies via Stereo Perception](/202605/12/2605.09989v1-stereopolicy-improving-robotic-manipulation-policies-via-stereo-perception)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于机器人操作的视觉运动策略学习
-5. [Trajectory-Consistent Flow Matching for Robust Visuomotor Policy Learning](/202605/12/2605.08511v1-trajectory-consistent-flow-matching-for-robust-visuomotor-policy-learning)  
+1. [Uncovering and Shaping the Latent Representation of 3D Scene Topology in Vision-Language Models](/202605/13/2605.07148v1-uncovering-and-shaping-the-latent-representation-of-3d-scene-topology-in-vision-language-models)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于机器人操作的视觉运动策略学习
-6. [RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Models](/202605/12/2605.09410v1-repo-vla-recovery-driven-policy-optimization-for-vision-language-action-models)  
+   evidence：视觉语言模型中基于2D第一视角输入的空间推理
+2. [PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions](/202605/13/2605.09538v1-physhandi-physics-based-reconstruction-of-hand-deformable-object-interactions)  
    标签：评分：7.0/10、query:dexop
-   evidence：针对接触密集型操作的恢复驱动策略优化
-7. [VEGA: Visual Encoder Grounding Alignment for Spatially-Aware Vision-Language-Action Models](/202605/12/2605.10485v1-vega-visual-encoder-grounding-alignment-for-spatially-aware-vision-language-action-models)  
+   evidence：重建手与物体的交互以及3D手部运动
+3. [EgoEV-HandPose: Egocentric 3D Hand Pose Estimation and Gesture Recognition with Stereo Event Cameras](/202605/13/2605.12297v1-egoev-handpose-egocentric-3d-hand-pose-estimation-and-gesture-recognition-with-stereo-event-cameras)  
+   标签：评分：7.0/10、query:dexop
+   evidence：用于机器人的第一视角3D手部姿态估计
+4. [ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](/202605/13/2605.05126v1-consisvla-4d-advancing-spatiotemporal-consistency-in-efficient-3d-perception-and-4d-reasoning-for-robotic-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：使用视觉编码器进行机器人操作的空间推理
-8. [PriorVLA: Prior-Preserving Adaptation for Vision-Language-Action Models](/202605/12/2605.10925v1-priorvla-prior-preserving-adaptation-for-vision-language-action-models)  
+   evidence：具有3D感知能力的机器人操作VLA模型
+5. [LoopVLA: Learning Sufficiency in Recurrent Refinement for Vision-Language-Action Models](/202605/13/2605.09948v1-loopvla-learning-sufficiency-in-recurrent-refinement-for-vision-language-action-models)  
    标签：评分：6.5/10、query:dexop
-   evidence：通用机器人操作模型的适配研究
-9. [HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Models](/202605/12/2605.10942v1-harmowam-harmonizing-generalizable-and-precise-manipulation-via-adaptive-world-action-models)  
+   evidence：涉及闭环空间调整和VLA模型的机器人操作
+6. [Data-Asymmetric Latent Imagination and Reranking for 3D Robotic Imitation Learning](/202605/13/2605.10166v1-data-asymmetric-latent-imagination-and-reranking-for-3d-robotic-imitation-learning)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于精确操作的自适应世界动作模型
-10. [ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](/202605/12/2605.05126v1-consisvla-4d-advancing-spatiotemporal-consistency-in-efficient-3d-perception-and-4d-reasoning-for-robotic-manipulation)  
+   evidence：基于混合质量轨迹的3D机器人模仿学习
+7. [ECHO: Continuous Hierarchical Memory for Vision-Language-Action Models](/202605/13/2605.10993v1-echo-continuous-hierarchical-memory-for-vision-language-action-models)  
+   标签：评分：6.5/10、query:dexop
+   evidence：用于长程操作任务的VLA模型
+8. [Training-Free Dense Hand Contact Estimation with Multi-Modal Large Language Models](/202605/13/2605.05886v1-training-free-dense-hand-contact-estimation-with-multi-modal-large-language-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：具有跨视图语义一致性的机器人操作 VLA 框架
-11. [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/202605/12/2605.08434v1-failing-forward-adaptive-failure-informed-learning-for-vision-language-action-models)  
+   evidence：密集手部接触估计和细粒度几何推理
+9. [When to Trust Imagination: Adaptive Action Execution for World Action Models](/202605/13/2605.06222v2-when-to-trust-imagination-adaptive-action-execution-for-world-action-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：利用失败轨迹的VLA模型用于可扩展机器人操作
+   evidence：预测未来视觉观测的机器人操作世界动作模型
+10. [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/202605/13/2605.08434v1-failing-forward-adaptive-failure-informed-learning-for-vision-language-action-models)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于机器人操作的VLA模型和基于失败信息的学习
+11. [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/202605/13/2605.08434v2-failing-forward-adaptive-failure-informed-learning-for-vision-language-action-models)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于可扩展机器人操作的VLA模型
 
 
 <div class="dpr-home-promo-card">

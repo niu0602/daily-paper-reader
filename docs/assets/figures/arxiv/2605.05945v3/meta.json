@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-001.webp",
+      "caption": "Fig. 4: Per-bone coefficient of variation (CV) of bone length across all valid frames, pooled over 98 sessions. Each bone of the 21-joint MANO skeleton should maintain constant length; lower CV indicates more consistent estimation. The pinky distal bone (joint 17→20) shows elevated CV because its physical length (∼2 cm) amplifies the relative effect of a fixed absolute noise floor (∼1.5 mm). Excluding this outlier, median CV is below 1%.",
+      "page": 6,
+      "index": 1,
+      "width": 894,
+      "height": 614
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-002.webp",
+      "caption": "Fig. 5: Distribution of estimated joint flexion angles for each finger, pooled over 98 sessions. Shaded regions indicate published biomechanical flexion limits for MCP, PIP, and DIP joints. Over 99.99% of estimated angles fall within anatomical bounds.",
+      "page": 6,
+      "index": 2,
+      "width": 893,
+      "height": 417
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-003.webp",
+      "caption": "Fig. 1: MobileEgo Anywhere turns any modern iPhone into a long-horizon egocentric capture device. (a) Contributors record hands-free using a helmet-mounted phone. (b) Episodes are substantially longer than those in prior datasets. (c) ARKit-based visual-inertial fusion yields continuous 6 DoF pose, used to generate 3D hand trajectories in a consistent world frame across the full session.",
+      "page": 2,
+      "index": 3,
+      "width": 1076,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-004.webp",
+      "caption": "Fig. 6: Wrist velocity and acceleration distributions for left and right hands, pooled over 98 sessions. Shaded bands indicate typical ranges for activities of daily living. Median velocity is 0.34 m/s (left) and 0.27 m/s (right); median acceleration is 2.7 m/s2 (left) and 1.5 m/s2 (right).",
+      "page": 7,
+      "index": 4,
+      "width": 894,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-005.webp",
+      "caption": "Fig. 7: Hierarchical decomposition of a 36-minute cooking session (217 atomic spans). A single session goal decomposes into five sub-goals, each containing two to four episodes. Sub-goal durations range from 1 to 17 minutes; episode durations from 23 s to 345 s. Numbers at the bottom row indicate the atomic span count per episode. The color grouping highlights how episodes cluster under semantically coherent sub-goals.",
+      "page": 7,
+      "index": 5,
+      "width": 1011,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-006.webp",
+      "caption": "TABLE I: Comparison of egocentric datasets for robot-relevant pretraining. Hours and durations are taken from the original publications or computed directly from the reported total hours and recording counts.",
+      "page": 3,
+      "index": 6,
+      "width": 1076,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-007.webp",
+      "caption": "Fig. 2: Overall data flow: raw mobile capture (RGB-D, IMU, ARKit pose) is logged in MCAP format, then processed offline into 3D hand trajectories, atomic action labels, and a hierarchical instruction tree.",
+      "page": 3,
+      "index": 7,
+      "width": 1076,
+      "height": 602
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-008.webp",
+      "caption": "Fig. 8: Hierarchical instruction labeling across 354 sessions (45,415 atomic spans). (a) Temporal scale separation: each level of the hierarchy occupies a distinct temporal band, with consistent 4–8× separation between adjacent levels (median durations: atomic spans 5 s, episodes 42 s, sub-goals 3.9 min, sessions 15.5 min). (b) Episode and sub-goal counts scale linearly with session length. (c) Episode granularity: 78% of episodes contain 10 or fewer atomic spans (median 5, mean 8.2), providing compact supervision units for downstream policy learning.",
+      "page": 8,
+      "index": 8,
+      "width": 1034,
+      "height": 830
+    },
+    {
+      "url": "assets/figures/arxiv/2605.05945v3/fig-009.webp",
+      "caption": "Fig. 3: Task diversity across 354 sessions and 16 contributors. Atomic action labels span a long-tail vocabulary covering household manipulation domains (cooking, cleaning, sewing, organizing) with ∼45K unique action categories.",
+      "page": 4,
+      "index": 9,
+      "width": 1022,
+      "height": 393
+    }
+  ]
+}

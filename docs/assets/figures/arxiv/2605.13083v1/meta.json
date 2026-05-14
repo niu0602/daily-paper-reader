@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-001.webp",
+      "caption": "Figure 5 Architecture of the multi-view tactile prediction model. A shared backbone encodes each view with view embeddings. Cross-view attention and gated fusion produce unified visual features, which are combined with hand pose through pose-aware fusion and decoded into bilateral pressure maps.",
+      "page": 6,
+      "index": 1,
+      "width": 982,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-002.webp",
+      "caption": "Figure 9 Tactile prediction results (5–8). The model captures fine-grained contact patterns and bimanual coordination across diverse manipulation tasks.",
+      "page": 21,
+      "index": 2,
+      "width": 906,
+      "height": 1174
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-003.webp",
+      "caption": "Figure 1 EgoTouch combines egocentric and wrist-mounted views with synchronized 3D hand pose and dense tactile pressure maps, providing complementary visual evidence for learning contact-aware interactions.",
+      "page": 2,
+      "index": 3,
+      "width": 984,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-004.webp",
+      "caption": "Figure 10 Tactile prediction results (9–12). The model accurately predicts contact locations during precision manipulation and dynamic gameplay.",
+      "page": 22,
+      "index": 4,
+      "width": 906,
+      "height": 1174
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-005.webp",
+      "caption": "Figure 7 Multi-view wrist cameras recover occluded hand--object contact. Top: the egocentric view suffers from occlusion, while wrist-mounted views reveal the contact interface. Bottom: ego-only prediction misses contact in occluded regions, whereas multi-view prediction recovers accurate pressure distributions consistent with the ground truth.",
+      "page": 10,
+      "index": 5,
+      "width": 886,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-006.webp",
+      "caption": "Table 1 Comparison of EgoTouch with existing hand interaction and tactile datasets. EgoTouch is the first to jointly provide multi-view video, bimanual hand pose, and real dense pressure data across diverse scenes.",
+      "page": 3,
+      "index": 6,
+      "width": 956,
+      "height": 397
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-007.webp",
+      "caption": "Figure 11 Tactile prediction results (13–16). The predicted pressure maps maintain spatial consistency with hand pose and visual observations while capturing temporal evolution of contact.",
+      "page": 23,
+      "index": 7,
+      "width": 906,
+      "height": 1174
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-008.webp",
+      "caption": "Table 2 Multi-view tactile prediction across five diverse scenarios. All methods use the same architecture and training recipe. Arrows (↑ / ↓) show relative percentage change vs. the Ego-only baseline.",
+      "page": 8,
+      "index": 8,
+      "width": 986,
+      "height": 809
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-009.webp",
+      "caption": "Figure 2 Data collection setup and example multi-modal data. The participant wears a head-mounted egocentric camera, two wrist-mounted cameras, and pressure-sensing gloves. All modalities are temporally synchronized.",
+      "page": 4,
+      "index": 9,
+      "width": 982,
+      "height": 531
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-010.webp",
+      "caption": "Figure 12 Failure case: folding black shorts. In the first frame, the model incorrectly predicts contact on the left hand even though no contact has occurred. The black glove and black shorts create a low-contrast visual appearance that resembles contact, causing the model to hallucinate pressure. This highlights a key limitation: the model relies heavily on visual cues and can be confused by color similarity between the hand and object.",
+      "page": 24,
+      "index": 10,
+      "width": 986,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-011.webp",
+      "caption": "Figure 6 Data scaling ablation study. Performance improves consistently with more training data across all metrics, demonstrating the model’s ability to leverage larger datasets effectively.",
+      "page": 9,
+      "index": 11,
+      "width": 966,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-012.webp",
+      "caption": "Figure 8 Tactile prediction results (1–4). Each subfigure shows a 2×3 grid of frames with predicted tactile pressure maps overlaid on the egocentric RGB input.",
+      "page": 20,
+      "index": 12,
+      "width": 906,
+      "height": 1174
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-013.webp",
+      "caption": "Figure 4 Dataset statistics and analysis. EgoTouch exhibits broad task coverage across five environment categories.",
+      "page": 5,
+      "index": 13,
+      "width": 986,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13083v1/fig-014.webp",
+      "caption": "Figure 3 Example data from EgoTouch demonstrates that hardware-based tactile sensing and pose tracking reveal critical force, contact, and motion cues that vision alone cannot capture.",
+      "page": 5,
+      "index": 14,
+      "width": 982,
+      "height": 338
+    }
+  ]
+}

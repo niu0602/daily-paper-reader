@@ -6,67 +6,67 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-13
-- 运行时间：2026-05-13 20:37:01 UTC
+- 最新运行日期：2026-05-14
+- 运行时间：2026-05-14 20:27:00 UTC
 - 运行状态：成功
 - 本次总论文数：15
-- 精读区：4
-- 速读区：11
+- 精读区：5
+- 速读区：10
 
 ### 今日简报（AI）
-今日聚焦移动端自中心感知与机器人操控智能，共精读4篇、速读11篇论文。  
-移动端长时序视觉采集与语义增强机器人操作成为亮点，展示低成本硬件与数据驱动策略的潜力。  
-建议关注开源自中心视觉平台与语义感知操控结合的最新实践，预判其在智能交互设备中的应用突破。
-- 详情：[/202605/13/README](/202605/13/README)
+今天专注于双手触觉估计与自我视角智能操作，共完成 15 篇论文的阅读。  
+重点成果来自 TouchAnything 与 MobileEgo Anywhere，展示了双手感知与长时间自我视频数据的新突破。  
+建议继续关注通用机器人交互与视觉‑动作模型融合的发展动向。
+- 详情：[/202605/14/README](/202605/14/README)
 
 ### 精读区论文标签
-1. [MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware](/202605/13/2605.05945v2-mobileego-anywhere-open-infrastructure-for-long-horizon-egocentric-data-on-commodity-hardware)  
+1. [TouchAnything: A Dataset and Framework for Bimanual Tactile Estimation from Egocentric Video](/202605/14/2605.13083v1-touchanything-a-dataset-and-framework-for-bimanual-tactile-estimation-from-egocentric-video)  
+   标签：评分：9.5/10、query:dexop
+   evidence：基于第一视角视频的双手触觉估计数据集
+2. [MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware](/202605/14/2605.05945v3-mobileego-anywhere-open-infrastructure-for-long-horizon-egocentric-data-on-commodity-hardware)  
    标签：评分：9.0/10、query:dexop
-   evidence：长时程第一视角数据的基础设施
-2. [SEVO: Semantic-Enhanced Virtual Observation for Robust VLA Manipulation via Active Illumination and Data-Centric Collection](/202605/13/2605.11114v1-sevo-semantic-enhanced-virtual-observation-for-robust-vla-manipulation-via-active-illumination-and-data-centric-collection)  
+   evidence：长时程第一视角数据采集的基础设施
+3. [SECOND-Grasp: Semantic Contact-guided Dexterous Grasping](/202605/14/2605.13117v1-second-grasp-semantic-contact-guided-dexterous-grasping)  
    标签：评分：9.0/10、query:dexop
-   evidence：用于操作的机载固定摄像头和第一视角虚拟观测
-3. [DexTwist: Dexterous Hand Retargeting for Twist Motion via Mixed Reality-based Teleoperation](/202605/13/2605.12182v1-dextwist-dexterous-hand-retargeting-for-twist-motion-via-mixed-reality-based-teleoperation)  
+   evidence：语义接触引导的灵巧抓取
+4. [Ego2World: Compiling Egocentric Cooking Videos into Executable Worlds for Belief-State Planning](/202605/14/2605.13335v1-ego2world-compiling-egocentric-cooking-videos-into-executable-worlds-for-belief-state-planning)  
+   标签：评分：9.0/10、query:dexop
+   evidence：将第一视角烹饪视频转化为可执行符号世界的基准测试
+5. [SID: Sliding into Distribution for Robust Few-Demonstration Manipulation](/202605/14/2605.13428v1-sid-sliding-into-distribution-for-robust-few-demonstration-manipulation)  
    标签：评分：8.0/10、query:dexop
-   evidence：通过基于混合现实的远程操作进行扭转动作的灵巧手重定向
-4. [EgoForce: Forearm-Guided Camera-Space 3D Hand Pose from a Monocular Egocentric Camera](/202605/13/2605.12498v1-egoforce-forearm-guided-camera-space-3d-hand-pose-from-a-monocular-egocentric-camera)  
-   标签：评分：8.0/10、query:dexop
-   evidence：用于操作任务的单目第一视角相机3D手部姿态恢复
+   evidence：用于鲁棒少样本操作的轻量级第一视角执行策略
 
 ### 速读区论文标签
-1. [Uncovering and Shaping the Latent Representation of 3D Scene Topology in Vision-Language Models](/202605/13/2605.07148v1-uncovering-and-shaping-the-latent-representation-of-3d-scene-topology-in-vision-language-models)  
+1. [HeteroGenManip: Generalizable Manipulation For Heterogeneous Object Interactions](/202605/14/2605.10201v1-heterogenmanip-generalizable-manipulation-for-heterogeneous-object-interactions)  
    标签：评分：7.0/10、query:dexop
-   evidence：视觉语言模型中基于2D第一视角输入的空间推理
-2. [PhysHanDI: Physics-Based Reconstruction of Hand-Deformable Object Interactions](/202605/13/2605.09538v1-physhandi-physics-based-reconstruction-of-hand-deformable-object-interactions)  
+   evidence：异构物体交互的泛化操作
+2. [ALAM: Algebraically Consistent Latent Transitions for Vision-Language-Action Models](/202605/14/2605.10819v1-alam-algebraically-consistent-latent-transitions-for-vision-language-action-models)  
    标签：评分：7.0/10、query:dexop
-   evidence：重建手与物体的交互以及3D手部运动
-3. [EgoEV-HandPose: Egocentric 3D Hand Pose Estimation and Gesture Recognition with Stereo Event Cameras](/202605/13/2605.12297v1-egoev-handpose-egocentric-3d-hand-pose-estimation-and-gesture-recognition-with-stereo-event-cameras)  
+   evidence：从无动作视频中为 VLA 模型进行表示学习
+3. [CUBic: Coordinated Unified Bimanual Perception and Control Framework](/202605/14/2605.13452v1-cubic-coordinated-unified-bimanual-perception-and-control-framework)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于机器人的第一视角3D手部姿态估计
-4. [ConsisVLA-4D: Advancing Spatiotemporal Consistency in Efficient 3D-Perception and 4D-Reasoning for Robotic Manipulation](/202605/13/2605.05126v1-consisvla-4d-advancing-spatiotemporal-consistency-in-efficient-3d-perception-and-4d-reasoning-for-robotic-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：具有3D感知能力的机器人操作VLA模型
-5. [LoopVLA: Learning Sufficiency in Recurrent Refinement for Vision-Language-Action Models](/202605/13/2605.09948v1-loopvla-learning-sufficiency-in-recurrent-refinement-for-vision-language-action-models)  
-   标签：评分：6.5/10、query:dexop
-   evidence：涉及闭环空间调整和VLA模型的机器人操作
-6. [Data-Asymmetric Latent Imagination and Reranking for 3D Robotic Imitation Learning](/202605/13/2605.10166v1-data-asymmetric-latent-imagination-and-reranking-for-3d-robotic-imitation-learning)  
-   标签：评分：6.5/10、query:dexop
-   evidence：基于混合质量轨迹的3D机器人模仿学习
-7. [ECHO: Continuous Hierarchical Memory for Vision-Language-Action Models](/202605/13/2605.10993v1-echo-continuous-hierarchical-memory-for-vision-language-action-models)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于长程操作任务的VLA模型
-8. [Training-Free Dense Hand Contact Estimation with Multi-Modal Large Language Models](/202605/13/2605.05886v1-training-free-dense-hand-contact-estimation-with-multi-modal-large-language-models)  
+   evidence：机器人操作中的双臂感知与控制框架
+4. [FrameSkip: Learning from Fewer but More Informative Frames in VLA Training](/202605/14/2605.13757v1-frameskip-learning-from-fewer-but-more-informative-frames-in-vla-training)  
+   标签：评分：7.0/10、query:dexop
+   evidence：在VLA训练中从包含操作关键转换的信息帧中学习
+5. [When to Trust Imagination: Adaptive Action Execution for World Action Models](/202605/14/2605.06222v1-when-to-trust-imagination-adaptive-action-execution-for-world-action-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：密集手部接触估计和细粒度几何推理
-9. [When to Trust Imagination: Adaptive Action Execution for World Action Models](/202605/13/2605.06222v2-when-to-trust-imagination-adaptive-action-execution-for-world-action-models)  
+   evidence：用于机器人操作的世界动作模型，预测未来视觉观测
+6. [Retrieve-then-Steer: Online Success Memory for Test-Time Adaptation of Generative VLAs](/202605/14/2605.10094v2-retrieve-then-steer-online-success-memory-for-test-time-adaptation-of-generative-vlas)  
    标签：评分：6.0/10、query:dexop
-   evidence：预测未来视觉观测的机器人操作世界动作模型
-10. [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/202605/13/2605.08434v1-failing-forward-adaptive-failure-informed-learning-for-vision-language-action-models)  
+   evidence：机器人操作中视觉-语言-动作模型的测试时自适应
+7. [Forecast-aware Gaussian Splatting for Predictive 3D Representation in Language-Guided Pick-and-Place Manipulation](/202605/14/2605.11144v1-forecast-aware-gaussian-splatting-for-predictive-3d-representation-in-language-guided-pick-and-place-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于机器人操作的VLA模型和基于失败信息的学习
-11. [Failing Forward: Adaptive Failure-Informed Learning for Vision-Language-Action Models](/202605/13/2605.08434v2-failing-forward-adaptive-failure-informed-learning-for-vision-language-action-models)  
+   evidence：语言引导的机器人拾取和放置操作的3D表示
+8. [Learning Action Manifold with Multi-view Latent Priors for Robotic Manipulation](/202605/14/2605.11832v1-learning-action-manifold-with-multi-view-latent-priors-for-robotic-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于可扩展机器人操作的VLA模型
+   evidence：用于操作的多视角潜变量先验与动作流形学习
+9. [SI-Diff: A Framework for Learning Search and High-Precision Insertion with a Force-Domain Diffusion Policy](/202605/14/2605.12247v1-si-diff-a-framework-for-learning-search-and-high-precision-insertion-with-a-force-domain-diffusion-policy)  
+   标签：评分：6.0/10、query:dexop
+   evidence：高精度插入和接触丰富的组装任务
+10. [AttenA+: Rectifying Action Inequality in Robotic Foundation Models](/202605/14/2605.13548v1-attena-rectifying-action-inequality-in-robotic-foundation-models)  
+   标签：评分：6.0/10、query:dexop
+   evidence：纠正机器人基础模型在操作中的动作不平等
 
 
 <div class="dpr-home-promo-card">

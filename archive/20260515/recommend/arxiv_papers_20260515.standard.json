@@ -1,0 +1,653 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-15T20:55:22.869516+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 10,
+    "quick_skim_target": 11,
+    "quick_selected": 10
+  },
+  "deep_dive": [
+    {
+      "id": "2605.05945v4",
+      "source": "arxiv",
+      "title": "MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware",
+      "abstract": "The recent advancement of Vision Language Action (VLA) models has driven a critical demand for large scale egocentric datasets. However, existing datasets are often limited by short episode durations, typically spanning only a few minutes, which fails to capture the long horizon temporal dependencies necessary for complex robotic task execution. To bridge this gap, we present MobileEgo Anywhere, a framework designed to facilitate the collection of robust, hour plus egocentric trajectories using commodity mobile hardware. We leverage the ubiquitous sensor suites of modern smartphones to provide high fidelity, long term camera pose tracking, effectively removing the high hardware barriers associated with traditional robotics data collection. Our contributions are three fold: (1) we release a novel dataset comprising 200 hours of diverse, long form egocentric data with persistent state tracking; (2) we open source a mobile application that enables any user to record egocentric data, and (3) we provide a comprehensive processing pipeline to convert raw mobile captures into standardized, training ready formats for Vision Language Action model and foundation model research. By democratizing the data collection process, this work enables the massive scale acquisition of long horizon data across varied global environments, accelerating the development of generalizable robotic policies.",
+      "authors": [
+        "Senthil Palanisamy",
+        "Abhishek Anand",
+        "Satpal Singh Rathor",
+        "Pratyush Patnaik",
+        "Shubhanshu Khatana"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.CL"
+      ],
+      "published": "2026-05-07T09:55:20+00:00",
+      "link": "https://arxiv.org/pdf/2605.05945v4",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "framework for collecting long-horizon egocentric trajectories for VLA models",
+      "llm_evidence_cn": "用于收集VLA模型长时程第一视角轨迹的框架",
+      "llm_evidence": "用于收集VLA模型长时程第一视角轨迹的框架",
+      "canonical_evidence": "用于收集VLA模型长时程第一视角轨迹的框架",
+      "llm_tldr_en": "MobileEgo Anywhere enables long-horizon egocentric data collection using commodity smartphones for robotics.",
+      "llm_tldr_cn": "MobileEgo Anywhere利用商用智能手机实现机器人长时程第一视角数据的收集。",
+      "llm_tldr": "MobileEgo Anywhere利用商用智能手机实现机器人长时程第一视角数据的收集。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.13925v1",
+      "source": "arxiv",
+      "title": "Towards Robotic Dexterous Hand Intelligence: A Survey",
+      "abstract": "Robotic dexterous hands are central to contact-rich manipulation, with rapid progress driven by advances in hardware, sensing, control, simulation, and data generation. However, existing studies are often developed under different assumptions regarding hand embodiments, sensory configurations, task settings, training data, and evaluation protocols, making systematic comparison difficult and obscuring the developmental trajectory of the field. This survey provides a holistic review of dexterous hand research from four complementary aspects. First, we present a hardware-level analysis covering actuation, transmission, perception, and representative hand designs, highlighting the key trade-offs in force capability, compliance, bandwidth, integration, and system complexity. Furthermore, we review control and learning methods for dexterous manipulation from a methodological perspective, grouping representative works by major paradigms and tracing their evolution in chronological order. In addition, we consolidate datasets, modality design, and evaluation practices, which enables methodological progress to be interpreted together with the ways in which it is trained, benchmarked, and assessed. Finally, we discuss the major limitations of current dexterous hand research and summarize the corresponding future directions. By connecting hardware analysis, methodological development, data resources, and evaluation, this survey aims to provide a structured understanding of dexterous hand research and to clarify the most important open challenges for future study.",
+      "authors": [
+        "Weiguang Zhao",
+        "Xihao Guo",
+        "Tian Liang",
+        "Rui Zhang",
+        "Irwin King",
+        "Kaizhu Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-13T15:23:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.13925v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Survey on robotic dexterous hand intelligence covering sensing, control, and data",
+      "llm_evidence_cn": "关于机器人灵巧手智能的综述，涵盖感知、控制和数据",
+      "llm_evidence": "关于机器人灵巧手智能的综述，涵盖感知、控制和数据",
+      "canonical_evidence": "关于机器人灵巧手智能的综述，涵盖感知、控制和数据",
+      "llm_tldr_en": "Provides a holistic review of dexterous hand research, including hardware, perception, and data generation.",
+      "llm_tldr_cn": "对灵巧手研究进行了全面回顾，包括硬件、感知和数据生成。",
+      "llm_tldr": "对灵巧手研究进行了全面回顾，包括硬件、感知和数据生成。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14106v1",
+      "source": "arxiv",
+      "title": "Behavior Cloning for Active Perception with Low-Resolution Egocentric Vision",
+      "abstract": "We investigate whether behavior cloning is sufficient to produce active perception in a structured object-finding task. A low-cost robot arm equipped with a wrist-mounted egocentric RGB camera must reposition to center a partially visible plant before triggering a grasp signal, requiring actions that improve future observations. The model predicts joint commands directly from low-resolution RGB images under closed-loop control. We show that low-resolution egocentric vision is sufficient for reliable task completion and that predicting relative joint deltas substantially outperforms absolute joint position prediction in our setting. These results demonstrate that visually grounded active perception can emerge from behavior cloning in a reproducible setting.",
+      "authors": [
+        "Anthony Bilic",
+        "Chen Chen",
+        "Ladislau Bölöni"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-13T20:45:21+00:00",
+      "link": "https://arxiv.org/pdf/2605.14106v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "behavior cloning with wrist-mounted egocentric RGB camera for active perception",
+      "llm_evidence_cn": "使用腕部第一视角RGB摄像头进行主动感知的行为克隆",
+      "llm_evidence": "使用腕部第一视角RGB摄像头进行主动感知的行为克隆",
+      "canonical_evidence": "使用腕部第一视角RGB摄像头进行主动感知的行为克隆",
+      "llm_tldr_en": "This study shows that low-resolution egocentric vision is sufficient for active perception in robotic grasping tasks.",
+      "llm_tldr_cn": "该研究表明，低分辨率的第一视角视觉足以在机器人抓取任务中实现主动感知。",
+      "llm_tldr": "该研究表明，低分辨率的第一视角视觉足以在机器人抓取任务中实现主动感知。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.15157v1",
+      "source": "arxiv",
+      "title": "Hand-in-the-Loop: Improving Dexterous VLA via Seamless Interventional Correction",
+      "abstract": "Vision-Language-Action (VLA) models are prone to compounding errors in dexterous manipulation, where high-dimensional action spaces and contact-rich dynamics amplify small policy deviations over long horizons. While Interactive Imitation Learning (IIL) can refine policies through human takeover data, applying it to high-degree-of-freedom (DoF) robotic hands remains challenging due to a command mismatch between human teleoperation and policy execution at the takeover moment, which causes abrupt robot-hand configuration changes, or \"gesture jumps\". We present Hand-in-the-Loop (HandITL), a seamless human-in-the-loop intervention method that blends human corrective intent with autonomous policy execution to avoid gesture jumps during bimanual dexterous manipulation. Compared with direct teleoperation takeover, HandITL reduces takeover jitter by 99.8% and preserves robust post-takeover manipulation, reducing grasp failures by 87.5% and mean completion time by 19.1%. We validate HandITL on tasks requiring bimanual coordination, tool use, and fine-grained long-horizon manipulation. When used to collect intervention data for policy refinement, HandITL yields policies that outperform those trained with standard teleoperation data by 19% on average across three long-horizon dexterous tasks.",
+      "authors": [
+        "Zhuohang Li",
+        "Liqun Huang",
+        "Wei Xu",
+        "Zhengming Zhu",
+        "Nie Lin",
+        "Xiao Ma",
+        "Xinjun Sheng",
+        "Ruoshi Wen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-05-14T17:51:40+00:00",
+      "link": "https://arxiv.org/pdf/2605.15157v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "improving dexterous VLA via interventional correction for robotic hands",
+      "llm_evidence_cn": "通过对机器人手的干预校正改进灵巧VLA",
+      "llm_evidence": "通过对机器人手的干预校正改进灵巧VLA",
+      "canonical_evidence": "通过对机器人手的干预校正改进灵巧VLA",
+      "llm_tldr_en": "Introduces HandITL to improve dexterous manipulation by blending human intervention with autonomous VLA policies.",
+      "llm_tldr_cn": "引入HandITL方法，通过融合人类干预与自主VLA策略来改进灵巧手操作。",
+      "llm_tldr": "引入HandITL方法，通过融合人类干预与自主VLA策略来改进灵巧手操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.14571v1",
+      "source": "arxiv",
+      "title": "Let Robots Feel Your Touch: Visuo-Tactile Cortical Alignment for Embodied Mirror Resonance",
+      "abstract": "Observing touch on another's body can elicit corresponding tactile sensations in the observer, a phenomenon termed mirror touch that supports empathy and social perception. This visuo-tactile resonance is thought to rely on structural correspondence between visual and somatosensory cortices, yet robotic systems lack computational frameworks that instantiate this principle. Here we demonstrate that cortical correspondence can be operationalized to endow robots with mirror touch. We introduce Mirror Touch Net, which imposes semantic, distributional and geometric alignment between visual and tactile representations through multi-level constraints, enabling prediction of millimetre-scale tactile signals across 1,140 taxels on a robotic hand from RGB images. Manifold analysis reveals that these constraints reshape visual representations into geometry consistent with the tactile manifold, reducing the complexity of cross-modal mapping. Extending this alignment framework to cross-domain observations of human hands enables tactile prediction and reflexive responses to observed human touch. Our results link a neural principle of visuo-tactile resonance to robotic perception, providing an explainable route towards anticipatory touch and empathic human-robot interaction. Code is available at https://github.com/fun0515/Mirror-Touch-Net.",
+      "authors": [
+        "Tianfang Zhu",
+        "Ning An",
+        "Rui Wang",
+        "Jiasi Gao",
+        "Qingming Luo",
+        "Anan Li",
+        "Guyue Zhou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-05-14T08:40:24+00:00",
+      "link": "https://arxiv.org/pdf/2605.14571v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "visuo-tactile alignment for predicting tactile signals from visual observation",
+      "llm_evidence_cn": "视觉-触觉对齐，用于从视觉观察中预测触觉信号",
+      "llm_evidence": "视觉-触觉对齐，用于从视觉观察中预测触觉信号",
+      "canonical_evidence": "视觉-触觉对齐，用于从视觉观察中预测触觉信号",
+      "llm_tldr_en": "Mirror Touch Net aligns visual and tactile representations to allow robots to feel touch through observation.",
+      "llm_tldr_cn": "Mirror Touch Net对齐视觉和触觉表示，使机器人能够通过观察来感知触觉。",
+      "llm_tldr": "Mirror Touch Net对齐视觉和触觉表示，使机器人能够通过观察来感知触觉。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.14742v1",
+      "source": "arxiv",
+      "title": "EARL: Towards a Unified Analysis-Guided Reinforcement Learning Framework for Egocentric Interaction Reasoning and Pixel Grounding",
+      "abstract": "Understanding human--environment interactions from egocentric vision is essential for assistive robotics and embodied intelligent agents, yet existing multimodal large language models (MLLMs) still struggle with accurate interaction reasoning and fine-grained pixel grounding. To this end, this paper introduces EARL, an Egocentric Analysis-guided Reinforcement Learning framework that explicitly transfers coarse interaction semantics to query-oriented answering and grounding. Specifically, EARL adopts a two-stage parsing framework including coarse-grained interpretation and fine-grained response. The first stage holistically interprets egocentric interactions and generates a structured textual description. The second stage produces the textual answer and pixel-level mask in response to the user query. To bridge the two stages, we extract a global interaction descriptor as a semantic prior, which is integrated via a novel Analysis-guided Feature Synthesizer (AFS) for query-oriented reasoning. To optimize heterogeneous outputs, including textual answers, bounding boxes, and grounding masks, we design a multi-faceted reward function and train the response stage with GRPO. Experiments on Ego-IRGBench show that EARL achieves 65.48% cIoU for pixel grounding, outperforming previous RL-based methods by 8.37%, while OOD grounding results on EgoHOS indicate strong transferability to unseen egocentric grounding scenarios.",
+      "authors": [
+        "Yuejiao Su",
+        "Xinshen Zhang",
+        "Zhen Ye",
+        "Lei Yao",
+        "Lap-Pui Chau",
+        "Yi Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-05-14T12:10:27+00:00",
+      "link": "https://arxiv.org/pdf/2605.14742v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "egocentric vision for interaction reasoning and grounding in robotics",
+      "llm_evidence_cn": "用于机器人交互推理和定位的第一视角视觉",
+      "llm_evidence": "用于机器人交互推理和定位的第一视角视觉",
+      "canonical_evidence": "用于机器人交互推理和定位的第一视角视觉",
+      "llm_tldr_en": "Introduces a reinforcement learning framework for reasoning and grounding human-environment interactions from egocentric views.",
+      "llm_tldr_cn": "引入了一个强化学习框架，用于从第一视角推理和定位人与环境的交互。",
+      "llm_tldr": "引入了一个强化学习框架，用于从第一视角推理和定位人与环境的交互。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.10201v2",
+      "source": "arxiv",
+      "title": "HeteroGenManip: Generalizable Manipulation For Heterogeneous Object Interactions",
+      "abstract": "Generalizable manipulation involving cross-type object interactions is a critical yet challenging capability in robotics. To reliably accomplish such tasks, robots must address two fundamental challenges: \"where to manipulate\" (contact point localization) and \"how to manipulate\" (subsequent interaction trajectory planning). Existing foundation-model-based approaches often adopt end-to-end learning that obscures the distinction between these stages, exacerbating error accumulation in long-horizon tasks. Furthermore, they typically rely on a single uniform model, which fails to capture the diverse, category-specific features required for heterogeneous objects. To overcome these limitations, we propose HeteroGenManip, a task-conditioned, two-stage framework designed to decouple initial grasp from complex interaction execution. First, Foundation-Correspondence-Guided Grasp module leverages structural priors to align the initial contact state, thereby significantly reducing the pose uncertainty of grasping. Subsequently, Multi-Foundation-Model Diffusion Policy (MFMDP) routes objects to category-specialized foundation models, integrating fine-grained geometric information with highly-variable part features via a dual-stream cross-attention mechanism. Experimental evaluations demonstrate that HeteroGenManip achieves robust intra-category shape and pose generalization. The framework achieves an average 31% performance improvement in simulation tasks with broad type setting, alongside a 36.7% gain across four real-world tasks with different interaction types.",
+      "authors": [
+        "Zhenhao Shen",
+        "Zeming Yang",
+        "Yue Chen",
+        "Yuran Wang",
+        "Shengqiang Xu",
+        "Mingleyang Li",
+        "Hao Dong",
+        "Ruihai Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-11T08:48:02+00:00",
+      "link": "https://arxiv.org/pdf/2605.10201v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Generalizable manipulation for heterogeneous object interactions and trajectory planning",
+      "llm_evidence_cn": "针对异构物体交互和轨迹规划的可泛化操作研究",
+      "llm_evidence": "针对异构物体交互和轨迹规划的可泛化操作研究",
+      "canonical_evidence": "针对异构物体交互和轨迹规划的可泛化操作研究",
+      "llm_tldr_en": "Proposes HeteroGenManip to address contact localization and trajectory planning for diverse object interactions.",
+      "llm_tldr_cn": "提出HeteroGenManip，解决多样化物体交互中的接触定位和轨迹规划问题。",
+      "llm_tldr": "提出HeteroGenManip，解决多样化物体交互中的接触定位和轨迹规划问题。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.11048v1",
+      "source": "arxiv",
+      "title": "ForceFlow: Learning to Feel and Act via Contact-Driven Flow Matching",
+      "abstract": "Existing imitation learning methods enable robots to interact autonomously with the physical environment. However, contact-rich manipulation tasks remain a significant challenge due to complex contact dynamics that demand high-precision force feedback and control. Although recent efforts have attempted to integrate force/torque sensing into policies, how to build a simple yet effective framework that achieves robust generalization under multimodal observations remains an open question. In this paper, we propose ForceFlow, a force-aware reactive framework built upon flow matching. For contact-stage policy design, we investigate force signal fusion mechanisms and adopt an asymmetric multimodal fusion architecture that treats force as a global regulatory signal, combined with a joint prediction paradigm that enhances the policy's understanding of instantaneous force and historical information, thereby achieving deep coupling between force and motion. For task-level hierarchical decomposition, we divide manipulation into a vision-dominant approach stage (VLM-based pointing for target localization) and a touch-dominant interaction stage (force-driven contact execution), with a Vision-to-Force (V2F) handover mechanism that explicitly decouples spatial generalization from contact regulation. Experimental results across six real-world contact-rich tasks demonstrate that ForceFlow achieves a 37% success rate improvement over the strong baseline ForceVLA while maintaining significantly lower cost. Moreover, ForceFlow exhibits accurate force signal prediction and demonstrates superior performance in contact force self-regulation and zero-shot out-of-distribution (OOD) generalization.",
+      "authors": [
+        "Shuoheng Zhang",
+        "Yifu Yuan",
+        "Hongyao Tang",
+        "Yan Zheng",
+        "Qiaojun Yu",
+        "Pengyi Li",
+        "Guowei Huang",
+        "Helong Huang",
+        "Xingyue Quan",
+        "Jianye Hao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-11T13:27:00+00:00",
+      "link": "https://arxiv.org/pdf/2605.11048v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "force-aware reactive framework for contact-rich manipulation tasks",
+      "llm_evidence_cn": "用于接触密集型操作任务的力量感知反应框架",
+      "llm_evidence": "用于接触密集型操作任务的力量感知反应框架",
+      "canonical_evidence": "用于接触密集型操作任务的力量感知反应框架",
+      "llm_tldr_en": "ForceFlow integrates force feedback into imitation learning for robust contact-rich robotic manipulation.",
+      "llm_tldr_cn": "ForceFlow将力量反馈集成到模仿学习中，用于稳健的接触密集型机器人操作。",
+      "llm_tldr": "ForceFlow将力量反馈集成到模仿学习中，用于稳健的接触密集型机器人操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.10819v2",
+      "source": "arxiv",
+      "title": "ALAM: Algebraically Consistent Latent Action Model for Vision-Language-Action Models",
+      "abstract": "Vision-language-action (VLA) models remain constrained by the scarcity of action-labeled robot data, whereas action-free videos provide abundant evidence of how the physical world changes. Latent action models offer a promising way to extract such priors from videos, but reconstruction-trained latent codes are not necessarily suitable for policy generation: they may predict future observations while lacking the structure needed to be reused or generated coherently with robot actions. We introduce ALAM (Algebraic Latent Action Model), an Algebraically Consistent Latent Action Model that turns temporal relations in action-free video into structural supervision. Given frame triplets, ALAM learns latent transitions that are grounded by reconstruction while being regularized by composition and reversal consistency, encouraging a locally additive transition space. For downstream VLA learning, we freeze the pretrained encoder and use its latent transition sequences as auxiliary generative targets, co-generated with robot actions under a joint flow-matching objective. This couples structured latent transitions with flow-based policy generation, allowing the policy to exploit ALAM's locally consistent transition geometry without requiring latent-to-action decoding. Representation probes show that ALAM reduces additivity and reversibility errors by 25-85 times over unstructured latent-action baselines and improves long-horizon cumulative reconstruction. When transferred to VLA policies, ALAM raises the average success rate from 47.9% to 85.0% on MetaWorld MT50 and from 94.1% to 98.1% on LIBERO, with consistent gains on real-world manipulation tasks. Ablations further confirm that the strongest improvements arise from the synergy between algebraically structured latent transitions and joint flow matching.",
+      "authors": [
+        "Zuojin Tang",
+        "Haoyun Liu",
+        "Xinyuan Chang",
+        "Changjie Wu",
+        "Dongjie Huo",
+        "Yandan Yang",
+        "Bin Liu",
+        "Zhejia Cai",
+        "Feng Xiong",
+        "Mu Xu",
+        "jiachen Luo",
+        "De Ma",
+        "Zhiheng Ma",
+        "Gang Pan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-05-11T16:37:07+00:00",
+      "link": "https://arxiv.org/pdf/2605.10819v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "latent action model extracting priors from action-free videos for policy generation",
+      "llm_evidence_cn": "从无动作视频中提取先验用于策略生成的潜动作模型",
+      "llm_evidence": "从无动作视频中提取先验用于策略生成的潜动作模型",
+      "canonical_evidence": "从无动作视频中提取先验用于策略生成的潜动作模型",
+      "llm_tldr_en": "Proposes ALAM to learn structured latent transitions from action-free videos for vision-language-action models.",
+      "llm_tldr_cn": "提出ALAM，从无动作视频中学习结构化潜转换，用于视觉-语言-动作模型。",
+      "llm_tldr": "提出ALAM，从无动作视频中学习结构化潜转换，用于视觉-语言-动作模型。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.13757v1",
+      "source": "arxiv",
+      "title": "FrameSkip: Learning from Fewer but More Informative Frames in VLA Training",
+      "abstract": "Vision-Language-Action (VLA) policies are commonly trained from dense robot demonstration trajectories, often collected through teleoperation, by sampling every recorded frame as if it provided equally useful supervision. We argue that this convention creates a temporal supervision imbalance: long low-change segments dominate the training stream, while manipulation-critical transitions such as alignment, contact, grasping, and release appear only sparsely. We introduce FrameSkip, a data-layer frame selection framework that scores trajectory frames using action variation, visual-action coherence, task-progress priors, and gripper-transition preservation, then remaps training samples toward high-importance frames under a target retention ratio. Because FrameSkip operates only in the dataloader, it leaves the VLA architecture, action head, training objective, and inference procedure unchanged. Across RoboCasa-GR1, SimplerEnv, and LIBERO, FrameSkip improves the success-retention trade-off over full-frame training and simpler frame selection variants, achieving a macro-average success rate of 76.15% across the three benchmarks compared with 66.50% for full-frame training while using a compressed trajectory view that retains 20% of unique frames in the main setting.",
+      "authors": [
+        "Bin Yu",
+        "Shijie Lian",
+        "Xiaopeng Lin",
+        "Zhaolong Shen",
+        "Yuliang Wei",
+        "Changti Wu",
+        "Hang Yuan",
+        "Haishan Liu",
+        "Bailing Wang",
+        "Cong Huang",
+        "Kai Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-13T16:38:05+00:00",
+      "link": "https://arxiv.org/pdf/2605.13757v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Frame selection for VLA training focusing on manipulation-critical transitions",
+      "llm_evidence_cn": "VLA训练中的帧选择，侧重于操作关键转换点",
+      "llm_evidence": "VLA训练中的帧选择，侧重于操作关键转换点",
+      "canonical_evidence": "VLA训练中的帧选择，侧重于操作关键转换点",
+      "llm_tldr_en": "Introduces FrameSkip to improve VLA training by prioritizing informative frames in robot demonstration trajectories.",
+      "llm_tldr_cn": "引入FrameSkip，通过优先处理机器人演示轨迹中的信息帧来改进VLA训练。",
+      "llm_tldr": "引入FrameSkip，通过优先处理机器人演示轨迹中的信息帧来改进VLA训练。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.10925v1",
+      "source": "arxiv",
+      "title": "PriorVLA: Prior-Preserving Adaptation for Vision-Language-Action Models",
+      "abstract": "Large-scale pretraining has made Vision-Language-Action (VLA) models promising foundations for generalist robot manipulation, yet adapting them to downstream tasks remains necessary. However, the common practice of full fine-tuning treats pretraining as initialization and can shift broad priors toward narrow training-distribution patterns. We propose PriorVLA, a novel framework that preserves pretrained priors and learns to leverage them for effective adaptation. PriorVLA keeps a frozen Prior Expert as a read-only prior source and trains an Adaptation Expert for downstream specialization. Expert Queries capture scene priors from the pretrained VLM and motor priors from the Prior Expert, integrating both into the Adaptation Expert to guide adaptation. Together, PriorVLA updates only 25% of the parameters updated by full fine-tuning. Across RoboTwin 2.0, LIBERO, and real-world tasks, PriorVLA achieves stronger overall performance than full fine-tuning and state-of-the-art VLA baselines, with the largest gains under out-of-distribution (OOD) and few-shot settings. PriorVLA improves over pi0.5 by 11 points on RoboTwin 2.0-Hard and achieves 99.1% average success on LIBERO. Across eight real-world tasks and two embodiments, PriorVLA reaches 81% in-distribution (ID) and 57% OOD success with standard data. With only 10 demonstrations per task, PriorVLA reaches 48% ID and 32% OOD success, surpassing pi0.5 by 24 and 22 points, respectively.",
+      "authors": [
+        "Xinyu Guo",
+        "Bin Xie",
+        "Wei Chai",
+        "Xianchi Deng",
+        "Tiancai Wang",
+        "Zhengxing Wu",
+        "Xingyu Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-11T17:56:02+00:00",
+      "link": "https://arxiv.org/pdf/2605.10925v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "adapting VLA models for generalist robot manipulation",
+      "llm_evidence_cn": "适配 VLA 模型用于通用机器人操作",
+      "llm_evidence": "适配 VLA 模型用于通用机器人操作",
+      "canonical_evidence": "适配 VLA 模型用于通用机器人操作",
+      "llm_tldr_en": "Introduces PriorVLA to preserve pretrained priors while adapting VLA models to downstream manipulation tasks.",
+      "llm_tldr_cn": "引入 PriorVLA 框架，在将 VLA 模型适配到下游操作任务时保留预训练先验。",
+      "llm_tldr": "引入 PriorVLA 框架，在将 VLA 模型适配到下游操作任务时保留预训练先验。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.14598v1",
+      "source": "arxiv",
+      "title": "DSSP: Diffusion State Space Policy with Full-History Encoding",
+      "abstract": "Diffusion-based imitation learning has shown strong promise for robot manipulation. However, most existing policies condition only on the current observation or a short window of recent observations, limiting their ability to resolve history-dependent ambiguities in long-horizon tasks. To address this, we introduce DSSP, a history-conditioned Diffusion State Space Policy that enables efficient, full-history conditioning for robot manipulation. Leveraging the continuous sequence modeling properties of State Space Models (SSMs), our history encoder effectively compresses the entire observation stream into a compact context representation. To ensure this context preserves critical information regarding future state evolution, the encoder is optimized with a dynamics-aware auxiliary training objective. This high-level context representation is then seamlessly fused with recent state observations to form a hierarchical conditioning mechanism for action generation. Furthermore, to maintain architectural consistency and minimize GPU memory overhead, we also instantiate the diffusion backbone itself using an SSM. Extensive experiments across simulation benchmarks and real-world manipulation tasks show that DSSP achieves state-of-the-art performance with a significantly smaller model size, demonstrating superior efficiency of the hierarchical conditioning in capturing crucial information as the history length increases.",
+      "authors": [
+        "Zhiyuan Guan",
+        "Jianshu Hu",
+        "Han Fang",
+        "Yunpeng Jiang",
+        "Yize Huang",
+        "Shujia Li",
+        "Xiao Li",
+        "Yutong Ban"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-05-14T09:06:01+00:00",
+      "link": "https://arxiv.org/pdf/2605.14598v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Diffusion-based imitation learning for robot manipulation using observation streams",
+      "llm_evidence_cn": "基于扩散的模仿学习用于机器人操作，利用观测流进行历史编码",
+      "llm_evidence": "基于扩散的模仿学习用于机器人操作，利用观测流进行历史编码",
+      "canonical_evidence": "基于扩散的模仿学习用于机器人操作，利用观测流进行历史编码",
+      "llm_tldr_en": "Introduces DSSP, a history-conditioned policy using State Space Models to improve long-horizon robot manipulation.",
+      "llm_tldr_cn": "引入DSSP，一种利用状态空间模型进行历史调节的策略，以改进长程机器人操作。",
+      "llm_tldr": "引入DSSP，一种利用状态空间模型进行历史调节的策略，以改进长程机器人操作。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.13041v1",
+      "source": "arxiv",
+      "title": "EgoForce: Robust Online Egocentric Motion Reconstruction via Diffusion Forcing",
+      "abstract": "With recent advances in embodied agents and AR devices, egocentric observations are readily available as input for real-world interactive online applications. However, egocentric viewpoints can only sporadically observe hands, in addition to the estimated head trajectory. We propose EgoForce, an online framework for reconstructing long-term full-body motion from noisy egocentric input. While existing generative frameworks can robustly handle noisy and sparse measurements, they assume a fixed-length observation window is available and are thus not suitable for real-time applications. Faster inference often relies on autoregressive prediction, sacrificing robustness. In contrast, we adopt a diffusion-based method with a temporally asymmetric noise schedule inspired by Diffusion Forcing. Specifically, our approach models temporally evolving uncertainty and incrementally denoises states as new streaming observations arrive. Combined with a noise-robust imputation strategy, EgoForce progressively generates stable and coherent full-body motion under strict causal constraints. Experiments demonstrate that our online framework outperforms existing online and offline methods, enabling long-horizon, full-body motion reconstruction in challenging egocentric scenarios.",
+      "authors": [
+        "Inwoo Hwang",
+        "Donggeun Lim",
+        "Hojun Jang",
+        "Young Min Kim"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-05-13T05:53:26+00:00",
+      "link": "https://arxiv.org/pdf/2605.13041v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "reconstructing full-body motion from noisy egocentric input",
+      "llm_evidence_cn": "从噪声第一视角输入中重建全身运动",
+      "llm_evidence": "从噪声第一视角输入中重建全身运动",
+      "canonical_evidence": "从噪声第一视角输入中重建全身运动",
+      "llm_tldr_en": "EgoForce reconstructs long-term full-body motion from egocentric observations using diffusion forcing.",
+      "llm_tldr_cn": "EgoForce利用扩散强迫技术从第一视角观测中重建长期全身运动。",
+      "llm_tldr": "EgoForce利用扩散强迫技术从第一视角观测中重建长期全身运动。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.13548v1",
+      "source": "arxiv",
+      "title": "AttenA+: Rectifying Action Inequality in Robotic Foundation Models",
+      "abstract": "Existing robotic foundation models, while powerful, are predicated on an implicit assumption of temporal homogeneity: treating all actions as equally informative during optimization. This \"flat\" training paradigm, inherited from language modeling, remains indifferent to the underlying physical hierarchy of manipulation. In reality, robot trajectories are fundamentally heterogeneous, where low-velocity segments often dictate task success through precision-demanding interactions, while high-velocity motions serve as error-tolerant transitions. Such a misalignment between uniform loss weighting and physical criticality fundamentally limits the performance of current Vision-Language-Action (VLA) models and World-Action Models (WAM) in complex, long-horizon tasks. To rectify this, we introduce AttenA+, an architecture-agnostic framework that prioritizes kinematically critical segments via velocity-driven action attention. By reweighting the training objective based on the inverse velocity field, AttenA+ naturally aligns the model's learning capacity with the physical demands of manipulation. As a plug-and-play enhancement, AttenA+ can be integrated into existing backbones without structural modifications or additional parameters. Extensive experiments demonstrate that AttenA+ significantly elevates the ceilings of current state-of-the-art models. Specifically, it improves OpenVLA-OFT to 98.6% (+1.5%) on the Libero benchmark and pushes FastWAM to 92.4% (+0.6%) on RoboTwin 2.0. Real-world validation on a Franka manipulator further showcases its robustness and cross-task generalization. Our work suggests that mining the intrinsic structural priors of action sequences offers a highly efficient, physics-aware complement to standard scaling laws, paving a new path for general-purpose robotic control.",
+      "authors": [
+        "Daojie Peng",
+        "Fulong Ma",
+        "Jiahang Cao",
+        "Qiang Zhang",
+        "Xupeng Xie",
+        "Jian Guo",
+        "Ping Luo",
+        "Andrew F. Luo",
+        "Boyu Zhou",
+        "Jun Ma"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-05-13T13:55:37+00:00",
+      "link": "https://arxiv.org/pdf/2605.13548v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Vision-Language-Action models for complex manipulation",
+      "llm_evidence_cn": "用于复杂操作的视觉-语言-动作模型",
+      "llm_evidence": "用于复杂操作的视觉-语言-动作模型",
+      "canonical_evidence": "用于复杂操作的视觉-语言-动作模型",
+      "llm_tldr_en": "Rectifies action inequality in robotic foundation models to improve precision-demanding manipulation.",
+      "llm_tldr_cn": "纠正机器人基础模型中的动作不平等，以提高对精度要求高的操作性能。",
+      "llm_tldr": "纠正机器人基础模型中的动作不平等，以提高对精度要求高的操作性能。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2605.14712v1",
+      "source": "arxiv",
+      "title": "IntentVLA: Short-Horizon Intent Modeling for Aliased Robot Manipulation",
+      "abstract": "Robot imitation data are often multimodal: similar visual-language observations may be followed by different action chunks because human demonstrators act with different short-horizon intents, task phases, or recent context. Existing frame-conditioned VLA policies infer each chunk from the current observation and instruction alone, so under partial observability they may resample different intents across adjacent replanning steps, leading to inter-chunk conflict and unstable execution. We introduce IntentVLA, a history-conditioned VLA framework that encodes recent visual observations into a compact short-horizon intent representation and uses it to condition chunk generation. We further introduce AliasBench, a 12-task ambiguity-aware benchmark on RoboTwin2 with matched training data and evaluation environments that isolate short-horizon observation aliasing. Across AliasBench, SimplerEnv, LIBERO, and RoboCasa, IntentVLA improves rollout stability and outperforms strong VLA baselines",
+      "authors": [
+        "Shijie Lian",
+        "Bin Yu",
+        "Xiaopeng Lin",
+        "Zhaolong Shen",
+        "Laurence Tianruo Yang",
+        "Yurun Jin",
+        "Haishan Liu",
+        "Changti Wu",
+        "Hang Yuan",
+        "Cong Huang",
+        "Kai Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-05-14T11:31:02+00:00",
+      "link": "https://arxiv.org/pdf/2605.14712v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "history-conditioned VLA framework encoding recent visual observations for robot manipulation",
+      "llm_evidence_cn": "为机器人操作编码近期视觉观测的历史条件VLA框架",
+      "llm_evidence": "为机器人操作编码近期视觉观测的历史条件VLA框架",
+      "canonical_evidence": "为机器人操作编码近期视觉观测的历史条件VLA框架",
+      "llm_tldr_en": "Introduces IntentVLA to model short-horizon intents in robot manipulation under partial observability.",
+      "llm_tldr_cn": "引入IntentVLA，在部分可观测下对机器人操作中的短时意图进行建模。",
+      "llm_tldr": "引入IntentVLA，在部分可观测下对机器人操作中的短时意图进行建模。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

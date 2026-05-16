@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.13067v1/fig-001.webp",
+      "caption": "Fig. 4. Distribution of the starting values for each episode in the dataset of the X (on the x-axis) and Z (on the y-axis) rails of the robot.",
+      "page": 4,
+      "index": 1,
+      "width": 511,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13067v1/fig-002.webp",
+      "caption": "Fig. 5. The episode-wise state and episode-wise actions (Eps/Eps) performs the best, with no state and chunk-wise actions (0/Chunk) performing slightly lower and with a much higher variance, while absolute state and absolute actions (Abs/Abs) fails completely.",
+      "page": 4,
+      "index": 2,
+      "width": 512,
+      "height": 374
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13067v1/fig-003.webp",
+      "caption": "Fig. 3. Bottle-recovery task decomposed into four stages: (a) Start—initial state, (b) Pick—approach and grasp the bottle, (c) Press—move to the shelf edge and press the bottle against it, (d) Place—move to the shelf and set the bottle upright.",
+      "page": 4,
+      "index": 3,
+      "width": 1052,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13067v1/fig-004.webp",
+      "caption": "Fig. 2. Illustration of the proposed episode-wise relative state and actions method applied to ACT.",
+      "page": 3,
+      "index": 4,
+      "width": 529,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13067v1/fig-005.webp",
+      "caption": "Fig. 1. Comparison of the three state-action representations. Absolute state/action encoding fails and can produce unsafe behavior. Removing the state and using chunk-wise actions improves robustness but still suffers from drift, especially in precision-critical stages. The proposed episode-wise relative encoding strikes a balance between the two and successfully solves the task. In the top-left example, the wrist collides with the upper shelf, leading to failure. In the top-right example, the bottle tilts after collision. A video digest of our work is available here: https://youtu.be/2tTUL bIeW4",
+      "page": 1,
+      "index": 5,
+      "width": 529,
+      "height": 368
+    }
+  ]
+}

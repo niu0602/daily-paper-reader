@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.13604v1/fig-001.webp",
+      "caption": "Figure 3. Per-joint MPJPE comparison. Attention (blue) outperforms GCN (red) on all joints, with the largest gains at fingertips (marked “tip”), which are most prone to occlusion.",
+      "page": 3,
+      "index": 1,
+      "width": 481,
+      "height": 301
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13604v1/fig-002.webp",
+      "caption": "Figure 4. Qualitative comparison: GCN multi-hop (red) vs. GT (green) on the left two columns, attention (blue) vs. GT (green) on the right two columns. Attention consistently aligns more closely with GT, with the largest differences at fingertip positions.",
+      "page": 4,
+      "index": 2,
+      "width": 1021,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2605.13604v1/fig-003.webp",
+      "caption": "Figure 1. Architecture overview. 2D keypoints are embedded with learnable joint-identity tokens and graph-distance positional encoding, processed by L=4 spatial self-attention layers, and decoded to 3D coordinates via a per-joint MLP.",
+      "page": 1,
+      "index": 3,
+      "width": 488,
+      "height": 426
+    }
+  ]
+}

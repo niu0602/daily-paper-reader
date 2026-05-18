@@ -6,49 +6,64 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-16
-- 运行时间：2026-05-16 20:26:46 UTC
+- 最新运行日期：2026-05-18
+- 运行时间：2026-05-18 20:56:29 UTC
 - 运行状态：成功
-- 本次总论文数：9
-- 精读区：1
-- 速读区：8
+- 本次总论文数：14
+- 精读区：5
+- 速读区：9
 
 ### 今日简报（AI）
-机器人操作专题阅读日——聚焦灵巧手与操作智能。  
-精读综述显示，灵巧手研究正向智能感知与可泛化操作跃进；程序引导奖励与抓取过滤方法值得继续追踪。  
-建议普通读者关注机器人如何通过多模态学习提升“手脑协作”，理解其在工业与家庭场景的潜力。
-- 详情：[/202605/16/README](/202605/16/README)
+探索机器人操作与多模态学习最新突破，深挖人机协作与智能推理潜力。  
+重点关注双臂绳索操控与脑机物理融合系统，两者在真实场景和数据效率上表现突出。  
+建议读者继续关注机器人细操作指标与个性化视觉上下文学习的应用进展。
+- 详情：[/202605/18/README](/202605/18/README)
 
 ### 精读区论文标签
-1. [Towards Robotic Dexterous Hand Intelligence: A Survey](/202605/16/2605.13925v1-towards-robotic-dexterous-hand-intelligence-a-survey)  
-   标签：评分：8.0/10、query:dexop
-   evidence：对灵巧手研究的全面综述，涵盖感知、控制和数据生成
+1. [Learning Sim-Grounded Policies for Bimanual Rope Manipulation from Human Teleoperation Data](/202605/18/2605.16043v1-learning-sim-grounded-policies-for-bimanual-rope-manipulation-from-human-teleoperation-data)  
+   标签：评分：10.0/10、query:dexop
+   evidence：研究基于远程操作的双手绳索操作第一视角视觉策略
+2. [PhysBrain 1.0 Technical Report](/202605/18/2605.15298v1-physbrain-10-technical-report)  
+   标签：评分：9.0/10、query:dexop
+   evidence：将大规模人类第一视角视频转化为物理常识，用于机器人适配。
+3. [EgoExo-WM: Unlocking Exo Video for Ego World Models](/202605/18/2605.15477v1-egoexo-wm-unlocking-exo-video-for-ego-world-models)  
+   标签：评分：9.0/10、query:dexop
+   evidence：将第三视角视频转换为第一视角视频，用于第一视角世界模型训练。
+4. [DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo](/202605/18/2605.16257v1-dexjoco-a-benchmark-and-toolkit-for-task-oriented-dexterous-manipulation-on-mujoco)  
+   标签：评分：9.0/10、query:dexop
+   evidence：面向任务的灵巧操作基准测试
+5. [Towards Robotic Dexterous Hand Intelligence: A Survey](/202605/18/2605.13925v2-towards-robotic-dexterous-hand-intelligence-a-survey)  
+   标签：评分：8.5/10、query:dexop
+   evidence：对灵巧手研究的全面综述，包括感知和数据生成
 
 ### 速读区论文标签
-1. [ProcVLM: Learning Procedure-Grounded Progress Rewards for Robotic Manipulation](/202605/16/2605.08774v1-procvlm-learning-procedure-grounded-progress-rewards-for-robotic-manipulation)  
+1. [KaRMA: A Kinematic Metric for Fine Manipulation Ability in Robotic Hands](/202605/18/2605.15548v1-karma-a-kinematic-metric-for-fine-manipulation-ability-in-robotic-hands)  
    标签：评分：7.5/10、query:dexop
-   evidence：用于机器人操作进度奖励的视觉语言模型
-2. [MVB-Grasp: Minimum-Volume-Box Filtering of Diffusion-based Grasps for Frontal Manipulation](/202605/16/2605.09672v1-mvb-grasp-minimum-volume-box-filtering-of-diffusion-based-grasps-for-frontal-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于正面操作场景的6自由度抓取生成器
-3. [When Absolute State Fails: Evaluating Proprioceptive Encodings for Robust Manipulation](/202605/16/2605.13067v1-when-absolute-state-fails-evaluating-proprioceptive-encodings-for-robust-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：评估用于鲁棒机器人操作的本体感受编码
-4. [FrameSkip: Learning from Fewer but More Informative Frames in VLA Training](/202605/16/2605.13757v1-frameskip-learning-from-fewer-but-more-informative-frames-in-vla-training)  
-   标签：评分：6.5/10、query:dexop
-   evidence：在抓取和释放等关键操作转换中为VLA训练进行帧选择
-5. [Drifting Field Policy: A One-Step Generative Policy via Wasserstein Gradient Flow](/202605/16/2605.07727v1-drifting-field-policy-a-one-step-generative-policy-via-wasserstein-gradient-flow)  
+   evidence：机器人手精细操作能力的运动学指标
+2. [RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data](/202605/18/2605.13775v1-roboevolve-co-evolving-planner-simulator-for-robotic-manipulation-with-limited-data)  
+   标签：评分：7.0/10、query:dexop
+   evidence：利用VLM和视频生成模型从图像中合成数据用于机器人操作训练的框架
+3. [Personal Visual Context Learning in Large Multimodal Models](/202605/18/2605.10936v1-personal-visual-context-learning-in-large-multimodal-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于机器人控制和动作价值优化的生成式策略
-6. [LoopVLA: Learning Sufficiency in Recurrent Refinement for Vision-Language-Action Models](/202605/16/2605.09948v1-loopvla-learning-sufficiency-in-recurrent-refinement-for-vision-language-action-models)  
+   evidence：来自可穿戴设备的第一视角视觉流
+4. [TMRL: Diffusion Timestep-Modulated Pretraining Enables Exploration for Efficient Policy Finetuning](/202605/18/2605.12236v1-tmrl-diffusion-timestep-modulated-pretraining-enables-exploration-for-efficient-policy-finetuning)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于具有闭环空间调节的机器人操作的VLA模型
-7. [RotVLA: Rotational Latent Action for Vision-Language-Action Model](/202605/16/2605.13403v1-rotvla-rotational-latent-action-for-vision-language-action-model)  
+   evidence：用于操作任务的通用机器人策略预训练与微调框架
+5. [Rethinking Graph Convolution for 2D-to-3D Hand Pose Lifting](/202605/18/2605.13604v1-rethinking-graph-convolution-for-2d-to-3d-hand-pose-lifting)  
    标签：评分：6.0/10、query:dexop
-   evidence：跨具身操作的视觉-语言-动作模型
-8. [AttenA+: Rectifying Action Inequality in Robotic Foundation Models](/202605/16/2605.13548v1-attena-rectifying-action-inequality-in-robotic-foundation-models)  
+   evidence：手部操作背景下的3D手势估计
+6. [FrameSkip: Learning from Fewer but More Informative Frames in VLA Training](/202605/18/2605.13757v1-frameskip-learning-from-fewer-but-more-informative-frames-in-vla-training)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于复杂长程操作任务的视觉-语言-动作模型
+   evidence：VLA训练中针对操作关键转折点的帧选择
+7. [DSSP: Diffusion State Space Policy with Full-History Encoding](/202605/18/2605.14598v1-dssp-diffusion-state-space-policy-with-full-history-encoding)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于长程机器人操作的基于扩散的模仿学习
+8. [HoloMotion-1 Technical Report](/202605/18/2605.15336v1-holomotion-1-technical-report)  
+   标签：评分：6.0/10、query:dexop
+   evidence：利用野外视频重建动作的人形机器人运动基础模型
+9. [SkiP: When to Skip and When to Refine for Efficient Robot Manipulation](/202605/18/2605.15536v1-skip-when-to-skip-and-when-to-refine-for-efficient-robot-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：针对机器人操作中关键接触步骤的高效模仿学习
 
 
 <div class="dpr-home-promo-card">

@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-001.webp",
+      "caption": "Table 1. Quantitative comparison on HO3D using ground-truth reconstruction metrics (top) and reference-free metrics (bottom). Best results are bold.",
+      "page": 6,
+      "index": 1,
+      "width": 498,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-002.webp",
+      "caption": "Fig. 12. Visualization of Stage 1 2D assets. The figure shows modal object masks, amodal object masks, 2D hand and object bounding boxes, and 2D hand joints, which provide the image-space evidence used by the subsequent 3D reconstruction, HOI spatial rectification, and optimization stages.",
+      "page": 15,
+      "index": 2,
+      "width": 1061,
+      "height": 1343
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-003.webp",
+      "caption": "Fig. 10. Qualitative comparison between CHOIR and state-of-the-art methods on HO3D. Red circles indicate regions of interest for comparing baseline reconstructions with ours. See videos on the supplementary webpage for temporal comparisons.",
+      "page": 10,
+      "index": 3,
+      "width": 1052,
+      "height": 1252
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-004.webp",
+      "caption": "Fig. 11. Representative failure cases. Most failures originate from Stage 1 initialization: (a) incomplete 2D object detection or segmentation, (b) incorrect metric object scale estimation or scale refinement, and (c) ambiguous or inaccurate pose tracking for geometrically symmetric objects under rapid or large motion changes.",
+      "page": 14,
+      "index": 4,
+      "width": 510,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-005.webp",
+      "caption": "Fig. 2. Method overview. Stage 1: From a monocular video, we first obtain 2D HOI cues and initialize 3D hand/object reconstructions to form a coarse 4D HOI sequence. Stage 2: A flow-matching generative HOI spatial rectification module rectifies hand-object relative placement before initial contact correspondence construction. Stage 3: Hierarchical contact-aware optimization refines the sequence across phases, yielding physically consistent 4D hand–object interactions.",
+      "page": 3,
+      "index": 5,
+      "width": 1064,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-006.webp",
+      "caption": "Fig. 8. Qualitative ablation of core components in CHOIR against the full pipeline. The first row shows the camera view and the second row shows a side view.",
+      "page": 9,
+      "index": 6,
+      "width": 1064,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-007.webp",
+      "caption": "Fig. 6. Examples from our GraspPair dataset. Each case comprises a posed object point cloud with 4,096 points, a source hand pose (red), a target hand pose (blue), and the camera ray direction (yellow).",
+      "page": 9,
+      "index": 7,
+      "width": 1064,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-008.webp",
+      "caption": "Fig. 7. Visualization of Stage 2 rectification and contact correspondences on HO3D, TASTE-Rob, and self-captured videos. We compare the reconstruction before and after Stage 2, together with ground truths when available or the final optimized result otherwise.",
+      "page": 9,
+      "index": 8,
+      "width": 1064,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2605.20992v2/fig-009.webp",
+      "caption": "Fig. 9. Visual results of our CHOIR on the challenging cases in TASTE-Rob and self-captured videos. Each case shows the input view, a novel-view rendering with the estimated contact map, and the rest-pose hand contact map. Temporal results are shown in videos on the supplementary webpage.",
+      "page": 9,
+      "index": 9,
+      "width": 1064,
+      "height": 339
+    }
+  ]
+}

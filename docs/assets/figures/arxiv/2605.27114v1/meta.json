@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-001.webp",
+      "caption": "Fig. 1: VR-DAGGER: portable, uncertainty-guided VR data collection. A task-agnostic VR application integrates directly with any Isaac Lab scene, providing immersive dexterous teleoperation. The policy rolls out autonomously; MC dropout uncertainty selects the most informative failure segments as short snippets for the operator to review and correct in VR, without full-rollout monitoring.",
+      "page": 1,
+      "index": 1,
+      "width": 475,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-002.webp",
+      "caption": "TABLE I: Policy performance across demonstration configurations, tasks, and difficulty levels. Each row corresponds to a training configuration defined by the number of initial offline demonstrations and corrective (on-policy) segments. Behavioral Cloning (BC) rows use only offline data; Corrective rows use VR-DAGGER uncertainty-guided active relabeling; HIL rows use unguided human-in-the-loop inspection. For each task (Pan, Drawer, Valve) and difficulty (Default, Hard), we report task success rate (%), subtask success rate (%) and respective standard deviations, evaluated after 1200 training epochs across 256 parallel environments for three different seeds. Subtask SR measures grasp success for Pan, grasp success for Drawer, and partial valve rotation for Valve.",
+      "page": 6,
+      "index": 2,
+      "width": 1044,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-003.webp",
+      "caption": "Fig. 6: Evaluation Environments. Overview of the three manipulation tasks used for policy evaluation. (a) Pan: A long-horizon pick-andplace task in which a robotic arm must grasp a pan from a cluttered table surface and place it onto a target burner, requiring precise grasping and object re-positioning. (b) Valve: A revolute joint manipulation task in which a dexterous robotic hand must rotate a wall-mounted valve, testing the ability to apply controlled rotational force to non-prehensile objects. (c) Drawer: A task in which a dexterous hand must identify and pull open a drawer on a multi-drawer cabinet, evaluating generalization to prismatic joint manipulation and contact-rich interactions.",
+      "page": 6,
+      "index": 3,
+      "width": 1054,
+      "height": 214
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-004.webp",
+      "caption": "Fig. 7: Example rollout for the Pan task. Sequence of global simulator frames (top) with the corresponding wrist-mounted frames (bottom, blue insets) as the robot approaches, grasps, and manipulates the object. During training and inference, the policy integrates both the third-person global perspective for spatial context and the ego-centric wrist views for fine-grained manipulation.",
+      "page": 7,
+      "index": 4,
+      "width": 1052,
+      "height": 197
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-005.webp",
+      "caption": "Fig. 9: Task and Subtask Success Rates. Darker bars show final task success rate; lighter bars show subtask success rate (grasp success for Pan, contact success for Drawer and Valve), both evaluated at the end of training (1200 epochs). Results for Behavioral Cloning (BC), Corrective, and HIL on Medium and Hard difficulty. Error bars show variability across evaluation rollouts.",
+      "page": 7,
+      "index": 5,
+      "width": 518,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-006.webp",
+      "caption": "Fig. 2: VR-DAGGER system overview. A client-server architecture decouples interactive VR teleoperation from simulation and learning. The server runs Isaac Lab, policy inference, and MC dropout uncertainty estimation; the Meta Quest client streams hand and head tracking for retargeting and visualizes the live scene state. After each failed rollout, the highest-uncertainty segment is extracted and presented as a short snippet for the operator to review and correct via VR teleoperation. The resulting corrective demonstration is appended to the training dataset before the next training round.",
+      "page": 3,
+      "index": 6,
+      "width": 983,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2605.27114v1/fig-007.webp",
+      "caption": "Fig. 4: Supported end-effectors. Our VR teleoperation app and retargeting pipeline support a variety of gripper morphologies, enabling data collection and policy learning across different robot configurations.",
+      "page": 4,
+      "index": 7,
+      "width": 514,
+      "height": 240
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.22231v1/fig-001.webp",
+      "caption": "Fig. 5: Network architecture of REACH-Net. The input is multiview videos, and the output is a 3D hand reconstruction. After extracting features from each frame using ViTPose [40] to produce tokens etn, we process them using a Transformer encoder-decoder architecture. The decoder’s output tokens are used to estimate hand pose parameters. They are then used to render the hand joints in each camera’s coordinate system.",
+      "page": 6,
+      "index": 1,
+      "width": 1054,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22231v1/fig-002.webp",
+      "caption": "Fig. 6: Estimated 3D hand poses. The leftmost column shows the two input views and other columns show the estimates by each method, in red for the left hand and in blue for the right hand. Our method recovers 3D hand pose more accurately than the baseline methods, particularly when the hands are occluded by objects or the body.",
+      "page": 8,
+      "index": 2,
+      "width": 1026,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22231v1/fig-003.webp",
+      "caption": "TABLE I: Comparison of different human hand pose datasets. Each column describes the following. No Vis. Dev.: whether the dataset is captured without any visible devices; Nat. Img.: whether the dataset comes with natural images; M/V HPA: whether the hand pose is annotated from more than one view; Room-Scale: whether the dataset is captured in a room-scale area; Act. Labels: whether the dataset provides action labels such as hand-object contact; and Modalities: the image modalities provided by the dataset. REACH is the first large-scale dataset that captures hand pose in a room-scale environment from multiple viewpoints with natural appearance and movement.",
+      "page": 4,
+      "index": 3,
+      "width": 948,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22231v1/fig-004.webp",
+      "caption": "Fig. 3: Sample images from the REACH dataset. The leftmost column shows images captured by the chest cameras (used only for annotation), and the other columns show images captured by the fixed-view room cameras. The ground truth hand (red for the left hand and blue for the right) is overlaid on the fixed-view images. The hand pose is estimated from the chest cameras and triangulated to the world coordinate system.",
+      "page": 4,
+      "index": 4,
+      "width": 1052,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2605.22231v1/fig-005.webp",
+      "caption": "Fig. 9: Camera arrangement of the REACH dataset. Blue cameras are installed on the ceiling, while red cameras are on the walls (from the height of the chest to the hip). Green cameras are auxiliary cameras that capture ceiling markers for estimating the chest camera’s location.",
+      "page": 9,
+      "index": 5,
+      "width": 512,
+      "height": 368
+    }
+  ]
+}

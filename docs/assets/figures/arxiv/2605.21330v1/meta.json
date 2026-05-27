@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-001.webp",
+      "caption": "Fig. 4: Joint command vs. actual position for different cube sizes. Deviation from the ideal line (y=x) increases with cube size due to volume blocking and weight-induced deformation. (a) Thumb MCP. (b) Thumb PIP. (c) Index MCP. (d) Ring MCP.",
+      "page": 6,
+      "index": 1,
+      "width": 1063,
+      "height": 253
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-002.webp",
+      "caption": "Fig. 5: Object position reconstruction from proprioceptive observations alone. (a) Per-axis tracking for a representative environment. (b) Reconstruction RMSE across 32 environments (mean ± std); the Transformer achieves 13.7 mm, outperforming MLP (17.9 mm, −23.4%) and LSTM (15.6 mm, −12.2%). *** denotes p < 0.001 (paired t-test with Bonferroni correction).",
+      "page": 6,
+      "index": 2,
+      "width": 991,
+      "height": 487
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-003.webp",
+      "caption": "Fig. 6: Per-joint reconstruction RMSE across architectures. Joints are grouped by type: 0 = Wrist; 1–5 = Abduction (Index, Middle, Pinky, Ring, Thumb); 6–10 = Metacarpophalangeal; 11–15 = Proximal interphalangeal; 16 = Distal interphalangeal (Thumb). Each group follows the same finger order.",
+      "page": 7,
+      "index": 3,
+      "width": 495,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-004.webp",
+      "caption": "TABLE II: Effect of observation window size and sensor feedback.",
+      "page": 7,
+      "index": 4,
+      "width": 529,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-005.webp",
+      "caption": "TABLE I: Performance comparison on cube rotation task. Best results in bold.",
+      "page": 5,
+      "index": 5,
+      "width": 446,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2605.21330v1/fig-006.webp",
+      "caption": "Fig. 3: Left: The ORCA hand in our real-world experiment. Magnetic angle sensors are embedded in the joints for direct joint sensing. The antagonistic tendon design allows the joint angles to be estimated from motor angle readings. Right: Continuous cube rotation on 55 mm and 65 mm cubes with our PT-Joint Policy.",
+      "page": 5,
+      "index": 6,
+      "width": 1076,
+      "height": 293
+    }
+  ]
+}

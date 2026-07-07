@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-001.webp",
+      "caption": "Table 3: High-level policy hyperparameters.",
+      "page": 15,
+      "index": 1,
+      "width": 810,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-002.webp",
+      "caption": "Figure 12: Example evaluation episodes of DP3 on the spray bottle task.",
+      "page": 21,
+      "index": 2,
+      "width": 664,
+      "height": 511
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-003.webp",
+      "caption": "Table 1: Success rate (%) across six simulation tasks with 20, 50, and 100 demonstrations. The Avg. columns report the average over all tasks. We use 500 evaluation episodes in each setting.",
+      "page": 7,
+      "index": 3,
+      "width": 834,
+      "height": 180
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-004.webp",
+      "caption": "Figure 14: Example evaluation episodes of our method on the spray bottle task.",
+      "page": 22,
+      "index": 4,
+      "width": 664,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-005.webp",
+      "caption": "Figure 13: Example evaluation episodes of hierarchical policy learning from scratch on the spray bottle task.",
+      "page": 22,
+      "index": 5,
+      "width": 664,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-006.webp",
+      "caption": "Table 5: Number of generated trajectories for each grasp type in G2D-Pretrain.",
+      "page": 18,
+      "index": 6,
+      "width": 582,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-007.webp",
+      "caption": "Table 6: Manual joint mapping from LEAP-hand actions to the canonical Shadow-hand action space. The LEAP joint indices are zero-indexed.",
+      "page": 18,
+      "index": 7,
+      "width": 740,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-008.webp",
+      "caption": "Figure 6: Visualization of high-level policy’s sub-goal predictions during real-world deployment.",
+      "page": 8,
+      "index": 8,
+      "width": 748,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-009.webp",
+      "caption": "Table 7: Image-based Diffusion Policy baseline hyperparameters.",
+      "page": 19,
+      "index": 9,
+      "width": 536,
+      "height": 671
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-010.webp",
+      "caption": "Figure 8: Workspace coverage comparison between G2D-Pretrain and a downstream task, visualized as point-cloud projections onto the x-y and x-z planes.",
+      "page": 17,
+      "index": 10,
+      "width": 664,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-011.webp",
+      "caption": "Figure 9: Performance gains from encoder-only transfer with G2D-Pretrain relative to GraspXL in simulation.",
+      "page": 20,
+      "index": 11,
+      "width": 498,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-012.webp",
+      "caption": "Figure 3: Our method integrates large-scale grasp pretraining with a hierarchical policy framework. (a) A high-level sub-goal prediction policy takes the current point cloud observation as input and predicts the positions of hand key points. (b) A low-level policy is conditioned on predicted sub-goal key points and current observation and predicts action chunks for the controller. Top: We augment the Dexonomy [2] dataset into grasp trajectories and pretrain the low-level policy, which we fine-tune with data from the downstream task.",
+      "page": 5,
+      "index": 12,
+      "width": 829,
+      "height": 536
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30749v1/fig-013.webp",
+      "caption": "Table 4: Low-level policy hyperparameters.",
+      "page": 16,
+      "index": 13,
+      "width": 464,
+      "height": 671
+    }
+  ]
+}

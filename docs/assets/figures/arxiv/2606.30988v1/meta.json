@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-001.webp",
+      "caption": "Figure 3: We pretrain a policy (with no F/T) on 21 tasks, then finetune on 5 unique tasks containing F/T information that do not exist in pretraining. We then evaluate MuSe on 3 sets of pretraining tasks to measure backwards transfer, and 3 sets of finetuning tasks for forward transfer. MuSe outperforms the pretrained model on all three pretraining tasks despite adding no additional data on these tasks, in addition to outperforming models with no pretraining and no F/T for forward transfer.",
+      "page": 6,
+      "index": 1,
+      "width": 810,
+      "height": 646
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-002.webp",
+      "caption": "Figure 6: Backward Transfer: Evaluation details for pretraining tasks. Left column shows initial task variation during evaluation, second and third columns show successful rollouts with MuSe, fourth column show failure modes with no finetuning (typically wrong application of force), and fifth column shows failure modes of No ER model (typically wrong task strategy).",
+      "page": 15,
+      "index": 2,
+      "width": 804,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-003.webp",
+      "caption": "Figure 1: Multisensory continual learning. A policy is first pretrained on diverse vision-action data without force-torque (F/T) labels, then adapted with a small amount of multisensory data from new contact-rich tasks. MuSe enables improved performance on pretraining tasks with no additional task-specific data (backward transfer), zero-shot F/T prediction where no F/T supervision was collected (cross-modal generalization), and improved performance on finetuning tasks that benefit from F/T sensing (forward transfer). Orange curves show predicted F/T signals, light-orange show ground-truth F/T, and bar plots compare MuSe task success rate with the corresponding baselines.",
+      "page": 2,
+      "index": 3,
+      "width": 826,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-004.webp",
+      "caption": "Figure 5: Cross-modal generalization of F/T prediction on pretraining tasks where F/T signals were recorded but never used for supervision. MuSe accurately predicts changes in F/T across all three axes (defined in top left). Failure modes include under or overestimation (middle left, bottom right).",
+      "page": 7,
+      "index": 4,
+      "width": 829,
+      "height": 634
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-005.webp",
+      "caption": "Table 5: Training data used for vision-only pretraining and multisensory finetuning. Rows are grouped by language label, with finetuning datasets sharing the same language label combined into a single entry.",
+      "page": 14,
+      "index": 5,
+      "width": 564,
+      "height": 700
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-006.webp",
+      "caption": "Figure 2: MuSe architecture. MuSe encodes image, proprioceptive, language, and optional force-torque (F/T) histories with modality-specific encoders, then fuses them through token-level early fusion and late fusion via crossattention adapters. The joint sequence model predicts future actions, F/T signals, and auxiliary video frames, with unavailable F/T inputs and losses masked during training. At deployment, action predictions drive the policy to commanded reference pose, while predicted future F/T is used to set a virtual target for adaptive compliance control.",
+      "page": 4,
+      "index": 6,
+      "width": 488,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2606.30988v1/fig-007.webp",
+      "caption": "Figure 7: Forward Transfer: Evaluation details for finetuning tasks. Left column shows initial task variation during evaluation, second and third columns show successful rollouts with MuSe, fourth column show failure modes with no F/T input (typically hits force limit or not enough application of force), and fifth column shows failure modes of No Pretraining model (typically failure to generalize).",
+      "page": 17,
+      "index": 7,
+      "width": 814,
+      "height": 431
+    }
+  ]
+}

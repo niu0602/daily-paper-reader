@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-001.webp",
+      "caption": "Table 1: Comparative results on contact-rich manipulation tasks. For each subtask, cln (clean, without perturbation) and ptb (perturbed, with human-induced disturbance) report success rates over 50 trials each. † denotes our method without real tactile input at inference time.",
+      "page": 6,
+      "index": 1,
+      "width": 624,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-002.webp",
+      "caption": "Figure 3: Demonstration of the four contact-rich manipulation subtasks evaluated in our experiments.",
+      "page": 6,
+      "index": 2,
+      "width": 829,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-003.webp",
+      "caption": "Table 3: Architecture details of UniTacVLA.",
+      "page": 15,
+      "index": 3,
+      "width": 527,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-004.webp",
+      "caption": "Figure 15: Qualitative comparison of tactile prediction within an action-tactile pair chunk on the plug insertion task. Red arrows indicate predicted tactile changes, while green arrows indicate the corresponding ground-truth tactile changes.",
+      "page": 21,
+      "index": 4,
+      "width": 829,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-005.webp",
+      "caption": "Figure 5: Qualitative results of T-CoT reasoning. (a) Our method accurately predicts rapid contact-stage transitions in board wiping despite subtle visual changes. (b) In USB insertion, T-CoT guides the model to place greater attention on tactile inputs during strong contact. (c) In the pencil adjustment task, unified tactile tokens form contact-aware semantic clusters under different contact patterns.",
+      "page": 7,
+      "index": 5,
+      "width": 824,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-006.webp",
+      "caption": "Figure 16: Visualization of the state-awareness capability of T-CoT across different tasks. The vertical axis denotes the average standard deviation of the depth and shear components from real tactile observations. TCoT can distinguish different contact modes from the current latent tactile state, and its state understanding is consistent with the variation trend of real tactile signals. These results show that T-CoT can correctly recognize loose, holding, and contact states, demonstrating its ability to capture task-relevant contact semantics.",
+      "page": 22,
+      "index": 6,
+      "width": 829,
+      "height": 814
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-007.webp",
+      "caption": "Figure 1: Overview of UniTacVLA. UniTacVLA learns a unified tactile latent space for contact-rich manipulation by combining tactile chain-of-thought reasoning with coarse-to-fine future tactile prediction. The learned proactive tactile prior captures both current contact states and future tactile dynamics. The predicted tactile dynamics are further used by the action-tactile mixed controller to refine low-frequency action chunks with high-frequency tactile-guided corrections, enabling more robust contact-rich manipulation.",
+      "page": 3,
+      "index": 7,
+      "width": 824,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-008.webp",
+      "caption": "Figure 12: Prompt template used for tactile chain-of-thought annotation.",
+      "page": 18,
+      "index": 8,
+      "width": 810,
+      "height": 635
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-009.webp",
+      "caption": "Figure 17: Qualitative behaviors of the action-tactile mixed controller in insertion tasks. The first row shows proactive correction in USB insertion, while the second and third rows show error-correction behaviors in USB and plug insertion, respectively. The controller enables the policy to recover from contact deviations and complete the insertion. In contrast, the fourth row shows a USB insertion failure without the controller, where the policy fails to correct the deviation in time and the task collapses.",
+      "page": 23,
+      "index": 9,
+      "width": 829,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-010.webp",
+      "caption": "Figure 9: Representative trajectories and task setups for the four categories of contact-rich manipulation tasks: pick-and-adjust, pick-and-wipe, pick-and-insert, and pick-and-assemble.",
+      "page": 13,
+      "index": 10,
+      "width": 826,
+      "height": 1093
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-011.webp",
+      "caption": "Figure 6: Qualitative results of coarse-to-fine future tactile prediction on the board-wiping task with disturbance.",
+      "page": 8,
+      "index": 11,
+      "width": 819,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-012.webp",
+      "caption": "Figure 7: Analysis of the high-frequency controller on the USB insertion task. The controller produces timely residual corrections when transient collisions occur, improving task success rates.",
+      "page": 8,
+      "index": 12,
+      "width": 829,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-013.webp",
+      "caption": "Figure 13: Qualitative comparison between fine-level tactile prediction and ground-truth tactile observations on adjustment and wiping tasks. Red arrows indicate predicted tactile changes, while green arrows indicate the corresponding ground-truth tactile changes.",
+      "page": 19,
+      "index": 13,
+      "width": 829,
+      "height": 855
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-014.webp",
+      "caption": "Figure 8: Gripper setup with two DM-Tac W visuo-tactile sensors mounted on the fingertips. The two tactile sensors are denoted as Finger 0 and Finger 1.",
+      "page": 12,
+      "index": 14,
+      "width": 492,
+      "height": 491
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-015.webp",
+      "caption": "Figure 14: Qualitative comparison between fine-level tactile prediction and ground-truth tactile observations on insertion and assembly tasks. Red arrows indicate predicted tactile changes, while green arrows indicate the corresponding ground-truth tactile changes.",
+      "page": 20,
+      "index": 15,
+      "width": 829,
+      "height": 855
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31723v1/fig-016.webp",
+      "caption": "Figure 2: Overview of the real-robot setup and task setup. We evaluate UniTacVLA on four categories of contact-rich manipulation tasks covering eight subtasks in total, using a RealMan 7-DoF robotic arm equipped with a DM-Tac W visuo-tactile sensor. We further introduce human-induced disturbances, as illustrated in (b), to evaluate the robustness of different methods under perturbed contact conditions.",
+      "page": 5,
+      "index": 16,
+      "width": 829,
+      "height": 304
+    }
+  ]
+}

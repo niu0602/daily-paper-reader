@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-001.webp",
+      "caption": "Figure 5: Training architecture of TTP. Our model includes an understanding expert for visual and text interpretation, an action expert, and a tactile expert. We use a unified action and tactile space to preserve pre-traing period knowledge.",
+      "page": 6,
+      "index": 1,
+      "width": 968,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-002.webp",
+      "caption": "Figure 7: Hardware settings in our real-robot experiments.",
+      "page": 11,
+      "index": 2,
+      "width": 654,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-003.webp",
+      "caption": "Figure 10: Demonstration showcases in our real-robot experiments (out of distribution). For Peeling tasks, we demonstrate object generalization including carrots and cucumbers. For VaseWiping tasks, we demonstrate object generalization including unseen vases and even wiping a whiteboard. For PickPlaceChips, we demonstrate location and object generalization with crispy instant noodles. For PaperFolding, we demonstrate object generalization with various unseen paper-like objects (A4, cardboards, and a piece of soft cloth). For SoftHard, we demonstrate object generalization including unseen soft and hard objects. For PlugIn tasks, we demonstrate visual interruption by painting the socket into black.",
+      "page": 15,
+      "index": 3,
+      "width": 876,
+      "height": 1140
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-004.webp",
+      "caption": "Figure 1: Overview of the Transferable Tactile Pre-Training (TTP) system.",
+      "page": 2,
+      "index": 4,
+      "width": 986,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-005.webp",
+      "caption": "Table 1: Semantic organization of the 200-dimensional action space.",
+      "page": 7,
+      "index": 5,
+      "width": 876,
+      "height": 932
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-006.webp",
+      "caption": "Table 2: Success rates (%) on LIBERO, LIBERO-plus, and RoboCasa benchmarks. We compare TTP with state-of-the-art models. Best results per benchmark are bolded, second-best are underlined. LIBERO: mean over 50 episodes per task. LIBERO-plus: zero-shot, mean over 70 trials per category. RoboCasa: mean over 50 trials per task (24 tasks).",
+      "page": 10,
+      "index": 6,
+      "width": 981,
+      "height": 586
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-007.webp",
+      "caption": "Figure 9: Demonstration showcases in our real-robot experiments (in distribution). From top to bottom are our 9 tasks: Peeling (Inspire), VaseWiping (single hand), VaseWiping (bimanual), Peeling (Gripper), PickPlaceChips, PaperFolding, SoftHard, PlugIn (Gripper), and PlugIn (DexBotic).",
+      "page": 14,
+      "index": 7,
+      "width": 886,
+      "height": 1154
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-008.webp",
+      "caption": "Figure 8: Real robot showcases. Our TTP demonstrate strong capabilities of precise and fine-grained manipulation, outperforming various baselines.",
+      "page": 13,
+      "index": 8,
+      "width": 982,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-009.webp",
+      "caption": "Figure 2: Our H-Tac datasets, composed of (a) HOI-Tac, (b) DeskTask-Tac, and (c) InternData-Tac. In total, H-Tac contains 160-hour vison-tactile-action data, including 300+ tasks and 135k+ episodes.",
+      "page": 4,
+      "index": 9,
+      "width": 958,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-010.webp",
+      "caption": "Table 3: Task settings and definitions. Our tasks range from fine-grained to contact rich settings, with various arms and hands of different DoFs and tactile sensors.",
+      "page": 12,
+      "index": 10,
+      "width": 876,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-011.webp",
+      "caption": "Figure 6: Visualization showcase. After tactile-based pre-training, our TTP model can generate hand motion and tactile predictions well, and can generalize to OOD inpainted scenes.",
+      "page": 9,
+      "index": 11,
+      "width": 650,
+      "height": 843
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-012.webp",
+      "caption": "Figure 3: Data collection system of our DeskTask-Tac dataset.",
+      "page": 5,
+      "index": 12,
+      "width": 779,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-013.webp",
+      "caption": "Table 5: Detailed results on real-robot experiments (in distribution), averaged over 10 test trails. Metrics including: (a) Peeling: average length of successfully peeled skins (cm), (b) PaperFolding: average proportion (%) of folded length over the length of applied paint, and (c) Others: success rate (%).",
+      "page": 16,
+      "index": 13,
+      "width": 964,
+      "height": 251
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01067v1/fig-014.webp",
+      "caption": "Table 6: Detailed results on real-robot experiments (out of distribution), averaged over 5 test trails. Metrics including: (a) Peeling: average length of successfully peeled skins (cm), (b) PaperFolding: average proportion (%) of folded length over the length of applied paint, and (c) Others: success rate (%).",
+      "page": 16,
+      "index": 14,
+      "width": 964,
+      "height": 254
+    }
+  ]
+}

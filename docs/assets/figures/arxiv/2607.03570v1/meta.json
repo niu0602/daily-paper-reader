@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-001.webp",
+      "caption": "Figure 6: (a) Simulation setup with 4 hands (b) Our real-world setup of the LEAP hand",
+      "page": 6,
+      "index": 1,
+      "width": 810,
+      "height": 222
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-002.webp",
+      "caption": "Figure 1: In our unified hand action space, an action is represented as the deformation of a canonical sphere. A deformed sphere is mapped to hand configurations of various embodiments (LEAP [16], Allegro [17], MANO Human [18] and Shadow [19]).",
+      "page": 2,
+      "index": 2,
+      "width": 811,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-003.webp",
+      "caption": "Figure 2: Illustration of the process of creating a sphere for a robotic hand given its URDF.",
+      "page": 3,
+      "index": 3,
+      "width": 821,
+      "height": 183
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-004.webp",
+      "caption": "Table 8: Domain randomization ranges applied during training.",
+      "page": 18,
+      "index": 4,
+      "width": 494,
+      "height": 432
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-005.webp",
+      "caption": "Figure 3: Construction of the unified hand surface correspondence.",
+      "page": 4,
+      "index": 5,
+      "width": 822,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-006.webp",
+      "caption": "Table 6: PPO training hyperparameters.",
+      "page": 17,
+      "index": 6,
+      "width": 454,
+      "height": 557
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-007.webp",
+      "caption": "Figure 5: We classify hand joints into (a) lateral joints and (b) encompassing joints and; (c) Illustration of the cascade inverse kinematics algorithm on a deformed sphere.",
+      "page": 5,
+      "index": 7,
+      "width": 817,
+      "height": 193
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03570v1/fig-008.webp",
+      "caption": "Figure 9: Homogeneous observations across different robotic hands.",
+      "page": 16,
+      "index": 8,
+      "width": 808,
+      "height": 253
+    }
+  ]
+}

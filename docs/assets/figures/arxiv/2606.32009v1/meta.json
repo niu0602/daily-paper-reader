@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-001.webp",
+      "caption": "Figure 4 Ego-exo data-collection setup. The egocentric cameras provide policy-aligned observations, while synchronized exocentric cameras provide complementary visual evidence for upper-body and hand motion recovery.",
+      "page": 11,
+      "index": 1,
+      "width": 936,
+      "height": 589
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-002.webp",
+      "caption": "Table 2 Stage-wise evaluation protocol for real-robot manipulation tasks. Stage completion rates are computed for the ordered subgoals listed below; final task success is counted only when the full task objective is achieved.",
+      "page": 10,
+      "index": 2,
+      "width": 915,
+      "height": 691
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-003.webp",
+      "caption": "Figure 7 Training-loss comparison for high-DoF VLA action learning. FK-aware supervision reduces the loss by constraining the joint prediction through robot kinematics, and the PhysBrain-initialized FK-aware model reaches the lowest loss under the same training budget.",
+      "page": 14,
+      "index": 3,
+      "width": 936,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-004.webp",
+      "caption": "Figure 1 Overview of Human-as-Humanoid and its effect on humanoid action-data generation. Conventional robot data collection obtains executable actions through teleoperation, coupling data throughput to robot execution. Humanas-Humanoid instead uses synchronized ego-exo human videos, estimates human keypoints, and retargets them into executable 60-DoF humanoid actions near the video capture rate. The upper-right panel reports a cross-domain action-replay compatibility check, where an action tokenizer trained on human-derived action chunks reconstructs unseen robot trajectories. The lower-right panel shows zero-shot real-robot policy rollouts from a VLA fine-tuned on converted human demonstrations, not direct replay of generated trajectories, on water pouring, bag packing, cap twisting, and ring placement.",
+      "page": 3,
+      "index": 4,
+      "width": 986,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-005.webp",
+      "caption": "Figure 6 End-to-end ego-exo conversion and replay at matched timestamps. Rows show the source human video, recovered skeleton keypoints, simulator replay, and real-robot replay. The visualization evaluates whether the recovered human motion remains coherent after retargeting into PrimeU actions and whether the resulting commands preserve the temporal structure required for near-real-time teleoperation-style replay.",
+      "page": 13,
+      "index": 5,
+      "width": 964,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-006.webp",
+      "caption": "Figure 3 Overview of the PhysDex learning pipeline. (Top) Synchronized human ego-exo videos are converted into controller-aligned 60-DoF robot action labels: egocentric views provide deployment-aligned policy observations, exocentric views support human mesh and upper-body/hand keypoint recovery, and staged IK maps the recovered motion into PrimeU joint chunks. (Bottom) The VLA policy is trained in the same robot action space. Visual-language features, the current robot state, and a noisy action chunk condition a flow-matching DiT, while DS-HKC applies differentiable FK supervision to the predicted joint chunk through wrist poses and fingertip positions.",
+      "page": 8,
+      "index": 6,
+      "width": 986,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-007.webp",
+      "caption": "Figure 9 Stage-final composite score in real-robot deployment. The score aggregates ordered stage completion and final task success over 10 rollouts per task, providing a progress-aware measure of deployment performance rather than a binary final-success rate alone.",
+      "page": 17,
+      "index": 7,
+      "width": 936,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-008.webp",
+      "caption": "Figure 5 Projection-based comparison between human video, camera-only ego-exo motion recovery, and wearable motion capture at matched relative timestamps. The visualization evaluates observation–motion compatibility by showing how the recovered skeletons align with the visible human body before retargeting into robot action labels.",
+      "page": 12,
+      "index": 8,
+      "width": 936,
+      "height": 710
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-009.webp",
+      "caption": "Figure 2 PrimeU human-aligned humanoid embodiment. The upper body is developed in-house and is designed around adult-male manipulation scale, with two 7-DoF arms, a 3-DoF neck, and a 3-DoF waist. The platform uses two 20-DoF Wuji dexterous hands for fine manipulation. Head-view and wrist-view cameras are Intel RealSense D435 cameras, matching the viewpoint structure used by the deployed VLA policy.",
+      "page": 5,
+      "index": 9,
+      "width": 986,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2606.32009v1/fig-010.webp",
+      "caption": "Figure 8 Synchronized rollout frames for downstream manipulation tasks. Each panel corresponds to one task; within each panel, the upper row shows the egocentric policy observation and the lower row shows a third-person visualization view at matched phases from early to late execution.",
+      "page": 16,
+      "index": 10,
+      "width": 836,
+      "height": 1208
+    }
+  ]
+}

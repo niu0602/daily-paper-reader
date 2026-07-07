@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-001.webp",
+      "caption": "Figure 3: Real-world contact-rich manipulation tasks. We evaluate OMNITACTUNE on four tasks: peg-in-hole requires spatial generalization and multi-stage insertion; charger insertion requires contact exploration and precise insertion; cap opening requires dynamic contact reasoning and pose adjustment; and box opening requires precise edge alignment and contact-rich opening.",
+      "page": 6,
+      "index": 1,
+      "width": 832,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-002.webp",
+      "caption": "Figure 13: Setting of Box Opening task.",
+      "page": 25,
+      "index": 2,
+      "width": 582,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-003.webp",
+      "caption": "Figure 14: Visualization of centroid trajectories.",
+      "page": 26,
+      "index": 3,
+      "width": 397,
+      "height": 332
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-004.webp",
+      "caption": "Figure 7: Visualization of our data collection system, for both hand and finger retargeting.",
+      "page": 15,
+      "index": 4,
+      "width": 582,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-005.webp",
+      "caption": "Figure 20: The training success rates for different policies, which is shown in Sec. 4.2.",
+      "page": 29,
+      "index": 5,
+      "width": 738,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-006.webp",
+      "caption": "Figure 21: The training success rates for different policies, which is shown in Sec. 4.4.",
+      "page": 29,
+      "index": 6,
+      "width": 739,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-007.webp",
+      "caption": "Table 3: Implementation hyperparameters used in OMNITACTUNE.",
+      "page": 22,
+      "index": 7,
+      "width": 752,
+      "height": 851
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-008.webp",
+      "caption": "Figure 2: System overview of OMNITACTUNE. OMNITACTUNE first collects visual demonstrations via human video retargeting and VR teleoperation, and uses them to train diverse visual base policies (left). It then adapts tactile feedback through a two-stage real-world residual RL pipeline: a warm-start stage collects tactile rollouts to optimize the tactile encoder and critic, followed by an online policy learning stage that learns residual tactile corrections (top right). A dense reward shaping pipeline combines visuo-tactile feedback to guide efficient real-world learning (bottom).",
+      "page": 3,
+      "index": 8,
+      "width": 827,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-009.webp",
+      "caption": "Table 4: Reward, contact-gate, and safety hyperparameters. The positive reward is normalized to [0, 1], while the safety term is applied as an additional penalty.",
+      "page": 23,
+      "index": 9,
+      "width": 694,
+      "height": 532
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-010.webp",
+      "caption": "Figure 10: Setting of Peg-in-Hole task.",
+      "page": 23,
+      "index": 10,
+      "width": 500,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-011.webp",
+      "caption": "Figure 19: Visualization of the failure cases on Cap Opening and Box Opening.",
+      "page": 28,
+      "index": 11,
+      "width": 740,
+      "height": 817
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-012.webp",
+      "caption": "Figure 11: Setting of Charger Insertion task.",
+      "page": 24,
+      "index": 12,
+      "width": 582,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03723v1/fig-013.webp",
+      "caption": "Figure 9: Visualization of ControlTac Generation Process.",
+      "page": 20,
+      "index": 13,
+      "width": 580,
+      "height": 208
+    }
+  ]
+}

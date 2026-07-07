@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-001.webp",
+      "caption": "Figure 5: Current-conditioned prediction pipeline. The model predicts CRPs from proprioceptive history. In teleoperation, inputs include robot state, raw motor current, and user intent velocity; in policy mode, user intent is replaced by task-level object or goal pose.",
+      "page": 6,
+      "index": 1,
+      "width": 790,
+      "height": 384
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-002.webp",
+      "caption": "Figure 2: Motivation for Current as Touch. Rigid position control may generate excessive contact forces and damage fragile objects when target positions are inaccurate. Motor current and joint states offer built-in tactile-like proprioceptive feedback about contact and object resistance. We use this feedback to predict a compliance reference position (CRP), allowing standard PD position control to produce compliant torque without external tactile/force sensors or direct torque commands.",
+      "page": 2,
+      "index": 2,
+      "width": 826,
+      "height": 381
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-003.webp",
+      "caption": "Figure 6: Object set for teleoperation training and evaluation. We collect grasping demonstrations on everyday objects with diverse shapes and stiffness, together with free-space hand-motion trajectories, to expose the model to both contact-induced and internal hand-motion currents.",
+      "page": 7,
+      "index": 3,
+      "width": 830,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-004.webp",
+      "caption": "Figure 3: Motivating measurement of motor current as proprioceptive contact feedback. On Unitree Dex3 [8] and LEAP Hand [9], motor current and joint states vary consistently with contact force measured by an external force/torque sensor. This observation motivates using intrinsic actuator signals as contact feedback without treating them as explicit force estimates.",
+      "page": 3,
+      "index": 4,
+      "width": 826,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-005.webp",
+      "caption": "Figure 7: Qualitative results across teleoperation and policy tasks. Without current-conditioned CRP prediction, direct retargeting or behavior cloning can deform cups, lose wiping contact, draw multiple cards, or drop a dynamically loaded bottle. Motor-current feedback predicts contact-aware CRPs for fragile object handling, sustained surface contact, thin-object retrieval, and dynamic load adaptation.",
+      "page": 8,
+      "index": 5,
+      "width": 820,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-006.webp",
+      "caption": "Table 6: Default model and training hyperparameters.",
+      "page": 12,
+      "index": 6,
+      "width": 402,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2607.03529v1/fig-007.webp",
+      "caption": "Figure 4: Teleoperation data manifold for learning CRPs. Demonstrations couple user intent with contact responses: command slopes encode grasp/release intent, while current changes relative to joint motion, e.g., ∆I/∆q, provide stiffness-related contact cues. The model learns CRPs from this human-corrected manifold.",
+      "page": 5,
+      "index": 7,
+      "width": 762,
+      "height": 210
+    }
+  ]
+}

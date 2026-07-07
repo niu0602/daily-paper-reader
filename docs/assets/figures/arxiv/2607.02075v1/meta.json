@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-001.webp",
+      "caption": "Figure 4. Camera-space hand orientation statistics for tracklets retained and rejected by our 3D-geometry filter. Azimuth and elevation are the horizontal and vertical angles of the hand orientation in the camera frame. Although retained hands follow the expected egocentric bias, rejected tracklets overlap these regions, confirming that fixed camera-space thresholds are insufficient for robust protagonist-hand identification.",
+      "page": 6,
+      "index": 1,
+      "width": 485,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-002.webp",
+      "caption": "Figure 3. Failure cases of naive camera-space heuristics. We illustrate two vanilla rules based on the hand orientation. (top) Image-plane orientation, expecting the protagonist’s hand to point upward. (bottom) Camera-facing direction, expecting alignment with the optical axis. Two columns show false rejections of protagonist hands and false retention of bystander hands, respectively.",
+      "page": 6,
+      "index": 2,
+      "width": 471,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-003.webp",
+      "caption": "Figure 1. HandsOnWorld: Unconstrained 3D hand-controlled egocentric video generation. Given the first frame and a target 3D camera and hand trajectory, our method synthesizes temporally coherent egocentric interactions across diverse everyday scenes, objects, and actions, generalizing far beyond the controlled tabletop settings of prior work. The first frames are generated with GPT-Image-2, and input text prompts are augmented before being passed to the video model.",
+      "page": 2,
+      "index": 3,
+      "width": 1010,
+      "height": 1204
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-004.webp",
+      "caption": "Figure 5. Qualitative comparison of training-data conditions. All rows share the same first control signals; columns sample every ten frames from t=0 to t=80. The ARCTIC-trained baselines drift toward lab imagery and place motion-capture markers on the synthesized hand (final-frame inset). Ours maintains the original scene appearance and produces more realistic hand interactions.",
+      "page": 7,
+      "index": 4,
+      "width": 1025,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-005.webp",
+      "caption": "Figure 6. Qualitative comparison of control signal representations on EgoVid-Pro (picking up a ruler) and ARCTIC (using a box). The camera-space baselines (Hand2World, Generated Reality) misplace the hand and miss the intended contact. Our Plückerray representation produces the most realistic hand interactions.",
+      "page": 8,
+      "index": 5,
+      "width": 481,
+      "height": 432
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-006.webp",
+      "caption": "Table 2. Quantitative comparison with recent SOTA methods. We achieve competitive performance against the baselines on ARCTIC. EgoVid-Pro brings out the full advantage of our representation, where we surpass all baselines on every metric. Bold marks the best per column and underline marks the second-best.",
+      "page": 9,
+      "index": 6,
+      "width": 1036,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02075v1/fig-007.webp",
+      "caption": "Figure 2. Overview of the protagonist-centered annotation pipeline. Starting from EgoVid-5M, we progressively discard clips that fail semantic (§4), image-quality (§4), or 3D-geometry (§4.3) criteria, yielding a clean set of protagonist-hand-trajectory pairs for training.",
+      "page": 5,
+      "index": 7,
+      "width": 1031,
+      "height": 382
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-001.webp",
+      "caption": "Figure 21: From human prior samples to optimized robot grasps. Left: contact-mode and wrist-pose samples predicted by the human prior for each object. Middle: robot wrist initializations obtained by transferring the prior samples to the robot hand. Right: final robot grasps after forceclosure-aware optimization.",
+      "page": 25,
+      "index": 1,
+      "width": 582,
+      "height": 1250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-002.webp",
+      "caption": "Figure 22: Snapshots of real-world grasp on objects #1–#12. Objects are approximately ordered by increasing scale from top to bottom. Some objects allow only one feasible contact mode, whereas others allow two. For each feasible contact mode, we execute three distinct grasps.",
+      "page": 26,
+      "index": 2,
+      "width": 829,
+      "height": 1246
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-003.webp",
+      "caption": "Figure 10: Visualization of representative cases of multiple grasps collected with a single object. For the smaller object #1, we collect single-handed grasps with varying numbers of fingers and object poses. For the larger objects #2 and #3, both single-handed and two-handed grasps are collected.",
+      "page": 15,
+      "index": 3,
+      "width": 790,
+      "height": 1187
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-004.webp",
+      "caption": "Figure 26: Typical failure modes of real-world grasping. (a) Low-quality grasp generation may produce loose or unstable grasps, suggesting that the current grasp generation network can be further improved. (b) Inaccurate calibration, segmentation, and depth sensing reduce the reliability of reconstructed point clouds, resulting in grasps that miss the object. This issue is particularly pronounced for small objects. (c) Irregularly shaped objects often suffer from poor point-cloud reconstruction and may lie outside the distribution of the training object set, leading to degraded grasp generation. This suggests that the diversity and coverage of the synthetic object dataset can be further improved to enhance generalization.",
+      "page": 30,
+      "index": 4,
+      "width": 748,
+      "height": 659
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-005.webp",
+      "caption": "Figure 4: Contact-mode allocation and synthesis success across object scales. (a) Averaged synthesis budgets and success counts per scene. (b) Overall synthesis success rate across object scales. (c) Pose diversity measured by the explained-variance ratio of the first principal component.",
+      "page": 7,
+      "index": 5,
+      "width": 826,
+      "height": 533
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-006.webp",
+      "caption": "Figure 25: Failure distribution of the distilled grasp generator on the Shadow Hand. Left: number of generated and successful grasps per scene across object scales and contact modes. Right: distribution of failure causes for each contact mode at each object scale, ordered as Single-Two, SingleThree, Single-Full, and Both-Full. Failures are categorized as position error (unsuccessful lifting), rotation error (excessive object rotation), pregrasp penetration, and squeeze-stage self-penetration.",
+      "page": 29,
+      "index": 6,
+      "width": 826,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-007.webp",
+      "caption": "Figure 16: Contact-mode allocation and synthesis success on the LEAP Hand. (a) Averaged synthesis budgets and success counts per scene. (b) Overall synthesis success rate across object scales. (c) Pose diversity measured by the explained-variance ratio of the first principal component.",
+      "page": 22,
+      "index": 7,
+      "width": 826,
+      "height": 533
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-008.webp",
+      "caption": "Figure 9: Visualization of the HUGS-Human dataset. Representative samples are shown with object scale increasing from top to bottom. Each sample includes RGB images from all four views, along with the rendered hand-object mesh reconstruction.",
+      "page": 14,
+      "index": 8,
+      "width": 790,
+      "height": 1239
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-009.webp",
+      "caption": "Figure 14: Qualitative examples of bimanual force-closure ablation. Using only the global bimanual term (Bimanual-Only) can produce degenerate contacts, where each hand touches the object only weakly or at fingertip extremities. Combining global and per-hand terms (Bimanual+Single) yields more coordinated bimanual grasps while maintaining better individual hand contact quality.",
+      "page": 18,
+      "index": 9,
+      "width": 664,
+      "height": 313
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-010.webp",
+      "caption": "Figure 13: Ablation of the bimanual force-closure objective. We compare using only the per-hand force-closure terms (Single-Only), only the global bimanual force-closure term (Bimanual-Only), and their combination (Bimanual+Single). Without considering bimanual force closure, the grasp success rate drops significantly.",
+      "page": 18,
+      "index": 10,
+      "width": 552,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-011.webp",
+      "caption": "Figure 17: Synthesized LEAP Hand grasps across object scales and contact modes.",
+      "page": 23,
+      "index": 11,
+      "width": 829,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-012.webp",
+      "caption": "Figure 8: Hardware setup for collecting the HUGS-Human dataset. Four RealSense D435 cameras are used for hand-object mesh reconstruction. Camera views #0 and #1 serve as the primary views, while auxiliary views #2 and #3 are used to reduce single-view depth ambiguity for each hand.",
+      "page": 13,
+      "index": 12,
+      "width": 706,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-013.webp",
+      "caption": "Figure 7: Real-world grasping demonstrations on LEAP Hands. (a) Cross-scale grasping over diverse objects. (b) Different mode selection under different deployment constraints.",
+      "page": 8,
+      "index": 13,
+      "width": 788,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-014.webp",
+      "caption": "Figure 2: Statistics of HUGS-Human Dataset. (a) Object-count distribution, compared with existing human grasp datasets (OakInk: only real-world captured objects; log-scaled y-axis and power-scaled x-axis, with absolute-value labels). (b) Average number of HUGS-Human grasps per object. (c) Contact-mode distribution in HUGS-Human.",
+      "page": 4,
+      "index": 14,
+      "width": 826,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-015.webp",
+      "caption": "Figure 23: Snapshots of real-world grasp on objects #13–#23.",
+      "page": 27,
+      "index": 15,
+      "width": 829,
+      "height": 1143
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-016.webp",
+      "caption": "Figure 19: Predicted contact-mode distributions from the human prior. Each example shows an object point cloud together with the predicted probability vector over contact modes, ordered as [Single-Two, Single-Three, Single-Full, Both-Full]. The coordinate axes have a length of 0.1 m.",
+      "page": 24,
+      "index": 16,
+      "width": 748,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-017.webp",
+      "caption": "Figure 20: Object-conditioned wrist-pose samples for different contact modes. The examples show that the learned pose prior predicts wrist-pose distributions conditioned jointly on object geometry and contact mode. For a given object geometry, different contact modes favor different approach regions: in Case 1, Both-Full admits both top and side bimanual approaches, while SingleFull mainly concentrates on top-down approaches; in Case 2, Single-Three favors oblique approaches, whereas Single-Two favors more direct top-down approaches.",
+      "page": 24,
+      "index": 17,
+      "width": 748,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-018.webp",
+      "caption": "Figure 15: Real-world hardware setup and customized LEAP fingertip. Our hardware setup consists of three RealSense D435 cameras arranged approximately 120◦ apart for object point-cloud reconstruction. Compared with the original LEAP fingertip, our customized fingertip has a smoother geometry and is covered with a silicone sleeve to improve contact stability.",
+      "page": 20,
+      "index": 18,
+      "width": 826,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-019.webp",
+      "caption": "Figure 3: Overview of HUGS. HUGS learns an object-conditioned human prior from demonstrations with geometry, wrist poses, and contact modes. During synthesis, it predicts contact-mode distributions and wrist initializations for unseen objects, transfers them to robot hands, and optimizes force closure under feasibility constraints to synthesize large-scale robot grasps across modes and scales.",
+      "page": 5,
+      "index": 19,
+      "width": 826,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-020.webp",
+      "caption": "Figure 12: Definition of the index MCP frame. We use the index MCP position as the translation anchor and the dorsal-hand wrist orientation as the rotation reference for the human wrist prior.",
+      "page": 16,
+      "index": 20,
+      "width": 664,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04554v1/fig-021.webp",
+      "caption": "Figure 11: Contact-mode distribution when including Both-Three. The Both-Three mode accounts for only a negligible fraction of the collected demonstrations.",
+      "page": 16,
+      "index": 21,
+      "width": 497,
+      "height": 339
+    }
+  ]
+}

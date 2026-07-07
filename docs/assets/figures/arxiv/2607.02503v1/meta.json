@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-001.webp",
+      "caption": "Fig. 1. Sparse tactile dynamics provide decisive evidence for contactrich manipulation. (a) Across six real-world tasks, tactile responses appear mainly around short contact events, making the informative signal temporally sparse. (b) By coupling action prediction with tactile deformation dynamics, VT-WAM improves the average success rate from 45.00% with Fast-WAM to 71.67%, with consistent gains on both surface-interaction and constrained insertion tasks.",
+      "page": 1,
+      "index": 1,
+      "width": 510,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-002.webp",
+      "caption": "Fig. 5. Visual-Tactile Prediction Results across Six Tasks. For visualization, VT-WAM predicts wrist camera observations together with tactile deformation fields. Blue denotes ground truth, and orange indicates prediction.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-003.webp",
+      "caption": "Fig. 6. AVTAG promotes tactile attention for contact recovery during vase wiping. The red and blue curves denote relative tactile and visual attention weights pt and pv from the action expert, and the dashed curve denotes the contact force |Fz | for visualization only. The wrist camera view is the only visual input available to the policy, while the side view is shown only for visualization. When the supporting plane moves downward, the wrist camera view changes only subtly and provides limited evidence about the contact phase. AVTAG encourages the action expert to attend more strongly to tactile evidence during this contact phase, enabling the model to re-establish contact and complete the task.",
+      "page": 7,
+      "index": 3,
+      "width": 514,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-004.webp",
+      "caption": "Fig. 2. Overview of VT-WAM. (a) Joint visual-tactile-action flow matching with three modality-specific experts connected by Asymmetric MoT Attention. (b) Attention masks in Asymmetric MoT Attention during training and inference. (c) Contact-gated AVTAG applies a training-only hinge ranking loss that encourages action queries to prioritize tactile evidence during contact phases.",
+      "page": 3,
+      "index": 4,
+      "width": 1018,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-005.webp",
+      "caption": "Fig. 3. Real-world experimental platform. The setup uses a 7-DoF xArm7 robot with a Robotiq 2F-85 gripper, a wrist camera, and paired gripper-mounted Xense tactile sensors. The scene includes the representative objects used in our experiments.",
+      "page": 4,
+      "index": 5,
+      "width": 492,
+      "height": 420
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-006.webp",
+      "caption": "Fig. 4. Overview of real-world contact-rich manipulation tasks. We evaluate VT-WAM on six real-world tasks covering two interaction regimes: surface-interaction tasks and constrained insertion tasks.",
+      "page": 5,
+      "index": 6,
+      "width": 1048,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02503v1/fig-007.webp",
+      "caption": "TABLE I SUCCESS RATES ON REAL-WORLD CONTACT-RICH TASKS.",
+      "page": 5,
+      "index": 7,
+      "width": 1044,
+      "height": 203
+    }
+  ]
+}

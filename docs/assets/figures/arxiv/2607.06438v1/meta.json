@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06438v1/fig-001.webp",
+      "caption": "Fig. 4: Key frames from manipulation sequences. Our method successfully handles challenging manipulation scenarios, including grasping a book from a flat table without a handle and grasping a kettle followed by turning the body while maintaining a stable grasp.",
+      "page": 11,
+      "index": 1,
+      "width": 719,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06438v1/fig-002.webp",
+      "caption": "Fig. 7: Ablation on hand-generalization. Our finger-agnostic approach generalizes across different hand morphologies without finger-specific data. We demonstrate successful grasping with three different hands that differ in joint length, size, and pose.",
+      "page": 15,
+      "index": 2,
+      "width": 579,
+      "height": 439
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06438v1/fig-003.webp",
+      "caption": "Fig. 1: Kinematic imitation does not guarantee successful manipulation and wrist pose encodes grasp affordance. Left: Even with accurate hand pose imitation, manipulation may fail because interaction forces are not encoded in kinematic trajectories. Top right: Wrist pose determines grasp success. Ground truth (left), feasible wrist region leading to stable grasp (middle, blue), and infeasible wrist pose causing failure (right, red). The yellow circle illustrates the feasible wrist boundary motivating our reset strategy. Bottom right: Different wrist poses induce distinct grasp configurations, highlighting that wrist pose captures grasp affordance and enables finger-agnostic, wrist-guided manipulation.",
+      "page": 2,
+      "index": 3,
+      "width": 718,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06438v1/fig-004.webp",
+      "caption": "Fig. 5: Grasping pose comparison. Although SkillMimicV2 demonstrates plausible finger closure, the incorrect wrist pose prevents a successful grasp, whereas WristMimic maintains precise wrist alignment.",
+      "page": 12,
+      "index": 4,
+      "width": 436,
+      "height": 384
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06438v1/fig-005.webp",
+      "caption": "Fig. 3: Qualitative comparison across 6 representative scenes. We illustrate representative qualitative results comparing our method with InterMimic [66]. Our method achieves affordance-aware grasping with diverse manipulation behaviors while accurately reproducing whole-body motion in the physics-based simulation.",
+      "page": 9,
+      "index": 5,
+      "width": 717,
+      "height": 457
+    }
+  ]
+}

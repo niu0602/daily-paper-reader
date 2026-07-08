@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-001.webp",
+      "caption": "Figure 4: Real-world evaluation on four dexterous tasks. Each bar reports success counts and failures categorized as arm-action error, dexterous-hand error, or stalled execution.",
+      "page": 6,
+      "index": 1,
+      "width": 818,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-002.webp",
+      "caption": "Figure A.1: Fraction of exploration that leaves the manifold at a matched displacement budget (Disp = 0.2). Bars show ∆NN/Disp; 1.0 (dashed) is fully off-manifold. LAMP keeps the smallest off-manifold fraction on most tasks. VQ-VAE is omitted here because its discrete action space cannot realise a controllable displacement budget; its behaviour is shown in the off-manifold panel instead.",
+      "page": 11,
+      "index": 2,
+      "width": 822,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-003.webp",
+      "caption": "Figure 5: Network architectures for our method, baselines, and ablations.",
+      "page": 7,
+      "index": 3,
+      "width": 487,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-004.webp",
+      "caption": "Table C.1: Visual reward classifier settings used for online RL and evaluation.",
+      "page": 14,
+      "index": 4,
+      "width": 831,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-005.webp",
+      "caption": "Table B.2: Residual-RLPD hyperparameters shared by all action-interface variants.",
+      "page": 13,
+      "index": 5,
+      "width": 826,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-006.webp",
+      "caption": "Figure 6: Latent action-flow visualization for the four tasks. Gray trajectories show the LMPM encoder output, teal trajectories show the latent action after adding the IL-predicted latent offset, and red dashed trajectories show the final latent action after applying the RL latent residual. Hand icons show decoded hand gestures at representative latent locations, and markers with the same color indicate the same sampled timestep.",
+      "page": 8,
+      "index": 6,
+      "width": 802,
+      "height": 439
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-007.webp",
+      "caption": "Figure 2: Overview of LAMP. The framework first learns LMPM from demonstrated hand motion and then uses the frozen prior interface in both behavior cloning and real-world residual RL.",
+      "page": 4,
+      "index": 7,
+      "width": 734,
+      "height": 560
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-008.webp",
+      "caption": "Table B.1: Training settings for LMPM and the behavior-cloning policy.",
+      "page": 12,
+      "index": 8,
+      "width": 828,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06323v1/fig-009.webp",
+      "caption": "Figure 3: Real-world setup and task scenes. The setup uses a Franka Research 3 arm, a Ruiyan dexterous hand, a front-view RealSense D435 camera, and a wrist-mounted RealSense D405 camera; the right panel shows execution-flow illustrations for the four tasks.",
+      "page": 5,
+      "index": 9,
+      "width": 810,
+      "height": 323
+    }
+  ]
+}

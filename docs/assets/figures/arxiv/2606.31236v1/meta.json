@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-001.webp",
+      "caption": "Figure 4: Sensor invariance and semantic preservation in the shared latent space. Sensor-prediction accuracy measures whether sensor identity remains recoverable from frozen latents, where lower values closer to the 33.3% chance level indicate stronger sensor invariance. Object-classification accuracy evaluates whether object-level information is preserved, where “Self” denotes training and testing on the same sensor and “Cross” denotes training on one sensor and testing on aligned latents from the other sensors.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-002.webp",
+      "caption": "Figure 5: Self- and cross-reconstruction from the shared latent. We visualize representative validation contacts from sphere, plane, and circle indentors. For each sensor, the first column is the ground-truth observation, the diagonal entries are self-reconstructions, and the off-diagonal entries are cross-reconstructions decoded from the nearest latent representations of the other sensors in the validation set.",
+      "page": 6,
+      "index": 2,
+      "width": 826,
+      "height": 220
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-003.webp",
+      "caption": "Table 6: Shared ACT hyperparameters (all tactile variants).",
+      "page": 15,
+      "index": 3,
+      "width": 770,
+      "height": 548
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-004.webp",
+      "caption": "Table 2: Cross-sensor policy transfer across all tasks. Each entry reports the number of successes out of 10 trials, shown as mean ± std over 3 runs. Bold indicates the best performance for each source-deploy combination and task.",
+      "page": 7,
+      "index": 4,
+      "width": 686,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-005.webp",
+      "caption": "Table 5: TACTX representation-learning hyperparameters.",
+      "page": 14,
+      "index": 5,
+      "width": 606,
+      "height": 220
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-006.webp",
+      "caption": "Figure 7: The three tactile sensors used in TACTX, each spanning a different transduction modality. All three are visually matched (black TPU/tape/elastomer) to remove cosmetic shortcuts and have roughly commensurate active sensing areas.",
+      "page": 13,
+      "index": 6,
+      "width": 740,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-007.webp",
+      "caption": "Figure 2: TACTX trains on paired contacts from two sensors at a time. Paired observations are encoded into a shared latent space, aligned with InfoNCE, and decoded through self- and cross-reconstruction. Other pairs are trained analogously, yielding a single latent space shared by all three sensors.",
+      "page": 4,
+      "index": 7,
+      "width": 829,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-008.webp",
+      "caption": "Figure 3: Transitive cross-sensor alignment. Cosine similarity along the Daimon→eFlesh→FlexiTac path measures global latent alignment, with dashed lines indicating the mean for each method.",
+      "page": 5,
+      "index": 8,
+      "width": 414,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2606.31236v1/fig-009.webp",
+      "caption": "Table 8: In-domain policy performance. Same-sensor train and test. TACTX matches or exceeds both baselines on pick-and-place and recovers most of the in-domain insertion gain provided by raw tactile. Success rates over 10 rollouts; bold marks the best per task per sensor.",
+      "page": 16,
+      "index": 9,
+      "width": 756,
+      "height": 275
+    }
+  ]
+}

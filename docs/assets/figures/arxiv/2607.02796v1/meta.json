@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-001.webp",
+      "caption": "Figure 4 A. The biomechanical model, positioned as computed from both reconstruction methods and overlayed on the video of the participant forming the ASL posture for the letter B. All data is from the same video recording at t = 4s. For the two-stage method (solid orange outline), pronounced flexion is observed in more distal joints; the end-to-end result (dashed blue outline) for the same frame shows better agreement to the actual position of the hand. B. Computed joint angles for the middle, ring, and pinky fingers across 10 trials involving signing the letter B. Time (~4-12s) corresponds to the hand being maintained in the B posture during forearm pronation. Solid, bold, orange lines indicate the average computed via the two-stage method (shaded orange regions indicated one standard deviation, lighter lines show individual trials). Dashed, bold, blue lines indicate the average computed via the end-to-end method (shaded blue regions indicated one standard deviation, lighter lines show individual trials).",
+      "page": 5,
+      "index": 1,
+      "width": 521,
+      "height": 481
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-002.webp",
+      "caption": "Figure 3. Absolute mean difference of individual joint angles produced by the end-to-end and two-stage reconstruction methods across all participants and recordings. The diameter and color of each inner circle reflects the magnitude of the average error. A separate ring, with diameter equal to the mean error + 1 standard deviation (s.d.) surrounds each filled circle. The color of the s.d. ring also indicates the value of the mean + 1 s.d. for that degree of freedom.",
+      "page": 5,
+      "index": 2,
+      "width": 521,
+      "height": 591
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-003.webp",
+      "caption": "Figure 2. Our end-to-end MMC reconstruction pipeline: For a single frame, the gradient-based optimizer, a multi-layer perceptron (MLP), initially outputs arbitrary joint angles to pose the biomechanical model. The model includes user-defined 3D virtual markers that correspond to the keypoints labeled via computer vision. When the model assumes the specified pose, the 3D coordinates of the virtual markers are reprojected to each of the 8 camera’s 2D planes, allowing direct comparison to the 2D digital keypoints identified by the hand pose estimation algorithm for that frame. During the optimization process for a whole recording, the MLP learns a mapping from timestep (t) to joint angles 𝜃(𝑡), defining a best fit set of joint angle trajectories for the recording. In parallel with optimizing joint angles, the biomechanical model is scaled to the participant, including fine-tuning the location of the virtual markers on the model. The MLP is trained for 40000 iterations to overfit based on defined loss functions, producing final joint angles that best represent the 2D information available from all camera planes.",
+      "page": 3,
+      "index": 3,
+      "width": 1076,
+      "height": 843
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-004.webp",
+      "caption": "Figure 1. Experimental setup with 8 cameras surrounding the participant replicating the hand pose (the ASL letter B) shown on the video screen.",
+      "page": 2,
+      "index": 4,
+      "width": 502,
+      "height": 383
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-005.webp",
+      "caption": "Table 1. Demographics of Healthy Participants",
+      "page": 2,
+      "index": 5,
+      "width": 552,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-006.webp",
+      "caption": "Figure 5. Summary of the joint angles that result from the two-stage (orange lines) and end-to-end (blue dashed lines) methods for a single object interaction task that involved reaching and grasping a ball. For both methods, the curves indicate joint angles averaged across groups of joints, including (top graph) the Distal joint angles (average of index, middle, ring, and pinky DIP joints + thumb IP joint), (middle graph) Proximal joint angles (average of all finger PIP joints plus thumb MCP joint), and (bottom graph) Base joint angles (all finger MCPs plus thumb CMC joint). Images at the top represent the hand posture at 7 seconds while holding the ball with the optimized biomechanical poses overlayed on each image.",
+      "page": 6,
+      "index": 6,
+      "width": 506,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02796v1/fig-007.webp",
+      "caption": "Figure 6. Percentage of correct keypoints (PCK) metric computed from the biomechanical reconstructions of the same 103 video recordings using the end-to-end (blue) and two-stage (orange) methods. PCK quantifies the percentage of reprojected 3D virtual markers that fall within a 10-pixel threshold of the 2D digital keypoints from pose estimation. Higher PCK values indicate better agreement. The two-stage method’s performance on tasks that include objects significantly decreased relative to postures (p < 0.001). Red dots and arrows highlight the trial displayed in Figure 5.",
+      "page": 6,
+      "index": 7,
+      "width": 508,
+      "height": 408
+    }
+  ]
+}

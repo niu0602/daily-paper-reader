@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-001.webp",
+      "caption": "Figure 2: Task Overview of RoboDojo. RoboDojo includes 42 simulation tasks and 18 real-world tasks for evaluating generalist robot manipulation policies. The simulation tasks are organized into five capability dimensions: Generalization, Memory, Long-Horizon, Precision, and Open, enabling efficient capability-oriented diagnosis. The real-world tasks assess policy behavior under challenging and reproducible physical deployment conditions. Together, these tasks cover diverse manipulation skills, spatial configurations, and bimanual coordination patterns across simulation and the real world.",
+      "page": 6,
+      "index": 1,
+      "width": 1031,
+      "height": 964
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-002.webp",
+      "caption": "Figure 6: Overview of the RoboDojo-RealEval system. RoboDojo-RealEval provides a standardized physical platform for reproducible real-world robot manipulation evaluation, with controlled workspace geometry, fixed robot and camera mounts, stable lighting, a touchscreen evaluation interface, and support for three collaborative bimanual embodiments.",
+      "page": 11,
+      "index": 2,
+      "width": 1029,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-003.webp",
+      "caption": "Table 3: Policy performance under standard and randomized visual settings. Each cell reports Standard Score / Random Score, with the relative score drop shown in parentheses. The drop is computed as (Standard − Random)/Standard.",
+      "page": 15,
+      "index": 3,
+      "width": 1025,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-004.webp",
+      "caption": "Figure 3: Skill Diversity in RoboDojo. Representative simulation tasks cover 24 manipulation skills, including grasping, placing, pushing, pulling, stacking, insertion, opening, closing, folding, alignment, tool use, and contact-sensitive operations. These tasks span diverse spatial configurations and bimanual coordination patterns, enabling skill-level diagnosis beyond repetitive pick-and-place behaviors.",
+      "page": 7,
+      "index": 4,
+      "width": 1029,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-005.webp",
+      "caption": "Table 12: XPolicyLab unified policy interface and evaluation protocol. XPolicyLab provides a shared policy-side interface for RoboDojo simulation and real-world evaluation. The same policy implementation can be deployed in single-environment real-world evaluation and batched simulation evaluation, where the batched interface enables heterogeneous parallel execution for faster feedback.",
+      "page": 34,
+      "index": 5,
+      "width": 1031,
+      "height": 463
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-006.webp",
+      "caption": "Figure 5: Assets and parallelism in RoboDojo. RoboDojo combines physically grounded assets with heterogeneous parallel simulation for scalable benchmark construction and evaluation.",
+      "page": 10,
+      "index": 6,
+      "width": 1031,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-007.webp",
+      "caption": "Table 8: Comparison between RoboDojo and other benchmarks. “Skill” is the number of operation primitives covered; “Num. Policies” is the number of baseline policies the benchmark integrates/evaluates. N/R indicates not reported. HP indicates heterogeneous parallelization.",
+      "page": 28,
+      "index": 7,
+      "width": 1023,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04434v1/fig-008.webp",
+      "caption": "Table 5: Real-world evaluation time for each task. Each entry reports the wall-clock time required to complete 10 full evaluation trials, including scene reset, RTX 4090 policy inference within the same local-area network, and robot execution.",
+      "page": 19,
+      "index": 8,
+      "width": 889,
+      "height": 200
+    }
+  ]
+}

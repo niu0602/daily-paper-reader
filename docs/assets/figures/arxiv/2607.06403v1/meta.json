@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-001.webp",
+      "caption": "Table 4. Scoring criteria for the part of GM-100 benchmark tasks.",
+      "page": 11,
+      "index": 1,
+      "width": 952,
+      "height": 1194
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-002.webp",
+      "caption": "Figure 11. Per-dimension MeanStd-normalized action distributions for joint and EEF action spaces. The first column shows the pooled distribution over all four tasks, while the remaining columns show task-specific distributions. The gap measures task-to-pooled distribution alignment based on per-dimension median and IQR differences.",
+      "page": 15,
+      "index": 2,
+      "width": 971,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-003.webp",
+      "caption": "Figure 10. Results on the four GM-100 real-robot tasks.",
+      "page": 15,
+      "index": 3,
+      "width": 963,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-004.webp",
+      "caption": "Figure 1. Overview of LingBot-VLA 2.0. We revamp the data processing pipeline and curate 60,000 hours of pretraining data, including 50,000 hours of robot trajectories across 20 robot configurations and 10,000 hours of egocentric human videos. Moreover, our model supports degrees of freedom for the head, waist, mobile base, and dexterous hands, enabling robots to handle more complex real-world tasks. We formulate future prediction as a proxy task, leveraging a video representation model for semantic priors and a depth estimation model for geometric cues.",
+      "page": 2,
+      "index": 4,
+      "width": 976,
+      "height": 395
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-005.webp",
+      "caption": "Table 2. Closed vocabulary for subtask annotation. The vocabulary consists of 15 primitive manipulation actions and three auxiliary labels: transit for empty-hand motion, idle for stationary arms, and other for out-of-vocabulary actions.",
+      "page": 7,
+      "index": 5,
+      "width": 986,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-006.webp",
+      "caption": "Figure 2. Visualization of the pre-training dataset used by LingBot-VLA-2.0. The dataset includes 20 robot embodiments with degrees of freedom in the arms, heads, waists, mobile bases, and dexterous hands.",
+      "page": 3,
+      "index": 6,
+      "width": 979,
+      "height": 786
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-007.webp",
+      "caption": "Figure 8. Per-subtask performance on the long-horizon mobile manipulation benchmark. Bars report the mean subtask completion score (%) across 15 trials under both in-domain (ID) and out-of-distribution (OOD) settings.",
+      "page": 13,
+      "index": 7,
+      "width": 963,
+      "height": 666
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-008.webp",
+      "caption": "Figure 5. Per-action statistics of the subtask annotations: duration composition, frequency (fraction of all subtasks), total time (fraction of the total annotated time), and mean duration. Actions are grouped as in Tab. 2; idle is filtered out of the training data and omitted here.",
+      "page": 8,
+      "index": 8,
+      "width": 964,
+      "height": 553
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-009.webp",
+      "caption": "Figure 6. Word cloud of the manipulated objects in the subtask annotations, sized by frequency.",
+      "page": 8,
+      "index": 9,
+      "width": 784,
+      "height": 196
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-010.webp",
+      "caption": "Figure 3. Data processing pipeline.",
+      "page": 4,
+      "index": 10,
+      "width": 682,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-011.webp",
+      "caption": "Figure 13. Causal perception results of LingBot-VLA 2.0 under visual distillation. Left: depth/DINO-Video-PCA ground truth and prediction for current image. Right: depth/DINO-Video-PCA ground truth and prediction for future image.",
+      "page": 17,
+      "index": 11,
+      "width": 982,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-012.webp",
+      "caption": "Table 5. Performance on the bimanual GM-100 benchmark under the generalist setting. We report progress score (Prog., %) and success rate (Succ., %) for each task. The shaded row in each platform block reports the average over the nine tasks.",
+      "page": 12,
+      "index": 12,
+      "width": 786,
+      "height": 643
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-013.webp",
+      "caption": "Figure 7. Comparable active-parameter scaling comparison between Dense model and MoE model using training loss on pre-training data and validation action error on GM-100 tasks.",
+      "page": 9,
+      "index": 13,
+      "width": 930,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-014.webp",
+      "caption": "Table 1. Statistical overview of robot manipulation data in LingBot-VLA-2.0.",
+      "page": 5,
+      "index": 14,
+      "width": 916,
+      "height": 738
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06403v1/fig-015.webp",
+      "caption": "Figure 12. Action targets and normalization statistics for the four GM-100 tasks. Left: relQpos substantially reduces the action scale compared with absQpos. Right: normalization changes the effective dynamic range of MeanStd-normalized relQpos; Q01–Q99 is shown in the actual unclipped setting.",
+      "page": 16,
+      "index": 15,
+      "width": 967,
+      "height": 340
+    }
+  ]
+}

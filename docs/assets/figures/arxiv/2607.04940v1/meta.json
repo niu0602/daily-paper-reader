@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-001.webp",
+      "caption": "Fig. 1: Learning full-state policy with tactile sensing and joint torques for dexterous grasping and in-hand manipulation.",
+      "page": 1,
+      "index": 1,
+      "width": 485,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-002.webp",
+      "caption": "Fig. 5: Grasping objects with controllable magnitudes of grasping forces – from low to high strength.",
+      "page": 7,
+      "index": 2,
+      "width": 1027,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-003.webp",
+      "caption": "Fig. 6: Varying joint torque and contact forces with force commands under different reward settings.",
+      "page": 7,
+      "index": 3,
+      "width": 443,
+      "height": 565
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-004.webp",
+      "caption": "TABLE IV: Ablation analysis of multiple observation combinations in the real world.",
+      "page": 7,
+      "index": 4,
+      "width": 918,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-005.webp",
+      "caption": "Fig. 8: Visualization results of in-hand manipulation tasks in real-world and simulation environments",
+      "page": 8,
+      "index": 5,
+      "width": 962,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04940v1/fig-006.webp",
+      "caption": "Fig. 7: Visualization results of force-adaptive grasping tasks in Real-world and simulation environments",
+      "page": 8,
+      "index": 6,
+      "width": 953,
+      "height": 267
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-001.webp",
+      "caption": "Figure 3: Qualitative Comparisons. Columns compare methods and rows show intent families with their language intents. Cyan insets show the shared start view; top-right insets show the first successful frame, or the final frame when no success is reached within the movement budget.",
+      "page": 6,
+      "index": 1,
+      "width": 829,
+      "height": 320
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-002.webp",
+      "caption": "Figure 7: Example of a start–goal pair label from RoomTour3D, showing the paired frames, motion metadata, observation-gain description, structured visual-change fields, and generated intent set.",
+      "page": 11,
+      "index": 2,
+      "width": 829,
+      "height": 917
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-003.webp",
+      "caption": "Figure 12: Qualitative LIBERO-Goal examples from sampled initial states. Columns are grouped by the sampled start view and the post-LIME view; each group shows the external and wrist cameras. The post-LIME views are captured before executing the downstream π0.5 manipulation policy.",
+      "page": 25,
+      "index": 3,
+      "width": 790,
+      "height": 1018
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-004.webp",
+      "caption": "Figure 11: Additional qualitative LIME prediction examples. For each row, images are ordered from the start frame to the first successful frame.",
+      "page": 26,
+      "index": 4,
+      "width": 799,
+      "height": 1213
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-005.webp",
+      "caption": "Figure 9: Representative benchmark examples from the three intent families. In each row, the left image is the start view and the right image is the held-out goal reference view.",
+      "page": 15,
+      "index": 5,
+      "width": 677,
+      "height": 681
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-006.webp",
+      "caption": "Figure 14: Language-instructed object scanning example. Repeated prompts and novelty-biased sampling produce a multi-view trajectory around the target. The reconstruction result on the right is generated with VGGT-Omega [70].",
+      "page": 30,
+      "index": 6,
+      "width": 829,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-007.webp",
+      "caption": "Figure 4: Qualitative samples on ScanNet++ indoor scenes. Each row fixes the same current observation and varies the language intent; colored camera frustums show five sampled target poses from the flow-matching head, illustrating intent-conditioned motion and multimodal pose hypotheses.",
+      "page": 7,
+      "index": 7,
+      "width": 829,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-008.webp",
+      "caption": "Figure 13: Qualitative AVS-ProcTHOR examples showing the start view, LIME rendered view, and held-out reference view. Each example occupies one row; rows are ordered as two Existence examples, two Counting examples, and two State examples.",
+      "page": 29,
+      "index": 8,
+      "width": 452,
+      "height": 1262
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-009.webp",
+      "caption": "Table 7: Ablation results on the proposed benchmark. All rows use run 1 and report SR and CA-SR in percent under the shared motion budget. Unless specified otherwise, the default number of flowmatching samples is 5.",
+      "page": 22,
+      "index": 9,
+      "width": 818,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-010.webp",
+      "caption": "Table 6: Run-1 SR and CA-SR for baseline model variants and our method under the shared motion budget. Sample-start variants preserve the benchmark sample’s original start view for observation, while gravity-planar variants render the initial observation from a gravity-aligned planarized start pose. VLMnav-pitch renders observations using VLMnav’s native fixed downward-pitch camera convention instead of the benchmark sample-start view.",
+      "page": 22,
+      "index": 10,
+      "width": 818,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-011.webp",
+      "caption": "Figure 6: Dataset distributions after balanced subsampling. We balance the start-goal image pairs across data source, intent kind, motion type, translation magnitude, and rotation magnitude before expanding them into intent-conditioned training examples.",
+      "page": 10,
+      "index": 11,
+      "width": 826,
+      "height": 790
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-012.webp",
+      "caption": "Figure 10: Target stage-1 proximity SR under increasingly relaxed adaptive distance thresholds. Each x-axis tick denotes the small-object / large-object threshold pair in meters, assigned to the 10th and 90th percentiles of target AABB max-side size, with intermediate thresholds linearly interpolated. Curves report mean SR over three runs under the shared motion budget.",
+      "page": 18,
+      "index": 12,
+      "width": 744,
+      "height": 401
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-013.webp",
+      "caption": "Table 2: Training and inference hyperparameters for the main LIME model.",
+      "page": 13,
+      "index": 13,
+      "width": 718,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-014.webp",
+      "caption": "Figure 5: Real-robot experiments. The learned camera-motion policy moves the robot camera to acquire visual evidence for chained perception and interaction intents. Blue text indicates action commands passed to a separate manipulation policy.",
+      "page": 8,
+      "index": 14,
+      "width": 786,
+      "height": 381
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-015.webp",
+      "caption": "Figure 2: LIME pipeline. Panel (a) shows the VLM-based camera-motion generator with an autoregressive language interface and a continuous flow-matching pose head (Sec. 3.2). Panel (b) shows how we mine passive egocentric video into intent-conditioned camera-motion supervision with observation-gain descriptions (Sec. 3.3).",
+      "page": 4,
+      "index": 15,
+      "width": 823,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-016.webp",
+      "caption": "Figure 8: Example of a start–goal pair label from Nymeria, showing the paired frames, motion metadata, observation-gain description, structured visual-change fields, and generated intent set.",
+      "page": 12,
+      "index": 16,
+      "width": 822,
+      "height": 1058
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-017.webp",
+      "caption": "Table 10: Results on the AVS-ProcTHOR benchmark. Accuracy is reported in percent using Gemini-2.5-Flash as the answer verifier, following the AVS-ProcTHOR evaluation setup. LIME predicts a relative SE(3) camera motion, which we convert to the VG-AVS planar action format before rendering through the official ProcTHOR agent-camera path.",
+      "page": 27,
+      "index": 17,
+      "width": 818,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02417v1/fig-018.webp",
+      "caption": "Table 9: LIBERO-Goal manipulation results from sampled initial states. Each task uses five sampled starts, with one rollout per start. Direct SR runs π0.5 from the sampled start pose, while LIME+π0.5 SR first applies one LIME-predicted wrist-camera motion from the same state. SR is reported as a percentage.",
+      "page": 24,
+      "index": 18,
+      "width": 818,
+      "height": 315
+    }
+  ]
+}

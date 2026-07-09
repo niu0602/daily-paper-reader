@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-001.webp",
+      "caption": "Figure 1. The two annotation axes of EGOSAFETYBENCH with egocentric examples. Top: the situational four-family taxonomy, with S1/S2 safe (green) and U1/U2 unsafe (red); S2 and U2 turn on a visible but context-dependent cue. Bottom: the visual-channel mismatch (VCM) axis, a separate binary label that co-occurs with both safe and unsafe scenes, including an unsafe scene whose accurate label makes it VCM=no. Decoupling the axes lets us measure physical-safety reasoning and channel trustworthiness independently.",
+      "page": 2,
+      "index": 1,
+      "width": 929,
+      "height": 584
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-002.webp",
+      "caption": "Table 4. Situational guarding under the current-chunk protocol (%, macro-averaged over videos). Lower is better except Video Balanced Accuracy. Bold marks the best value among the headline columns (Video Bal. Acc, Chunk Miss, U1–U2 Gap); per-family columns are left unbolded because the lowest false-alarm and miss rates often reflect degenerate near-constant predictions (e.g., Qwen3.5-0.8B) rather than reliable guarding.",
+      "page": 7,
+      "index": 2,
+      "width": 1022,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-003.webp",
+      "caption": "Figure 5. Exact word-format evaluation prompts (current-chunk protocol). Frames are inserted at [frames]; the directive line follows. Window variants add that up to three consecutive chunks are provided (the last is the current chunk) and that the earlier chunks are used only as temporal context.",
+      "page": 14,
+      "index": 3,
+      "width": 1036,
+      "height": 1321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-004.webp",
+      "caption": "Table 1. Situational safety axis in EGOSAFETYBENCH, with families grouped by the desired guard verdict. The visual-channel mismatch axis is annotated separately as a binary label.",
+      "page": 3,
+      "index": 4,
+      "width": 1036,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-005.webp",
+      "caption": "Table 2. Example label combinations across the two axes; the last two rows form a matched misleading/truthful pair. Physical safety and visual-channel trustworthiness vary independently.",
+      "page": 3,
+      "index": 5,
+      "width": 502,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-006.webp",
+      "caption": "Table 12. Cross-axis robustness under the current-chunk protocol (%). For each model we split the situational hazard-miss rate (on unsafe chunks) and the safe false-alarm rate (on safe chunks) by whether a misleading in-scene channel is present (VCM=Yes) or not (VCM=No). ∆ is the Yes-minus-No difference, so a positive value means a misleading sign degrades that behavior. Every ∆ is positive: a misleading channel makes every model both miss more hazards and false-alarm more on safe scenes.",
+      "page": 13,
+      "index": 6,
+      "width": 764,
+      "height": 334
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-007.webp",
+      "caption": "Table 7. Visual-channel mismatch detection under the currentchunk protocol (%).",
+      "page": 8,
+      "index": 7,
+      "width": 489,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-008.webp",
+      "caption": "Table 6. Deception under the current-chunk protocol. Each hazardous scene has a lying (attack) and truthful (control) sign. Flip rate (%): control-correct videos the guard turns safe under the lie; ∆VidMiss is the attack-minus-control video miss rate. †Over a small base; not strong evidence.",
+      "page": 8,
+      "index": 8,
+      "width": 698,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-009.webp",
+      "caption": "Figure 2. The EGOSAFETYBENCH pipeline: (1) SceneGen authors contrastive-ladder scenarios with situational, mechanism, and VCM labels; (2) Filtering applies structural, dedup, rubric, mechanism, and pair-validation gates; (3) Rendering produces egocentric video selected by a VLM candidate judge; (4) Annotation splits each 5 s clip into ten 0.5 s chunks labeled on both axes; and (5) Evaluation scores VLMs as runtime guards under the stateless and causal-window protocols.",
+      "page": 4,
+      "index": 9,
+      "width": 972,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-010.webp",
+      "caption": "Figure 4. Annotation interface. Each of the ten 0.5 s chunks is rated independently as safe or unsafe; annotators see only these definitions and the chunk frames.",
+      "page": 12,
+      "index": 10,
+      "width": 1006,
+      "height": 504
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-011.webp",
+      "caption": "Table 11. Evaluated models and exact identifiers. Open-source models run locally in bfloat16; closed-source models are accessed through hosted APIs.",
+      "page": 12,
+      "index": 11,
+      "width": 694,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00218v1/fig-012.webp",
+      "caption": "Table 3. EGOSAFETYBENCH statistics. Domains are balanced at 300 scenarios each (600 home, 600 factory). The visual-channel mismatch tag covers the 400 channel-track scenarios plus 4 situational scenarios whose deciding cue is a misleading text channel.",
+      "page": 5,
+      "index": 12,
+      "width": 437,
+      "height": 396
+    }
+  ]
+}

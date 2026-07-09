@@ -6,73 +6,67 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-08
-- 运行时间：2026-07-08 20:32:49 UTC
+- 最新运行日期：2026-07-09
+- 运行时间：2026-07-09 20:20:46 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：15
+- 精读区：4
 - 速读区：11
 
 ### 今日简报（AI）
-今日共追踪 17 篇机器人与 VLA 相关论文，重点精读了 VLA 模型落地优化与 sim-to-real 灵巧操作世界模型两大方向。  
-《From Foundation to Application: Improving VLA Models in Practice》与《Mask2Real-WM》最值得关注，前者聚焦 VLA 实践效果提升，后者用分割 Mask 打通仿真到真实的可控灵巧操作。  
-建议下一步重点关注“视觉+触觉+世界模型”的融合路线，尤其是 tactile residual adaptation 与 contact-rich manipulation 相关工作。
-- 详情：[/202607/08/README](/202607/08/README)
+今日共追踪 15 篇 AI/机器人论文，重点精读了 VR+LLM 人形交互与触觉基础模型两大方向。  
+最值得关注的是《Immersive Social Interaction with VR and LLM-Assisted Humanoids》展示沉浸式智能体交互潜力，以及《TouchWorld》与多篇触觉操控工作共同指向“触觉+世界模型”正在成为灵巧操作核心路线。  
+如果想快速跟进趋势，建议优先关注具身智能里的触觉感知、接触式操作和多智能体场景理解，这些方向已明显进入落地加速期。
+- 详情：[/202607/09/README](/202607/09/README)
 
 ### 精读区论文标签
-1. [From Foundation to Application: Improving VLA Models in Practice](/202607/08/2607.06403v1-from-foundation-to-application-improving-vla-models-in-practice)  
-   标签：评分：10.0/10、query:dexop
-   evidence：使用1万小时的第一视角人类视频进行机器人操作预训练
-2. [Mask2Real-WM: Segmentation Masks as a Sim-to-Real Bridge for Controllable Dexterous World Models](/202607/08/2607.04546v1-mask2real-wm-segmentation-masks-as-a-sim-to-real-bridge-for-controllable-dexterous-world-models)  
+1. [Immersive Social Interaction with VR and LLM-Assisted Humanoids](/202607/09/2607.07430v1-immersive-social-interaction-with-vr-and-llm-assisted-humanoids)  
+   标签：评分：9.5/10、query:dexop
+   evidence：第一视角视觉反馈并通过手指追踪遥操作灵巧手
+2. [TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation](/202607/09/2607.07287v1-touchworld-a-predictive-and-reactive-tactile-foundation-model-for-dexterous-manipulation)  
    标签：评分：9.0/10、query:dexop
-   evidence：使用分割掩码的动作条件灵巧操作世界模型
-3. [LAMP: Latent Motion Prior-Guided Real-World Learning for Dexterous Hand Manipulation](/202607/08/2607.06323v1-lamp-latent-motion-prior-guided-real-world-learning-for-dexterous-hand-manipulation)  
-   标签：评分：9.0/10、query:dexop
-   evidence：使用运动先验的灵巧手操作真实世界学习框架
-4. [RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation](/202607/08/2607.06558v1-rynnworld-teleop-an-action-conditioned-world-model-for-digital-teleoperation)  
-   标签：评分：9.0/10、query:dexop
-   evidence：合成高保真第一视角视频用于模仿学习
-5. [Closing the Reality Gap: Zero-Shot Sim-to-Real Deployment for Dexterous Force-Based Grasping and Manipulation](/202607/08/2607.04940v1-closing-the-reality-gap-zero-shot-sim-to-real-deployment-for-dexterous-force-based-grasping-and-manipulation)  
-   标签：评分：8.5/10、query:dexop
-   evidence：训练具有多个手指的类人灵巧手的控制策略
-6. [DexTele: A Dual-Arm Dexterous Teleoperation System Based on Motion Retargeting and Adaptive Force Control](/202607/08/2607.05883v1-dextele-a-dual-arm-dexterous-teleoperation-system-based-on-motion-retargeting-and-adaptive-force-control)  
-   标签：评分：8.5/10、query:dexop
-   evidence：基于视觉的双臂灵巧遥操作运动重定向
+   evidence：用于灵巧操作的触觉基础模型
+3. [EgoSafetyBench: A Diagnostic Egocentric Video Benchmark for Evaluating Embodied VLMs as Runtime Safety Guards](/202607/09/2607.00218v1-egosafetybench-a-diagnostic-egocentric-video-benchmark-for-evaluating-embodied-vlms-as-runtime-safety-guards)  
+   标签：评分：8.0/10、query:dexop
+   evidence：包含1200个机器人视角场景的自我中心视频基准，用于评估具身VLM
+4. [WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](/202607/09/2607.06988v1-wam-ttt-steering-world-action-models-by-watching-human-play-at-test-time)  
+   标签：评分：8.0/10、query:dexop
+   evidence：从原始人类视频中引导世界动作模型
 
 ### 速读区论文标签
-1. [OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](/202607/08/2607.03723v1-omnitactune-policy-agnostic-real-world-rl-for-tactile-residual-adaptation-of-visual-policies)  
-   标签：评分：8.0/10、query:dexop
-   evidence：将触觉反馈适配到从人类视频中学习的预训练视觉策略中
-2. [WristMimic: Full-Body Humanoid Control with Wrist-Guided Manipulation](/202607/08/2607.06438v1-wristmimic-full-body-humanoid-control-with-wrist-guided-manipulation)  
-   标签：评分：8.0/10、query:dexop
-   evidence：将人类物体交互演示重定向到物理仿真
-3. [Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation](/202607/08/2607.03387v1-feeling-the-unexpected-restacvla-for-contact-rich-manipulation-via-residual-tactile-representation)  
+1. [EgoGapBench: Benchmarking Egocentric Action Selection in Multi-Agent Scenes](/202607/09/2607.00547v1-egogapbench-benchmarking-egocentric-action-selection-in-multi-agent-scenes)  
    标签：评分：7.5/10、query:dexop
-   evidence：将触觉表示集成到VLA模型中用于接触密集型操作
-4. [Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation](/202607/08/2607.03387v2-feeling-the-unexpected-restacvla-for-contact-rich-manipulation-via-residual-tactile-representation)  
+   evidence：使用第一视角数据对多智能体场景中的自我中心动作选择进行基准测试
+2. [Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation](/202607/09/2607.03387v2-feeling-the-unexpected-restacvla-for-contact-rich-manipulation-via-residual-tactile-representation)  
    标签：评分：7.5/10、query:dexop
-   evidence：将触觉感知整合到视觉-语言-动作模型中，用于接触密集型操作
-5. [TactX: Learning Shared Tactile Representations Across Diverse Sensors](/202607/08/2606.31236v1-tactx-learning-shared-tactile-representations-across-diverse-sensors)  
+   evidence：将触觉感知集成到VLA模型中以进行接触丰富的操作
+3. [KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation](/202607/09/2607.04652v1-kam-wm-kinematic-affordance-maps-from-latent-world-models-for-robot-manipulation)  
+   标签：评分：7.2/10、query:dexop
+   evidence：从世界模型中提取运动启发图，以调节操作策略。
+4. [FurnitureVLA: Learning Long-Horizon Bimanual Furniture Assembly with Vision-Language-Action Model](/202607/09/2607.01212v1-furniturevla-learning-long-horizon-bimanual-furniture-assembly-with-vision-language-action-model)  
    标签：评分：7.0/10、query:dexop
-   evidence：为接触密集型操作学习共享触觉表示
-6. [LIME: Learning Intent-aware Camera Motion from Egocentric Video](/202607/08/2607.02417v1-lime-learning-intent-aware-camera-motion-from-egocentric-video)  
+   evidence：使用视觉-语言-动作模型进行双臂家具组装
+5. [Imagining the Sense of Touch: Touch-Informed Manipulation via Imagined Tactile Representations](/202607/09/2607.01684v1-imagining-the-sense-of-touch-touch-informed-manipulation-via-imagined-tactile-representations)  
    标签：评分：7.0/10、query:dexop
-   evidence：从第一视角视频中学习相机运动
-7. [Biomechanics-aware Multi-view Markerless Motion Capture of Dexterous Hand Movements](/202607/08/2607.02796v1-biomechanics-aware-multi-view-markerless-motion-capture-of-dexterous-hand-movements)  
+   evidence：通过视觉想象的触觉表示进行触觉感知操作
+6. [OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies](/202607/09/2607.03723v1-omnitactune-policy-agnostic-real-world-rl-for-tactile-residual-adaptation-of-visual-policies)  
    标签：评分：7.0/10、query:dexop
-   evidence：追踪灵巧的无约束手部运动和物体操作任务
-8. [RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies](/202607/08/2607.04434v1-robodojo-a-unified-sim-and-real-benchmark-for-comprehensive-evaluation-of-generalist-robot-manipulation-policies)  
-   标签：评分：7.0/10、query:dexop
-   evidence：通用机器人操作策略的统一仿真与真实基准
-9. [The Moving Eye: Enhancing VLA Spatial Generalization via Hybrid Dynamic Data Collection](/202607/08/2607.02322v1-the-moving-eye-enhancing-vla-spatial-generalization-via-hybrid-dynamic-data-collection)  
+   evidence：将触觉反馈适配到视觉策略中以进行接触丰富的操作
+7. [ASPIRE: Agentic /Skills Discovery for Robotics](/202607/09/2607.00272v1-aspire-agentic-skills-discovery-for-robotics)  
    标签：评分：6.5/10、query:dexop
-   evidence：通过移动环境摄像头视角增强VLA模型的空间泛化能力
-10. [SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects](/202607/08/2607.04234v1-softvtbench-a-safety-aware-visuo-tactile-benchmark-for-physically-constrained-robotic-manipulation-of-deformable-objects)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于物理受限机器人操作的安全感知视触觉基准
-11. [DSWAM: A Dual-System World Action Foundation Model for Fine-Grained Robot Manipulation](/202607/08/2607.04927v1-dswam-a-dual-system-world-action-foundation-model-for-fine-grained-robot-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：利用视频监督进行细粒度机器人操作的世界动作基础模型
+   evidence：用于自主机器人控制程序和技能发现的持续学习系统。
+8. [Partial Skeleton Visibility for Action Recognition: A Constrained Field-of-View Approach](/202607/09/2607.00716v1-partial-skeleton-visibility-for-action-recognition-a-constrained-field-of-view-approach)  
+   标签：评分：6.0/10、query:dexop
+   evidence：第一视角和受限视野下的骨骼动作识别
+9. [From World Models to World Action Models: A Concise Tutorial for Robotics](/202607/09/2607.00836v2-from-world-models-to-world-action-models-a-concise-tutorial-for-robotics)  
+   标签：评分：6.0/10、query:dexop
+   evidence：关于将预测的未来与可执行机器人动作连接起来的世界动作模型的教程。
+10. [BIFROST: Bridging Invariant Feature Representation for Observation-space Sim2Real Transfer](/202607/09/2607.01410v1-bifrost-bridging-invariant-feature-representation-for-observation-space-sim2real-transfer)  
+   标签：评分：6.0/10、query:dexop
+   evidence：从原始观测中进行机器人策略学习的仿真到现实迁移
+11. [VLAFlow: A Unified Training Framework for Vision-Language-Action Models via Co-training and Future Latent Alignment](/202607/09/2607.01586v1-vlaflow-a-unified-training-framework-for-vision-language-action-models-via-co-training-and-future-latent-alignment)  
+   标签：评分：6.0/10、query:dexop
+   evidence：使用异构机器人语料库的VLA模型统一训练框架
 
 
 <div class="dpr-home-promo-card">

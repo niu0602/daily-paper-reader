@@ -1,0 +1,174 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-001.webp",
+      "caption": "Figure 6: Robot execution engine and evolutionary search ablations on LIBERO-Pro. Figures (a) and (b) show stacked bars for position and task perturbations: the base system without the robot execution engine or evolutionary search, the gain from adding the robot execution engine, and the additional gain from evolutionary search. On average, the robot execution engine provides the largest gain, raising macro-average success from 14% to 62%; evolutionary search further improves remaining hard tasks. Figure (c) shows average progress over low-performing tasks across evolutionary-search iterations. Per-task results are in Appendix D.",
+      "page": 11,
+      "index": 1,
+      "width": 977,
+      "height": 220
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-002.webp",
+      "caption": "Table 5: Macro-averaged zero-shot transfer of the Aspire skill library (accumulated on LIBERO-90) to LIBERO-Pro Long [Zhou et al., 2025]. 𝑁 denotes the number of LIBERO-90 tasks whose repair skills seed the library; no additional debugging is performed at test time. Columns report macro-averaged success rate on Pos (position perturbation) and Task (instruction perturbation) axes, 10 tasks per axis.",
+      "page": 21,
+      "index": 2,
+      "width": 587,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-003.webp",
+      "caption": "Table 6: Zero-shot transfer of the Aspire skill library (accumulated on LIBERO-90) to LIBERO-Pro Long, per task and snapshot size 𝑁 (seeds 1–50, 𝑛=50). Pos: positional-perturbation variant. Task: semantic-perturbation variant.",
+      "page": 21,
+      "index": 3,
+      "width": 983,
+      "height": 705
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-004.webp",
+      "caption": "Figure 1: Aspire system overview. A coordinator spawns an actor agent (coding agent) per task, enabling parallel learning across tasks. Each actor refines and validates robot programs through iterative debugging with the robot execution engine, which exposes per-primitive multimodal traces for failure attribution and repair. Evolutionary search samples diverse candidate programs (𝜋0, . . . , 𝜋𝑘), sends each through the engine, and conditions the next generation (𝜋′0, . . . , 𝜋′𝑘) on surviving programs and residual failure traces. The coordinator writes validated repairs into a shared skill library, which future actors retrieve as in-context guidance; skills discovered in sim can also be adapted as cross-embodiment guidance for real-robot programming.",
+      "page": 2,
+      "index": 4,
+      "width": 980,
+      "height": 586
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-005.webp",
+      "caption": "Table 7: LIBERO-Pro per-task ablation, Position perturbation (seeds 1–50, 𝑛=50). Aspire w/o Robot execution engine and Evolutionary search: zero-shot Claude Opus 4.6 with 15 example programs. Aspire w/o Evolutionary search: Robot Execution Engine repaired program (Execution engine + skill library). Evo. search: raw evolutionary-search result (best validated candidate), or “–” if Evolutionary Search was not run for that task. Aspire: per-task winner selected on a held-out validation set (seeds 66–80) between the repaired program and Evolutionary Search.",
+      "page": 22,
+      "index": 5,
+      "width": 983,
+      "height": 1106
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-006.webp",
+      "caption": "Table 1: Real-robot cross-embodiment skill transfer. For each task, we compare real-robot debugging with and without retrieving a corresponding simulation-discovered skill from Aspire’s library. Token counts are measured until the first successful real-robot program, or until the debugging budget is exhausted for runs that do not reach success. Success rate reports evaluation trials for the generated programs.",
+      "page": 10,
+      "index": 6,
+      "width": 929,
+      "height": 180
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-007.webp",
+      "caption": "Figure 11: Motion-primitive skills. Representative entries for reusable low-level motion patterns, contact-rich alignment, and execution-time recovery.",
+      "page": 18,
+      "index": 7,
+      "width": 933,
+      "height": 307
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-008.webp",
+      "caption": "Figure 9: Navigation skills. Representative entries for recovering from motion-planning failures and selecting collision-aware approach poses.",
+      "page": 18,
+      "index": 8,
+      "width": 933,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-009.webp",
+      "caption": "Figure 10: Strategic grasping skills. Representative entries for choosing task-appropriate grasp points and adapting grasp strategy to object geometry and scene context.",
+      "page": 18,
+      "index": 9,
+      "width": 933,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-010.webp",
+      "caption": "Table 8: LIBERO-Pro per-task ablation, Task perturbation (seeds 1–50, 𝑛=50). Aspire w/o Robot execution engine and Evolutionary search: zero-shot Claude Opus 4.6 with 15 example programs. Aspire w/o Evolutionary search: Robot Execution Engine repaired program (Execution engine + skill library). Evo. search: raw evolutionary-search result (best validated candidate), or “–” if Evolutionary Search was not run for that task. Aspire: per-task winner selected on a held-out validation set (seeds 66–80) between the repaired program and Evolutionary Search.",
+      "page": 23,
+      "index": 10,
+      "width": 983,
+      "height": 1161
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-011.webp",
+      "caption": "Figure 4: Aspire improves over prior coding agents and end-to-end VLAs across three benchmark families. (a) Short-horizon manipulation on LIBERO-Pro; (b) contact-rich manipulation on Robosuite; (c) long-horizon mobile manipulation on BEHAVIOR-1K. Aspire evaluates one generated program per task across held-out seeds, while CaP-Agent0 regenerates a separate program per seed with test-time reasoning and retries. Aspire improves performance across all benchmarks, with several results surpassing programs written by human experts. Detailed per-task results are in Appendix B and D.1.",
+      "page": 8,
+      "index": 11,
+      "width": 979,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-012.webp",
+      "caption": "Figure 2: Robot execution engine. Trace-guided debugging on a BEHAVIOR-1K navigate-and-pick-up-radio task. (a) Ego-view keyframes and overlays show the robot locating the radio but failing to approach it. (b) The primitive trace localizes the failure to repeated PLANNING_ERRORs: candidate navigation goals fall inside the table’s collision-avoidance buffer. (c) The agent patches the program with a multi-angle approach routine, re-perceives the radio from a reachable side, and completes the grasp. The validated repair is admitted as a reusable Multi-Angle Approach skill.",
+      "page": 4,
+      "index": 12,
+      "width": 958,
+      "height": 510
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-013.webp",
+      "caption": "Figure 12: Scene-reasoning skills. Representative entries for reasoning over spatial relations, support surfaces, occlusions, and scene-level task constraints.",
+      "page": 19,
+      "index": 13,
+      "width": 933,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-014.webp",
+      "caption": "Figure 8: Localization skills. Representative entries for grounding ambiguous language and object references into robust perception and localization routines.",
+      "page": 17,
+      "index": 14,
+      "width": 933,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-015.webp",
+      "caption": "Figure 7: Debugging skills. Representative skill-library entries that encode reusable debugging strategies, including failure signatures, when-to-apply guards, and validated repair sketches.",
+      "page": 17,
+      "index": 15,
+      "width": 933,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-016.webp",
+      "caption": "Table 9: Evolutionary search progress on selected LIBERO-Pro tasks. Each column shows the held-out success rate (seeds 1–50) of the best candidate at that iteration. Blank cells indicate search terminated early.",
+      "page": 24,
+      "index": 16,
+      "width": 983,
+      "height": 1274
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-017.webp",
+      "caption": "Figure 5: Cross-task zero-shot transfer on LIBERO-Pro Long. Skills accumulated on LIBERO-90 improve zero-shot performance on held-out long-horizon tasks. Figure (a) compares the full 𝑁=90 library with baselines. Figure (b) shows Pos/Task success as the size of the skill library increases. All success rates are macro-averaged over 10 tasks per axis. Per-task results are in Appendix C.",
+      "page": 9,
+      "index": 17,
+      "width": 973,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-018.webp",
+      "caption": "Table 4: BEHAVIOR-1K [Li et al., 2024] performance on two representative household tasks: Soda Can pick-up and Radio pick-up. Navigation and Task Success rates in [0, 1] are reported separately; all numbers are on the 25-seed held-out evaluation (seeds 1–25); Aspire runs interactive block-by-block generation with the skill library accumulated on seeds 26–35.",
+      "page": 20,
+      "index": 18,
+      "width": 983,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-019.webp",
+      "caption": "Table 3: Robosuite [Zhu et al., 2020] performance of CaP-Agent0 [Fu et al., 2026] and Aspire on 7 manipulation tasks (100-trial held-out evaluation). Values are task success rates in [0, 1]. Average is the unweighted mean across all 7 tasks.",
+      "page": 20,
+      "index": 19,
+      "width": 508,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-020.webp",
+      "caption": "Table 2: LIBERO-Pro [Zhou et al., 2025] performance of OpenVLA [Kim et al., 2024], 𝜋0 [Black et al., 2025], 𝜋0.5 [Physical Intelligence et al., 2025], CaP-Agent0 [Fu et al., 2026], and Aspire on the libero-object, libero-goal, and libero-spatial benchmarks under initial position perturbations (Pos) and instruction perturbations (Task), macro-averaged across 10 tasks per suite. Overall columns are macro-averaged across the three suites. All Aspire numbers are on the 50-seed held-out evaluation (seeds 1–50). See the per-task breakdown in Appendix D.1.",
+      "page": 20,
+      "index": 20,
+      "width": 691,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00272v1/fig-021.webp",
+      "caption": "Figure 3: Skill library. Aspire stores validated, agent-discovered repair knowledge as reusable in-context skills rather than a fixed set of human-written primitives. Top: representative entries show learned skills about localization disambiguation, motion-primitive construction, and navigation recovery. Middle: the library grows across heterogeneous categories, including localization, navigation, motion primitives, object-level grasping, scene understanding, and debugging workflows. Bottom: selected skills discovered in sim are used as in-context guidance for real-robot programming, providing evidence that skills can transfer across embodiments. Additional skill examples and prompts are shown in Appendix A.",
+      "page": 5,
+      "index": 21,
+      "width": 956,
+      "height": 933
+    }
+  ]
+}

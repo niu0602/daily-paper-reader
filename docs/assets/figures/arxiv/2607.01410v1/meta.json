@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.01410v1/fig-001.webp",
+      "caption": "Fig. 2. Left: top-down maze navigation. Right: egocentric maze navigation. In both settings, the agent observes the bottom-row 64× 64 image crop as a partial observation.",
+      "page": 5,
+      "index": 1,
+      "width": 512,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01410v1/fig-002.webp",
+      "caption": "Fig. 1. Overview of the BIFROST framework. A shared history encoder is trained on paired cross-domain data so that observation-action sequences leading to equivalent long-term behavior are mapped to nearby latent states, regardless of domain-specific visual or dynamics differences. The policy is trained and deployed in the same latent space, enabling zero-shot transfer without separate treatment of individual gap sources.",
+      "page": 4,
+      "index": 2,
+      "width": 1022,
+      "height": 575
+    }
+  ]
+}

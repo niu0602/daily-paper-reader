@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-001.webp",
+      "caption": "Fig. 6: Qualitative real-robot rollouts. (Left) successful long-horizon assembly of the IVAR chair. (Right) emergent self-correction behaviors: regrasping for improved contact and fine-grained magnet alignment.",
+      "page": 7,
+      "index": 1,
+      "width": 1050,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-002.webp",
+      "caption": "Fig. 10: IVAR chair assembly initialization.",
+      "page": 10,
+      "index": 2,
+      "width": 506,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-003.webp",
+      "caption": "Fig. 2: Bimanual furniture assembly tasks. These tasks require executing diverse manipulation skills over extremely long horizons. A simple item (LACK side table) requires 12 skill executions (650 steps), while a complex assembly (IVAR chair) requires 25 (1550 steps).",
+      "page": 3,
+      "index": 3,
+      "width": 1048,
+      "height": 974
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-004.webp",
+      "caption": "Fig. 3: System setup. The teleoperator wears a Meta Quest 3 headset at the neck to track hand poses. A green screen reduces visual noise; a white cover occludes the teleoperator. Bottom-right: tabletop schematic with symmetric dual Kinova placement.",
+      "page": 4,
+      "index": 4,
+      "width": 508,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-005.webp",
+      "caption": "Fig. 12: Subtask success rates under different design choices. Results correspond to Table II and Table III.",
+      "page": 12,
+      "index": 5,
+      "width": 792,
+      "height": 1300
+    },
+    {
+      "url": "assets/figures/arxiv/2607.01212v1/fig-006.webp",
+      "caption": "Fig. 8: Furniture part taxonomy and geometric properties. Illustration of part naming, dimensions, and base part definition used in assembly. For the IVAR chair stage 1 definition, see Sec. B.2.",
+      "page": 9,
+      "index": 6,
+      "width": 508,
+      "height": 416
+    }
+  ]
+}

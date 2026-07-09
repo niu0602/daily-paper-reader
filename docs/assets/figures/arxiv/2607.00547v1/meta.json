@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-001.webp",
+      "caption": "Table 4: Motivating pilot on EgoNormia (N = 543). Adding a fifth option that is an action observed in the scene (video action) sharply raises how often models choose it (Pick5) and lowers accuracy, whereas a random action (shuffled) does not. Pick5 is the percentage of items on which the added option is selected.",
+      "page": 11,
+      "index": 1,
+      "width": 749,
+      "height": 203
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-002.webp",
+      "caption": "Figure 1: An example item from EgoGapBench. The item asks the model to adopt a viewpoint behind home plate, corresponding to the umpire’s role, in a scene that also contains other agents. Besides the correct answer, the options include the observed action of another agent (the batter preparing to hit, marked motor intrusion) and a role that fits the activity but cannot be occupied from the given viewpoint (off-vantage). Qwen3.5 selects a motor-intrusion option (C), choosing the action of the visible batter rather than an action appropriate from its assigned viewpoint.",
+      "page": 2,
+      "index": 2,
+      "width": 819,
+      "height": 258
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-003.webp",
+      "caption": "Table 1: Zero-shot results on EgoGapBench (%), sorted by overall accuracy. Left: accuracy—even the strongest proprietary models score high on indirect items but collapse on direct items. Right: n4 errors split by type. Each value is reported as a share of all n4 items, so that n4 accuracy and the two error columns partition the n4 set (values are rounded to one decimal place). Except for three rows, motor-intrusion errors exceed the random-choice baseline. Results are robust to prompt formulation (Appendix I).",
+      "page": 7,
+      "index": 3,
+      "width": 740,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-004.webp",
+      "caption": "Table 2: Egocentric tuning on EgoIT-99K dissociates Egocentric Action Selection (EgoGapBench) from first-person scene understanding (EgoThink): the same training leaves scene parsing essentially unchanged (mean −0.4%) while collapsing EgoGapBench across all five models (mean −33.9%). EgoThink is the mean of {0, 0.5, 1} judge grades (GPT-4o); EgoGapBench is multiplechoice accuracy (%, chance ≈30%). As the two scales are not directly comparable in raw points, we contrast them via self-normalized relative change (rel.). Columns: ZS (zero-shot) and EgoIT (after egocentric tuning on EgoIT-99K).",
+      "page": 7,
+      "index": 4,
+      "width": 577,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-005.webp",
+      "caption": "Figure 2: Left: many egocentric datasets and benchmarks include visible camera-wearer body cues, allowing models to answer from body evidence rather than perspective. Middle: vertically flipping an EgoThink image yields a viewpoint that could not arise from a first-person position, yet models return nearly the same answer, indicating reliance on visible body cues. Right: on EgoNormia, replacing one option with an action observed in the scene draws the model toward it (“Grind the joint near the top of a handrail support.”) over the action it should take.",
+      "page": 3,
+      "index": 5,
+      "width": 802,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-006.webp",
+      "caption": "Table 5: Out-of-domain (Wikimedia) accuracy (%), sorted by overall accuracy within each setting. The zero-shot direct–indirect split and the partial recovery under rationale tuning reflect the main results (Tables 1 and 3). This set is small and is reported as a qualitative check.",
+      "page": 13,
+      "index": 6,
+      "width": 506,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.00547v1/fig-007.webp",
+      "caption": "Table 3: EAS tuning (fine-tuning on EAS data to match the evaluation format) partially recovers EgoGapBench accuracy over zero-shot (Table 1). The right block reports the direction of n4 errors as a share of all n4 items, before (ZS, derived from Table 1) and after EAS tuning. Although accuracy improves, in all five models motor-intrusion errors fall while off-vantage errors rise. Accuracy (%), open-source models only.",
+      "page": 8,
+      "index": 7,
+      "width": 660,
+      "height": 211
+    }
+  ]
+}

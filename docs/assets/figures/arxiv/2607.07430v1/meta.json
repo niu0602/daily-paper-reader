@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07430v1/fig-001.webp",
+      "caption": "Fig. 2. Our system features voice-controlled locomotion, teleoperated manipulation, social interaction, and multi-modal data collection ability. The user uses Apple Vision Pro to send voice commands for locomotion, social interaction, and hand tracking. The voice loco-control module converts locomotion commands into high-level control commands, while the manipulation module tracks wrist and finger poses to send low-level commands via PD control. Multi-modal data, i.e., ego-centric images, voice/text commands, 19 body and 12 hand joint angles, and eye movements, is recorded for imitation learning.",
+      "page": 2,
+      "index": 1,
+      "width": 1052,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07430v1/fig-002.webp",
+      "caption": "Fig. 3. Apple Vision Pro, Inspire Robotics Dexterous Hands, and Unitree H1 Humanoid Robot used in the experimental setup.",
+      "page": 2,
+      "index": 2,
+      "width": 475,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07430v1/fig-003.webp",
+      "caption": "Fig. 1. Demonstration of tasks involving voice-controlled locomotion, teleoperated manipulation, and social interaction. For the manipulation task, the user teleoperates with the hands to pick the bottle and place it in a box. For the social interaction task, the robot takes the blue cube from a person, walks towards another person, and hands the cube. Finally, the robot performs hand-shaking gesture.",
+      "page": 1,
+      "index": 3,
+      "width": 508,
+      "height": 270
+    }
+  ]
+}

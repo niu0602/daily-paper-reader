@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-001.webp",
+      "caption": "Fig. 1. Comparison of attention distributions between standard attention and AmpAttention in robotic view images. (a) Task scenario of open the top drawer. (b) Visualization of attention distributions under different attention mechanisms. left: standard attention. right: AmpAttention. (c) Quantitative comparison of both attention mechanisms.",
+      "page": 1,
+      "index": 1,
+      "width": 596,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-002.webp",
+      "caption": "Fig. 5. Real-world experimental setup. (a) Real-world task scenario setting. (b) Pick dart and insert bullseye: the red/green bullseye has a radius of 6/14 mm. (c) Press the toy switch: pressing a 12mm × 6mm control switch. (d) Cable grasping task. (e) Pick and place toy bear task.",
+      "page": 6,
+      "index": 2,
+      "width": 1022,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-003.webp",
+      "caption": "TABLE II ABLATION STUDY (%) ON RLBENCH. WE QUANTIFY THE IMPACT OF DIFFERENT COMPONENTS IN RVAF.",
+      "page": 7,
+      "index": 3,
+      "width": 1054,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-004.webp",
+      "caption": "Fig. 4. Overview of the AmpAttention.",
+      "page": 3,
+      "index": 4,
+      "width": 446,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-005.webp",
+      "caption": "Fig. 3. Overview of the RVAF architecture. Given a task instruction and multi-view images, RVAF first encodes them into task embeddings and view-specific embeddings. These embeddings are then processed through intra-view and inter-view AmpAttention to capture view representations. The resulting representations are used to predict the next key-frame pose.",
+      "page": 3,
+      "index": 5,
+      "width": 490,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2607.02845v1/fig-006.webp",
+      "caption": "TABLE I MULTI-TASK PERFORMANCE (%) ON RLBENCH.",
+      "page": 5,
+      "index": 6,
+      "width": 1054,
+      "height": 430
+    }
+  ]
+}

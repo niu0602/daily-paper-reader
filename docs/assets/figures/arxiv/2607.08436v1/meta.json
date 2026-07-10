@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-001.webp",
+      "caption": "Figure 3: Quantitative Comparison on Real-World Rollouts. Normalized score and success rate across three bimanual tasks under ID and OOD evaluation, comparing BC against four WAM variants. WAM cotraining consistently outperforms BC: human data often degrades BC yet yields large WAM gains. Pixel transfers weakly, while DINO drives the strongest OOD generalization and 3D Flow the largest ID spatial gains. Error bars indicate 95% finite-sample-valid confidence intervals with Type-I error control for miscoverage [66].",
+      "page": 6,
+      "index": 1,
+      "width": 822,
+      "height": 512
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-002.webp",
+      "caption": "Figure 5: Qualitative Comparison on Real-World Rollouts. WAM variants (3D Flow, DINO) are compared against BC and Pixel baselines under EgoVerse co-training. (a) BC produces human-like motion, Pixel fails at precise cup transport; (b) BC cannot grasp unseen objects, Pixel hallucinates a free-space grasp; (c) BC overfits and fails to reach the cloth, Pixel’s geometric confusion leaves the third fold incomplete.",
+      "page": 7,
+      "index": 2,
+      "width": 821,
+      "height": 774
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-003.webp",
+      "caption": "Table 2: Hyperparameters held fixed across all world-model variants. Only the world-model head and target (bottom block) change between runs.",
+      "page": 18,
+      "index": 3,
+      "width": 846,
+      "height": 976
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-004.webp",
+      "caption": "Figure 2: Model Architecture. (a) EGOWAM builds on a Heterogeneous Pretrained Transformer [16, 7] with modality-specific stems (ego vision, proprioception, wrist vision), learned action and future tokens, a flow-matching action head, and a swappable world-model head supplying dynamics supervision that carries human data where actions cannot. The head supports three world targets: (b) a VAE head decoding pixel latents, (c) an RAE DINO-feature head, and (d) a 3D-flow head denoising camera-stabilized motion flow.",
+      "page": 4,
+      "index": 4,
+      "width": 826,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-005.webp",
+      "caption": "Figure 13: In-Domain and OOD Objects.",
+      "page": 20,
+      "index": 5,
+      "width": 497,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08436v1/fig-006.webp",
+      "caption": "Figure 10: Robot Platform and Data Collection. (a) Our robot platform: two upright-mounted 6-DoF ARX5 arms with two wrist-mounted Intel RealSense D405 cameras and a head-mounted Project Aria headset, teleoperated by a human via a Meta Quest 3 interface. (b) A human wearing Project Aria glasses collects demonstrations naturally. (c) The human deliberately aligns with the robot’s action, height, and viewpoint, producing a static egocentric view matched to the robot platform.",
+      "page": 16,
+      "index": 6,
+      "width": 826,
+      "height": 235
+    }
+  ]
+}

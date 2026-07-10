@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-001.webp",
+      "caption": "Fig. 1. Conventional imitation-based visuomotor policies often struggle to adapt to a new task from only a handful of demonstrations. SkillPlug augments the policy with a skill interactor and router, and mines a transferable skill library from multi-task demonstrations, enabling efficient reuse and recombination of learned skills for successful few-shot transfer.",
+      "page": 1,
+      "index": 1,
+      "width": 555,
+      "height": 496
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-002.webp",
+      "caption": "TABLE III LOSS-TERM ABLATION OF ACT+SKILLPLUG ON DISCOVERSE. ABLATED VARIANTS ARE SINGLE-SEED DIAGNOSTICS; FOR THE FULL OBJECTIVE, AVG. REPORTS THE THREE-SEED MEAN ± SE.",
+      "page": 6,
+      "index": 2,
+      "width": 529,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-003.webp",
+      "caption": "TABLE I DISCOVERSE MULTI-TASK AND FEW-SHOT PERFORMANCE OF ACT AND ACT+SKILLPLUG. RESULTS ARE REPORTED OVER 3 TRAINING SEEDS.",
+      "page": 6,
+      "index": 3,
+      "width": 1076,
+      "height": 228
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-004.webp",
+      "caption": "TABLE IV DISCOVERSE PER-TASK SUCCESS RATES OF ACT+SKILLPLUG FOR DIFFERENT NUMBERS OF SKILLS K ∈ {2, 4, 6} (SINGLE SEED).",
+      "page": 7,
+      "index": 4,
+      "width": 529,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-005.webp",
+      "caption": "Fig. 2. SkillPlug architecture and training. SkillPlug augments a base visuomotor policy with a skill library, a skill interactor, and a router that composes skill-conditioned features for action prediction. During training, a Trajectory–skill posterior encoder is introduced to mine skills from raw demonstrations, and is removed at inference. SkillPlug is learned with four self-supervised objectives: a reconstruction loss for faithful imitation, a KL regularizer for compactness, a behavioral skill alignment loss to tie skills to trajectory-level behavior, and a skill disentanglement loss to reduce redundancy.",
+      "page": 3,
+      "index": 5,
+      "width": 1076,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-006.webp",
+      "caption": "Fig. 8. Skill routing visualization on a real robot for pick banana and bread on the white plate task in the few-shot setting. The router exhibits two similar pick-and-place phases: motion-dominant segments uses Skill 1, gripper state changes uses Skill 2, and a Skill 4 is triggered near 90 steps reflects wrist rotation to align the end-effector for grasping the bread.",
+      "page": 8,
+      "index": 6,
+      "width": 1072,
+      "height": 1081
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08354v1/fig-007.webp",
+      "caption": "Fig. 3. Scene-agnostic behavior of a single skill. The selected skill consistently induces an open–gripper motion. For each scene we show the camera view where this behavior is most clearly visible.",
+      "page": 5,
+      "index": 7,
+      "width": 524,
+      "height": 402
+    }
+  ]
+}

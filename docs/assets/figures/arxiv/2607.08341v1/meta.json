@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08341v1/fig-001.webp",
+      "caption": "Table 1: Simulation Results (×10−2) on Retargeting Quality. AnyDexRT achieves better global and local motion consistency across diverse dexterous hands. *Deterministic methods do not have standard deviations.",
+      "page": 7,
+      "index": 1,
+      "width": 818,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08341v1/fig-002.webp",
+      "caption": "Figure 2: Overview of AnyDexRT. (Left) During training, AnyDexRT learns a fingertip mapper from collected human fingertip samples with few paired human-robot anchors as guidance, and trains a contact classifier using collected or generated pinch/non-pinch poses. (Right) During deployment, the fingertip mapper produces retargeted targets, which are refined by the contact classifier and converted into robot joint commands.",
+      "page": 4,
+      "index": 2,
+      "width": 818,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08341v1/fig-003.webp",
+      "caption": "Figure 7: Qualitative Results of AnyDexRT.",
+      "page": 12,
+      "index": 3,
+      "width": 826,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08341v1/fig-004.webp",
+      "caption": "Figure 3: Retargeting Objectives. (a) Combining all objectives produces a geometrically consistent and intuitive mapping from the human fingertip space to the robot fingertip space. (b) Full Chamfer loss can force unnatural coverage of redundant robot fingertip regions. (c) Distance loss preserves the geometric structure of the retargeted space and reduces mapping distortion. (d) Local motion preservation encourages consistent motion directions between human and robot fingertips, and is less sensitive to calibration compared to global motion preservation. (e) Few-shot anchor alignment resolves mapping ambiguity and stabilizes retargeting.",
+      "page": 5,
+      "index": 4,
+      "width": 820,
+      "height": 341
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-001.webp",
+      "caption": "Figure 5: Visual demonstration of embodiments and visual variation.",
+      "page": 6,
+      "index": 1,
+      "width": 832,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-002.webp",
+      "caption": "Table 4: Task list with category, task name, task description, success condition, and environment rendering.",
+      "page": 15,
+      "index": 2,
+      "width": 830,
+      "height": 1181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-003.webp",
+      "caption": "Table 5: Observation-mode presets. Each preset enables only the listed groups and sets history length to the given length",
+      "page": 22,
+      "index": 3,
+      "width": 764,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-004.webp",
+      "caption": "Table 1: Comparison with representative robot manipulation and dexterous manipulation benchmarks. DexVerse features broad 100 dexterous manipulation tasks, multi-embodiment support, visual variation, and demonstration datasets. ✓: supported; △: partially supported; ✗: not supported.",
+      "page": 3,
+      "index": 4,
+      "width": 822,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-005.webp",
+      "caption": "Table 3: Imitation learning baselines’ online success rates on DexVerse baseline tasks.",
+      "page": 8,
+      "index": 5,
+      "width": 808,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-006.webp",
+      "caption": "Table 2: DexVerse taxonomy with 8 categories and 100 tasks. Tasks are grouped by the dominant interaction pattern and manipulation challenge rather than only by object type.",
+      "page": 4,
+      "index": 6,
+      "width": 740,
+      "height": 405
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-007.webp",
+      "caption": "Figure 2: Visualization of selected tasks from the DexVerse environments.",
+      "page": 4,
+      "index": 7,
+      "width": 732,
+      "height": 385
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08751v1/fig-008.webp",
+      "caption": "Figure 3: Visualization of task progression of the 5 long-horizon tasks in DexVerse environments.",
+      "page": 5,
+      "index": 8,
+      "width": 826,
+      "height": 308
+    }
+  ]
+}

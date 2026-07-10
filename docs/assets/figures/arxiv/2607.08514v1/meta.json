@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-001.webp",
+      "caption": "Fig. 3: Hand-object masking strategy. H and O denote sets of hand and object tubelet indices, respectively. R denotes set of randomly selected tubelet indices. M denotes final set of tubelets to mask.",
+      "page": 6,
+      "index": 1,
+      "width": 706,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-002.webp",
+      "caption": "Fig. 7: Top-50 noun distribution in DEHOI.",
+      "page": 21,
+      "index": 2,
+      "width": 725,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-003.webp",
+      "caption": "Fig. 1: Cue-Isolated HOI. CI-HOI requires verb prediction representing HOI dynamics from isolated hand- or object-related observations. In this example, recognition failure can be attributed to the incorrect recognition of dough transformation.",
+      "page": 2,
+      "index": 3,
+      "width": 711,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-004.webp",
+      "caption": "Fig. 4: Training HOI-dynamics-aware (HDA) decoder. Hand- and object-centric queries cross-attend to encoded visual patches to produce cue-specific embeddings, supervised by hand/object locations and semantics. The video-level embedding interacts with these embeddings and visual patches to encode hand-object dynamics, and is aligned with narration summarizing the overall interaction.",
+      "page": 7,
+      "index": 4,
+      "width": 718,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-005.webp",
+      "caption": "Fig. 8: Top-50 verb distribution in DEHOI.",
+      "page": 22,
+      "index": 5,
+      "width": 725,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-006.webp",
+      "caption": "Table 2: Ablation study with different modules under three video settings.",
+      "page": 14,
+      "index": 6,
+      "width": 720,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-007.webp",
+      "caption": "Fig. 5: Verb-wise performance improvement (degradation) of our model compared to Helping Hands [37] under hand-centric (left) and object-centric (right) settings. Verb classes with more than 10 samples and absolute difference greater than 1% are shown.",
+      "page": 13,
+      "index": 7,
+      "width": 387,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-008.webp",
+      "caption": "Table 1: Zero-shot evaluation on original and inpainted videos. Numbers in parentheses indicate absolute performance drops compared to the original video. We report EgoVideo [20] ’s performance in gray since it is trained on much larger data.",
+      "page": 12,
+      "index": 8,
+      "width": 716,
+      "height": 212
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-009.webp",
+      "caption": "Fig. 9: Qualitative results of State Change Identification task in STATUS Bench [32].",
+      "page": 24,
+      "index": 9,
+      "width": 706,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-010.webp",
+      "caption": "Fig. 10: Qualitative results of action recognition from DROID [14] videos.",
+      "page": 24,
+      "index": 10,
+      "width": 712,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08514v1/fig-011.webp",
+      "caption": "Fig. 2: Hand-object masked training. Similar to MAE, input visual patches are masked and reconstructed, while masking strategy explicitly targets hand- and object-centric regions or background regions.",
+      "page": 5,
+      "index": 11,
+      "width": 715,
+      "height": 221
+    }
+  ]
+}

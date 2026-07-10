@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-001.webp",
+      "caption": "Figure 4: Real world tasks. Highly dexterous tasks used in real world experiments to benchmark the tasks: Card Pickup (Task A, top), Vertical Cube Rotation (Task B, middle), and Screwdriver Pivot (Task C, bottom).",
+      "page": 6,
+      "index": 1,
+      "width": 664,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-002.webp",
+      "caption": "Figure 5: Empirical evaluation of retargeter performance. (a) Compares the overall success rates across algorithms for Tasks A, B, and C. (b) Illustrates the variance and consistency in task completion times for successful trials.",
+      "page": 7,
+      "index": 2,
+      "width": 826,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-003.webp",
+      "caption": "Figure 6: NASA TLX results for each task. Results from NASA-TLX survey from operators on the different retargeters for each task. A smaller area indicates that the retargeter had a reduced workload.",
+      "page": 7,
+      "index": 3,
+      "width": 824,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-004.webp",
+      "caption": "Figure 17: Spearman rank correlation between simulation metrics and real-world performance. Human-in-the-loop study results (N = 14 operators) comparing simulation metrics (rows) against real-world metrics (columns). In accordance with standard behavioral science frameworks [42], correlation magnitudes are interpreted relatively: r = ±0.1 denotes a small effect, r = ±0.3 a medium effect, and r = ±0.5 a large effect. Confidence intervals (CIs) are reported in brackets. CIs that do not cross zero indicate statistical significance.",
+      "page": 22,
+      "index": 4,
+      "width": 780,
+      "height": 513
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-005.webp",
+      "caption": "Figure 2: System overview. After aligning human (pi H ) and robot keypoints using the KabschUmeyama algorithm [26, 27, 28], SBR optimizes joint commands iteratively. Over L cycles, N candidates are sampled in each iteration, and M elite samples are weighted via a softmax function to update the control distribution (µ,Σ) subject to the cost function J (Eq. (1)).",
+      "page": 3,
+      "index": 5,
+      "width": 829,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-006.webp",
+      "caption": "Figure 12: Operator variance in cognitive workload across tasks. Total workload distributions derived via subjective NASA-TLX metrics across all tasks and retargeters. Despite the variance, we observe that SBR has the lowest median value (indicated by the solid black line) across the 3 different tasks, indicating that it has the lowest workload on the operator.",
+      "page": 18,
+      "index": 6,
+      "width": 823,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-007.webp",
+      "caption": "Figure 13: Operator success rate distributions across tasks. Violin plots illustrating the spread of individual operator success rates across the three distinct manipulation tasks.",
+      "page": 18,
+      "index": 7,
+      "width": 823,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-008.webp",
+      "caption": "Figure 8: Compute-performance trade-offs in SBR. This ablation maps the mean tracking loss (weighted smooth-L1) across varying sample sizes N and update cycles L. The diagonal contour lines denote equivalent compute budgets (N × L). The green regions highlight hyperparameter configurations where SBR successfully surpasses the DexPilot reference loss (0.4414). Notably, the 160k operations contour reveals that a balanced allocation (e.g., N = 4096, L = 40 or N = 8192, L = 20) yields better optimization than heavily skewed sample generation (N = 16384, L = 10), emphasizing the need for both exploratory breadth and iterative depth.",
+      "page": 13,
+      "index": 8,
+      "width": 706,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-009.webp",
+      "caption": "Figure 14: Gradient versus sampling-based optimization comparison. Utilizing the DexPilot [9] loss function and swapping out the optimization methods, we compare the baseline tracking performance. To further help with the comparison, we perform batch optimization where we run the optimized inputs in parallel and apply a softmax to their outputs using N = 32768 samples, matching the sampling-based approach. RMSProp [40] was used as a non-momentum baseline, and SLSQP [41] was selected as it is used among existing retargeters [9, 12]. Due to the heavy computational demands of parallel SLSQP execution, we analyze 500 frames of recorded hand motion (≈ 5 seconds). For approximately identical loss values, the sampling-based approach achieves a 36.4% reduction in tracking jitter compared to the gradient-based baseline.",
+      "page": 19,
+      "index": 9,
+      "width": 787,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-010.webp",
+      "caption": "Figure 11: Operator variance in completion time across tasks. Distribution of execution times across the four evaluated retargeting algorithms for the three tasks. Data points represent individual successful trials, with internal horizontal lines denoting the median values.",
+      "page": 17,
+      "index": 10,
+      "width": 823,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-011.webp",
+      "caption": "Figure 7: Performance comparison of Python forward kinematics (FK) libraries. We compared the performance of the following Python FK libraries: Pinocchio [36], PyTorch Kinematics [37], and JAX MJX [31, 38, 39]. Profiling execution times across different batch sizes. The superior parallel processing capabilities of JAX with MJX motivated its selection for our retargeter’s core computations.",
+      "page": 12,
+      "index": 11,
+      "width": 775,
+      "height": 510
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-012.webp",
+      "caption": "Figure 15: Hessian eigen-direction decomposition and comparison. The eigen-modes of the Hessian enable us to better understand the true source of tracking jitter, given that jitter represents the second derivative with respect to position. For the stiffer eigenvectors (characterized by higher eigenvector and eigenvalue ranks), we observe that the mean per-frame jitter is very close across all methods. However, as we move towards the lower-ranked eigen-directions, we begin to notice a stark divergence. This trend indicates that in the flat regions of the loss function, the gradient-based method jumps around and fails to converge to a consistent value.",
+      "page": 20,
+      "index": 12,
+      "width": 664,
+      "height": 463
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-013.webp",
+      "caption": "Figure 16: Gradient- versus sampling-based optimization comparison with a velocity regularization term. Using the same core DexPilot loss function, we introduce an explicit velocity regularization term with a weight of wv = 0.05. Although joint jittering is successfully reduced across the board by a factor of 7.18 times, the mean tracking loss increases by 0.0232 on average. Under this formulation, the gradient-based method achieves comparable jitter to sampling-based methods, but at the explicit trade-off of incurring a slightly higher tracking loss costs.",
+      "page": 20,
+      "index": 13,
+      "width": 706,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-014.webp",
+      "caption": "Table 1: Simulation benchmark results for online retargeting algorithms. Arrows indicate the direction of optimality and best performing values are bolded. SBR achieves the highest Consistency metrics and Cosine Similarity. Data from each category is averaged over N = 14 operators. Scheduling constraints limited the analysis to 14 of the 18 operators.",
+      "page": 5,
+      "index": 14,
+      "width": 792,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07491v1/fig-015.webp",
+      "caption": "Figure 10: Overall operator task adaptation. Aggregating all tasks and operators to quantify learning effects. At the global level, operators generally become faster as the study progresses. At the local block level, significant learning effects emerge, highlighting that operators quickly adapt to the specifics of an individual retargeter over the course of a single block.",
+      "page": 16,
+      "index": 15,
+      "width": 825,
+      "height": 518
+    }
+  ]
+}

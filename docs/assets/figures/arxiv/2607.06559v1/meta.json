@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-001.webp",
+      "caption": "Figure 4 Overview of RynnWorld-4D. Our pipeline leverages the large-scale Rynn4DDataset 1.0 dataset to train a generative model capable of predicting future 4D sequences. Given a single RGB-D observation and a language instruction, RynnWorld-4D co-generates future RGB frames, depth maps, and optical flow. These predictive 4D representations are then aggregated by RynnWorld-4D-Policy to derive the final robot actions.",
+      "page": 6,
+      "index": 1,
+      "width": 986,
+      "height": 668
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-002.webp",
+      "caption": "Figure 5 Real-worldManipulation Benchmark. We establish a comprehensive evaluation suite comprising six diverse tasks to assess the model’s performance in open-world manipulation, providing a rigorous testbed for our 4D world model.",
+      "page": 11,
+      "index": 2,
+      "width": 984,
+      "height": 652
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-003.webp",
+      "caption": "Figure 9 Extended qualitative results. Each row displays the generated RGB, depth, and optical flow sequences. The results highlight RynnWorld-4D’s ability to produce spatially and temporally coherent 4D predictions across various manipulation scenarios.",
+      "page": 26,
+      "index": 3,
+      "width": 979,
+      "height": 896
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-004.webp",
+      "caption": "Figure 1 Given an input RGB-D image and description, RynnWorld-4D generates RGB, depth, and optical flow videos synchronously, which can be further lifted into 3D scene flow (right).",
+      "page": 2,
+      "index": 4,
+      "width": 979,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-005.webp",
+      "caption": "Table 2 Stage-wise training configuration. Effective batch size is per-GPU batch (1) × gradient accumulation (2-4) × NGPU.",
+      "page": 10,
+      "index": 5,
+      "width": 677,
+      "height": 201
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-006.webp",
+      "caption": "Table 4 Quantitative evaluation of 4Dworldmodeling quality. Metrics span visual synthesis (RGB), geometric structure (Depth), and temporal dynamics (Optical Flow). N/A denotes that the baseline lacks the native capability to generate specific modalities.",
+      "page": 14,
+      "index": 6,
+      "width": 992,
+      "height": 444
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-007.webp",
+      "caption": "Table 5 Success rates (%) on roboticmanipulation tasks. We compare RynnWorld-4D-Policy against state-of-the-art policy learning baselines and foundation models across six challenging tasks.",
+      "page": 14,
+      "index": 7,
+      "width": 922,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-008.webp",
+      "caption": "Figure 8 Operator to collect real world data.",
+      "page": 23,
+      "index": 8,
+      "width": 444,
+      "height": 593
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-009.webp",
+      "caption": "Figure 6 Qualitative results of RynnWorld-4D. Starting from a single RGB-D image and a text prompt, RynnWorld-4D synchronously generates RGB video, depth maps, and optical flow, preserving sharp geometric structures and producing temporally consistent motion fields.",
+      "page": 13,
+      "index": 9,
+      "width": 984,
+      "height": 1104
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-010.webp",
+      "caption": "Figure 2 Composition of the Rynn4DDataset 1.0 dataset. We provide a large-scale hybrid collection of 254.4M frames, balancing human egocentric videos with diverse robotic manipulation data. This diversity ensures that the world model learns both general object interaction priors and robot-specific execution traces.",
+      "page": 4,
+      "index": 10,
+      "width": 834,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-011.webp",
+      "caption": "Table 3 Statistics of the Real-World Dataset used for training.",
+      "page": 12,
+      "index": 11,
+      "width": 936,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-012.webp",
+      "caption": "Table 1 Inference latency breakdown on NVIDIA RTX 5090 (FP8).",
+      "page": 9,
+      "index": 12,
+      "width": 673,
+      "height": 226
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06559v1/fig-013.webp",
+      "caption": "Figure 3 Data Curation Pipeline. The video data is collected from diverse sources and partitioned into short clips during data preprocessing. Each clip undergoes a multi-modal annotation process: (1) Video Captioning: Qwen3VL (Bai et al., 2025) generates detailed natural language descriptions of the video content; (2) Optical Flow Estimation: DPFlow (Morimitsu et al., 2025) computes dense per-frame motion fields, which are visualized and saved as flow videos; (3) Depth Estimation: Depth Anything 3 (Lin et al., 2025) produces monocular depth predictions, which are upsampled to the original resolution and saved as depth videos with a global depth range of [0.0, 5.0] meters.",
+      "page": 5,
+      "index": 13,
+      "width": 960,
+      "height": 342
+    }
+  ]
+}

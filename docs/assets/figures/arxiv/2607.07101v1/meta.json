@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-001.webp",
+      "caption": "Table B.3: Per-task success rates (%) on four representative small-object precision MetaWorld tasks (Diffusion Policy). ∆ is the absolute gain of GeoProp over Vanilla.",
+      "page": 15,
+      "index": 1,
+      "width": 636,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-002.webp",
+      "caption": "Figure C.1: Real-world execution sequences on Mobile ALOHA. Rows show task progress from the initial state to the final state for Paper Toss, Coffee Retrieval, Desk Clearing, and Table Cleaning. Red dots indicate projected end-effector positions, and orange boxes show the corresponding grounded visual regions used by GeoProp.",
+      "page": 21,
+      "index": 2,
+      "width": 826,
+      "height": 573
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-003.webp",
+      "caption": "Figure 2: GeoProp projects end-effector and look-ahead waypoints to image features, producing spatially aligned state tokens for downstream policies.",
+      "page": 3,
+      "index": 3,
+      "width": 814,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-004.webp",
+      "caption": "Figure B.1: Simulation grounding visualization. Rows show representative rollouts from simulation tasks. Red dots indicate projected 2D end-effector positions, and orange boxes show the corresponding image-space regions associated with GeoProp’s feature-grid grounding.",
+      "page": 18,
+      "index": 4,
+      "width": 564,
+      "height": 718
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-005.webp",
+      "caption": "Table A.1: Detailed training hyperparameters.",
+      "page": 13,
+      "index": 5,
+      "width": 622,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-006.webp",
+      "caption": "Figure B.2: Additional attention-map visualizations. We compare Vanilla proprioception fusion and GeoProp across multiple RoboTwin tasks and transformer layers. GeoProp produces more localized activations around task-relevant end-effector/object regions, while Vanilla fusion often attends diffusely to background regions.",
+      "page": 19,
+      "index": 6,
+      "width": 826,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-007.webp",
+      "caption": "Table B.8: Per-task success rates (%) on the MetaWorld-50 suite with Diffusion Policy. Per-row bests are highlighted within each backbone.",
+      "page": 17,
+      "index": 7,
+      "width": 706,
+      "height": 1096
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-008.webp",
+      "caption": "Figure B.3: Calibration robustness under synthetic extrinsic drift. GeoProp remains above Vanilla and No-Proprio under mild-to-moderate perturbations, while performance gradually decreases as projection error grows.",
+      "page": 20,
+      "index": 8,
+      "width": 826,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-009.webp",
+      "caption": "Figure B.4: Qualitative visualization under translation drift. Red and blue dots show unperturbed and perturbed end-effector projections, respectively. Orange and cyan boxes show the corresponding grounding regions, with overlap highlighted in purple.",
+      "page": 20,
+      "index": 9,
+      "width": 826,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-010.webp",
+      "caption": "Figure B.5: Qualitative visualization under rotation drift. Red and blue dots show unperturbed and perturbed end-effector projections, respectively. Orange and cyan boxes show the corresponding grounding regions, with overlap highlighted in purple.",
+      "page": 20,
+      "index": 10,
+      "width": 826,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07101v1/fig-011.webp",
+      "caption": "Table B.5: Per-task success rates (%) on the expanded 15-task RoboTwin setup with π0 (50 demonstrations per task, 25 evaluation rollouts per task). ∆ denotes the absolute gain of GeoProp over Vanilla π0.",
+      "page": 16,
+      "index": 11,
+      "width": 477,
+      "height": 390
+    }
+  ]
+}

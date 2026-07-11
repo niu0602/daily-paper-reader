@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-001.webp",
+      "caption": "Fig. 1: Overview of the proposed framework. A unified monocular vision-based grasping system enables a standard position controlled gripper to handle both compliant and rigid objects using RGB input alone. By combining semantic priors from language with visual feedback during manipulation, the framework selects an appropriate grasping behavior before contact and adapts online to maintain stable grasps across diverse everyday objects.",
+      "page": 1,
+      "index": 1,
+      "width": 510,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-002.webp",
+      "caption": "TABLE II: Comparison of Young’s modulus estimates (GPa) produced by GPT-5.3 and StiffNET.",
+      "page": 6,
+      "index": 2,
+      "width": 462,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-003.webp",
+      "caption": "TABLE I: Comparison with representative prior approaches in terms of their core enabling assumption, use of semantic priors, and demonstrated object regime. Prior work typically derives robustness from tactile instrumentation, explicit mechanics models, or specialized end-effector design. In contrast, the proposed framework operates with monocular RGB and a standard position-controlled gripper while addressing both deformable and rigid objects.",
+      "page": 2,
+      "index": 3,
+      "width": 1052,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-004.webp",
+      "caption": "Fig. 5: Grasping bottle: As the robot ascends, the distance between the camera and the bottle’s tracking points increases, reducing the scaling factor. This leads the gripper controller to command narrower finger widths. Once the bottle is grasped, both the scaling factor and finger width stabilize. The top row of images illustrates the robot’s upward motion during the bottle-grasping process, while the bottom row shows the scaling factor (SF) and finger width. Red markings indicate instances in the experiment.",
+      "page": 7,
+      "index": 4,
+      "width": 460,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-005.webp",
+      "caption": "Fig. 3: Grasping multiple objects: We demonstrate successful grasping during a pick-and-place operation for deformable objects, including lettuce, mozzarella cheese, croissant bread, and a paper roll. The proposed controller adjusts the gripper finger width to track the desired dissimilarity and maintain a stable grasp throughout the manipulation. D indicates the dissimilarity of the tracking points compared to the initial condition, and red lines show the instances of particular dissimilarity values.",
+      "page": 4,
+      "index": 5,
+      "width": 948,
+      "height": 496
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07897v1/fig-006.webp",
+      "caption": "Fig. 4: Grasping lettuce: During the robot’s upward movement, a decrease in the scaling factor is observed when the lettuce is not grasped. This reduction increases the reference dissimilarity, leading to a decrease in the gripper’s finger width. Consequently, the gripper gradually closes until the lettuce is grasped; after grasping, all parameters stabilize. Red numbers and green lines in the figures indicate specific instances in the experiments.",
+      "page": 5,
+      "index": 6,
+      "width": 462,
+      "height": 452
+    }
+  ]
+}

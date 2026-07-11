@@ -1,0 +1,242 @@
+Title: GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation
+
+URL Source: https://arxiv.org/pdf/2607.05869v1
+
+Published Time: Wed, 08 Jul 2026 00:41:58 GMT
+
+Number of Pages: 10
+
+Markdown Content:
+# GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation 
+
+# Paul Koch Fraunhofer IPK Pascalstraße 8-9, 10587 Berlin, Germany 
+
+paul.koch@ipk.fraunhofer.de 
+
+# Adem Karakurt Fraunhofer IPK Andr´ e Sers Fraunhofer IPK 
+
+# Abstract 
+
+Robust robotic grasping of novel objects requires datasets that simultaneously provide photorealistic RGB-D observa-tions, physically validated grasp quality annotations, and a principled bridge between simulation and the real world, which existing datasets lack to provide jointly. GraspIT 
+
+addresses this gap: tabletop scenes in NVIDIA Isaac Sim are annotated via a four-stage physical slip-test on parallel Franka Panda instances, producing trajectory-reachability checks and continuous quality scores beyond force-closure.Of ∼2.3M candidates, 83% pass as good 
+
+(s≥0.50 ); the 17% that passed force-closure but failed the slip-test provide graded hard negatives. A Real ↔Sim loop back-projects these labels onto 100 real-world scenes. The release provides ∼316k annotated RGBD frame sets across 1 035 sim and 100 real scenes, with instance masks, 6-DoF poses, physical object properties, and scored 6-DoF grasps. All tools are open-source and Docker-containerized. The trajectory planning within Isaac Sim further allows stream-ing of high resolution demonstrations for tabletop manipu-lation policy learning and behavior cloning. 
+
+# 1. Introduction 
+
+Robotic manipulation of everyday objects — picking, plac-ing, stacking, and handing over — remains an unsolved challenge despite decades of research [11, 32]. Recent large-scale imitation learning systems such as RT-2 [3], 
+
+π0 [1], and Octo [29] demonstrate multi-task instruction-following in laboratory settings; yet, their generalization collapses when confronted with objects, scenes, or light-ing conditions outside the training distribution. A central root cause is the absence of physically grounded visual rep-resentations: the encoders driving these systems are trained on semantic similarity objectives (CLIP [31], SigLIP [37]) that do not encode metric geometry, 3D object understand-ing, or the physical grounding that determines whether a 
+
+Figure 1. Grasp IT erative robot tabletop object manipulation dataset: illustration of the four-stage iterative concept. 
+
+proposed grasp or object manipulation will succeed [8, 41]. Collecting the training data needed to close this gap is expensive. Accurate 6-DoF grasp annotation requires ei-ther real-robot execution at scale or a physics simulator; real RGBD observations necessitate a physical setup; link-ing the two so that simulation annotations are valid for real sensor data requires a careful calibration pipeline. No exist-ing dataset provides all of these simultaneously (see Tab. 1). We introduce GraspIT (Fig. 1), a dataset and genera-tion system that addresses this gap through four principled design decisions (Fig. 2): 1) Quality over quantity. Every grasp candidate is validated by a four-stage physical slip test 
+
+executed by a simulated Franka Panda arm (Fig. 6), produc-ing a continuous quality score s ∈ { 0, 0.25 , 0.50 , 0.75 , 1.0}
+
+that captures failure modes (slip under gravity, oscillation, pendulum swing) that are absent from force-closure met-rics. 2) Robot-in-the-loop reachability filtering. Every candidate is validated for collision-free trajectory reacha-bility by the robot arm before the slip test, ensuring that all positive labels are actionable. 3) Real ↔Sim bidirectional link. Real-world scene geometry is captured via a robot-mounted camera and registered into Isaac Sim; simulation-validated labels are back-projected onto all real camera frames. This means a single real-world capture session 1arXiv:2607.05869v1 [cs.RO] 7 Jul 2026 yields both real RGB-D images and unlimited additional photorealistic synthetic views with full annotation (Fig. 5). 
+
+4) Open, containerized, and extendable. All generation tools are packaged as Docker containers, enabling any lab to reproduce, extend, or contribute to the shared GraspIT data foundation. GraspIT initial release provides ∼ 316 k annotated RGBD frame sets across 1 035 Isaac Sim scenes and 100 real-world scenes, with ∼2.3M slip-test validated scene unique grasp candidates spanning ∼7.4k+ unique object identities drawn from the ABC dataset [22] and our own real assets. Every frame carries per-instance segmentation masks, 6-DoF object poses, scored visible/hidden grasp-ing poses, camera calibrations, complete 3D surface point clouds from CAD, analytically derived physical properties (centroid, extent, volume), and robot trajectories to grasp-ing attempts. 
+
+Contributions. (A) GraspIT: the first dataset provid-ing photorealistic RGBD observations, robot-reachability-filtered grasps, and staged slip-test quality scores simulta-neously. (B) A Real ↔Sim registration pipeline that makes simulation annotations valid for real sensor data. (C) Ascalable, open, containerized generation system enabling unlimited new scene generation with minimal manual la-beling. 
+
+# 2. Related Work 
+
+6-DoF Object Pose Datasets (generatable object proper-ties). The BOP benchmark [15] consolidates eight pose estimation datasets (LineMOD [13], YCB-Video [40], T-Less [14], HomebrewedDB [17], and others), providing cal-ibrated RGBD frames with CAD-model annotations and 6-DoF ground truth. These datasets are invaluable for detec-tion and shape reasoning but carry no manipulation annota-tions : grasping labels, robot reachability, and physical ob-ject properties are absent. The MVIP dataset [21] extends benchmarking to industrial multi-view settings with 308 ob-ject classes, including real object weight and language prop-erty annotations —– but similarly focuses on recognition rather than manipulation. 
+
+Grasping Datasets. Cornell [16] and Jacquard [7] pro-vide 2D planar grasp rectangles — a useful simplification but incapable of representing tilted or sideways approach configurations required in real manipulation. GraspNet-1Billion [11] is the dominant 6-DoF bench-mark, providing real RGBD tabletop imagery with 1B an-alytically scored grasp candidates. However, its force-closure metric [11] assumes rigid, perfectly known con-tact geometry, which has been shown to correlate poorly with real-robot success under dynamic perturbation [24]. Graspnet further reports only a moderate grasping success correlation between a subset of “good” grasp candidates and tested robot success. Critically, GraspNet carries no robot-reachability filtering: many high-scoring candidates require the arm to reach through the support surface or ex-ceed workspace limits. ACRONYM [9] advances beyond analytic scoring by executing 17.7M grasp candidates in NVIDIA FleX un-der gravity-free shaking, but it provides no visual observa-tions , uses non-textured ShapeNet meshes [4] that produce a large sim-to-real gap, and does not model robot kinemat-ics. GraspIT directly addresses all three limitations. 
+
+Learning-Based Grasp Quality Estimation. Dex-Net 2.0 [24] introduced the Grasp Quality Convolutional Neural Network (GQ-CNN), trained on synthetic depth images paired with analytic grasp-quality metrics to predict parallel-jaw grasp success from a single depth image. While demonstrating strong sim-to-real transfer for planar grasps, Dex-Net 2.0 relies on force-closure as its simulation ground truth, inheriting the correlation gap between analytic scores and real execution that motivates our slip-test design. Dex-Net 4.0 [25] extended this to ambidextrous policies combining suction and parallel-jaw grasping, reporting ∼9–98% real-robot success depending on quality score — the correlation range that motivates GraspIT’s staged validation. Contact-GraspNet [35] moves beyond quality prediction to direct 6-DoF grasp generation 
+
+from point clouds in cluttered scenes, using GraspNet-1B as its training corpus. Its strong real-world performance highlights the value of scene-level RGBD observations — a modality absent from ACRONYM and present in GraspIT. Critically, none of these methods validates candidate reachability via robot trajectory planning, nor provides a Real ↔Sim registration link; GraspIT is designed to supply exactly these missing components as a pretraining foundation for next-generation object manipulation models. 
+
+Robot Demonstration Datasets. Large-scale imitation learning datasets — BridgeData V2 [38], DROID [18], and Open X-Embodiment [30] — provide paired observation-action sequences and have driven the development of gen-eralized manipulation policies [1–3]. However, they carry no explicit 3-D geometry, CAD models, or grasp quality scores; they teach what to do but not why it works physi-cally . ManiSkill2 [12] provides simulation-based demon-strations with object metadata but focuses on task-success trajectories rather than physical object properties or the Real ↔Sim link. GraspIT is positioned as a complemen-tary pretraining foundation whose physically grounded la-bels can improve the visual representations consumed by VLAs and diffusion policies [5, 8, 42]. 2Geometry-Aware Visual Pretraining. Recent work has shown that explicitly injecting geometric knowledge into visual encoders improves downstream robotic perception. Here, Yang et al . [41] recently quantified a 2× depth-estimation gap between the VGGT geometric foundation model and the GR00T-N1.5 VLA’s encoder, confirming that semantic pretraining leaves a measurable physical reason-ing deficit. GraspIT is the first dataset designed to sup-port pretraining that fills this object-level physical ground-ing gap with directly manipulable, physics-validated labels for robot tabletop manipulation tasks. 
+
+Sim-to-Real Data Generation. Synthetic data generation with domain randomization [36] and photorealistic render-ing [6, 23] has become standard practice for pose esti-mation and detection training. Robot-assisted annotation pipelines [20] demonstrate that real-world 6-DoF labels can be collected with minimal user interaction. Our Real ↔Sim loop extends this philosophy to grasp quality: annotations generated in simulation are explicitly validated for trans-fer to real sensor frames through metric 3D registration, addressing the domain gap documented in the BOP chal-lenge [15]. 
+
+# 3. GraspIT: A Data Foundation for Object Ma-nipulation 
+
+GraspIT is designed not as a static benchmark but as a liv-ing, expandable generation system : a closed Real ↔Sim loop (Fig. 2) that produces arbitrarily large, fully annotated RGBD corpora from a single consistent pipeline. Its de-sign is guided by the observation that downstream robot manipulation models suffer most from two compounding deficits—the lack of physically grounded pretraining data and the lack of a principled bridge between simulation la-bels and real sensor observations [8, 41]. All tools are packaged as Docker containers and hosted at https:// github.com/KochPJ/GraspIt .
+
+3.1. Design Philosophy 
+
+GraspIT rests on four design pillars: 
+
+Quality over quantity. Rather than generating billions of analytically scored candidates, GraspIT validates each through a four-stage physical slip test (Sec. 3.5), yielding a continuous quality score s ∈ [0 , 1] . The base score b is determined by the last stage successfully completed: 
+
+b =
+
+
+
+0.00 trajectory planning to closure failed 
+
+0.25 trajectory OK; lift failed 
+
+0.50 lift OK; horizontal oscillation failed 
+
+0.75 horizontal OK; pendulum swing failed 
+
+1.00 all four stages passed (1) The final quality score additionally penalizes excessive slip, even within a passed stage. For each stage i that is executed, if the measured positional slip |∆pi| > 2 cm or 
+
+the measured orientational slip |∆θi| > 10 , a penalty of 112 
+
+is subtracted: 
+
+s = b − Nxyz >2cm 
+
+12 − Nrpy >10 
+
+12 , s ∈ [0 , 1] , (2) where Nxyz >2cm (resp. Nrpy >10 ) counts the number of exe-cuted stages in which the positional or orientational slip ex-ceeds the threshold. A grasp is annotated good if s ≥ 0.50 
+
+and bad otherwise. This two-level design is intentional: a grasp that nomi-nally passes the lift stage but displaces the object by 3 cm can be penalized below the “good” threshold, reflecting real-world unreliability. The denominator 12 is calibrated so that a single maximal-slip violation on a 0.75-base grasp still keeps it marginally good ( 0.75 − 1/12 ≈ 0.67 ), while two violations on a 0.50-base grasp push it to bad (0.50 − 2/12 ≈ 0.33 ). We clamp scores between [0 , 1] 
+
+when reaching a theoretically reachable negative score. This design is motivated by the finding that Dex-Net 4.0’s [25] force-closure scores of s=0 .1 yield only ∼9–
+
+23% real-robot success, whereas s=1 .0 yields ∼93 –98% .Each stage of our slip test exposes a distinct failure mode absent from static force-closure analysis. 
+
+Robot-in-the-loop reachability. Every candidate passes collision-free trajectory planning by the Franka Panda arm via cuRobo [34] before the slip test. Candidates requiring approaches through obstacles or beyond workspace limits are discarded, ensuring all positive labels are actionable for a deployed system. 
+
+Real ↔Sim bidirectional link. Real scene geometry is registered into Isaac Sim; simulation-validated annotations are back-projected to all real camera poses (see Fig. 2). A single capture session therefore yields both real RGB-D im-ages and unlimited additional photorealistic synthetic views at novel viewpoints, all sharing a consistent annotation co-ordinate frame (Fig. 5). 
+
+Open and extendable infrastructure. The Docker con-tainerized pipeline accepts any registered scene, enabling 3Table 1. Dataset Landscape with Robot Manipulation relevant data modalities and training targets. Columns: A Metric depth/scene geometry; B Per-instance segmentation; C 6-DoF pose + CAD; D Generated Object Properties (shape extend, center-of-mass, visibility, volume, scale, position); E Physically validated grasps; F Hierarchical slip scores; G Photorealistic assets; H Real ↔Sim link; I Robot demonstrations. 
+
+Dataset Year Scenes Frames A B C D E F G H I
+
+NYU-Depth V2 [33] 2012 464 1 499 ✓ ✓ ✗ ✗ ✗ ✗ ✗ ✗ ✗
+
+LineMod [13] 2013 15 15k ✓ ✓ ✓ ≈ ✗ ✗ ✗ ✗ ✗
+
+YCB-Video [40] 2018 92 134k ✓ ✓ ✓ ≈ ✗ ✗ ✗ ✗ ✗
+
+GraspNet-1B [11] 2020 190 97k ✓ ✓ ✓ ≈ ≈ ✗ ✗ ✗ ✗
+
+ACRONYM [9] 2020 – – ✗ ✗ ✓ ≈ ✓ ≈ ✗ ✗ ✗
+
+ManiSkill2 [12] 2023 20+ – ✓ ≈ ≈ ✗ ✗ ✗ ✗ ✗ ✓
+
+Open X-Emb. [30] 2023 – 1M+ ep ✓ ✗ ✗ ✗ ✗ ✗ ✗ ✗ ✓
+
+DROID [18] 2024 – 76k ep ✓ ✗ ✗ ✗ ✗ ✗ ✗ ✗ ✓
+
+GraspIT (ours) 2026 1 035 Sim + 100 Real ∼ 316 k ✓ ✓ ✓ ✓ ✓ ✓ ✓ ✓ ≈
+
+✓ = fully provided; ≈ = partially or generate-able; ✗ = absent.   
+
+> Figure 2. GraspIT Real ↔Sim Collection Loop. Objects are 3-D scanned via generative image-to-3D reconstruction and imported into Isaac Sim. Real scenes are captured by a robot-mounted camera, registered into the simulator, and extended with synthetic views. Physics-validated grasp labels from the Robot School are back-projected onto all real and synthetic frames, yielding a consistent annotation coordinate frame across both domains.
+
+the progressive integration of existing datasets (BOP, GraspNet) into the GraspIT framework and extension to new robot models, environments, or sensor modalities. 
+
+3.2. Simulation Branch: Scene Generation 
+
+Tabletop scenes are assembled in NVIDIA Isaac Sim [26] by a probabilistic scene sampler that draws 10–20 objects uniformly at random from the ABC dataset [22] ( ∼10 k ac-cessible curated CAD meshes spanning industrial, organic, and household geometries). Each object per scene is ran-domly scaled to a maximum side length of [2 , 20] % of the maximum table side length—ensuring object scale di-versity, graspable and non-graspable object instances, and disconnecting grasping candidates from object IDs. The sampled and scaled objects are then randomly oriented, spawned [20 , 40] cm above the table, and dropped with grav-ity physics enabled to generate fully randomized, physically plausible scene configurations. We use ten table models with domain-randomized PBR textures, HDR lighting, and ambient occlusion, so each generated Sim scene presents a unique visual distribution (Fig. 3). For each scene, 256 camera poses are sampled from a hemispherical trajectory at 1–2 m from the table cen-ter. Each frame is rendered at 1920 ×1080 and exported with: photorealistic RGB; metric depth with structured-light noise; per-instance semantic segmentation from the scene graph; ground-truth 6-DoF object pose; and com-plete CAD point cloud. Because of the large 10k ABC ob-4ject pool, every new generation run introduces novel object combinations, preventing object-identity overfitting. 
+
+3.3. Annotation Modalities 
+
+Every GraspIT frame carries the full annotation stack shown in Fig. 4: RGB-D : photorealistic color image and metric depth with structured-light noise applied to match real sen-sor characteristics [23]. Instance segmentation : per-object binary masks derived directly from the Isaac Sim scene graph. 6-DoF object pose : ground-truth SE (3) trans-form for every visible object. Camera Calibration : per view extrinsic and intrinsic calibrations. 3D Point Cloud :full CAD surface geometry. Physical properties : geomet-ric centroid (center-of-mass proxy under uniform density), spatial extent, visibility (%), and convex-hull volume frac-tion. Validated 6-DoF grasps : slip-test quality scores per candidate grasp with translation and orientation (the pose origin is placed between the fingertips). Grasping and Slip-Test Trajectories : each grasp attempt has a robot tra-jectory with respect to the reached slip-test stage, which could be followed in Isaac Sim with full demonstration cap-turing (robot states, camera observations, and action com-mands) for policy learning. 
+
+3.4. Real Branch: Capture, Scan, and Register 
+
+Object scanning. Physical objects are 3D scanned using TRELLIS [39], a generative image-to-3D reconstruction model. A set of high-resolution RGB images is captured under controlled lighting from multiple viewpoints; TREL-LIS reconstructs a high-fidelity textured 3D asset with PBR material attributes (base colour, metallic, roughness). Abso-lute scale is recovered by fitting the reconstructed mesh to real-world scene geometry via multi-view ICP using met-ric camera poses from the robot’s high precision forward kinematics. GraspIT initial release includes 100 real objects scanned via this pipeline (See Fig. 5 for example illustra-tion). 
+
+Real Scene capture. A UR-5 arm equipped with an In-tel RealSense D405 ( 1280 ×720 ) executes a hemispherical scanning trajectory of 256 predefined joint configurations. Eye-in-hand calibration provides the rigid transform T EE cam ,so every camera pose in world coordinates is obtained from forward kinematics alone. 
+
+3.5. Robot School: Physically Validated Grasp An-notation 
+
+Candidate generation and filtering. For every object, grasp candidates are sampled by antipodal point sampling on the down-sampled surface point cloud (1000 points). From all initial points, geometric antipodal filtering ( ∼10% 
+
+pass) and collision checking with Franka Panda trajectory planning via cuRobo [34] and Lula [28] discards kinemat-ically infeasible configurations before physics validation (passes ∼ 88 .54 % of remaining) – reducing the pool to 
+
+∼307 candidates per object. We use the Franka Hand grip-per with 50 mm finger length and 80 mm opening width. The center grasping point between the fingertips marks the pose SE(3) origin, and the orientation defines the approach direc-tion of the gripper. 
+
+Four-stage slip test. Surviving candidates enter the Robot School (Fig. 6): parallel Franka Panda instances in Isaac Sim simultaneously execute each grasp through four se-quential perturbations. Position slip > 2 cm or orienta-tion slip > 10 at any stage constitutes failure, yielding the continuous quality score defined in Eq. 2. The four stages are: 1) Trajectory + Close: trajectory to gripper fingers antipodal force-closure contact; failure indicates a geomet-ric collision, insufficient contact, or slip. 2) Lift: 20 cm vertical displacement under gravity; failure indicates in-sufficient friction force between the fingertips, the Franka Hand closure-force ( 70 N), and the object material. We use the default friction coefficient of the Isaac Sim material for all objects and the fingertips ( μs1.0), and Isaac Sim scales object weight linearly with object volume (1000 kg/m 3). 
+
+3) Horizontal oscillation: linear perturbation in the hori-zontal plane; exposes rotational instability. 4) Pendulum swing: rotation of joint 5; tests resistance to moment arms created by off-center mass. This staged protocol captures failure modes invisible to static force-closure: an object that passes vertical lift may still slip under pendulum torque, and the quality score en-codes which failure mode occurred (Fig 6) and to what ex-tent slip occurred. 
+
+Annotation transfer. In the top-down reference frame, ground-truth object poses are obtained via ICP-refined CAD fitting and propagated to all 256 real views through relative camera transforms. The registered scene is then im-ported into Isaac Sim; additional synthetic views are ren-dered at the real camera intrinsics, and per-instance segmen-tation masks are back-projected to real frames, and grasps are annotated in the slip test (see Fig. 7). 
+
+Demonstration Ready. For policy learning (behavior cloning), successful demonstrations are required, while fail-ures can be used for reinforcement, out-of-distribution de-tection, and data curation (filtering and uncertainty esti-mation) [10]. The GraspIT Robot School is capable of capturing and streaming robot states, camera observations, and goal conditioning into generated successful and fail-ure demonstrations. In combination with photorealistic Real ↔Sim assets, this yields an unlimited exploration foun-5Figure 3. GraspIT Scene Variety. Representative Isaac Sim tabletop scenes with ABC objects, randomised table textures, and HDR lighting. Every scene introduces novel object combinations.        
+
+> (a) RGB (b) Depth (c) Masks (d) Grasp+Shape
+> Figure 4. GraspIT Annotation Modalities. RGB, metric depth with sensor noise, per-instance segmentation, and validated 6-DoF grasp candidates overlaid on the 3D point cloud in camera coordinates.
+> Figure 5. Object Scan Quality. Top row: real physical objects and scene. Bottom row: reconstructed textured meshes imported into Isaac Sim and grasp annotations.
+
+dation that can be finetuned with minimal real data demon-strations to address real applications efficiently and at scale. 
+
+3.6. Dataset Statistics 
+
+Tab. 2 summarizes the GraspIT initial release. The dataset comprises 1,035 simulated scenes , each rendered at 
+
+1920 ×1080 from 256 hemispherical camera poses , yield-ing 264,960 annotated frame sets (each with RGBD, Mask, etc). Scenes contain 13 .9 ± 2.7 objects on average (range 8–19), from 7,396 randomly drawn unique object identities from 10k ABC object pool ( ∼ 73% of ABC pool used). In total, 2,275,352 grasp candidates were evaluated by the Robot School, of which 1,887,185 (82.94%) are anno-   
+
+> Figure 6. Robot School. Parallel Franka Panda instances execute grasp candidates through four sequential slip tests. The robot is spawned at a “perfect reach” position 90 ◦tilted above the object plane to ensure reachable paths exist for all validated candidates.
+
+tated good (s ≥ 0.50 ) and 388,167 (17.06%) bad (s < 
+
+0.50 ). The mean score across all grasps is ¯s = 0 .72 ± 0.30 ;good grasps average ¯sgood = 0 .85 while bad grasps average 
+
+¯sbad = 0 .13 .We use Nvidia RTX6000 GPUs to generate GraspIT. A single GPU can create a batch of 100 scenes in less than a week’s compute. Generating GraspIT takes ∼ 2 − 3month on a single GPU (with the majority of the time being used for robot trajectory computation and grasp evaluation). The pipeline ablation stats (Tab. 2) show that 88.54% of attempted candidates obtain a planned trajectory; of those, 88.48% survive horizontal perturbation, and 94.26% survive the pendulum test. The largest attrition is at the 6Figure 7. Real ↔Sim. Illustration of real Scenes brought to simulation to become grasp annotated. Table 2. GraspIT v1 Statistics. “Good”: s ≥ 0.50 ; “Full suc-cess”: s = 1 .00 . Penalised grasps have a base stage passed but final s pushed below 0.50 by excessive slip (Eq. 2).                                           
+
+> Property Value
+> Sim scenes 1 035 (256 sim views each) Real scenes 100 (256 real + 256 synth views each) Sim annotated frame sets (1 035 + 100) ×256 = 290 560 Real annotated frame sets 100 ×256 = 25 600 Total annotated frames 290 560 + 25 600 = 316 160 Image resolution 1920 ×1080 (Sim) 1280 ×720 (Real) Unique objects 7 396 (Sim) + 100 (Real) Objects per scene 13 .9±2.7(range 8–19)
+> Grasp Pipeline
+> Total candidates passed force-closure 2 275 352 w/ trajectory 2 014 689 (88.54%) Total Good grasps ( s≥0.50 )1 887 185 (82.94%) Total Bad grasps ( s < 0.50 )388 167 (17.06%) Mean Grasps per Object& Scene 307 ±649 & 2198 ±1866 Good & Bad Grasps per Scene 1823 ±1612 & 375 ±423 Good & Bad Grasps per object 255 ±567 & 52 ±155 Mean score ¯s(Good & Bad) 0.72 ±0.30 (0.85 & 0.13) No Trajectory to closure ( s= 0 .00 )260 663 (11.46%) Fail lift ( s= 0 .25 )33 029 (1.45%) Penalized large slip ( s < 0.5)94 475 (4.15%) Fail horizontal ( s= 0 .50 )167 549 (7.36%) Fail pendulum ( s= 0 .75 )883 733 (38.84%) Full success ( s= 1 .00 )835 903 (36.74%)
+
+trajectory-planning stage (11.46% of all candidates receive 
+
+s=0 .00 ), confirming that robot-reachability filtering is a genuine bottleneck. The 82.94% good-grasp rate reflects the stringency of slip-test validation relative to analytic metrics. In particular, the penalized “bad” bucket (94,475 grasps) demonstrates the value of Eq. 2: these candidates nominally pass two or more stages yet exhibit excessive slip, making them unreli-able in practice; a pure stage-count score would incorrectly label them as good. The fine granular grasp scoring sys-tem allows for future work on novel grasp critic functions that can anticipate the quality of a physically plausible grasp based on, e.g., the generated object properties of center-of-mass, shape extend, or volume. Tab. 3 compares GraspIT’s annotation strategy against competing datasets. 
+
+Table 3. Grasping Dataset Comparison. PJ: parallel jaw; Phys. val.: physics-validated; Reach.: robot reachability filtered; Obs.: visual observations included; Sim ↔Real: annotations trans-ferable both ways.                                           
+
+> Dataset #Obj. #Grasps Phys. Reach. Scores Obs. Sim ↔Real
+> Cornell [16] 240 5.1k ✗✗1✓✗
+> Jacquard [7] 11k 1.1M ✗✗1✓✗
+> GraspNet-1B [11] 88 1.1B ✗✗10 ✓✗
+> ACRONYM [9] 8.8k 17.7M ≈✗2✗✗
+> GraspIT (ours) 7.4k 2.3M ✓✓5✓✓
+
+# 4. Discussion 
+
+Gaps closed. GraspIT is the first dataset to simulta-neously provide: photorealistic RGBD observations at scale; robot-reachability-filtered grasps; staged, physically-validated quality scores with explicit slip-penalty calibra-tion (Eq. 2); complete 3D object shape, including occluded geometry; and a bidirectional Real ↔Sim registration link (Tab. 1, 3). 
+
+Score design and bad-grasp utility. The 17.06% bad-grasp fraction (388,167 candidates) is a deliberate feature rather than a limitation. The penalized bucket (94,475 grasps that pass two or more stages yet score < 0.50 due to excessive slip) provides particularly informative hard nega-tives for training grasp-quality regressors: these candidates look geometrically plausible but fail under realistic pertur-bation—exactly the failure mode that force-closure metrics miss. Out-of-distribution detection, reinforcement-learning negative examples, and data curation algorithms [10] all benefit from this granular annotation. 
+
+New capabilities: Pretraining and VLA grounding. 
+
+Recent analyses [8, 41] show that current VLAs inherit a depth-estimation deficit of ∼2× relative to geometric foun-dation models at the encoder level — a gap that down-stream fine-tuning can only partially close. GraspIT’s phys-ically grounded labels (shape, centroid, grasp quality) are designed to reduce this deficit when used as a pretraining stage for VLAs [1, 19, 27] and diffusion policies [5, 42] be-fore task-specific fine-tuning — enabling the grounding of 7the encoder stages to understand object properties and af-fordance. 
+
+Scalability via the ABC pool. The ABC CAD li-brary [22] ( ∼10 k meshes) ensures highly diversity. With 7,396 unique objects across 1,035 sim scenes (mean 13.9 objects/scene) and 100 real objects and scenes, each new generation run introduces novel combinations that prevent object-identity overfitting. This scalability stands in con-trast to GraspNet (88 objects) or YCB-Video (21 objects), where models risk learning object-specific shortcuts. 
+
+Annotation upgrade for existing datasets. The Real ↔Sim pipeline can enhance rather than replace existing datasets. BOP sub-datasets and GraspNet scenes with known object meshes can be imported into Isaac Sim and their grasp candidates generated or validated via the Robot School, converting analytic annotations to slip-test-validated labels while preserving the original real RGBD observations. 
+
+Limitations. (i) No Downstream Evaluation. At this stage, we do not provide a downstream evaluation of GraspIT as the dataset has no single purpose that has an es-tablished evaluation. A comprehensive downstream bench-mark is beyond the scope of this initial release; we leave comparative evaluation to future work. (ii) Parallel-jaw gripper only. GraspIT covers only parallel-jaw configura-tions; multi-finger and suction grasps are out of scope. (iii) Single robot model. Only the Franka Panda arm is used for reachability filtering; transferred labels may not be directly valid for different kinematic chains. (iv) No task demon-strations. GraspIT provides grasp-level annotations with trajectories, but no full task-level demonstration trajectories yet. However, the trajectories can be recaptured with the full robot state, camera observation, and action space track-ing. Extending the Robot School infrastructure to pick-and-place demonstrations with language annotation is a direct next step and can be adopted by GraspIT users depending on their setup and modality needs. (v) generated physical properties . The center-of-mass is derived from CAD geom-etry, while material dependent friction and volume are ig-nored. To further improve the current approximations, real object weighting, material simulation, and volume estima-tions have to be implemented into the object corpus to nar-row the gap between the simulated manipulations and real world behaviors. (vi) Real ↔Sim scan and registration offset 
+
+scanning, scaling, and registration of the real objects create inevitable unique and method- or hand-precision-dependent offsets that are inherent in the projected annotations. Truly measuring them in real world evaluations is impossible and can only be approximated with high precision scanning that exceeds our project budget, or their severity can be reflected in the future work downstream task evaluations and pre-training ablations. 
+
+Future work. Extending the Robot School to full ma-nipulation demonstrations (grasp → lift → place) with language annotation would create a grounded policy-learning dataset bridging GraspIT’s physical labels and demonstration datasets such as DROID [18] and Open X-Embodiment [30]. Additional robot models, new sensor noise profiles, and multi-camera configurations can be pa-rameterized at the Isaac Sim level without changes to the ex-port tooling. We release GraspIT initially as an open foun-dation starting point and invite the community to contribute new scenes, objects, and annotations. 
+
+# 5. Conclusion 
+
+We presented GraspIT , a living dataset and generation sys-tem for physically grounded robot grasping manipulation. By combining photorealistic Isaac Sim rendering with a four-stage physical slip test, robot-reachability filtering via cuRobo, a continuous quality score that additionally penal-izes excessive positional and orientational slip (Eq. 2), and a bidirectional Real ↔Sim registration loop, GraspIT pro-vides annotation coverage that no existing dataset achieves simultaneously. The initial release comprises ∼ 316 k annotated RGB-D frames across 1,035 simulated and 100 real scenes spanning ∼ 7.4k unique object geometries, with ∼2.3M slip-test-validated grasp candidates and fine grained scores 
+
+[0 , 1] and slip-test stage pass annotations — of which 
+
+82.94% are annotated as good ( s ≥ 0.50 ) and the remain-ing 17.06% provide graded negative examples, including a penalized bucket of physically ambiguous near-misses (94,475 (4.15%) candidates). The mean quality score of 
+
+¯s = 0 .85 across all validated “good” grasps reflects the gen-uine physical rigor of the staged slip-test, in contrast to the binary or force-closure-only labels of prior datasets. With our staged slip-test, we demonstrated again that an-tipodal force-closure is not sufficient to yield high-quality “good” grasp candidates. Within our slip-tests, we showed that adding path planning for physical plausibility (11.46% filtered from force-closure accepted candidates) and staged slip-test filtering (grasped but slip filtered 17.06% from force-closure accepted candidates) yields a better approx-imation for “good” grasp candidates than force-closure alone. Moreover, filtering “bad” grasping candidate tar-gets adds the opportunity to investigate future work on critic functions and grasping quality aware grounding. All tools, Docker containers, and the GraspIT re-lease are publicly available at https : / / github . com / KochPJ / GraspIt . We invite the community to contribute new objects, environments, robot models, and task demonstrations to grow the GraspIT database 8as a shared foundation for generalized robotic manipula-tion. 
+
+# References 
+
+[1] Kevin Black, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai, Lachy Groom, Karol Hausman, Brian Ichter, Szymon Jakubczak, Tim Jones, Liyiming Ke, Sergey Levine, Adrian Li-Bell, Mohith Mothukuri, Suraj Nair, Karl Pertsch, Lucy Xiaoyang Shi, James Tanner, Quan Vuong, Anna Walling, Haohuan Wang, and Ury Zhilinsky. π0: A vision-language-action flow model for general robot control, 2024. 1, 2, 7 [2] Anthony Brohan, Noah Brown, Justice Carbajal, et al. RT-1: Robotics transformer for real-world control at scale. In 
+
+Robotics: Science and Systems (RSS) , 2023. [3] Anthony Brohan, Noah Brown, Justice Carbajal, et al. RT-2: Vision-language-action models transfer web knowledge to robotic control, 2023. 1, 2 [4] Angel X. Chang, Thomas A. Funkhouser, Leonidas J. Guibas, Pat Hanrahan, Qi-Xing Huang, Zimo Li, Silvio Savarese, Manolis Savva, Shuran Song, Hao Su, Jianxiong Xiao, Li Yi, and Fisher Yu. Shapenet: An information-rich 3d model repository. CoRR , abs/1512.03012, 2015. 2 [5] Cheng Chi, Siyuan Feng, Yilun Du, Zhenjia Xu, Eric Cousineau, Benjamin Burchfiel, and Shuran Song. Diffu-sion policy: Visuomotor policy learning via action diffusion. In Robotics: Science and Systems (RSS) , 2023. 2, 7 [6] Maximilian Denninger, Dominik Winkelbauer, Martin Sun-dermeyer, Wout Boerdijk, Markus Knauer, Klaus H. Strobl, Matthias Humt, and Rudolph Triebel. Blenderproc2: Aprocedural pipeline for photorealistic rendering. Journal of Open Source Software , 8(82):4901, 2023. 3 [7] Amaury Depierre, Emmanuel Dellandr´ ea, and Liming Chen. Jacquard: A large scale dataset for robotic grasp detection, 2018. 2, 7 [8] Danny Driess, Jost Tobias Springenberg, Brian Ichter, Lili Yu, Adrian Li-Bell, Karl Pertsch, Allen Z. Ren, Homer Walke, Quan Vuong, Lucy Xiaoyang Shi, and Sergey Levine. Knowledge insulating vision-language-action models: Train fast, run fast, generalize better, 2025. 1, 2, 3, 7 [9] Clemens Eppner, Arsalan Mousavian, and Dieter Fox. ACRONYM: A large-scale grasp dataset based on simula-tion. In Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2021. 2, 4, 7 [10] Physical Intelligence et al. π∗
+
+> 0.6
+
+: a vla that learns from expe-rience, 2025. 5, 7 [11] Hao-Shu Fang, Chenxi Wang, Minghao Gou, and Cewu Lu. Graspnet-1billion: A large-scale benchmark for general ob-ject grasping. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , pages 11444– 11453, 2020. 1, 2, 4, 7 [12] Jiayuan Gu, Fanbo Xiang, Xuanlin Li, et al. ManiSkill2: A unified benchmark for generalizable manipulation skills, 2023. 2, 4 [13] Stefan Hinterstoisser, Vincent Lepetit, Slobodan Ilic, Ste-fan Holzer, Gary Bradski, Kurt Konolige, and Nassir Navab. Model based training, detection and pose estimation of texture-less 3d objects in heavily cluttered scenes. In Com-puter Vision – ACCV 2012 , pages 548–562, Berlin, Heidel-berg, 2013. Springer Berlin Heidelberg. 2, 4 [14] Tomas Hodan, Pavel Haluza, Step´ an Obdrz´ alek, Jiri Matas, Manolis I. A. Lourakis, and Xenophon Zabulis. T-LESS: an RGB-D dataset for 6d pose estimation of texture-less objects. 
+
+CoRR , abs/1701.05498, 2017. 2 [15] Tomas Hodan, Martin Sundermeyer, Yann Labbe, Van Nguyen Nguyen, Gu Wang, Eric Brachmann, Bertram Drost, Vincent Lepetit, Carsten Rother, and Jiri Matas. Bop challenge 2023 on detection, segmentation and pose estimation of seen and unseen rigid objects, 2024. 2, 3 [16] Yun Jiang, Stephen Moseson, and Ashutosh Saxena. Effi-cient grasping from RGBD images: Learning using a new rectangle representation. In Proceedings of the IEEE In-ternational Conference on Robotics and Automation (ICRA) ,pages 5130–5137, 2011. 2, 7 [17] Roman Kaskman, Sergey Zakharov, Ivan Shugurov, and Slo-bodan Ilic. Homebreweddb: RGB-D dataset for 6d pose es-timation of 3d objects. CoRR , abs/1904.03167, 2019. 2 [18] Alexander Khazatsky, Karl Pertsch, Suraj Nair, et al. DROID: A large-scale in-the-wild robot manipulation dataset, 2024. 2, 4, 8 [19] Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti, Ted Xiao, Ashwin Balakrishna, Suraj Nair, Rafael Rafailov, Ethan Fos-ter, Grace Lam, Pannag Sanketi, Quan Vuong, Thomas Kol-lar, Benjamin Burchfiel, Russ Tedrake, Dorsa Sadigh, Sergey Levine, Percy Liang, and Chelsea Finn. Openvla: An open-source vision-language-action model, 2024. 7 [20] Paul Koch, Marian Schl¨ uter, Serge Thill, and J¨ org Kr¨ uger. Towards robot-assisted data generation with minimal user in-teraction for autonomously training 6d pose estimation in op-erational environments. Procedia CIRP , 120:249–254, 2023. 56th CIRP International Conference on Manufacturing Sys-tems 2023. 3 [21] Paul Koch, Marian Schl¨ uter, and J¨ org Kr¨ uger. Mvip – a dataset and methods for application oriented multi-view and multi-modal industrial part recognition, 2025. 2 [22] Sebastian Koch, Albert Matveev, Zhongshi Jiang, Francis Williams, Alexey Artemov, Evgeny Burnaev, Marc Alexa, Denis Zorin, and Daniele Panozzo. Abc: A big cad model dataset for geometric deep learning, 2019. 2, 4, 8 [23] Xingyu Liu, Chenyangguang Zhang, Gu Wang, Ruida Zhang, and Xiangyang Ji. Rasim: A range-aware high-fidelity rgb-d data simulation pipeline for real-world appli-cations, 2024. 3, 5 [24] Jeffrey Mahler, Jacky Liang, Sherdil Niyaz, Michael Laskey, Richard Doan, Xinyu Liu, Juan Aparicio Ojea, and Ken Goldberg. Dex-net 2.0: Deep learning to plan robust grasps with synthetic point clouds and analytic grasp metrics, 2017. 2[25] Jeffrey Mahler, Matthew Matl, Vishal Satish, Michael Danielczuk, Bill DeRose, Stephen McKinley, and Ken Gold-berg. Learning ambidextrous robot grasping policies. Sci-ence Robotics , 4(26):eaau4984, 2019. 2, 3 [26] Viktor Makoviychuk, Lukasz Wawrzyniak, Yunrong Guo, Michelle Lu, Kier Storey, Miles Macklin, David Hoeller, 
+
+9Nikita Rudin, Arthur Allshire, Ankur Handa, and Gavriel State. Isaac gym: High performance GPU-based physics simulation for robot learning. In Advances in Neural Infor-mation Processing Systems (NeurIPS) , 2021. 4 [27] NVIDIA. GR00T N1: An open foundation model for gener-alist humanoid robots, 2025. 7 [28] NVIDIA. Lula robot description and xrdf editor - isaac sim documentation, 2025. Accessed: 2026-04-14. 5 [29] Octo Model Team, Dibya Ghosh, Homer Walke, Karl Pertsch, et al. Octo: An open-source generalist robot pol-icy, 2024. 1 [30] Open X-Emb. Colla., Abhishek Padalkar, et al. Open X-embodiment: Robotic learning datasets and RT-X models, 2023. 2, 4, 8 [31] Alec Radford, Jong Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh, Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark, Gretchen Krueger, and Ilya Sutskever. Learning transferable vi-sual models from natural language supervision. CoRR ,abs/2103.00020, 2021. 1 [32] Shaoqing Ren, Kaiming He, Ross B. Girshick, and Jian Sun. Faster R-CNN: towards real-time object detection with re-gion proposal networks. CoRR , abs/1506.01497, 2015. 1 [33] Nathan Silberman, Derek Hoiem, Pushmeet Kohli, and Rob Fergus. Indoor segmentation and support inference from rgbd images. pages 746–760, 2012. 4 [34] Balakumar Sundaralingam, Siva Kumar Sastry Hari, Adam Fishman, Caelan Garrett, Karl Van Wyk, Valts Blukis, Alexander Millane, Helen Oleynikova, Ankur Handa, Fabio Ramos, et al. curobo: Parallelized collision-free minimum-jerk robot motion generation. arXiv preprint arXiv:2310.17274 , 2023. 3, 5 [35] Martin Sundermeyer, Arsalan Mousavian, Rudolph Triebel, and Dieter Fox. Contact-graspnet: Efficient 6-dof grasp gen-eration in cluttered scenes. CoRR , abs/2103.14127, 2021. 2 [36] Josh Tobin, Rachel Fong, Alex Ray, Jonas Schneider, Woj-ciech Zaremba, and Pieter Abbeel. Domain randomization for transferring deep neural networks from simulation to the real world. In IEEE/RSJ International Conference on Intel-ligent Robots and Systems (IROS) , pages 23–30, 2017. 3 [37] Michael Tschannen, Alexey Gritsenko, Xiao Wang, Muham-mad Ferjad Naeem, Ibrahim Alabdulmohsin, Nikhil Parthasarathy, Talfan Evans, Lucas Beyer, Ye Xia, Basil Mustafa, Olivier H´ enaff, Jeremiah Harmsen, Andreas Steiner, and Xiaohua Zhai. Siglip 2: Multilingual vision-language encoders with improved semantic understanding, localization, and dense features, 2025. 1 [38] Homer Walke, Kevin Black, Abraham Lee, et al. BridgeData V2: A dataset for robot learning at scale, 2023. 2 [39] Jianfeng Xiang, Xiaoxue Chen, Sicheng Xu, Ruicheng Wang, Zelong Lv, Yu Deng, Hongyuan Zhu, Yue Dong, Hao Zhao, Nicholas Jing Yuan, and Jiaolong Yang. Native and compact structured latents for 3d generation, 2025. 5 [40] Yu Xiang, Tanner Schmidt, Venkatraman Narayanan, and Dieter Fox. Posecnn: A convolutional neural network for 6d object pose estimation in cluttered scenes. CoRR ,abs/1711.00199, 2017. 2, 4 [41] Yurou Yang, Muyuan Lin, Roberto Martin-Martin, Martin Labrie, Shreekant Gayaka, Cheng-Hao Kuo, and Luca Car-lone. Understanding the impact of geometric foundation models on vision-language-action models, 2026. 1, 3, 7 [42] Yanjie Ze, Ge Zhang, Kangning Zhang, Chenyou Hu, Ruizhe Wang, and Huazhe Xu. 3D diffusion policy: Generalizable visuomotor policy learning via simple 3D representations, 2024. 2, 7 
+
+10

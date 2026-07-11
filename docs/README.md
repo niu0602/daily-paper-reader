@@ -6,74 +6,59 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-10
-- 运行时间：2026-07-10 21:40:50 UTC
+- 最新运行日期：2026-07-11
+- 运行时间：2026-07-11 21:20:24 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：12
+- 精读区：1
 - 速读区：11
 
 ### 今日简报（AI）
-- 今日共生成 17 篇推荐（精读 6 篇，速读 11 篇）
-- 精读：《EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data》（9.5/10）, 《Immersive Social Interaction with VR and LLM-Assisted Humanoids》（9.0/10）
-- 速读：《GIRAF: Towards Generalizable Human Interactions with Articulated Objects》（7.5/10）, 《Smooth Operator: A Real-Time Sampling-Based Algorithm for Kinematic Hand Retargeting》（7.0/10）, 《SkillPlug: Unsupervised Skill Mining for Few-Shot Adaptation in Robotic Manipulation》（7.0/10）
+- 今日共生成 12 篇推荐（精读 1 篇，速读 11 篇）
+- 精读：《Immersive Social Interaction with VR and LLM-Assisted Humanoids》（10.0/10）
+- 速读：《TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training》（7.0/10）, 《Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control》（7.0/10）, 《Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/10/README](/202607/10/README)
+- 详情：[/202607/11/README](/202607/11/README)
 
 ### 精读区论文标签
-1. [EgoWAM: World Action Models Beyond Pixels with In-the-Wild Egocentric Human Data](/202607/10/2607.08436v1-egowam-world-action-models-beyond-pixels-with-in-the-wild-egocentric-human-data)  
-   标签：评分：9.5/10、query:dexop
-   evidence：利用野外第一视角人类数据进行机器人操作监督
-2. [Immersive Social Interaction with VR and LLM-Assisted Humanoids](/202607/10/2607.07430v1-immersive-social-interaction-with-vr-and-llm-assisted-humanoids)  
-   标签：评分：9.0/10、query:dexop
-   evidence：用于远程操作灵巧手的第一视角视觉反馈
-3. [DexVerse: A Modular Benchmark for Multi-Task, Multi-Embodiment Dexterous Manipulation](/202607/10/2607.08751v1-dexverse-a-modular-benchmark-for-multi-task-multi-embodiment-dexterous-manipulation)  
-   标签：评分：9.0/10、query:dexop
-   evidence：多任务灵巧操作基准
-4. [TouchWorld: A Predictive and Reactive Tactile Foundation Model for Dexterous Manipulation](/202607/10/2607.07287v2-touchworld-a-predictive-and-reactive-tactile-foundation-model-for-dexterous-manipulation)  
-   标签：评分：8.5/10、query:dexop
-   evidence：使用感觉数据的灵巧操作触觉基础模型
-5. [Do Egocentric Video-Language Models Capture Both Hand- and Object-Centric Cues?](/202607/10/2607.08514v1-do-egocentric-video-language-models-capture-both-hand--and-object-centric-cues)  
-   标签：评分：8.5/10、query:dexop
-   evidence：用于手部操作和物体变换的第一视角视频语言模型
-6. [AnyDexRT: Calibration-Free Dexterous Hand Retargeting with Few-Shot Human Guidance](/202607/10/2607.08341v1-anydexrt-calibration-free-dexterous-hand-retargeting-with-few-shot-human-guidance)  
-   标签：评分：8.0/10、query:dexop
-   evidence：为灵巧机器人手的模仿学习收集演示数据
+1. [Immersive Social Interaction with VR and LLM-Assisted Humanoids](/202607/11/2607.07430v1-immersive-social-interaction-with-vr-and-llm-assisted-humanoids)  
+   标签：评分：10.0/10、query:dexop
+   evidence：使用Apple Vision Pro的第一视角视觉反馈进行灵巧手遥操作
 
 ### 速读区论文标签
-1. [GIRAF: Towards Generalizable Human Interactions with Articulated Objects](/202607/10/2607.07880v1-giraf-towards-generalizable-human-interactions-with-articulated-objects)  
-   标签：评分：7.5/10、query:dexop
-   evidence：专注于针对关节物体的纯手部操作和细粒度接触
-2. [Smooth Operator: A Real-Time Sampling-Based Algorithm for Kinematic Hand Retargeting](/202607/10/2607.07491v1-smooth-operator-a-real-time-sampling-based-algorithm-for-kinematic-hand-retargeting)  
+1. [TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](/202607/11/2607.02840v1-taco-tactile-world-model-as-a-self-corrector-forscalable-vla-post-training)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于高质量操作遥操作数据的运动学手部重定向
-3. [SkillPlug: Unsupervised Skill Mining for Few-Shot Adaptation in Robotic Manipulation](/202607/10/2607.08354v1-skillplug-unsupervised-skill-mining-for-few-shot-adaptation-in-robotic-manipulation)  
+   evidence：用于接触密集型机器人操作任务的触觉感知世界模型
+2. [Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control](/202607/11/2607.03964v1-worldscape-moe-a-unified-mixture-of-experts-world-model-for-scalable-heterogeneous-action-control)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于机器人操作任务的视觉运动模仿策略
-4. [Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable Manipulation](/202607/10/2607.03163v1-beyond-point-attached-semantics-object-centric-semantic-fields-for-generalizable-manipulation)  
+   evidence：包含手部关节信号的异构动作控制统一世界模型
+3. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/11/2607.08448v1-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
+   标签：评分：7.0/10、query:dexop
+   evidence：用于操作原语和触觉丰富控制的视觉-语言-动作模型
+4. [PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis](/202607/11/2607.04880v1-prism-personalized-robotic-dataset-generation-via-image-based-scene-and-motion-synthesis)  
    标签：评分：6.5/10、query:dexop
-   evidence：通过以物体为中心的语义场解决通用机器人操作问题
-5. [Learning 4D Geometric Priors for Inference-Efficient World Action Models](/202607/10/2607.05468v1-learning-4d-geometric-priors-for-inference-efficient-world-action-models)  
-   标签：评分：6.5/10、query:dexop
-   evidence：为精确操作建模视觉动力学和动作序列
-6. [RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation](/202607/10/2607.06559v1-rynnworld-4d-4d-embodied-world-models-for-robotic-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于机器人操作的4D具身世界模型
-7. [Learning to Move Before Learning to Do: Task-Agnostic pretraining for VLAs](/202607/10/2607.02466v1-learning-to-move-before-learning-to-do-task-agnostic-pretraining-for-vlas)  
+   evidence：用于策略学习的个性化机器人数据集生成
+5. [RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies](/202607/11/2607.04434v3-robodojo-a-unified-sim-and-real-benchmark-for-comprehensive-evaluation-of-generalist-robot-manipulation-policies)  
    标签：评分：6.0/10、query:dexop
-   evidence：使用无标签交互数据对VLA进行任务无关的预训练
-8. [Differential Amplifier-Inspired AmpAttention for Multi-View Robotic Manipulation](/202607/10/2607.02845v1-differential-amplifier-inspired-ampattention-for-multi-view-robotic-manipulation)  
+   evidence：用于全面评估机器人操作策略的统一仿真与真实基准
+6. [GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation](/202607/11/2607.05869v1-graspit-a-dataset-bridging-the-sim-to-real-gap-and-back-for-validated-grasping-se3-pose-generation)  
    标签：评分：6.0/10、query:dexop
-   evidence：讨论了多视角机器人操作和感知
-9. [SoftVTBench: A Safety-Aware Visuo-Tactile Benchmark for Physically Constrained Robotic Manipulation of Deformable Objects](/202607/10/2607.04234v1-softvtbench-a-safety-aware-visuo-tactile-benchmark-for-physically-constrained-robotic-manipulation-of-deformable-objects)  
+   evidence：用于验证机器人抓取和操作的数据集
+7. [Diagnosing Semantic Handoff Failures in Agent-Orchestrated Vision-Language-Action Skill Composition](/202607/11/2607.06256v1-diagnosing-semantic-handoff-failures-in-agent-orchestrated-vision-language-action-skill-composition)  
    标签：评分：6.0/10、query:dexop
-   evidence：机器人操作的视触觉基准
-10. [Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning](/202607/10/2607.04591v1-simple-to-complex-structured-demonstrations-for-vision-language-action-learning)  
+   evidence：用于长程家庭任务的视觉-语言-动作技能组合
+8. [GeoProp: Grounding Robot State in Vision for Generalist Manipulation](/202607/11/2607.07101v1-geoprop-grounding-robot-state-in-vision-for-generalist-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于机器人操作中视觉-语言-动作学习的结构化演示
-11. [KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation](/202607/10/2607.04652v1-kam-wm-kinematic-affordance-maps-from-latent-world-models-for-robot-manipulation)  
+   evidence：在通用操作策略中将机器人状态与视觉对齐
+9. [Monocular Vision Based Control Framework for Grasping](/202607/11/2607.07897v1-monocular-vision-based-control-framework-for-grasping)  
    标签：评分：6.0/10、query:dexop
-   evidence：从视频世界模型中提取机器人操作的交互线索
+   evidence：基于单目视觉的软硬物体抓取控制框架
+10. [Whareformer: Learning to Track What is Where in Long Egocentric Videos](/202607/11/2607.08537v1-whareformer-learning-to-track-what-is-where-in-long-egocentric-videos)  
+   标签：评分：6.0/10、query:dexop
+   evidence：在长第一视角视频中跟踪摄像机佩戴者移动的物体
+11. [FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation](/202607/11/2607.08575v1-fabrivla-a-lightweight-vision-language-action-model-for-precise-multi-task-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于精确多任务机器人操作的轻量级VLA模型
 
 
 <div class="dpr-home-promo-card">

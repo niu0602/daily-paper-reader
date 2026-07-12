@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-001.webp",
+      "caption": "Fig. 6: Generalization. We evaluate the model under three OOD conditions: Unseen Object, Unseen Light, and Unseen Background. Red boxes highlight the changed conditions.",
+      "page": 11,
+      "index": 1,
+      "width": 496,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-002.webp",
+      "caption": "Fig. 1: Overview. a) Unlike previous 3D VLA methods that encode point clouds either with newly introduced 3D encoders or by projecting features between 2D and 3D spaces, b) We propose Lift3D-VLA, equipping 2D VLA models with explicit 3D reasoning and temporally coherent action generation. First, following our prior work Lift3D [1], we align 3D points with 2D positional embeddings to enable direct point-cloud encoding. Building on this, in Stage 1 we introduce Geometry-Centric MAE, which reconstructs the present point cloud while predicting its future geometric evolution, enhancing 3D representations. In Stage 2, we further propose layer-wise temporal action modeling, leveraging multiple layers of the LLM to produce temporally consistent actions. Across 22 simulated and 8 real-world tasks, Lift3D-VLA achieves SOTA performance.",
+      "page": 2,
+      "index": 2,
+      "width": 1058,
+      "height": 451
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-003.webp",
+      "caption": "TABLE I: Datasets used for pre-training. The names of selected datasets for large-scale pretraining and their sampling ratios (%)",
+      "page": 7,
+      "index": 3,
+      "width": 529,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-004.webp",
+      "caption": "TABLE III: Results on the RLBench. All models are trained in the multi-task setting and evaluated over 25 rollouts.",
+      "page": 8,
+      "index": 4,
+      "width": 1068,
+      "height": 187
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-005.webp",
+      "caption": "TABLE II: Results on the MetaWorld. We evaluate models in both single-task and multi-task settings over 25 rollouts. Success is determined by the built-in MetaWorld evaluation module. Results report average manipulation success rates (S.R.).",
+      "page": 8,
+      "index": 5,
+      "width": 1070,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-006.webp",
+      "caption": "Fig. 2: Lift3D-VLA Framework. a) Following our previous work Lift3D, we perform virtual projection to align 3D points with pretrained 2D positional embeddings (PEs), thereby constructing geometry-aligned 3D PEs that enable the 2D vision encoder in VLA models to directly process point cloud inputs. b) Stage 1. To enhance 3D physical representations, we first leverage VGGT to synthesize 3D point clouds from large-scale robotic data, which serve as self-supervised training targets. We then introduce Geometry-Centric MAE, a framework that reconstructs the current point cloud while simultaneously predicting its future geometric evolution, enabling the model to capture physical dynamics in addition to static spatial structure. c) Stage 2. Building on the strengthened 3D representations, we further propose layer-wise temporal action modeling, which leverages the sequence modeling capabilities of intermediate and deep LLM layers to generate temporally consistent action sequences.",
+      "page": 4,
+      "index": 6,
+      "width": 1076,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-007.webp",
+      "caption": "Fig. 4: Real-world experimental robot platform. We employ a Franka Research 3 arm equipped with an Intel RealSense D455 RGB-D camera.",
+      "page": 9,
+      "index": 7,
+      "width": 529,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06564v1/fig-008.webp",
+      "caption": "Fig. 3: Ablation Studies. (a) Impact of the 2D model-lifting strategy and GC-MAE on 3D representation. (b) Effect of the mask ratio in GC-MAE. All experiments are conducted in the MetaWorld single-task setting.",
+      "page": 9,
+      "index": 8,
+      "width": 509,
+      "height": 292
+    }
+  ]
+}

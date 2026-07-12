@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06442v1/fig-001.webp",
+      "caption": "Table 1: Performance comparison with baselines on SimplerEnv-WidowX using Qwen3-VL-4B-GR00T. We compare SIEVE with baselines under 50% and 70% selection budgets, at different training steps. “Avg.” denotes the average success rate.",
+      "page": 6,
+      "index": 1,
+      "width": 1048,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06442v1/fig-002.webp",
+      "caption": "Figure 3: Distribution of top-50 composition patterns before and after SIEVE selection (Selection budget=50%) on Bridge-V2. Each x-axis label denotes a composition pattern, represented as an ordered list of primitive IDs.",
+      "page": 7,
+      "index": 2,
+      "width": 494,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06442v1/fig-003.webp",
+      "caption": "Figure 2: Overview of SIEVE. 1) Primitive Discovery: trajectories are segmented into primitives through representation learning and clustering. 2) Structural Exposure Allocation: a structural exposure objective estimates primitive composition coverage and allocates the selection budget across composition patterns. 3) Learning-Friendly Trajectory Selection: representative trajectories are selected within each composition-pattern bucket to construct a compact, diverse, and learning-friendly training subset.",
+      "page": 3,
+      "index": 3,
+      "width": 1048,
+      "height": 487
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06442v1/fig-004.webp",
+      "caption": "Figure 4: Selection of the number of primitive clusters K on different datasets. Following the practical protocol used in our experiments, we randomly sample 10% of each training dataset and uniformly evaluate 20 candidate K values within a reasonable search range. The optimal K is selected by maximizing the clustering score (1 − J ) logR, and is indicated by the red dashed line.",
+      "page": 9,
+      "index": 4,
+      "width": 394,
+      "height": 540
+    }
+  ]
+}

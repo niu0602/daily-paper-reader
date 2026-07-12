@@ -6,59 +6,47 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-11
-- 运行时间：2026-07-11 21:20:24 UTC
+- 最新运行日期：2026-07-12
+- 运行时间：2026-07-12 20:03:09 UTC
 - 运行状态：成功
-- 本次总论文数：12
-- 精读区：1
-- 速读区：11
+- 本次总论文数：8
+- 精读区：0
+- 速读区：8
 
 ### 今日简报（AI）
-- 今日共生成 12 篇推荐（精读 1 篇，速读 11 篇）
-- 精读：《Immersive Social Interaction with VR and LLM-Assisted Humanoids》（10.0/10）
-- 速读：《TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training》（7.0/10）, 《Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control》（7.0/10）, 《Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents》（7.0/10）
-- 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/11/README](/202607/11/README)
+今日速读 8 篇机器人与具身智能论文，重点覆盖双臂协作回收、工具使用泛化与 3D 动力学感知操作。  
+最值得关注的是 ROBOCYCLE 的自主双臂回收协同，以及 FORGE、Lift3D-VLA 对“工具泛化 + 3D 操作理解”的推进，显示机器人正从固定流程走向更通用操作能力。  
+下一步建议优先跟进具身智能里的“工具使用”和“3D 感知操作”方向，这两类能力最可能率先落地到真实工业与家庭场景。
+- 详情：[/202607/12/README](/202607/12/README)
 
 ### 精读区论文标签
-1. [Immersive Social Interaction with VR and LLM-Assisted Humanoids](/202607/11/2607.07430v1-immersive-social-interaction-with-vr-and-llm-assisted-humanoids)  
-   标签：评分：10.0/10、query:dexop
-   evidence：使用Apple Vision Pro的第一视角视觉反馈进行灵巧手遥操作
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [TACO: TActile World Model as a Self-COrrector forScalable VLA Post-Training](/202607/11/2607.02840v1-taco-tactile-world-model-as-a-self-corrector-forscalable-vla-post-training)  
+1. [ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications](/202607/12/2607.03616v1-robocycle-autonomous-dual-arm-robotic-manipulation-and-coordination-for-recycling-applications)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于接触密集型机器人操作任务的触觉感知世界模型
-2. [Worldscape-MoE: A Unified Mixture-of-Experts World Model for Scalable Heterogeneous Action Control](/202607/11/2607.03964v1-worldscape-moe-a-unified-mixture-of-experts-world-model-for-scalable-heterogeneous-action-control)  
+   evidence：用于回收的双手臂机器人操作
+2. [FORGE: Towards Functional Tool-Use Generalization via Keypoint Trajectory Reasoning](/202607/12/2607.05780v1-forge-towards-functional-tool-use-generalization-via-keypoint-trajectory-reasoning)  
    标签：评分：7.0/10、query:dexop
-   evidence：包含手部关节信号的异构动作控制统一世界模型
-3. [Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](/202607/11/2607.08448v1-harness-vla-steering-frozen-vlas-into-reliable-manipulation-primitives-via-memory-guided-agents)  
+   evidence：利用人类视频提示实现功能性工具使用泛化
+3. [Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation](/202607/12/2607.06564v1-lift3d-vla-lifting-vla-models-to-3d-geometry-and-dynamics-aware-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于操作原语和触觉丰富控制的视觉-语言-动作模型
-4. [PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis](/202607/11/2607.04880v1-prism-personalized-robotic-dataset-generation-via-image-based-scene-and-motion-synthesis)  
+   evidence：用于3D几何和动力学感知机器人操作的VLA框架
+4. [Deform360: A Massive Multi-view Visuotactile Dataset for Deformable World Models](/202607/12/2607.05390v1-deform360-a-massive-multi-view-visuotactile-dataset-for-deformable-world-models)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于策略学习的个性化机器人数据集生成
-5. [RoboDojo: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies](/202607/11/2607.04434v3-robodojo-a-unified-sim-and-real-benchmark-for-comprehensive-evaluation-of-generalist-robot-manipulation-policies)  
+   evidence：用于机器人操作的视触觉数据集
+5. [SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models](/202607/12/2607.06442v1-sieve-structure-aware-data-selection-for-imitation-learning-with-vla-models)  
+   标签：评分：6.5/10、query:dexop
+   evidence：针对机器人模仿学习中VLA模型的结构感知数据选择
+6. [Geometry-Aware Motion Latents for Learning Robust Manipulation Policies](/202607/12/2607.04714v1-geometry-aware-motion-latents-for-learning-robust-manipulation-policies)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于全面评估机器人操作策略的统一仿真与真实基准
-6. [GraspIT: A Dataset Bridging the Sim-to-Real gap and back for Validated Grasping SE(3) Pose Generation](/202607/11/2607.05869v1-graspit-a-dataset-bridging-the-sim-to-real-gap-and-back-for-validated-grasping-se3-pose-generation)  
+   evidence：通过预测点云演化学习鲁棒的操作策略
+7. [Ego-Human Motion Prediction with 3D-Aware LLM](/202607/12/2607.07001v1-ego-human-motion-prediction-with-3d-aware-llm)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于验证机器人抓取和操作的数据集
-7. [Diagnosing Semantic Handoff Failures in Agent-Orchestrated Vision-Language-Action Skill Composition](/202607/11/2607.06256v1-diagnosing-semantic-handoff-failures-in-agent-orchestrated-vision-language-action-skill-composition)  
+   evidence：从第一视角预测人体运动
+8. [ContactMimic: Humanoid Object Interaction via Contact Control](/202607/12/2607.08742v1-contactmimic-humanoid-object-interaction-via-contact-control)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于长程家庭任务的视觉-语言-动作技能组合
-8. [GeoProp: Grounding Robot State in Vision for Generalist Manipulation](/202607/11/2607.07101v1-geoprop-grounding-robot-state-in-vision-for-generalist-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：在通用操作策略中将机器人状态与视觉对齐
-9. [Monocular Vision Based Control Framework for Grasping](/202607/11/2607.07897v1-monocular-vision-based-control-framework-for-grasping)  
-   标签：评分：6.0/10、query:dexop
-   evidence：基于单目视觉的软硬物体抓取控制框架
-10. [Whareformer: Learning to Track What is Where in Long Egocentric Videos](/202607/11/2607.08537v1-whareformer-learning-to-track-what-is-where-in-long-egocentric-videos)  
-   标签：评分：6.0/10、query:dexop
-   evidence：在长第一视角视频中跟踪摄像机佩戴者移动的物体
-11. [FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation](/202607/11/2607.08575v1-fabrivla-a-lightweight-vision-language-action-model-for-precise-multi-task-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于精确多任务机器人操作的轻量级VLA模型
+   evidence：通过接触控制和关键点追踪实现类人对象交互
 
 
 <div class="dpr-home-promo-card">

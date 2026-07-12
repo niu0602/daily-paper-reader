@@ -1,0 +1,354 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-12T20:00:32.318352+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 8,
+    "quick_skim_target": 11,
+    "quick_selected": 8
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.03616v1",
+      "source": "arxiv",
+      "title": "ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications",
+      "abstract": "As urban waste volumes escalate and labor shortages intensify, automated waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the Anygrasp SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and deformable waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing complex coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous waste management in real-world human environments.",
+      "authors": [
+        "Rubén de J. Hilario-Cruz",
+        "Jesus A. García-González",
+        "Enrique Coronado",
+        "Arturo E. Cerón-López"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-03T22:14:48+00:00",
+      "link": "https://arxiv.org/pdf/2607.03616v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "dual-arm robotic manipulation for recycling",
+      "llm_evidence_cn": "用于回收的双手臂机器人操作",
+      "llm_evidence": "用于回收的双手臂机器人操作",
+      "canonical_evidence": "用于回收的双手臂机器人操作",
+      "llm_tldr_en": "ROBOCYCLE is an autonomous dual-arm platform for sorting complex waste using 3D perception.",
+      "llm_tldr_cn": "ROBOCYCLE是一个利用3D感知进行复杂垃圾分类的自主双臂平台。",
+      "llm_tldr": "ROBOCYCLE是一个利用3D感知进行复杂垃圾分类的自主双臂平台。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.05390v1",
+      "source": "arxiv",
+      "title": "Deform360: A Massive Multi-view Visuotactile Dataset for Deformable World Models",
+      "abstract": "Predicting object dynamics (i.e., world modeling) is a fundamental challenge for robotic manipulation, and modeling deformable objects presents a particularly difficult case due to their high-dimensional state spaces and complex material properties. While current world models approach this through two distinct paradigms: learning the dynamics over the 2D pixel space or more explicit 3D geometric space. A systematic understanding of their relative strengths and limitations remains elusive due to the lack of diverse, large-scale real-world data. To address this, we present Deform360, a large-scale visuotactile dataset featuring 198 daily-life objects, 1,980 interaction sequences, and over 215 hours of observations from 41 surround-view cameras and bimanual tactile grippers to capture both global motion and contact-induced local deformations. Leveraging a novel markerless visuotactile 3D tracking pipeline to extract dense geometry and motion, we systematically evaluate current state-of-the-art world models, comparing 2D video models against 3D particle models. Finally, we provide a preliminary demonstration indicating the real-world applicability of our dataset by performing robot planning tasks on deformable objects. Our analysis reveals key insights into the trade-offs between structural priors and scalability, providing a solid benchmark for future research in generalizable deformable object-centric world modeling. Project website: https://deform360.lhy.xyz",
+      "authors": [
+        "Hongyu Li",
+        "Wanjia Fu",
+        "Xiaoyan Cong",
+        "Zekun Li",
+        "Binghao Huang",
+        "Hanxiao Jiang",
+        "Xintong He",
+        "Yiqing Liang",
+        "Rao Fu",
+        "Tao Lu",
+        "Srinath Sridhar",
+        "Kevin A. Smith",
+        "George Konidaris",
+        "Yunzhu Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-06T17:59:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.05390v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "visuotactile dataset for robotic manipulation",
+      "llm_evidence_cn": "用于机器人操作的视触觉数据集",
+      "llm_evidence": "用于机器人操作的视触觉数据集",
+      "canonical_evidence": "用于机器人操作的视触觉数据集",
+      "llm_tldr_en": "Deform360 provides a massive multi-view dataset for modeling the dynamics of deformable objects.",
+      "llm_tldr_cn": "Deform360提供了一个大规模多视图数据集，用于建模可变形物体的动力学。",
+      "llm_tldr": "Deform360提供了一个大规模多视图数据集，用于建模可变形物体的动力学。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.05780v1",
+      "source": "arxiv",
+      "title": "FORGE: Towards Functional Tool-Use Generalization via Keypoint Trajectory Reasoning",
+      "abstract": "While humans readily repurpose a book, a stone, or a shoe to drive a nail, robots trained on specific tools fail to transfer the same function to novel ones -- a gap we formalize as functional generalization. Such tools share a common functional intent that is visually recognizable, yet this perceptual similarity does not carry over to action space, where each tool demands an entirely different motor pattern. To bridge this gap, we explore intermediate representations including affordance images, human video prompts, and 2D keypoint trajectories, finding that keypoint trajectories best balance functional expressiveness and action groundability. Building on this, we propose FunctiOnal Reasoning and Grounded Execution (FORGE), a two-stage policy that decouples functional reasoning from action execution: predicting generalizable keypoint trajectories from action-free data, then grounding them into robot actions with limited demonstrations. On a seven-tool hitting-function benchmark, FORGE consistently outperforms state-of-the-art methods on unseen tools in both simulation and the real world, achieving over 2X improvement in average success rate.",
+      "authors": [
+        "Chuhao Zhou",
+        "Liquan Wang",
+        "Shuxin Cao",
+        "Xiangyu Chen",
+        "Yuxuan Hu",
+        "Boyu Ma",
+        "Animesh Garg",
+        "Jianfei Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-07-07T03:10:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.05780v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "functional tool-use generalization using human video prompts",
+      "llm_evidence_cn": "利用人类视频提示实现功能性工具使用泛化",
+      "llm_evidence": "利用人类视频提示实现功能性工具使用泛化",
+      "canonical_evidence": "利用人类视频提示实现功能性工具使用泛化",
+      "llm_tldr_en": "Explores human video prompts and keypoint trajectories for functional tool-use generalization in robots.",
+      "llm_tldr_cn": "探索利用人类视频提示和关键点轨迹来实现机器人的功能性工具使用泛化。",
+      "llm_tldr": "探索利用人类视频提示和关键点轨迹来实现机器人的功能性工具使用泛化。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.06442v1",
+      "source": "arxiv",
+      "title": "SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models",
+      "abstract": "Vision-Language-Action (VLA) models are typically trained by imitation learning on large-scale robot demonstration datasets, but more data does not necessarily yield better policies due to redundancy, noise, and uneven coverage. Existing data selection methods often assess demonstrations at either the trajectory or state-action level, missing the reusable structures that compose long-horizon behaviors. In this paper, we propose SIEVE, a structure-aware data selection method for VLA imitation learning. SIEVE views demonstrations as compositions of reusable primitives and transition interfaces. It first discovers visuo-motor primitives from segmented trajectories, then allocates selection budgets to composition patterns by maximizing reuse-aware structural exposure under diminishing returns. Finally, it selects medoid trajectories within each composition-pattern bucket to retain central, stable, and imitation-friendly demonstrations. Experiments across multiple datasets, benchmarks, and VLA models show that SIEVE consistently outperforms competitive data selection baselines. Notably, SIEVE can surpass full-data training while using only 50% of demonstrations and 50% of training steps, suggesting that reusable structure, captured through primitives and transitions, is an important signal for efficient VLA imitation learning.",
+      "authors": [
+        "Changti Wu",
+        "Bin Yu",
+        "Zhaolong Shen",
+        "Shijie Lian",
+        "Xiaopeng Lin",
+        "Cong Huang",
+        "Zhirui Zhang",
+        "Lei Zhang",
+        "Kai Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-07T16:10:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.06442v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Structure-aware data selection for VLA models in robot imitation learning",
+      "llm_evidence_cn": "针对机器人模仿学习中VLA模型的结构感知数据选择",
+      "llm_evidence": "针对机器人模仿学习中VLA模型的结构感知数据选择",
+      "canonical_evidence": "针对机器人模仿学习中VLA模型的结构感知数据选择",
+      "llm_tldr_en": "Proposes SIEVE to improve VLA model training by selecting reusable primitives from robot demonstration datasets.",
+      "llm_tldr_cn": "提出SIEVE方法，通过从机器人演示数据集中选择可重用的动作基元来优化VLA模型训练。",
+      "llm_tldr": "提出SIEVE方法，通过从机器人演示数据集中选择可重用的动作基元来优化VLA模型训练。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.06564v1",
+      "source": "arxiv",
+      "title": "Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation",
+      "abstract": "Recently, Vision-Language-Action (VLA) models have demonstrated strong generalization across diverse tasks. However, effective robotic manipulation in physical environments fundamentally requires geometric understanding and spatial reasoning. While some VLA approaches attempt to incorporate 3D information, they are constrained by limited data availability and geometric information loss in current 3D encoding pipelines, and fail to jointly capture 3D geometry and temporally structured actions in dynamic environments. To address these limitations, we introduce Lift3D-VLA, a unified VLA framework that equips models with explicit 3D point cloud reasoning and enables temporally coherent action generation. First, building upon our previous work Lift3D, an enhanced 2D model-lifting strategy is proposed to geometrically align 3D points with pretrained 2D positional embeddings. This design enables direct point-cloud encoding within the VLA vision encoder while minimizing spatial information loss. Based on explicit 3D inputs, we propose Geometry-Centric Masked Autoencoding (GC-MAE), a dual-objective self-supervised framework that reconstructs the current point cloud while predicting its future geometric evolution. This formulation allows the 2D vision encoder to internalize both 3D structure and physical dynamics. To fully exploit 3D representations, we further design layer-wise temporal action modeling, which leverages multiple layers of the LLM to collaboratively predict action chunks, enabling temporally consistent predictions. Across 22 simulated tasks and 8 real-world manipulation tasks, Lift3D-VLA achieves 10.8% and 11.1% higher mean success rates on MetaWorld and RLBench than the best-performing prior VLA methods, and outperforms the strongest real-world baseline by 4 percentage points, while exhibiting stronger generalization to out-of-distribution perturbations.",
+      "authors": [
+        "Jiaming Liu",
+        "Qingpo Wuwu",
+        "Nuowei Han",
+        "Hao Chen",
+        "Zhuoyang Liu",
+        "Fan Fei",
+        "Yueru Jia",
+        "Chenyang Gu",
+        "Yandong Guo",
+        "Boxin Shi",
+        "Shanghang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-07T17:59:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.06564v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "VLA framework for 3D geometry and dynamics-aware robotic manipulation",
+      "llm_evidence_cn": "用于3D几何和动力学感知机器人操作的VLA框架",
+      "llm_evidence": "用于3D几何和动力学感知机器人操作的VLA框架",
+      "canonical_evidence": "用于3D几何和动力学感知机器人操作的VLA框架",
+      "llm_tldr_en": "Lift3D-VLA integrates 3D point cloud reasoning into VLA models for better spatial manipulation.",
+      "llm_tldr_cn": "Lift3D-VLA将3D点云推理集成到VLA模型中，以实现更好的空间操作。",
+      "llm_tldr": "Lift3D-VLA将3D点云推理集成到VLA模型中，以实现更好的空间操作。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.04714v1",
+      "source": "arxiv",
+      "title": "Geometry-Aware Motion Latents for Learning Robust Manipulation Policies",
+      "abstract": "Learning motion latents for robotic manipulation heavily relies on extracting motion patterns from visual sequences, yet effective action abstractions require understanding three-dimensional geometric transformations. Here, we introduce GeoMoLa (Geometry-Aware Motion Latents), which learns discrete motion latent codes by predicting how point clouds evolve during manipulation rather than reconstructing visual observations. This four-dimensional objective -- spatial geometry changing through time -- forces latent representations to encode actual physical motion rather than appearance patterns. GeoMoLa achieves state-of-the-art performance using only single-view RGB-D input, while existing methods require multi-view reconstruction, succeeding across diverse manipulation benchmarks. Our ablations reveal that geometric prediction is the key to driving performance, quantitatively validating that manipulation depends on spatial understanding. Furthermore, the learned codes exhibit effective motion abstraction: applying them to novel scenes produces physically consistent transformations regardless of visual context. Our real-world experiments also confirm this robustness capability, achieving robust manipulation with minimal demonstrations in cluttered environments where geometric reasoning determines success. Thus, we demonstrate that effective motion latents for robot control can better emerge from understanding motion through its three-dimensional effects rather than pixel-level patterns.",
+      "authors": [
+        "Yunchao Zhang",
+        "Yijia Weng",
+        "Ruizhe Liu",
+        "Ming Hu",
+        "Leonidas Guibas",
+        "Yanchao Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-06T06:34:14+00:00",
+      "link": "https://arxiv.org/pdf/2607.04714v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "learning robust manipulation policies by predicting point cloud evolution",
+      "llm_evidence_cn": "通过预测点云演化学习鲁棒的操作策略",
+      "llm_evidence": "通过预测点云演化学习鲁棒的操作策略",
+      "canonical_evidence": "通过预测点云演化学习鲁棒的操作策略",
+      "llm_tldr_en": "GeoMoLa learns motion latents by predicting 3D geometry changes to improve robotic manipulation robustness.",
+      "llm_tldr_cn": "GeoMoLa通过预测3D几何变化来学习运动潜变量，从而提高机器人操作的鲁棒性。",
+      "llm_tldr": "GeoMoLa通过预测3D几何变化来学习运动潜变量，从而提高机器人操作的鲁棒性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.07001v1",
+      "source": "arxiv",
+      "title": "Ego-Human Motion Prediction with 3D-Aware LLM",
+      "abstract": "Anticipating human motion from an egocentric perspective is fundamental for proactive assistance in AR/VR, human-robot collaboration, and embodied AI. While recent works incorporate language as a semantic prior to reduce the ill-posed nature of egocentric forecasting, they largely neglect the 3D spatial and semantic context that governs how motion unfolds, and treat pose and language prediction as separate inference streams. We introduce Ego3DLM, built on two core principles: accurate motion forecasting requires explicit spatial and semantic understanding of the 3D environment, and pose and language must be predicted holistically in a single pass, since motion is inherently tied to the semantic interpretation of actions being performed. Given three-point tracking, 3D scene features, and egocentric video, Ego3DLM simultaneously decodes past pose, future pose, past narration, and future narration in a single autoregressive pass, grounding predicted poses and descriptions in one another to enforce cross-modal and temporal consistency. We adopt a three-stage training scheme: (1) spatial-semantic scene awareness pretraining; (2) holistic instruction tuning over all four outputs in a single pass; and (3) GRPO-based reinforcement finetuning with intra- and inter-modal rewards that directly optimize pose-language fidelity. Experiments on the Nymeria benchmark demonstrate that Ego3DLM achieves state-of-the-art performance across future motion prediction, past motion tracking, and motion description, showing that 3D scene grounding and holistic cross-modal prediction yield physically plausible and semantically coherent motion forecasts. The project page is available at https://jaewoo97.github.io/Ego3DLM/.",
+      "authors": [
+        "Yujin Bae",
+        "Jaewoo Jeong",
+        "Hyeonseong Kim",
+        "Kuk-Jin Yoon"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-08T04:51:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.07001v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "human motion prediction from an egocentric perspective",
+      "llm_evidence_cn": "从第一视角预测人体运动",
+      "llm_evidence": "从第一视角预测人体运动",
+      "canonical_evidence": "从第一视角预测人体运动",
+      "llm_tldr_en": "Ego3DLM predicts human motion and language from egocentric video using 3D spatial context.",
+      "llm_tldr_cn": "Ego3DLM利用3D空间上下文从第一视角视频中预测人体运动和语言。",
+      "llm_tldr": "Ego3DLM利用3D空间上下文从第一视角视频中预测人体运动和语言。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.08742v1",
+      "source": "arxiv",
+      "title": "ContactMimic: Humanoid Object Interaction via Contact Control",
+      "abstract": "Keypoint tracking alone is insufficient for object interaction tasks such as sitting on a chair, wiping a board, or pushing furniture, where the robot can reach the correct pose without making meaningful physical contact with the object. We present CONTACTMIMIC, a learning framework that tracks explicit partlevel binary contact commands alongside keypoint trajectories. CONTACTMIMIC is made possible through the use of contact-following rewards and a trajectory augmentation scheme aimed at breaking the correlations between keypoint trajectories and contact labels. The resulting policy successfully decouples contact behavior from keypoint geometry, and achieves precise physical contact as well as contact-controllability (produce or suppress contact during deployment as desired). Simulation experiments across 10 diverse human-object interaction motions confirm that CONTACTMIMIC exhibits contact controllability that enables it to complete manipulation tasks without task-specific rewards, while also outperforming keypoint-only trackers on contact-relevant tasks. Ablations confirm the necessity of the proposed trajectory augmentation scheme and sim2real deployment validates contact controllability in the real world across 5 different motions. Video results are available on https://lixinyao11.github.io/contactmimic-page/.",
+      "authors": [
+        "Xinyao Li",
+        "Xialin He",
+        "Runpei Dong",
+        "Saurabh Gupta"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T17:42:15+00:00",
+      "link": "https://arxiv.org/pdf/2607.08742v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "humanoid object interaction via contact control and keypoint tracking",
+      "llm_evidence_cn": "通过接触控制和关键点追踪实现类人对象交互",
+      "llm_evidence": "通过接触控制和关键点追踪实现类人对象交互",
+      "canonical_evidence": "通过接触控制和关键点追踪实现类人对象交互",
+      "llm_tldr_en": "ContactMimic enables humanoid robots to perform precise physical contact tasks via contact-following rewards.",
+      "llm_tldr_cn": "ContactMimic通过接触跟随奖励使类人机器人能够执行精确的物理接触任务。",
+      "llm_tldr": "ContactMimic通过接触跟随奖励使类人机器人能够执行精确的物理接触任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

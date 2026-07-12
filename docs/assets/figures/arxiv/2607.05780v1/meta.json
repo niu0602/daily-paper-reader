@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-001.webp",
+      "caption": "Figure 8 Additional Qualitative Comparison with ATM. (a) Failure cases of ATM on unseen tools. (b) Successful demos of FORGE with predicted keypoint-based functional plans.",
+      "page": 15,
+      "index": 1,
+      "width": 971,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-002.webp",
+      "caption": "Figure 4 Qualitative results of FORGE. (a) Successful demos with predicted keypoint-based functional plans on unseen tools. (b) Two typical failure cases of FORGE.",
+      "page": 7,
+      "index": 2,
+      "width": 981,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-003.webp",
+      "caption": "Figure 5 Real-World Results. Results on the unseen book across two hitting patterns. We compare FORGE with the FM base policy. Results for hitting with (a) the bottom. (b) the spine.",
+      "page": 7,
+      "index": 3,
+      "width": 975,
+      "height": 189
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-004.webp",
+      "caption": "Figure 7 Additional Real-World Qualitative Results. (a) Failure cases of the FM baseline on unseen tools. (b) Successful demos of FORGE across hitting patterns. The blue point indicates the reference hitting point for each pattern.",
+      "page": 14,
+      "index": 4,
+      "width": 970,
+      "height": 819
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-005.webp",
+      "caption": "Figure 2 Overview of the FORGE. (a) Evaluation and selection of functional intermediate representations. (b) In Stage 1, the System-2 planner learns to predict future keypoint-based functional plans from action-free observations. (c) In Stage 2, the System-1 execution policy grounds the predicted functional plans into executable robot actions.",
+      "page": 3,
+      "index": 5,
+      "width": 959,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-006.webp",
+      "caption": "Table 5 Main Reward Terms forMPPI-basedDemonstrationGeneration. Here, dx, dy, and dxy denote the distances between the hitting point and the target along the x axis, the y axis, and the xy plane, respectively, while ∆dx, ∆dy, and ∆dxy denote their step-wise reductions. For the vertical direction, zlift denotes the tool lifting height from its initial height, z1 denotes the target lifting threshold in Stage 1, ∆zlift denotes the step-wise lifting progress, and ez denotes the error between the current tool height and the target hovering height. ∆zhead denotes the vertical displacement of the hitting point between consecutive steps, so −∆zhead measures downward motion. The terms r∗ reward the current state for satisfying the stage-specific objective, while r∗_prog rewards step-wise progress toward that objective.",
+      "page": 12,
+      "index": 6,
+      "width": 970,
+      "height": 906
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05780v1/fig-007.webp",
+      "caption": "Figure 3 Simulation Benchmark and Real-world Setting. (a) The simulation benchmark contains seven tools, three initial settings per tool, and randomized target and hitting points. (b) The real-world setting uses a Franka robot and includes three tools, each with two hitting patterns.",
+      "page": 5,
+      "index": 7,
+      "width": 981,
+      "height": 307
+    }
+  ]
+}

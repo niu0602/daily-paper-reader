@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-001.webp",
+      "caption": "Table 3: Despite similar MPJPE, the keypoint-only method, BeyondMimic [1], fails to establish physical contact. † For object-manipulation motions we also report the object displacement (higher means the object is moved more).",
+      "page": 7,
+      "index": 1,
+      "width": 752,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-002.webp",
+      "caption": "Table 7: Per-motion training settings. Aug. columns indicate which paired-motion augmentations are enabled: Infl. (inflated geometry), Rem. (interaction-object removal at train time), and Flip (random contact-label flipping). Mode is the label-matching reward form (Bal. = balanced accuracy, TP−FP = TPR − λFPR, λ=1). prem. and pflip are the train-time augmentation probabilities (per episode).",
+      "page": 14,
+      "index": 2,
+      "width": 598,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-003.webp",
+      "caption": "Figure 2: Overview of our pipeline. We retarget human-object interaction clips from HUMOTO, extracting both reference keypoint trajectories and per-body contact labels. We then synthesize augmented motion pairs by inflated geometry, contact-label flipping and object removal. A contactconditioned policy is then trained on this data with contact-and-keypoint-tracking and contact-aware rewards, so that contact can be turned on or off at test time through the conditioning label.",
+      "page": 3,
+      "index": 3,
+      "width": 826,
+      "height": 382
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-004.webp",
+      "caption": "Table 5: PPO hyperparameters used to train each contact-conditioned policy.",
+      "page": 13,
+      "index": 4,
+      "width": 544,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-005.webp",
+      "caption": "Table 6: Full list of reward terms used to train each contact-conditioned policy. Positive weights are rewards; negative weights are penalties. Gaussian terms are shaped as exp(−e2/σ2) on the underlying error e.",
+      "page": 13,
+      "index": 5,
+      "width": 702,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-006.webp",
+      "caption": "Figure 5: Removing proposed data augmentation hurts contact controllability. Solid arrows for our full method, are more consistently long and facing left (i.e. contacts reduce when commanded not to make contact) than the dotted arrows for the version trained without the augmentations from § 3.2.",
+      "page": 8,
+      "index": 6,
+      "width": 452,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-007.webp",
+      "caption": "Table 8: Contact label controllability across all interaction motions. A single contact-conditioned policy is evaluated on four input trajectories per motion: T ✔ nearand T ✘ farare matched (keypoint and label agree), while T ✘ nearand T ✔ far are flipped (keypoint and label disagree). Object displacement is only reported for free-object motions (†). Bodies/impulse track the contact label (not the keypoint variant), indicating the policy follows the label rather than implicitly inferring contact from keypoints. The arrow beside each key joint marks whether its torque is intuitively expected to increase (↑) or decrease (↓) when the commanded contact is turned off.",
+      "page": 17,
+      "index": 7,
+      "width": 768,
+      "height": 1092
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-008.webp",
+      "caption": "Table 9: Ablation on paired-motion data augmentation across all motions. (T ✔ near= original keypoint with contact; T ✘ near= original keypoint without contact (flipped)). Without augmentation, contact metrics are largely insensitive to the contact label (both T ✔ nearand T ✘ nearproduce similar values, whether high or low), showing the policy ignores the contact conditioning.",
+      "page": 16,
+      "index": 8,
+      "width": 590,
+      "height": 579
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08742v1/fig-009.webp",
+      "caption": "Figure 6: Per-motion ablation on paired-motion data augmentation, shown for both contact bodies and impulse. Solid arrows show our full method (Ours); dotted arrows show the no-augmentation baseline (No-aug). Both arrows go from T ✔ near to T ✘ near. Without augmentation, the arrows are short or even reverse direction, indicating the policy fails to follow the contact label.",
+      "page": 16,
+      "index": 9,
+      "width": 826,
+      "height": 390
+    }
+  ]
+}

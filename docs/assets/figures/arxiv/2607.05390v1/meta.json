@@ -1,0 +1,166 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-001.webp",
+      "caption": "Fig. 16: Visualization of 3D Deformables (continued). Object names are marked at the lower right corner of each image.",
+      "page": 38,
+      "index": 1,
+      "width": 725,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-002.webp",
+      "caption": "Fig. 8: Visualization of dynamic reconstruction results from novel viewpoints and different temporal steps.",
+      "page": 26,
+      "index": 2,
+      "width": 724,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-003.webp",
+      "caption": "Table 8: Detailed Categorization for 2D Deformables. The 2D deformable objects collected in Deform360 can be divided into cloths, fabric, garments, paper-like deformables, bag-like deformables, and other thin-shell deformables.",
+      "page": 30,
+      "index": 3,
+      "width": 718,
+      "height": 690
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-004.webp",
+      "caption": "Fig. 1: Overview of Deform360. We collect a massive multi-view visuotactile dataset with 198 deformable objects (a subset is shown), supporting 2D and 3D world models, contact detection, and real-world robot planning tasks.",
+      "page": 2,
+      "index": 4,
+      "width": 721,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-005.webp",
+      "caption": "Fig. 3: Visualization of our particle tracking system across different object categories.",
+      "page": 7,
+      "index": 5,
+      "width": 725,
+      "height": 208
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-006.webp",
+      "caption": "Table 7: Detailed Categorization for 1D Deformables. The 1D deformable objects collected in Deform360 can be divided into thick rope-like deformables, thin ropelike deformables, and stiff cable-like deformables.",
+      "page": 29,
+      "index": 6,
+      "width": 718,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-007.webp",
+      "caption": "Fig. 17: Visualization of Multi-view Deformables. Each image represents a different view of the same object.",
+      "page": 39,
+      "index": 7,
+      "width": 725,
+      "height": 937
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-008.webp",
+      "caption": "Fig. 12: Visualization of 2D Deformables (continued). Object names are marked at the lower right corner of each image.",
+      "page": 34,
+      "index": 8,
+      "width": 725,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-009.webp",
+      "caption": "Fig. 7: Real-world Robot Planning with Model Predictive Control. We deploy learned models from Deform360 in an MPC framework to manipulate various deformable objects toward the goal state.",
+      "page": 14,
+      "index": 9,
+      "width": 725,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-010.webp",
+      "caption": "Fig. 11: Visualization of 2D Deformables. Object names are marked at the lower right corner of each image.",
+      "page": 33,
+      "index": 10,
+      "width": 725,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-011.webp",
+      "caption": "Fig. 13: Visualization of 2D Deformables (continued). Object names are marked at the lower right corner of each image.",
+      "page": 35,
+      "index": 11,
+      "width": 725,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-012.webp",
+      "caption": "Fig. 9: Visualization of Multi-Episode Generalization. We show the predicted future frames for the glove-cloth (top) and sack-cloth (bottom) objects, comparing different world models under the episode generalization setting.",
+      "page": 28,
+      "index": 12,
+      "width": 725,
+      "height": 681
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-013.webp",
+      "caption": "Fig. 6: Visualization of Multi-Object Generalization. We show the predicted future frames for the cable (top) and bubble-wrap (bottom) objects, comparing different world models under the zero-shot object generalization setting.",
+      "page": 13,
+      "index": 13,
+      "width": 725,
+      "height": 585
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-014.webp",
+      "caption": "Fig. 18: Visualization of Multi-view Deformables. Each image represents a different view of the same object.",
+      "page": 40,
+      "index": 14,
+      "width": 725,
+      "height": 937
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-015.webp",
+      "caption": "Fig. 14: Visualization of 3D Deformables. Object names are marked at the lower right corner of each image.",
+      "page": 36,
+      "index": 15,
+      "width": 725,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-016.webp",
+      "caption": "Fig. 10: Visualization of 1D Deformables. Object names are marked at the lower right corner of each image.",
+      "page": 32,
+      "index": 16,
+      "width": 725,
+      "height": 625
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-017.webp",
+      "caption": "Fig. 19: Visualization of Multi-view Deformables. Each image represents a different view of the same object.",
+      "page": 41,
+      "index": 17,
+      "width": 725,
+      "height": 937
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-018.webp",
+      "caption": "Fig. 4: Benefit of Visuotactile Perception. The three rows compare the warped point clouds, obtained by temporally integrating per-frame tracking results: our full visuotactile approach, tracking without tactile optimization, and the RGB ground truth. Our method yields superior tracking accuracy under occlusions caused by the gripper, confirming the advantage of integrating tactile feedback into the tracking pipeline.",
+      "page": 9,
+      "index": 18,
+      "width": 725,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-019.webp",
+      "caption": "Fig. 15: Visualization of 3D Deformables (continued). Object names are marked at the lower right corner of each image.",
+      "page": 37,
+      "index": 19,
+      "width": 725,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2607.05390v1/fig-020.webp",
+      "caption": "Table 9: Detailed Categorization for 3D Deformables. The 3D deformable objects collected in Deform360 can be divided into stuffed animals, plush toys, foam, and squeezables.",
+      "page": 31,
+      "index": 20,
+      "width": 718,
+      "height": 479
+    }
+  ]
+}

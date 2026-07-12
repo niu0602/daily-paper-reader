@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-001.webp",
+      "caption": "Table 1: Comparison of prediction and tracking results on motion and text metrics. x-y Align. denotes motion and text alignment. Embedding distance functions (dgp, dpg, dpp) are defined in Sec. 3.5. Best are denoted in bold. Arrow denotes better.",
+      "page": 11,
+      "index": 1,
+      "width": 716,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-002.webp",
+      "caption": "Fig. 1: Our Ego3DLM incorporates the semantic context of the surrounding 3D environment along with 2D egocentric video and three-point tracking data to generate past and future poses and their corresponding language motion descriptions.",
+      "page": 2,
+      "index": 2,
+      "width": 570,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-003.webp",
+      "caption": "Fig. 3: Spatial-semantic scene awareness QA dataset generation. Semantic Awareness: For each 3D scene, we use egocentric videos to automatically generate question-answer pairs that describe and reason about the environment. We define six types of QA pairs targeting semantic understanding, and show their frequency distribution across the constructed data (left). Spatial Awareness: We partition the environment into three angular sectors (front, left, and right) and generate QA pairs to predict directional clearance levels and the most navigable direction (right).",
+      "page": 7,
+      "index": 3,
+      "width": 709,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-004.webp",
+      "caption": "Table 4: Ablation on GRPO finetuning. A more comprehensive reward signal results in overall improvement, especially the semantic understanding of past and future motion. dfpp and dppp each denote the embedding distance between generated motion and description for future and past, respectively.",
+      "page": 14,
+      "index": 4,
+      "width": 714,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-005.webp",
+      "caption": "Table 3: Ablation on instruction tuning. The effects of pretraining (Qsem, Qspa), use of spatial scene reasoning (SSR) and 3D scene (S) are compared.",
+      "page": 13,
+      "index": 5,
+      "width": 712,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-006.webp",
+      "caption": "Fig. 4: Qualitative results for motion forecasting and tracking. The ground-truth (GT) past motion trajectory is shown in red, and the predicted future motion is visualized in blue. For future motion narration below the figure, green highlights correct phrases matching the GT, while red highlights incorrect or mismatched descriptions.",
+      "page": 12,
+      "index": 6,
+      "width": 718,
+      "height": 453
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07001v1/fig-007.webp",
+      "caption": "Fig. 2: Overview of the Ego3DLM framework. Our model consists of three stages. 3D Scene Feature Extraction (Sec. 3.2): 2D semantic features are extracted from egocentric video frames and lifted onto the 3D point cloud. The feature-enhanced point cloud is fed into a Q-Former to produce compact scene query embeddings (top left). LM Training: (I) Pre-training (Sec. 3.3) aligns scene, motion, and language via two complementary objectives; (II) Instruction Tuning (Sec. 3.4) trains simultaneous single-pass generation of all four outputs, comprising past and future poses and descriptions (top right); (III) GRPO (Sec. 3.5) refines the model with intra- and inter-modal rewards for pose-language fidelity (bottom).",
+      "page": 5,
+      "index": 7,
+      "width": 720,
+      "height": 444
+    }
+  ]
+}

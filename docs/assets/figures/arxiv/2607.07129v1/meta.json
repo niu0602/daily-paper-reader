@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07129v1/fig-001.webp",
+      "caption": "Fig. 1: System overview. Top: Task sequence with object interactions, followed by the ground-truth and reconstructed images. Middle: Object-specific masks inferred from latent codes, illustrating object-centric scene decomposition. Bottom: Temporal gating weights showing each object’s influence over the trajectory; snapshots above the plot correspond to key events (T0–T3), marked by vertical dotted lines.",
+      "page": 1,
+      "index": 1,
+      "width": 374,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07129v1/fig-002.webp",
+      "caption": "TABLE I: Simulation results (MED/Accuracy).",
+      "page": 6,
+      "index": 2,
+      "width": 516,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07129v1/fig-003.webp",
+      "caption": "Fig. 9: Illustration of the perception pipeline: input images, languageconditioned mask colorizations produced by the vision–language model, and the resulting image reconstructions.",
+      "page": 7,
+      "index": 3,
+      "width": 500,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07129v1/fig-004.webp",
+      "caption": "Fig. 10: Example multi-step trials for the second (A-1, A-2, A-3) and third (B-1, B-2, B-3) tasks. Language prompts in the second row allow the user to specify the object to be manipulated.",
+      "page": 7,
+      "index": 4,
+      "width": 524,
+      "height": 260
+    }
+  ]
+}

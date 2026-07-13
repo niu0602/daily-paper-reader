@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.07076v1/fig-001.webp",
+      "caption": "Figure 3: Confusion matrix of PANet primitive classification (left) and sensitivity analysis of autolabeling thresholds (right). Rel. and Rot. denote release and rotation, respectively.",
+      "page": 6,
+      "index": 1,
+      "width": 812,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.07076v1/fig-002.webp",
+      "caption": "Figure 6: Comparison of our PriGo-DP (top row) and the vanilla diffusion policy (bottom row) on the ‘prepare a set of tableware’ task.",
+      "page": 15,
+      "index": 2,
+      "width": 826,
+      "height": 404
+    }
+  ]
+}

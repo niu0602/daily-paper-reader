@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-001.webp",
+      "caption": "Figure 4: Qualitative rollouts. For each unseen task we show a robot rollout filmstrip (right) and the paired human demonstration used as deployment-time Key/Value (left).",
+      "page": 6,
+      "index": 1,
+      "width": 788,
+      "height": 496
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-002.webp",
+      "caption": "Figure 3: Experimental setup.",
+      "page": 6,
+      "index": 2,
+      "width": 788,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-003.webp",
+      "caption": "Table 1: Main results. Progress (%) on 9 manipulation tasks evaluated in previously unseen home environments. All cells averaged over 25 trials. The full table including the in-cubicle Orig. setting is in Appendix C.",
+      "page": 7,
+      "index": 3,
+      "width": 825,
+      "height": 226
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-004.webp",
+      "caption": "Figure 2: Pipeline of WAM-TTT. We first meta-train a fast-weight memory using paired human-robot demonstrations, encouraging human visual cues to align with robot behaviors through a key–value memory reconstruction objective. At test time, the memory is adapted from unlabeled human videos via video prediction, while the pretrained WAM remains frozen. The adapted memory then steers robot execution through the WAM’s shared visual-action dynamics.",
+      "page": 3,
+      "index": 4,
+      "width": 826,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-005.webp",
+      "caption": "Table C.1: Full main results. Progress (%) on 9 tasks under the Orig. (standardized robot cubicle) and New (unseen household, combined OOD shift) settings. All cells averaged over 25 trials.",
+      "page": 18,
+      "index": 5,
+      "width": 825,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-006.webp",
+      "caption": "Figure 5: Generalization Setup.",
+      "page": 8,
+      "index": 6,
+      "width": 788,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-007.webp",
+      "caption": "Figure B.2: Human data collection in the actual New household scenes. Same 10 task slots and panel order as Figure B.1, but the human demonstrator is in the actual household environment used as the New evaluation setting (lighting, clutter, tableware, and target instances all differ from the cubicle). The hand pose varies per panel according to the paired robot end-effector: parallel-jaw mimic on the Galbot gripper panels (5, 6), three-finger dex-hand grasp on the Unitree G1 panels (1–3), and unconstrained dexterous use on the Galbot sharpa panels (4, 7–10). The task identity and panel order are the same as in Figure B.1. Demonstrations are recorded with a GoPro camera in egocentric view, without any hand-pose, joint-angle, or motion-retargeting annotation.",
+      "page": 17,
+      "index": 7,
+      "width": 788,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-008.webp",
+      "caption": "Figure B.1: Robot data collection in the standardized cubicle. Representative teleoperation frames in the 5×2 layout, read left-to-right, top-to-bottom. Top row: (1) Table Bussing, (2) Pour Water, (3) Deliver Drink on the Unitree G1; (4) Swap Place on the Galbot sharpa; (5) Transfer Bottle on the Galbot gripper. Bottom row: (6) Stamp Paper on the Galbot gripper; (7) Pyramid Stacking, (8) Multi-step Steak (grasping the pan and pouring the beef in), (9) Flip Steak, (10) Multi-step Steak (sprinkling pepper), all on the Galbot sharpa. The long-horizon Multi-step Steak occupies panels 8 and 10.",
+      "page": 17,
+      "index": 8,
+      "width": 788,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2607.06988v2/fig-009.webp",
+      "caption": "Table B.1: Hyperparameters for the main WAM-TTT runs.",
+      "page": 16,
+      "index": 9,
+      "width": 838,
+      "height": 342
+    }
+  ]
+}

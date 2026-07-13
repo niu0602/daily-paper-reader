@@ -1,0 +1,428 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-13T20:48:20.982870+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 3,
+    "deep_cap": 6,
+    "deep_selected": 3,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [
+    {
+      "id": "2607.08857v1",
+      "source": "arxiv",
+      "title": "AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning",
+      "abstract": "Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.",
+      "authors": [
+        "Iaroslav Kolomiets",
+        "Miguel Altamirano Cabrera",
+        "Artem Lykov",
+        "Jeffrin Sam",
+        "Dmitrii Iarchuk",
+        "Yara Mahmoud",
+        "Daniia Zinniatullina",
+        "Mikhail Konenkov",
+        "Dzmitry Tsetserukou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T18:27:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.08857v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "synthesis from human FPV video for dexterous humanoid learning",
+      "llm_evidence_cn": "从人类第一视角视频合成数据用于灵巧人形机器人学习",
+      "llm_evidence": "从人类第一视角视频合成数据用于灵巧人形机器人学习",
+      "canonical_evidence": "从人类第一视角视频合成数据用于灵巧人形机器人学习",
+      "llm_tldr_en": "AgenticFocus converts human FPV videos into robot-trainable demonstrations for dexterous manipulation.",
+      "llm_tldr_cn": "AgenticFocus 将人类第一视角视频转换为可用于训练灵巧操作的机器人演示数据。",
+      "llm_tldr": "AgenticFocus 将人类第一视角视频转换为可用于训练灵巧操作的机器人演示数据。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09190v1",
+      "source": "arxiv",
+      "title": "TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation",
+      "abstract": "Tactile feedback is fundamental to Hand-Object Interaction (HOI), governing contact formation, force regulation, and stable manipulation, making it essential for achieving true human-like dexterous manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily rely on kinematic trajectories, resulting in motion imitation without physically grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided benchmark specifically designed to move dexterous manipulation beyond kinematic mimicry toward contact-level human-likeness. TactiDex provides a comprehensive dataset that elegantly aligns whole-hand tactile signals with multi-granularity kinematic and object states, coupled with standardized evaluation metrics. Building upon this data paradigm, we propose a tactile-driven transfer framework that effectively translates human demonstrations into physically plausible robotic execution. We introduce TactiSkill, a framework built upon a novel tri-component tactile reward that innovatively uses tactile signals as structured supervision. This reward unifies guidance, human-like alignment, and contact constraints into a single objective. Through comprehensive experiments on both single and bimanual tasks, we demonstrate that TactiSkill achieves superior performance in manipulation success and physical realism. This work lays a crucial foundation for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/.",
+      "authors": [
+        "Suting Ni",
+        "Hanbing Zhang",
+        "Zhenyu Wei",
+        "Guo Chen",
+        "Chixuan Zhang",
+        "Ye Shi",
+        "Jingya Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T08:32:19+00:00",
+      "link": "https://arxiv.org/pdf/2607.09190v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "real-world tactile-guided benchmark for human-like dexterous manipulation with comprehensive dataset",
+      "llm_evidence_cn": "具有全面数据集的类人灵巧操作真实世界触觉引导基准",
+      "llm_evidence": "具有全面数据集的类人灵巧操作真实世界触觉引导基准",
+      "canonical_evidence": "具有全面数据集的类人灵巧操作真实世界触觉引导基准",
+      "llm_tldr_en": "TactiDex is a tactile-guided benchmark for dexterous manipulation aligning tactile and kinematic data.",
+      "llm_tldr_cn": "TactiDex是一个用于灵巧操作的触觉引导基准，对齐了触觉和运动学数据。",
+      "llm_tldr": "TactiDex是一个用于灵巧操作的触觉引导基准，对齐了触觉和运动学数据。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.09519v1",
+      "source": "arxiv",
+      "title": "DemoBridge: A Simulation-in-the-Loop Toolkit for Single-View Human Demonstration Retargeting",
+      "abstract": "We present DemoBridge, an toolkit that turns a single-view RGB stereo recording of a human hand demonstration into an executable, physics-validated robot-arm trajectory. Retargeting across the embodiment gap is hard. A robot arm reaches a target with a long, articulated body whose links carry far more collision volume than a hand. Solving inverse kinematics for the mapped end-effector pose often yields no collision-free solution, and a trajectory imposes this at every waypoint. A single view adds noise, leaving the demonstrated reference inaccurate. At the core of DemoBridge is a single collision-aware planner. It optimizes the whole joint trajectory at once, reasoning jointly over alternative grasp poses, whole-arm and grasped-object collision, and fidelity to the demonstrated path. A physics simulator runs in the loop. It validates each phase as it is produced and backtracks on failure, so a demonstration that cannot be reproduced as given is re-planned rather than discarded. The resulting action sequence is dynamically stable and faithful to the demonstrated manipulation. It also doubles as a ready-to-use simulation rollout for policy learning. Grasp timing is inferred automatically, and the perception backends, robot, and pipeline stages are swappable from configuration. We evaluate whole-pipeline retargeting on three real-demonstration tasks and the planner on a controlled synthetic benchmark. Our code is available at https://gitlab.kuleuven.be/u0123974/demo-bridge/ .",
+      "authors": [
+        "Zehao Wang",
+        "Fabien Despinoy",
+        "Sergey Zakharov",
+        "Tinne Tuytelaars",
+        "Rahaf Aljundi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T15:31:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.09519v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "retargeting human hand demonstrations from single-view RGB recordings into robot trajectories",
+      "llm_evidence_cn": "将单视图RGB记录的人手演示重定向为机器人轨迹",
+      "llm_evidence": "将单视图RGB记录的人手演示重定向为机器人轨迹",
+      "canonical_evidence": "将单视图RGB记录的人手演示重定向为机器人轨迹",
+      "llm_tldr_en": "DemoBridge converts single-view human hand videos into physics-validated robot trajectories.",
+      "llm_tldr_cn": "DemoBridge将单视图人手视频转换为经过物理验证的机器人轨迹。",
+      "llm_tldr": "DemoBridge将单视图人手视频转换为经过物理验证的机器人轨迹。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.06988v2",
+      "source": "arxiv",
+      "title": "WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time",
+      "abstract": "Steering robot foundation models (RFMs) toward new task variants or user-preferred behaviors remains challenging, often requiring additional robot demonstrations, task-specific fine-tuning, or long-context conditioning. We present WAM-TTT, a test-time training framework for steering world action models from raw human videos. Rather than treating human videos as trajectories to imitate, WAM-TTT absorbs them into a lightweight adaptive memory inside a frozen WAM through self-supervised video prediction. To make this memory useful for control, we introduce a meta-training stage that aligns human demonstrations with robot behaviors using paired human-robot data and a key--value memory reconstruction objective. At test time, only unlabeled human videos are required to adapt the memory, while the pretrained WAM remains frozen. This enables efficient and reusable steering without robot actions, human-side annotations, or task-specific fine-tuning, while preserving the generalization ability of the foundation model. Extensive experiments show that WAM-TTT consistently outperforms in-context human-video conditioning baselines across diverse manipulation tasks and generalization settings.",
+      "authors": [
+        "Yusen Feng",
+        "Bingchen Han",
+        "Jiangran Lyu",
+        "Kai Liu",
+        "Yixin Zheng",
+        "Yuxuan Wan",
+        "Weiheng Liu",
+        "Sun Han",
+        "Ruiqin Li",
+        "Yulong Zhang",
+        "Fangfu Liu",
+        "Xuesong Shi",
+        "Libin Liu",
+        "Yizhou Wang",
+        "Zhizheng Zhang",
+        "He Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-08T04:23:22+00:00",
+      "link": "https://arxiv.org/pdf/2607.06988v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "steering world action models from raw human videos",
+      "llm_evidence_cn": "通过原始人类视频引导世界动作模型",
+      "llm_evidence": "通过原始人类视频引导世界动作模型",
+      "canonical_evidence": "通过原始人类视频引导世界动作模型",
+      "llm_tldr_en": "WAM-TTT uses human videos to steer robot world models via test-time training and memory reconstruction.",
+      "llm_tldr_cn": "WAM-TTT通过测试时训练和记忆重构，利用人类视频引导机器人世界模型。",
+      "llm_tldr": "WAM-TTT通过测试时训练和记忆重构，利用人类视频引导机器人世界模型。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.07076v1",
+      "source": "arxiv",
+      "title": "PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation",
+      "abstract": "Imitation learning has enabled remarkable progress in robotic manipulation, especially with diffusion and flow-based policies that generate complex visuomotor behaviors directly from demonstrations. Yet, despite their strong performance, these policies often fail to generalize across tasks and environments. A key reason is that existing policies tend to imitate superficial action correlations rather than the underlying intent. Inspired by the compositional structure of human behaviors, we propose PriGo, a primitive-guided test-time adaptive framework for robust robotic manipulation. PriGo introduces PANet, a lightweight primitive prediction module that infers primitive distributions directly from observations. We further propose a differentiable primitive guidance mechanism that refines generated actions during inference, steering trajectories toward semantically consistent behaviors. Unlike prior primitive-conditioned approaches, PriGo operates entirely at test time and can be seamlessly integrated into pretrained diffusion and flow policies without retraining. Extensive experiments on LIBERO, CALVIN, SIMPLER, and real-world robotic tasks demonstrate that PriGo consistently improves robustness, long-horizon execution, and generalization ability across both diffusion and flow-based policies.",
+      "authors": [
+        "Zezeng Li",
+        "Enda Xiang",
+        "Thuy Tran",
+        "Di Huang",
+        "Momath Thiam",
+        "Liming Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-08T07:08:11+00:00",
+      "link": "https://arxiv.org/pdf/2607.07076v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "test-time adaptive framework for robust robotic manipulation",
+      "llm_evidence_cn": "用于鲁棒机器人操作的测试时自适应框架",
+      "llm_evidence": "用于鲁棒机器人操作的测试时自适应框架",
+      "canonical_evidence": "用于鲁棒机器人操作的测试时自适应框架",
+      "llm_tldr_en": "PriGo introduces primitive guidance to diffusion policies to improve generalization in robotic manipulation.",
+      "llm_tldr_cn": "PriGo为扩散策略引入基元引导，以提高机器人操作中的泛化能力。",
+      "llm_tldr": "PriGo为扩散策略引入基元引导，以提高机器人操作中的泛化能力。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.09365v1",
+      "source": "arxiv",
+      "title": "PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation",
+      "abstract": "Video-based manipulation provides object-centric motion priors from human demonstrations, generated videos, or RGB-D observations, but such priors are typically embodiment-agnostic and cannot be directly executed by a specific robot. This paper presents \\textbf{PhysV2A}, a reachability-gated and semantic-mask-constrained feasibility-completion framework for converting video-derived 6D object motion into robot-executable manipulation trajectories. The key idea is to treat grasp feasibility as trajectory-conditioned rather than local: each RGB-D-generated 6-DoF grasp candidate is rigidly coupled with the recovered object motion to form a grasp-conditioned TCP trajectory hypothesis. PhysV2A then performs hierarchical reachability-gated selection, where infeasible grasp--trajectory pairs are rejected by robot-centric kinematic checks and surviving candidates are ranked by downstream execution suitability. For the selected reachable trajectory, a VLM-assisted and rule-validated S-Mask identifies task-critical and relaxable Cartesian components, enabling semantic-mask-constrained manipulability refinement through redundancy-first optimization and bounded Cartesian relaxation. Real-robot experiments on four tabletop manipulation tasks show that PhysV2A improves task success over representative video-prior and IK-only baselines, reduces kinematic-feasibility failures, and produces better-conditioned trajectories with bounded semantic deviations.",
+      "authors": [
+        "Haohui Huang",
+        "Junda Duan",
+        "Tao Teng",
+        "Chenguang Yang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T12:43:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.09365v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "converting video-derived object motion from human demonstrations into robot trajectories",
+      "llm_evidence_cn": "将人类演示视频中的物体运动转换为机器人轨迹",
+      "llm_evidence": "将人类演示视频中的物体运动转换为机器人轨迹",
+      "canonical_evidence": "将人类演示视频中的物体运动转换为机器人轨迹",
+      "llm_tldr_en": "PhysV2A converts video-derived object motion into feasible robot manipulation trajectories.",
+      "llm_tldr_cn": "PhysV2A将视频衍生的物体运动转换为可行的机器人操作轨迹。",
+      "llm_tldr": "PhysV2A将视频衍生的物体运动转换为可行的机器人操作轨迹。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.09218v1",
+      "source": "arxiv",
+      "title": "Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation",
+      "abstract": "Whole-arm manipulation involves direct contact with the environment while the robot completes a task by distributing contact across multiple links as contacts form, slide, and break. This setting breaks common implicit assumptions in many learning-based manipulation pipelines: arm configuration tightly couples motion and contact forces, contact state is partially observed under occlusion, and purely learned rollouts can become physically inconsistent under distribution shift because many multi-link contact configurations are sparsely represented in the data. To address this, we propose TACTIC (Tactile and Vision Conditioned Contact-Centric Control), a receding-horizon controller for whole-arm manipulation. TACTIC uses a contact-centric hybrid predictive model that combines RGB-D, distributed tactile sensing, and a compact 2D proximity representation. The model couples a learned, action-conditioned latent dynamics model with analytical kinematics through contact Jacobians, enabling rollouts of future contact configurations and interaction forces. TACTIC integrates these rollouts into a sampling-based MPC planner with contact-aware action sampling: contact Jacobian-based projections steer sampled action sequences toward force-modulating directions, and objectives defined over predicted proximity and interaction forces trade task progress against whole-arm force regulation. We evaluate TACTIC in simulation against state-of-the-art model-based and model-free methods, and perform ablations that isolate the contribution of each design choice. TACTIC consistently outperforms other methods. We further demonstrate real-world performance on a robot with distributed tactile sensing across three whole-arm manipulation tasks that require multi-contact trajectories: turning over and repositioning a manikin, and goal-reaching in a 3D dynamic maze. Website: https://emprise.cs.cornell.edu/tactic",
+      "authors": [
+        "Rishabh Madan",
+        "Angchen Xie",
+        "Samantha Saak",
+        "Andres Blanco",
+        "Dohyeok Lee",
+        "Sarah Grace Brown",
+        "Yunting Yan",
+        "Mark Zolotas",
+        "Jose Barreiros",
+        "Tapomayukh Bhattacharjee"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-10T09:08:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.09218v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "tactile and vision conditioned control for whole-arm manipulation",
+      "llm_evidence_cn": "触觉和视觉调节的全臂操作控制",
+      "llm_evidence": "触觉和视觉调节的全臂操作控制",
+      "canonical_evidence": "触觉和视觉调节的全臂操作控制",
+      "llm_tldr_en": "TACTIC is a contact-centric controller for whole-arm manipulation using tactile and visual feedback.",
+      "llm_tldr_cn": "TACTIC是一种利用触觉和视觉反馈进行全臂操作的以接触为中心的控制器。",
+      "llm_tldr": "TACTIC是一种利用触觉和视觉反馈进行全臂操作的以接触为中心的控制器。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.07129v1",
+      "source": "arxiv",
+      "title": "Compositional Motion Generation from Demonstration with Object-Centric Neural Fields",
+      "abstract": "Compositionality, by organizing complex behavior as combinations of simpler elements, enables robot learning that is scalable and data efficient. Leveraging this principle, we propose a generative learning-from-demonstration framework that enables compositional modeling of robotic behavior by connecting perception and motion through shared object-level representations. We render scenes from object-centric neural representations that integrate canonical neural fields with latent-conditioned deformations, capturing positional and geometric variations in a smooth, consistent, and interpretable way. For motion generation, a temporal mixture-of-experts (MoE) employs a gating mechanism to combine object-conditioned movement primitives over time, producing complete trajectories. This spatial-temporal compositionality maintains the data efficiency of movement primitives while grounding motion in visual structure, enabling systematic generalization across diverse scene configurations. In simulation, long-horizon manipulation tasks are successfully completed using the proposed model, which requires significantly less training data than other image-based baselines. Real-world experiments further demonstrate the method's robustness to noise, its ability to generalize at the category level through language-based segmentation models, and its capacity to operate directly on 3D scene representations.",
+      "authors": [
+        "Ahmet Ercan Tekden",
+        "Yasemin Bekiroglu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-08T08:20:24+00:00",
+      "link": "https://arxiv.org/pdf/2607.07129v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "compositional modeling of robotic behavior from demonstration",
+      "llm_evidence_cn": "通过演示对机器人行为进行组合建模",
+      "llm_evidence": "通过演示对机器人行为进行组合建模",
+      "canonical_evidence": "通过演示对机器人行为进行组合建模",
+      "llm_tldr_en": "A framework for compositional motion generation using object-centric neural fields and movement primitives.",
+      "llm_tldr_cn": "一种利用以物体为中心的神经场和运动基元进行组合运动生成的框架。",
+      "llm_tldr": "一种利用以物体为中心的神经场和运动基元进行组合运动生成的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.08575v2",
+      "source": "arxiv",
+      "title": "FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation",
+      "abstract": "We present FabriVLA, a lightweight Vision-Language-Action model for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching action head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context. The model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head. On the Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate of 90.0%, demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on multi billion parameter VLA backbones.",
+      "authors": [
+        "Shiyuan Yang",
+        "Borong Zhang",
+        "Jizheng Zhang",
+        "Zhijia Tao",
+        "Junfei Guo",
+        "Donglai Ran",
+        "Xu Bian",
+        "Qingbiao Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T15:06:43+00:00",
+      "link": "https://arxiv.org/pdf/2607.08575v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-language-action model for precise multi-task manipulation on Meta-World benchmark",
+      "llm_evidence_cn": "用于Meta-World基准上精确多任务操作的视觉-语言-动作模型",
+      "llm_evidence": "用于Meta-World基准上精确多任务操作的视觉-语言-动作模型",
+      "canonical_evidence": "用于Meta-World基准上精确多任务操作的视觉-语言-动作模型",
+      "llm_tldr_en": "FabriVLA is a lightweight VLA model achieving high success rates in multi-task manipulation.",
+      "llm_tldr_cn": "FabriVLA是一种轻量级VLA模型，在多任务操作中实现了高成功率。",
+      "llm_tldr": "FabriVLA是一种轻量级VLA模型，在多任务操作中实现了高成功率。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.09515v1",
+      "source": "arxiv",
+      "title": "One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps",
+      "abstract": "Robotic manipulation tasks often require simultaneous reasoning over motion and contact forces, yet most Learning from Demonstration (LfD) methods model only spatial trajectories and neglect force interactions with the environment. This limitation reduces robustness and can lead to unsafe or inconsistent task reproduction in force-constrained settings. We propose a novel one-shot multimodal LfD framework for the segmentation, encoding, and reproduction of force-inclusive demonstrations. First, we introduce a multimodal probabilistic segmentation method that adaptively weighs spatial and force modalities over time, enabling the automatic extraction of force-aware motion primitives. Second, we extend the elastic maps representation to incorporate external force constraints during skill encoding and formulate a convex optimization procedure for learning force-consistent trajectory models. The resulting skills reproduce both motion and contact characteristics from a single demonstration while promoting safer execution by accounting for demonstrated force profiles. We validate our approach on five real-world manipulation tasks across two distinct force-sensing configurations: wrist force sensing on a UR5e with a Robotiq 2f-85 gripper and finger force sensing on a Kinova Gen3 with an Openhand Model O gripper. Experimental results demonstrate robust multimodal segmentation, accurate force-aware reproduction, and cross-platform generality.",
+      "authors": [
+        "Brendan Hertel",
+        "Jonathan Spanos",
+        "Navya Garg",
+        "Reza Azadeh"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T15:27:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.09515v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "robotic manipulation tasks requiring motion and contact forces",
+      "llm_evidence_cn": "需要运动和接触力的机器人操作任务",
+      "llm_evidence": "需要运动和接触力的机器人操作任务",
+      "canonical_evidence": "需要运动和接触力的机器人操作任务",
+      "llm_tldr_en": "A one-shot multimodal LfD framework that integrates force and motion for robust robotic manipulation.",
+      "llm_tldr_cn": "一种单样本多模态演示学习框架，整合了力和运动以实现鲁棒的机器人操作。",
+      "llm_tldr": "一种单样本多模态演示学习框架，整合了力和运动以实现鲁棒的机器人操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

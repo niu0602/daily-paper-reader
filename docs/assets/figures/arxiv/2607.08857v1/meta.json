@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.08857v1/fig-001.webp",
+      "caption": "Figure 2: Human-to-humanoid dataset conversion in AgenticFocus: human FPV manipulation, object-centric representation, and humanoid mixed-reality rendering.",
+      "page": 2,
+      "index": 1,
+      "width": 464,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08857v1/fig-002.webp",
+      "caption": "Figure 3: Mean 3D position error for trajectory reconstruction. Lower values indicate better agreement with the ground-truth trajectory. Error bars show the 95% confidence interval.",
+      "page": 3,
+      "index": 2,
+      "width": 444,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2607.08857v1/fig-003.webp",
+      "caption": "Figure 4: SPARC-based trajectory smoothness comparison across Masquerade, Do as I Do, and AgenticFocus.",
+      "page": 4,
+      "index": 3,
+      "width": 502,
+      "height": 620
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.09515v1/fig-001.webp",
+      "caption": "Fig. 1: Human demonstrations can sometimes include excessive forces that should not be replicated. Our force-constrained LfD framework avoids these forces resulting in more accurate and safer reproductions.",
+      "page": 1,
+      "index": 1,
+      "width": 506,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09515v1/fig-002.webp",
+      "caption": "Fig. 4: Several tasks performed using a UR5e manipulator. In each task type, a demonstration is given, and a reproduction using forceconstrained LfD is found. The reproductions successfully complete the task while avoiding unnecessary forces.",
+      "page": 6,
+      "index": 2,
+      "width": 1002,
+      "height": 471
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09515v1/fig-003.webp",
+      "caption": "Fig. 6: Comparison of forces between a demonstration of a pegin-hole task and reproductions using force control and our method. For quantitative results see Table. IV.",
+      "page": 7,
+      "index": 3,
+      "width": 506,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09515v1/fig-004.webp",
+      "caption": "Fig. 3: (a-b) Example of picking up a plate by sliding it against a wall. Results for position-only segmentation (c), uniform multimodal segmentation (d), and multimodal segmentation with custom weights (e). Each colored portion of the trajectories in (c), (d), and (e) represents a segment. The custom weights find a more intuitive segmentation of the motion, with clear segments for the approach, slide, and pick movements. Both (c) and (d) segment the approach movement into two sections, whereas (e) correctly keeps this movement whole.",
+      "page": 5,
+      "index": 4,
+      "width": 506,
+      "height": 288
+    }
+  ]
+}

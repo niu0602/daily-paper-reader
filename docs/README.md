@@ -6,47 +6,53 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-12
-- 运行时间：2026-07-12 20:03:09 UTC
+- 最新运行日期：2026-07-13
+- 运行时间：2026-07-13 20:54:32 UTC
 - 运行状态：成功
-- 本次总论文数：8
-- 精读区：0
-- 速读区：8
+- 本次总论文数：10
+- 精读区：3
+- 速读区：7
 
 ### 今日简报（AI）
-今日速读 8 篇机器人与具身智能论文，重点覆盖双臂协作回收、工具使用泛化与 3D 动力学感知操作。  
-最值得关注的是 ROBOCYCLE 的自主双臂回收协同，以及 FORGE、Lift3D-VLA 对“工具泛化 + 3D 操作理解”的推进，显示机器人正从固定流程走向更通用操作能力。  
-下一步建议优先跟进具身智能里的“工具使用”和“3D 感知操作”方向，这两类能力最可能率先落地到真实工业与家庭场景。
-- 详情：[/202607/12/README](/202607/12/README)
+- 今日共生成 10 篇推荐（精读 3 篇，速读 7 篇）
+- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation》（10.0/10）
+- 速读：《WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time》（7.5/10）, 《PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation》（7.0/10）, 《PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation》（6.5/10）
+- 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
+- 详情：[/202607/13/README](/202607/13/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/13/2607.08857v1-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
+   标签：评分：10.0/10、query:dexop
+   evidence：从人类第一视角视频合成数据用于灵巧人形机器人学习
+2. [TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation](/202607/13/2607.09190v1-tactidex-a-real-world-tactile-guided-benchmark-for-human-like-dexterous-manipulation)  
+   标签：评分：10.0/10、query:dexop
+   evidence：具有全面数据集的类人灵巧操作真实世界触觉引导基准
+3. [DemoBridge: A Simulation-in-the-Loop Toolkit for Single-View Human Demonstration Retargeting](/202607/13/2607.09519v1-demobridge-a-simulation-in-the-loop-toolkit-for-single-view-human-demonstration-retargeting)  
+   标签：评分：8.0/10、query:dexop
+   evidence：将单视图RGB记录的人手演示重定向为机器人轨迹
 
 ### 速读区论文标签
-1. [ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications](/202607/12/2607.03616v1-robocycle-autonomous-dual-arm-robotic-manipulation-and-coordination-for-recycling-applications)  
+1. [WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](/202607/13/2607.06988v2-wam-ttt-steering-world-action-models-by-watching-human-play-at-test-time)  
+   标签：评分：7.5/10、query:dexop
+   evidence：通过原始人类视频引导世界动作模型
+2. [PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation](/202607/13/2607.09365v1-physv2a-reachability-gated-and-semantic-mask-constrained-feasibility-completion-for-video-to-robot-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于回收的双手臂机器人操作
-2. [FORGE: Towards Functional Tool-Use Generalization via Keypoint Trajectory Reasoning](/202607/12/2607.05780v1-forge-towards-functional-tool-use-generalization-via-keypoint-trajectory-reasoning)  
-   标签：评分：7.0/10、query:dexop
-   evidence：利用人类视频提示实现功能性工具使用泛化
-3. [Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation](/202607/12/2607.06564v1-lift3d-vla-lifting-vla-models-to-3d-geometry-and-dynamics-aware-manipulation)  
-   标签：评分：7.0/10、query:dexop
-   evidence：用于3D几何和动力学感知机器人操作的VLA框架
-4. [Deform360: A Massive Multi-view Visuotactile Dataset for Deformable World Models](/202607/12/2607.05390v1-deform360-a-massive-multi-view-visuotactile-dataset-for-deformable-world-models)  
+   evidence：将人类演示视频中的物体运动转换为机器人轨迹
+3. [PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation](/202607/13/2607.07076v1-prigo-test-time-primitive-guidance-to-diffusion-and-flow-policies-for-adaptive-robotic-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于机器人操作的视触觉数据集
-5. [SIEVE: Structure-Aware Data Selection for Imitation Learning with VLA Models](/202607/12/2607.06442v1-sieve-structure-aware-data-selection-for-imitation-learning-with-vla-models)  
+   evidence：用于鲁棒机器人操作的测试时自适应框架
+4. [Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation](/202607/13/2607.09218v1-tactile-and-vision-conditioned-contact-centric-control-for-whole-arm-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：针对机器人模仿学习中VLA模型的结构感知数据选择
-6. [Geometry-Aware Motion Latents for Learning Robust Manipulation Policies](/202607/12/2607.04714v1-geometry-aware-motion-latents-for-learning-robust-manipulation-policies)  
+   evidence：触觉和视觉调节的全臂操作控制
+5. [Compositional Motion Generation from Demonstration with Object-Centric Neural Fields](/202607/13/2607.07129v1-compositional-motion-generation-from-demonstration-with-object-centric-neural-fields)  
    标签：评分：6.0/10、query:dexop
-   evidence：通过预测点云演化学习鲁棒的操作策略
-7. [Ego-Human Motion Prediction with 3D-Aware LLM](/202607/12/2607.07001v1-ego-human-motion-prediction-with-3d-aware-llm)  
+   evidence：通过演示对机器人行为进行组合建模
+6. [FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation](/202607/13/2607.08575v2-fabrivla-a-lightweight-vision-language-action-model-for-precise-multi-task-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：从第一视角预测人体运动
-8. [ContactMimic: Humanoid Object Interaction via Contact Control](/202607/12/2607.08742v1-contactmimic-humanoid-object-interaction-via-contact-control)  
+   evidence：用于Meta-World基准上精确多任务操作的视觉-语言-动作模型
+7. [One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps](/202607/13/2607.09515v1-one-shot-multimodal-learning-from-demonstration-with-force-constrained-elastic-maps)  
    标签：评分：6.0/10、query:dexop
-   evidence：通过接触控制和关键点追踪实现类人对象交互
+   evidence：需要运动和接触力的机器人操作任务
 
 
 <div class="dpr-home-promo-card">

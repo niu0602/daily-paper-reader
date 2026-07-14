@@ -6,53 +6,71 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-13
-- 运行时间：2026-07-13 20:54:32 UTC
+- 最新运行日期：2026-07-14
+- 运行时间：2026-07-14 21:31:41 UTC
 - 运行状态：成功
-- 本次总论文数：10
-- 精读区：3
-- 速读区：7
+- 本次总论文数：16
+- 精读区：6
+- 速读区：10
 
 ### 今日简报（AI）
-- 今日共生成 10 篇推荐（精读 3 篇，速读 7 篇）
-- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation》（10.0/10）
-- 速读：《WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time》（7.5/10）, 《PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation》（7.0/10）, 《PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation》（6.5/10）
+- 今日共生成 16 篇推荐（精读 6 篇，速读 10 篇）
+- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）
+- 速读：《Pix2Act: Image-Space Manipulation Policies with Equivariant Augmentation》（7.5/10）, 《More Structure, Not More Capacity: Object-Centric Representations for Visuomotor Imitation Learning》（7.0/10）, 《Action Map Policy: Learning 3D Closed-loop Manipulation via Pixel Classification》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/13/README](/202607/13/README)
+- 详情：[/202607/14/README](/202607/14/README)
 
 ### 精读区论文标签
-1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/13/2607.08857v1-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
+1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/14/2607.08857v1-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
    标签：评分：10.0/10、query:dexop
    evidence：从人类第一视角视频合成数据用于灵巧人形机器人学习
-2. [TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation](/202607/13/2607.09190v1-tactidex-a-real-world-tactile-guided-benchmark-for-human-like-dexterous-manipulation)  
+2. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/14/2607.08857v2-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
    标签：评分：10.0/10、query:dexop
-   evidence：具有全面数据集的类人灵巧操作真实世界触觉引导基准
-3. [DemoBridge: A Simulation-in-the-Loop Toolkit for Single-View Human Demonstration Retargeting](/202607/13/2607.09519v1-demobridge-a-simulation-in-the-loop-toolkit-for-single-view-human-demonstration-retargeting)  
+   evidence：从人类第一视角视频合成数据用于灵巧类人学习
+3. [RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation](/202607/14/2607.06558v2-rynnworld-teleop-an-action-conditioned-world-model-for-digital-teleoperation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：为数字遥操作合成高保真第一视角视频
+4. [Towards Human-level Dexterous Teleoperation](/202607/14/2607.11481v1-towards-human-level-dexterous-teleoperation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：人类水平的灵巧遥操作和手内操作的接触执行
+5. [A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation](/202607/14/2607.11874v1-a-minimalist-retargeting-guided-reinforcement-learning-recipe-for-dexterous-manipulation)  
+   标签：评分：8.5/10、query:dexop
+   evidence：将人类手部动作重定向到机器人以进行灵巧操作学习
+6. [GraspGraphNet: Graph-Structured Multi-Embodiment Dexterous Grasp Generation](/202607/14/2607.11031v1-graspgraphnet-graph-structured-multi-embodiment-dexterous-grasp-generation)  
    标签：评分：8.0/10、query:dexop
-   evidence：将单视图RGB记录的人手演示重定向为机器人轨迹
+   evidence：图结构的跨实体灵巧抓取生成
 
 ### 速读区论文标签
-1. [WAM-TTT: Steering World-Action Models by Watching Human Play at Test Time](/202607/13/2607.06988v2-wam-ttt-steering-world-action-models-by-watching-human-play-at-test-time)  
+1. [Pix2Act: Image-Space Manipulation Policies with Equivariant Augmentation](/202607/14/2607.11167v1-pix2act-image-space-manipulation-policies-with-equivariant-augmentation)  
    标签：评分：7.5/10、query:dexop
-   evidence：通过原始人类视频引导世界动作模型
-2. [PhysV2A: Reachability-Gated and Semantic-Mask-Constrained Feasibility Completion for Video-to-Robot Manipulation](/202607/13/2607.09365v1-physv2a-reachability-gated-and-semantic-mask-constrained-feasibility-completion-for-video-to-robot-manipulation)  
+   evidence：使用图像空间轨迹进行复杂3D操作策略的模仿学习
+2. [More Structure, Not More Capacity: Object-Centric Representations for Visuomotor Imitation Learning](/202607/14/2607.09825v1-more-structure-not-more-capacity-object-centric-representations-for-visuomotor-imitation-learning)  
    标签：评分：7.0/10、query:dexop
-   evidence：将人类演示视频中的物体运动转换为机器人轨迹
-3. [PriGo: Test-Time Primitive Guidance to Diffusion and Flow Policies for Adaptive Robotic Manipulation](/202607/13/2607.07076v1-prigo-test-time-primitive-guidance-to-diffusion-and-flow-policies-for-adaptive-robotic-manipulation)  
+   evidence：用于操作任务中视觉运动模仿学习的以物体为中心的表示
+3. [Action Map Policy: Learning 3D Closed-loop Manipulation via Pixel Classification](/202607/14/2607.10706v1-action-map-policy-learning-3d-closed-loop-manipulation-via-pixel-classification)  
+   标签：评分：7.0/10、query:dexop
+   evidence：将3D闭环操作策略学习建模为图像空间中的像素分类
+4. [SegDiff: Segmented Trajectory Diffusion for Consistent and Adaptive Robot Manipulation](/202607/14/2607.11027v1-segdiff-segmented-trajectory-diffusion-for-consistent-and-adaptive-robot-manipulation)  
+   标签：评分：7.0/10、query:dexop
+   evidence：从演示中学习机器人操作技能的模仿学习
+5. [WALA Learning Executable Latent Actions from Action-Labeled Demonstrations and Action-Free Videos](/202607/14/2607.11397v1-wala-learning-executable-latent-actions-from-action-labeled-demonstrations-and-action-free-videos)  
+   标签：评分：7.0/10、query:dexop
+   evidence：从无动作标注的视频中学习机器人策略的潜动作
+6. [EDAR: Learning Environment-Dependent Action Representations for Robotic Manipulation](/202607/14/2607.11427v1-edar-learning-environment-dependent-action-representations-for-robotic-manipulation)  
+   标签：评分：7.0/10、query:dexop
+   evidence：将机器人操作中的动作标记锚定在预期的视觉结果中
+7. [TAC-LOCO: Unified Whole-Body Control for Quadrupedal TACtile-Informed LOCO-Manipulation](/202607/14/2607.10132v1-tac-loco-unified-whole-body-control-for-quadrupedal-tactile-informed-loco-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于鲁棒机器人操作的测试时自适应框架
-4. [Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation](/202607/13/2607.09218v1-tactile-and-vision-conditioned-contact-centric-control-for-whole-arm-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：触觉和视觉调节的全臂操作控制
-5. [Compositional Motion Generation from Demonstration with Object-Centric Neural Fields](/202607/13/2607.07129v1-compositional-motion-generation-from-demonstration-with-object-centric-neural-fields)  
+   evidence：带有触觉反馈的四足机器人运动操作统一全身控制
+8. [CAC-VLA: Context-Gated Action Conditioning for Vision-Language-Action Models](/202607/14/2607.04816v1-cac-vla-context-gated-action-conditioning-for-vision-language-action-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：通过演示对机器人行为进行组合建模
-6. [FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation](/202607/13/2607.08575v2-fabrivla-a-lightweight-vision-language-action-model-for-precise-multi-task-manipulation)  
+   evidence：使用视觉-语言-动作模型的通用机器人操作
+9. [Diagnosing Semantic Handoff Failures in Agent-Orchestrated Vision-Language-Action Skill Composition](/202607/14/2607.06256v1-diagnosing-semantic-handoff-failures-in-agent-orchestrated-vision-language-action-skill-composition)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于Meta-World基准上精确多任务操作的视觉-语言-动作模型
-7. [One-Shot Multimodal Learning from Demonstration with Force-Constrained Elastic Maps](/202607/13/2607.09515v1-one-shot-multimodal-learning-from-demonstration-with-force-constrained-elastic-maps)  
+   evidence：长程家庭任务中的视觉-语言-动作技能组合
+10. [TACTIC: Tactile and Vision Conditioned Contact-Centric Control for Whole-Arm Manipulation](/202607/14/2607.09218v2-tactic-tactile-and-vision-conditioned-contact-centric-control-for-whole-arm-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：需要运动和接触力的机器人操作任务
+   evidence：针对全臂操作的触觉和视觉调节控制
 
 
 <div class="dpr-home-promo-card">

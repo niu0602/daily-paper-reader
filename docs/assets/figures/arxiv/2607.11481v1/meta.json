@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-001.webp",
+      "caption": "Fig. 3: Task descriptions. Seven dexterous tasks across two categories: three reorientation tasks over diverse geometries and four long-horizon tool-use tasks. Each task is decomposed into well-defined stages.",
+      "page": 7,
+      "index": 1,
+      "width": 826,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-002.webp",
+      "caption": "Fig. 5: Training-recipe ablation curves on Hammer. (a) Reward and (b) consecutive subgoals reached vs. environment steps for the full method, without curriculum, and with PPO replacing SAPG.",
+      "page": 14,
+      "index": 2,
+      "width": 814,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-003.webp",
+      "caption": "Fig. 4: Autonomous policy setup and rollout.",
+      "page": 8,
+      "index": 3,
+      "width": 417,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-004.webp",
+      "caption": "Fig. 2: Method overview of TELEDEXTER. Given human hand-object reference motions, we train a cotracking controller via single-stage RL and deploy it zero-shot to real-world dexterous teleoperation.",
+      "page": 4,
+      "index": 4,
+      "width": 826,
+      "height": 368
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-005.webp",
+      "caption": "Fig. 8: Hand–object motion capture setup. (a) The dedicated capture volume equipped with tripod-mounted NOKOV infrared cameras. (b) Two glove configurations: the left glove, used for offline reference-motion collection, has dense markers on the wrist, palm, and all finger joints; the right glove, used for real-time teleoperation, has markers only on the wrist and fingertips.",
+      "page": 19,
+      "index": 5,
+      "width": 826,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-006.webp",
+      "caption": "Fig. 9: Hand–object reference motion visualization. Retargeted motion clips for (a) Cylinder and (b) Cuboid. Each clip shows the source MANO hand and the corresponding retargeted LeapHand and SharpaWave sequences. Coordinate axes indicate the object 6-D pose.",
+      "page": 24,
+      "index": 6,
+      "width": 829,
+      "height": 929
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11481v1/fig-007.webp",
+      "caption": "Fig. 7: Real-world failure cases. Each panel shows a snapshot at the point of failure together with the representative failure mode: (a) interaction perturbation, (b) contact transition jam, (c) tracking stall.",
+      "page": 16,
+      "index": 7,
+      "width": 829,
+      "height": 779
+    }
+  ]
+}

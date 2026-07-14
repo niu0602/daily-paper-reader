@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-001.webp",
+      "caption": "Figure 3 Comparison between sampling from noise inverted from action buffer and from random noise. If there exists a large gap between action buffer and the action sampled from the inverted noise, we discard the action buffer as unusable.",
+      "page": 6,
+      "index": 1,
+      "width": 976,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-002.webp",
+      "caption": "Figure 9 Results on different interpolation length (𝐿) and update factor (𝜂).",
+      "page": 11,
+      "index": 2,
+      "width": 889,
+      "height": 283
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-003.webp",
+      "caption": "Table 11 Detailed Results on RLBench-60",
+      "page": 25,
+      "index": 3,
+      "width": 756,
+      "height": 1131
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-004.webp",
+      "caption": "Table 12 Success Rate (Mean) on 3 RoboMimic Tasks under 30/50/100/200 Demonstrations",
+      "page": 26,
+      "index": 4,
+      "width": 756,
+      "height": 517
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-005.webp",
+      "caption": "Figure 12 Visualization of the complete processes of real-world tasks.",
+      "page": 21,
+      "index": 5,
+      "width": 967,
+      "height": 746
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-006.webp",
+      "caption": "Figure 4 Mode switching in model predictions can lead to undesirable actions (left), whereas sampling from the inverted noise provides a consistent alternative (right).",
+      "page": 7,
+      "index": 6,
+      "width": 1025,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-007.webp",
+      "caption": "Table 1 Success rates (%) on 10 RLBench tasks [19]. Results for ACT, DP, CoA and Octo are taken from [52] and [53]. We also reproduce the results of DP ourselves and report them as DP*. The results of SegDiff are averaged over 3 random seeds.",
+      "page": 7,
+      "index": 7,
+      "width": 722,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-008.webp",
+      "caption": "Table 7 Hyperparameters for SegDiff and DP on RLBench",
+      "page": 22,
+      "index": 8,
+      "width": 475,
+      "height": 528
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-009.webp",
+      "caption": "Table 8 Hyperparameters for SegDiff, DP, and AWE on RoboMimic",
+      "page": 22,
+      "index": 9,
+      "width": 475,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-010.webp",
+      "caption": "Figure 8 Learning curves of SegDiff and Diffusion Policy across 4 tasks on RLBench.",
+      "page": 10,
+      "index": 10,
+      "width": 986,
+      "height": 187
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-011.webp",
+      "caption": "Table 10 Detailed experiment results on RLBench.",
+      "page": 23,
+      "index": 11,
+      "width": 979,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-012.webp",
+      "caption": "Figure 5 Success rate improvement of SegDiff over DP/CoA. Detailed per-task results are provided in the supplementary material.",
+      "page": 8,
+      "index": 12,
+      "width": 974,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-013.webp",
+      "caption": "Figure 6 Success rate on RoboMimic with varying numbers of demonstrations.",
+      "page": 8,
+      "index": 13,
+      "width": 973,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-014.webp",
+      "caption": "Figure 2 Overview of SegDiff. During training, demonstration episodes are segmented by keyposes, and the model learns to predict the complete trajectory from the current state to the next keypose (Segmented Trajectory Modeling). During inference, DDIM inversion [40] generates a prior-informed candidate, allowing Dynamic Temporal Ensembling (DTE) to produce a trajectory that adapts to the current observation while maintaining temporal consistency for execution and buffer update.",
+      "page": 4,
+      "index": 14,
+      "width": 977,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-015.webp",
+      "caption": "Figure 13 Distribution of reconstruction distance on 10 RLBench tasks. 24",
+      "page": 24,
+      "index": 15,
+      "width": 964,
+      "height": 1397
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-016.webp",
+      "caption": "Figure 7 Demonstrations and design of real-world tasks.",
+      "page": 9,
+      "index": 16,
+      "width": 976,
+      "height": 226
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11027v1/fig-017.webp",
+      "caption": "Figure 11 Visualization of the predicted pose trajectory in Segmented Trajectory Modeling (STM). The prediction always targets at the next keypose, ensuring focused modeling of the trajectory toward task-critical points.",
+      "page": 20,
+      "index": 17,
+      "width": 986,
+      "height": 312
+    }
+  ]
+}

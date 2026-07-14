@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.10706v1/fig-001.webp",
+      "caption": "Figure 1: Comparison of different policy-learning frameworks. Regression methods can easily collapse to the mean of multiple modes. Diffusion methods can, in principle, capture multi-modal distributions, but require multiple denoising steps to generate a single sample and sampling-based procedures to recover the full distribution. In contrast, our method supports single-pass inference and captures the full action distribution using a dense map that represents actions geometrically.",
+      "page": 2,
+      "index": 1,
+      "width": 748,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10706v1/fig-002.webp",
+      "caption": "Figure 11: Heatmap prediction visualization on the MAKE-COFFEE task, evaluated at the midpoint of a downward grasp toward the coffee pod. Each row corresponds to one calibrated side view. The columns show the dense prediction process, including the raw decoder output, cross-entropy supervision, spatial softmax, argmax pixel selection, and the final horizon-wide trajectory. Columns (1)–(2) summarize the full 5×12 keypoint-step output of the policy, while Columns (3)–(7) visualize the image-space distribution of a single keypoint.",
+      "page": 14,
+      "index": 2,
+      "width": 773,
+      "height": 659
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10706v1/fig-003.webp",
+      "caption": "Figure 7: Real-world tasks: make-coffee, toast-bread, and steam-egg.",
+      "page": 8,
+      "index": 3,
+      "width": 826,
+      "height": 187
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10706v1/fig-004.webp",
+      "caption": "Figure 2: Architecture of Action Map Policy. The left branches take one in-hand image and two side-view images as input. The center features a multi-view transformer that enables communication between the in-hand features and the side-view context features. The right branch consists of two decoders that generate heatmaps of",
+      "page": 4,
+      "index": 4,
+      "width": 779,
+      "height": 345
+    },
+    {
+      "url": "assets/figures/arxiv/2607.10706v1/fig-005.webp",
+      "caption": "Figure 10: Simulation camera setup for the six MimicGen tasks. The first row shows side-view camera 1, the second row shows side-view camera 2, and the last row shows the in-hand view. All images are rendered at a resolution of 224× 224.",
+      "page": 12,
+      "index": 5,
+      "width": 814,
+      "height": 387
+    }
+  ]
+}

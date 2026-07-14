@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-001.webp",
+      "caption": "Table 1. Comparison on LIBERO. We report success rates (%) on the four LIBERO task suites. Methods are organized by their role in the evaluation: representative VLA systems are provided for context, while controlled comparisons isolate the effect of replacing the action interface with EDAR under the same policy backbone. Avg. denotes the average success rate.",
+      "page": 6,
+      "index": 1,
+      "width": 525,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-002.webp",
+      "caption": "Figure 1. Conceptual comparison. The same action segment can induce different effects under different scene contexts, and should therefore not be represented as a context-invariant representation. Left: trajectory-only action representation collapses these environmentdependent effects into the same latent action. Right: EDAR conditions the action representation on the current scene and grounds it with visual consequences, separating actions according to their context-dependent effects.",
+      "page": 2,
+      "index": 2,
+      "width": 983,
+      "height": 324
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-003.webp",
+      "caption": "Table 2. Comparison on CALVIN ABCD→D. We report the success rate (%) of completing at least k consecutive instructions over 1000 five-instruction chains, and the average completed sequence length. The upper block lists representative baselines for context; for these rows, Avg. Len. is the scalar reported by the original paper and is not recomputed from rounded per-step percentages. The lower block reports our controlled comparisons, where each baseline and EDAR variant share the same training data, schedule, and evaluation protocol. ∗ denotes models with pretraining.",
+      "page": 7,
+      "index": 3,
+      "width": 602,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-004.webp",
+      "caption": "Figure 4. Qualitative results of long-horizon real-world tasks. Key frames for the four long-horizon tasks. Each subfigure shows the progression from start to completion.",
+      "page": 8,
+      "index": 4,
+      "width": 496,
+      "height": 428
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-005.webp",
+      "caption": "Figure 3. Real-world long-horizon manipulation results. We report normalized average score on four real-world tasks: Stack-5, Drawer, Rope, and Flower, together with the average score across tasks.",
+      "page": 8,
+      "index": 5,
+      "width": 921,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11427v1/fig-006.webp",
+      "caption": "Figure 2. Overview of Environment-Dependent Action Representation (EDAR). EDAR encodes the action chunk At, current visual tokens Xt, and learnable register tokens R into continuous latent action tokens Zt. The decoder reconstructs the original action chunk Ât while predicting future visual tokens X̂t+H , forcing the latent action representation to capture both executable control structure and environment-conditioned visual consequences. A shared-attention decoder with specialized FFNact and FFNvis branches handles the heterogeneous action and visual targets.",
+      "page": 4,
+      "index": 6,
+      "width": 952,
+      "height": 366
+    }
+  ]
+}

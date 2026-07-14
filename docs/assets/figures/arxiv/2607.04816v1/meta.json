@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-001.webp",
+      "caption": "Table 1: Comparison on the LIBERO benchmark. All metrics are average success rates (%). The best results are highlighted in bold.",
+      "page": 6,
+      "index": 1,
+      "width": 740,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-002.webp",
+      "caption": "Figure 6: Representative successful and failed real-world executions of π0.5 and CAC-VLA. Top: pick-and-place task. Bottom: block-stacking task.",
+      "page": 15,
+      "index": 2,
+      "width": 660,
+      "height": 522
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-003.webp",
+      "caption": "Figure 5: Phase-level visualization of effective latent-conditioning strength for a representative LIBERO-Long task. The color indicates ∥g ⊙ u∥2/(∥x∥2 + ϵ) across denoising steps and manually annotated manipulation phases. Vertical lines mark phase boundaries.",
+      "page": 14,
+      "index": 3,
+      "width": 819,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-004.webp",
+      "caption": "Figure 4: Effective latent-conditioning strength on LIBERO-Long and LIBERO-Goal. We report ∥g ⊙ u∥2/(∥x∥2 + ϵ) over normalized episode progress. Each curve is first averaged within each task and then averaged over the 10 tasks in the corresponding suite. The shaded region denotes the standard error across tasks.",
+      "page": 13,
+      "index": 4,
+      "width": 654,
+      "height": 423
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-005.webp",
+      "caption": "Figure 3: Visualization of raw context-gate values across flow steps. We report the average gate value for each LIBERO task suite, averaged over expert layers, evaluation episodes, and hidden channels.",
+      "page": 13,
+      "index": 5,
+      "width": 568,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-006.webp",
+      "caption": "Figure 2: Quantitative real-world evaluation on pick-and-place and block-stacking tasks. We report Task Score and Full Success Rate (Full SR) for pick-and-place and Stacking Success Rate (Stacking SR) for block stacking. Each result is computed over 25 trials.",
+      "page": 8,
+      "index": 6,
+      "width": 646,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2607.04816v1/fig-007.webp",
+      "caption": "Table 5: Training hyperparameters used in our main experiments.",
+      "page": 12,
+      "index": 7,
+      "width": 606,
+      "height": 410
+    }
+  ]
+}

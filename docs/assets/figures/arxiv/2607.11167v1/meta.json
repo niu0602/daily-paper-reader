@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-001.webp",
+      "caption": "Figure 1: From left to right: (a) an illustration of our dual in-hand camera setup and the selected keypoints; (b,c) our proposed method consumes stereo images and predicts image actions for these keypoints; independent image rotations result in consistent transformations of the 2D action trajectories; (d) triangulation yields consistent 3D results for both the original and transformed image pairs, as they convey the same contextual information.",
+      "page": 2,
+      "index": 1,
+      "width": 783,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-002.webp",
+      "caption": "Figure 5: Real-world manipulation tasks. The four single-arm tasks evaluated on our UR5 platform.",
+      "page": 8,
+      "index": 2,
+      "width": 826,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-003.webp",
+      "caption": "Figure 8: Real-world robot setup and initial task variations. (a) The UR5 platform with two FLIR Blackfly inhand cameras and one Intel RealSense D455 agent-view camera. (b–e) Representative initial object configurations for two of the four tasks; configurations are randomized within the workspace at the start of each trial.",
+      "page": 17,
+      "index": 3,
+      "width": 827,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-004.webp",
+      "caption": "Figure 9: Agent-view camera perturbations during evaluation. Each row shows five representative agent-view frames captured with the side-view camera randomly perturbed (A small figure embedded in the top right ), for the Plug Flower task (top) and Put in Drawer task (bottom). The in-hand cameras are rigidly mounted to the end-effector and therefore cannot be perturbed independently. Pix2Act remains stable across these viewpoint changes, while the baseline fails to complete the tasks.",
+      "page": 17,
+      "index": 4,
+      "width": 818,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-005.webp",
+      "caption": "Figure 2: Architecture of Diffusion X-Net. (a) Observation Encoding; (b) Action Generation. The left branches of X-Net take two in-hand images and one side-view image as input. The center of X-Net features a multi-view transformer that enables communication between the in-hand features and the side-view context features. The right branches of X-Net regress two sets of continuous keypoints separately from the two in-hand features with SE(2) augmentation. As a result, our model learns an n-equivariant function.",
+      "page": 5,
+      "index": 5,
+      "width": 781,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2607.11167v1/fig-006.webp",
+      "caption": "Figure 7: Predicted trajectory visualization. Predicted image-space keypoint trajectories overlaid on the top and bottom in-hand camera views for two real-world tasks. Trajectories remain consistent across the two views.",
+      "page": 16,
+      "index": 6,
+      "width": 440,
+      "height": 361
+    }
+  ]
+}

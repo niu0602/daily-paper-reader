@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-001.webp",
+      "caption": "Fig. 8. DAG-ROS imitation-learning infrastructure, comprising three subsystems (data collection, real-time control, and inference & deployment) connected by labeled data-flow arrows. Subsystem details and the role of each arrow are described in Section IV.",
+      "page": 6,
+      "index": 1,
+      "width": 500,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-002.webp",
+      "caption": "Fig. 2. Classical vision pipeline used to solve the six-connector harness insertion challenge on NIST ATB4.",
+      "page": 2,
+      "index": 2,
+      "width": 500,
+      "height": 423
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-003.webp",
+      "caption": "Fig. 3. Intermediate representations in the classical vision pipeline. (a) Textured CAD model provided as the reference mesh to FoundationPose. (b) Dense depth map reconstructed from RealSense stereo IR pairs via FoundationStereo. (c, d) Projected 6-DOF bounding boxes produced by FoundationPose, overlaid on detected connectors in the scene.",
+      "page": 3,
+      "index": 3,
+      "width": 515,
+      "height": 388
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-004.webp",
+      "caption": "Fig. 4. IDB Board #1: datacenter cable-management benchmark. Top to bottom: the target application (densely populated fiber rack), the initial benchmark design (aluminum extrusion + 3-D-printed parts, dimensioned), and the final assembly of the board used in this study.",
+      "page": 4,
+      "index": 4,
+      "width": 500,
+      "height": 829
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-005.webp",
+      "caption": "TABLE I CAMERAS AND SENSOR CONFIGURATIONS EVALUATED ON THE IDB BOARD #1 DATACENTER CABLE-CLEANING TASK.",
+      "page": 5,
+      "index": 5,
+      "width": 524,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14021v1/fig-006.webp",
+      "caption": "Fig. 7. The phases of the IDB Board #1 baseline task, captured during a teleoperated demonstration. Each panel shows the scene camera view (left) and the wrist camera view (right), which are used as policy inputs.",
+      "page": 5,
+      "index": 6,
+      "width": 520,
+      "height": 561
+    }
+  ]
+}

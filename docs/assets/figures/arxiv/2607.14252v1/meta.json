@@ -1,0 +1,278 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-001.webp",
+      "caption": "TABLE XXI: Model registry grouped by pipeline role. Total and active parameter counts coincide for dense models; for mixture-of-experts models, active denotes per-token compute.",
+      "page": 43,
+      "index": 1,
+      "width": 877,
+      "height": 440
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-002.webp",
+      "caption": "TABLE IX: MEMORA-Embodied Memory Assessment accuracy (%): per-backbone, per-type panel. All four backbones report under the experience-dependent, memory-grounded EAM-QA view (Appendix L): Gemma-4-31B-it on the full 18-PID panel (N=1,122; mirrors Table III); Qwen3.6-35B-A3B on the 12-PID intersection where all seven conditions are currently materialized (N=1,141); Qwen3.6-27B on the full 18-PID panel (N=1,556); Gemma-4-26B-A4B-it on the full 18-PID panel (N=1,497). ∆consol row: MEMORA minus MEMORA-Episodic. The Parametric (no-memory) row is omitted because the experience-dependent view retains only questions it answers incorrectly (0% by construction); full-benchmark Parametric accuracy and memory-grounded answerability are reported in Table VIII.",
+      "page": 25,
+      "index": 2,
+      "width": 862,
+      "height": 742
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-003.webp",
+      "caption": "Fig. 6: MEMORA memory-bank construction pipeline. The system watches egocentric videos turn by turn, converts each clip into structured observations, updates typed memory online, and then consolidates participant-level routines and preferences for downstream Embodied Memory and Planning evaluations.",
+      "page": 15,
+      "index": 3,
+      "width": 756,
+      "height": 602
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-004.webp",
+      "caption": "Fig. 11: Prompt skeletons for Embodied Memory question generation. All generation prompts append the shared verifiability rules; SPREF, SHABIT, SROUTINE, and ERECALL differ in the evidence pattern they require and the schema fields they emit. Placeholders {P} and {N} are filled per run, and multi-hop variants reuse the same framing with supplied action chains.",
+      "page": 21,
+      "index": 4,
+      "width": 1064,
+      "height": 483
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-005.webp",
+      "caption": "Fig. 18: Excerpt from a real memora ReAct trace for plan_P03_101_019. The trace illustrates routine-first retrieval followed by object grounding before final plan emission.",
+      "page": 30,
+      "index": 5,
+      "width": 530,
+      "height": 697
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-006.webp",
+      "caption": "Fig. 1: MEMORA studies embodied memory as a lifecycle from experience to action. An agent observes continuous egocentric experience, forms typed memory online, and consolidates repeated experience into reusable routines, habits, and preferences. The resulting memory supports experience-grounded reasoning, planning, and qualitative physical robot transfer.",
+      "page": 2,
+      "index": 6,
+      "width": 1051,
+      "height": 384
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-007.webp",
+      "caption": "TABLE II: How MEMORA-Bench connects memory formation to planning use. Each row states the capability being tested, shows a real MEMORA output, and explains why that capability matters for memory-grounded robot planning. Aggregate baseline comparisons are reported in Figure 3.",
+      "page": 7,
+      "index": 7,
+      "width": 1090,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-008.webp",
+      "caption": "TABLE XIX: Axis 1 memory-bank shape on the 14-participant held-out cohort (Qwen2.5-Omni-7B perception fixed). No-edit counts turn-aligned entity observations that would be stored under an append-only policy; MEMORA counts unique entities retained in the edited object_registry. Ratio is No-edit / MEMORA, the per-participant Entity Memory compression factor. A1-14B commits fewer state-history events than CTRL (lower No-edit) while keeping a comparable entity inventory (similar MEMORA).",
+      "page": 39,
+      "index": 8,
+      "width": 690,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-009.webp",
+      "caption": "Fig. 12: Released Embodied Memory items (P06). Left column: SPREF and SROUTINE; right column: SHABIT and ERECALL. Option E (information not available) is appended at evaluation; it is omitted from the stored release JSON.",
+      "page": 22,
+      "index": 9,
+      "width": 1090,
+      "height": 846
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-010.webp",
+      "caption": "TABLE XVI: Object-grounding diagnostic across all completed (backbone, benchmark) cells. For each cell we report the value for the best non-MEMORA baseline (“best base”) and for the best MEMORA variant (over MEMORA, MEMORA-Episodic), and the gap ∆ (MEMORA − best base, positive favours MEMORA). ObjGT-F1 = GT-plan noun F1; GF1 = Grounded F1 (KB ∩ GT). MEMORA does not consistently win on any token-overlap grounding metric; the chunk-based retrieval advantage is robust across metric variants.",
+      "page": 34,
+      "index": 10,
+      "width": 948,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-011.webp",
+      "caption": "Fig. 5: Appendix visual roadmap for MEMORA-Bench. The appendix separates four concepts that are easy to conflate: longitudinal evidence, held-out benchmark tasks, memory-bank construction from video, and memory-conditioned evaluation. Subsequent figures expand the memory-bank construction pipeline (Figure 6), the Embodied Memory benchmark generator (Figure 10), the Planning benchmark generator (Figure 13), and the final retrieval-and-scoring loop (Figure 9).",
+      "page": 14,
+      "index": 11,
+      "width": 910,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-012.webp",
+      "caption": "Fig. 21: Qualitative ablation contrast on two EAM-QA items (Gemma-4-26B-A4B-it answer agent; MEMORA-Episodic memory bank; held-out 14-PID cohort). Both items illustrate the two failure modes inferred from the aggregate numbers in Table XX (Gemma block): (i) the memory-ablation arm (A1-14B) loses the contentful answer because the under-written memory provides insufficient retrievable support, raising E-rate; (ii) the perception-ablation arm (A2-VL7) keeps committing to an A–D option but the answer is grounded in single-segment visual evidence rather than cross-segment audio-aware consolidation, producing a confidently wrong letter.",
+      "page": 42,
+      "index": 12,
+      "width": 1060,
+      "height": 712
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-013.webp",
+      "caption": "Fig. 17: Tool-call distribution on EAM-QA across baselines and MEMORA. Aggregated from 7,068 questions and 17,220 tool calls (4 backbones × four EAM-QA question types: ELOC, EORDER, SPREF, ERECALL). Socratic exposes only a single search (100%); Graph-2D adds time-localised helpers; MEMORA exposes a typed-dispatching search that routes to all four memory categories internally, plus two specialised tools (get_object_history, get_state_at_time). Unlike on planning (Figure 16), QA agents overwhelmingly use the unified dispatcher, reaching Environment Memory and the other typed indices through a single call.",
+      "page": 33,
+      "index": 13,
+      "width": 516,
+      "height": 255
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-014.webp",
+      "caption": "TABLE XVII: Robot-transfer task specification and generated plans. The plans are language-level MEMORA outputs used to drive a fixed rule-based controller.",
+      "page": 35,
+      "index": 14,
+      "width": 1055,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-015.webp",
+      "caption": "Fig. 4: Physical robot demonstration. MEMORA uses memory formed from human egocentric video to generate language-level plans executed by a rule-based Unitree G1 for Prepare Drink and Breakfast. Generated plans are in Appendix XVII; full per-frame traces are in Appendices 19 and 20.",
+      "page": 8,
+      "index": 15,
+      "width": 968,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-016.webp",
+      "caption": "Fig. 3: MEMORA-Planning connects remembered evidence to long-horizon plans and aggregate gains. (a) A real Generalize task queries memory-derived evidence for dirty dishes, drying rack, dish towel, dish soap, and sponge evidence. (b) The raw MEMORA model response produces a 27-step plan; the figure shows a compact excerpt that collects dirty items, grounds tools and places, sequences scrub/rinse/dry operations, and puts items away. (c) On Gemma-4-31B-it, full MEMORA improves out-of-distribution Generalize RGP by +16.4% relative to the strongest non-MEMORA baseline. Cross-backbone and per-axis details are in Appendix M0b.",
+      "page": 8,
+      "index": 16,
+      "width": 972,
+      "height": 654
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-017.webp",
+      "caption": "TABLE I: Typed memory stores in MEMORA. Examples are drawn from a real kitchen recording (participant P09).",
+      "page": 4,
+      "index": 17,
+      "width": 1076,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-018.webp",
+      "caption": "Fig. 19: Task A: Prepare Drink (full trace). The contact sheet shows the human egocentric demonstration and the Unitree G1 execution guided by MEMORA’s memory-grounded language plan and a fixed rule-based controller. This task tests preference and entity grounding: success depends on selecting bottled Coca-Cola over a visually salient Fanta can and the demonstrator’s orange plastic cup among multiple colored cups.",
+      "page": 36,
+      "index": 18,
+      "width": 1076,
+      "height": 1360
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-019.webp",
+      "caption": "TABLE V: Primary memory stores and leakage controls. Leakage control specifies how each store is time-sliced or scoperestricted so evaluation cannot access future or out-of-scope evidence.",
+      "page": 17,
+      "index": 19,
+      "width": 1078,
+      "height": 471
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-020.webp",
+      "caption": "Fig. 9: Memory-conditioned evaluation and scoring loop. The benchmark item and the scoped memory interface are kept separate: benchmark tasks define what should be answered, while memory substrates define what the agent can retrieve before committing to an answer or plan.",
+      "page": 17,
+      "index": 20,
+      "width": 756,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-021.webp",
+      "caption": "TABLE XV: Planning tool-call counts by typed store and configuration. MEMORA-Episodic exposes Entity Memory and Activity Memory tools only; full MEMORA additionally provides get_routine_skill and get_preferences over consolidated Inferred Knowledge. Percentages are normalized within each variant (7,163 vs. 8,331 total calls); tools with <1% usage in both variants are omitted.",
+      "page": 32,
+      "index": 21,
+      "width": 1076,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-022.webp",
+      "caption": "Fig. 16: Per-store contribution of agent tool calls during planning (1,440 tasks = 4 backbones × 2 suites × 18 PIDs × 12 tasks). (a) Under the main MEMORA configuration, every backbone draws on multiple typed stores, but with markedly different mixtures: Gemma4-26B-A4B-it routes 54% of its tool budget to Inferred Knowledge (routines, preferences), while Qwen3.6-27B routes 71% to Entity Memory (object identity). A single-store substrate would penalise at least one backbone. (b) In the MEMORA-Episodic ablation, agents query Entity Memory and Activity Memory only (search_objects, get_object_history, search_activities); those queries are not eliminated — 35% of all calls migrate to Activity Memory episode search, direct evidence that consolidated routines are doing work that episodic activity search alone cannot supplant. Environment Memory is omitted from the figure because spatial information is bound to object records in the planning prompt (every search_objects return ships location attributes), so a separate environment-search tool is not advertised; the EAM-QA agent instead reaches Environment Memory through the unified search interface (Figure 17).",
+      "page": 32,
+      "index": 22,
+      "width": 987,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-023.webp",
+      "caption": "TABLE X: MEMORA-Planning task taxonomy. Categories are assigned by deterministic verb-category thresholds.",
+      "page": 27,
+      "index": 23,
+      "width": 979,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-024.webp",
+      "caption": "Fig. 13: MEMORA-Planning benchmark construction pipeline. The flow converts EPIC action annotations into prospective, experience-grounded planning requests. Unlike the memory-bank construction flow in Figure 6, this figure describes held-out benchmark construction; the memory bank is only read during video scope checking and object enrichment.",
+      "page": 27,
+      "index": 24,
+      "width": 756,
+      "height": 667
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-025.webp",
+      "caption": "TABLE VIII: EAM-QA evaluation views: MEMORA overall accuracy (%) and gap to strongest controlled baseline (SOCRATIC/GRAPH-2D, raw or after MEMORA’s online editing pass; MEMORA-Episodic excluded as it is a MEMORA ablation rather than a baseline). The full-benchmark view reports all EAM-QA questions; the memory-grounded answerability view reports cases where MEMORA selects a content option A–D; the headline view additionally focuses on experience-dependent questions missed by the parametric prior.",
+      "page": 24,
+      "index": 25,
+      "width": 1010,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-026.webp",
+      "caption": "TABLE III: MEMORA-Embodied Memory Assessment per-type accuracy (%) on Gemma-4-31B-it (N=1,122 EAM-QA questions under the experience-dependent, memory-grounded evaluation subset over the full 18 participants). SPREF/SHABIT/SROUTINE aggregate evidence across sessions; ERECALL is within a single video. ∆ is MEMORA minus MEMORA-Episodic; bold marks the best per column. Parametric is omitted because this subset focuses on questions it answered incorrectly; see Appendix L. Per-backbone reproductions are in Appendix Table IX.",
+      "page": 9,
+      "index": 26,
+      "width": 764,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-027.webp",
+      "caption": "Fig. 20: Task B: Breakfast (full trace). The contact sheet shows the human egocentric demonstration and the Unitree G1 execution guided by MEMORA’s memory-grounded language plan and a fixed rule-based controller. This task adds ordered procedural execution: success depends on selecting the yellow bowl, Cinnamon Tea, yellow spoon, and bread in the remembered breakfast sequence.",
+      "page": 37,
+      "index": 27,
+      "width": 1076,
+      "height": 1348
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-028.webp",
+      "caption": "Fig. 15: Cross-backbone RGP summary (companion to Figure 3). Grey = best non-MEMORA baseline; orange = best MEMORA variant; annotations give ∆ RGP and relative gain.",
+      "page": 31,
+      "index": 28,
+      "width": 968,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-029.webp",
+      "caption": "TABLE XIV: Per-condition per-axis Planning detail on Qwen3.6-35B-A3B. (proc.) indicates a baseline substrate rebuilt after MEMORA’s online editing pass. Bold: best per column within each benchmark block.",
+      "page": 31,
+      "index": 29,
+      "width": 860,
+      "height": 236
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-030.webp",
+      "caption": "TABLE VII: Models and decoding settings for Embodied Memory benchmark generation. For gpt-5.5, listed T values document intent; the API uses its built-in sampling and an expanded completion cap.",
+      "page": 20,
+      "index": 30,
+      "width": 1076,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-031.webp",
+      "caption": "Fig. 10: MEMORA-Embodied Memory benchmark construction pipeline. MEMORA-Bench converts longitudinal action annotations into experience-dependent Embodied Memory questions through four phases: evidence preparation, question synthesis, curation and verification, and release. Colors indicate whether each stage is annotation input, deterministic processing, LLM-based synthesis, hybrid checking, or the released benchmark bundle.",
+      "page": 20,
+      "index": 31,
+      "width": 756,
+      "height": 589
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-032.webp",
+      "caption": "Fig. 2: Active memory formation in Entity Memory (18 participants). (a) Cumulative records with and without the editor (per-segment median, first 150 segments). (b) Editor decision mix (n=37,648, P01–P04): NOOP (45.8%) and UPD (44.4%) dominate ADD (8.0%) with rare DEL (1.8%) — the editor mostly maintains rather than expands. (c) Per-participant size before vs. after editing; median reduction ≈ 18×, minimum 9×. Per-PID counts and editor ablations are in Appendices C, V0d.",
+      "page": 5,
+      "index": 32,
+      "width": 1030,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-033.webp",
+      "caption": "Fig. 8: Abbreviated JSON-style examples of MEMORA memory records. The panel keeps literal schema field names but compresses values so the four record types can be compared without a split listing block.",
+      "page": 16,
+      "index": 33,
+      "width": 1064,
+      "height": 320
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14252v1/fig-034.webp",
+      "caption": "Fig. 7: Prompt templates for MEMORA memory-bank construction. Each box preserves the operational contract of a prompted processor: what enters the module, what instruction constrains it, and what structured fields it must emit.",
+      "page": 16,
+      "index": 34,
+      "width": 1064,
+      "height": 367
+    }
+  ]
+}

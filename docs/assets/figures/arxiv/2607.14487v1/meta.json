@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-001.webp",
+      "caption": "Fig. 1: (a) MIDAS Hand and its key specifications. (b) Representative grasps: scissor operation, pen use, and irregular-object grasping.",
+      "page": 1,
+      "index": 1,
+      "width": 506,
+      "height": 616
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-002.webp",
+      "caption": "Fig. 8: Strength tests of MIDAS Hand. (a) Fingertip load test. (b) Whole-hand payload test.",
+      "page": 6,
+      "index": 2,
+      "width": 437,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-003.webp",
+      "caption": "Fig. 7: Thumb and finger contact-center workspace intersection for MIDAS Hand. The colored points indicate the overlapping workspace where the thumb and each opposing finger can reach a common contact location.",
+      "page": 6,
+      "index": 3,
+      "width": 1054,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-004.webp",
+      "caption": "Fig. 9: Reliability test of the MIDAS Hand. (a) Experimental setup for the continuous grasping test. The hand was commanded to repeatedly perform a grasping motion for 2 h (5,143 cycles). (b) Maximum actuator temperature over time during the test. (c) Endpoint position error over the 2 h test.",
+      "page": 7,
+      "index": 4,
+      "width": 512,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-005.webp",
+      "caption": "Fig. 2: Kinematic structure and joint nomenclature of the MIDAS Hand.",
+      "page": 3,
+      "index": 5,
+      "width": 487,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-006.webp",
+      "caption": "Fig. 11: GRASP taxonomy evaluation. MIDAS Hand successfully reproduces 32 of the 33 grasp types defined in the GRASP taxonomy. The only unsuccessful grasp requires the little finger, which is absent in the current four-finger design.",
+      "page": 8,
+      "index": 6,
+      "width": 998,
+      "height": 1289
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-007.webp",
+      "caption": "Fig. 5: Overview of the MIDAS Hand open-source ecosystem: hardware release artifacts, teleoperation inputs, retargeting, hardware API, simulation, and data collection.",
+      "page": 5,
+      "index": 7,
+      "width": 508,
+      "height": 469
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14487v1/fig-008.webp",
+      "caption": "Fig. 6: Retargeting and teleoperation demonstration. Human hand poses are mapped to MIDAS Hand joint commands in real time through (a) vision-based hand tracking and (b) the MANUS glove.",
+      "page": 5,
+      "index": 8,
+      "width": 462,
+      "height": 473
+    }
+  ]
+}

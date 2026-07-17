@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-001.webp",
+      "caption": "Fig. 1: Our KineFuse Framework combines vision with multimodal haptic feedback, such as tactile, force/torque and joint angle, to enable robust 6D pose tracking during dexterous in-hand manipulation under occlusion.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 600
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-002.webp",
+      "caption": "Fig. 8: Qualitative tracking comparison under 30% occlusion. Top: KineFuse (V+H) maintains accurate pose overlay through step 35. Bottom: V-only (FP) diverges by step 20 as the occluded region grows. Insets show the rendered hypothesis (A) and observed crop (B) fed to the refiner. Attention allocation percentages (green text) confirm that KineFuse uses 100% vision for translation and 75/25% vision/haptic for rotation throughout.",
+      "page": 6,
+      "index": 2,
+      "width": 948,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-003.webp",
+      "caption": "TABLE I: Open-loop sequential tracking under occlusion (3 seeds ± std). Pose at frame t initializes frame t+1, so errors accumulate. KineFuse achieves the lowest position error at every occlusion level and maintains constant angular error (47.6 degrees). KineFuse is the only model that maintains constant angular error (47.6 degrees) regardless of occlusion level.",
+      "page": 6,
+      "index": 3,
+      "width": 529,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-004.webp",
+      "caption": "Fig. 9: Occlusion Level Settings. (a) Physical occlusion in simulation: objects of increasing size are placed between the camera and the manipulated object. (b) Synthetic rectangular occlusion applied to the observed RGB-D crop at varying ratios (0.0–0.9). Both settings are used during training; evaluation sweeps the occlusion ratio to measure robustness under progressive visual degradation.",
+      "page": 6,
+      "index": 4,
+      "width": 462,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-005.webp",
+      "caption": "Fig. 10: Real-world qualitative results.",
+      "page": 7,
+      "index": 5,
+      "width": 512,
+      "height": 550
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-006.webp",
+      "caption": "Fig. 2: KineFuse framework. A shared visual encoder produces L=400 tokens from rendered and observed RGB-D crops; the Finger Graph Encoder maps 16-joint haptic signals to K=4 finger tokens. Both are concatenated and decoded by separate translation and rotation heads.",
+      "page": 3,
+      "index": 6,
+      "width": 898,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-007.webp",
+      "caption": "Fig. 3: Haptic Graph Encoder. (a) Naive, (b) FingerMLP, (c) 16-token, and (d) KineFuse: intra-finger attention with a block-diagonal mask propagates sparse F/T cues within each finger, cross-attention pools joints into finger tokens, and Graphormer layers with URDF spatial bias capture interfinger relationships.",
+      "page": 3,
+      "index": 7,
+      "width": 462,
+      "height": 450
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-008.webp",
+      "caption": "Fig. 4: Illustration of robotic hand platform capable of kinesthetic feedback at each finger. (a), (b), and (c) show the threeaxis F/T sensor embedded into the robotic hand platform for kinesthetic feedback, the robotic hand platform, and the robotic finger that includes tactile sensors respectively.",
+      "page": 5,
+      "index": 8,
+      "width": 462,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14842v1/fig-009.webp",
+      "caption": "Fig. 7: Model errors in pose-tolerance space. Each model’s mean tracking error is overlaid on the RL policy’s noisetolerance curve. KineFuse operates within the viable region; V-only and 16-token fall outside it.",
+      "page": 5,
+      "index": 9,
+      "width": 437,
+      "height": 318
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-17T21:22:24.076310+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 1,
+    "quick_skim_target": 11,
+    "quick_selected": 1
+  },
+  "deep_dive": [
+    {
+      "id": "2607.08857v2",
+      "source": "arxiv",
+      "title": "AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning",
+      "abstract": "Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.",
+      "authors": [
+        "Iaroslav Kolomiets",
+        "Miguel Altamirano Cabrera",
+        "Artem Lykov",
+        "Jeffrin Sam",
+        "Dmitrii Iarchuk",
+        "Yara Mahmoud",
+        "Daniia Zinniatullina",
+        "Mikhail Konenkov",
+        "Dzmitry Tsetserukou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-09T18:27:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.08857v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "synthesis from human FPV video for dexterous humanoid learning",
+      "llm_evidence_cn": "从人类第一视角视频合成用于灵巧类人学习的数据",
+      "llm_evidence": "从人类第一视角视频合成用于灵巧类人学习的数据",
+      "canonical_evidence": "从人类第一视角视频合成用于灵巧类人学习的数据",
+      "llm_tldr_en": "Converts human egocentric videos into robot-trainable demonstrations for dexterous manipulation.",
+      "llm_tldr_cn": "将人类第一视角视频转换为可用于机器人训练的灵巧操作演示。",
+      "llm_tldr": "将人类第一视角视频转换为可用于机器人训练的灵巧操作演示。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14183v1",
+      "source": "arxiv",
+      "title": "Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning",
+      "abstract": "Egocentric videos of human manipulation provide scalable supervision for embodied intelligence, yet existing resources rarely combine low-cost continuous capture, manipulation-level structured annotations, and reusable tools for robot learning. We present Open-AoE, an open, community-oriented egocentric manipulation dataset and toolchain spanning the full pipeline from smartphone capture to model training. Its first release contains approximately 2,000 hours of manipulation video collected in natural environments by 500+ contributors using 400+ smartphones. The dataset provides text annotations, MANO-based hand poses, camera trajectories, and temporally localized atomic actions. Open-AoE further includes a data processing pipeline that transforms raw recordings into structured samples through temporal action segmentation, semantic annotation, hand reconstruction, and camera trajectory reconstruction. Meanwhile, we provide a separate downstream toolchain supports visualization, cross-embodiment retargeting, model-specific data conversion, and training recipes for VLA policies, WAMs, and World Models. By integrating scalable capture, structured processing, and downstream adaptation, Open-AoE reduces the barriers to both data contribution and reuse, providing practical open infrastructure for embodied model training, human-to-robot transfer, and world modeling.",
+      "authors": [
+        "Zishuo Li",
+        "Bowen Yang",
+        "Changtao Miao",
+        "Kai Zhu",
+        "Hao Chen",
+        "Qingze Guan",
+        "Zhengxing Wu",
+        "Wanke Zhan",
+        "Yang Sun",
+        "Zhiyi Huang",
+        "Zitong Shan",
+        "Zhenchao Jin",
+        "Jiadong Hong",
+        "Taowen Wang",
+        "Yushi Feng",
+        "You Liu",
+        "Yibo Wang",
+        "Yifan Yang",
+        "Zhaowen Zhou",
+        "Man Luo",
+        "Hao Cheng",
+        "Bo Zhang",
+        "Jianshu Li",
+        "Jiansheng Cai",
+        "Guocai Yao",
+        "Jize Zhang",
+        "Chenhao Lin",
+        "Renjing Xu",
+        "Lequan Yu",
+        "Chao Shen",
+        "Chunhua Shen",
+        "Zhe Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-15T14:49:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.14183v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "open egocentric manipulation dataset for embodied learning",
+      "llm_evidence_cn": "用于具身学习的开源自我中心操作数据集",
+      "llm_evidence": "用于具身学习的开源自我中心操作数据集",
+      "canonical_evidence": "用于具身学习的开源自我中心操作数据集",
+      "llm_tldr_en": "Open-AoE provides a large-scale egocentric manipulation dataset and toolchain for training embodied agents.",
+      "llm_tldr_cn": "Open-AoE提供了一个大规模的自我中心操作数据集和工具链，用于训练具身智能体。",
+      "llm_tldr": "Open-AoE提供了一个大规模的自我中心操作数据集和工具链，用于训练具身智能体。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14487v1",
+      "source": "arxiv",
+      "title": "MIDAS Hand: Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand",
+      "abstract": "Dexterous manipulation is limited not only by algorithms but by a shortage of accessible hand hardware that combines human-scale morphology, ease of manufacturing or maintenance, tactile sensing, and practical cost. Existing dexterous hands tend to optimize some of these properties at the expense of others. We present MIDAS Hand, a low-cost, open-source, human-scale dexterous hand with integrated tactile sensing for manipulation research. MIDAS Hand provides 16 total degrees of freedom (DoF) with 13 active DoF, directly driven actuation with measurably low backdrive torque, and 283 three-axis tactile taxels in a compact 700 g package with a bill of materials under 3,000 USD. Built from 3D-printed components, it assembles in under three hours while providing the strength, repeatability, and maintainability needed for repeated real-world experiments. Alongside the hardware, we release a full stack: design files, build documentation, control and tactile Python APIs, simulation models, and retargeting and teleoperation pipelines. We characterize MIDAS Hand through workspace and grasp-taxonomy analysis, payload and reliability tests, backdrivability measurements, and teleoperation demonstrations with tactile sensing, showing that it offers a balanced, reproducible platform for tactile dexterous manipulation and human-to-robot data collection. Project page: https://midas-hand.com",
+      "authors": [
+        "Alvin Zhu",
+        "Mingzhang Zhu",
+        "Beom Jun Kim",
+        "Quanyou Wang",
+        "Jose Victor S. H. Ramos",
+        "Dennis Hong"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-16T01:59:56+00:00",
+      "link": "https://arxiv.org/pdf/2607.14487v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Anthropomorphic sensing hand for dexterous manipulation research",
+      "llm_evidence_cn": "用于灵巧操作研究的类人传感手",
+      "llm_evidence": "用于灵巧操作研究的类人传感手",
+      "canonical_evidence": "用于灵巧操作研究的类人传感手",
+      "llm_tldr_en": "MIDAS Hand is a low-cost, open-source dexterous hand with integrated tactile sensing for manipulation research.",
+      "llm_tldr_cn": "MIDAS Hand是一款低成本、开源且集成触觉传感的灵巧手，用于操作研究。",
+      "llm_tldr": "MIDAS Hand是一款低成本、开源且集成触觉传感的灵巧手，用于操作研究。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.14842v1",
+      "source": "arxiv",
+      "title": "KineFuse: Kinematic-Aware Haptic Fusion for In-Hand Occluded-Object Pose Tracking",
+      "abstract": "Dexterous in-hand manipulation requires continuous 6D pose tracking, yet the manipulating fingers inevitably occlude the object from the camera. We study how to structure the sparse haptic signals already available on multi-fingered hands, including proprioception, proximal force/torque, and binary contact, to complement a pretrained visual pose tracker under occlusion. We propose a kinematic-aware finger-level encoder and systematically compare it against four alternative designs through three levels of evaluation: per-frame refinement, sequential open-loop tracking, and closed-loop manipulation. Our experiments reveal that (i) per-frame evaluation cannot distinguish encoder quality, while sequential tracking amplifies architectural differences by up to 15 times; (ii) the structured encoder learns task-specific cross-modal gating, using vision exclusively for translation and dedicating one attention head to haptics for rotation, without explicit supervision; and (iii) compact finger-level tokenization with 4 tokens outperforms both flat fusion and joint-level representations, which suppress vision through norm dominance. We validate that improved tracking yields higher success in a downstream reorientation task and provide qualitative real-world demonstrations. Our project page is available at https://cold-young.github.io/kine-fuse/.",
+      "authors": [
+        "Chanyoung Ahn",
+        "Jaesung Lee",
+        "Sungwoo Park",
+        "Donghyun Hwang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-16T11:07:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.14842v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "haptic fusion for in-hand occluded-object pose tracking in dexterous manipulation",
+      "llm_evidence_cn": "灵巧操作中手内遮挡物体位姿跟踪的触觉融合",
+      "llm_evidence": "灵巧操作中手内遮挡物体位姿跟踪的触觉融合",
+      "canonical_evidence": "灵巧操作中手内遮挡物体位姿跟踪的触觉融合",
+      "llm_tldr_en": "KineFuse integrates haptic and visual signals for robust 6D pose tracking during dexterous in-hand manipulation.",
+      "llm_tldr_cn": "KineFuse整合了触觉和视觉信号，用于灵巧手内操作期间稳健的6D位姿跟踪。",
+      "llm_tldr": "KineFuse整合了触觉和视觉信号，用于灵巧手内操作期间稳健的6D位姿跟踪。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.14252v1",
+      "source": "arxiv",
+      "title": "MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning",
+      "abstract": "Long-horizon robot planning requires more than predicting what actions will do next; it also requires memory of the embodied experience that makes future goals interpretable. People do not plan from the present scene alone: they draw on remembered places, object-state changes, prior procedures, and regularities revealed through repeated action. We formulate Embodied Action Memory (EAM) as the capability to form, maintain, and use such experience as a persistent memory state for later decisions. MEMORA realizes EAM with a formation-consolidation-retrieval lifecycle and four typed stores: Environment Memory, Entity Memory, Activity Memory, and Inferred Knowledge. Online editing maintains object identities and state histories as new observations arrive; offline consolidation abstracts repeated experience into reusable procedures and participant-specific regularities. MEMORA-Bench evaluates this lifecycle on 45 hours of EPIC-KITCHENS-100 extension video across 18 participants through memory-grounded planning, including previously unseen goals, and a complementary memory-assessment task. Across four open-weight language models, full MEMORA--combining editing, typed stores, and consolidation--achieves the strongest aggregate results among the evaluated memory conditions. It improves memory-assessment accuracy by up to 20.5 points over the strongest controlled baseline and improves out-of-distribution Robot-Grounded Plan score by up to 16.6% relative. A qualitative two-task robot deployment study further illustrates how memory-grounded language plans can interface with downstream control, while the overall results show that editable, consolidated memory can supply remembered context for robot planning. Project page: https://yuzihaowashu.github.io/MEMORA/",
+      "authors": [
+        "Zihao Yu",
+        "Xiu Yuan",
+        "Chongjie Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-07-15T18:12:28+00:00",
+      "link": "https://arxiv.org/pdf/2607.14252v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Embodied action memory from egocentric videos for planning",
+      "llm_evidence_cn": "从第一视角视频中获取具身动作记忆用于规划",
+      "llm_evidence": "从第一视角视频中获取具身动作记忆用于规划",
+      "canonical_evidence": "从第一视角视频中获取具身动作记忆用于规划",
+      "llm_tldr_en": "MEMORA uses egocentric videos to form a persistent embodied memory for long-horizon robot planning.",
+      "llm_tldr_cn": "MEMORA利用第一视角视频形成持久的具身记忆，用于长程机器人规划。",
+      "llm_tldr": "MEMORA利用第一视角视频形成持久的具身记忆，用于长程机器人规划。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

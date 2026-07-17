@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-001.webp",
+      "caption": "Figure 1: Overview of Open-AoE. Open-AoE provides independent modules for smartphone capture, structured data processing, and downstream robot learning, supporting 2,000 hours of data across 500+ contributors, 400+ device types, 400+ scenes, and 8,000+ tasks.",
+      "page": 1,
+      "index": 1,
+      "width": 1039,
+      "height": 782
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-002.webp",
+      "caption": "Figure 5: AoE-Training-Ready. A synchronized AoE segment is projected into action representations with different supervision densities and semantic roles. Integrated recipes connect dense MANO, robot-facing, hand-plus-camera, and latent or weak action representations to Vision-Language-Action policies, World Action Models, and World Models.",
+      "page": 11,
+      "index": 2,
+      "width": 940,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-003.webp",
+      "caption": "Figure 7: Semantic breadth and temporal annotation characteristics across datasets. (a) Number of unique entries in the primary released action-annotation field versus temporal annotation coverage, with marker area proportional to annotation density, measured as the number of annotated segments per minute. (b) Mean segment duration and annotation density for each dataset. Because the datasets use different native annotation schemas, vocabulary size reflects the breadth of the released semantic supervision rather than a controlled vocabulary comparison under a shared ontology.",
+      "page": 15,
+      "index": 3,
+      "width": 941,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-004.webp",
+      "caption": "Table 1: Comparison of egocentric manipulation datasets. Capture devices are reported as device models or camera types only when explicitly documented by the source; aggregated corpora without a verifiable model inventory are marked Mixed / N/A. Open-AoE combines large-scale consumer-smartphone collection with complete manipulation annotations and a data-to-model toolchain.",
+      "page": 2,
+      "index": 4,
+      "width": 941,
+      "height": 182
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-005.webp",
+      "caption": "Figure 4: AoE-Reconstruct-Retarget. A smartphone-captured egocentric video is projected into 4D hand-object assets, robot-usable motion, and robotized video. The repository integrates reconstruction interfaces for EgoInfinity and Do-as-I-Do, multiple retargeting backends for G1, Galbot/Galaxea, Sharpa, and XHand, and simulation and egoview synthesis for result validation.",
+      "page": 10,
+      "index": 5,
+      "width": 943,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-006.webp",
+      "caption": "Figure 6: High-dimensional CLIP feature analysis. Bars report the mean over 3,000 balanced random subsamples, with 2,000 embeddings drawn from each dataset in every trial. Open-AoE has the highest mean in all six metrics.",
+      "page": 13,
+      "index": 6,
+      "width": 942,
+      "height": 514
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-007.webp",
+      "caption": "Figure 3: Open-AoE collection, sensor, and semantic diversity in a random 100-hour sample. The nested donut summarizes the consumer-phone brand and market-model composition, and the lower-left panel shows the horizontal-FOV distribution. The center panels report collectioncontext composition and anonymous collector-ID coverage, while the word clouds summarize atomic-action verbs, manipulated objects, and task-language terms. All panels use the same randomly sampled 100-hour subset; wedge area, bar height, and word size encode relative prevalence or frequency.",
+      "page": 8,
+      "index": 7,
+      "width": 950,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-008.webp",
+      "caption": "Table 2: Action representations exposed by AoE-Training-Ready. Dimensions are per-frame vectors defined by Open-AoE converters; citations identify integrated downstream methods rather than the origin of the layouts. Recipes may normalize vectors or concatenate a future horizon. The two 20D interfaces are not interchangeable.",
+      "page": 12,
+      "index": 8,
+      "width": 950,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-009.webp",
+      "caption": "Figure 2: Open-AoE data processing pipeline. Starting from edge-side on-device detection and control, raw egocentric videos pass through offline quality checking and scene labeling (imagebased detection, video slicing, and large-model detection), followed by pose reconstruction, atomic-action annotation, and three-gate quality inspection to produce an anonymized training corpus. The released subset contains approximately 2,000 hours of egocentric manipulation video captured with consumer smartphones, together with English annotations, MANO hand poses, and camera trajectories.",
+      "page": 5,
+      "index": 9,
+      "width": 943,
+      "height": 531
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14183v1/fig-010.webp",
+      "caption": "Figure 8: Sequence-level image-annotation consistency across datasets. (a) Sequence-macro means, sequence-level medians, and 95% bootstrap confidence intervals for the mean Idefics2 consistency score. (b) Fractions of sequences in the low (⩽ 2), intermediate (2 < · < 4), and high (⩾ 4) score ranges.",
+      "page": 16,
+      "index": 10,
+      "width": 941,
+      "height": 313
+    }
+  ]
+}

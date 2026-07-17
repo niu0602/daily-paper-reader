@@ -6,32 +6,38 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-16
-- 运行时间：2026-07-16 21:03:54 UTC
+- 最新运行日期：2026-07-17
+- 运行时间：2026-07-17 21:28:30 UTC
 - 运行状态：成功
-- 本次总论文数：3
-- 精读区：3
-- 速读区：0
+- 本次总论文数：5
+- 精读区：4
+- 速读区：1
 
 ### 今日简报（AI）
-- 今日共生成 3 篇推荐（精读 3 篇，速读 0 篇）
-- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）
+- 今日共生成 5 篇推荐（精读 4 篇，速读 1 篇）
+- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning》（10.0/10）
+- 速读：《MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/16/README](/202607/16/README)
+- 详情：[/202607/17/README](/202607/17/README)
 
 ### 精读区论文标签
-1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/16/2607.08857v1-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
-   标签：评分：10.0/10、query:dexop
-   evidence：将人类第一视角视频转换为用于灵巧类人机器人学习的训练演示。
-2. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/16/2607.08857v2-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
+1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/17/2607.08857v2-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
    标签：评分：10.0/10、query:dexop
    evidence：从人类第一视角视频合成用于灵巧类人学习的数据
-3. [Industrial Dexterity Benchmark: A Hardware-Software Benchmarking Platform for Industrial Dexterous Manipulation](/202607/16/2607.14021v1-industrial-dexterity-benchmark-a-hardware-software-benchmarking-platform-for-industrial-dexterous-manipulation)  
-   标签：评分：9.0/10、query:dexop
-   evidence：专注于工业灵巧操作任务并引入了基准测试平台。
+2. [Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning](/202607/17/2607.14183v1-open-aoe-an-open-egocentric-manipulation-dataset-and-toolchain-for-embodied-learning)  
+   标签：评分：10.0/10、query:dexop
+   evidence：用于具身学习的开源自我中心操作数据集
+3. [MIDAS Hand: Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand](/202607/17/2607.14487v1-midas-hand-modular-low-impedance-direct-drive-anthropomorphic-sensing-hand)  
+   标签：评分：8.0/10、query:dexop
+   evidence：用于灵巧操作研究的类人传感手
+4. [KineFuse: Kinematic-Aware Haptic Fusion for In-Hand Occluded-Object Pose Tracking](/202607/17/2607.14842v1-kinefuse-kinematic-aware-haptic-fusion-for-in-hand-occluded-object-pose-tracking)  
+   标签：评分：8.0/10、query:dexop
+   evidence：灵巧操作中手内遮挡物体位姿跟踪的触觉融合
 
 ### 速读区论文标签
-- 本次无速读推荐。
+1. [MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning](/202607/17/2607.14252v1-memora-embodied-action-memory-from-egocentric-videos-for-reasoning-and-planning)  
+   标签：评分：7.0/10、query:dexop
+   evidence：从第一视角视频中获取具身动作记忆用于规划
 
 
 <div class="dpr-home-promo-card">

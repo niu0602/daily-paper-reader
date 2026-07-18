@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-001.webp",
+      "caption": "Figure 4: Experimental task suite. The five blocks correspond to USB Drive Insertion, Whiteboard Wiping, Plug Insertion, Light Bulb Unscrewing and Deformable Object Grasping.Green check marks indicate successful executions. For deformable-object grasping, both a successful execution and a failure case, marked with a red cross, are shown.",
+      "page": 6,
+      "index": 1,
+      "width": 783,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-002.webp",
+      "caption": "Figure 1: Motivation of representation-aligned tactile grounding. Future tactile prediction is most effective when applied to a representation aligned with action-conditioned contact dynamics. VLM-side features are too perception-oriented, while final action features are already specialized for motor decoding. We therefore ground the intermediate action-expert representation, where future tactile information is most accessible.",
+      "page": 2,
+      "index": 2,
+      "width": 788,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-003.webp",
+      "caption": "Figure 5: Success rates on five real-world contact-rich manipulation tasks using the SmolVLA backbone. We report task success rates for input-level tactile conditioning, external predictive tactile representation learning, less-aligned tactile prediction interfaces, and our representation-aligned tactile grounding under identical settings.",
+      "page": 7,
+      "index": 3,
+      "width": 782,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-004.webp",
+      "caption": "Figure 8: Qualitative examples of successful real-world rollouts. Uniformly sampled frames from successful rollouts of Plug Insertion, USB Drive Insertion, Whiteboard Wiping, Deformable Object Grasping, and Light Bulb Unscrewing are arranged chronologically to illustrate the execution process.",
+      "page": 13,
+      "index": 4,
+      "width": 826,
+      "height": 756
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-005.webp",
+      "caption": "Figure 6: Success rates with the π0 backbone on five real-world contact-rich manipulation tasks. We compare the standard π0 policy, tactile-conditioned π0, two less-aligned future tactile prediction interfaces (VLM Pred. and AE Final Pred.), and our representation-aligned tactile grounding under the same task setting.",
+      "page": 8,
+      "index": 5,
+      "width": 785,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-006.webp",
+      "caption": "Figure 2: Linear-probe diagnosis and downstream validation. (A) Future tactile prediction MSE without tactile input. (B) The same probe analysis with current tactile as input. (C) The same analysis on the π0 backbone. (D) Downstream success when grounding VLM-side, intermediate action-expert, and final action representations. Curves in (A–C) are evaluated at normalized action-generation timesteps T of the flow-based action expert.",
+      "page": 4,
+      "index": 6,
+      "width": 814,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-007.webp",
+      "caption": "Table 1: Training hyperparameters for SmolVLA.",
+      "page": 12,
+      "index": 7,
+      "width": 586,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-008.webp",
+      "caption": "Table 2: Training hyperparameters for π0 LoRA.",
+      "page": 12,
+      "index": 8,
+      "width": 586,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14609v1/fig-009.webp",
+      "caption": "Figure 3: Overview of future latent tactile grounding. The VLA policy takes current observations (It, l, rt) - image, language, and tactile input—and predicts an action chunk ât+1:t+H . During training, the aligned action-expert feature, which is most grounded in future contact states, conditions a latent tactile predictor, which predicts future tactile latents ẑt+1:t+H from learnable queries q1:H . The targets zt+1:t+H are encoded from future tactile observations rt+1:t+H and used with stopgradient for the grounding loss. The predictor is used only during training.",
+      "page": 5,
+      "index": 9,
+      "width": 779,
+      "height": 413
+    }
+  ]
+}

@@ -6,38 +6,38 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-17
-- 运行时间：2026-07-17 21:28:30 UTC
+- 最新运行日期：2026-07-18
+- 运行时间：2026-07-18 21:12:30 UTC
 - 运行状态：成功
 - 本次总论文数：5
-- 精读区：4
-- 速读区：1
+- 精读区：0
+- 速读区：5
 
 ### 今日简报（AI）
-- 今日共生成 5 篇推荐（精读 4 篇，速读 1 篇）
-- 精读：《AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning》（10.0/10）, 《Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning》（10.0/10）
-- 速读：《MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning》（7.0/10）
+- 今日共生成 5 篇推荐（精读 0 篇，速读 5 篇）
+- 速读：《Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation》（7.5/10）, 《Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation》（6.5/10）, 《GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency》（6.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/17/README](/202607/17/README)
+- 详情：[/202607/18/README](/202607/18/README)
 
 ### 精读区论文标签
-1. [AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning](/202607/17/2607.08857v2-agenticfocus-object-preserving-mixed-reality-synthesis-from-human-fpv-video-for-dexterous-humanoid-learning)  
-   标签：评分：10.0/10、query:dexop
-   evidence：从人类第一视角视频合成用于灵巧类人学习的数据
-2. [Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning](/202607/17/2607.14183v1-open-aoe-an-open-egocentric-manipulation-dataset-and-toolchain-for-embodied-learning)  
-   标签：评分：10.0/10、query:dexop
-   evidence：用于具身学习的开源自我中心操作数据集
-3. [MIDAS Hand: Modular low-Impedance Direct-drive Anthropomorphic Sensing Hand](/202607/17/2607.14487v1-midas-hand-modular-low-impedance-direct-drive-anthropomorphic-sensing-hand)  
-   标签：评分：8.0/10、query:dexop
-   evidence：用于灵巧操作研究的类人传感手
-4. [KineFuse: Kinematic-Aware Haptic Fusion for In-Hand Occluded-Object Pose Tracking](/202607/17/2607.14842v1-kinefuse-kinematic-aware-haptic-fusion-for-in-hand-occluded-object-pose-tracking)  
-   标签：评分：8.0/10、query:dexop
-   evidence：灵巧操作中手内遮挡物体位姿跟踪的触觉融合
+- 本次无精读推荐。
 
 ### 速读区论文标签
-1. [MEMORA: Embodied Action Memory from Egocentric Videos for Reasoning and Planning](/202607/17/2607.14252v1-memora-embodied-action-memory-from-egocentric-videos-for-reasoning-and-planning)  
-   标签：评分：7.0/10、query:dexop
-   evidence：从第一视角视频中获取具身动作记忆用于规划
+1. [Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation](/202607/18/2607.14609v1-representation-aligned-tactile-grounding-for-contact-rich-robotic-manipulation)  
+   标签：评分：7.5/10、query:dexop
+   evidence：用于接触密集型操作的触觉增强视觉-语言-动作策略
+2. [Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation](/202607/18/2607.09315v1-robot-trajectron-v3-a-probabilistic-shared-control-framework-for-se3-manipulation)  
+   标签：评分：6.5/10、query:dexop
+   evidence：用于高自由度操作和抓取的概率共享控制框架
+3. [GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency](/202607/18/2607.09191v1-genvid2robot-from-video-generation-to-robot-manipulation-via-rigid-geometric-consistency)  
+   标签：评分：6.0/10、query:dexop
+   evidence：将生成的视频动作转换为可执行的真实机器人操作轨迹
+4. [Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](/202607/18/2607.13154v1-worlds-in-one-demo-a-synthetic-data-engine-for-learning-open-world-mobile-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：基于源RGBD观测的移动操作合成数据引擎
+5. [Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation](/202607/18/2607.13653v1-exploratory-communicative-and-deployable-vision-driven-embodied-agents-for-open-world-mobile-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：无需先验感知的开放世界移动操作视觉驱动具身智能体
 
 
 <div class="dpr-home-promo-card">

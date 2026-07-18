@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-001.webp",
+      "caption": "Figure 4. Real-world deployment on the Ark LIFT2 mobile manipulator. REAL transfers the high-level visual-interactive policy zero-shot to a physical backend with the same MCP tool interface. The execution trajectory demonstrates causal planning (e.g.,, preparing the microwave before fetching food), human-robot disambiguation under multiple candidate objects, and language-to-physical grounding for closed-loop task completion. Quantitative reliability is reported in table 2.",
+      "page": 11,
+      "index": 1,
+      "width": 975,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-002.webp",
+      "caption": "Figure 3. Failure mode taxonomy. Manual analysis over 100 evaluation episodes from the best SFT+RL checkpoint.",
+      "page": 11,
+      "index": 2,
+      "width": 371,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-003.webp",
+      "caption": "Figure A.1. Training scenes: Overhead floor plan views of two training environments. The scenes display the spatial layout alongwith the arrangements of furniture and objects. They vary in complexity, room configurations, and object density, offering diverse training examples to learn capabilities in spatial reasoning, active perception, and manipulation.",
+      "page": 15,
+      "index": 3,
+      "width": 983,
+      "height": 444
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-004.webp",
+      "caption": "Figure 1. Comparison of embodied agent frameworks. Left: Reliance on oracle perceptual APIs and open-loop execution in prior environments hinders ambiguity resolution and real-world deployment. Right: REAL removes oracle perceptual APIs while retaining physically obtainable scene priors, enabling RGB-based exploration and natural language interaction for ambiguous instructions.",
+      "page": 2,
+      "index": 4,
+      "width": 983,
+      "height": 555
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-005.webp",
+      "caption": "Table A.1. Per-scene statistics for the 6 training environments. #Furniture denotes the number of interactable receptacle pieces; #Captions denotes the total number of annotated natural-language descriptions.",
+      "page": 14,
+      "index": 5,
+      "width": 671,
+      "height": 643
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-006.webp",
+      "caption": "Figure B.1. Example object layout produced by the placement algorithm on a kitchen table. Five food items are distributed across the surface, each within the perimeter reachability band and clear of static obstacles.",
+      "page": 18,
+      "index": 6,
+      "width": 591,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-007.webp",
+      "caption": "Table A.3. Examples of (source, destination, object) triplets used to instantiate tasks. Each row corresponds to a single receptacle pair; the Objects column lists a sample of semantically compatible items for the specified transfer. The source and destination are denoted as room/ furniture.",
+      "page": 17,
+      "index": 7,
+      "width": 721,
+      "height": 519
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-008.webp",
+      "caption": "Table A.4. Task examples grouped by interaction type. Precise instructions reference objects with visual attributes, whereas fuzzy instructions use only category labels. The dynamic tasks employ deliberately vague language to elicit clarification dialogues. Blue: source and destination furniture. Red: target object.",
+      "page": 17,
+      "index": 8,
+      "width": 687,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-009.webp",
+      "caption": "Figure C.1. MCP tool dispatch pipeline. The embodied agent always issues the same tool calls through the same MCP schema. In simulation, deterministic handlers update Isaac Sim and return RGB/text observations efficiently. On the physical robot, the backend is swapped for onboard navigation, open-vocabulary perception, VLA manipulation, and HRI modules. Only the backend implementation changes; the policy-facing tool names, input signatures, and response types remain invariant.",
+      "page": 24,
+      "index": 9,
+      "width": 677,
+      "height": 883
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-010.webp",
+      "caption": "Table D.1. GSPO Training Hyperparameters",
+      "page": 31,
+      "index": 10,
+      "width": 862,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-011.webp",
+      "caption": "Figure 2. Overview of the environment design. The Embodied Agent receives physically obtainable receptacle priors and RGB/SoM observations with visual IDs, but no oracle object lists, poses, simulator states, or goal locations. The ToolChain exposes deployable exploration tools (nav_to, walk_around, show_object_by_category, gaze_at), Pick/Place/Open/Close controls, and Ask. The simulated user conditions on the agent’s action/observation history and a task profile to answer queries; backend state may be used by handlers but is never exposed to the policy.",
+      "page": 5,
+      "index": 11,
+      "width": 971,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2607.13653v1/fig-012.webp",
+      "caption": "Figure A.2. Evaluation scene: Overhead floor plan of the evaluation environment. This scene is held out from training and used to assess the performance of the model on unseen spatial layouts. The composition of the scene and the arrangements of objects present different spatial challenges compared to the training set, thereby enabling a fair evaluation of generalization.",
+      "page": 16,
+      "index": 12,
+      "width": 591,
+      "height": 592
+    }
+  ]
+}

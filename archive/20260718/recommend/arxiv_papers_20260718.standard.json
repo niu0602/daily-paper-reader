@@ -1,0 +1,228 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-18T21:10:14.411493+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.14609v1",
+      "source": "arxiv",
+      "title": "Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation",
+      "abstract": "Tactile-enhanced vision-language-action (VLA) policies have been introduced for contact-rich manipulation, where critical interaction states are often hidden from vision. Future tactile prediction is a promising way to use touch because it turns tactile outcomes into supervision for action-induced contact dynamics. Yet VLA policies contain representations with different roles, from perceptual encoding to motor prediction, making it unclear where this supervision should be applied. We study this as a representation-alignment problem. Through a linear probe analysis, we find that future tactile states are most predictable from intermediate action-expert features, rather than from vision-language features or final action states. Motivated by this observation, we introduce a lightweight Latent Tactile Predictor (LTP), which predicts compact future tactile embeddings from the identified intermediate representation. By avoiding direct prediction of noisy raw tactile signals, LTP provides an action-outcome grounding signal that aligns intermediate action representations with future contact consequences. Experiments on real-world contact-rich manipulation tasks show that representation-aligned tactile grounding outperforms less aligned or multi-interface tactile prediction, highlighting the importance of where tactile supervision is applied.",
+      "authors": [
+        "Ruilin Chen",
+        "Jingkai Jia",
+        "Tong Yang",
+        "Xinyu Zhou",
+        "Qiao Sun",
+        "Jiangwei Zhong",
+        "Shizeng Zhang",
+        "Nuo Chen",
+        "Bailin He",
+        "Wei Li",
+        "Wenqiang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-16T06:12:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.14609v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "tactile-enhanced vision-language-action policies for contact-rich manipulation",
+      "llm_evidence_cn": "用于接触密集型操作的触觉增强视觉-语言-动作策略",
+      "llm_evidence": "用于接触密集型操作的触觉增强视觉-语言-动作策略",
+      "canonical_evidence": "用于接触密集型操作的触觉增强视觉-语言-动作策略",
+      "llm_tldr_en": "Aligns tactile and visual representations to improve contact-rich robotic manipulation policies.",
+      "llm_tldr_cn": "对齐触觉和视觉表示，以改进接触密集型机器人操作策略。",
+      "llm_tldr": "对齐触觉和视觉表示，以改进接触密集型机器人操作策略。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.09315v1",
+      "source": "arxiv",
+      "title": "Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation",
+      "abstract": "We aim to address the challenge of teleoperating robotic arms for high-degree-of-freedom (high-DoF) manipulation tasks, which is cognitively demanding and error-prone, particularly when relying on low-bandwidth interfaces. We propose Robot Trajectron V3 (RT-V3), a probabilistic shared control framework designed for $SE(3)$ grasping tasks. RT-V3 formulates shared control as Bayesian inference by learning a prior over user intent and combining it with real-time user commands to estimate the posterior intent distribution. The prior models user intent as a distribution over future trajectories conditioned on past robot dynamics and visual scene context. The intent prior is parameterized by a transformer-based conditional generative model that reasons over point clouds and candidate grasp poses, together with a factorized translation-rotation representation that improves learning efficiency in high-dimensional action spaces. During execution, RT-V3 continuously estimates the posterior distribution over future trajectories by combining the learned intent prior with a user-command likelihood derived from the observed control input, enabling continuous intent refinement and shared assistance. Comprehensive experiments demonstrate that RT-V3 achieves high accuracy in trajectory prediction and competitive performance in reactive planning. Furthermore, real-world user studies indicate that RT-V3 significantly outperforms baseline methods in terms of success rate and efficiency, while substantially reducing the user's physical and mental workload.",
+      "authors": [
+        "Pinhao Song",
+        "Zhongxi Li",
+        "Ze Fu",
+        "Federico Ulloa Rios",
+        "Renaud Detry"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-10T11:52:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.09315v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "probabilistic shared control framework for high-DoF manipulation and grasping",
+      "llm_evidence_cn": "用于高自由度操作和抓取的概率共享控制框架",
+      "llm_evidence": "用于高自由度操作和抓取的概率共享控制框架",
+      "canonical_evidence": "用于高自由度操作和抓取的概率共享控制框架",
+      "llm_tldr_en": "Develops a shared control framework for high-DoF grasping using visual scene context and user intent.",
+      "llm_tldr_cn": "开发了一个利用视觉场景上下文和用户意图进行高自由度抓取的共享控制框架。",
+      "llm_tldr": "开发了一个利用视觉场景上下文和用户意图进行高自由度抓取的共享控制框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.09191v1",
+      "source": "arxiv",
+      "title": "GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency",
+      "abstract": "Generated videos provide useful visual motion priors for robot manipulation, but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry, grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.",
+      "authors": [
+        "Haohui Huang",
+        "Xi Yuan",
+        "Panpan Liao",
+        "Tao Teng",
+        "Chenguang Yang",
+        "Jing Guo",
+        "Yi Guo"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-07-10T08:32:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.09191v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "converts generated video motion into executable real-robot manipulation trajectories",
+      "llm_evidence_cn": "将生成的视频动作转换为可执行的真实机器人操作轨迹",
+      "llm_evidence": "将生成的视频动作转换为可执行的真实机器人操作轨迹",
+      "canonical_evidence": "将生成的视频动作转换为可执行的真实机器人操作轨迹",
+      "llm_tldr_en": "A framework to convert generated video priors into physically executable robot manipulation trajectories.",
+      "llm_tldr_cn": "一种将生成的视频先验转换为物理上可执行的机器人操作轨迹的框架。",
+      "llm_tldr": "一种将生成的视频先验转换为物理上可执行的机器人操作轨迹的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.13154v1",
+      "source": "arxiv",
+      "title": "Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation",
+      "abstract": "Learning open-world mobile manipulation policies requires vast data to achieve spatial generalization, long-horizon robustness, and scene generalization. Current prevailing data collection paradigms, teleoperation and UMI, demand prohibitive human effort and cost at scale. To scale beyond the limits of manual data collection, we seek to maximize the value of each human demonstration by scalable data generation. To this end, we introduce WANDA: learning open-World mobile mANipulation from one demonstration via a synthetic DAta engine. WANDA first reconstructs background Gaussian splats and robot-object interaction trajectories from source RGBD observations, as a world substrate for later planning and rendering. It then rearranges contact-rich robot-object interaction segments into extensive spatial configurations, utilizing whole-body motion planning to chain them into new trajectories. To enhance long-horizon robustness, it applies Corrective State Expansion to increase the robot and object state diversity at different stages of mobile manipulation. To unlock cross-environment generalization, trajectories are synthesized on diverse generated 3D worlds from everyday photos. Furthermore, we synthesize photo-realistic observations by compositing rendered robot and object meshes with Gaussian splatting backgrounds. We evaluate our approach on extensive simulation and real-world tasks in various scenes. Experiments show that policies trained with WANDA achieve long-horizon robustness, broad spatial generalization and cross-environment generalization from one real demonstration. Moreover, WANDA naturally supports cross-embodiment data generation, validated by zero-shot deployment on another mobile manipulator with a distinct morphology.",
+      "authors": [
+        "Lingxiao Guo",
+        "Huanyu Li",
+        "Guanya Shi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-14T18:04:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.13154v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "synthetic data engine for mobile manipulation from source RGBD observations",
+      "llm_evidence_cn": "基于源RGBD观测的移动操作合成数据引擎",
+      "llm_evidence": "基于源RGBD观测的移动操作合成数据引擎",
+      "canonical_evidence": "基于源RGBD观测的移动操作合成数据引擎",
+      "llm_tldr_en": "A synthetic data engine that scales mobile manipulation learning from a single human demonstration.",
+      "llm_tldr_cn": "一种通过单次人类演示扩展移动操作学习的合成数据引擎。",
+      "llm_tldr": "一种通过单次人类演示扩展移动操作学习的合成数据引擎。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.13653v1",
+      "source": "arxiv",
+      "title": "Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation",
+      "abstract": "Real-world deployment of embodied agents requires active exploration, visual grounding, and interactive intent disambiguation. However, existing frameworks often rely on privileged simulator states or assume complete instructions, bypassing realistic deployment challenges. To bridge this gap, we present REAL, an agentic framework for open-world mobile manipulation. REAL establishes sim-to-real-consistent environment APIs without oracle perception and integrates a simulated user to enable human-in-the-loop interaction. Within this environment, we design diverse task compositions to drive data collection, supervised fine-tuning, and online reinforcement learning, systematically optimizing agent performance. To comprehensively evaluate this approach, we introduce REAL-Bench, a benchmark spanning 241 tasks across active exploration, visual distraction, articulated manipulation, and interactive disambiguation.   Experimental results demonstrate that our trained agent outperforms leading commercial closed-source VLMs on interactive tasks with a 56.9% success rate. Further empirical analysis reveals that our hierarchical training pipeline successfully aligns the model's tool-use capabilities while maintaining robust open-vocabulary reasoning under extended exploration horizons. Finally, we deploy and evaluate our framework on a physical dual-arm mobile robot, where it achieves a 78.3% end-to-end success rate over 60 real-world episodes. These physical trials demonstrate robust zero-shot transferability to unseen household scenarios, validating that our sim-to-real-consistent design successfully bridges the reality gap for long-horizon mobile manipulation. Code is available at https://github.com/InternRobotics/REAL.",
+      "authors": [
+        "Boyu Mi",
+        "Mengchen Ma",
+        "Yifei Yao",
+        "Xing Gao",
+        "Junting Chen",
+        "Yangzi Li",
+        "Zihou Zhu",
+        "Guohao Li",
+        "Zhenfei Yin",
+        "Tai Wang",
+        "Yao Mu",
+        "Jiangmiao Pang",
+        "Hanqing Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-15T09:55:45+00:00",
+      "link": "https://arxiv.org/pdf/2607.13653v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-driven embodied agents for open-world mobile manipulation without oracle perception",
+      "llm_evidence_cn": "无需先验感知的开放世界移动操作视觉驱动具身智能体",
+      "llm_evidence": "无需先验感知的开放世界移动操作视觉驱动具身智能体",
+      "canonical_evidence": "无需先验感知的开放世界移动操作视觉驱动具身智能体",
+      "llm_tldr_en": "Develops a framework for mobile manipulation using visual grounding and interactive exploration.",
+      "llm_tldr_cn": "开发了一个利用视觉定位和交互式探索进行移动操作的框架。",
+      "llm_tldr": "开发了一个利用视觉定位和交互式探索进行移动操作的框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

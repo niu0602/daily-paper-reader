@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-001.webp",
+      "caption": "Fig. 2: The overall architecture of Robot Trajectron V3 (RT-V3). [Left] Prior Training and Inference: The model extracts representations from past trajectories, candidate grasp poses, and point clouds to form the context embedding h0. Following a CVAE framework, the maneuver class z is sampled and fed into an LSTM decoder, where the action generation is explicitly factorized into a translational velocity vt and a translation-conditioned rotational velocity wt. [Right] Posterior Decision Making: During teleoperation, RT-V3 performs Bayesian posterior estimation, fusing the uncertain user command au 0 with the learned behavioral prior p(a0|h0) at the current timestep. Furthermore, an asynchronous shared control mechanism dynamically alternates between shared autonomy and autonomous execution to reduce user cognitive fatigue.",
+      "page": 6,
+      "index": 1,
+      "width": 1068,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-002.webp",
+      "caption": "Fig. 5: Real-world experimental setup with a Franka Research 3 robot and a top-down RGB-D. Users are required to control the robot to grasp the object in a certain way with an Xbox joystick.",
+      "page": 10,
+      "index": 2,
+      "width": 520,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-003.webp",
+      "caption": "Fig. 8: Visualization of task processes and entropy in successful and failed scenarios. (a) A successful demonstration of grasping a bottle cap. (b) A failure assistance case during the grasping of a pill bottle. In both plots, the legend is consistent: Blue lines denote the entropy of translational action distribution, and orange lines denote the entropy of rotational action distribution. Solid lines denote the upper bound of the entropy, and dashed lines denote the lower bound. The gray zone indicates autonomous control by RT-V3 using the prior, while the green zone denotes the approach grasp action phase.",
+      "page": 14,
+      "index": 3,
+      "width": 1075,
+      "height": 925
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-004.webp",
+      "caption": "Fig. 7: The user study for each method across all participants for the real-world shared control experiment. The plots are bar plots with error bars: (a) the agreement survey and (b) the NASA-TLX survey, where ∗ = p < 0.05 and ∗∗ = p < 0.01. For (a) a higher score is better, while for (b) a lower score is better. The color of the bars representing the control methods is consistent across all figures.",
+      "page": 13,
+      "index": 4,
+      "width": 1048,
+      "height": 330
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-005.webp",
+      "caption": "Fig. 1: Graphical models of the probabilistic decision-making process in the RT-V3 framework. Trajectories are represented using relative timesteps, where t = 0 denotes the current timestep. (a) The prior model: This model captures the user’s inherent behavioral patterns. The past state trajectory and unstructured context (s−T+1:0) are encoded into an initial recurrent state (h0). To account for the multi-modality of manipulation intents, a discrete latent variable (z) is introduced, which governs the generation of future hidden states (ht) and corresponding actions (at). (b) The posterior model: During closed-loop shared control at t = 0, the system observes a noisy user command au 0 , which consists of translational (vu 0 ) and rotational (wu 0 ) velocities. The intended action a0 is explicitly factorized into a translational component (v0) and a rotational component (w0) conditioned on translation. By fusing the uncertain user command with the learned behavioral prior via Bayesian posterior estimation, RT-V3 continuously infers the most probable intended action.",
+      "page": 4,
+      "index": 5,
+      "width": 850,
+      "height": 284
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-006.webp",
+      "caption": "Fig. 10: Visualizations of four different demonstrations. (a) Task1: Grasp the facial cleanser from the right. (b) Task3: Grasp the box from the left. (c) Task11: Grasp the pill bottle from the right.",
+      "page": 17,
+      "index": 6,
+      "width": 968,
+      "height": 1328
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-007.webp",
+      "caption": "Fig. 6: Some objective results for the real-world experiment. (a) Total joystick inputs. (b) Completion time. (c1) Translational trajectory length. (c2) Adjusted translational trajectory length. (d1) Adjusted rotational trajectory length. (d2) Rotational trajectory length. ∗ = p < 0.05, ∗∗ = p < 0.01, and ∗ ∗ ∗ = p < 0.001.",
+      "page": 12,
+      "index": 7,
+      "width": 1052,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-008.webp",
+      "caption": "Fig. 4: Visualization of RT-V3’s predicted trajectories. For clarity, we visualize every four iterations. The past trajectories are painted as solid green lines, while the predicted trajectories are painted as dashed red lines. We also visualize the final step of the predicted trajectories and the grasp poses as frames. The opacity of the predicted trajectories denotes the value of qω(z|h0). The black circle in iteration 40 highlights that the predicted trajectories reach the desired grasp poses.",
+      "page": 9,
+      "index": 8,
+      "width": 1072,
+      "height": 771
+    },
+    {
+      "url": "assets/figures/arxiv/2607.09315v1/fig-009.webp",
+      "caption": "Fig. 9: Twelve tasks in the real-world shared autonomy experiment. During the experiment, these tasks were separated into 3 groups (1-4, 5-8, 9-12), and three methods (Direct, HO, and RT-V3) were randomly assigned to one of the groups.",
+      "page": 16,
+      "index": 9,
+      "width": 738,
+      "height": 288
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "label": "2026-07-19",
+  "date": "2026-07-19",
+  "generated_at": "2026-07-19T21:10:19",
+  "count": 4,
+  "papers": [
+    {
+      "paper_id": "202607/19/2607.11498v1-see-like-a-robot-robot-centric-pointmaps-for-vision-language-action-models",
+      "section": "quick",
+      "title_en": "See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models",
+      "authors": "Byungkun Lee, Dongyoon Hwang, Dongjin Kim, Hojoon Lee, Minho Park, Jaegul Choo",
+      "date": "2026-07-13",
+      "pdf": "https://arxiv.org/pdf/2607.11498v1",
+      "score": "6.5",
+      "evidence": "面向视觉-语言-动作模型的机器人中心点图",
+      "tldr": "利用以机器人为中心的点图解决VLA模型中的坐标系失配，提升视角泛化能力。",
+      "tags": "query:dexop",
+      "abstract_en": "Vision-language-action (VLA) models predict robot actions from visual observations and language instructions. These actions are defined in the robot's own 3D coordinate frame, yet most VLAs observe the scene in the camera frame, creating a frame mismatch between where the scene is observed and where actions are defined. The mismatch is benign under a fixed viewpoint, where the policy can memorize a single observation-to-action mapping, but grows harder as large-scale datasets aggregate demonstrations across diverse camera setups and the policy must generalize this mapping across viewpoints. We address this mismatch with robot-centric pointmaps, images whose pixels store the 3D coordinates of scene points in the robot frame. Pointmaps provide robot-frame 3D geometry while preserving the dense H x W grid expected by pretrained 2D VLAs, so they integrate into existing VLAs with minimal architectural change. On RoboCasa, pointmaps improve both pi0.5 and SmolVLA and outperform representative camera-viewpoint and 3D-aware baselines. In real-robot experiments, their advantage over an RGB-only policy widens when the camera is moved to a placement unseen during training.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/19/2607.10892v1-a-single-diffusion-policy-controller-for-multi-task-block-pushing-with-zero-shot-sim-to-real-transfer",
+      "section": "quick",
+      "title_en": "A Single Diffusion-Policy Controller for Multi-Task Block Pushing with Zero-Shot Sim-to-Real Transfer",
+      "authors": "Haitong Ma, Haldun Balim, Yang Hu, Bo Dai, Na Li",
+      "date": "2026-07-12",
+      "pdf": "https://arxiv.org/pdf/2607.10892v1",
+      "score": "6.0",
+      "evidence": "为多任务机器人操作训练扩散策略",
+      "tldr": "探索使用强化学习训练扩散策略，以实现多任务方块推拽操作。",
+      "tags": "query:dexop",
+      "abstract_en": "Diffusion policies have shown promising empirical performance in representing and learning complex maneuvers for robots using behavior cloning (BC). In this paper, we explore training diffusion policies from scratch using reinforcement learning (RL) for multi-task robotic manipulation. Specifically, we aim to train a single diffusion policy for block-pushing tasks with multiple shapes. The proposed framework features a simple policy loss function, which is a reweighted evidence lower bound used in BC-based diffusion policy training and can seamlessly serve as the policy learning module in RL algorithms. To address the exploration challenges arising from the absence of demonstrations, we incorporate reverse curriculum generation and objective-centric representations. Combined with the expressiveness of diffusion policies, our design supports learning of multi-task block-pushing policies in our sparse-reward simulation setting. We further evaluate whether the trained diffusion policy transfers in zero-shot to real-world tasks under varying environmental conditions including goal positions, block shapes, block weights and surface friction, providing evidence that this pipeline can transfer to our real-world block-pushing setup under the tested variations.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/19/2607.13818v1-learning-robust-execution-in-robotic-manipulation-with-agentic-reinforcement-learning",
+      "section": "quick",
+      "title_en": "Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning",
+      "authors": "Xiaopeng Zhang, Yueyang Weng, Qi Liu, Yongjin Mu, Yanjie Li",
+      "date": "2026-07-15",
+      "pdf": "https://arxiv.org/pdf/2607.13818v1",
+      "score": "6.0",
+      "evidence": "通过代理强化学习在机器人操作中学习鲁棒执行",
+      "tldr": "一种代理强化学习框架，用于评估和恢复机器人操作任务中的执行稳定性。",
+      "tags": "query:dexop",
+      "abstract_en": "Robotic manipulation poses fundamental challenges due to uncertainty, long-horizon execution, and compounding errors, which can easily destabilize execution and lead to task failure. Although recent vision-language-action (VLA) models exhibit strong generalization, they typically lack explicit mechanisms to assess execution stability and to recover when execution deviates from its nominal behavior. In this paper, we propose: (1) two complementary metrics to assess execution quality at runtime, and (2) an agentic reinforcement learning framework that learns to restore effective execution through high-level decision-making rather than directly learning low-level actions. In this framework, an agentic policy reasons over recent execution history and selects among a small set of execution modes to regulate the execution process. Under execution degradation, it triggers appropriate recovery mechanisms to restore the robot to previously visited nominal states, enabling the task to continue. We evaluate the proposed method on the LIBERO benchmark, achieving up to a 13.7% improvement in success rate under standard settings and up to a 39.2% improvement under disturbance settings, demonstrating substantially enhanced execution robustness.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202607/19/2607.13882v1-learning-forward--reverse-skills-from-a-single-unfinished-demonstration-for-constrained-manipulation-tasks",
+      "section": "quick",
+      "title_en": "Learning Forward & Reverse Skills from a Single Unfinished Demonstration for Constrained Manipulation Tasks",
+      "authors": "Yexin Hu, Haoyi Zheng, Johannes Heidersberger, Dongheui Lee",
+      "date": "2026-07-15",
+      "pdf": "https://arxiv.org/pdf/2607.13882v1",
+      "score": "6.0",
+      "evidence": "从专家演示中学习接触密集型任务的操作技能",
+      "tldr": "一种从单次演示中学习正向和反向约束操作技能的一键式框架。",
+      "tags": "query:dexop",
+      "abstract_en": "Learning from demonstration (LfD) enables robots to learn manipulation skills directly from expert demonstrations but remains challenging for contact-rich tasks involving geometric constraints and force interaction. Existing approaches typically require multiple complete demonstrations and do not support reverse skill execution. In this paper, we present a unified one-shot framework for constrained manipulation that learns both forward and reverse execution from a single, possibly unfinished demonstration. Our method decomposes demonstrations into non-contact and contact phases, with non-contact motion encoded with dynamic movement primitives (DMP), and contact motion represented as a sequence of screw motion primitives segmented by our proposed geometry-driven twist-direction segmentation algorithm. During execution, screw primitives are executed sequentially under admittance-guided pose correction and speed regulation, enabling task completion beyond the demonstrated trajectory length as well as reverse skill execution without additional learning data. Experiments on peg insertion, battery insertion, lock opening, and screw driving tasks demonstrate improved success rates and robustness over segmentation and one-shot trajectory learning baselines. Details are available on the project website: https://tuwien-asl.github.io/LfD-Screw/.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

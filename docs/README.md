@@ -6,38 +6,35 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-18
-- 运行时间：2026-07-18 21:12:30 UTC
+- 最新运行日期：2026-07-19
+- 运行时间：2026-07-19 21:10:02 UTC
 - 运行状态：成功
-- 本次总论文数：5
+- 本次总论文数：4
 - 精读区：0
-- 速读区：5
+- 速读区：4
 
 ### 今日简报（AI）
-- 今日共生成 5 篇推荐（精读 0 篇，速读 5 篇）
-- 速读：《Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation》（7.5/10）, 《Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation》（6.5/10）, 《GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency》（6.0/10）
+- 今日共生成 4 篇推荐（精读 0 篇，速读 4 篇）
+- 速读：《See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models》（6.5/10）, 《A Single Diffusion-Policy Controller for Multi-Task Block Pushing with Zero-Shot Sim-to-Real Transfer》（6.0/10）, 《Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning》（6.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/18/README](/202607/18/README)
+- 详情：[/202607/19/README](/202607/19/README)
 
 ### 精读区论文标签
 - 本次无精读推荐。
 
 ### 速读区论文标签
-1. [Representation-Aligned Tactile Grounding for Contact-Rich Robotic Manipulation](/202607/18/2607.14609v1-representation-aligned-tactile-grounding-for-contact-rich-robotic-manipulation)  
-   标签：评分：7.5/10、query:dexop
-   evidence：用于接触密集型操作的触觉增强视觉-语言-动作策略
-2. [Robot Trajectron V3: A Probabilistic Shared Control Framework for SE(3) Manipulation](/202607/18/2607.09315v1-robot-trajectron-v3-a-probabilistic-shared-control-framework-for-se3-manipulation)  
+1. [See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models](/202607/19/2607.11498v1-see-like-a-robot-robot-centric-pointmaps-for-vision-language-action-models)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于高自由度操作和抓取的概率共享控制框架
-3. [GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency](/202607/18/2607.09191v1-genvid2robot-from-video-generation-to-robot-manipulation-via-rigid-geometric-consistency)  
+   evidence：面向视觉-语言-动作模型的机器人中心点图
+2. [A Single Diffusion-Policy Controller for Multi-Task Block Pushing with Zero-Shot Sim-to-Real Transfer](/202607/19/2607.10892v1-a-single-diffusion-policy-controller-for-multi-task-block-pushing-with-zero-shot-sim-to-real-transfer)  
    标签：评分：6.0/10、query:dexop
-   evidence：将生成的视频动作转换为可执行的真实机器人操作轨迹
-4. [Worlds in One Demo: A Synthetic Data Engine for Learning Open-World Mobile Manipulation](/202607/18/2607.13154v1-worlds-in-one-demo-a-synthetic-data-engine-for-learning-open-world-mobile-manipulation)  
+   evidence：为多任务机器人操作训练扩散策略
+3. [Learning Robust Execution in Robotic Manipulation with Agentic Reinforcement Learning](/202607/19/2607.13818v1-learning-robust-execution-in-robotic-manipulation-with-agentic-reinforcement-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：基于源RGBD观测的移动操作合成数据引擎
-5. [Exploratory, Communicative, and Deployable: Vision-Driven Embodied Agents for Open-World Mobile Manipulation](/202607/18/2607.13653v1-exploratory-communicative-and-deployable-vision-driven-embodied-agents-for-open-world-mobile-manipulation)  
+   evidence：通过代理强化学习在机器人操作中学习鲁棒执行
+4. [Learning Forward & Reverse Skills from a Single Unfinished Demonstration for Constrained Manipulation Tasks](/202607/19/2607.13882v1-learning-forward--reverse-skills-from-a-single-unfinished-demonstration-for-constrained-manipulation-tasks)  
    标签：评分：6.0/10、query:dexop
-   evidence：无需先验感知的开放世界移动操作视觉驱动具身智能体
+   evidence：从专家演示中学习接触密集型任务的操作技能
 
 
 <div class="dpr-home-promo-card">

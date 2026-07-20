@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of the proposed gripper. The system enables in-hand book insertion into a tightly packed shelf (State 1–2) using the actuated palm with Visuo-Tactile sensing, followed by dexterous in-hand extraction with contact-rich feedback from the fingertip tactile arrays (State 3–4).",
+      "page": 1,
+      "index": 1,
+      "width": 510,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-002.webp",
+      "caption": "Fig. 8. In-hand syringe reorientation and plunger actuation via teleoperation using the proposed gripper. The sequence illustrates pinch-based grasping, in-hand reorientation to align the syringe outlet, and coordinated palm actuation for controlled plunger depression.",
+      "page": 6,
+      "index": 2,
+      "width": 516,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-003.webp",
+      "caption": "Fig. 7. In-hand object reorientation experiments.",
+      "page": 6,
+      "index": 3,
+      "width": 440,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-004.webp",
+      "caption": "Fig. 2. (a) Mechanical design and overall structure of the proposed gripper. (b) Active bi-modal palm module. A linear actuator is mounted on the base frame, enabling vertical sliding of the palm. (c) Each finger is actuated by two 2-DOF servo motors. A tactile array sensor is mounted on the fingertip.",
+      "page": 2,
+      "index": 4,
+      "width": 508,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-005.webp",
+      "caption": "Fig. 9. Sequential images of in-hand singulation. (a) Overview of the teleoperated singulation process for grasping granular mung beans from a bowl, where the human thumb-index fingertip vectors are retargeted to control the proposed gripper. (b) Singulation results on five representative objects with varying size, geometry, and stiffness. From the first to the last row: initial multi-object grasp with multiple tactile contact patterns, intermediate object removal during in-hand manipulation, and successful isolation of a single object verified by a distinct tactile contact pattern on each fingertip.",
+      "page": 7,
+      "index": 5,
+      "width": 1048,
+      "height": 608
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-006.webp",
+      "caption": "Fig. 10. Peg-in-hole insertion enabled by the bi-modal actuated palm. Vision mode is used for initial pose estimation, followed by tactile-based hole localization through edge extraction and circle fitting. Finally, the robotic arm adjusts the end-effector pose based on the estimated hole center and executes peg insertion with a 1mm tolerance.",
+      "page": 7,
+      "index": 6,
+      "width": 475,
+      "height": 441
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-007.webp",
+      "caption": "Fig. 4. (a) Visualization of vision and tactile outputs from the proposed bi-modal palm. (b) Mechanical design of the actuated palm module. (c) Experimental demonstration of long-range visual perception, detecting a 30× 30mm ArUco marker.",
+      "page": 3,
+      "index": 7,
+      "width": 509,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-008.webp",
+      "caption": "Fig. 3. (a) Schematic representation of the finger kinematics. (b) Workspace of all three fingertips.",
+      "page": 3,
+      "index": 8,
+      "width": 506,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-009.webp",
+      "caption": "Fig. 5. Overview of the proposed retargeting framework for teleoperated dexterous manipulation. (a) Experimental setup. (b) Gesture recognition for selecting grasp primitives of the reconfigurable three-finger gripper (cage, power, and pinch). (c) Key optimization objectives for human-to-gripper retargeting. (d) Mapping of thumb-index rolling motions to the gripper’s adduction/abduction DOF for fine in-hand singulation.",
+      "page": 4,
+      "index": 9,
+      "width": 505,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15448v1/fig-010.webp",
+      "caption": "Fig. 6. Tactile-reactive grasping experiments under three representative configurations: cage grasping of large and articulated objects (top), power grasping of wide and heavy objects (middle), and pinch grasping of fragile objects (bottom).",
+      "page": 5,
+      "index": 10,
+      "width": 450,
+      "height": 544
+    }
+  ]
+}

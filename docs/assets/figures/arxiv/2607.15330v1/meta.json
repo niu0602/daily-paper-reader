@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-001.webp",
+      "caption": "Figure 4 Post-training Dataset. The post-training dataset of Xiaomi-Robotics-1 comprises about 10k hours of cross-embodiment trajectories, including over 7.2k hours of in-house robot data collected with mobile manipulators and dual-arm robots, over 1k hours of instruction-labeled UMI data, and open-source robot datasets.",
+      "page": 6,
+      "index": 1,
+      "width": 960,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-002.webp",
+      "caption": "Figure 9 Downstream Fine-tuning Evaluation. We fine-tune the post-trained model on four new challenging tasks with a minimal amount of data.",
+      "page": 11,
+      "index": 2,
+      "width": 784,
+      "height": 769
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-003.webp",
+      "caption": "Figure 11 Examples of UMI data in the Pre-training Dataset.",
+      "page": 25,
+      "index": 3,
+      "width": 822,
+      "height": 1168
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-004.webp",
+      "caption": "Figure 12 Examples of UMI data in the Post-training Dataset.",
+      "page": 26,
+      "index": 4,
+      "width": 822,
+      "height": 1052
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-005.webp",
+      "caption": "Table 5 Results on the RoboDojo Simulation Benchmark. Each entry reports score / success rate (%). The best and second-best results are highlighted in bold and underline, respectively.",
+      "page": 15,
+      "index": 5,
+      "width": 806,
+      "height": 638
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-006.webp",
+      "caption": "Figure 1 Overview. Xiaomi-Robotics-1 is pre-trained on over 100k hours of real-world UMI trajectories with auto-labeled state-transition language prompts. It is then aligned to robot embodiments and imperative instruction prompts via cross-embodiment post-training. Xiaomi-Robotics-1 scales effectively with data and model size. It is able to perform multiple tasks in unseen environment out-of-the-box and learn new tasks efficiently.",
+      "page": 2,
+      "index": 6,
+      "width": 870,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-007.webp",
+      "caption": "Figure 5 Scaling of Pre-training. We show the validation action errors (MSE) from the data-scaling and model-scaling pre-training experiments. We terminate the training for 12.5% and 25% data in the data-scaling experiment early as the validation loss indicates overfitting.",
+      "page": 7,
+      "index": 7,
+      "width": 908,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-008.webp",
+      "caption": "Figure 8 Quantitative Results of Post-training. We showcase the success rates of post-trained models across different pre-training data scales and model sizes.",
+      "page": 10,
+      "index": 8,
+      "width": 925,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-009.webp",
+      "caption": "Table 4 Results on the VLABench Benchmark. SR, PS, and IS denote success rate, progress score, and intention score, respectively. The best and second-best results are highlighted in bold and underline, respectively.",
+      "page": 14,
+      "index": 9,
+      "width": 702,
+      "height": 519
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-010.webp",
+      "caption": "Figure 2 Model Architecture. Xiaomi-Robotics-1 adopts a Mixture-of-Transformers [44] architecture that couples a pre-trained VLM with a DiT. The VLM encodes the observation and language instruction, and additionally predicts action chunks via Choice Policies [59] to accelerate training convergence. Conditioned on the robot state and the VLM’s KV cache of the observation and language tokens, the DiT generates the action chunk via flow matching. Note that the action-related tokens from the VLM are excluded from the DiT’s attention computation.",
+      "page": 3,
+      "index": 10,
+      "width": 955,
+      "height": 363
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-011.webp",
+      "caption": "Table 3 Results on the RoboCasa365 benchmark. We report task success rates (%). The best and second-best results are highlighted in bold and underline, respectively.",
+      "page": 13,
+      "index": 11,
+      "width": 974,
+      "height": 586
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-012.webp",
+      "caption": "Figure 6 Qualitative Results of Pre-training. After pre-training, Xiaomi-Robotics-1 is able to predict action trajectories for UMI grippers on a held-out validation set according to the language description of state transitions.",
+      "page": 8,
+      "index": 12,
+      "width": 910,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-013.webp",
+      "caption": "Figure 10 Quantitative Results of Downstream Fine-tuning. We report the success rates and progresses of different models across the four different tasks.",
+      "page": 12,
+      "index": 13,
+      "width": 901,
+      "height": 576
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-014.webp",
+      "caption": "Table 6 Progress Definition for Evaluation on Efficient Adaptation to New Tasks. Each rollout is assigned a progress score from 0 to 100% according to completed task milestones.",
+      "page": 24,
+      "index": 14,
+      "width": 986,
+      "height": 330
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-015.webp",
+      "caption": "Figure 7 Post-training Evaluation. We evaluate the post-trained model out-of-the-box across four tasks in novel environments. Crucially, both the environments and object instances are unseen during training.",
+      "page": 9,
+      "index": 15,
+      "width": 772,
+      "height": 835
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15330v1/fig-016.webp",
+      "caption": "Figure 3 Pre-training Dataset. The pre-training dataset of Xiaomi-Robotics-1 contains over 100k hours of real-world manipulation trajectories collected with UMI devices.",
+      "page": 5,
+      "index": 16,
+      "width": 964,
+      "height": 636
+    }
+  ]
+}

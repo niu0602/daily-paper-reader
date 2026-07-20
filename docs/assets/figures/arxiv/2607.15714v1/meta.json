@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15714v1/fig-001.webp",
+      "caption": "Table 2: Performance comparison on LIBERO benchmark, including both in-distribution and outof-distribution suites. Results are success rates (%) averaged across tasks.",
+      "page": 6,
+      "index": 1,
+      "width": 852,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15714v1/fig-002.webp",
+      "caption": "Figure 1: Out-of-distribution compositional actions confuse vision and language modalities. (a) Training tasks: object A→target A and object B→target B. (b) Novel task: object A→target B. Since all training examples map “grasp object A” to target A, the model faces a token-level conflict between visual cues (object A) and language instructions (target B), leading to action prediction confusion.",
+      "page": 2,
+      "index": 2,
+      "width": 497,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15714v1/fig-003.webp",
+      "caption": "Table 4: Real-world performance (%)",
+      "page": 8,
+      "index": 3,
+      "width": 818,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15714v1/fig-004.webp",
+      "caption": "Figure 2: Overview of the AC-VLA framework. (a) Compositional learning module: full demonstrations are decomposed into sub-tasks via LLM-based instruction parsing and proprioceptive trajectory alignment; the model is then trained with a mixture of complete and decomposed data. (b) Asymmetric masking module: wrist-camera views are suppressed during closed-gripper phases at training time, enforcing global spatial grounding.",
+      "page": 4,
+      "index": 4,
+      "width": 826,
+      "height": 324
+    }
+  ]
+}

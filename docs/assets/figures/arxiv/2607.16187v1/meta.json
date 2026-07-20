@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.16187v1/fig-001.webp",
+      "caption": "Figure 4: Teleoperation as Dexterous Hand of Handroid on various dexterous tasks.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 449
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16187v1/fig-002.webp",
+      "caption": "Figure 5: Representative Diffusion Policy grasping rollouts, conditioned on object point clouds and proprioception across randomized object poses.",
+      "page": 7,
+      "index": 2,
+      "width": 822,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16187v1/fig-003.webp",
+      "caption": "Figure 7: Tasks in the Humanoid embodiment, including pick-and-place, pull-up, and push-up.",
+      "page": 8,
+      "index": 3,
+      "width": 826,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16187v1/fig-004.webp",
+      "caption": "Figure 2: Handroid Structure Design. Modules I–V correspond to the five fingers in the hand embodiment and to the head, left arm, left leg, right leg, and right arm in the humanoid embodiment, while modules VI and VII form the base and hip. We show the module mapping, joint numbering, actuator layout, and pitch/roll/yaw axes. Joints 9 and 26 drive the prismatic sliding mechanism for embodiment switching.",
+      "page": 4,
+      "index": 4,
+      "width": 806,
+      "height": 493
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16187v1/fig-005.webp",
+      "caption": "Figure 8: Long-horizon task with Handroid, including embodiment switching, detachment from the Franka, obstacle-avoidance walking, box pushing, lying down, re-docking with the Franka end effector, object grasping, and pick-and-place in the Dexterous-Hand embodiment.",
+      "page": 9,
+      "index": 5,
+      "width": 824,
+      "height": 475
+    }
+  ]
+}

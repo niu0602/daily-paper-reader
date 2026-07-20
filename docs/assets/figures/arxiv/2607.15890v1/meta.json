@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15890v1/fig-001.webp",
+      "caption": "Figure 1: Schematic of the VL-EHPF task and ideology of the proposed Exo2EgoPose Framework.",
+      "page": 1,
+      "index": 1,
+      "width": 454,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15890v1/fig-002.webp",
+      "caption": "Table 1: Quantitative results on the test set of the AssemblyHands, Ego-Exo4D, and novel EgoMe-pose benchmarks.",
+      "page": 6,
+      "index": 2,
+      "width": 781,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15890v1/fig-003.webp",
+      "caption": "Figure 4: Results of the forecasted Ego 3D hand poses of our Exo2EgoPose and comparison methods (downsampled for brevity).",
+      "page": 7,
+      "index": 3,
+      "width": 945,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15890v1/fig-004.webp",
+      "caption": "Figure 2: Overview of our Exo2EgoPose framework. First, we adopt multiple modality-specific encoders to extract features, which are then tokenized and fed into a multimodal Transformer with initialized queries. Then, the DERM reconstructs the representations of the whole video clip and future chunked frames from the Exo perspective during training to construct Ego-Exo cross-view correspondence. Next, the GLMM utilizes the reconstructed Exo knowledge as guidance and performs comprehensive global-to-local feature refinement, which facilitates accurate prediction for the future Ego 3D hand poses.",
+      "page": 3,
+      "index": 4,
+      "width": 999,
+      "height": 518
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15890v1/fig-005.webp",
+      "caption": "Figure 3: Illustration of the Global-to-Local Modulation Module (GLMM). Given the reconstructed Exo representations, it performs feature refinement from global to local levels via cross attention and adaptive modulation units (AMU).",
+      "page": 5,
+      "index": 5,
+      "width": 502,
+      "height": 285
+    }
+  ]
+}

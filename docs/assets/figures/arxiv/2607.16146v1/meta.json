@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.16146v1/fig-001.webp",
+      "caption": "Fig. 3. VTLoc workflow that predicts coordinates on an object’s surface from tactile readings where the contact occurs. The framework includes a geometric multi-modal alignment (GMA) module, which enhances geometric consistency by minimizing the Chamfer distance between the pseudo-point cloud reconstructed from fused visual and tactile features and the original point cloud. An iterative localizing updater is introduced to perform iterative refinement to predict the contact prediction cp (denoted by a star). This prediction is used to retrieve the top-K most likely contact candidates {c∗1, . . . , c∗k} from the contact set Sc. Finally, a 3D contact probability heat-map is generated over the point cloud, reflecting the likelihood of contact at each point.",
+      "page": 3,
+      "index": 1,
+      "width": 806,
+      "height": 239
+    }
+  ]
+}

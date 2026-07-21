@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-001.webp",
+      "caption": "Fig. 4. Example of pose landmark extraction. Left: MediaPipe landmark indexing scheme. Center: input RGB frame. Right: reconstructed 3D landmarks obtained from MediaPipe.",
+      "page": 6,
+      "index": 1,
+      "width": 725,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-002.webp",
+      "caption": "Table 2. Reference joint angles (degrees) defining the evaluated poses.",
+      "page": 11,
+      "index": 2,
+      "width": 560,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-003.webp",
+      "caption": "Fig. 5. Example of forearm rotation calculations. Numeration from Fig. 4",
+      "page": 7,
+      "index": 3,
+      "width": 725,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-004.webp",
+      "caption": "Fig. 6. Left shoulder angles calculations. Numeration from Fig. 4",
+      "page": 10,
+      "index": 4,
+      "width": 725,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-005.webp",
+      "caption": "Fig. 8. Qualitative comparison of six test poses. Each cell shows one gesture: the robot pose obtained from manually defined reference landmarks, the corresponding human RGB input image, and the robot pose obtained after MediaPipe landmark extraction and RGB-based reconstruction.",
+      "page": 14,
+      "index": 5,
+      "width": 652,
+      "height": 816
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-006.webp",
+      "caption": "Fig. 1. Degrees of freedom of the NICO robot.",
+      "page": 4,
+      "index": 6,
+      "width": 436,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-007.webp",
+      "caption": "Fig. 7. Average absolute reconstruction error (MAE, degrees) for each evaluated pose and reconstructed joint. Values are averaged across all participants and viewing angles using the proposed method with MediaPipe hand landmarks whenever available.",
+      "page": 12,
+      "index": 7,
+      "width": 582,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18197v1/fig-008.webp",
+      "caption": "Fig. 3. Visualization of hand landmarks extracted using MediaPipe.",
+      "page": 5,
+      "index": 8,
+      "width": 582,
+      "height": 306
+    }
+  ]
+}

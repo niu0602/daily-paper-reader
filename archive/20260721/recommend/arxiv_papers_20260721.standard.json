@@ -1,0 +1,290 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-21T21:05:48.054302+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 5,
+    "quick_skim_target": 11,
+    "quick_selected": 5
+  },
+  "deep_dive": [
+    {
+      "id": "2607.14183v2",
+      "source": "arxiv",
+      "title": "Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning",
+      "abstract": "Egocentric videos of human manipulation provide scalable supervision for embodied intelligence, yet existing resources rarely combine low-cost continuous capture, manipulation-level structured annotations, and reusable tools for robot learning. We present Open-AoE, an open, community-oriented egocentric manipulation dataset and toolchain spanning the full pipeline from smartphone capture to model training. Its first release contains approximately 2,000 hours of manipulation video collected in natural environments by 500+ contributors using 400+ smartphones. The dataset provides text annotations, MANO-based hand poses, camera trajectories, and temporally localized atomic actions. Open-AoE further includes a data processing pipeline that transforms raw recordings into structured samples through temporal action segmentation, semantic annotation, hand reconstruction, and camera trajectory reconstruction. Meanwhile, we provide a separate downstream toolchain supports visualization, cross-embodiment retargeting, model-specific data conversion, and training recipes for VLA policies, WAMs, and World Models. By integrating scalable capture, structured processing, and downstream adaptation, Open-AoE reduces the barriers to both data contribution and reuse, providing practical open infrastructure for embodied model training, human-to-robot transfer, and world modeling.",
+      "authors": [
+        "Zishuo Li",
+        "Bowen Yang",
+        "Changtao Miao",
+        "Kai Zhu",
+        "Hao Chen",
+        "Qingze Guan",
+        "Zhengxing Wu",
+        "Wanke Zhan",
+        "Yang Sun",
+        "Zhiyi Huang",
+        "Zitong Shan",
+        "Zhenchao Jin",
+        "Jiadong Hong",
+        "Taowen Wang",
+        "Yushi Feng",
+        "You Liu",
+        "Yibo Wang",
+        "Yifan Yang",
+        "Zhaowen Zhou",
+        "Man Luo",
+        "Hao Cheng",
+        "Bo Zhang",
+        "Jianshu Li",
+        "Jiansheng Cai",
+        "Guocai Yao",
+        "Jize Zhang",
+        "Chenhao Lin",
+        "Renjing Xu",
+        "Lequan Yu",
+        "Chao Shen",
+        "Chunhua Shen",
+        "Zhe Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-15T14:49:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.14183v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "egocentric manipulation dataset and toolchain for embodied learning",
+      "llm_evidence_cn": "用于具身学习的第一视角操作数据集和工具链",
+      "llm_evidence": "用于具身学习的第一视角操作数据集和工具链",
+      "canonical_evidence": "用于具身学习的第一视角操作数据集和工具链",
+      "llm_tldr_en": "Introduces Open-AoE, a large-scale egocentric manipulation dataset with structured annotations for robot learning.",
+      "llm_tldr_cn": "推出了Open-AoE，一个具有结构化标注的大规模第一视角操作数据集，用于机器人学习。",
+      "llm_tldr": "推出了Open-AoE，一个具有结构化标注的大规模第一视角操作数据集，用于机器人学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.15641v1",
+      "source": "arxiv",
+      "title": "IMBench: A Benchmark for Intuitive Robotic Manipulation",
+      "abstract": "Humans combine reasoning and motor control to solve complex manipulation tasks under diverse constraints. They build an understanding of the physical world that helps them convert reasoning into actions and quickly adapt to new scenes, tasks, and rules. We refer to this capability as intuitive manipulation. Existing benchmarks fail to capture this integration: they evaluate physical reasoning in isolation from execution, or measure policy performance without requiring explicit reasoning. We introduce IMBENCH, a benchmark designed to evaluate intuitive manipulation as an integrated capability spanning perception, physical reasoning, action generation, and iterative execution. Our tasks require models to infer task-relevant physical structure and generate feasible action sequences under explicit constraints, including contact-rich manipulation, tool use, and multi-stage dependencies. We introduce a benchmark of 35 tasks, 14K filtered trajectories, and scalable tools for generating diverse scenarios. Experiments reveal a consistent gap: vision language models show partial physical reasoning ability but fail to produce executable plans, while state-of-the-art vision-language-action models struggle to satisfy task constraints and generalize across scenarios. These results identify intuitive manipulation as a missing axis in current foundation models and generalist robot policies, and position IMBENCH as a step toward evaluating and enabling more integrated, adaptive physical intelligence.",
+      "authors": [
+        "Anurag Maurya",
+        "Sukhvansh Jain",
+        "Prajwal Avhad",
+        "Gautham Balachandran",
+        "Ziyi Zhou",
+        "Atharva Kshirsagar",
+        "Satyam Singh",
+        "Bowen Li. Rishabh Mukund",
+        "Ritul Singh",
+        "Jatin Vira",
+        "Suvonil Chatterjee",
+        "Devesh K. Jha"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-17T05:34:29+00:00",
+      "link": "https://arxiv.org/pdf/2607.15641v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "benchmark for intuitive robotic manipulation spanning perception and execution",
+      "llm_evidence_cn": "涵盖感知和执行的直觉式机器人操作基准",
+      "llm_evidence": "涵盖感知和执行的直觉式机器人操作基准",
+      "canonical_evidence": "涵盖感知和执行的直觉式机器人操作基准",
+      "llm_tldr_en": "IMBench evaluates integrated robotic manipulation capabilities including physical reasoning and execution.",
+      "llm_tldr_cn": "IMBench评估包括物理推理和执行在内的综合机器人操作能力。",
+      "llm_tldr": "IMBench评估包括物理推理和执行在内的综合机器人操作能力。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.18236v1",
+      "source": "arxiv",
+      "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
+      "abstract": "Pretrained dense visual features from Vision Transformers (ViTs) are powerful yet have been underutilized in robot learning. Modern robot policies either compress each observation into a single global token, or rely on visual backbones trained from scratch, sacrificing both fine-grained spatial detail and the benefits of large-scale visual pre-training. While there exist policies that do operate on dense patch features like large vision-language-action models (VLAs), they tend to be heavy and slow, inheriting the full cost of a billion-parameter vision-language model (VLM) backbone. We close this gap with Patch Policy, a minimal architectural extension that enables transformer-based policies to consume dense pre-trained patch tokens directly without the computational overhead of a full VLM. At its core is a block-causal attention mask that preserves the temporal causality of standard policies while letting the model attend over many patch tokens per observation, alongside other state information. Patch Policy is lightweight, fast, and highly effective. Across four simulated and three real-world environment suites, our method achieves a 40% relative improvement over policies using state-of-the-art global-pooled representations. Furthermore, it surpasses fine-tuned OpenVLA-OFT by 18% while using roughly 0.7% of the parameters. We believe Patch Policy provides a pipeline for the robotics community to readily leverage continuing progress in visual representation learning, without sacrificing the training efficiency or inference speed required for high-frequency, reactive control. Videos can be viewed at https://patch-policy.github.io",
+      "authors": [
+        "Gaoyue Zhou",
+        "Zichen Jeff Cui",
+        "Ada Langford",
+        "Bowen Tan",
+        "Yann LeCun",
+        "Lerrel Pinto"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-07-20T17:59:41+00:00",
+      "link": "https://arxiv.org/pdf/2607.18236v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "efficient embodied control via dense visual representations for robot policies",
+      "llm_evidence_cn": "通过密集视觉表示实现高效的机器人策略具身控制",
+      "llm_evidence": "通过密集视觉表示实现高效的机器人策略具身控制",
+      "canonical_evidence": "通过密集视觉表示实现高效的机器人策略具身控制",
+      "llm_tldr_en": "Patch Policy uses dense pre-trained ViT features to enable efficient and fine-grained robot control.",
+      "llm_tldr_cn": "Patch Policy利用预训练的ViT特征实现高效且细粒度的机器人控制。",
+      "llm_tldr": "Patch Policy利用预训练的ViT特征实现高效且细粒度的机器人控制。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "policy learning methods for dexterous manipulation using first-person observations",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.16312v1",
+      "source": "arxiv",
+      "title": "xperception -- Making Robotic Grasping Easier",
+      "abstract": "The transition toward high-mix low-volume manufacturing demands flexibility in robotic manipulation. However, conventional vision systems remain a bottleneck, requiring extensive data collection and model retraining whenever a new object is introduced to the production line. To overcome this rigidity, we present xperception, a zero-shot 6D pose estimation technology that eliminates the need for object-specific fine-tuning and laborious data annotation. By directly utilizing typical CAD models and integrating the rich semantic features of foundation models (e.g. DINOv2, GeDi), xperception achieves millimeter-accurate 6D pose estimation. xperception showed robustness against severe occlusions in industrial tasks like bin picking and is engineered for deployment on industrial edge hardware, such as NVIDIA Jetson Thor. Validated at a TRL of 6, the core methodology behind xperception is based on the FreeZe algorithm, which won the international BOP Challenge 2024, paving the way for scalable, plug-and-play robotic automation in unstructured high-mix low-volume manufacturing industries.",
+      "authors": [
+        "Matteo Bortolon",
+        "Andrea Caraffa",
+        "Alice Fasoli",
+        "Fabio Poiesi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-07-14T18:38:39+00:00",
+      "link": "https://arxiv.org/pdf/2607.16312v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "robotic grasping and 6D pose estimation for industrial manipulation",
+      "llm_evidence_cn": "工业操作中的机器人抓取和6D位姿估计",
+      "llm_evidence": "工业操作中的机器人抓取和6D位姿估计",
+      "canonical_evidence": "工业操作中的机器人抓取和6D位姿估计",
+      "llm_tldr_en": "xperception enables zero-shot 6D pose estimation for flexible robotic grasping in manufacturing.",
+      "llm_tldr_cn": "xperception实现了零样本6D位姿估计，用于制造业中的柔性机器人抓取。",
+      "llm_tldr": "xperception实现了零样本6D位姿估计，用于制造业中的柔性机器人抓取。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.17323v1",
+      "source": "arxiv",
+      "title": "From Perception to Assistance: Open-Vocabulary Shared Autonomy for Robotic Manipulation",
+      "abstract": "Teleoperating a robotic manipulator in industrial environments demands precision that camera-based interfaces alone struggle to deliver. The operator must align the end-effector with a target in clutter, under limited depth perception, and without colliding with the surrounding structures. This paper presents a shared-autonomy framework that assists the operator throughout this process. A single RGB-D camera captures the operator's arm motion and hand gestures without wearables, fiducials, or a calibration stage. The intended target is specified by a free-form text prompt, grounded by a vision-language model in the robot's gripper camera, and tracked across its onboard cameras by a promptable video-segmentation model, resulting in a grasp frame continuously separated from the obstacle map. Every commanded motion is executed by a GPU-accelerated model-predictive controller that enforces self- and environment-collision avoidance against an online volumetric reconstruction, while a potential field corrects the operator's reference toward the grounded target during the final approach. An autonomous mode can be gesture-triggered to complete the grasp on the same target without a separate perception pipeline. The framework is validated on a quadruped mobile manipulator. The interface achieves a positional RMSE of 59 mm relative to motion-capture ground truth, and the controller keeps the arm at least 18 cm from obstacles while the operator deliberately commands the arm into them by 6 cm. In an industrial valve manipulation and a pick-and-place task, the full framework succeeded in all trials, while ablating either the collision or the assistance module produced failures through complementary mechanisms, and autonomous execution succeeded in four of five trials per task.",
+      "authors": [
+        "Murilo Vinicius da Silva",
+        "Ricardo V. Godoy",
+        "Juliano Negri",
+        "Gustavo J. G. Lahr",
+        "Ranulfo Bezerra",
+        "Marcelo Becker"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.HC",
+        "eess.SY"
+      ],
+      "published": "2026-07-19T16:15:14+00:00",
+      "link": "https://arxiv.org/pdf/2607.17323v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-language model in the robot's gripper camera",
+      "llm_evidence_cn": "机器人夹爪相机中的视觉语言模型",
+      "llm_evidence": "机器人夹爪相机中的视觉语言模型",
+      "canonical_evidence": "机器人夹爪相机中的视觉语言模型",
+      "llm_tldr_en": "A shared-autonomy framework using gripper-mounted cameras for assisted robotic manipulation.",
+      "llm_tldr_cn": "一种利用夹爪相机和视觉语言模型辅助操作员进行机器人操作的共享自主框架。",
+      "llm_tldr": "一种利用夹爪相机和视觉语言模型辅助操作员进行机器人操作的共享自主框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.18197v1",
+      "source": "arxiv",
+      "title": "Imitation of Arm Gestures by the Semi-Humanoid Robot NICO",
+      "abstract": "Seamless human-robot interaction (HRI) requires a number of perceptual and motor abilities from the robot, one of them being the imitation of human gestures. Humanoid robots have an advantage in HRI thanks to their anthropomorphic features. In this work, we develop a system for imitation of human arm gestures by the semi-humanoid robot NICO based on analytical geometry and a pretrained MediaPipe pose-estimation model. For each input RGB frame, 3D coordinates of relevant human body landmarks, including arm joints and hand keypoints, are obtained using the MediaPipe framework. Joint angles are then computed from these coordinates using derived geometric relations. Finally, the computed angles are properly mapped to NICO's motor configuration and executed in a predefined motion sequence. Preliminary experiments on several representative arm gestures with six participants of different height indicate that the proposed method can produce meaningful imitative motions from monocular RGB input only, while also highlighting limitations in more complex poses and wrist-related movements.",
+      "authors": [
+        "Anastasiya Ihnatovich",
+        "Igor Farkaš"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-20T17:37:57+00:00",
+      "link": "https://arxiv.org/pdf/2607.18197v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "imitation of human arm and hand keypoints from RGB frames",
+      "llm_evidence_cn": "从RGB帧中模仿人类手臂和手部关键点",
+      "llm_evidence": "从RGB帧中模仿人类手臂和手部关键点",
+      "canonical_evidence": "从RGB帧中模仿人类手臂和手部关键点",
+      "llm_tldr_en": "Develops a system for humanoid robots to imitate human arm gestures using MediaPipe pose estimation.",
+      "llm_tldr_cn": "开发了一个利用MediaPipe姿态估计让类人机器人模仿人类手臂动作的系统。",
+      "llm_tldr": "开发了一个利用MediaPipe姿态估计让类人机器人模仿人类手臂动作的系统。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

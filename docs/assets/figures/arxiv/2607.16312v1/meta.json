@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.16312v1/fig-001.webp",
+      "caption": "Figure 1: Visualization of the xperception output during the Automatica 2025 demonstrator. The robotic system leverages the object’s CAD model to estimate the 6D pose of randomly scattered pens, identifying optimal, collision-free grasping points (indicated in blue) for the robotic gripper.",
+      "page": 3,
+      "index": 1,
+      "width": 943,
+      "height": 420
+    }
+  ]
+}

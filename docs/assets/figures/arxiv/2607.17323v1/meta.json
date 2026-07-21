@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.17323v1/fig-001.webp",
+      "caption": "Fig. 1: Shared-control valve manipulation. (a) The operator commands the robot via arm motion and hand gestures, captured by an RGB-D camera without wearables or calibration. (b) The robotic arm operates on an industrial panel in clutter. (c)–(e) Approach trajectories relative to the grasp frame {G} (red), grounded from the prompt “wheel valve”. Inside the 0.4m activation radius (dashed circle), the potential field draws the assisted end-effector trajectory (green) toward the target while the operator command (orange) remains offset. The gripper tip (dashed) converges onto the target, and the loops correspond to the operator turning the valve after the grasp.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17323v1/fig-002.webp",
+      "caption": "Fig. 5: Collision-aware shared control. Left: reconstructed workspace with the commanded (orange), executed wrist (red), and executed hand (green) trajectories. Right: signed distance of each to the nearest cone over time. The operator deliberately drives the command 6 cm into the obstacle, while the executed wrist and hand never come closer than 19 cm and 18 cm.",
+      "page": 7,
+      "index": 2,
+      "width": 529,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17323v1/fig-003.webp",
+      "caption": "Fig. 2: System overview. Three perception modules supply the controller. MediaPipe converts operator wrist motion, palm orientation, and hand gestures from a ZED 2i RGB-D feed into a teleoperation reference pt, gripper commands, and a mode trigger. The highlighted body landmarks (shoulders, hips, ankles) define the operator frame {B}, and the palm normal from the wrist and metacarpophalangeal landmarks drive the gripper roll. Qwen3-VL [28] with SAM 2 grounds an open-vocabulary description against Spot’s gripper camera, producing a grasp frame {G} for objects such as the wheel valve illustrated. nvblox fuses Spot’s stereo into a 5 cm voxel TSDF and exposes an ESDF for distance queries. A proximity-scaled potential field corrects pt toward {G}, producing the modulated reference p′ t. cuRobo’s MPPI-based MPC switches between two modes. Shared-control mode tracks p′ t under collision, joint-limit, and smoothness costs. Autonomous mode, engaged by the gesture trigger, tracks {G} directly to complete the task. The output joint trajectory is sent to Spot’s manipulator.",
+      "page": 3,
+      "index": 3,
+      "width": 990,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17323v1/fig-004.webp",
+      "caption": "Fig. 3: Open-vocabulary grounding and multi-camera tracking. (a) A free-form operator query is grounded by Qwen3-VL on the hand camera, which returns a bounding box and candidate grasp points. Each point is segmented by SAM 2, and the affordance point is selected by the best mask-to-box IoU, defining the world-latched grasp frame {G}. (b) The single hand camera detection is reprojected, gated on field of view and depth consistency, into the two body cameras.",
+      "page": 4,
+      "index": 4,
+      "width": 396,
+      "height": 306
+    }
+  ]
+}

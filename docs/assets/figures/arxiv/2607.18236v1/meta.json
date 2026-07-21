@@ -1,0 +1,158 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-001.webp",
+      "caption": "Figure 4: Real-robot rollout examples for the three evaluation tasks: cable insertion, pen collection, and tool hanging. Each row shows one task rollout and visualizes key stages of the policy execution.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-002.webp",
+      "caption": "Figure 11: Push-T, Cube, and LIBERO Goal environment Ours - VQ-BeT evaluation rollouts.",
+      "page": 25,
+      "index": 2,
+      "width": 748,
+      "height": 1185
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-003.webp",
+      "caption": "Figure 12: EgoGym pick, open, and close PATCH POLICY evaluation rollouts.",
+      "page": 26,
+      "index": 3,
+      "width": 829,
+      "height": 665
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-004.webp",
+      "caption": "Table 11: PATCH POLICY - Diffusion Policy Hyperparameters",
+      "page": 21,
+      "index": 4,
+      "width": 698,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-005.webp",
+      "caption": "Figure 1: We introduce PATCH POLICY, an efficient policy architecture that harnesses the power of pre-trained dense visual features. PATCH POLICY demonstrates superior performance while remaining computationally lean in both parameter count and inference latency. Through a rigorous analysis across five state-of-the-art visual representations, we show that our dense patch-based approach provides consistent performance gains over traditional global-feature policy baselines (WebSSL CLS).",
+      "page": 2,
+      "index": 5,
+      "width": 826,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-006.webp",
+      "caption": "Figure 5: Comparison of PATCH POLICY across various pretrained visual representations. We report the mean and standard deviation across runs with three random seeds. Our results suggest that DINOv2 and WebSSL are the most effective vision backbones for robot learning tasks. We normalize BlockPush and Cube results to [0, 1] to facilitate comparison across the entire task suite.",
+      "page": 7,
+      "index": 6,
+      "width": 826,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-007.webp",
+      "caption": "Table 2: Real-robot success rates through task stages, 20 trials.",
+      "page": 7,
+      "index": 7,
+      "width": 829,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-008.webp",
+      "caption": "Table 13: Model Size Ablation: Architectural Parameters and Performance on Push-T for PATCH POLICY with DINOv2 (ViT-S) patch features. We report the final mean coverage of the T-shaped block over the target T across 100 evaluation rollouts.",
+      "page": 22,
+      "index": 8,
+      "width": 826,
+      "height": 835
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-009.webp",
+      "caption": "Figure 2: Architecture. PATCH POLICY consists of an observation trunk (left) with a policy head (right). We encode multiview observations into patch features and optionally concatenate goal embeddings (images/states) into the current timestep sequence. PATCH POLICY is compatible with any transformer-based policy head. A block-wise causal mask is applied to enforce conditioning on past observations, allowing the policy to be optimized with any standard action head.",
+      "page": 3,
+      "index": 9,
+      "width": 826,
+      "height": 397
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-010.webp",
+      "caption": "Figure 6: We evaluate on 10 unseen objects for Real Franka Pickup, following the evaluation criteria in CAP [27].",
+      "page": 18,
+      "index": 10,
+      "width": 829,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-011.webp",
+      "caption": "Figure 9: CAP real Franka object pickup successes.",
+      "page": 23,
+      "index": 11,
+      "width": 748,
+      "height": 1256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-012.webp",
+      "caption": "Table 3: Computational Resources and Inference Speed of PATCH POLICY.",
+      "page": 8,
+      "index": 12,
+      "width": 776,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-013.webp",
+      "caption": "Figure 3: We evaluate PATCH POLICY on four simulated and three real-world environments.",
+      "page": 4,
+      "index": 13,
+      "width": 748,
+      "height": 384
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-014.webp",
+      "caption": "Table 8: Effect of Pre-trained Visual Representations on PATCH POLICY - Diffusion Policy. Values within 2% of the maximum performance for each task are shown in bold.",
+      "page": 19,
+      "index": 14,
+      "width": 745,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-015.webp",
+      "caption": "Figure 13: CAP dataset pick, open, and close trajectory samples.",
+      "page": 27,
+      "index": 15,
+      "width": 829,
+      "height": 665
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-016.webp",
+      "caption": "Figure 10: CAP real Franka object pickup failure modes.",
+      "page": 24,
+      "index": 16,
+      "width": 829,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-017.webp",
+      "caption": "Table 9: PATCH POLICY - VQ-BeT Hyperparameters",
+      "page": 20,
+      "index": 17,
+      "width": 822,
+      "height": 334
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-018.webp",
+      "caption": "Table 10: PATCH POLICY - Real Robot VQ-BeT Hyperparameters",
+      "page": 20,
+      "index": 18,
+      "width": 572,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18236v1/fig-019.webp",
+      "caption": "Table 1: PATCH POLICY on simulated environments. Top: standard policies that consume globally pooled visual features. Middle: our pipeline with WebSSL patch features. Bottom: other policies that consume patch tokens. PATCH POLICY substantially improves over global-feature counterparts of the same policies, while matching or exceeding patch-based baselines.",
+      "page": 5,
+      "index": 19,
+      "width": 830,
+      "height": 343
+    }
+  ]
+}

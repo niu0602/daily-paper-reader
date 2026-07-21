@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-001.webp",
+      "caption": "Table 6: Per-trajectory streams written by the IMBENCH LeRobot recorder. Rates are configurable per category via recording.save_freq.*; values shown are typical defaults for a 100 Hz control loop. Cameras are stored as MP4 with per-row frame_index.* pointers in Parquet.",
+      "page": 26,
+      "index": 1,
+      "width": 744,
+      "height": 558
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-002.webp",
+      "caption": "Table 8: Stage-1 understanding accuracy per task (%). A response is graded correct on a probe if it satisfies all required identifications and contains no forbidden false positives; task-level accuracy is the macro-average across applicable probes",
+      "page": 30,
+      "index": 2,
+      "width": 825,
+      "height": 675
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-003.webp",
+      "caption": "Figure 1: IMBench — a benchmark for intuitive manipulation. Top: Each task is decomposed into a three-stage cognitive loop. Understand extracts latent physical properties from perception (e.g., a thin plate flush on a table affords no top-down grasp). Infer simulates forward dynamics and selects sub-goals (e.g., slide-then-grasp). Act executes a closed-loop interactive policy .",
+      "page": 2,
+      "index": 3,
+      "width": 829,
+      "height": 654
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-004.webp",
+      "caption": "Table 2: Policy success rates (%) on IMBENCH, averaged over tasks within each category. Rollouts are over 20 seeds and 5 rollouts each. Bold marks the best entry per row. ZS = zero-shot pretrained checkpoint; FT = finetuned on teleoperation data. Diffusion Policy (DP) is trained from scratch (Full-training).",
+      "page": 7,
+      "index": 4,
+      "width": 827,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-005.webp",
+      "caption": "Table 15: Policy success rates (%) per task on IMBENCH. Bold marks the best per row.",
+      "page": 34,
+      "index": 5,
+      "width": 827,
+      "height": 806
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-006.webp",
+      "caption": "Table 13: GR00T N1.5 finetuning settings.",
+      "page": 33,
+      "index": 6,
+      "width": 814,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-007.webp",
+      "caption": "Table 3: OOD generalization (task-wise). Success rate under in-distribution (ID) and out-ofdistribution (OOD) settings, with absolute drop ∆.",
+      "page": 8,
+      "index": 7,
+      "width": 828,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-008.webp",
+      "caption": "Figure 2: IMBench: 35 tasks across seven categories. Each targets a distinct inference bottleneck: geometry (P1), dynamics (P2), causal chains (P3), tool use (P4), hidden state (P5), reactive replanning (P6), stability (P7); two miscellaneous tasks in grey (bottom row).",
+      "page": 4,
+      "index": 8,
+      "width": 826,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-009.webp",
+      "caption": "Table 5: Master catalog of IMBENCH tasks. “Demos” lists curated counts after the three-stage filtering pipeline. A dash (–) in the teleop column denotes a task for which teleoperation is infeasible with the SpaceMouse interface.",
+      "page": 17,
+      "index": 9,
+      "width": 814,
+      "height": 774
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-010.webp",
+      "caption": "Table 10: Stage-3 action success rate per task (%) for GPT-5.5 without and with privileged object context.",
+      "page": 32,
+      "index": 10,
+      "width": 827,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15641v1/fig-011.webp",
+      "caption": "Table 9: Stage-2 plan correctness per task (%). Plans graded correct if a human verifier finds the generated plan sufficient to execute the task correctly.",
+      "page": 31,
+      "index": 11,
+      "width": 825,
+      "height": 676
+    }
+  ]
+}

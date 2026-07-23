@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18016v1/fig-001.webp",
+      "caption": "Figure 2: Real-world task rollouts. Each task family is shown with three representative frames from the same execution sequence, illustrating the object-centered state changes that POT-VLA conditions on and verifies across transport, placement, stacking, sorting, articulated interaction, deformableobject handling, and handover tasks.",
+      "page": 6,
+      "index": 1,
+      "width": 829,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18016v1/fig-002.webp",
+      "caption": "Table 1: Real-world evaluation results. Entries are successes/trials. Panel A is the primary matched comparison against the direct baseline under the same action backbone, embodiment, and execution conditions. Panel B is an external paper-reported reference on Being-0-aligned service tasks, not a local reproduction of Being-0.",
+      "page": 7,
+      "index": 2,
+      "width": 750,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18016v1/fig-003.webp",
+      "caption": "Table 3: Object-token representation used by POT-VLA. The same 3D object-record fields condition the VLA action expert and provide predicate evidence for supervision, which keeps action generation and verification grounded in the same object state.",
+      "page": 9,
+      "index": 3,
+      "width": 830,
+      "height": 245
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18016v1/fig-004.webp",
+      "caption": "Figure 1: POT-VLA system overview. POT maintains a role-indexed object memory Mτi t , serializes it into Persistent 3D Object Tokens for the whole-body action head, and refreshes the same memory after each executed chunk. The predicate supervisor verifies the refreshed memory Mτi t+H with grounded 3D predicates, closing the maintain–act–observe–verify–recover loop over shared objectlevel physical state.",
+      "page": 4,
+      "index": 4,
+      "width": 826,
+      "height": 399
+    }
+  ]
+}

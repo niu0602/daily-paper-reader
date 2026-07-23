@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-001.webp",
+      "caption": "Fig. 7 HOST retains its performance on previously mastered tasks while supervised fine-tuning erodes it. (A) Success rate on previously mastered tasks for HOST and each SFT baseline before and after acquiring a novel task, across demonstration budgets. Left, absolute success rate. Right, the percentage of performance retained relative to before acquisition. (B) Per-task success rate on the seven previously mastered manipulation tasks, comparing HOST against each SFT baseline before and after acquiring a novel task, across demonstration budgets.",
+      "page": 11,
+      "index": 1,
+      "width": 976,
+      "height": 1081
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-002.webp",
+      "caption": "Table 6 Summary of notation used in the main text.",
+      "page": 38,
+      "index": 2,
+      "width": 544,
+      "height": 1299
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-003.webp",
+      "caption": "Fig. 10 Resolving execution through self-grounded prediction improves performance on novel tasks at each stage, same-embodiment pretraining scales skill acquisition from human video, and acquired skills persist across recurring tasks. (A) Ablation of resolving execution through self-grounded prediction. Each added stage raises performance on novel tasks. (B, C) Localization accuracy and visual prediction quality. Predicted progress positions closely track ground-truth values across all steps, and the model adapts the demonstrated behavior to the robot’s own embodiment and deployment scene. (D) Success on novel tasks increases monotonically with Stage 1 same-embodiment pretraining data volume, with Stage 2 adaptation data held fixed. (E) Retrieval and execution reliability. Recall of recurring tasks and recognition of novel tasks are jointly high across a broad range of similarity thresholds, and execution from a retrieved demonstration matches the performance of a freshly provided one.",
+      "page": 15,
+      "index": 3,
+      "width": 967,
+      "height": 966
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-004.webp",
+      "caption": "Fig. 1 Robots acquire manipulation skills in seconds from a single human video. (A) Current methods teach a robot new skills through a cumbersome training-time loop that is costly and slow, and erodes previously mastered skills. HOST instead acquires skills at inference time, each from a single human video, averaging 29 seconds, while retaining its previously mastered skills. (B) Skill acquisition from a single human video confronts a structural mismatch between video demonstration and execution. Temporal asynchrony between the two decouples the prediction target from the video demonstration, while state discrepancies hinder the translation of the observed behavior into action. (C) HOST overcomes this mismatch through two mechanisms, coupling prediction targets to the demonstration and resolving execution through self-grounded prediction, enabling the robot to actively follow the demonstrated procedure and adapt it to the robot’s own embodiment.",
+      "page": 2,
+      "index": 4,
+      "width": 892,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-005.webp",
+      "caption": "Fig. 6 HOST surpasses supervised fine-tuning in success rate, data efficiency and time efficiency. (A) Success rates on novel tasks and the time to acquire each skill for each SFT baseline at 10, 20 and 50 demonstrations per task, compared against the success rate and acquisition time of HOST from a single human video. (B) Qualitative illustration depicting the composition of the time to acquire each skill for 𝜋0.5+SFT as a representative baseline, split between data collection and offline fine-tuning at 10, 20 and 50 demonstrations per task, compared against the time HOST takes to acquire a skill from a single human video. (C) Per-task success rates and the time to acquire each skill for each SFT baseline trained on 50 demonstrations per task, compared against HOST from a single human video.",
+      "page": 10,
+      "index": 5,
+      "width": 976,
+      "height": 910
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-006.webp",
+      "caption": "Table 1 Alignment module hyperparameters.",
+      "page": 33,
+      "index": 6,
+      "width": 968,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-007.webp",
+      "caption": "Table 2 Autoregressive diffusion model architecture hyperparameters.",
+      "page": 35,
+      "index": 7,
+      "width": 968,
+      "height": 681
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-008.webp",
+      "caption": "Fig. 9 Coupling prediction targets to the demonstration turns the video demonstration from a passive conditioning signal into the active driver of the robot’s prediction. (A) Progress alignment on a shared task progress manifold recovers frame-level correspondence between the human video and the robot trajectory, whereas sampling based on clock time yields mismatched stages. (B) Each robot prediction target is coupled to the upcoming progression of the demonstration. (C) Aligned frame indices across paired training trajectories scatter around but not on the identity diagonal, confirming that correspondence based on clock time is insufficient and alignment is necessary. (D) Progress alignment reduces the mean absolute progress error at human-annotated events from 0.079 under matching based on clock time to 0.006, an order-of-magnitude improvement. (E) Each coupling ingredient contributes substantially to performance on novel tasks.",
+      "page": 13,
+      "index": 8,
+      "width": 966,
+      "height": 882
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-009.webp",
+      "caption": "Fig. 4 HOST acquires manipulation skills from a single human video across 50 novel manipulation tasks. The 50 novel manipulation tasks span varied objects, tools and manipulation primitives. HOST acquires each skill from a single human video demonstration at inference time.",
+      "page": 8,
+      "index": 9,
+      "width": 956,
+      "height": 882
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-010.webp",
+      "caption": "Fig. 2 Method overview of HOST. (A) Coupling prediction targets to the demonstration. HOST maps the robot trajectory and the video demonstration onto a shared task progress manifold, then redefines each target to align with the video’s future progression, turning the video into the active driver of the robot’s prediction. (B) Resolving execution through self-grounded prediction. HOST works through a causal cascade of self-grounded stages. It first localizes the robot’s progress within the video demonstration, then translates its upcoming progression into the robot’s own future observations, and finally derives actions from these predicted observations. (C) Given a single human video of a previously unseen task, HOST runs the same self-grounded cascade to carry out the task, acquiring the skill while retaining those already mastered.",
+      "page": 4,
+      "index": 10,
+      "width": 926,
+      "height": 928
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-011.webp",
+      "caption": "Table 3 Training hyperparameters (shared by Stage 1 and Stage 2).",
+      "page": 36,
+      "index": 11,
+      "width": 964,
+      "height": 442
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-012.webp",
+      "caption": "Fig. 8 HOST remains robust to deployment perturbations. HOSTmaintains strong performance under lighting variation, out-of-distribution objects, scene replacement, and human disturbance during execution, illustrated alongside the resulting average and per-task success rates on novel tasks under each condition.",
+      "page": 12,
+      "index": 12,
+      "width": 976,
+      "height": 608
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-013.webp",
+      "caption": "Fig. 5 Success rates on novel manipulation tasks. HOST acquires each skill from a single human video without any parameter update across novel tasks whose manipulation skills are absent from the training data, each evaluated over 20 trials. HOST is compared against OSVI baselines (Vid2Robot, AWDA) and language-conditioned imitation learning baselines (𝜋0.5, Wall-OSS, HOST-base) evaluated zero-shot from the instruction, exceeding the strongest baseline average by 43%, with the best result per task marked in bold.",
+      "page": 9,
+      "index": 13,
+      "width": 976,
+      "height": 850
+    },
+    {
+      "url": "assets/figures/arxiv/2607.20033v1/fig-014.webp",
+      "caption": "Table 4 Data processing hyperparameters.",
+      "page": 37,
+      "index": 14,
+      "width": 968,
+      "height": 294
+    }
+  ]
+}

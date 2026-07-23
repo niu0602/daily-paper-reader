@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-001.webp",
+      "caption": "Figure 2. Overview of RoboInter-Data and RoboInter-VQA. We annotate 230k manipulation episodes with 10 types of intermediate representation annotations through Data Collection and Annotation & Check. A large-scale, diverse set of VQA spanning spatial and temporal dimensions is further constructed. Statistics of raw episodes and curated VQA are also provided.",
+      "page": 6,
+      "index": 1,
+      "width": 962,
+      "height": 650
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-002.webp",
+      "caption": "Figure 4. Overview of RoboInter-World. Themask latent is employed to encode temporal information, explicitly distinguishing between historical/current states and future contents. The control video is encoded into control latents, which are subsequently concatenated with the input latents along the channel dimension. Concurrently, conditioning latents (when available), comprising language instructions and robot actions, guide the diffusion transformer via the cross-attention blocks in the DiT architecture. Two variances in which RoboInter-World guides the action executor are also illustrated.",
+      "page": 11,
+      "index": 2,
+      "width": 958,
+      "height": 502
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-003.webp",
+      "caption": "Figure 1. RoboInter1.5 manipulation suite includes annotation tools, annotated data, a curated VQA dataset, and their applications in VLMs, VLAs, and World Models. RoboInter provides a dataset with over 230k episodes and 10+ types of intermediate representation annotations, named RoboInterData; VLMs trained on the curated embodied VQA dataset covering 29 spatial- and temporal-level categories, named RoboInter-VLM; an integrated plan-then-execute framework for training VLA models, RoboInter-VLA; and an intermediate representation guided world model, RoboInter-World.",
+      "page": 2,
+      "index": 3,
+      "width": 979,
+      "height": 402
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-004.webp",
+      "caption": "Figure 5. Open-loop evaluation in TableTop setting. We show the curve of OLS@0.05 from 1k to 40k training steps. We mainly report the five variances of RoboInter-VLA.",
+      "page": 14,
+      "index": 4,
+      "width": 482,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-005.webp",
+      "caption": "Table 4. Open-loop evaluation in In-the-Wild setting. We report OLS with different error thresholds (@0.1 to @0.01) and the mean value.",
+      "page": 14,
+      "index": 5,
+      "width": 497,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-006.webp",
+      "caption": "Table 1. Comparison of embodied annotation datasets. Emb.-VQA denotes the availability of curated embodied VQA benchmarks and datasets; E2E-ACT indicates whether the annotation is temporally aligned with executed actions; Curated-CoT specifies multi-intermediate chain-of-thought support; IR-Video indicates whether the dataset provides high-quality video sequences conditioned on dense intermediate representations",
+      "page": 3,
+      "index": 6,
+      "width": 975,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-007.webp",
+      "caption": "Table 8. Ablation study on control modalities across model scales. We focus on action, segmentation masks, and 2D trace conditions.",
+      "page": 18,
+      "index": 7,
+      "width": 481,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-008.webp",
+      "caption": "Table 9. Evaluation of different control protocols across model scales. Predictive fidelity of RoboInter-W under the planner-control protocol versus the oracle-control protocol (upper bound) and action-only baselines.",
+      "page": 18,
+      "index": 8,
+      "width": 494,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-009.webp",
+      "caption": "Table 10. World-guided VLA action accuracy (%). We evaluate the impact of predicted latent representations on a downstream VLA model across different training steps. OLS@X denotes the open-Loop score of predicted actions within a normalized distance threshold.",
+      "page": 18,
+      "index": 9,
+      "width": 663,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-010.webp",
+      "caption": "Figure 10. Chain of thought of RoboInter-VLA. Two representative examples (used in RoboInter-ECE2E and RoboInter-Modular) are shown. The upper example involves a sequence of manipulation behaviors, including picking, placing, and pushing, while the lower one focuses on a pick-and-place task. RoboInter-VLA predicts and utilizes structured chain-of-thought representations consisting of subtasks, primitive skills, gripper boxes, target object boxes, affordance boxes, and traces.",
+      "page": 28,
+      "index": 10,
+      "width": 739,
+      "height": 694
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-011.webp",
+      "caption": "Table 3. Results of RoboInter-VQA spatial and temporal benchmark. G.D. means grounding, A.F. denotes Affordance. Spatial generation uses ACC@IOU>0.1 (%↑), multiple choice and T/F use ACC (%↑). For temporal, Trace uses DTW (↓), other metrics use ACC or average BLEU (↑).",
+      "page": 13,
+      "index": 11,
+      "width": 975,
+      "height": 407
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-012.webp",
+      "caption": "Figure 8. Qualitative comparison in two representative zero-shot, long-horizon scenarios from the test set: putting down a tissue and picking up a cloth. Each sequence represents a single-chunk prediction lasting approximately 4 seconds (64 frames). Compared to the action-guided I2V-baseline 14B model, our model demonstrates significantly better physical simulation of object deformations and gripper traces under long-horizon control, highlighting its superior generalization capabilities in unseen environments.",
+      "page": 19,
+      "index": 12,
+      "width": 833,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-013.webp",
+      "caption": "Table 6. Main quantitative benchmarking of world model predictions. Oracle visual generation quality across various model architectures and fine-tuning strategies is shown.",
+      "page": 17,
+      "index": 13,
+      "width": 479,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-014.webp",
+      "caption": "Table 2. Performance comparison on third-party benchmarks. Including Embodied, Grounding, and General benchmarks for general VLMs (upper) and embodied VLMs (lower).",
+      "page": 12,
+      "index": 14,
+      "width": 946,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-015.webp",
+      "caption": "Figure 9. Additional real-world ID and OOD validation. (Left) Tool Inserting: a precision ID task requiring accurate contact handling and slot alignment. (Right) Object Sorting: an OOD task that tests language-guided generalization using novel objects and containers.",
+      "page": 27,
+      "index": 15,
+      "width": 979,
+      "height": 494
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-016.webp",
+      "caption": "Figure 3. Framework of RoboInter-VLA. Our model follows a plan-then-execute paradigm with a VLM-based Planner and an Executor. The Planner exhibits enhanced understanding and generation for manipulation, strong general grounding abilities, and robust perception across diverse scenes. The Executor shares the VLM backbone with the Planner. Three variants are supported, and intermediate representations in Flexible Chain-of-Thought (F-CoT) bridge planning and execution.",
+      "page": 9,
+      "index": 16,
+      "width": 973,
+      "height": 529
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18709v2/fig-017.webp",
+      "caption": "Figure 7. Real-World experiments. The top charts present results from 15 in-distribution (ID) and 15 out-of-distribution (OOD) trials. The bottom panel illustrates the OOD test setup. Notably, the performance drop from ID to OOD reflects each model’s generalization under distribution shift, where EC-E2E outperforms IC-E2E and exhibits a smaller ID→OOD degradation (8.3% vs. 19.0%), showing the consistent conclusion with the Open-Loop Evaluation. Key steps are marked with a number, along with an end-execution thumbnail. Experiments of RoboInter-Modular are in the Appendix.",
+      "page": 16,
+      "index": 17,
+      "width": 962,
+      "height": 480
+    }
+  ]
+}

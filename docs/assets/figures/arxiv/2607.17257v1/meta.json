@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-001.webp",
+      "caption": "Figure 8: Evaluation Initial Configurations. For each task, we evaluate each policy on 20 different initial configurations. The object is randomly placed at the beginning of each trial, and these evaluation configurations are different from those used in the training demonstrations.",
+      "page": 15,
+      "index": 1,
+      "width": 814,
+      "height": 249
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-002.webp",
+      "caption": "Figure 7: Overview of Demonstrations for each Tasks. We visualize the initial configurations from 50 demonstrations for each task.",
+      "page": 15,
+      "index": 2,
+      "width": 814,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-003.webp",
+      "caption": "Table 1: Evaluation Results. LAG-Fusion achieves the best performance, indicating that asynchronous policy composition and latency-aware guidance fusion are effective in contact-rich manipulation. Cells highlighted in gray indicate high-frequency inference. The † denotes that Policy Consensus [10] is not fully modular since it requires training an extra router and fine-tuning the remaining modules.",
+      "page": 7,
+      "index": 3,
+      "width": 796,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-004.webp",
+      "caption": "Figure 2: Overview of the LAG-Fusion Framework. LAG-Fusion composes modality-specific diffusion policies at their native inference frequencies. (Left) A low-frequency vision policy provides long-horizon scene guidance, while a high-frequency force/torque policy provides local contact guidance. (Right) In the diffusion composition head, the overlapping noisy action segment is rebased into the current force frame for force denoising. The corresponding vision guidance is rebased to the same frame, fused with force guidance, and mapped back to update the full-horizon noise prediction.",
+      "page": 3,
+      "index": 4,
+      "width": 817,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-005.webp",
+      "caption": "Table 2: Key Hyperparameters of the Force Policy. The standalone force/torque frequency study additionally varies the input and inference frequencies while keeping the remaining architecture and training settings consistent unless otherwise specified.",
+      "page": 13,
+      "index": 5,
+      "width": 544,
+      "height": 381
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-006.webp",
+      "caption": "Figure 6: Effect of Inference Frequency. (a) On Flip, the standalone low-dimensional force policy performs better when it is allowed to infer at higher frequencies, showing that the lightweight high-frequency modality benefits from its native high-frequency execution. (b) In the full LAG-Fusion framework, preserving highfrequency inference also improves composed policy performance on both tasks.",
+      "page": 8,
+      "index": 6,
+      "width": 826,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-007.webp",
+      "caption": "Figure 10: Detailed Standalone Force Policy Results under Different Input and Inference Frequencies.",
+      "page": 17,
+      "index": 7,
+      "width": 826,
+      "height": 758
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17257v1/fig-008.webp",
+      "caption": "Figure 9: Evaluation Setup for the Standalone Low-dimensional Policy. We evaluate the standalone lowdimensional force/torque policy on five objects with different shapes, materials, and contact properties. The top row shows the Purple Box used in training, while the bottom rows show additional test objects used during evaluation. This setup is used to compare the standalone policy under different input-frequency and inferencefrequency configurations.",
+      "page": 16,
+      "index": 8,
+      "width": 826,
+      "height": 506
+    }
+  ]
+}

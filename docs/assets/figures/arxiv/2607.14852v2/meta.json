@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.14852v2/fig-001.webp",
+      "caption": "Table 1: Comparison of success rate (SR, %) under the LifelongVLA setting. Joint is an upper bound and is excluded from ranking. Red/blue denote the best/second-best lifelong methods.",
+      "page": 6,
+      "index": 1,
+      "width": 794,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14852v2/fig-002.webp",
+      "caption": "Figure 3: Process-level analysis. Left: stability–plasticity trade-off. Right: incremental accuracy over tasks.",
+      "page": 6,
+      "index": 2,
+      "width": 936,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14852v2/fig-003.webp",
+      "caption": "Figure 1: Motivation and overview. (a) Lifelong VLA learning with incremental tasks, stability–plasticity balance, and low-storage replay. (b) Performance comparison of LifelongVLA with competing baselines. retaining all previous task data and repeatedly retraining over the full history can mitigate forgetting. It incurs prohibitive memory and computational costs as the number of tasks grows.",
+      "page": 2,
+      "index": 3,
+      "width": 933,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14852v2/fig-004.webp",
+      "caption": "Figure 4: Real-world and simulator task evolution. The left panel shows real-world rollouts and the right panel shows simulator rollouts. Each row illustrates language-conditioned start-to-final-state execution.",
+      "page": 7,
+      "index": 4,
+      "width": 968,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2607.14852v2/fig-005.webp",
+      "caption": "Figure 2: Algorithmic diagram of LifelongVLA, which consists of two modules: (i) Dual-Timescale LoRA Gating, which composes short-term and long-term LoRA pathways with a task-aware gate to balance new-skill plasticity and old-skill stability, and (ii) Cache-Efficient Stochastic Replay, which stores compact prefix tokens and reconstructs replay suffixes to provide old-skill supervision without full-trajectory replay.",
+      "page": 4,
+      "index": 5,
+      "width": 939,
+      "height": 308
+    }
+  ]
+}

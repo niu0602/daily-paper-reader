@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-001.webp",
+      "caption": "Fig. 2: System overview. BayesContact performs pose estimation using simulation-based forward models with a graphics renderer for depth observations and a physics simulator for contact observations. These likelihoods serve as the frontend to a Sequential Monte Carlo inference backend. Together, these allow the robot to estimate belief over pose of a hole in a peg-insertion setup.",
+      "page": 4,
+      "index": 1,
+      "width": 1054,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-002.webp",
+      "caption": "Fig. 4: Pose convergence. We illustrate the pose estimate convergence through vision and contact measurements for an example scenario using the ELLIPSE-TEETH geometry. Top row: Convergence of the ADD-S metric across time. Middle row: Position error. Bottom row: Orientation error. The particle orientation errors show a weight clustering around {0°, 90°, 180°} coming in from the vision posterior, a consequence of geometric ambiguity. Contact observations then help disambiguate between these modes.",
+      "page": 7,
+      "index": 2,
+      "width": 1018,
+      "height": 442
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-003.webp",
+      "caption": "TABLE I: Summary Pose Estimation Results in Simulation. We report converged ADD-S (mm), position error(mm), and orientation error (degrees), reported as mean (±std), for both for Vision-only and Vision + Contact Approaches.",
+      "page": 7,
+      "index": 3,
+      "width": 1044,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-004.webp",
+      "caption": "Fig. 5: Active sensing. Comparison of IG and the MAP probing strategies. Both strategies are initialized from the same prior vision belief for a single scenario. While they show similar convergence rates on overall ADD-S and position error, IG handles multimodality in orientation better than MAP.",
+      "page": 8,
+      "index": 4,
+      "width": 481,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-005.webp",
+      "caption": "Fig. 6: Probing efficiency and Insertion Success. Top row: Number of contact measurements taken to reach a belief (weighted mean of particles) within an ADD of 2 mm, averaged across 20 simulated scenarios each. Bottom row: Total number of successful insertions out of 20 simulation attempts. Both cases are arranged by the geometry type displayed below: Arch, Rectangle, Ellipse, Rectangle-teeth, and Ellipse-teeth.",
+      "page": 8,
+      "index": 5,
+      "width": 483,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16123v1/fig-006.webp",
+      "caption": "Fig. 1: BayesContact: We propose a Simulation-based Inference approach to infer uncertain pose using rendering-based depth and physics-based contact likelihoods, which enable online estimation of pose from depth and contact sensing. BayesContact improves pose observability and insertion success over vision-only approaches by 30%.",
+      "page": 1,
+      "index": 6,
+      "width": 514,
+      "height": 379
+    }
+  ]
+}

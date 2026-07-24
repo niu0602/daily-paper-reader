@@ -6,65 +6,53 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-23
-- 运行时间：2026-07-23 21:37:04 UTC
+- 最新运行日期：2026-07-24
+- 运行时间：2026-07-24 21:47:10 UTC
 - 运行状态：成功
-- 本次总论文数：14
+- 本次总论文数：10
 - 精读区：3
-- 速读区：11
+- 速读区：7
 
 ### 今日简报（AI）
-- 今日共生成 14 篇推荐（精读 3 篇，速读 11 篇）
-- 精读：《EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration》（9.0/10）, 《RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation》（8.0/10）
-- 速读：《Robots Acquire Manipulation Skills in Seconds from a Single Human Video》（7.5/10）, 《Beyond Implicit Force: Evaluating Explicit Force-Torque Proxies in Action Chunking with Transformers》（7.0/10）, 《EgoExoMoCap: Distributed Ego-Exo Human Motion Capture》（7.0/10）
+- 今日共生成 10 篇推荐（精读 3 篇，速读 7 篇）
+- 精读：《EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration》（9.5/10）, 《Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories》（9.0/10）
+- 速读：《Towards Human-like Physical Intelligence: LifelongVision-Language-Action Learning for Robotic Manipulation》（7.0/10）, 《Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation》（7.0/10）, 《FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/23/README](/202607/23/README)
+- 详情：[/202607/24/README](/202607/24/README)
 
 ### 精读区论文标签
-1. [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](/202607/23/2607.19745v1-egorecovery-acquiring-failure-recovery-ability-through-human-recovery-demonstration)  
+1. [EgoRecovery: Acquiring Failure Recovery Ability Through Human Recovery Demonstration](/202607/24/2607.19745v2-egorecovery-acquiring-failure-recovery-ability-through-human-recovery-demonstration)  
+   标签：评分：9.5/10、query:dexop
+   evidence：用于操作故障恢复的第一视角人类数据
+2. [Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories](/202607/24/2607.15330v2-xiaomi-robotics-1-scaling-vision-language-action-models-with-over-100k-hours-of-real-world-trajectories)  
    标签：评分：9.0/10、query:dexop
-   evidence：捕获失败恢复过程的第一视角人类数据
-2. [RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation](/202607/23/2607.18709v1-robointer15-a-holistic-intermediate-representation-suite-for-embodied-world-modeling-and-robotic-manipulation)  
-   标签：评分：8.0/10、query:dexop
-   evidence：为机器人操作片段提供了一套中间表示和数据。
-3. [RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation](/202607/23/2607.18709v2-robointer15-a-holistic-intermediate-representation-suite-for-embodied-world-modeling-and-robotic-manipulation)  
-   标签：评分：8.0/10、query:dexop
-   evidence：机器人操作数据集的整体中间表示套件
+   evidence：通过UMI设备（第一视角）收集的轨迹数据
+3. [Robots Acquire Manipulation Skills in Seconds from a Single Human Video](/202607/24/2607.20033v2-robots-acquire-manipulation-skills-in-seconds-from-a-single-human-video)  
+   标签：评分：8.5/10、query:dexop
+   evidence：通过单个人类视频进行机器人操作技能的一次性学习
 
 ### 速读区论文标签
-1. [Robots Acquire Manipulation Skills in Seconds from a Single Human Video](/202607/23/2607.20033v1-robots-acquire-manipulation-skills-in-seconds-from-a-single-human-video)  
-   标签：评分：7.5/10、query:dexop
-   evidence：从人类视频演示中获取技能
-2. [Beyond Implicit Force: Evaluating Explicit Force-Torque Proxies in Action Chunking with Transformers](/202607/23/2607.14578v1-beyond-implicit-force-evaluating-explicit-force-torque-proxies-in-action-chunking-with-transformers)  
+1. [Towards Human-like Physical Intelligence: LifelongVision-Language-Action Learning for Robotic Manipulation](/202607/24/2607.14852v1-towards-human-like-physical-intelligence-lifelongvision-language-action-learning-for-robotic-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：专注于接触密集型操作和细粒度机器人任务的动作分块。
-3. [EgoExoMoCap: Distributed Ego-Exo Human Motion Capture](/202607/23/2607.15868v1-egoexomocap-distributed-ego-exo-human-motion-capture)  
+   evidence：用于机器人操作的视觉-语言-动作学习
+2. [Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation](/202607/24/2607.18016v1-closing-the-loop-in-humanoid-vla-persistent-3d-object-tokens-for-verifiable-loco-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于人体运动估计的第一视角多模态信号
-4. [HCPG-Flow:Hierarchical Contact-Progress Guidance for Flow-Policy Robot Manipulation](/202607/23/2607.17651v1-hcpg-flowhierarchical-contact-progress-guidance-for-flow-policy-robot-manipulation)  
+   evidence：使用RGB-D观测的人形机器人移动操作
+3. [FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation](/202607/24/2607.18231v1-fm-vla-force-based-memory-for-vision-language-action-models-in-contact-rich-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：具有接触进度引导的流策略机器人操作
-5. [Towards Human-like Physical Intelligence: LifelongVision-Language-Action Learning for Robotic Manipulation](/202607/23/2607.14852v1-towards-human-like-physical-intelligence-lifelongvision-language-action-learning-for-robotic-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：使用视觉-语言-动作模型进行机器人操作的终身学习
-6. [Masked Visual Actions for Unified World Modeling](/202607/23/2607.19343v1-masked-visual-actions-for-unified-world-modeling)  
-   标签：评分：6.5/10、query:dexop
-   evidence：机器人世界建模的像素空间控制
-7. [Semantic Anchoring for Robotic Action Representations](/202607/23/2607.13597v1-semantic-anchoring-for-robotic-action-representations)  
+   evidence：使用力反馈记忆的接触密集型操作VLA模型
+4. [FELT: Generating Tactile Signals from Vision for Visuo-Tactile Manipulation](/202607/24/2607.20683v1-felt-generating-tactile-signals-from-vision-for-visuo-tactile-manipulation)  
+   标签：评分：7.0/10、query:dexop
+   evidence：从视觉生成触觉信号用于操作策略
+5. [BayesContact: Uncertain Pose Estimation via Visuo-Tactile Proposals and Simulation-based Inference](/202607/24/2607.16123v1-bayescontact-uncertain-pose-estimation-via-visuo-tactile-proposals-and-simulation-based-inference)  
    标签：评分：6.0/10、query:dexop
-   evidence：VLA模型中机器人动作表示的语义锚定
-8. [Towards Human-like Physical Intelligence: Lifelong Vision-Language-Action Learning for Robotic Manipulation](/202607/23/2607.14852v2-towards-human-like-physical-intelligence-lifelong-vision-language-action-learning-for-robotic-manipulation)  
+   evidence：接触密集型操作的视触觉姿态估计
+6. [GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning](/202607/24/2607.21049v1-guidedattention-interpretable-and-correctable-visual-attention-for-ood-robust-robot-manipulation-via-imitation-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：使用视觉-语言-动作模型的机器人操作终身学习框架。
-9. [Foresight Residual RL for Long-Horizon Robot Manipulation with Vision-Language-Action Models](/202607/23/2607.16506v1-foresight-residual-rl-for-long-horizon-robot-manipulation-with-vision-language-action-models)  
+   evidence：机器人操作的视觉运动模仿学习
+7. [AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation](/202607/24/2607.21588v1-axis-a-growable-community-driven-data-engine-for-scalable-robot-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：使用VLA模型和残差强化学习进行长程机器人操作
-10. [Asynchronous Multimodal Diffusion Policy Composition via Latency-Aware Guidance Fusion](/202607/23/2607.17257v1-asynchronous-multimodal-diffusion-policy-composition-via-latency-aware-guidance-fusion)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于提升操作性能的多模态扩散策略
-11. [Closing the Loop in Humanoid VLA: Persistent 3D Object Tokens for Verifiable Loco-Manipulation](/202607/23/2607.18016v1-closing-the-loop-in-humanoid-vla-persistent-3d-object-tokens-for-verifiable-loco-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：使用RGB-D观测的类人机器人移动操作
+   evidence：用于可扩展机器人操作学习的基准数据集
 
 
 <div class="dpr-home-promo-card">

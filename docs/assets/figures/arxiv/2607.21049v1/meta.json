@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of the GuidedAttention framework. Teleoperated demonstrations are annotated with attention keypoints only in the initial frame, which serve as an interpretable and correctable intermediate representation for visuomotor policy learning. During rollout, users may optionally correct selected keypoints once, after which they are automatically tracked throughout execution.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-002.webp",
+      "caption": "TABLE I SIMULATION SUCCESS RATES ACROSS FOUR GENERALIZATION CONDITIONS",
+      "page": 6,
+      "index": 2,
+      "width": 920,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-003.webp",
+      "caption": "Fig. 5. Real-world manipulation tasks. (A–D) show real-world task execution under ID conditions. (E) shows the Appearance OOD condition for Towel Fold, where numerous colorful block distractors introduce significant visual clutter. All tasks use two attention keypoints.",
+      "page": 7,
+      "index": 3,
+      "width": 1026,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-004.webp",
+      "caption": "Fig. 6. Real-world manipulation success rates. Results in (A) and (B) are averaged across three real-world tasks. (C) is evaluated only on the Towel Fold task. All results are averaged over three random seeds with 10 rollouts per condition for each seed. Blue bars indicate baseline policies. Green bars indicate fully autonomous execution. Red bars indicate optional human correction of the predicted attention.",
+      "page": 7,
+      "index": 4,
+      "width": 492,
+      "height": 545
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-005.webp",
+      "caption": "Fig. 7. Qualitative real-world rollouts under distribution shift. Guided visual attention improves robustness by maintaining focus on taskrelevant structures. The predicted keypoints are visualized as x-marks on the images in DP-GA. (A, B) In the Chain Pick-and-Place task, DP-GA autonomously keeps attention near the chain end and around the cup rim, enabling successful placement even at unseen object positions. (C, D) In the Towel Fold task, accurate keypoints are provided only at the initial frame and then continuously used through automatic tracking, ensuring reliable grasping of the towel corner and successful folding under significant appearance changes.",
+      "page": 7,
+      "index": 5,
+      "width": 512,
+      "height": 478
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-006.webp",
+      "caption": "Fig. 2. Policy architecture overview. (A) The policy conditions a denoising diffusion process for action generation on attention features from image-based keypoints, together with proprioceptive states. (B) Each image is processed by a ResNet and Transformer encoder-decoder to predict pixel-level keypoints, which are embedded as attention features. (C) During rollout, users can optionally correct predicted keypoints when attention drift occurs. The corrected keypoints replace the predictions and update the attention features, enabling recovery from failures. The figure shows two of four keypoints overridden.",
+      "page": 3,
+      "index": 6,
+      "width": 500,
+      "height": 860
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21049v1/fig-007.webp",
+      "caption": "Fig. 3. Simulation manipulation tasks. (A) Cable: passing a flexible cable through a narrow gap between poles. (B) Ring: placing a flexible ring around a pole. (C) Particle: scooping particles into a box. (D) Cable under Appearance OOD: textured distractors on the tabletop introduce severe visual changes. All tasks use two attention keypoints: a dynamic keypoint attached to the manipulated object or tool, and a static keypoint defined on the target object or environment.",
+      "page": 4,
+      "index": 7,
+      "width": 471,
+      "height": 411
+    }
+  ]
+}

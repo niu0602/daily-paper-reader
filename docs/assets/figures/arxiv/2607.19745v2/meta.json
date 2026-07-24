@@ -1,0 +1,246 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-001.webp",
+      "caption": "Figure 3 Experimental platforms and task objects. Real robot tabletop settings used for closed-loop evaluation across four manipulation tasks: cup brush insertion, table sweep, round disk placement, and cube stacking.",
+      "page": 6,
+      "index": 1,
+      "width": 984,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-002.webp",
+      "caption": "Figure 10 Recovery Gate Head aligned to annotated recovery boundaries. Predictions 𝑝rec(·) are aligned to 𝑡recover on 15 robot and 15 human recovery episodes per task. Solid curves show per-domain means with 95% bootstrap confidence intervals, and dashed curves show a phase-only baseline. Left and right panels show cup brush insertion and round disk placement. The gate drops near the annotated transition for both embodiments, limiting intent modulation to recovery frames.",
+      "page": 25,
+      "index": 2,
+      "width": 940,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-003.webp",
+      "caption": "Figure 12 Human recovery collection for cup-brush insertion (Task 1).",
+      "page": 26,
+      "index": 3,
+      "width": 986,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-004.webp",
+      "caption": "Figure 14 Robot recovery collection for cup-brush insertion (Task 1).",
+      "page": 26,
+      "index": 4,
+      "width": 986,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-005.webp",
+      "caption": "Figure 13 Robot success collection for cup-brush insertion (Task 1).",
+      "page": 26,
+      "index": 5,
+      "width": 986,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-006.webp",
+      "caption": "Figure 11 Human success collection for cup-brush insertion (Task 1).",
+      "page": 26,
+      "index": 6,
+      "width": 986,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-007.webp",
+      "caption": "Table 7 Pooled statistics for the human data scaling study in Figure 5. All rows use the fixed robot anchor Robot success (50) and Robot recovery (50). Counts aggregate four tasks with 80 rollouts per start state regime. Bold values mark the better matched condition at each human data budget.",
+      "page": 21,
+      "index": 7,
+      "width": 960,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-008.webp",
+      "caption": "Table 8 Pooled recovery statistics for the cost matched substitution regime in Figure 6(a). The robot equivalent recovery budget is fixed at 𝐵RobotEq = 80. Counts aggregate four tasks with 80 recovery rollouts per row. Bold values mark the higher result for each matched recovery budget.",
+      "page": 21,
+      "index": 8,
+      "width": 958,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-009.webp",
+      "caption": "Table 6 Aggregate statistics for the main closed loop comparison. All methods are evaluated on the same fixed set of 20 initial states and 20 recovery starts per task. Counts aggregate the four tasks, giving 80 rollouts per start state regime. Intervals are Wilson 95% binomial confidence intervals. Bold values mark the best aggregate result.",
+      "page": 21,
+      "index": 9,
+      "width": 960,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-010.webp",
+      "caption": "Figure 4 Main closed-loop results across four tabletop tasks. Each task group reports Initial SR and Recovery SR (%) for cup brush, table sweep, round disk, cube stack, and their average. In the method labels, 𝑅suc, 𝑅rec, 𝐻suc, and 𝐻rec denote robot success, robot recovery, human success, and human recovery demonstration counts.",
+      "page": 7,
+      "index": 10,
+      "width": 961,
+      "height": 295
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-011.webp",
+      "caption": "Figure 24 Human recovery collection for cube stacking (Task 4).",
+      "page": 29,
+      "index": 11,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-012.webp",
+      "caption": "Figure 25 Robot success collection for cube stacking (Task 4).",
+      "page": 29,
+      "index": 12,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-013.webp",
+      "caption": "Figure 26 Robot recovery collection for cube stacking (Task 4).",
+      "page": 29,
+      "index": 13,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-014.webp",
+      "caption": "Figure 23 Human success collection for cube stacking (Task 4).",
+      "page": 29,
+      "index": 14,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-015.webp",
+      "caption": "Table 9 Pooled recovery statistics for the low robot grounding regime in Figure 6(b). Robot recovery is fixed at Robot recovery (20), and human recovery is varied. Counts aggregate four tasks with 80 recovery rollouts per row. Bold values mark the higher result for each human recovery budget.",
+      "page": 22,
+      "index": 15,
+      "width": 958,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-016.webp",
+      "caption": "Figure 8 Cross-embodiment alignment of the 𝐾 = 4 DCT magnitude intent target. Bars report two-sample KS distances between robot and human DCT target distributions for each coefficient. Light bars compare success trajectories and dark bars compare recovery sub-trajectories; lower values indicate stronger cross-embodiment overlap. Left and right panels show cup brush insertion and round disk placement, respectively.",
+      "page": 23,
+      "index": 16,
+      "width": 936,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-017.webp",
+      "caption": "Figure 22 Robot recovery collection for round-disk placement (Task 3).",
+      "page": 28,
+      "index": 17,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-018.webp",
+      "caption": "Figure 19 Human success collection for round-disk placement (Task 3).",
+      "page": 28,
+      "index": 18,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-019.webp",
+      "caption": "Figure 20 Human recovery collection for round-disk placement (Task 3).",
+      "page": 28,
+      "index": 19,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-020.webp",
+      "caption": "Figure 21 Robot success collection for round-disk placement (Task 3).",
+      "page": 28,
+      "index": 20,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-021.webp",
+      "caption": "Figure 5 Human data scaling under fixed robot recovery grounding. a, Average Initial SR. b, Average Recovery SR. The human data budget varies from 200 to 800 episodes, while all settings use Robot success (50) and Robot recovery (50). The comparison contrasts the Human-Success Baseline and EgoRecovery, which replaces nominal human data with Human recovery (n) routed through the proposed recovery-specific pathway. The shaded band marks the Main Setting.",
+      "page": 8,
+      "index": 21,
+      "width": 955,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-022.webp",
+      "caption": "Figure 6 Recovery budget comparison. a, Average Recovery SR under cost-matched substitution, where the robotequivalent recovery budget is fixed at 𝐵RobotEq = 80 while the amount of human recovery data varies. b, Average Recovery SR under low robot grounding, where Robot recovery (20) is fixed while the human recovery budget varies. The comparison contrasts the Robot-Only Reference, the Direct Human-Recovery Mix, and EgoRecovery. The shaded band marks the Main Setting.",
+      "page": 8,
+      "index": 22,
+      "width": 916,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-023.webp",
+      "caption": "Figure 2 EgoRecovery method. a, During training, robot success preserves nominal execution, robot recovery grounds corrective intent in executable robot actions, and human recovery broadens failure-state coverage. Recovery annotations define the recovery-state label 𝑠𝑡 and the intent mask 𝑚𝑡 , which supervise intent prediction and recovery-gate prediction. b, At deployment, the robot uses only robot observations. The predicted intent 𝑐𝑡 modulates decoder features through gated FiLM only when the predicted gate 𝑝𝑡 indicates that recovery is needed.",
+      "page": 4,
+      "index": 23,
+      "width": 979,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-024.webp",
+      "caption": "Figure 7 Egocentric human recovery collection setup. Head mounted first person recording is used to collect human recovery demonstrations from staged off nominal starts, with wrist mounted streams recording close range hand object interaction. These videos provide failure state and corrective intent supervision during training only; policies are evaluated using robot observations only.",
+      "page": 17,
+      "index": 24,
+      "width": 904,
+      "height": 515
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-025.webp",
+      "caption": "Figure 15 Human success collection for table sweep (Task 2).",
+      "page": 27,
+      "index": 25,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-026.webp",
+      "caption": "Figure 18 Robot recovery collection for table sweep (Task 2).",
+      "page": 27,
+      "index": 26,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-027.webp",
+      "caption": "Figure 16 Human recovery collection for table sweep (Task 2).",
+      "page": 27,
+      "index": 27,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-028.webp",
+      "caption": "Figure 17 Robot success collection for table sweep (Task 2).",
+      "page": 27,
+      "index": 28,
+      "width": 986,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-029.webp",
+      "caption": "Figure 9 Learned alignment in the corrective-intent bottleneck. PCA-2 visualizations of the pre-bottleneck Intent Head input (left) and the trained 4D intent latent 𝑐𝑡 (right) for cup brush insertion (T1) and round disk placement (T3). Color denotes embodiment and marker shape denotes phase. The boxed values are computed in the original feature space rather than the PCA plane: 𝑊𝑅 2 is the sliced Wasserstein-2 distance between robot and human recovery features, and 𝜌 =𝑊𝑅 2 /𝑊𝑁 2 compares recovery alignment with nominal alignment.",
+      "page": 24,
+      "index": 29,
+      "width": 839,
+      "height": 831
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19745v2/fig-030.webp",
+      "caption": "Table 5 Compact training details for the main EgoRecovery runs.",
+      "page": 20,
+      "index": 30,
+      "width": 886,
+      "height": 358
+    }
+  ]
+}

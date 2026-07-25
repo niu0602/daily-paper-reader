@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-001.webp",
+      "caption": "Fig. 4. Evaluation of the corrected stereovision localization method on a 9×4 grid of target positions. The unfocused version uses the initial head pose, where NICO looks toward the center of the table. Green squares indicate target positions, blue points show the estimated positions, and the values inside the green squares represent the estimated z coordinate in centimeters. The pivot point indicates the direction toward which the predictions are shifted during correction.",
+      "page": 6,
+      "index": 1,
+      "width": 658,
+      "height": 418
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-002.webp",
+      "caption": "Fig. 3. Example of a stereo-vision calibration image with detected chessboard corners and their projected positions.",
+      "page": 6,
+      "index": 2,
+      "width": 365,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-003.webp",
+      "caption": "Fig. 8. Visualization of 2D grasping success rate for grid-based targets spread across the whole reachable area using the visual feedback hand alignment model. The plot shows the number of successful grasp attempts for each target position. Gray targets indicate positions where stereo vision substantially overestimated the hand position.",
+      "page": 10,
+      "index": 3,
+      "width": 710,
+      "height": 392
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-004.webp",
+      "caption": "Fig. 7. Visualization of predictions produced by M3 for input points distributed across the whole table. Red points represent input target positions and blue points show the predicted positions. The darker rectangle marks the region covered by training data used for the NN, whereas points outside this region require extrapolation. The box \"NICO\" denotes the robot position.",
+      "page": 10,
+      "index": 4,
+      "width": 706,
+      "height": 389
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-005.webp",
+      "caption": "Fig. 5. Grasping pipeline of our approach.",
+      "page": 8,
+      "index": 5,
+      "width": 719,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-006.webp",
+      "caption": "Fig. 6. Visualization of 2D grasping success rate for grid-based targets spread across the whole reachable area using the baseline model M1 (top) and NN correction model M3 (bottom). The plot shows the number of successful grasp attempts for each target position, together with the touchscreen area, NN correction area, and NICO arm reach. The box \"NICO\" denotes the robot position (to be shifted 10 cm up).",
+      "page": 9,
+      "index": 6,
+      "width": 710,
+      "height": 766
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18210v1/fig-007.webp",
+      "caption": "Fig. 2. Example of object detection results using the YOLO12s model. Left: the original image; Middle: ground truth annotations from the dataset; Right: predictions by the trained model with confidence scores.",
+      "page": 5,
+      "index": 7,
+      "width": 725,
+      "height": 255
+    }
+  ]
+}

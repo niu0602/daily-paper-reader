@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-001.webp",
+      "caption": "Figure 3: Causal BC on Confounded AntMaze. On Medium (left), the agent reaches the goal. On Large (right), the agent follows the expert path initially but drifts off course partway through; once outside the demonstration support, it cannot recover and fails to reach the goal.",
+      "page": 6,
+      "index": 1,
+      "width": 648,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-002.webp",
+      "caption": "Figure 9: Confounded HumanoidMaze. P is global position, A is joint angles, H is head height, E is extremities in torso frame, V is torso vertical, C is center-of-mass gravity, J is joint velocities, U is the latent seismic tremor, W is the vibration sensor, X is joint torques, and Y is the latent reward.",
+      "page": 30,
+      "index": 2,
+      "width": 579,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-003.webp",
+      "caption": "Figure 10: Visualization for Confounded HumanoidMaze, demonstrating the effect of latent seismic tremors U (yellow) on the perceived ground vibration sensor W (red) despite the true center-ofmass velocity C (green) pointing in a completely different direction.",
+      "page": 30,
+      "index": 3,
+      "width": 412,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-004.webp",
+      "caption": "Figure 8: Visualization for Confounded AntMaze, demonstrating the effect of latent winds U (blue) on the heading compass W (red) despite the original heading O (green) being completely different.",
+      "page": 29,
+      "index": 4,
+      "width": 387,
+      "height": 388
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-005.webp",
+      "caption": "Figure 7: Confounded AntMaze. P is global position, L is torso linear velocity, O is torso orientation, A is joint angles, T is torso angular velocity, J is joint angular velocities, U is the latent wind field, W is the compass, X is joint torques, and Y is the latent terminal reward.",
+      "page": 29,
+      "index": 5,
+      "width": 582,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-006.webp",
+      "caption": "Table 6: Mean episode length (steps) for successfully solved episodes (± std). Only algorithms with nonzero success rates are shown. Best result per task in bold.",
+      "page": 34,
+      "index": 6,
+      "width": 818,
+      "height": 236
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-007.webp",
+      "caption": "Figure 11: Runtime to compute adjustment sets as a function of horizon H (log–log scale). Algorithm 1 (H = 2 for HumanoidMaze, H = 10 for AntMaze; Appendix E) completes in a few seconds, while full-horizon adjustment (H = 1000, 2000) takes over four hours.",
+      "page": 34,
+      "index": 7,
+      "width": 522,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-008.webp",
+      "caption": "Figure 1: Performance of various imitation learning algorithms on the Confounded AntMaze Large task. (a) One of our proposed algorithms, Causal IQ-Learn. (b) Existing CIL methods such as Causal GAIL struggle to scale to high-dimensional long-horizon tasks, even when equipped with our windowed adjustment (Section 3.2) to bypass their infeasibility (see Appendix F.3). (c) Noncausal methods fail by overfitting to spurious correlations corrupted by unobserved confounding. (d) Success rates for all algorithms tested aggregated across all tasks evaluated; Causal SQIL and Causal IQ-Learn perform best through leveraging causal knowledge and scalable policy learning.",
+      "page": 3,
+      "index": 8,
+      "width": 756,
+      "height": 539
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-009.webp",
+      "caption": "Table 5: Evaluation results on confounded tasks without normalization. Best non-expert result per task in bold.",
+      "page": 33,
+      "index": 9,
+      "width": 822,
+      "height": 210
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-010.webp",
+      "caption": "Table 7: Ablation over horizon length H ∈ {500, 1000, 1500} on Confounded AntMaze, at the default 100% confounding strength. Best result per column in bold. Normalized E[Y ] is not comparable across horizons (see text).",
+      "page": 35,
+      "index": 10,
+      "width": 818,
+      "height": 596
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-011.webp",
+      "caption": "Table 8: Ablation over confounding strength ∈ {15%, 50%, 85%, 100%} on Confounded AntMaze, at the default horizon H = 1000. Best result per column in bold. Normalized E[Y ] is not comparable across strengths (see text).",
+      "page": 36,
+      "index": 11,
+      "width": 822,
+      "height": 476
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17003v1/fig-012.webp",
+      "caption": "Table 4: Hyperparameters for all algorithms. Causal and non-causal variants share identical settings. “—” denotes a hyperparameter not applicable to that algorithm. A /H distinguishes AntMaze and HumanoidMaze values where they differ.",
+      "page": 31,
+      "index": 12,
+      "width": 822,
+      "height": 779
+    }
+  ]
+}

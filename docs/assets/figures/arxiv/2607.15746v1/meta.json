@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.15746v1/fig-001.webp",
+      "caption": "Figure 2: Design and operating principle of the OptiTac. a. OptiTac sensor CAD schematic. b. the 217 OFs are arranged in a coherent hexagonal array. To demonstrate its coherence a repeating patterned object was imaged through the array when the tactile sensing module was not attached. Clear stripes are visible at the output of the OF array. c. the pre-processing of the raw tactile images to intensity surface plots from which relevant parameters can be extracted.",
+      "page": 15,
+      "index": 1,
+      "width": 1129,
+      "height": 1077
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15746v1/fig-002.webp",
+      "caption": "Figure 1: Concept and biomimetic design of the OptiTac tactile sensor. There are two subprocesses; tactile transduction and high spatial resolution sampling. Tactile transduction in the OptiTac is inspired by the way humans transduce tactile information. Hairless skin contains features such as Merkel cells and Meissner Corpuscles that are key to the transduction of mechanical stimulation of the skin and send activation signals along mechanoreceptors. Low level tactile feature extraction happens as early as the skin and the spinal cord. This is present in the OptiTac from the; TacTip skin, the optical fibers that transport and process the tactile information and the way in which the output light intensities are processed.",
+      "page": 14,
+      "index": 2,
+      "width": 1129,
+      "height": 796
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15746v1/fig-003.webp",
+      "caption": "Figure 5: Tactile contact characterization of the OptiTac. a. To demonstrate the effect of the calibration process (see “Methods”), it was tested on seen data which was used in the development of the calibration protocol. An unseen data set which was not used in the development of the protocol was tested to demonstrate the generalizability of the calibration. The two scatter plots in the far right illustrate the effect of the calibration on the unseen data set compared to the ground truth. The gray scatter points in the background represent the position of the individual OFs within the OFA. b. Repeatability of the centroid measurements. Top shows the 5 ground truth positions that a 5 mm diameter circle indenter contacts the OptiTac. The gray scatter points in the background represent the position of the individual OFs within the OFA. Bottom shows the calibrated x,y centroid measurement errors at the 5 positions after a total of 10 indentations each. c. Calibrated contact width measurements along the major and minor axes. The three binarized surface plots on the right demonstrate how different indenter sizes affect the spread of the resultant light intensity changes.",
+      "page": 18,
+      "index": 3,
+      "width": 904,
+      "height": 1175
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15746v1/fig-004.webp",
+      "caption": "Figure 6: Contact shape classification using the OptiTac. a. Dimensions in mm of the 3D printed indenters. An edge and four flat shapes (circle, square, ellipse, triangle). The output intensity surface plots are shown for each shape. b. Hu moment combinations and the resultant average of the diagonal elements in the corresponding confusion matrices for shape classification using a GMM. c. Confusion matrices for different combinations of Hu moments which are used in the Gaussian Mixture method to classify different shapes. d. Clustering of data from five different shaped indenters when they are pressed into the sensor skin to a depth of 3 mm. Hu moments M1, M2 and M3 were used to extract shape features and a GMM was used to classify the clusters.",
+      "page": 19,
+      "index": 4,
+      "width": 1126,
+      "height": 935
+    },
+    {
+      "url": "assets/figures/arxiv/2607.15746v1/fig-005.webp",
+      "caption": "Figure 4: Development of the contact centroid localization calibration method. To calibrate the measured centroid values, pre-requisite information on how the errors vary over the surface of the sensor is required. Indentations are made directly above each OF within the array. The errors of the 217 indentations vary in both x and y axis so two calibration plots are generated. For each plot, a nearest neighbor search is performed on a 1000x1000 mesh assigning the error value of the nearest measured indenter position. To minimize the effect of overfitting, a Gaussian filter (σ 10) was applied. To demonstrate, unseen input data was calibrated using these calibration surface plots.",
+      "page": 17,
+      "index": 5,
+      "width": 1129,
+      "height": 1288
+    }
+  ]
+}

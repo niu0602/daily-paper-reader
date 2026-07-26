@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-001.webp",
+      "caption": "Table 3: Quantitative Comparison of Egocentric Hand Motion Reconstruction. ReViV achieves state-of-the-art accuracy across four benchmarks while operating orders of magnitude faster than continuous optimization baselines (e.g., Dyn-HaMR). Metrics evaluated include Global-Aligned (GA-MPJPE), Root-Aligned (RA-MPJPE), and Procrustes-Aligned (PA-MPJPE) errors. ↓ indicates lower is better.",
+      "page": 11,
+      "index": 1,
+      "width": 710,
+      "height": 443
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-002.webp",
+      "caption": "Fig. 4: Qualitative visualization of egocentric body motion reconstruction.",
+      "page": 26,
+      "index": 2,
+      "width": 689,
+      "height": 910
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-003.webp",
+      "caption": "Table 1: Tokenizer training settings.",
+      "page": 21,
+      "index": 3,
+      "width": 536,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-004.webp",
+      "caption": "Fig. 1: We present ReViV, a unified framework for holistic egocentric 4D reconstruction. Given a monocular egocentric RGB video, our method jointly estimates humancentric modalities, including body, hand pose, and gaze, alongside scene-aware camera trajectory and depth estimation. These predictions are integrated into a temporally consistent viewer–view reconstruction from a monocular egocentric video.",
+      "page": 2,
+      "index": 4,
+      "width": 570,
+      "height": 673
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-005.webp",
+      "caption": "Table 2: Egocentric Body Motion Reconstruction on ADT [34]. ReViV achieves SOTA performance and efficiency purely from monocular video. Even without explicit camera tracking, ReViV yields superior motion quality (FID), pose accuracy (PA-MPJPE), and pose similarity compared to baselines utilizing either estimated (VIPE) or ground-truth camera trajectories. ↓: lower is better; ↑: higher is better.",
+      "page": 10,
+      "index": 5,
+      "width": 725,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-006.webp",
+      "caption": "Table 5: Ablation on Ego Body Motion, Camera Tracking & Depth.",
+      "page": 14,
+      "index": 6,
+      "width": 642,
+      "height": 195
+    },
+    {
+      "url": "assets/figures/arxiv/2607.17790v1/fig-007.webp",
+      "caption": "Fig. 3: Qualitative Results of Egocentric Hand Reconstruction. ReViV learns robust spatiotemporal motion priors to generate plausible hand motions, even under severe occlusion or when the hands are out of view. We visualize sampled, non-consecutive frames across two distinct sequences to demonstrate temporal stability.",
+      "page": 12,
+      "index": 7,
+      "width": 715,
+      "height": 390
+    }
+  ]
+}

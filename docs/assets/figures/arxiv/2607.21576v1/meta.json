@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-001.webp",
+      "caption": "Table 6: Evaluation tasks. Summary of the probing tasks used for each evaluation dataset.",
+      "page": 15,
+      "index": 1,
+      "width": 848,
+      "height": 679
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-002.webp",
+      "caption": "Table 9: Multi-layer direct-feature baselines. To control for the use of intermediate DINOv2 features, we evaluate direct CLS and average-pooled patch descriptors extracted from all 12 backbone blocks. Descriptors are averaged across layers and combined across adjacent frames either by concatenation or feature difference. Even with access to multi-layer features, direct descriptors remain substantially below SDM on all datasets except for static DAVIS2017, which is consistent with the results obtained without multi-layer features (see Table 2). This indicates that the gains are not explained by intermediate-feature aggregation alone. We report MSE on standardized regression targets and accuracy in % for classification tasks. Best results are highlighted in bold.",
+      "page": 21,
+      "index": 2,
+      "width": 838,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-003.webp",
+      "caption": "Table 10: Additional temporal-context results. SDM and the baseline generally benefit from additional frames on the temporally coherent Kubric and CameraBench benchmarks. On benchmarks with less temporal coherence, our method remains stable with increasing temporal context, while the frame-pair baseline can degrade. We report MSE on standardized regression targets and accuracy in % for classification tasks.",
+      "page": 21,
+      "index": 3,
+      "width": 690,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-004.webp",
+      "caption": "Figure 1: The Structured Dynamics Model (SDM) remodels frozen image features into structured motion tokens. Left: A frozen image encoder extracts frame features, and a recurrent SDM is trained by self-supervised future-feature prediction. SDM structures temporal change into a primary motion token p for the dominant source of change and a residual motion token r for remaining dynamics. Right: Linear probes on ProbeMotion show that these structured motion tokens outperform direct frozen-backbone descriptors such as CLS and average-pooled features, and even surpass VGGT probing performance on 3/7 tasks (see Table 2), while showing stronger generalization to motion-adjacent semantic action classification.",
+      "page": 2,
+      "index": 4,
+      "width": 822,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-005.webp",
+      "caption": "Table 2: Linear probing results on ProbeMotion. We compare SDM against direct frozen-backbone descriptors from DINOv2 with registers, the self-supervised DeltaTok model [19], and strongly supervised 3D/geometry models. For the direct DINOv2 baselines, we use concatenation for CLS features and feature differences for AVG-pooled features. For supervised models, we report separate rows for average-pooled feature-map descriptors and camera-token descriptors. Each entry selects the better of concatenation and feature differences for that row and benchmark based on Section B.2. For Pi3X, which does not provide camera tokens, the second row uses averaged register tokens. For DeltaTok, we directly probe its delta token. SDM outperforms the direct frozen-backbone descriptors across most camera-motion, object-motion, and action probes, and outperforms DeltaTok on five of seven tasks, while remaining competitive with strongly supervised representations despite using substantially weaker supervision and fewer parameters. We report MSE on standardized regression targets and accuracy in % for classification tasks. Best and second-best results among methods without explicit geometric supervision are highlighted in bold and underlined, respectively.",
+      "page": 7,
+      "index": 5,
+      "width": 842,
+      "height": 388
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-006.webp",
+      "caption": "Figure 7: Structured feature prediction. We visualize feature-map error to the target after primary and residual compensation of a CameraBench sample. Errors are highlighted in red. Compared to",
+      "page": 22,
+      "index": 6,
+      "width": 802,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-007.webp",
+      "caption": "Figure 5: Latent motion swapping. We apply motion tokens from a source clip to the feature map of a target clip with a different object, both from the Kubric test set, and visualize the resulting features by PCA projection to RGB after normalization. Black boxes mark the initial object position. The target feature map follows the transferred motion over short horizons and drifts at longer horizons.",
+      "page": 10,
+      "index": 7,
+      "width": 806,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-008.webp",
+      "caption": "Figure 2: Overview of the structured dynamics model shown for T=3. For each transition, SDM predicts the target frozen feature map ft from the previous one ft−1 through two sequential compensation stages. The primary stage extracts a recurrent motion token pt from the feature pair (ft−1, ft) and uses it to produce a primary-compensated feature map f>t , explaining the dominant change. The residual stage extracts rt from the mismatch between f>t and ft, and refines f>t into the final prediction f≫t . The motion tokens are autoregressive but non-causal across time, allowing temporal information to accumulate.",
+      "page": 3,
+      "index": 8,
+      "width": 824,
+      "height": 318
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-009.webp",
+      "caption": "Table 14: Existing assets. Summary of existing datasets and pretrained models used in this paper.",
+      "page": 24,
+      "index": 9,
+      "width": 798,
+      "height": 1035
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-010.webp",
+      "caption": "Figure 4: Motion extrapolation. We repeatedly apply the last motion token from the observed frames to predict future feature maps on a sample from the DAVIS2017 test split. Visualization is done by PCA projection to RGB after normalization. Black boxes mark the last observed ground-truth object position, which is repeated for the extrapolated feature maps. The extrapolated object features follow the object’s motion beyond its last observed position over short horizons and drift at longer horizons.",
+      "page": 9,
+      "index": 10,
+      "width": 815,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-011.webp",
+      "caption": "Figure 3: Stage-wise structured feature prediction. We visualize feature-map error to the target after primary and residual compensation on a sample from DAVIS2017. Errors are highlighted in red.",
+      "page": 9,
+      "index": 11,
+      "width": 794,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-012.webp",
+      "caption": "Table 8: Baseline descriptor ablations. We compare descriptor choices for frozen DINOv2with-registers representations and strongly supervised representations. For DINOv2 with registers, we evaluate CLS tokens and average-pooled patch features using either concatenation or feature differences across consecutive frames. Multi-frame variants average frame-pair descriptors over time. For VGGT and Depth Anything 3, we compare average-pooled feature maps and camera tokens using either concatenation or differences across consecutive frames. Since Pi3X does not have a camera token, we use the average of its registers as an alternative and otherwise follow the same setup. We report MSE on standardized regression targets and accuracy in % for classification tasks. The best results for each model and baseline type are highlighted in bold.",
+      "page": 20,
+      "index": 12,
+      "width": 852,
+      "height": 604
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-013.webp",
+      "caption": "Table 1: ProbeMotion evaluation datasets. Summary of the linear-probe datasets. Numbers given for source videos refer to the samples taken from the corresponding public or generated dataset after clip-length filtering. Dashes indicate that the source dataset does not provide a split suitable for ProbeMotion. For these datasets, we create our own probing splits. Parentheses indicate partial dynamics for SSv2’s camera (see Section B.1). Further details, including split creation for these datasets, are provided in Section A.3.",
+      "page": 5,
+      "index": 13,
+      "width": 787,
+      "height": 326
+    },
+    {
+      "url": "assets/figures/arxiv/2607.21576v1/fig-014.webp",
+      "caption": "Figure 6: Kubric examples. Example sequences from our generated Kubric training data. The three subsets provide weak scene-level supervision for disentangling primary and residual dynamics: moving-camera/static-scene sequences contain only camera-induced motion, static-camera/dynamicscene sequences contain only object motion, and moving-camera/dynamic-scene sequences combine both sources of motion. Examples are shown at 1 fps.",
+      "page": 16,
+      "index": 14,
+      "width": 790,
+      "height": 606
+    }
+  ]
+}

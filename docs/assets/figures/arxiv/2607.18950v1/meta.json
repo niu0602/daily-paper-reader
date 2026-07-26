@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-001.webp",
+      "caption": "FIGURE 8: Sign of the moment around z0 as a function of the contact force location on the distal phalange",
+      "page": 6,
+      "index": 1,
+      "width": 506,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-002.webp",
+      "caption": "FIGURE 9: Contact forces as a function of θ3i",
+      "page": 6,
+      "index": 2,
+      "width": 442,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-003.webp",
+      "caption": "FIGURE 1: Two-dimensional kinematic model of a finger with two interlinked closed loops, providing three DOF through a single actuation at A1i and underactuation via S2i .",
+      "page": 2,
+      "index": 3,
+      "width": 325,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-004.webp",
+      "caption": "FIGURE 11: Hand Prototype manually actuated thanks to a slider: the fingers close when the slider is pulled.",
+      "page": 7,
+      "index": 4,
+      "width": 537,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-005.webp",
+      "caption": "FIGURE 10: Sign of the moment around z0i as a function of the contact forces locations on x1i and angles θ2, θ3",
+      "page": 7,
+      "index": 5,
+      "width": 485,
+      "height": 745
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-006.webp",
+      "caption": "FIGURE 4: Hand performing a cylindrical and a spherical grasp viewed from above: (a)(c)(e) initial fingers position (b) passive adaptation of the fingers for a cylindrical grasp (d) passive adaptation of the fingers for a spherical grasp and (f) passive adaptation for an intermediate grasp.",
+      "page": 3,
+      "index": 6,
+      "width": 537,
+      "height": 864
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-007.webp",
+      "caption": "FIGURE 2: Three-dimensional kinematic model of a finger with a passive rotation at P1i through springs S3i and S4i .",
+      "page": 3,
+      "index": 7,
+      "width": 323,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-008.webp",
+      "caption": "TABLE 2: Types of grasps illustrated for a pencil holder, wallet, small box, and bottle",
+      "page": 8,
+      "index": 8,
+      "width": 546,
+      "height": 553
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-009.webp",
+      "caption": "FIGURE 5: The differential mechanism with a global actuation force fa and three output forces fa1, fa2 and fa3.",
+      "page": 4,
+      "index": 9,
+      "width": 458,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-010.webp",
+      "caption": "FIGURE 6: Illustration of the contact force and its location used in precision grasp.",
+      "page": 4,
+      "index": 10,
+      "width": 296,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2607.18950v1/fig-011.webp",
+      "caption": "FIGURE 7: Illustration of the contact forces and their location used in enveloping grasp.",
+      "page": 5,
+      "index": 11,
+      "width": 298,
+      "height": 471
+    }
+  ]
+}

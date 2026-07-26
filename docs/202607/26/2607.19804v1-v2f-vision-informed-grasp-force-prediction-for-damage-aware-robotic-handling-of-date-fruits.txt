@@ -1,0 +1,209 @@
+Title: V2F: Vision-Informed Grasp Force Prediction for Damage-Aware Robotic Handling of Date Fruits
+
+URL Source: https://arxiv.org/pdf/2607.19804v1
+
+Published Time: Thu, 23 Jul 2026 00:35:27 GMT
+
+Number of Pages: 8
+
+Markdown Content:
+# V2F: Vision-Informed Grasp Force Prediction for Damage-Aware Robotic Handling of Date Fruits 
+
+Shahd Shami, Obadah Wali, Eric Feron, and Shinkyu Park 
+
+Abstract —This paper presents a vision-informed grasp force prediction framework for robotic handling of date fruits. Ad-dressing the dual challenge of high detachment forces and low bruise thresholds, we first conduct mechanical characterization on date samples to define a safe grasping envelope and quantify the relationship between fruit geometry and bioyield stress. In this work, we develop a Vision-to-Force (V2F) pipeline that combines computer vision-based segmentation, active-contour refinement, and geometric feature extraction with a physics-informed residual neural network that augments a Hertz contact equation. The resulting model maps non-contact visual descrip-tors and cultivar metadata to predict a safe grasp force with mean validation performance of R2 ≈ 0.7 across unseen cultivar groups, which is a good result given the inherent mechanical variability of biological tissue. Experimental validation using a gripper and load cell indicates that the predicted forces enable stable manipulation of different types of date fruits, with residual deformations below 1 mm and no observable damage. These results show that pre-emptive, vision-driven force estimation, enabling safer robotic handling of fragile fruits. 
+
+I. I NTRODUCTION 
+
+The demand for robotic solutions in agricultural handling and harvesting has surged as the industry seeks to overcome labor shortages and improve post-harvest quality [1], [2] and reduce labor risks. While significant progress has been made in automating the harvest of rigid fruits [3], [4], the manipulation of delicate organic products in unstructured environments remains a significant challenge. Among these, the date fruit ( Phoenix dactylifera ) is a crop of high economic and cultural importance, particularly in the Middle East and Mediterranean regions. However, the high variability in fruit texture and fragility requires robust perception and force-aware manipulation, making date harvesting a challenging and relatively underexplored problem in agricultural robotics. Current robotic harvesting systems predominantly target rigid fruits using uniform clamping forces or simplified vacuum suction mechanisms. While recent advancements have introduced specialized end-effector designs for soft-fruit manipulation [5]–[7], these solutions often depends on tactile exploration which can cause micro-bruising before it reacts to stop. Dates present a complex mechanical paradox: they require a relatively high gripping force to overcome the detachment resistance of the bunch, yet possess a low 
+
+The work was supported by funding from King Abdullah University of Science and Technology (KAUST). The authors are with the Computer, Electrical and Mathematical Sciences and Engineering, King Abdullah University of Science and Technology (KAUST), Thuwal 23955, Saudi Arabia. {shahd.shami, obadah.wali, eric.feron, shinkyu.park }@kaust.edu.sa 
+
+threshold for mechanical deformation, making them highly susceptible to bruising. Furthermore, existing research lacks a predictive framework that can pre-emptively determine the optimal grasping force based on individual fruit character-istics. This absence of a predictive mapping between visual fruit characteristics and safe grasping forces results in a lack of adaptive grasping strategies, often leading to fruit slippage or irreversible tissue damage during robotic handling. To train and evaluate the proposed framework, we con-structed a laboratory-scale dataset comprising date fruits sam-ples spanning multiple cultivars and hydration states. Con-trolled mechanical characterization experiments established the relationship between fruit geometry and safe grasping limits, providing the supervisory labels for the proposed learning framework. 
+
+Fig. 1. Experimental testbed for V2F validation: (1) UR10e robotic manip-ulator, (2) ZED stereo camera for visual feature extraction, (3) standardized testing surface, (4) custom acrylic gripper pads, and (5) high-precision load cell for real-time force feedback. 
+
+Building upon these biomechanical insights, we propose Vision-to-Force (V2F), a framework that predicts safe grasp-ing forces directly from pre-contact visual observations. V2F framework leverages computer vision and machine learning to estimate optimal grasping parameters. By mapping pre-contact visual descriptors to the required normal grasp force, the framework enables the robot to adapt its grip to the me-chanical properties of each individual fruit while maintaining damage-free manipulation. arXiv:2607.19804v1 [cs.RO] 22 Jul 2026 The primary contributions of this work are as follows:  
+
+> •
+
+A Vision-to-Force (V2F) framework for predicting safe grasp forces directly from pre-contact visual observa-tions.  
+
+> •
+
+A physics-guided residual learning model that combines Hertzian contact mechanics with data-driven learning to improve force prediction.  
+
+> •
+
+Experimental validation on a robotic gripper equipped with a force sensor (see Fig. 1), demonstrating the feasibility of using ML-driven force identification for the damage-free handling of delicate fruits. The remainder of this paper is organized as follows: Sec-tion II reviews related work in agricultural manipulation. Section III details the mechanical characterization of the date fruit dataset. The proposed V2F ML framework is described in Section IV. Section V presents the robotic hardware integration and experimental results, and Section VI concludes the paper with future research directions. II. R ELATED WORK 
+
+A. Pre-Harvest Fruit Classification and Maturity Assessment 
+
+Vision-based classification of date fruits prior to harvesting has seen significant progress through deep learning. Alta-heri et al. [8] trained a CNN to classify cultivar and ripeness under natural lighting conditions. Faisal et al. [9] extended this direction with the Intelligent Harvesting Decision System (IHDS) to classify maturity stages. While these results are compelling, both studies operate exclusively in the visual domain and report no mechanism for translating maturity pre-dictions into mechanically safe grasping decisions. Therefore, visual classification alone cannot determine the grasp force required for safe manipulation. 
+
+B. Grasp State Classification and Safe Force Inference 
+
+While visual classification identifies harvest-ready fruits, safe manipulation additionally requires estimating the forces needed for stable grasping. Reliable grasping in cluttered, occluded environments requires sensors that can detect and respond to unstable contact events without relying on line-of-sight perception. Walt and Krishnan [10] addressed this directly in the agricultural setting, mounting low-cost IMU and IR reflectance sensors on a two-finger gripper to classify four grasp states: no slip, slip, failed grasp, and successful pick, using a Random Forest classifier operating on FFT-transformed sensor windows. Their system achieved perfect recall on failed grasps and was validated on a live cherry tomato plant, demonstrating that computationally light sens-ing pipelines can function reliably under the occlusion and stem attachment forces unique to agricultural manipulation. A key finding was that sensor fusion, rather than any single modality, provided the robustness needed for real-world plant conditions. Building on this, recent work has moved beyond state classification toward predicting the safe operating force for deformable objects. Liu and Sun [11] proposed KAN-ViT, an end-to-end transformer architecture that fuses GelSight tactile images with external RGB camera data to jointly classify grasp states and infer safe grasping force for soft objects such as bread. Their framework introduces optical flow extracted from tactile image sequences to capture subtle contact dynamics that static images miss, and replaces the standard MLP decoder with a KAN network to improve time efficiency. Force calibration is achieved through a 3D gel in-dentation mapping correlating visual sensor deformation with normal contact force. Xu et al. [12] further showed that an attention-augmented LSTM correctly up-weights informative contact frames from piezoresistive tactile sequences, and that gripper closing speed significantly affects signal quality and recognition accuracy, rising above 90% at high speed but falling below 71% at the slowest tested speed, confirming that grasp dynamics, not just final contact geometry, shape the measurable signal. Although these studies advance grasp-state monitoring and reactive force control, they operate exclusively during or after contact, classifying an ongoing grasp or adapting force in response to observed slip. None estimates the required force prior to contact. Furthermore, their dependence on high-resolution vision-based tactile sensors and online exploratory actions introduces infrastructure that may be impractical in field harvesting robots. 
+
+C. Vision-Tactile Fusion and Deformable Object Grasping 
+
+Beyond agricultural applications, multimodal vision-tactile methods have also been investigated for deformable object grasping. Wang et al. [13] introduced a compact GelSight-based tactile sensor capable of reconstructing high-resolution 3D contact geometry, demonstrating that accurate contact modeling improves grasp interpretation for deformable ob-jects. Kwiatkowski et al. [14] proposed a multimodal frame-work fusing proprioceptive and tactile signals to assess grasp stability, showing that sensor fusion significantly enhances robustness over single-modality systems. Slip detection has been widely investigated; Dong and Adelson [15] demon-strated that combining tactile and visual information im-proves slip prediction reliability under dynamic contact con-ditions. More recently, transformer-based architectures have been proposed for deformable object grasping, leveraging cross-modal attention to generalize across object categories and grasp configurations [16]. Across all of these works, force inference is derived from rich contact sensing during or after grasp interaction. Our framework shifts prediction earlier in the manipulation pipeline: rather than relying on high-resolution tactile imag-ing or exploratory probing, we estimate yield-level grasp stress prior to contact from compact geometric descriptors and fruit type, grounding predictions in analytical Hertzian contact mechanics and refining them through physics-guided residual learning. This positions our approach as a planning-time complement to the execution-stage feedback systems reviewed above. III. M ECHANICAL CHARACTERIZATION AND FORCE 
+
+MODELING 
+
+In this section, we establish the biomechanical foundation required to define the “safe grasping envelope” for date fruits. This physical grounding ensures that our predictive model provides force set-points that maintain the fruit within its elastic deformation regime, avoiding irreversible tissue damage. 
+
+A. Biomechanical Properties of Date Fruit 
+
+Agricultural products like dates exhibit complex viscoelas-tic behavior, where the stress-strain relationship is influenced by cellular structure, moisture content, and maturity [17]. As illustrated in Fig. 2, the force-deformation curve of the date fruit is characterized by three critical transition points: 1) Linear Limit (LL): The regime of proportional elasticity where the slope remains constant. 2) Bioyield Point ( y): The onset of microstructural cell rupture. This represents the functional limit for damage-free robotic handling. 3) Rupture Point ( R): Macrostructural failure, such as skin puncture or cracking. The mechanical response of the fruit is characterized using engineering stress and strain. The applied compressive stress is σ = F/A 0, where F is the applied compression force and 
+
+A0 is the initial contact area. The corresponding engineering strains along the loading ( y) and transverse ( z) directions are given by ϵ = δL/L 0, where L0 denotes the initial dimension, and δL represents the corresponding dimensional changes during compression. The mechanical resistance of the fruit is governed by its Young’s modulus ( E = σ/ϵ y ) and Poisson’s ratio ( ν = −ϵz /ϵ y ). These parameters determine the material’s shear modulus ( G), defined as 
+
+G = E
+
+2(1 + ν) . (1) Maintaining the applied robotic stress below the bioyield threshold σy ensures that deformation remains elastic, pre-serving the fruit’s commercial value. Our objective is to determine a force Ftot such that the maximum contact stress σmax satisfies the safety condition: 
+
+σmax < σ bioyield . (2) 
+
+B. Bridging Physics to ML: Feature Mapping 
+
+The core hypothesis of our V2F framework is that a fruit’s morphology, specifically its projected surface area, serves as a reliable proxy for its mechanical constraints. By identifying the fruit’s projected area via computer vision, we can estimate its effective contact patch and ge-ometry. This transitions the problem from a reactive tactile sensing task to a predictive vision task . The ML model, described in the following section, learns to map these visual descriptors to the optimal Fgrasp .    
+
+> Fig. 2. A typical force-deformation curve for an agricultural product, showing the proportional limit LL, bioyield point y, and rupture point R. Corresponding forces (F) and deformations (D) are labeled at each point
+> ∈ { LL ,y,R}[17].
+
+IV. V ISION -T O-F ORCE FRAMEWORK 
+
+The proposed V2F pipeline, illustrated in Fig. 3, employs a three-stage physics-guided residual learning architecture to map visual descriptors to mechanical grasping constraints. The process initiates with stereo image acquisition to extract the initial fruit dimentions. In Stage 1, a Gradient Boost-ing Regressor estimates the fundamental material properties. Stage 2 utilizes these parameters within an analytical Hertz’s contact model to compute the theoretical stress ( σh) Finally, in Stage 3, a residual deep neural network identifies the dis-crepancy ( r) between the analytical model and the measured stress ( σmeas ). 
+
+A. Data and Inputs 
+
+The training dataset was obtained under controlled lab-oratory conditions using date fruits at the Tamar ripeness stage, which represents the fully ripe stage commonly as-sociated with marketable and consumable dates [18], [19]. The samples included three Saudi cultivars, Ajwa, Barhi, and Sagai, prepared under normal, moistened, and dried conditions to capture practical variability in fruit texture and moisture state during handling. Mechanical labels were generated from compression tests, where force and deforma-tion were recorded synchronously to identify safe grasping limits before the onset of permanent tissue damage. The dataset size was determined using Simple Random Sampling (SRS) methodology [20], which yielded approximately 500 samples. To provide standardized inputs for the V2F framework, we define a right-handed x−y −z coordinate system centered on the fruit body, as illustrated in Fig. 4. The z-axis is aligned with the longitudinal stem-to-tip axis, representing the fruit height Z0 (cm), while the y-axis corresponds to the maximum transverse diameter Y0 (cm). For each sample, the cross-section of A0 (cm 2) is measured on the zy -plane. Assuming a Fig. 3. Architecture of the physics-guided residual learning framework. The pipeline integrates analytical Hertz’s contact theory (Stage 2) with a deep residual network (Stage 3) to predict grasping stress by mapping visual geometric features to biomechanical material properties.  
+
+> Fig. 4. Coordinate definition for date-fruit dimensions.
+
+symmetric geometry about the z-axis ( Y0 ≈ X0), we estimate the fruit volume V0 (cm 3) using the ellipsoidal approximation 
+
+V0 = 23 A0 · Y0. (3) Each sample corresponds to a single fruit compres-sion/grasp instance. Let the target be the measured yield-level engineering stress σ (kPa), denoted in our dataset as 
+
+stress_y_kPa . We define the input vector x ∈ Rd by concatenating physical descriptors and categorical condition indicators 
+
+x =
+
+h
+
+Y0, Z 0, A 0, V 0, onehot( DT ), onehot( HS ), ϵ y
+
+i
+
+, (4) where onehot( DT ) ∈ { 0, 1}2 encodes the cultivar identity across three varieties with one category dropped as 
+
+DT ∈ { Ajwa , Barhi , Sagai }, (5) yielding two binary indicator columns [1Barhi , 1Sagai ], with 
+
+Ajwa as the reference category, and onehot( HS ) ∈ { 0, 1}2
+
+encodes the hydration level across three conditions as 
+
+HS ∈ { Dried , Moistened , Normal }, (6) yielding two binary indicator columns [1Moistened , 1Normal ],with Dried as the reference category. Finally, εy > 0 is the cultivar-specific elastic strain limit obtained from experimen-tal data. This strain corresponds to the maximum recoverable deformation prior to the onset of permanent tissue damage and serves as a biomechanical prior for force prediction. 
+
+B. Vision Model Architecture 
+
+We employ an AI-based computer vision model for object detection with advanced image processing algorithms to track and quantify dimensional during experiment. The model and image processing are implemented in Python (v3.10.11) [21] with the PyTorch [22] and OpenCV [23] packages to develop an autonomous system to be applicable for future systems. We select the Mask Region-Based Convolutional Neural Network model with Residual Network with 50 layers Fea-ture Pyramid Network (MaskR-CNN with ResNet-50 FPN) backbone for date fruit detection and segmentation [24]. We fine-tune and train the model on our dataset to identify and segment date fruits in both static images and video sequences. Also, we utilize Common Objects in Context (COCO) pre-trained weights to accelerate the training for binary classification to label objects as background or date fruit. Additionally, we configure the region of interest heads with a Non-Maximum Suppression (NMS) threshold and a detection score threshold to optimize detection sensitivity while maintaining precision. We incorporate monitoring pro-tocols into the training, including early stopping based on validation loss, periodic checkpointing, and visualization of predictions. We evaluate training progress through detailed loss breakdown analysis covering classification, bounding box regression, mask prediction, objectness, and region pro-posal network box regression components (Table I). TABLE I MASK R-CNN M ODEL HYPERPARAMETER            
+
+> Parameter Category Configuration Details
+> Training epochs 100 Optimizer Stochastic Gradient Descent Initial learning rate 0.001 Momentum 0.9 Weight decay 0.0005 Batch size 2Mask loss weighting 1.5 Early stopping patience 5 epochs NMS threshold 0.4 Detection score threshold 0.3
+
+To improve measurement accuracy, we implement an Ac-tive Contour Algorithm that refines the initial model segmen-tation contour. The purpose of this algorithm is to ensure that the contour surrounds only the detected date fruit boundaries within each frame. The algorithm employs grayscale con-version with contrast enhancement using Contrast-Limited Adaptive Histogram Equalization (CLAHE) [25]. CLAHE is a local method that enhances image contrast by redistributing pixel intensity values within small regions while preventing the amplification of noise through contrast limiting. The algorithm then incorporates the contours detected in previous frames to ensure temporal consistency throughout the video sequence, providing a logical correlation between detected object motions. Finally, the output refinement contour is constrained to the initial model contour’s boundaries. For dimensional measurements, we use a ZED stereo camera [26] to capture images and videos. The dimensions are then extracted from the model’s detected contour. 
+
+C. Vision Model Performance 
+
+The primary performance metric is classification accuracy, defined as the ratio of correctly classified instances to the total number of predictions. In epoch 1 shows early segmentation with no prediction above 0.5 accuracy, providing empty frame. The developed Mask R-CNN model achieved an initial accuracy of 0.67 at epoch 5, primarily due to background misclassifications. As training progressed, false positives and segmentation errors were progressively reduced. By epoch 10, the model reached stable predictions with an accuracy of 1.0, enabling precise measurement of fruit geometry. As illustrated in Fig. 5, the model demonstrates robust detection performance, including accurate segmentation of compressed dates. This reliable segmentation directly supports accurate residual deformation calculations. Overall, the results indi-cate that automated segmentation can effectively measure date fruit dimensions, overcoming the limitations of manual caliper-based methods reported in prior studies [27], [28]. With reliable segmentation provided by the Mask R-CNN model, the next step in the pipeline is Active Contour Algorithm . This algorithm extracts a refinement contour and outputs the physical properties measured in pixels. Existing studies focus mainly on classification or simple feature extraction of single date fruits [29], [30], whereas our work 
+
+(a) Epoch 1 
+
+Ground Truth Prediction (b) Epoch 5 
+
+Ground Truth Prediction (c) Epoch 10 
+
+Ground Truth Prediction 
+
+> Fig. 5. Model predictions at different training epochs, The red boxes indicate detected objects with the green box displays the corresponding accuracy score.
+
+advances this area by providing active-contour segmentation, precise geometric measurement, and improved handling of the irregular textures and natural asymmetry characteristic of date fruits (Fig. 6). 
+
+D. Stress Prediction ML Model Theoretical Formulation 
+
+To model the complex biomechanical response of fruits, we propose a hybrid framework that augments a classical analytical baseline with a learnable residual term. We first compute an analytical baseline stress, σHertz , derived from Hertzian contact theory, We estimate mechanical parameters 
+
+( ˆE, ˆν) from physical features via regression to define the effective modulus ˆE∗ = ˆE/ (1 − ˆν2). The equivalent fruit Fig. 6. A frame illustrating the date fruit, lighting setup. The Mask R-CNN detection contour is shown in pink, while the refined active-contour boundary is shown in red. TABLE II BASELINE MODEL COMPARISON UNDER GROUP KF OLD CROSS -VALIDATION (CV). T RAIN AND VALIDATION RMSE ARE REPORTED IN K PA. CV R2 MEAN AND STANDARD DEVIATION ARE COMPUTED ACROSS FIVE FOLDS . M ODELS WITH NEGATIVE CV OF R2                                                            
+
+> PERFORM WORSE THAN A CONSTANT MEAN PREDICTOR .
+> Model Val RMSE Val
+> R2CV R2
+> Mean CV R2
+> Std
+> Baseline (Mean) 1.548 −0.095 −0.032 0.011 Baseline (Median) 1.480 −0.001 −0.064 0.029 Linear Regression 1.488 −0.012 0.054 0.077 Ridge 1.469 0.014 0.126 0.029 Lasso 1.548 −0.095 −0.032 0.011 ElasticNet 1.466 0.017 0.076 0.048 Random Forest 1.498 −0.025 0.173 0.056 Gradient Boosting 2.063 −0.945 −0.080 0.129 Extra Trees 1.398 0.106 0.166 0.058 SVR (RBF) 1.494 −0.019 0.069 0.044 SVR (Linear) 1.428 0.068 0.126 0.070 KNN 1.561 −0.113 −0.012 0.122
+> The proposed model 1.1345 0.7407 0.6986 0.0828
+> Bold entries indicate the best validation R2per column.
+> Fig. 7. Per-fold cross-validation performance under GroupKFold partition-ing, R2scores and RMSE (kPa), dashed lines indicate the mean across folds (Train: blue, Val: orange).
+
+radius is approximated as Req = Y0, and indentation is modeled as δ = ( ϵy /100) Y0. The resulting baseline is 
+
+ˆσHertz (x) = 43 ˆE∗ pReq 
+
+δ3/2
+
+A0
+
+. (7) Since biological fruits deviate from ideal elastic assumptions due to viscoelasticity and structural heterogeneity, we decom-pose the predicted stress into this Hertz term plus a learnable residual rϕ(x)ˆσ = ˆ σHertz (x) + rϕ(x) + η, (8) where ˆσHertz (x) is the predicted Hertz’s stress, rϕ(x) is the learned residual with network parameters ϕ, and η captures measurement noise. To enforce consistency between the data-driven predictions and the underlying contact mechanics, we formulate a physics-guided loss function, L, that combines a supervised data loss with the residual of a learnable effective Hertzian contact model. The overall training objective is defined as 
+
+L = (1 − α) Ldata (ˆ rϕ, r ) + α Lphys (ˆ σ(x), ˆσHertz (x)) , (9) where Ldata penalizes the mismatch between the predicted residual stress ˆrϕ and the ground-truth residual r, Lphys 
+
+penalizes deviations of the total predicted stress ˆσ from the Hertz’s contact stress ˆσHertz , and α ∈ [0 , 1] controls the trade-off between fitting the residual to data and maintaining consistency with the Hertzian contact model. Setting α = 0 
+
+reduces to a pure data-driven residual, while α = 1 en-forces full physics consistency. This physics-guided residual learning encourages the network to produce stress fields that remain close to the analytical Hertz solution while still capturing unmodelled effects, leading to highly accurate predictions of the final grasping force Fgrasp .
+
+E. Validation and Generalization of the Proposed Method 
+
+To assess the robustness of the V2F framework across diverse conditions, we define a group label 
+
+g = (date type, hydration state ) for each sample. We implemented a five-fold GroupKFold cross-validation (CV) strategy, ensuring that samples from the same cultivar–state group are never split across training and validation sets. This rigorous partitioning, illustrated in Fig. 7, forces the model to generalize its predictions to entirely unseen date varieties. As shown in Table II, the proposed model significantly outperforms standard baselines, achieving a mean validation 
+
+R2 of 0.74 and an RMSE of 1.13 kPa. While Fold 5 (Sagai Dried/Normal) presented a greater generalization challenge (R2 = 0.69 ), the consistently low training RMSE (0.56 kPa) suggests that while internal features are learned well, high inter-group variability requires our hybrid approach to maintain stability. Overall, the consistent performance confirms that the model provides physically reasonable force set-points even when encountering novel cultivar-condition combinations. V. E XPERIMENTAL VALIDATION 
+
+In this section, we evaluate the performance of the pro-posed Vision-to-Force (V2F) framework through physical grasping experiments. The primary objective is to verify if the AI-predicted force Fpred is sufficient for stable manipulation while remaining below the bioyield threshold to prevent permanent damage. 
+
+A. Experimental Procedure 
+
+The validation protocol follows a three-stage sequence, see Fig. 8: 1) The ZED camera captures the scene. The vision model performs fruit segmentation to calculate the projected area Ap. This value, alongside the variety and ripeness state, is fed into the V2F model. 2) The model generates a target force Fpred . The Robotiq 2F-85 gripper [31] is then actuated until the integrated load cell registers the target set-point. 3) A standard pick-and-place task is executed. Upon re-lease, the vision system re-scans the fruit to quantify the residual deformation, 
+
+δres = Lafter − L0, (10) where L0 is the initial fruit dimension before grasping and Lafter is the corresponding dimension measured after the fruit is released and allowed to recover. The residual deformation serves as a quantitative indicator of permanent mechanical damage. 
+
+B. Experimental Results and Discussion 
+
+The framework was evaluated on multiple date cultivars, specifically Ajwa , Barhi , and Sagai . All experiments were conducted at the natural (normal) hydration state, represent-ing the most common commercial harvesting condition. The experimental workflow is illustrated in Fig. 8, while the quantitative results are summarized in Table III.                    
+
+> TABLE III EXPERIMENTAL VALIDATION RESULTS FOR V2F G RASPING
+> Date Variety Area Predicted Force Residual Unit mm 2N∆mm
+> Ajwa 7.473 1.25 0.8 Barhi 7.123 0.60 0.6 Sagei 7.126 0.30 0.4
+> Fig. 8. Experiment workflow, (1) identify the fruit area and needed force, (2) grip and move the date with required force, (3) release the date and calculate the residual deformation.
+
+The predicted grasp force varied according to fruit mor-phology and cultivar, ranging from 0.30 N for Sagai to 
+
+1.25 N for Ajwa . Despite this variation, all grasping trials were completed successfully without fruit dropping or visible bruising. The measured post-release residual deformation remained below 1 mm for all cultivars, with values of 
+
+0.8 mm, 0.6 mm, and 0.4 mm for Ajwa , Barhi , and Sagai ,respectively. These results indicate that the predicted forces maintained the fruit within the elastic deformation regime established during the mechanical characterization, thereby preventing permanent tissue damage. To verify that the predicted grasp forces ensure both damage-free and stable manipulation, grasp stability was further evaluated using the Coulomb friction model. For a two-finger gripper, slip-free transport requires 
+
+2μs ˆFn ≥ mf (g + amax ), (11) where μs is the coefficient of static friction, ˆFn is the predicted normal grasp force, mf is the fruit mass, g is the gravitational acceleration, and amax is the maximum transport acceleration. Using a conservative coefficient of static friction of μs = 0 .3 and an average fruit mass of 
+
+9 g [32], the minimum normal force required for static slip-free grasping is approximately 0.15 N. This value is well below the minimum force predicted by the proposed framework ( 0.30 N for Sagai ), indicating that all predicted grasp forces satisfy the theoretical slip-free condition with a safety margin of at least two. Consistent with this analysis, no observable slip or fruit loss occurred during any pick-and-place experiment. The experimental results demonstrate that the proposed V2F framework simultaneously achieves damage-free han-dling and reliable grasp stability. Unlike conventional grasp-ing approaches based on fixed force heuristics or reactive tactile sensing, the proposed method predicts fruit-specific grasp forces directly from pre-contact visual observations while incorporating Hertzian contact mechanics through a physics-guided residual learning framework. Consequently, the robot adapts its grasp before contact, eliminating ex-ploratory squeezing while maintaining stable manipulation across different fruit cultivars. These results substantiate the dual-objective design of the framework: (i) damage-free handling and (ii) reliable grasp stability, validating the effectiveness of embedding physics-guided residual learning within a vision-based force prediction pipeline. VI. C ONCLUSION 
+
+This work presents a vision-informed Vision-to-Force (V2F) framework that predicts safe grasping forces for robotic handling of date fruits directly from visual features and minimal contextual metadata. The model is grounded in a mechanical characterization study and integrates a Hertz analytical baseline within a residual neural network to ensure physically reasonable stress predictions across different cul-tivar and hydration states. The framework combines Mask R-CNN segmentation, active-contour refinement, and physics-informed residual learning to estimate fruit geometry and safe stress levels. Using GroupKFold cross-validation with cultivar-state groups held out, the model achieves a mean validation R2 ≈ 0.7. Robotic experiments on a manipulator with a force-sensor-equipped gripper demonstrate that the predicted forces enable stable manipulation while maintain-ing residual deformation below 1 mm, indicating operation within the elastic regime without bruising. More broadly, this approach demonstrates how non-contact vision can replace slow exploratory tactile sensing, which risks micro-bruising and reduces handling throughput. Future work will explore closed-loop integration with tactile feedback to handle rare out-of-distribution cases where vision-only predictions may be insufficient. REFERENCES [1] A. Bechar and C. Vigneault, “Agricultural robots for field operations: Concepts and components,” Biosystems Engineering , vol. 149, pp. 94– 111, 2016. [2] N. Bharad and B. Khanpara, “Agricultural fruit harvesting robot: An overview of digital agriculture,” Plant Arch , vol. 24, pp. 154–160, 2024. [3] J. Espinoza, B. Chinnock, C. Bahne, T. Nguyen, and A. Bani Milhim, “A novel high-precision citrus harvesting robotic system for controlled stem length: Design, validation, and field evaluation,” Smart Agricul-tural Technology , vol. 13, p. 101918, 2026. [4] H. Zhou, H. Kang, X. Wang, W. Au, M. Y. Wang, and C. Chen, “Branch interference sensing and handling by tactile enabled robotic apple harvesting,” Agronomy , vol. 13, no. 2, p. 503, 2023. [5] J. F. Elfferich, D. Dodou, and C. Della Santina, “Soft robotic grippers for crop handling or harvesting: A review,” IEEE Access , vol. 10, pp. 75 428–75 443, 2022. [6] F. Visentin, F. Castellini, and R. Muradore, “A soft, sensorized gripper for delicate harvesting of small fruits,” Computers and Electronics in Agriculture , vol. 213, p. 108202, 2023. [7] G. Hu, C. Chen, J. Chen, L. Sun, A. Sugirbay, Y. Chen, H. Jin, S. Zhang, and L. Bu, “Simplified 4-dof manipulator for rapid robotic apple harvesting,” Computers and Electronics in Agriculture , vol. 199, p. 107177, 2022. [8] H. Altaheri, M. Alsulaiman, and G. Muhammad, “Date fruit classi-fication for robotic harvesting in a natural environment using deep learning,” IEEE Access , vol. 7, pp. 117 115–117 133, 2019. [9] M. Faisal, M. Alsulaiman, M. Arafah, and M. A. Mekhtiche, “IHDS: Intelligent harvesting decision system for date fruit based on maturity stage using deep learning and computer vision,” IEEE Access , vol. 8, pp. 167 985–167 997, 2020. [10] B. Walt and G. Krishnan, “Grasp state classification in agricultural ma-nipulation,” in 2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . Detroit, MI, USA: IEEE, October 2023, pp. 4250–4255. [11] C. Liu and J. Sun, “KAN-ViT: A visual-tactile fusion learning method for grasping states classification and safe force inference,” in Proceed-ings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) . IEEE, 2024. [12] Z. Xu, W. Yi, M. Chen, and C. Liu, “Robotic tactile recognition system based on AM-LSTM model,” in 2021 IEEE International Conference on Robotics and Biomimetics (ROBIO) . Sanya, China: IEEE, December 2021, pp. 1570–1575. [13] S. Wang, S. He, B. Romero, and E. Adelson, “Gelsight wedge: Measuring high-resolution 3d contact geometry with a compact robotic finger,” in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2021, pp. 6468–6475. [14] J. Kwiatkowski, D. Cockburn, and V. Duchaine, “Grasp stability assessment through the fusion of proprioception and tactile signals,” in 
+
+Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , 2017. [15] J. Li, S. Dong, and E. Adelson, “Slip detection with combined tactile and visual information,” in Proceedings of the IEEE International Conference on Robotics and Automation (ICRA) , 2018, pp. 7772–7777. [16] Y. Han, K. Yu, R. Batra, N. Boyd, C. Mehta, T. Zhao, Y. She, S. Hutchinson, and Y. Zhao, “Learning generalizable vision-tactile robotic grasping strategy for deformable objects via transformer,” 
+
+IEEE/ASME Transactions on Mechatronics , vol. 30, no. 1, pp. 554– 566, 2025. [17] N. N. Mohsenin, Physical Properties of Plant and Animal Materials: Structure, Physical Characteristics and Mechanical Properties . Rout-ledge, 2020. [18] I. Ahmed, A. S. Ahmed, and R. Robinson, “Biochemical changes in date fruits as affected by maturity stages,” Journal of Food Chemistry and Nutrition , vol. 2, no. 2, pp. 106–115, 2014. [19] W. Sawaya, J. Khalil, W. Safi, and A. Al-Shalhat, “Physical and chemical characterization of three saudi date cultivars at various stages of development,” Canadian Institute of Food Science and Technology Journal , vol. 16, no. 2, pp. 87–92, 1983. [20] S. L. Lohr, Sampling: Design and Analysis . Chapman and Hall/CRC, 2021. [21] Python Software Foundation, Python 3.10.11 Documentation , Wilm-ington, DE, USA, 2023. [22] S. Imambi, K. B. Prakash, and G. R. Kanagachidambaresan, PyTorch .Cham: Springer International Publishing, 2021, pp. 87–104. [Online]. Available: https://doi.org/10.1007/978-3-030-57077-4 10 [23] I. Culjak, D. Abram, T. Pribanic, H. Dzapo, and M. Cifrek, “A brief introduction to opencv,” in Proceedings of the 35th International Convention MIPRO , 2012, pp. 1725–1730. [24] E. Hassan, N. El-Rashidy et al. , “Mask R-CNN models,” Nile Journal of Communication and Computer Science , vol. 3, no. 1, 2022. [25] K. Zuiderveld, “Contrast limited adaptive histogram equalization,” in 
+
+Graphics Gems IV , P. S. Heckbert, Ed. San Diego, CA, USA: Academic Press Professional, Inc., 1994, pp. 474–485. [26] Stereolabs, “ZED stereo camera,” https://www.stereolabs.com/zed, 2024, accessed: 2026-03-02. [27] I. Al-Abdoulhadi, S. Al-Ali, K. Khurshid, F. Al-Shryda, A. Al-Jabr, and A. Ben Abdallah, “Assessing fruit characteristics to standardize quality norms in date cultivars of saudi arabia,” Indian Journal of Science and Technology , vol. 4, pp. 1262–1266, 01 2011. [28] M. Kumar Mahawar, K. Jalgaonkar, M. Kumar, V. Singh Meena, and B. Bhushan, “Determination of some physical properties of date palm fruits(cv. Khadrawy and Medjool),” Acta Agrophysica , vol. 24, no. 2, pp. 271–277, 2017. [29] H. Altaheri, M. Alsulaiman, and G. Muhammad, “Date fruit classi-fication for robotic harvesting in a natural environment using deep learning,” IEEE Access , vol. 7, pp. 117 115–117 133, 2019. [30] K. Albarrak, Y. Gulzar, Y. Hamid, A. Mehmood, and A. B. Soomro, “A deep learning-based model for date fruit classification,” Sustainability ,vol. 14, no. 10, 2022. [31] Robotiq, “Adaptive Grippers: 2-Finger Grippers,” https://robotiq.com/products/adaptive-grippers, 2025, accessed: 8February 2026. [32] M. Ghonimy, R. Alayouni, G. Alshehry, H. Barakat, and M. M. Ibrahim, “Assessing the physico-mechanical properties of three date fruit varieties for conserving the keeping and appearance qualities,” 
+
+Foods , vol. 14, no. 11, p. 1838, May 2025.

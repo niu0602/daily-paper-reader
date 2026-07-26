@@ -1,0 +1,302 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-26T20:35:30.630416+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 7,
+    "quick_skim_target": 11,
+    "quick_selected": 7
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.18840v1",
+      "source": "arxiv",
+      "title": "WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory",
+      "abstract": "World Action Models (WAMs) offer a promising paradigm for robotic manipulation by jointly modeling visual state transitions and robot actions. However, existing WAMs are constrained by limited temporal context, coarse episode-level language supervision, and predominantly text-only conditioning, which hinder task-progress tracking and fine-grained language-video-action grounding while limiting visual-context reasoning and cross-embodiment transfer. In this paper, we introduce WorldScape Policy 2.0, a controllable WAM with reasoning-augmented long short-term memory. Its causal short-term visual memory supplies recent observations as DiT prefill to preserve local interaction dynamics, while its long short-term event memory organizes historical VLM outputs into global-history, local-active, and event-boundary representations for progress-aware retrieval. The retrieved history augments perception and autoregressively generated planning tokens, yielding an implicit subgoal condition for autonomous planning; semantic forcing further transfers event-level instruction semantics into this latent planning pathway. To establish fine-grained multimodal controllability, we construct ManipEvent-5M, an event-grounded embodied pretraining dataset containing nearly 5 million event segments with aligned action trajectories, episode-level task instructions, segment-level subtask captions, goal images, and video demonstrations. These designs provide a unified interface for autonomous planning from high-level instructions and controllable execution from fine-grained text, goal-image, or video-context prompts. Experiments in both simulation and real-world platforms demonstrate superior capabilities in long-horizon autonomous planning, fine-grained instruction following and in-context adaptation.",
+      "authors": [
+        "Haisheng Su",
+        "Zongdai Liu",
+        "Xin Jin",
+        "Haoxuan Dou",
+        "Chengming Hu",
+        "Baorun Li",
+        "Zhanwang Liu",
+        "Ruiyan Xu",
+        "Jianjie Fang",
+        "Xin Zhang",
+        "Zhenjie Yang",
+        "Xue Yang",
+        "Chen Gao",
+        "Junchi Yan",
+        "Yong Li",
+        "Wei Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-21T08:25:37+00:00",
+      "link": "https://arxiv.org/pdf/2607.18840v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "World Action Models for robotic manipulation modeling visual state transitions",
+      "llm_evidence_cn": "用于机器人操作的世界动作模型，模拟视觉状态转换",
+      "llm_evidence": "用于机器人操作的世界动作模型，模拟视觉状态转换",
+      "canonical_evidence": "用于机器人操作的世界动作模型，模拟视觉状态转换",
+      "llm_tldr_en": "Introduces WorldScape Policy 2.0, a controllable world action model for robotic manipulation.",
+      "llm_tldr_cn": "推出了WorldScape Policy 2.0，一种用于机器人操作的可控世界动作模型。",
+      "llm_tldr": "推出了WorldScape Policy 2.0，一种用于机器人操作的可控世界动作模型。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.17757v1",
+      "source": "arxiv",
+      "title": "Seg2Grasp: A Robust Modular Suction Grasping in Bin Picking",
+      "abstract": "Current bin picking methods that rely heavily on end-to-end learning often falter when confronted with unfamiliar or complex objects in unstructured environments. To overcome these limitations, we introduce Seg2Grasp, a modular pipeline designed for robust suction grasping in dynamic and cluttered bin scenarios. Seg2Grasp is built on a three-step process: Segmentation, Grasping, and Classification. The Segmentation module employs a Transformer-based model to generate class-agnostic object masks from RGB-D images, ensuring accurate detection across various conditions. The Grasping module uses surface normals and mask proposals to determine the optimal suction points, enhancing grasp success. Finally, the Classification module leverages fine-tuned open-vocabulary Mask-CLIP for precise object identification, enabling versatile handling of diverse objects. Real-world robotic experiments demonstrate that Seg2Grasp outperforms existing methods in success rates and adaptability, establishing it as a powerful tool for automated bin picking in industrial settings.",
+      "authors": [
+        "Hye-Jung Yoon",
+        "Juno Kim",
+        "Yesol Park",
+        "Jun-Ki Lee",
+        "Byoung-Tak Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T09:48:13+00:00",
+      "link": "https://arxiv.org/pdf/2607.17757v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "modular pipeline for suction grasping in bin picking",
+      "llm_evidence_cn": "用于料箱拣选的模块化吸附抓取流水线",
+      "llm_evidence": "用于料箱拣选的模块化吸附抓取流水线",
+      "canonical_evidence": "用于料箱拣选的模块化吸附抓取流水线",
+      "llm_tldr_en": "Introduces Seg2Grasp, a modular pipeline for robust suction grasping in dynamic and cluttered bin scenarios.",
+      "llm_tldr_cn": "引入Seg2Grasp，一种用于动态杂乱料箱场景下鲁棒吸附抓取的模块化流水线。",
+      "llm_tldr": "引入Seg2Grasp，一种用于动态杂乱料箱场景下鲁棒吸附抓取的模块化流水线。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.18950v1",
+      "source": "arxiv",
+      "title": "Design and stability analysis of an underactuated hand with passively rotating fingers",
+      "abstract": "This paper presents an innovative design and stability analysis of an underactuated robotic finger with spatial mobility, designed to enhance gripping dexterity in robotic hands. The finger architecture incorporates a revolute joint at its base, enabling passive spatial rotation that facilitates both cylindrical and spherical grasping. With only two phalanges per finger, the design simplifies kinematic complexity while supporting precision and enveloping grasps. Stability criteria, based on the moment at the finger base joint induced by contact forces, are introduced to ensure reliable object gripping and prevent ejection during manipulation. The study also examines a differential mechanism that distributes a single actuation torque across multiple fingers, allowing adaptive and coordinated motion. This mechanism enhances the hand's ability to grasp diverse object shapes with minimal pre-grasp adjustments, leveraging passivity for autonomous adaptation. Theoretical findings are experimentally validated using a fully mechanical prototype, demonstrating versatility in performing cylindrical, spherical, parallel, and enveloping grasps. The integration of underactuation-both within individual fingers and among multiple fingers-reduces mechanical complexity, cost, and control demands while preserving functional adaptability. This work advances the development of compliant robotic hands suitable for applications requiring dexterity and robustness, such as agricultural robotics, logistics, assistive technologies, and waste sorting. Future research will focus on automating actuation and refining control strategies to further improve grasp stability and precision, paving the way for autonomous manipulation in unstructured environments.",
+      "authors": [
+        "Léonie Plancoulaine",
+        "Sylvain Guégan",
+        "Franck Plestan",
+        "Damien Chablat"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-21T10:37:18+00:00",
+      "link": "https://arxiv.org/pdf/2607.18950v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "design of an underactuated hand to enhance gripping dexterity",
+      "llm_evidence_cn": "旨在增强抓取灵巧性的欠驱动手设计",
+      "llm_evidence": "旨在增强抓取灵巧性的欠驱动手设计",
+      "canonical_evidence": "旨在增强抓取灵巧性的欠驱动手设计",
+      "llm_tldr_en": "This paper presents an underactuated robotic finger design to improve grasping dexterity and stability.",
+      "llm_tldr_cn": "本文介绍了一种欠驱动机器人手指设计，以提高抓取的灵巧性和稳定性。",
+      "llm_tldr": "本文介绍了一种欠驱动机器人手指设计，以提高抓取的灵巧性和稳定性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.17790v1",
+      "source": "arxiv",
+      "title": "ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video",
+      "abstract": "Egocentric devices, such as wearable front-facing cameras, provide a unique perspective for capturing the continuous interaction between a human viewer and the surrounding environment. A holistic and efficient multimodal model capable of reconstructing this 4D representation is therefore highly desirable. However, existing approaches often rely on auxiliary inputs such as pre-computed camera trajectories, treat scene perception and human ego-motion modeling as separate problems despite their strong interdependency, and suffer from slow inference time. To address these limitations, we present ReViV, the first unified framework for holistic egocentric 4D reconstruction that extracts both viewer and view dynamics from a single monocular RGB video. We formulate the task as learning the full joint probability distribution over multimodal signals, including RGB video, camera trajectory, gaze direction, full-body motion, hand motion, and depth. Powered by a Masked Generative Egocentric Transformer, ReViV operates within a single feed-forward architecture to simultaneously reconstruct the temporally consistent 4D reconstruction across the viewer and the view with fast inference speed. Extensive experiments on diverse benchmarks, including HoloAssist, HOT3D, ARCTIC, Aria Digital Twin, and TACO, demonstrate that ReViV achieves state-of-the-art accuracy and efficiency across holistic ego-body, hand, and gaze reconstruction, camera tracking, while maintaining highly competitive egocentric depth estimation without relying on heavy task-specific priors. Code and models are fully open-sourced: https://reviv4d.github.io/.",
+      "authors": [
+        "Xiaozhong Lyu",
+        "Gen Li",
+        "Zhiyin Qian",
+        "Xucong Zhang",
+        "Marc Pollefeys",
+        "Siyu Tang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T10:22:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.17790v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "holistic egocentric 4D reconstruction from monocular RGB video",
+      "llm_evidence_cn": "从单目RGB视频中进行整体第一视角4D重建",
+      "llm_evidence": "从单目RGB视频中进行整体第一视角4D重建",
+      "canonical_evidence": "从单目RGB视频中进行整体第一视角4D重建",
+      "llm_tldr_en": "ReViV reconstructs 4D viewer and view dynamics from monocular egocentric video for human-environment interaction.",
+      "llm_tldr_cn": "ReViV通过单目第一视角视频重建4D观察者和场景动态，用于捕捉人机环境交互。",
+      "llm_tldr": "ReViV通过单目第一视角视频重建4D观察者和场景动态，用于捕捉人机环境交互。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.17861v1",
+      "source": "arxiv",
+      "title": "ConceptTree: Bringing Semantic Transparency to Black-Box Decision Making for Robotic Manipulation",
+      "abstract": "Establishing interpretable decision-making processes in long-horizon robotic manipulation is critical for enabling reliable human oversight and intervention. However, existing approaches to robotic manipulation largely treat skill selection as opaque mappings from observations to actions, offering limited transparency into how decisions are formed. In this work, we propose ConceptTree, a framework that reframes high-level manipulation skill selection as reasoning over human-interpretable concepts, representing high-level policies as a sequence of concept-level predicates over visual observations. Rather than relying on implicit latent representations, our method learns a normalized concept space grounded in visual inputs, over which a decision tree is trained to predict high-level skills. This formulation yields a transparent decision process that is both traceable and intervenable, enabling direct inspection and modification of policy behavior. We evaluate our approach on a set of real-world robotic manipulation tasks with increasing complexity. Experimental results show that ConceptTree consistently outperforms existing concept-based baselines, particularly in complex, long-horizon scenarios. Furthermore, we provide qualitative case studies showing that our model supports fine-grained intervention by modifying individual concepts, enabling targeted correction of decision errors without retraining.",
+      "authors": [
+        "Yongyan Wen",
+        "Feifan Liu",
+        "Jinyi Chen",
+        "Bo An",
+        "Peng Liu",
+        "Siyuan Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-20T12:02:30+00:00",
+      "link": "https://arxiv.org/pdf/2607.17861v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "interpretable decision-making for long-horizon robotic manipulation",
+      "llm_evidence_cn": "长程机器人操作的可解释决策过程",
+      "llm_evidence": "长程机器人操作的可解释决策过程",
+      "canonical_evidence": "长程机器人操作的可解释决策过程",
+      "llm_tldr_en": "Proposes ConceptTree for transparent skill selection in robotic manipulation using visual observations.",
+      "llm_tldr_cn": "提出了ConceptTree框架，通过视觉观察实现机器人操作中透明的技能选择。",
+      "llm_tldr": "提出了ConceptTree框架，通过视觉观察实现机器人操作中透明的技能选择。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.19804v1",
+      "source": "arxiv",
+      "title": "V2F: Vision-Informed Grasp Force Prediction for Damage-Aware Robotic Handling of Date Fruits",
+      "abstract": "This paper presents a vision-informed grasp force prediction framework for robotic handling of date fruits. Addressing the dual challenge of high detachment forces and low bruise thresholds, we first conduct mechanical characterization on date samples to define a safe grasping envelope and quantify the relationship between fruit geometry and bioyield stress. In this work, we develop a Vision-to-Force (V2F) pipeline that combines computer vision-based segmentation, active-contour refinement, and geometric feature extraction with a physics-informed residual neural network that augments a Hertz contact equation. The resulting model maps non-contact visual descriptors and cultivar metadata to predict a safe grasp force with mean validation performance of $R^2 \\approx 0.7$ across unseen cultivar groups, which is a good result given the inherent mechanical variability of biological tissue. Experimental validation using a gripper and load cell indicates that the predicted forces enable stable manipulation of different types of date fruits, with residual deformations below 1 mm and no observable damage. These results show that pre-emptive, vision-driven force estimation% can replace slow and potentially damaging tactile exploration , enabling safer robotic handling of fragile fruits.",
+      "authors": [
+        "Shahd Shami",
+        "Obadah Wali",
+        "Eric Feron",
+        "Shinkyu Park"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-22T06:36:55+00:00",
+      "link": "https://arxiv.org/pdf/2607.19804v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-informed grasp force prediction for robotic handling",
+      "llm_evidence_cn": "视觉感知的机器人抓取力预测",
+      "llm_evidence": "视觉感知的机器人抓取力预测",
+      "canonical_evidence": "视觉感知的机器人抓取力预测",
+      "llm_tldr_en": "Develops a Vision-to-Force pipeline for safe robotic handling of delicate fruits.",
+      "llm_tldr_cn": "开发了一个视觉到力量的流水线，用于安全地进行易损水果的机器人处理。",
+      "llm_tldr": "开发了一个视觉到力量的流水线，用于安全地进行易损水果的机器人处理。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.21576v1",
+      "source": "arxiv",
+      "title": "Self-Supervised Learning of Structured Dynamics from Videos",
+      "abstract": "Understanding motion in video is a fundamental challenge for visual learning, as frame-to-frame change entangles two sources of dynamics: camera motion and object motion. This decomposition has remained underexplored in representation learning, partly because these factors are tightly coupled in natural videos and difficult to supervise separately. Yet recovering it is important for learning robust motion representations that separate meaningful object dynamics from camera-induced variation. We study whether such structured motion representations can be recovered from frozen features of a pretrained image vision transformer. We propose the Structured Dynamics Model (SDM), which explicitly separates the dominant source of temporal change from residual dynamics through future-feature prediction, rather than representing video change with a single entangled latent or with unstructured, spatially dense transition tokens. Training combines self-supervised learning on real video with weak supervision of scene dynamics on synthetic Kubric data. We evaluate SDM on ProbeMotion, a new evaluation suite spanning synthetic and real videos with camera motion, object motion, and combined dynamics. SDM outperforms backbone baselines using global CLS or average-pooled features, and compares favorably to strongly supervised representations such as VGGT on several probes, despite using substantially weaker supervision. These results suggest that pretrained image models can be readily repurposed into structured video-dynamics representations, providing a useful inductive bias for learning and analyzing latent video dynamics.",
+      "authors": [
+        "Lukas Knobel",
+        "Andrew Zisserman",
+        "Yuki M. Asano"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-23T17:55:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.21576v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "separating camera motion from object motion in video representation learning",
+      "llm_evidence_cn": "在视频表示学习中分离相机运动与物体运动",
+      "llm_evidence": "在视频表示学习中分离相机运动与物体运动",
+      "canonical_evidence": "在视频表示学习中分离相机运动与物体运动",
+      "llm_tldr_en": "Proposes a model to separate camera and object dynamics, useful for egocentric vision representations.",
+      "llm_tldr_cn": "提出一种分离相机和物体动力学的模型，有助于第一视角视觉表示学习。",
+      "llm_tldr": "提出一种分离相机和物体动力学的模型，有助于第一视角视觉表示学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

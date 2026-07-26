@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.19804v1/fig-001.webp",
+      "caption": "Fig. 1. Experimental testbed for V2F validation: (1) UR10e robotic manipulator, (2) ZED stereo camera for visual feature extraction, (3) standardized testing surface, (4) custom acrylic gripper pads, and (5) high-precision load cell for real-time force feedback.",
+      "page": 1,
+      "index": 1,
+      "width": 519,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19804v1/fig-002.webp",
+      "caption": "TABLE II BASELINE MODEL COMPARISON UNDER GROUPKFOLD CROSS-VALIDATION(CV). TRAIN AND VALIDATION RMSE ARE REPORTED IN KPA. CV R2 MEAN AND STANDARD DEVIATION ARE COMPUTED ACROSS FIVE FOLDS. MODELS WITH NEGATIVE CV OF R2 PERFORM WORSE THAN A CONSTANT MEAN PREDICTOR.",
+      "page": 6,
+      "index": 2,
+      "width": 481,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19804v1/fig-003.webp",
+      "caption": "Fig. 2. A typical force-deformation curve for an agricultural product, showing the proportional limit LL, bioyield point y, and rupture point R. Corresponding forces (F) and deformations (D) are labeled at each point ∈ {LL, y,R} [17].",
+      "page": 3,
+      "index": 3,
+      "width": 517,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19804v1/fig-004.webp",
+      "caption": "Fig. 3. Architecture of the physics-guided residual learning framework. The pipeline integrates analytical Hertz’s contact theory (Stage 2) with a deep residual network (Stage 3) to predict grasping stress by mapping visual geometric features to biomechanical material properties.",
+      "page": 4,
+      "index": 4,
+      "width": 1052,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2607.19804v1/fig-005.webp",
+      "caption": "Fig. 5. Model predictions at different training epochs, The red boxes indicate detected objects with the green box displays the corresponding accuracy score.",
+      "page": 5,
+      "index": 5,
+      "width": 628,
+      "height": 946
+    }
+  ]
+}

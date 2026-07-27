@@ -6,44 +6,44 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-07-26
-- 运行时间：2026-07-26 20:45:02 UTC
+- 最新运行日期：2026-07-27
+- 运行时间：2026-07-27 21:35:23 UTC
 - 运行状态：成功
 - 本次总论文数：7
-- 精读区：0
-- 速读区：7
+- 精读区：1
+- 速读区：6
 
 ### 今日简报（AI）
-- 今日共生成 7 篇推荐（精读 0 篇，速读 7 篇）
-- 速读：《WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory》（7.0/10）, 《Design and stability analysis of an underactuated hand with passively rotating fingers》（7.0/10）, 《Seg2Grasp: A Robust Modular Suction Grasping in Bin Picking》（6.5/10）
+- 今日共生成 7 篇推荐（精读 1 篇，速读 6 篇）
+- 精读：《Robot Learning to Communicate through Projected Visual Abstractions》（8.5/10）
+- 速读：《ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation》（7.5/10）, 《GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning》（7.0/10）, 《Embodying Multi-Hand Manipulation Policies by Searching the Assignment and Null Spaces》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202607/26/README](/202607/26/README)
+- 详情：[/202607/27/README](/202607/27/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [Robot Learning to Communicate through Projected Visual Abstractions](/202607/27/2607.22434v1-robot-learning-to-communicate-through-projected-visual-abstractions)  
+   标签：评分：8.5/10、query:dexop
+   evidence：使用21自由度灵巧手进行动态阴影表达
 
 ### 速读区论文标签
-1. [WorldScape Policy 2.0: Empowering Steerable World Action Modeling with Reasoning-Augmented Memory](/202607/26/2607.18840v1-worldscape-policy-20-empowering-steerable-world-action-modeling-with-reasoning-augmented-memory)  
+1. [ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation](/202607/27/2607.22530v1-vitacworld-scaling-visuo-tactile-world-models-for-contact-rich-robot-manipulation)  
+   标签：评分：7.5/10、query:dexop
+   evidence：用于接触丰富型机器人操作的视触觉世界模型
+2. [GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning](/202607/27/2607.21049v2-guidedattention-interpretable-and-correctable-visual-attention-for-ood-robust-robot-manipulation-via-imitation-learning)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于机器人操作的世界动作模型，模拟视觉状态转换
-2. [Design and stability analysis of an underactuated hand with passively rotating fingers](/202607/26/2607.18950v1-design-and-stability-analysis-of-an-underactuated-hand-with-passively-rotating-fingers)  
+   evidence：具有可解释视觉注意力的机器人操作视觉运动模仿学习
+3. [Embodying Multi-Hand Manipulation Policies by Searching the Assignment and Null Spaces](/202607/27/2607.22020v1-embodying-multi-hand-manipulation-policies-by-searching-the-assignment-and-null-spaces)  
    标签：评分：7.0/10、query:dexop
-   evidence：旨在增强抓取灵巧性的欠驱动手设计
-3. [Seg2Grasp: A Robust Modular Suction Grasping in Bin Picking](/202607/26/2607.17757v1-seg2grasp-a-robust-modular-suction-grasping-in-bin-picking)  
+   evidence：在物理机器人手臂上实现多手操作策略
+4. [Ordered Action Tokens for Visuomotor Policy Learning](/202607/27/2607.21670v1-ordered-action-tokens-for-visuomotor-policy-learning)  
    标签：评分：6.5/10、query:dexop
-   evidence：用于料箱拣选的模块化吸附抓取流水线
-4. [ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video](/202607/26/2607.17790v1-reviv-reconstructing-the-viewer-and-the-view-in-4d-from-monocular-egocentric-video)  
+   evidence：用于机器人操作视觉运动策略学习的动作标记化方法
+5. [User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method](/202607/27/2607.16998v1-user-driven-learning-from-demonstration-a-trajectory-and-impedance-learning-method)  
    标签：评分：6.0/10、query:dexop
-   evidence：从单目RGB视频中进行整体第一视角4D重建
-5. [ConceptTree: Bringing Semantic Transparency to Black-Box Decision Making for Robotic Manipulation](/202607/26/2607.17861v1-concepttree-bringing-semantic-transparency-to-black-box-decision-making-for-robotic-manipulation)  
+   evidence：从单次人类演示中学习操作轨迹和阻抗
+6. [One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments](/202607/27/2607.22119v1-one-hand-watches-the-other-dynamic-multi-agent-cooperation-for-sample-efficient-bimanual-manipulation-in-dynamic-environments)  
    标签：评分：6.0/10、query:dexop
-   evidence：长程机器人操作的可解释决策过程
-6. [V2F: Vision-Informed Grasp Force Prediction for Damage-Aware Robotic Handling of Date Fruits](/202607/26/2607.19804v1-v2f-vision-informed-grasp-force-prediction-for-damage-aware-robotic-handling-of-date-fruits)  
-   标签：评分：6.0/10、query:dexop
-   evidence：视觉感知的机器人抓取力预测
-7. [Self-Supervised Learning of Structured Dynamics from Videos](/202607/26/2607.21576v1-self-supervised-learning-of-structured-dynamics-from-videos)  
-   标签：评分：6.0/10、query:dexop
-   evidence：在视频表示学习中分离相机运动与物体运动
+   evidence：动态环境下高效采样的双臂操作
 
 
 <div class="dpr-home-promo-card">

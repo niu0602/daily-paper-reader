@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.16998v1/fig-001.webp",
+      "caption": "Fig. 2: Experimental procedure. The user teaches by physically guiding the EE along a 3D trapezoidal path. The green and red markers show the start and end points, respectively. External interaction is highlighted by a green circle, and the inset image shows the user’s applied “push” motion (arrow).",
+      "page": 5,
+      "index": 1,
+      "width": 520,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16998v1/fig-002.webp",
+      "caption": "Fig. 4: Experiment result: (a,i) 3D FDM learned path, (a.ii–a.iv) estimation error of the learned path, reproduction error, and reproduction under perturbation for a trapezoid-shaped path; (b.i–b.iv) corresponding results for a ‘W’-shaped path. Shaded areas indicate the period of interaction, with the corresponding impact highlighted in circles. All values are expressed in cm.",
+      "page": 6,
+      "index": 2,
+      "width": 876,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2607.16998v1/fig-003.webp",
+      "caption": "Fig. 3: Experiment result: (a,i) 3D FDM learned path, (a.ii–a.iv) estimation error of the learned path, reproduction error, and reproduction under perturbation for an ‘S’-shaped path; (b.i–b.iv) corresponding results for a near ‘O’-shaped path. Shaded areas indicate the period of interaction, with the corresponding impact highlighted in circles. All values are expressed in cm.",
+      "page": 6,
+      "index": 3,
+      "width": 876,
+      "height": 454
+    }
+  ]
+}

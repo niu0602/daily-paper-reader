@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.22020v1/fig-001.webp",
+      "caption": "Figure 2: Left images: illustrations of our test cases visualizing six robots and six end-effector trajectories. The left image shows all robots moving from right to left in a constrained space, and the right image shows six robots performing a boxflipping motion. From middle to the right: overall success rates, success rates by robot count, and average overall runtime.",
+      "page": 4,
+      "index": 1,
+      "width": 1024,
+      "height": 181
+    }
+  ]
+}

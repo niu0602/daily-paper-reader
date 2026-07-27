@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-001.webp",
+      "caption": "Figure 4: Qualitative example of ViTacWorld-based policy evaluation on U-Block insertion. The top row shows a failed real-robot execution, and the following rows show three imagined rollouts initialized from the same observation. ViTacWorld consistently predicts failure for this initial condition, matching the real outcome while allowing natural rollout variation across imagined samples.",
+      "page": 15,
+      "index": 1,
+      "width": 829,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-002.webp",
+      "caption": "Table 4: Matched initial-state evaluation on U-Block insertion. S and F denote success and failure. For each real initial condition, ViTacWorld generates three independent policy-in-the-loop rollouts. The final ViTacWorld outcome is assigned by majority vote and compared with the real-robot outcome.",
+      "page": 15,
+      "index": 2,
+      "width": 827,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-003.webp",
+      "caption": "Table 1: Real-robot success rates (%). “Expert only” uses real expert demonstrations, while “Expert + ViTacWorld rollouts” augments the same expert data with generated visuo-tactile rollouts.",
+      "page": 7,
+      "index": 3,
+      "width": 827,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-004.webp",
+      "caption": "Figure 6: Supplementary tactile prediction visualization with GelSight Mini-style tactile observations. We fine-tune ViTacWorld from the pretrained checkpoint using a small set of simulated and real GelSight Mini trajectories, then evaluate it on held-out validation clips. The generated rollouts preserve multi-view visual consistency while producing contact-aligned tactile changes that are easier to observe than those from the Xense sensor used in the main experiments.",
+      "page": 18,
+      "index": 4,
+      "width": 826,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-005.webp",
+      "caption": "Table 2: Quantitative evaluation of world-model prediction on held-out real-world validation clips. Given the first observation frame and the ground-truth action sequence, each model predicts a future rollout. We report view-wise PSNR, SSIM, and LPIPS between predicted and ground-truth future observations, where higher PSNR/SSIM and lower LPIPS indicate better generation quality.",
+      "page": 8,
+      "index": 5,
+      "width": 827,
+      "height": 255
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-006.webp",
+      "caption": "Figure 2: Qualitative comparison of real-robot rollouts using the same π0.5 + tactile policy architecture. The top row shows the policy trained only with expert demonstrations, while the bottom row shows the policy trained with the same expert demonstrations augmented by ViTacWorld-generated rollouts.",
+      "page": 8,
+      "index": 6,
+      "width": 826,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-007.webp",
+      "caption": "Figure 1: Overview of ViTacWorld. Right side shows scaling training pipeline, where real visuotactile data and task-aligned simulation data are used for pretraining, followed by real robot task data and policy rollout data for target-domain tuning. Left side illustrates the action-conditioned visuo-tactile world model and its rollout generation process. Visual and tactile streams are encoded into latent tokens and modeled with a view-aware DiT to produce policy-conditioned rollouts, which support both dataset augmentation and policy evaluation.",
+      "page": 4,
+      "index": 7,
+      "width": 794,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-008.webp",
+      "caption": "Figure 5: Additional qualitative comparisons of real-robot rollouts across contact-rich tasks. For each task, the top row shows the π0.5 + tactile policy trained only with expert demonstrations, while the bottom row shows the same policy architecture trained with expert demonstrations augmented by ViTacWorld-generated rollouts. The augmented policy produces more reliable pickup, alignment, and contact adjustment behaviors, leading to successful task completion in cases where the expertonly policy fails.",
+      "page": 17,
+      "index": 8,
+      "width": 783,
+      "height": 668
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-009.webp",
+      "caption": "Figure 3: Qualitative world-model predictions on held-out validation clips. The model receives the first observation frame and the logged action sequence, then predicts future visual and tactile observations.",
+      "page": 9,
+      "index": 9,
+      "width": 829,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2607.22530v1/fig-010.webp",
+      "caption": "Table 5: Real-robot success rates (%).Additional dream-data augmentation results. Success rates are reported in percentage. “Round-1 rollouts” denotes the ViTacWorld-generated rollouts used in the main paper. “Round-2 rollouts” further adds a second round of dream rollouts generated by the first-round augmented π0.5 + tactile policy.",
+      "page": 16,
+      "index": 10,
+      "width": 827,
+      "height": 275
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-27T21:31:04.084029+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 6,
+    "quick_skim_target": 11,
+    "quick_selected": 6
+  },
+  "deep_dive": [
+    {
+      "id": "2607.22434v1",
+      "source": "arxiv",
+      "title": "Robot Learning to Communicate through Projected Visual Abstractions",
+      "abstract": "Humans routinely communicate through abstractions of their bodies, including shadows, silhouettes, and reflections. Yet robots remain largely confined to expressing themselves through their physical morphology. Enabling robots to communicate through such projected visual abstractions requires reasoning not only about bodily motion but also about how that motion is transformed into an external representation perceived by an observer. Among these abstractions, shadows provide a particularly compelling example because they emerge directly from the robot's embodiment while remaining visually distinct from the body itself. Here, we present a robotic system capable of dynamic shadow expression using a 21-degree-of-freedom dexterous hand with compliant soft skin and a learned shadow self-model. The soft-skinned embodiment reduces light leakage to produce visually continuous silhouettes, while the differentiable self-model learns the mapping between hand configurations and projected shadow appearance through task-agnostic self-exploration. Given a target shadow image or video, the robot optimizes its hand configurations through gradient-based search over 1 the learned self-model and refines the solution through collision-aware simulation to obtain physically feasible motions. For dynamic shadow performance, we further introduce expressive-region objectives, temporal smoothness regularization, and keyframe-based optimization to preserve visually important motion cues while reducing optimization complexity. We demonstrate robotic shadow expression across sign-language gestures, hand-shadow puppetry, and animal motion imitation in both simulation and physical experiments. These results establish a framework for enabling robots to manipulate projected visual abstractions of themselves for communication and visual storytelling.",
+      "authors": [
+        "Danyang Yan",
+        "Boyuan Wang",
+        "Jiaxun Liu",
+        "Boyuan Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-07-24T15:52:36+00:00",
+      "link": "https://arxiv.org/pdf/2607.22434v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "Dynamic shadow expression using a 21-degree-of-freedom dexterous hand",
+      "llm_evidence_cn": "使用21自由度灵巧手进行动态阴影表达",
+      "llm_evidence": "使用21自由度灵巧手进行动态阴影表达",
+      "canonical_evidence": "使用21自由度灵巧手进行动态阴影表达",
+      "llm_tldr_en": "Explores robot communication through visual abstractions using a high-DOF dexterous hand.",
+      "llm_tldr_cn": "探索利用高自由度灵巧手通过视觉抽象进行机器人通信。",
+      "llm_tldr": "探索利用高自由度灵巧手通过视觉抽象进行机器人通信。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.22530v1",
+      "source": "arxiv",
+      "title": "ViTacWorld: Scaling Visuo-Tactile World Models for Contact-Rich Robot Manipulation",
+      "abstract": "Contact-rich robot manipulation requires physical interaction cues that are often invisible to cameras, making tactile sensing essential for robust control. However, scaling visuo-tactile robot learning remains difficult because real tactile interaction data are expensive to collect, hardware-dependent, and limited in task and scene diversity. We present ViTacWorld, an action-conditioned visuo-tactile world model for scalable contact-rich robot manipulation. ViTacWorld leverages public real tactile datasets and a constructed simulation environment to scale visuo-tactile-action data, exploiting the fact that tactile signals are directly grounded in physical contact and can exhibit a smaller simulation-to-real gap than purely visual observations. The model is first pretrained with large-scale real and simulated visuo-tactile trajectories, and then finetuned with real-world policy rollouts to better match downstream manipulation behaviors. Given robot actions, ViTacWorld predicts temporally aligned visual observations and tactile feedback, enabling visuo-tactile-action rollout generation. To the best of our knowledge, ViTacWorld is the first framework that uses a world model for robot visuo-tactile-action trajectory generation and policy evaluation. It serves two roles: synthesizing rollouts to improve downstream tactile policies, and evaluating policies by predicting action-conditioned visuo-tactile outcomes under controlled action sequences. Experiments on contact-rich manipulation tasks show that ViTacWorld generates physically meaningful rollouts, improves policy performance through scalable data augmentation, and enables action-conditioned policy evaluation. Project page: https://vitacworld.github.io/",
+      "authors": [
+        "Yunao Huang",
+        "Shiyu Sang",
+        "Haotao Lu",
+        "Suting Ni",
+        "Shijie Wu",
+        "Ziyang Guo",
+        "Ye Shi",
+        "Jingya Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-24T17:59:33+00:00",
+      "link": "https://arxiv.org/pdf/2607.22530v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "visuo-tactile world models for contact-rich robot manipulation",
+      "llm_evidence_cn": "用于接触丰富型机器人操作的视触觉世界模型",
+      "llm_evidence": "用于接触丰富型机器人操作的视触觉世界模型",
+      "canonical_evidence": "用于接触丰富型机器人操作的视触觉世界模型",
+      "llm_tldr_en": "Presents ViTacWorld, a visuo-tactile world model for scaling contact-rich robot manipulation learning.",
+      "llm_tldr_cn": "提出了 ViTacWorld，一种用于扩展接触丰富型机器人操作学习的视触觉世界模型。",
+      "llm_tldr": "提出了 ViTacWorld，一种用于扩展接触丰富型机器人操作学习的视触觉世界模型。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.21670v1",
+      "source": "arxiv",
+      "title": "Ordered Action Tokens for Visuomotor Policy Learning",
+      "abstract": "Action tokenization maps continuous robot action chunks to discrete tokens and has become an important interface for modern visuomotor policies. Existing approaches either rely on analytical discretization methods that produce prohibitively long token sequences or learned latent tokenizers that lack structure, limiting their compatibility with downstream policies. In this work, we identify three desiderata for action tokenization - high compression, total decodability, and an ordered token space - and introduce Ordered Action Tokenization (OAT), a learned action tokenizer that satisfies all three. OAT discretizes action chunks into an ordered sequence of tokens using a transformer with registers, finite scalar quantization, and ordering-inducing training mechanisms. By training each token prefix to decode into a valid action chunk, OAT places coarse control information in early tokens and uses later tokens to refine residual detail, yielding an anytime tradeoff between inference cost and action fidelity. We validate OAT in two prevailing uses of action tokens: autoregressive policies that generate tokens for control, and token co-training policies that use token losses to shape the vision-language model context consumed by a flow-based action expert. Across three policy backbones and more than 60 tasks spanning five simulation benchmarks and real-world settings, OAT consistently delivers strong policy performance while offering significantly greater flexibility at inference time.",
+      "authors": [
+        "Chaoqi Liu",
+        "Yue Zhao",
+        "Haonan Chen",
+        "Xiaoshen Han",
+        "Jiawei Gao",
+        "Ehsan Adeli",
+        "Yilun Du"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-23T07:04:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.21670v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Action tokenization for visuomotor policy learning in robot manipulation",
+      "llm_evidence_cn": "用于机器人操作视觉运动策略学习的动作标记化方法",
+      "llm_evidence": "用于机器人操作视觉运动策略学习的动作标记化方法",
+      "canonical_evidence": "用于机器人操作视觉运动策略学习的动作标记化方法",
+      "llm_tldr_en": "Introduces Ordered Action Tokenization (OAT) to improve efficiency and decodability in visuomotor policies.",
+      "llm_tldr_cn": "引入有序动作标记化（OAT）以提高视觉运动策略的效率和可解码性。",
+      "llm_tldr": "引入有序动作标记化（OAT）以提高视觉运动策略的效率和可解码性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "policy learning methods for dexterous manipulation using first-person observations",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.21049v2",
+      "source": "arxiv",
+      "title": "GuidedAttention: Interpretable and Correctable Visual Attention for OOD-Robust Robot Manipulation via Imitation Learning",
+      "abstract": "End-to-end visuomotor policies provide little opportunity for humans to understand or correct the policy's visual attention. We propose GuidedAttention, a visuomotor imitation learning framework that introduces interpretable and correctable visual attention as an explicit intermediate representation. Task-relevant attention keypoints are predicted from camera images and condition a diffusion-based action policy. Users can inspect and optionally correct selected keypoints once at rollout initialization, after which the corrected attention is automatically propagated throughout execution by a tracking module. Experiments in simulation and the real world demonstrate that GuidedAttention consistently improves robot manipulation performance, particularly under positional and appearance out-of-distribution (OOD) conditions. https://mmurooka.github.io/guided-attention-project-page",
+      "authors": [
+        "Masaki Murooka",
+        "Ryoichi Nakajo",
+        "Keisuke Shirai",
+        "Tomohiro Motoda",
+        "Hanbit Oh",
+        "Ryo Hanai",
+        "Yukiyasu Domae"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-23T08:33:40+00:00",
+      "link": "https://arxiv.org/pdf/2607.21049v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Visuomotor imitation learning for robot manipulation with interpretable visual attention",
+      "llm_evidence_cn": "具有可解释视觉注意力的机器人操作视觉运动模仿学习",
+      "llm_evidence": "具有可解释视觉注意力的机器人操作视觉运动模仿学习",
+      "canonical_evidence": "具有可解释视觉注意力的机器人操作视觉运动模仿学习",
+      "llm_tldr_en": "Proposes GuidedAttention to make visual attention in robot manipulation policies interpretable and correctable.",
+      "llm_tldr_cn": "提出GuidedAttention框架，使机器人操作策略中的视觉注意力可解释且可修正。",
+      "llm_tldr": "提出GuidedAttention框架，使机器人操作策略中的视觉注意力可解释且可修正。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "policy learning methods for dexterous manipulation using first-person observations",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.16998v1",
+      "source": "arxiv",
+      "title": "User-Driven Learning from Demonstration: A Trajectory and Impedance Learning Method",
+      "abstract": "This paper presents a method for user-driven robot Learning from Demonstration (LfD) that reduces user effort while ensuring compliant and precise reproduction. The method eliminates repeated teaching for the same task and enables real-time learning from a single demonstration. Demonstrated motions are reproduced with high precision, while impedance variations are learned in real time to provide both compliance and robustness against perturbations. This mitigates potential safety issues in Human-Robot Interaction (HRI) that arise from conventional time-indexed trajectories lacking compliance. The proposed approach integrates a three-dimensional (3D) Fast Diffeomorphic Matching (FDM) algorithm with a Dynamical System (DS)-based motion generator to achieve real-time single-shot demonstration learning and reproduction. An Extended Kalman Filter (EKF) framework compensates for reproduction errors and recovers from external interactions. Furthermore, an impedance parameterization function is incorporated to learn impedance variations from demonstrations and maintain surface contact for specific applications. The proposed approach is validated through comprehensive experiments on a 7 Degree-of-Freedom (DOF) KUKA LWR IV+ robot.",
+      "authors": [
+        "Zi-Qi Yang",
+        "Mehrdad R. Kermani"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-18T23:27:17+00:00",
+      "link": "https://arxiv.org/pdf/2607.16998v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "learning manipulation trajectories and impedance from a single human demonstration",
+      "llm_evidence_cn": "从单次人类演示中学习操作轨迹和阻抗",
+      "llm_evidence": "从单次人类演示中学习操作轨迹和阻抗",
+      "canonical_evidence": "从单次人类演示中学习操作轨迹和阻抗",
+      "llm_tldr_en": "This method enables real-time learning of compliant robot manipulation from a single user demonstration.",
+      "llm_tldr_cn": "该方法实现了从单次用户演示中实时学习具有顺从性的机器人操作轨迹与阻抗。",
+      "llm_tldr": "该方法实现了从单次用户演示中实时学习具有顺从性的机器人操作轨迹与阻抗。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.22020v1",
+      "source": "arxiv",
+      "title": "Embodying Multi-Hand Manipulation Policies by Searching the Assignment and Null Spaces",
+      "abstract": "Learned manipulation policies increasingly predict motions for abstract \"hands\" and are attractive in practice because they rely on easily collected demonstrations and transfer across robot platforms. Executing these trajectories on multi-arm robots, however, is not trivial. Multi-hand policy outputs must be assigned to physical arms, each arm must realize a configuration-space motion that tracks its prescribed end-effector trajectory, and all arms must respect kinematic limits and avoid collisions. In the absence of algorithms that directly address this problem, practitioners typically extend single-arm inverse-kinematics (IK) pipelines in an ad hoc way, with no guarantees of feasibility or safety. In this work, we close this execution gap with a search-based framework that is theoretically complete for grounding policy-generated multi-hand trajectories onto physical multi-arm systems. Building on Conflict-Based Search, our method explicitly searches over both the discrete assignment of trajectories to arms and the continuous Jacobian null spaces of redundant manipulators, using redundancy to avoid inter-arm collisions while tracking the prescribed motions. This unified treatment of assignment and null-space motion yields a practically efficient planner that safely realizes coordinated manipulation-policy outputs on multi-arm robots. See omcbsa.github.io for more.",
+      "authors": [
+        "Yorai Shaoul",
+        "Jiaoyang Li",
+        "Maxim Likhachev"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-24T06:37:52+00:00",
+      "link": "https://arxiv.org/pdf/2607.22020v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "embodying multi-hand manipulation policies on physical robot arms",
+      "llm_evidence_cn": "在物理机器人手臂上实现多手操作策略",
+      "llm_evidence": "在物理机器人手臂上实现多手操作策略",
+      "canonical_evidence": "在物理机器人手臂上实现多手操作策略",
+      "llm_tldr_en": "This work addresses the execution of abstract multi-hand manipulation policies on physical multi-arm robots.",
+      "llm_tldr_cn": "该研究解决了在物理多臂机器人上执行抽象多手操作策略的轨迹分配与安全执行问题。",
+      "llm_tldr": "该研究解决了在物理多臂机器人上执行抽象多手操作策略的轨迹分配与安全执行问题。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.22119v1",
+      "source": "arxiv",
+      "title": "One Hand Watches The Other: Dynamic Multi-Agent Cooperation for Sample-Efficient Bimanual Manipulation in Dynamic Environments",
+      "abstract": "Multi-stream robot manipulation policies achieve unparalleled sample efficiency and generalization by modeling actions relative to environmental reference frames. However, existing approaches typically assume these frames to be strictly exogenous. This causal assumption collapses in dynamic settings, such as when a single robot arm manipulates a moving object or when two arms coordinate, where each arm effectively becomes part of the dynamic environment of the other. We propose DynaMAC, a lightweight, policy-agnostic framework that resolves this causal limitation while preserving the sample efficiency, computational speed, and flexibility of multi-stream policies, DynaMAC treats the opposite arm as a dynamic task parameter, thereby providing a unified formulation for dynamic manipulation and bimanual coordination without requiring an explicit leader-follower relationship. To rigorously evaluate these capabilities, we introduce DynaBench, a novel benchmark for robot manipulation in dynamic environments. Across both dynamic environments and bimanual manipulation tasks, DynaMAC outperforms leading probabilistic and generative baselines by over 35 percentage points while requiring 20 times fewer samples. Crucially, DynaMAC generalizes zero-shot from static demonstrations to dynamic environments, substantially simplifying data collection and establishing an elegant bridge toward human-robot collaboration.",
+      "authors": [
+        "Jan Ole von Hartz",
+        "Abhinav Valada",
+        "Joschka Boedecker"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-07-24T09:14:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.22119v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "sample-efficient bimanual manipulation in dynamic environments",
+      "llm_evidence_cn": "动态环境下高效采样的双臂操作",
+      "llm_evidence": "动态环境下高效采样的双臂操作",
+      "canonical_evidence": "动态环境下高效采样的双臂操作",
+      "llm_tldr_en": "DynaMAC resolves causal limitations in multi-stream policies for dynamic bimanual robot manipulation.",
+      "llm_tldr_cn": "DynaMAC 解决了动态双臂机器人操作中多流策略的因果限制。",
+      "llm_tldr": "DynaMAC 解决了动态双臂机器人操作中多流策略的因果限制。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

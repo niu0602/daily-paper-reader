@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.24296v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of PAC-DP. The diffusion policy is modeled as a Bayesian neural network by learning a posterior distribution Q(w) over network parameters. Training minimizes a PAC-Bayesian objective that combines the standard denoising loss with a KL-divergence regularizer between the posterior and prior distributions. During inference, actions are generated using either sampled network parameters or the posterior mean.",
+      "page": 2,
+      "index": 1,
+      "width": 860,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24296v1/fig-002.webp",
+      "caption": "TABLE III HYPERPARAMETER SENSITIVITY OF PAC-DP. RESULTS ARE AVERAGED OVER ALL PAC-DP CONFIGURATIONS. FOR COMPARISON, BDP REPORTS THE AVERAGE OVER THE SAME ρ VALUES.",
+      "page": 7,
+      "index": 2,
+      "width": 516,
+      "height": 378
+    }
+  ]
+}

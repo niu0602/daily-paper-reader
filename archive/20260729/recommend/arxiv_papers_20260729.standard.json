@@ -1,0 +1,563 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-07-29T21:33:57.816846+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 5,
+    "deep_cap": 6,
+    "deep_selected": 5,
+    "quick_candidates": 8,
+    "quick_skim_target": 11,
+    "quick_selected": 8
+  },
+  "deep_dive": [
+    {
+      "id": "2607.25895v1",
+      "source": "arxiv",
+      "title": "HiFi-UMI: Learning Deployable Manipulation Policies from High-Fidelity UMI Data Alone",
+      "abstract": "Learning deployable manipulation policies is bottlenecked by the scarcity of data that is both high-fidelity and scalable. Real-robot teleoperation is accurate but costly to scale; robot-free UMI capture scales readily, and current practice uses the resulting data mainly for pre-training, adding a small real-robot \"anchor\" at post-training. We ask whether raising the fidelity of robot-free UMI data, rather than shrinking the real-robot fraction, can remove that anchor. We present HiFi-UMI, a portable UMI data-production system co-designed for trajectory accuracy, inter-gripper relative pose, synchronization, and field of view: head-mounted offline stereo-inertial SLAM, native rather than reconstructed relative pose, a shared microsecond GPIO trigger, and two wide-angle cameras per hand covering ~200 degrees. It reaches 3 mm workspace-local end-effector accuracy without external tracking infrastructure. Using this corpus, we demonstrate zero-robot post-training: a policy post-trained solely on HiFi-UMI demonstrations deploys directly on a real robot and matches in-domain teleoperation across three backbones spanning the vision-language-action and world-action-model families, with success-rate differences of -2.5, +3.1, and -0.6 percentage points on StarVLA-QwenPI, OpenPI-pi_0.5, and LingBot-VA; the strongest policy reaches 85% on a precision insertion task, even though the teleoperation baseline is collected in the evaluation scene and no HiFi-UMI trajectory is. Pre-training on 4,000 hours from the same corpus lowers action error on ten unseen tasks by 41% and, on StarVLA-QwenPI, raises real-robot success by a further 18.1 percentage points. We open-source HiFi-UMI-2K, 2,000 hours of microsecond-synchronized, ultra-wide-FoV demonstrations, each automatically reconstructed and validated through simulation replay, as a large-scale, high-fidelity resource for the robot-learning community.",
+      "authors": [
+        "Simple AI",
+        ":",
+        "Yuteng Wei",
+        "Jinming Ma",
+        "Jiawei Wang",
+        "Weitao Zhou",
+        "Yushen Zuo",
+        "Ke Rui",
+        "Minglei Li",
+        "Jinhao Zhang",
+        "Zhikang Pan",
+        "Xiang Wang",
+        "Haoran Jia",
+        "Huan Du",
+        "Zicheng Zeng",
+        "Jun Ma",
+        "Guiyu Qin",
+        "Di Zhang",
+        "Xiaofei Li"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-07-28T15:52:02+00:00",
+      "link": "https://arxiv.org/pdf/2607.25895v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "portable UMI data-production system using head-mounted SLAM for robot-free capture",
+      "llm_evidence_cn": "使用头戴式SLAM进行无机器人采集的便携式UMI数据生产系统",
+      "llm_evidence": "使用头戴式SLAM进行无机器人采集的便携式UMI数据生产系统",
+      "canonical_evidence": "使用头戴式SLAM进行无机器人采集的便携式UMI数据生产系统",
+      "llm_tldr_en": "HiFi-UMI improves the fidelity of robot-free data to learn deployable manipulation policies without real-robot anchors.",
+      "llm_tldr_cn": "HiFi-UMI通过提高无机器人采集数据的保真度，实现了无需真实机器人锚点即可学习可部署的操作策略。",
+      "llm_tldr": "HiFi-UMI通过提高无机器人采集数据的保真度，实现了无需真实机器人锚点即可学习可部署的操作策略。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23782v1",
+      "source": "arxiv",
+      "title": "$N_0$-VTLA: Scaling Vision-Tactile-Language-Action Model with Latent Tactile Tokens",
+      "abstract": "We present $N_0$-VTLA, a vision-tactile-language-action (VTLA) foundation model capable of (1) fine-grained contact-rich manipulation with tactile perception and tactile-feedback control, and (2) offline policy improvement from stored deployment data. Building on current vision-based backbones, we propose a training recipe for tactile integration consisting of visuo-tactile pre-training, staged tactile-pathway integration, and advantage-conditioned offline policy improvement. During pre-training, the policy learns broad contact priors from NeoData, our large-scale visuo-tactile robot dataset; to our knowledge, $N_0$-VTLA is the first VTLA model pretrained on tactile data at scale. During post-training, we augment the policy with a predictive tactile pathway that distills the contact patterns learned at scale into the fine motion adjustments required by downstream tactile-centric manipulation. For offline policy improvement, we introduce ALTER, an advantage-conditioned offline reinforcement learning method that converts relative progress and trajectory-event comparisons into binary advantage labels for policy training on a fixed deployment corpus, further improving task-specific learning on contact-rich skills such as deformable object manipulation. Across contact-rich benchmarks, $N_0$-VTLA outperforms strong baselines by wide margins: it wins all nine real-robot NeoReal tasks and reaches 63.8% mean success on a twenty-task simulation suite, against 44.0% for the strongest baseline. $N_0$-VTLA policies trained with ALTER reach 75-95% success on three long-horizon real-robot tasks. These results lay a foundation for versatile tactile-driven manipulation policies.",
+      "authors": [
+        "NeoteAI Team",
+        "Fudan TEAI Team"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-26T17:58:47+00:00",
+      "link": "https://arxiv.org/pdf/2607.23782v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "fine-grained contact-rich manipulation with tactile perception and large-scale visuo-tactile robot dataset",
+      "llm_evidence_cn": "具有触觉感知和大规模视觉-触觉机器人数据集的细粒度接触丰富操作",
+      "llm_evidence": "具有触觉感知和大规模视觉-触觉机器人数据集的细粒度接触丰富操作",
+      "canonical_evidence": "具有触觉感知和大规模视觉-触觉机器人数据集的细粒度接触丰富操作",
+      "llm_tldr_en": "Presents a vision-tactile-language-action model for fine-grained manipulation using large-scale tactile data.",
+      "llm_tldr_cn": "提出一种视觉-触觉-语言-动作模型，利用大规模触觉数据实现细粒度操作。",
+      "llm_tldr": "提出一种视觉-触觉-语言-动作模型，利用大规模触觉数据实现细粒度操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.24744v1",
+      "source": "arxiv",
+      "title": "Data Pyramid for Embodied Manipulation",
+      "abstract": "Multimodal foundation models learned to see and to speak by consuming the whole internet. Embodied agents admit no such shortcut, since they require data that couple observations with physical states and actions. These signals can be provided, to varying degrees, by multiple data sources. In this work, we organize the embodied data ecosystem as a \"pyramid\" spanning five complementary sources: real-robot data, UMI-style data, egocentric and exocentric data, simulation data, and general vision-language data. We organize the pyramid around the tension between scalability and robot alignment, and further characterize each source in terms of data quality, diversity, reusability, and physical fidelity. We then analyze recent embodied foundation models through the lens of their data recipes, examining how different sources are selected, aligned, and mixed during pretraining. For embodied brain models, vision-language-action models, and world-action models alike, we relate data composition to capabilities in perception, reasoning, planning, action generation, and world prediction. We close by discussing six open challenges: building large-scale tactile datasets, collecting failure and recovery data, developing scalable data-collection pipelines, aligning actions across embodiments, leveraging egocentric data for dexterous manipulation, and designing principled data recipes for robot learning. We hope this work paves the foundation for the design of next-generation embodied systems.",
+      "authors": [
+        "Yifan Ye",
+        "Yankai Fu",
+        "Yaoxu Lv",
+        "Bohan Hou",
+        "Jun Cen",
+        "Lingdong Kong",
+        "Duo Zheng",
+        "Tianxing Chen",
+        "Jiaming Liu",
+        "Ziang Cao",
+        "Yunfan Lou",
+        "Wei Chow",
+        "Xian Sun",
+        "Yingshuo Wang",
+        "Kuangzhi Ge",
+        "Xiaowei Chi",
+        "Xidong Zhang",
+        "Zhibo Pang",
+        "Yiwu Zhong",
+        "Sirui Han",
+        "Zhihe Lu",
+        "Weihao Yuan",
+        "Qifeng Chen",
+        "Michael Yu Wang",
+        "Yao Mu",
+        "Ziwei Liu",
+        "Jianfei Yang",
+        "Ping Luo",
+        "Shanghang Zhang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-27T17:59:58+00:00",
+      "link": "https://arxiv.org/pdf/2607.24744v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "organizes embodied data ecosystem including egocentric and UMI-style data for manipulation",
+      "llm_evidence_cn": "组织包含第一视角和 UMI 风格数据的具身操作数据生态系统",
+      "llm_evidence": "组织包含第一视角和 UMI 风格数据的具身操作数据生态系统",
+      "canonical_evidence": "组织包含第一视角和 UMI 风格数据的具身操作数据生态系统",
+      "llm_tldr_en": "Categorizes embodied manipulation data sources, highlighting the role of egocentric and real-robot data.",
+      "llm_tldr_cn": "对具身操作数据源进行分类，强调了第一视角和真实机器人数据的作用。",
+      "llm_tldr": "对具身操作数据源进行分类，强调了第一视角和真实机器人数据的作用。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.20033v3",
+      "source": "arxiv",
+      "title": "Robots Acquire Manipulation Skills in Seconds from a Single Human Video",
+      "abstract": "The ability to acquire skills rapidly and effortlessly while retaining those already mastered is essential for robots. However, current methods still rely on a cumbersome training-time loop that is costly and slow, while eroding skills already mastered. In this paper, we introduce HOST (Human-to-robot One-Shot Skill AcquisiTion), a framework that enables a robot to acquire skills in seconds from a single human video while retaining previously mastered skills. HOST resolves skill acquisition through a cascade of self-grounded prediction. It first estimates the robot's progress within the demonstrated task, then translates the upcoming progression into the robot's own future observations, and finally derives actions from these predicted observations. This cascade is trained on targets coupled to the video demonstration, obtained by mapping the robot trajectory and the video demonstration onto a shared task progress manifold, then redefining each target to align with the future progression of the video. HOST thereby enables the robot to actively follow the demonstrated procedure and adapt it to the robot's embodiment. HOST acquires novel skills at inference time from a single human video in an average of 29 seconds and achieves a 62% average success rate. It exceeds the zero-shot baseline by 45% while retaining previously mastered skills. HOST even exceeds the baseline fine-tuned on 50 robot demonstrations per task while requiring 50 times fewer demonstrations and acquiring each skill 507 times faster. Additional information about HOST is available on the project website.",
+      "authors": [
+        "Guangyan Chen",
+        "Meiling Wang",
+        "Te Cui",
+        "Zichen Zhou",
+        "Qi Shao",
+        "Shalfun Li",
+        "Hang Su",
+        "Roy Gan",
+        "Hao Wang",
+        "Mengyin Fu",
+        "Yi Yang",
+        "Yufeng Yue"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-22T11:20:05+00:00",
+      "link": "https://arxiv.org/pdf/2607.20033v3",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "acquire skills in seconds from a single human video using self-grounded prediction",
+      "llm_evidence_cn": "通过自我对齐预测，在几秒钟内从单个视频中获取技能",
+      "llm_evidence": "通过自我对齐预测，在几秒钟内从单个视频中获取技能",
+      "canonical_evidence": "通过自我对齐预测，在几秒钟内从单个视频中获取技能",
+      "llm_tldr_en": "HOST enables rapid robot skill acquisition from a single human video by predicting future observations and actions.",
+      "llm_tldr_cn": "HOST通过预测未来观测和动作，使机器人能够从单个视频中快速获取技能。",
+      "llm_tldr": "HOST通过预测未来观测和动作，使机器人能够从单个视频中快速获取技能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "papers on training dexterous manipulation using first person or egocentric data",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.23783v1",
+      "source": "arxiv",
+      "title": "$N_0$-TWAM: Scaling Tactile-Native World-Action Model for Contact-Rich Manipulation",
+      "abstract": "We present $N_0$-TWAM, a tactile-native world-action model for contact-rich manipulation that predicts both future vision and future contact. To our knowledge, it is the first tactile world-action model trained at large scale, and it shows strong capability on contact-rich tasks. We pre-train $N_0$-TWAM at large scale with visuo-tactile joint training over tactile-rich demonstrations spanning six embodiments and 450 tasks. We use NeoForce, a unified force-based tactile representation, to form a physically grounded contact signal that conditions action generation. To improve long-horizon and multi-stage manipulation, we introduce tactile contact events for task staging and advance through them during execution. For real-time efficiency, we adopt an asymmetric Mixture-of-Transformers architecture that pairs a full-width expert for video prediction with slim experts for downstream action and tactile prediction. Evaluations on both real and simulated benchmarks justify the capabilities of $N_0$-TWAM across a range of contact-rich tasks, and demonstrate the benefit of data scaling for precise tactile and action prediction. In summary, $N_0$-TWAM endows a world-action model with predictive capabilities to foresee vision, touch and action, building a solid foundation for fine-grained manipulation on open contact-rich tasks. The codebase and model checkpoints will be made publicly available to foster further research and development in tactile-enabled robotic manipulation.",
+      "authors": [
+        "NeoteAI Team",
+        "Fudan TEAI Team"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-26T17:58:53+00:00",
+      "link": "https://arxiv.org/pdf/2607.23783v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "tactile-native world-action model for contact-rich manipulation spanning six embodiments and 450 tasks",
+      "llm_evidence_cn": "用于接触丰富操作的触觉原生世界动作模型，涵盖六种具身和450个任务",
+      "llm_evidence": "用于接触丰富操作的触觉原生世界动作模型，涵盖六种具身和450个任务",
+      "canonical_evidence": "用于接触丰富操作的触觉原生世界动作模型，涵盖六种具身和450个任务",
+      "llm_tldr_en": "Develops a tactile-native world-action model for complex contact-rich manipulation tasks across embodiments.",
+      "llm_tldr_cn": "开发了一种触觉原生世界动作模型，用于跨具身的复杂接触丰富操作任务。",
+      "llm_tldr": "开发了一种触觉原生世界动作模型，用于跨具身的复杂接触丰富操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2607.24207v1",
+      "source": "arxiv",
+      "title": "FloAff-Kitchen: Bridging Navigation and Manipulation via Canonical and Progressive Floor Affordance Learning",
+      "abstract": "Mobile manipulation requires robots to identify Floor Affordance (FloAff) that maximizes downstream manipulation success rather than merely ensuring navigation feasibility. FloAff prediction is a target-conditioned local spatial reasoning problem, yet existing methods suffer from representation ambiguity caused by irrelevant spatial context and arbitrary object orientations, while entangling shared and task-specific knowledge across heterogeneous manipulation skills. To address these challenges, we propose a unified framework for FloAff prediction from egocentric multimodal perception, consisting of canonical representation learning and progressive affordance prior learning. Specifically, we introduce a Canonical Floor Affordance Representation (CFAR), which learns canonical interaction geometry by preserving affordance-relevant local structure while eliminating nuisance spatial variations unrelated to robot base placement. We further propose Progressive Floor Affordance Learning (PFAL), which learns transferable FloAff priors from a foundation manipulation task and progressively adapts them to heterogeneous downstream manipulation skills. To facilitate systematic evaluation, we establish the first cross-scene, multi-view FloAff-Kitchen benchmark covering diverse manipulation skills, scene layouts, furniture styles, and viewpoints. Extensive experiments on three benchmark settings demonstrate that our method consistently outperforms strong baselines, while ablation studies validate the contribution of each proposed component. Project page: https://csu-hero-lab.github.io/FloAff-Kitchen_Web/",
+      "authors": [
+        "Ping Zhong",
+        "Manling Teng",
+        "Tao Wu",
+        "Bolei Chen",
+        "Jiazhi Xia",
+        "Jianxin Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-27T09:36:00+00:00",
+      "link": "https://arxiv.org/pdf/2607.24207v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "predicting floor affordance for manipulation from egocentric multimodal perception",
+      "llm_evidence_cn": "从第一视角多模态感知中预测操作的地面可利用性",
+      "llm_evidence": "从第一视角多模态感知中预测操作的地面可利用性",
+      "canonical_evidence": "从第一视角多模态感知中预测操作的地面可利用性",
+      "llm_tldr_en": "Proposes a framework for predicting floor affordance from egocentric data to bridge navigation and manipulation.",
+      "llm_tldr_cn": "提出一种从第一视角数据预测地面可利用性的框架，以衔接导航与操作任务。",
+      "llm_tldr": "提出一种从第一视角数据预测地面可利用性的框架，以衔接导航与操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.23473v1",
+      "source": "arxiv",
+      "title": "PRISM: Polynomial Representations for Interaction-Structured Motor Control",
+      "abstract": "Robot policies are typically MLPs mapping observations to actions. Yet robot observations are physical variables, and many action-relevant cues arise not from individual variables but from their interactions; power, inertial effects, contact, slip, and compliance depend on products among observable signals. We introduce PRISM, a policy representation that makes polynomial interactions among observable physical variables explicit, learnable, and compact. Rather than listing all polynomial terms, PRISM uses a factorized polynomial module to expose higher-order interaction features efficiently. In reinforcement learning, it keeps the standard MLP backbone but applies a gradually activated element-wise polynomial function after it. In imitation learning, it replaces linear proprioceptive conditioning in Diffusion Policy with a polynomial layer trained end-to-end. Across humanoid locomotion and contact-rich manipulation, PRISM improves performance over standard MLP policies and larger MLPs with matched capacity, showing that interaction structure cannot be replaced by capacity alone. It also yields sensorless compliant behavior without force, wrench, tactile input, contact labels, or admittance control. These results suggest that polynomial representations should become a standard architectural choice for embodied motor control. The project page is available at https://lsh3163.github.io/prism/",
+      "authors": [
+        "Seung Hyun Lee",
+        "Stella X. Yu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-26T05:58:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.23473v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "policy representation for interaction-structured motor control focusing on contact and slip in manipulation",
+      "llm_evidence_cn": "针对操作中接触和滑动的交互结构化运动控制策略表示",
+      "llm_evidence": "针对操作中接触和滑动的交互结构化运动控制策略表示",
+      "canonical_evidence": "针对操作中接触和滑动的交互结构化运动控制策略表示",
+      "llm_tldr_en": "Proposes a polynomial policy representation to capture physical interactions like contact in robot control.",
+      "llm_tldr_cn": "提出一种多项式策略表示，以捕捉机器人控制中接触等物理交互。",
+      "llm_tldr": "提出一种多项式策略表示，以捕捉机器人控制中接触等物理交互。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.24159v1",
+      "source": "arxiv",
+      "title": "DeVA: Decoupled Video-Action Model with physical guidance for robot policy learning",
+      "abstract": "Generalizable robot manipulation requires policies that can anticipate how visual scenes evolve while executing language instructions. While recent Vision-Language-Action models benefit from large-scale pretraining, their predominantly static pretraining objectives provide limited supervision for physical dynamics and temporal causality, leaving control-relevant knowledge to be learned from downstream robot demonstrations. Video generative models offer a promising foundation by encoding rich spatiotemporal priors through future predictions. However, existing Video-Action Models either couple video and action prediction in a shared backbone, making policy adaptation harder to optimize, or under-utilize video information when guiding the action branch. In this work, we introduce DeVA, a Decoupled Video-Action model with specialized video and action experts, multi-level feature transfer, and physically salient guidance. DeVA transfers representations from multiple video layers to the action expert, enabling rich information exchange while making policy learning more tractable. It further supervises intermediate video features and the action stream with physically salient guidance (affordance/depth). Experiments on both simulation benchmarks and real-world deployment demonstrate strong performance with limited data, faster convergence than a unified architecture, and clear performance gains from physical guidance.",
+      "authors": [
+        "Mengqi Zhang",
+        "Sahil Khose",
+        "Simar Kareer",
+        "Yuchen Song",
+        "Unnat Jain",
+        "Judy Hoffman"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-07-27T08:37:35+00:00",
+      "link": "https://arxiv.org/pdf/2607.24159v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "robot policy learning using video generative models for spatiotemporal priors and physical dynamics",
+      "llm_evidence_cn": "利用视频生成模型获取时空先验和物理动力学的机器人策略学习",
+      "llm_evidence": "利用视频生成模型获取时空先验和物理动力学的机器人策略学习",
+      "canonical_evidence": "利用视频生成模型获取时空先验和物理动力学的机器人策略学习",
+      "llm_tldr_en": "Decouples video and action modeling to leverage video generative priors for generalizable robot manipulation.",
+      "llm_tldr_cn": "解耦视频和动作建模，利用视频生成先验实现通用的机器人操作。",
+      "llm_tldr": "解耦视频和动作建模，利用视频生成先验实现通用的机器人操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.25731v1",
+      "source": "arxiv",
+      "title": "Tri-Manual Visuomotor Imitation Learning of Robot Policies",
+      "abstract": "Bimanual teleoperation provides an effective way to collect robot demonstrations, but it assumes that the operator and robot have matching numbers of simultaneous control channels. This assumption breaks for tri-manual systems: the robot can coordinate three arms concurrently, whereas a single operator can continuously control only two. Pairwise mode switching may therefore record otherwise independent motions sequentially, causing behaviour cloning to reproduce delays imposed by the interface rather than required by the task. We present TriManPolicy, a tri-manual imitation learning system that allows one operator to demonstrate behaviours for three arms. Its central component is Dependency-Aware Tri-Arm Scheduling (DATS). The key idea is to preserve the demonstrated arm motions while reconsidering when they occur. DATS retimes demonstrations offline by preserving local sensorimotor segments of fixed duration and repositioning them according to constraints on task order and arm usage that are reviewed by a human. The resulting data train a single synchronous policy for all three arms, while deployment requires neither the dependency graph nor the scheduler. Across six challenging tasks performed in the real world, policies trained on demonstrations retimed by DATS exhibit more efficient coordination while maintaining comparable observed task success. Offline analysis further shows that DATS changes the supervision across arms rather than merely removing idle periods.",
+      "authors": [
+        "James Zhao",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T13:52:51+00:00",
+      "link": "https://arxiv.org/pdf/2607.25731v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "tri-manual visuomotor imitation learning for robot manipulation policies",
+      "llm_evidence_cn": "机器人操作策略的三手视觉运动模仿学习",
+      "llm_evidence": "机器人操作策略的三手视觉运动模仿学习",
+      "canonical_evidence": "机器人操作策略的三手视觉运动模仿学习",
+      "llm_tldr_en": "Introduces TriManPolicy for coordinating three robotic arms through imitation learning from human demonstrations.",
+      "llm_tldr_cn": "引入 TriManPolicy，通过模仿学习协调三个机器人手臂执行操作任务。",
+      "llm_tldr": "引入 TriManPolicy，通过模仿学习协调三个机器人手臂执行操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.25397v1",
+      "source": "arxiv",
+      "title": "Decompose and Reorganize: Planning with Primitives and Visuomotor Policies Learned from Demonstrations",
+      "abstract": "Successfully automating dexterous, long-horizon robotic manipulation requires frameworks capable of both high-level reasoning and fine-grained execution. Traditional task and motion planning (TAMP), while excellent at symbolic planning, is often brittle in contact-rich operations. Simultaneously, imitation learning (IL), while effective in manipulation tasks with visual feedback, is limited by its low capability in spatial generalization and multi-stage operation. To reconcile their complementary strengths and limitations, we propose DR-LfD (Decomposed and Reorganized Skills Learned from Demonstrations), a framework that seamlessly integrates visuomotor policies into a TAMP-gated decision-making system. Based on contact relationships, DR-LfD decomposes human demonstrations into atomic skills, which are reproduced as visuomotor policies or object-centric primitives. The initiation, termination, and constraints of the visuomotor policies are carefully modeled and implemented in a TAMP-compatible form, enabling reorganization of skills learned from different sources. DR-LfD transforms the learning problem from one requiring exponential demonstration data over possible skill sequences to one whose demonstration burden scales with the number of distinct skill types, with limited data for each skill. Through comprehensive real-world and simulation benchmarking across diverse scenarios, we demonstrate the strong performance of DR-LfD on tasks involving multiple steps, unseen setups, and physical constraints. Project website: https://dr-lfd.github.io/DR-LfD-website.",
+      "authors": [
+        "Yizhou Chen",
+        "Hang Xu",
+        "Dongjie Yu",
+        "Yupu Lu",
+        "Tengye Xu",
+        "Zeqing Zhang",
+        "Wei Zhang",
+        "Yi Ren",
+        "Ben M. Chen",
+        "Jia Pan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T07:57:09+00:00",
+      "link": "https://arxiv.org/pdf/2607.25397v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "automating dexterous, long-horizon robotic manipulation using visuomotor policies",
+      "llm_evidence_cn": "使用视觉运动策略实现灵巧、长程机器人操作的自动化",
+      "llm_evidence": "使用视觉运动策略实现灵巧、长程机器人操作的自动化",
+      "canonical_evidence": "使用视觉运动策略实现灵巧、长程机器人操作的自动化",
+      "llm_tldr_en": "DR-LfD integrates visuomotor policies with symbolic planning to handle dexterous and multi-stage manipulation tasks.",
+      "llm_tldr_cn": "DR-LfD将视觉运动策略与符号规划相结合，以处理灵巧和多阶段的操作任务。",
+      "llm_tldr": "DR-LfD将视觉运动策略与符号规划相结合，以处理灵巧和多阶段的操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.23909v1",
+      "source": "arxiv",
+      "title": "WorldDiT: A Unified Diffusion Architecture for World and Action Modeling",
+      "abstract": "Many recent robot policies pursue stronger control by using large pretrained vision-language models (VLMs) as the action backbone. We introduce WorldDiT, a unified diffusion transformer architecture that couples action generation with visual world modeling and achieves strong performance without a large pretrained VLM action backbone. During training, a single diffusion transformer generates continuous action chunks and predicts normalized RGB patch targets from future camera frames. Across four LIBERO simulation suites, WorldDiT lies on the reported Pareto frontier for total model parameters and mean success among methods reporting all four suites. These results provide a strong sub-billion-parameter baseline for future scaling studies.",
+      "authors": [
+        "Sen Wang",
+        "R. Gnana Praveen",
+        "Bidhan Roy",
+        "Marcos Villagra"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.RO"
+      ],
+      "published": "2026-07-27T00:55:10+00:00",
+      "link": "https://arxiv.org/pdf/2607.23909v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "unified diffusion architecture for world and action modeling in robot manipulation tasks",
+      "llm_evidence_cn": "用于机器人操作任务中世界和动作建模的统一扩散架构",
+      "llm_evidence": "用于机器人操作任务中世界和动作建模的统一扩散架构",
+      "canonical_evidence": "用于机器人操作任务中世界和动作建模的统一扩散架构",
+      "llm_tldr_en": "Introduces a diffusion transformer that couples action generation with visual world modeling for robot control.",
+      "llm_tldr_cn": "引入一种扩散Transformer，将动作生成与视觉世界建模相结合用于机器人控制。",
+      "llm_tldr": "引入一种扩散Transformer，将动作生成与视觉世界建模相结合用于机器人控制。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.24296v1",
+      "source": "arxiv",
+      "title": "PAC-DP: PAC-Bayesian Diffusion Policy Learning",
+      "abstract": "Diffusion Policies (DPs) are able to perform complex manipulation tasks. However, DPs are typically trained by minimizing a denoising objective, which provides limited control over generalization in the finite-data regimes common in robotics. In this letter, we propose PAC-DP, an approach that increases the performance of DPs in robotic manipulation tasks. By modeling the DP as a Bayesian neural network, and defining a PAC-Bayes generalization bound, we derive a novel training objective that augments the standard denoising loss with a Kullback-Leibler divergence regularizer between the posterior and prior parameter distributions. From the theoretical perspective, our approach provides a principled approach to regularize the training of DPs without significantly increasing the training time. From the practical point of view, experimental results demonstrate improved denoising performance, lower variational negative log-likelihood, and higher success rates across multiple robotic manipulation benchmarks. Crucially, the largest improvements are observed in low-data training regimes and complex tasks, establishing PAC-DP as a theoretically grounded framework for robot policy learning.",
+      "authors": [
+        "Mohammad Hasan Yeganegi",
+        "Dian Yu",
+        "Andrea Del Prete",
+        "Majid Khadiv",
+        "Matteo Saveriano"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-27T11:43:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.24296v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "diffusion policy learning for complex robotic manipulation tasks",
+      "llm_evidence_cn": "复杂机器人操作任务的扩散策略学习",
+      "llm_evidence": "复杂机器人操作任务的扩散策略学习",
+      "canonical_evidence": "复杂机器人操作任务的扩散策略学习",
+      "llm_tldr_en": "Improves diffusion policies for robotic manipulation using a PAC-Bayesian generalization bound objective.",
+      "llm_tldr_cn": "利用 PAC-Bayesian 泛化界限目标改进了机器人操作的扩散策略。",
+      "llm_tldr": "利用 PAC-Bayesian 泛化界限目标改进了机器人操作的扩散策略。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.26047v1",
+      "source": "arxiv",
+      "title": "S2A2: Audio-Visual Imitation Learning for Manipulation Tasks Using Acoustic Spatial Information",
+      "abstract": "Acoustic information provides rich cues about object location, material properties, and changes caused by contact or motion. This paper introduces a new set of acoustic-aware manipulation tasks for imitation learning, in which robots must use auditory cues to determine manipulation targets. These tasks require sound source localization and identification for active exploration in robotic manipulation. Also, we propose a multimodal imitation learning framework, Spatial-Spectral Audio Action (S2A2), that integrates visual features with acoustic spatial and acoustic signal information for the acoustic-aware manipulation tasks. We implemented S2A2 models that integrates policies such as ACT, Diffusion Policy, VQ-BeT, and $π_0$, into our framework. Simulation experiments showed that the proposed method is the most effective for tasks requiring both position and timbre. Furthermore, real-robot experiments confirm the applicability of the proposed tasks and framework to real-world manipulation.",
+      "authors": [
+        "Kaneyoshi Hiratsuka",
+        "Benjamin Yen",
+        "Ryosuke Kojima"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T17:56:07+00:00",
+      "link": "https://arxiv.org/pdf/2607.26047v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Audio-visual imitation learning for robotic manipulation tasks.",
+      "llm_evidence_cn": "用于机器人操作任务的视听模仿学习。",
+      "llm_evidence": "用于机器人操作任务的视听模仿学习。",
+      "canonical_evidence": "用于机器人操作任务的视听模仿学习。",
+      "llm_tldr_en": "S2A2 integrates visual and acoustic spatial cues to improve imitation learning for manipulation tasks.",
+      "llm_tldr_cn": "S2A2框架结合视觉和声学空间信息，提升了机器人操作任务的模仿学习效果。",
+      "llm_tldr": "S2A2框架结合视觉和声学空间信息，提升了机器人操作任务的模仿学习效果。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.23909v1/fig-001.webp",
+      "caption": "Figure 2 shows successful rollouts across four LIBERO suites.",
+      "page": 2,
+      "index": 1,
+      "width": 919,
+      "height": 490
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23909v1/fig-002.webp",
+      "caption": "Table 1 shows the reported performance of all 24 methods across the LIBERO Spatial, Object, Goal, and Long suites. Methods are grouped by whether they use a large pretrained vision-language model as the action backbone. The WorldDiT row reports an aggregate over 500 episodes per suite, including 300 episodes per suite used during staged checkpoint selection.",
+      "page": 7,
+      "index": 2,
+      "width": 989,
+      "height": 661
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23909v1/fig-003.webp",
+      "caption": "Figure 3 | A ten-step window provides three observed context steps, seven target actions, and one future normalized RGB patch target. Frozen encoders and trainable projections construct multimodal tokens, and one unified WorldDiT backbone predicts action and RGB patch flow velocities.",
+      "page": 3,
+      "index": 3,
+      "width": 962,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23909v1/fig-004.webp",
+      "caption": "Figure 4 | The unified backbone encodes three observed context steps and samples a chunk of seven actions through twenty flow steps. We execute the first three actions, update the window, and replan.",
+      "page": 5,
+      "index": 4,
+      "width": 983,
+      "height": 432
+    }
+  ]
+}

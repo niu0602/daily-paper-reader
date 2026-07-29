@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-001.webp",
+      "caption": "Figure 1: (Top) Examples of side-view and front-view MoMa in a manipulation-rich kitchen scene. (Bottom) CFAR learns canonical interaction geometry by eliminating representation ambiguity. PFAL progressively learns transferable FloAff priors before adapting them to heterogeneous manipulation skills.",
+      "page": 1,
+      "index": 1,
+      "width": 500,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-002.webp",
+      "caption": "Figure 4: Illustration of qualitative results for predicting FloAff using different methods on the CloseD and OpenSD tasks (FloAff-Kitchen benchmarks). Under different styles and layouts, each task is shown in two cases. Please see the supplementary material for more visualizations.",
+      "page": 6,
+      "index": 2,
+      "width": 1050,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-003.webp",
+      "caption": "Table 1: Quantitative evaluation of FloAff prediction across different datasets.",
+      "page": 6,
+      "index": 3,
+      "width": 488,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-004.webp",
+      "caption": "Table 8: Statistics of RoboCasa dataset.",
+      "page": 11,
+      "index": 4,
+      "width": 466,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-005.webp",
+      "caption": "Figure 2: The data collection process consists of three phases: Scene Generation, Rollout-based FloAff Annotation, and Multi-View Observation Collection. After scene generation, the candidate poses are evaluated for physical feasibility and then annotated.",
+      "page": 3,
+      "index": 5,
+      "width": 500,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-006.webp",
+      "caption": "Figure 3: Illustrations of (a) Canonical FloAff Representation and (b) Progressive FloAff Learning.",
+      "page": 4,
+      "index": 6,
+      "width": 500,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-007.webp",
+      "caption": "Figure 5: Illustration of qualitative results for predicting FloAff using different methods on the PnPC2C and CloseDD tasks (FloAff-Kitchen benchmarks). Under different styles and layouts, each task is shown in two cases.",
+      "page": 12,
+      "index": 7,
+      "width": 1052,
+      "height": 340
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24207v1/fig-008.webp",
+      "caption": "Figure 6: Illustration of FloAff predictions and the four downstream MoMa tasks completed based on them.",
+      "page": 12,
+      "index": 8,
+      "width": 486,
+      "height": 643
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-001.webp",
+      "caption": "Figure 3: PRISM improves both training stability and locomotion behavior. Locomotion results on Humanoid-Gym [10]. Left figure shows training curves with shaded standard error across seeds. Polynomial actors learn more reliably and reach higher performance than baselines. Right figure shows forward command-tracking traces under a fixed forward command, where the black line denotes the command and others denote realized forward velocity. PRISM follows the target more closely and remains stable throughout the rollout.",
+      "page": 6,
+      "index": 1,
+      "width": 810,
+      "height": 257
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-002.webp",
+      "caption": "Table 10: Implementation details for the stronger-backbone validation.",
+      "page": 15,
+      "index": 2,
+      "width": 660,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-003.webp",
+      "caption": "Figure 1: Policies should expose multiplicative interactions among proprioception, actions, commands, and motion variables. We show representative rollout signals from locomotion tasks and manipulation tasks; each curve plots the corresponding physical quantity over rollout time. These crucial physical quantities are not directly provided as policy inputs, but they can be formed through higher-order interactions of observable variables (a) Pjoint = ∑ i |τiq̇i| denotes joint mechanical power, where τi and q̇i are joint torque and velocity. (b) vslip = ∑ i ∥vfooti,xy∥ denotes foot slip velocity, where vfooti,xy is planar foot velocity.(c) Jc(t) = ∫ t 0 Fc(τ)dτ denotes accumulated contact impulse, integrating contact-force magnitude Fc over time. (d) Pc = Fc∥vEEF∥ denotes contact power, where vEEF is end-effector velocity.",
+      "page": 2,
+      "index": 3,
+      "width": 826,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-004.webp",
+      "caption": "Table 7: Humanoid-Gym reward scales shared by all methods.",
+      "page": 13,
+      "index": 4,
+      "width": 494,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-005.webp",
+      "caption": "Table 6: Shared Humanoid-Gym training configuration.",
+      "page": 13,
+      "index": 5,
+      "width": 556,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-006.webp",
+      "caption": "Figure 5: Learned actor representations respond to unobserved dynamics shifts. t-SNE of the post-conditioner BFM-Zero actor features for reference motion 30. Each panel contains the same 30 matched samples per condition: nominal (green circles), low friction (blue triangles), and payload mass (orange squares). Features are standardized, reduced to at most 50 PCA dimensions, and projected with independently fitted t-SNE models using seed 1000 and perplexity 12. Axes and cross-panel distances are arbitrary; only within-panel neighborhood structure should be interpreted.",
+      "page": 17,
+      "index": 6,
+      "width": 826,
+      "height": 221
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23473v1/fig-007.webp",
+      "caption": "Table 4: PRISM representations make Newtonian quantities more linearly predictable. We freeze trained policy representations and train ordinary linear probes on held-out rollout windows with horizon H = 5. Targets are mechanics-inspired quantities computed only for analysis from simulator states, contacts, and actions. Lower MSE and higher Pearson correlation coefficient (PCC) indicate better linear predictability. Gains are relative changes from Diffusion Policy [9] to PRISM.",
+      "page": 9,
+      "index": 7,
+      "width": 826,
+      "height": 189
+    }
+  ]
+}

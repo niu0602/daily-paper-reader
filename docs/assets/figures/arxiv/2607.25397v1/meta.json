@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-001.webp",
+      "caption": "Fig. 4: Skill detection and scene grounding.",
+      "page": 6,
+      "index": 1,
+      "width": 524,
+      "height": 543
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-002.webp",
+      "caption": "Fig. 7: (a) The reachability map constructed for the left puppet arm of the ALOHA [3] robot. The cup sleeve (circled) is in a low-reachability area. (a1)–(a4) are the cup-sleeve insertion task progression in the Unreachable setting. (b) The MDF map constructed for the cup wiping task. The toy plunger (circled) stands in an area with high collision probability. (b1)–(b4) are the cup wiping task progression in the Unsafe setting.",
+      "page": 11,
+      "index": 2,
+      "width": 474,
+      "height": 386
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-003.webp",
+      "caption": "TABLE VII: Success rates in LIBERO dataset evaluation.",
+      "page": 15,
+      "index": 3,
+      "width": 510,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-004.webp",
+      "caption": "Fig. 9: Executions in unreachable and unsafe scenarios.",
+      "page": 14,
+      "index": 4,
+      "width": 526,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-005.webp",
+      "caption": "Fig. 10: Experiments of two long-horizon tasks with customized goals.",
+      "page": 14,
+      "index": 5,
+      "width": 529,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-006.webp",
+      "caption": "TABLE I: A collection of hierarchical planning-learning methods. The sensor modality in bold font indicates the requirement for real-time updates.",
+      "page": 3,
+      "index": 6,
+      "width": 992,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-007.webp",
+      "caption": "TABLE V: Success rates and completion times in real-world tasks under different initial setups. Statistics obtained from 20 trials.",
+      "page": 13,
+      "index": 7,
+      "width": 514,
+      "height": 652
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-008.webp",
+      "caption": "Fig. 11: Initial object-pose distributions in the real-world comparative studies. Top: in Cup-sleeve Insertion, the sleeve is initialized in the left blue region and the cup in the right green region; in the OOD setup, both regions are enlarged. Middle: in Screwdriver Packing, the screwdriver center is initialized in the purple region with heading chosen from {−10◦, 0◦, 10◦}; in the OOD setup, the region is enlarged to cover most of the left half of the table, and the heading is randomized continuously. Bottom: in Object Handoff, the tape is initialized on the right side of the table; in the OOD setup, this placement region is enlarged. In the Leaky setups, the target objects are additionally tilted: the cup and sleeve are tilted along the pitch axis, the screwdriver is tilted by approximately 5◦, and the tape leans against a mouse at approximately 30◦ pitch. The supporting objects are used only to induce target-object tilt. They are treated as static support or background objects rather than movable obstacles, and therefore do not affect the IsSafePolicy(·) constraint.",
+      "page": 19,
+      "index": 8,
+      "width": 462,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25397v1/fig-009.webp",
+      "caption": "Fig. 8: An execution example for the task “(1) Apply the handoff skill; (2) Place the object inside the basket.” When encountering unseen setups, DRLfD leverages the learned object-picking skill to initiate the visuomotor policy in an in-distribution observation. Additionally, DR-LfD can complete test-time customized goals with skills in its repertoire.",
+      "page": 12,
+      "index": 9,
+      "width": 529,
+      "height": 850
+    }
+  ]
+}

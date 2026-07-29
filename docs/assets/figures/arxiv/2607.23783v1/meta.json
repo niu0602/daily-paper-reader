@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-001.webp",
+      "caption": "Figure 1 Overview. N0-TWAM is pre-trained on large-scale self-collected real-robot manipulation data with synchronized per-finger tactile streams. An MoT with three per-modality experts (video, tactile, and action) predicts the future vision and tactile, then predicts the action from them, so touch is both predicted (a predicted future) and observed (an observed present). Across contact-rich benchmarks in simulation and on real robots, N0-TWAM outperforms prior world-action and vision-language-action baselines.",
+      "page": 2,
+      "index": 1,
+      "width": 972,
+      "height": 487
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-002.webp",
+      "caption": "Figure 4 The two tactile pathways. Touch enters N0-TWAM in two ways. As a predicted signal, it is generated in the VAE latent space shared with video and denoised by the tactile expert as a foresight target. As an observed signal, it is read in force space: a frozen estimator gθ maps the raw tactile image to a three-axis force map [fx, fy, fz] → a NeoForce [56] tactile encoder (warm-started, fine-tuned) produces representation tokens → cross-attended into the action stream through the zero-initialized port of Eq. (7). An optional reconstruction term anchors the fine-tuned representation to the force field.",
+      "page": 7,
+      "index": 2,
+      "width": 976,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-003.webp",
+      "caption": "Figure 6 Qualitative simulation rollout (Insert Hole): the model’s predicted future (top) against the ground-truth rollout (bottom). In each block the multi-view RGB scene sits above its tactile stream; the predicted scene and contact track the real execution across the insertion.",
+      "page": 14,
+      "index": 3,
+      "width": 976,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-004.webp",
+      "caption": "Figure 7 Per-task success rate (%) on the real-robot suite, eight contact-rich tasks, four methods each (bar value on top; N0-TWAM in blue). The methods are the vision-language-action policy π0.5 [7] and the world-action models LingBot-VA [45] and FastWAM [86]. Macro average (equal weight per task): N0-TWAM 46.3, π0.5 30.0, LingBot-VA 21.9, FastWAM 14.4. Six of the eight tasks are drawn from the NeoReal benchmark [56].",
+      "page": 14,
+      "index": 4,
+      "width": 919,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-005.webp",
+      "caption": "Figure 11 Predicting future touch (lemon-tea grasp). Top row: the model’s predicted future; bottom row: the ground truth. From left to right, the third-person and right-wrist RGB views, then the tactile image and the contact-flow map for each of the two gripper fingers (rl, rr). The predicted tactile and flow match the observed sensor, so foresight extends to contact, not only to the visual scene.",
+      "page": 18,
+      "index": 5,
+      "width": 976,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-006.webp",
+      "caption": "Figure 10 Two renderings of the same tactile stream. One observed rollout: the top row is the RGB scene, shared by both renderings; below it the same contact appears as the simulator’s smooth clean field and as our gel-rendered rendering, a silvery, speckled gel with grain noise and depth shading that matches the look of a real vision-based sensor. Only the tactile rendering differs.",
+      "page": 18,
+      "index": 6,
+      "width": 959,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-007.webp",
+      "caption": "Figure 12 Per-modality pre-training loss (first 18k steps). Video, action, and tactile flow-matching losses of the MoT backbone; the +UMI marker is where the hand-collected UMI data is mixed in. The video loss rises and converges higher afterward, while the tactile loss is essentially unchanged.",
+      "page": 28,
+      "index": 7,
+      "width": 960,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-008.webp",
+      "caption": "Table 3 Per-task success rate (%) on the NeoSim simulation suite (four single-arm and eight dual-arm tasks). Methods are grouped into vision-language-action (VLA) policies and world-action models (WAM); the best per row is in bold. FastWAM and the ACT baseline were not run on NeoSim.",
+      "page": 13,
+      "index": 8,
+      "width": 980,
+      "height": 471
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-009.webp",
+      "caption": "Figure 2 Overview ofN0-TWAM. Multi-view RGB and tactile streams are encoded into latent tokens and processed by three per-modality experts (video, tactile, action) that interact only through a single shared self-attention at every layer, ordered by the frame-id causal cascade: the video and tactile experts co-generate the predicted future scene and future contact, and the action expert denoises the action chunk conditioned on the just-predicted pair. The language instruction enters the video and action experts through cross-attention, but not the tactile expert. A lightweight observed pathway (right) encodes the observed current tactile and cross-attends into the action tokens before the action head (§2.2); the denoised actions are decoded and executed.",
+      "page": 4,
+      "index": 9,
+      "width": 972,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-010.webp",
+      "caption": "Figure 9 Ablation ofN0-TWAM on UniVTAC (eight tasks), NeoSim (twelve tasks), and their mean. Removing either tactile pathway lowers success, most sharply on NeoSim; the 20% pre-training variant (UniVTAC only) shows pretraining scale is the largest single factor. Per-task breakdowns are in Appendix A.",
+      "page": 17,
+      "index": 10,
+      "width": 749,
+      "height": 230
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-011.webp",
+      "caption": "Table 2 Success rate (%) on the UniVTAC simulation benchmark (eight tasks). Methods are grouped into visionlanguage-action (VLA) policies and world-action models (WAM); the best per column is in bold.",
+      "page": 12,
+      "index": 11,
+      "width": 980,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-012.webp",
+      "caption": "Figure 5 Tactile-punctuated long-horizon execution. (a) Training: a long-horizon demonstration, drawn as gripper aperture and tactile magnitude ∥f∥ over time, is segmented at contact events into sub-task clips. The tactile trace also reports whether each grasp succeeds: a gripper can close without loading any force, so a failed grasp shows an aperture dip but no tactile rise, and the one signal that delimits sub-tasks also confirms them. Each clip is labeled with a short instruction (“Pick up the Cup”, “Pour the Tea”, …) and post-trained through the existing text pathway. (b) Inference: a lightweight scheduler holds the sub-task queue; N0-TWAM runs on the current sub-task prompt and executes it, and when tactile feedback signals the sub-task is complete the scheduler advances to the next prompt, looping through the queue.",
+      "page": 9,
+      "index": 12,
+      "width": 979,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2607.23783v1/fig-013.webp",
+      "caption": "Figure 8 The real-robot task suite. Eight contact-rich tasks on two embodiments: four single-arm tasks on a Flexiv (top row) and four dual-arm tasks on a PiPER (bottom row). Six of the eight are drawn from NeoReal [56].",
+      "page": 16,
+      "index": 13,
+      "width": 979,
+      "height": 327
+    }
+  ]
+}

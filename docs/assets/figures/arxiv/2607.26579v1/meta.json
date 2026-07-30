@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.26579v1/fig-001.webp",
+      "caption": "Table 2: Cross-dataset evaluation. All metrics are computed over 25 held-out clips per dataset after masking out the visible hand/robot in both the prediction and the ground truth.",
+      "page": 8,
+      "index": 1,
+      "width": 830,
+      "height": 254
+    }
+  ]
+}

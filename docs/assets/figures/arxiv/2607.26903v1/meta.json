@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.26903v1/fig-001.webp",
+      "caption": "Figure 2: Multi-scene synthesized robot videos generated from human manipulation videos. The equally sized panels illustrate diverse manipulation tasks, environments, and viewpoints.",
+      "page": 6,
+      "index": 1,
+      "width": 477,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26903v1/fig-002.webp",
+      "caption": "Figure 1: Pegasus Architecture. Human demonstrations are transformed into task graphs, encoded in a hierarchical affordance latent space, translated into embodiment-specific robot planning graphs, verified against physical constraints, and rendered as robot-learning experiences.",
+      "page": 3,
+      "index": 2,
+      "width": 1002,
+      "height": 671
+    }
+  ]
+}

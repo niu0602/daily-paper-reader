@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-001.webp",
+      "caption": "Fig. 5: Selected successful DATS rollouts for BINTOWEL (top) and TOWELHANG (bottom), showing O progressing while L and R continue towel manipulation.",
+      "page": 6,
+      "index": 1,
+      "width": 1052,
+      "height": 272
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-002.webp",
+      "caption": "TABLE II: Real-robot comparison over 25 trials per task and condition. N denotes processed training demonstrations. Time is mean±sample SD over successful trials; failures count in Succ. but are excluded from time. The final row gives aggregate success and unweighted macro-mean time.",
+      "page": 6,
+      "index": 2,
+      "width": 508,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-003.webp",
+      "caption": "Fig. 2: TriManPolicy pipeline. An offline annotation pass constructs a reviewed subtask graph from each mode-switched demonstration; DATS uses that graph to optimise segment placement and produce retimed three-arm supervision. Raw and DATS share the policy-learning module.",
+      "page": 2,
+      "index": 3,
+      "width": 512,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-004.webp",
+      "caption": "Fig. 6: Episode-level relationship between paired duration change and co-window gain over 237 processed demonstrations. Light markers show individual episodes; outlined markers show task means. Positive values correspond to shorter DATS timelines on the horizontal axis and greater DATS coverage on the vertical axis, measured in percentage points (pp).",
+      "page": 7,
+      "index": 4,
+      "width": 512,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-005.webp",
+      "caption": "Fig. 7: Selected TOWELHANG rollout: hanger retrieval overlaps towel folding and lifting.",
+      "page": 7,
+      "index": 5,
+      "width": 512,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-006.webp",
+      "caption": "Fig. 3: Mode-switched teleoperation interface for three-arm demonstration collection. The interface supports pairwise control assignments over Arms L, R, and O, allowing one operator to collect three-arm demonstrations while controlling only two arms at a time.",
+      "page": 3,
+      "index": 6,
+      "width": 514,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-007.webp",
+      "caption": "Fig. 4: DATS temporal reparameterisation on BAGTAPE. Equal-width purple bands schematically mark horizon-H action-target windows. The Raw window contains bag preparation on O with held targets on L and R; the DATS window presents tape handling on R together with bag preparation on L and O. The checked aperture-insertion dependency remains enforced.",
+      "page": 4,
+      "index": 7,
+      "width": 512,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25731v2/fig-008.webp",
+      "caption": "TABLE I: Complementary three-arm stages and task-specific completion criteria.",
+      "page": 5,
+      "index": 8,
+      "width": 492,
+      "height": 250
+    }
+  ]
+}

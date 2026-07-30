@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-001.webp",
+      "caption": "Figure 3: The 12 ArmnetBench v0.1 tasks, shown from the top camera at the start of a humanteleoperated reference demonstration. The upper two rows show the eight single-arm tasks; the bottom row shows the four bimanual tasks.",
+      "page": 6,
+      "index": 1,
+      "width": 979,
+      "height": 532
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-002.webp",
+      "caption": "Table 1: ArmnetBench versus representative real-world manipulation benchmarks. Entries are qualitative characterisations of each work’s dominant design choice. Labelled eval corpus means a released set of policy rollouts, each tagged with a success/failure (or graded) outcome, as distinct from teleoperated training demonstrations.",
+      "page": 2,
+      "index": 2,
+      "width": 959,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-003.webp",
+      "caption": "Table 4: ArmnetBench v0.1 tasks. Each task has 50 human-teleoperated reference demonstrations used to train/fine-tune all 7 policies.",
+      "page": 7,
+      "index": 3,
+      "width": 818,
+      "height": 512
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-004.webp",
+      "caption": "Figure 1: Single-arm (left) and bimanual (right) ArmnetBench cells. Each cell uses a bounded cardboard workspace and three cameras. The single-arm cell uses top, front, and wrist views; the bimanual cell uses top, left_wrist, and right_wrist views.",
+      "page": 3,
+      "index": 4,
+      "width": 979,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-005.webp",
+      "caption": "Table 5: ArmnetBench v0.1 overall leaderboard, pooled across all 12 tasks. Strict success counts only successful rollouts; the last column also credits suboptimal completions. n is the number of scored rollouts.",
+      "page": 8,
+      "index": 5,
+      "width": 523,
+      "height": 251
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-006.webp",
+      "caption": "Table 6: Per-task strict success rate (%); entries generally aggregate 30 rollouts, with two at 29 after data cleaning. Best per row in bold. Single-arm tasks above the rule, bimanual below.",
+      "page": 8,
+      "index": 6,
+      "width": 814,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-007.webp",
+      "caption": "Table 2: Approximate per-cell bill of materials (indicative US retail, mid-2026). Arm, camera, and enclosure quantities differ between the configurations.",
+      "page": 4,
+      "index": 7,
+      "width": 572,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24481v1/fig-008.webp",
+      "caption": "Figure 2: The fleet-management control panel used for parallel evaluation. Two cells are midrollout, with progress and scoring controls, while the third is waiting for the operator to confirm a scene reset. Each row also shows occupancy, the active job, configuration, task, and cell lifecycle controls.",
+      "page": 5,
+      "index": 8,
+      "width": 979,
+      "height": 386
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-001.webp",
+      "caption": "Table 4: Comprehensive Robustness Evaluation on EgoSafe-Bench. We report the Reasoning Score for the eight degradation conditions for which per-condition scores are available. The complete generation protocol contains 11 controlled variants (Appendix A); no scores are inferred for the three unreported lighting conditions. Avg. Drop indicates the percentage performance decline compared to the Clean baseline.",
+      "page": 15,
+      "index": 1,
+      "width": 720,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-002.webp",
+      "caption": "Fig. 1: From Recognition to Evidence-Based Reasoning. While traditional benchmarks focus on identifying explicit violence in stable third-person views (Left), real-world safety understanding requires inferring intent and causality under partial observability (Right). EgoSafe-Bench challenges LVLMs to perform hierarchical reasoning, transitioning from anchoring visual evidence to deducing covert actions in blind spots.",
+      "page": 2,
+      "index": 2,
+      "width": 725,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-003.webp",
+      "caption": "Fig. 2: Overview of the data generation and verification pipeline for EgoSafeBench. A human-in-the-loop (HITL) verification mechanism ensures reasoning consistency, where flawed annotations are rejected and rewritten before being integrated into the final dataset.",
+      "page": 7,
+      "index": 3,
+      "width": 725,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-004.webp",
+      "caption": "Fig. 6: Qualitative Analysis of Perception-Reasoning Decoupling. Left: Input frames showing a “Pickpocketing” scenario where the wallet is occluded by a hand (Blind Spot). Right: Comparison of model outputs. While the model (e.g., Qwen3-VL) accurately describes the environment (High Perception), it hallucinates that the wallet is still visible or missing, failing to infer the theft (Reasoning Failure). In contrast, the Ground Truth Reasoning chain correctly deduces the covert action from the hand’s motion.",
+      "page": 14,
+      "index": 4,
+      "width": 725,
+      "height": 567
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-005.webp",
+      "caption": "Fig. 5: Performance degradation across reasoning levels. All models exhibit a downward trend as reasoning complexity increases. The steepest drop occurs at the Blind Spot/Covert Action stage.",
+      "page": 13,
+      "index": 5,
+      "width": 725,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26518v1/fig-006.webp",
+      "caption": "Fig. 3: Comprehensive analysis of scene diversity. (b) Comparison of egocentric benchmarks where bubble size denotes annotation density.",
+      "page": 8,
+      "index": 6,
+      "width": 725,
+      "height": 249
+    }
+  ]
+}

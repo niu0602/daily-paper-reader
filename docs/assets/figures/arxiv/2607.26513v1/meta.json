@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.26513v1/fig-001.webp",
+      "caption": "Table 1: SimplerEnv simulation evaluation results for the Google Robot setup. “FT” denotes performance of the fine-tuned models. ∗ marks the method specifically designed for 3D inputs.",
+      "page": 7,
+      "index": 1,
+      "width": 586,
+      "height": 334
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26513v1/fig-002.webp",
+      "caption": "Figure 1: Example implementation of Analytic Concepts. Structural Blueprint: higher-level objects are procedurally composed by wiring multiple geometric assets together, forming a parametric graph that captures their spatial layout and structural relationships. Manipulation Blueprint: parameterised routines compute grasp poses and force directions that exploit the affordances encoded in the underlying structure.",
+      "page": 3,
+      "index": 2,
+      "width": 810,
+      "height": 217
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26513v1/fig-003.webp",
+      "caption": "Figure 3: (a) Online RL performance comparison in the Open Drawer task. (b) The radar chart shows the online RL final success rates on manipulation tasks from the ShapeNet Mobility dataset. (c) A representative example of “Place the stapler in the lower drawer” task.",
+      "page": 8,
+      "index": 3,
+      "width": 819,
+      "height": 220
+    },
+    {
+      "url": "assets/figures/arxiv/2607.26513v1/fig-004.webp",
+      "caption": "Figure 2: SAGE Architecture Overview. At t = 0 (Initialization Phase, left): The Concept Expert utilizes 3D features from VGGT (Wang et al., 2025) and SAM (Ravi et al., 2025) to estimate the initial structural parameters (Ps) and kinematic parameters (P 0 k ) via the Structural Parameter Head. For t > 0 (Dynamic Tracking and Rollout Phase, right): An adapter extracts intermediate features from the VLA model’s VLA Layer. This enables the Concept Expert’s Dynamic Parameter Head to track the dynamic parameters (P t k) in real-time. The constructed analytic concept can use Reward Function and Guidance Function to generate dense feedback signals (like rt) for fine-tuning the Action Expert. Dashed lines indicate training-only.",
+      "page": 4,
+      "index": 4,
+      "width": 810,
+      "height": 439
+    }
+  ]
+}

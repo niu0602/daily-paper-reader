@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-001.webp",
+      "caption": "Table 5. Stage-wise execution protocol for the eight downstream real-robot tasks.",
+      "page": 15,
+      "index": 1,
+      "width": 1026,
+      "height": 759
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-002.webp",
+      "caption": "Table 4. Core-component ablations on Wan2.2-5B-Control. Within each block, the complementary component is fixed to its full configuration.",
+      "page": 14,
+      "index": 2,
+      "width": 1036,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-003.webp",
+      "caption": "Figure 11. Detailed execution sequences for four bimanual and four single-arm real-robot tasks. Five checkpoints per row show the progression from the initial configuration to the task-specific success state.",
+      "page": 14,
+      "index": 3,
+      "width": 1034,
+      "height": 771
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-004.webp",
+      "caption": "Figure 3. EGOGENESIS architecture. Text, noisy video, and skeleton embeddings provide the conditioning inputs. Autoregressive DiT generates and appends video frames. OAPM maintains anchored and recent 3D scene slots and refreshes the recent state online. A3DRoPE injects metric action geometry into skeleton-to-video cross-attention.",
+      "page": 3,
+      "index": 4,
+      "width": 1027,
+      "height": 604
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-005.webp",
+      "caption": "Figure 13. Additional comparisons on egg transfer and cup-lid removal; EGOGENESIS better preserves scene and hand identity while following the commanded contact sequence.",
+      "page": 18,
+      "index": 5,
+      "width": 1024,
+      "height": 620
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-006.webp",
+      "caption": "Figure 9. OOD task progress with and without EGOGENESISgenerated training data.",
+      "page": 8,
+      "index": 6,
+      "width": 496,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-007.webp",
+      "caption": "Table 7. Training and inference configuration of the downstream WAM. The same configuration is used for the real, synthetic, and mixed training-data settings.",
+      "page": 17,
+      "index": 7,
+      "width": 960,
+      "height": 777
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-008.webp",
+      "caption": "Figure 10. Composition of the 210K-clip egocentric training corpus. Every source is converted to a unified camera-and-pose conditioning interface.",
+      "page": 12,
+      "index": 8,
+      "width": 496,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-009.webp",
+      "caption": "Figure 4. Qualitative comparison on flattening shorts and assembling a square table; EGOGENESIS better preserves embodiment, scene layout, and contact-driven object evolution.",
+      "page": 5,
+      "index": 9,
+      "width": 1023,
+      "height": 474
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-010.webp",
+      "caption": "Table 1. Generation quality on held-out trajectories under identical scene and action conditioning. Blue bold cells denote the best results, and green underlined cells denote the second-best results for each metric.",
+      "page": 5,
+      "index": 10,
+      "width": 1036,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28243v1/fig-011.webp",
+      "caption": "Table 6. Per-task real-robot success rates (%), with 25 trials per task. Panels (a) and (b) exactly decompose the Single-arm SR and Dual-arm SR columns in main-paper Table 3; bold denotes the best training budget within each split.",
+      "page": 16,
+      "index": 11,
+      "width": 1036,
+      "height": 803
+    }
+  ]
+}

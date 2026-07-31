@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.28198v1/fig-001.webp",
+      "caption": "Figure 4. Human Hand long-horizon manipulation",
+      "page": 13,
+      "index": 1,
+      "width": 959,
+      "height": 295
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28198v1/fig-002.webp",
+      "caption": "Figure 5. Allegro long-horizon manipulation",
+      "page": 13,
+      "index": 2,
+      "width": 948,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28198v1/fig-003.webp",
+      "caption": "Figure 6. Sharpa Wave long-horizon manipulation",
+      "page": 13,
+      "index": 3,
+      "width": 959,
+      "height": 269
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28198v1/fig-004.webp",
+      "caption": "Figure 2. Overview of the proposed unified framework. Ten per-skill policies (one for grasp, one for relocate, six for rotation (x+/x-/y+/y/z+/z- of the hand frame), and two for translation (z+/z- of the hand frame)) are first trained independently and then distilled into a single unified policy via DAgger. All policies share a unified observation space, network architecture, and action space, and the per-skill policies share a unified reward formulation.",
+      "page": 4,
+      "index": 4,
+      "width": 1020,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28198v1/fig-005.webp",
+      "caption": "Table 8. Reward coefficients.",
+      "page": 12,
+      "index": 5,
+      "width": 483,
+      "height": 482
+    }
+  ]
+}

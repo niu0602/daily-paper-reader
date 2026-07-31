@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-001.webp",
+      "caption": "Figure 4: Training and zero-shot testing settings for USB insertion and whiteboard erasing tasks.",
+      "page": 6,
+      "index": 1,
+      "width": 498,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-002.webp",
+      "caption": "Figure 5: Success rates for USB insertion and whiteboard erasing under in-distribution, object-generalization, and scene-generalization settings.",
+      "page": 6,
+      "index": 2,
+      "width": 465,
+      "height": 259
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-003.webp",
+      "caption": "Figure 3: Qualitative results of policy execution.",
+      "page": 6,
+      "index": 3,
+      "width": 1036,
+      "height": 741
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-004.webp",
+      "caption": "Figure 1: τ Framework. Multi-view visual observations, tactile signals, and language instruction are encoded into modalityspecific tokens and fused by the large language model in the vision-language-action model for action chunk prediction. During training, an auxiliary JEPA-style self-supervised objective predicts future visual representations from action-conditioned latent features, enabling predictive multimodal representation learning without pixel-level reconstruction. Notably, the JEPA-style self-supervised learning is applied only during training and is removed during inference.",
+      "page": 3,
+      "index": 4,
+      "width": 1042,
+      "height": 598
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-005.webp",
+      "caption": "Figure 2: Contact-rich task suite of TacAura.",
+      "page": 4,
+      "index": 5,
+      "width": 1052,
+      "height": 198
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24485v2/fig-006.webp",
+      "caption": "Table 1: Success rates (%) of different models on four contact-rich tasks. The best results are in bold, and the suboptimal ones are underlined. Avg. denotes the average of the full success rates across all four tasks. † marks models adapted for our tactile sensing setup while preserving the original framework. τ -WristSup., τ -FrontSup., and τ -DualViewSup. are three variants of the τ framework that use wrist-view, front-view, and dual-view representations, respectively, as supervisory signals for SSL.",
+      "page": 5,
+      "index": 6,
+      "width": 1036,
+      "height": 234
+    }
+  ]
+}

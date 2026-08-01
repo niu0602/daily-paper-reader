@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-001.webp",
+      "caption": "Figure 1: Effect of dynamic-centric supervision and routing. Our method achieves a relatively low PSNR, but improves policy success on LIBERO-Plus evaluation, suggesting that appearance-level reconstruction fidelity is not aligned with control-relevant future prediction.",
+      "page": 1,
+      "index": 1,
+      "width": 455,
+      "height": 330
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-002.webp",
+      "caption": "Figure 5: Real-world task-by-condition evaluation matrix. Columns show three bimanual manipulation tasks, while rows show clean, lighting-perturbed, and backgroundperturbed settings.",
+      "page": 6,
+      "index": 2,
+      "width": 482,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-003.webp",
+      "caption": "Table 1: Success rate (%) on LIBERO (ID) and LIBERO-Plus (OOD), with all methods trained only on clean LIBERO. ID– OOD drop denotes the difference between average success rates; lower is better.",
+      "page": 7,
+      "index": 3,
+      "width": 496,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-004.webp",
+      "caption": "Figure 2: Overview of DC-WAM. DC-WAM redirects the RGB video branch toward interaction-induced dynamics through complementary dense and sparse supervision. Temporal-difference supervision models changes in adjacent visual flows, while TrackFM reweights visual flow-matching errors using an offline tracker-derived dynamic map. The same map supervises DynaRoute, which predicts token-wise dynamic relevance and converts it into a key-side bias in the visual-action MoT attention. Tracker-derived targets are used only during training and require no additional online input or modality-specific predictions at deployment.",
+      "page": 3,
+      "index": 4,
+      "width": 1040,
+      "height": 575
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-005.webp",
+      "caption": "Figure 3: Attention responses under increasing visual perturbations. As perturbation severity increases, FastWAM-AC attention becomes increasingly diffuse and shifts toward static distractors, whereas DC-WAM maintains more consistent and concentrated attention on manipulation-relevant dynamic regions, indicating stronger attention stability and OOD robustness under visual corruption.",
+      "page": 4,
+      "index": 5,
+      "width": 1018,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2607.25918v1/fig-006.webp",
+      "caption": "Figure 4: DynaRoute during training and inference. During training, a layer-shared bias is predicted at each diffusion timestep and injected into video-query attention. At deployment, DynaRoute is evaluated once at τinit = 1 to construct the routed visual cache CV . The video branch is then disabled and the cache is reused throughout action denoising.",
+      "page": 5,
+      "index": 6,
+      "width": 451,
+      "height": 345
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "label": "2026-08-02",
+  "date": "2026-08-02",
+  "generated_at": "2026-08-02T21:07:51",
+  "count": 3,
+  "papers": [
+    {
+      "paper_id": "202608/02/2607.25918v1-dc-wam-dynamic-centric-visual-supervision-and-reasoning-for-world-action-models",
+      "section": "quick",
+      "title_en": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+      "authors": "Haoyuan Ji, Lingxiang Fan, Shang Su, Yinqiao Lu, Mengkai Shi, Jun Gao, Shuo Feng",
+      "date": "2026-07-28",
+      "pdf": "https://arxiv.org/pdf/2607.25918v1",
+      "score": "7.0",
+      "evidence": "机器人策略中世界动作模型的视觉监督与推理",
+      "tldr": "重新审视世界动作模型中的未来视频预测，重点关注与控制相关的视觉表示。",
+      "tags": "query:dexop",
+      "abstract_en": "World-Action Models (WAMs) augment robot policies with future visual prediction, but it remains unclear what the visual modality should learn for control. While photorealistic future prediction provides dense supervision, it also incurs substantial computation and can allocate capacity to texture, illumination, and background variations that are only weakly related to action selection. Recent efficient WAM variants suggest that the main benefit of the video branch may not lie in the rendered future itself, but in the control-relevant visual representations induced during training. In this work, we revisit future video prediction from a dynamic-centric perspective and ask whether an existing RGB-based WAM can be redirected from appearance-dominated reconstruction toward interaction-induced visual dynamics without introducing additional modality-specific predictions or online inputs at deployment. We propose DC-WAM, a dynamic-centric WAM framework that redistributes supervision and computation in the RGB video branch. At the supervision level, DC-WAM combines temporal-difference flow matching with trajectory-guided weighting, emphasizing dense temporal changes and localized regions where the gripper, manipulated objects, and contact areas move. At the reasoning level, DynaRoute predicts token-wise dynamic relevance and converts it into an attention bias, guiding the model toward control-relevant future tokens. Experiments in simulation and on real-world manipulation tasks show that DC-WAM consistently improves policy performance, especially under out-of-distribution perturbations in lighting, object appearance, and background texture.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/02/2607.27511v1-failure-detection-for-surgical-robot-imitation-policies-via-flow-matching-world-modeling",
+      "section": "quick",
+      "title_en": "Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling",
+      "authors": "Zhefeng Huang, Yilin Cai, Ankit Patel, Mohammad Hajiha, Brendan Browne, Yue Chen",
+      "date": "2026-07-29",
+      "pdf": "https://arxiv.org/pdf/2607.27511v1",
+      "score": "6.0",
+      "evidence": "解决手术机器人模仿策略中的故障检测问题",
+      "tldr": "FoMo-FD 使用流匹配世界模型在复杂的手术操作任务中进行故障检测。",
+      "tags": "query:dexop",
+      "abstract_en": "Imitation learning has shown increasing promise for autonomous robotic surgery, yet safe deployment remains challenging due to the safety-critical nature of surgical tasks and the complexity and variability of surgical environments. Failure detection is therefore an essential safeguard, but its development remains difficult due to the challenges of scarce failure data, highly variable manipulation dynamics, and the need to balance missed detections against disruptive false alarms. To address these challenges, we introduce FoMo-FD (Flow-Matching World Model for Failure Detection), a failure detection method that learns nominal short-horizon visual dynamics with an action-conditioned flow-matching world model. FoMo-FD scores the inverse-transport nonconformity of observed endpoint latents, enabling window-level detection of visual-action inconsistencies without requiring failure demonstrations. Detection thresholds are obtained by conformal calibration on successful executions, yielding task-specific alarms without assuming future failure types. We evaluate FoMo-FD on four surgically relevant manipulation tasks with twenty failure modes across simulation and real-world experiments using the da Vinci Research Kit (dVRK). Results show that FoMo-FD outperforms observation-level anomaly baselines and a prediction-error variant of the same world model, with the wrist-camera view achieving the strongest performance, including a 96.6% failure detection rate (FDR) at a 1.3% false alarm rate (FAR).",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "paper_id": "202608/02/2607.27890v1-static-in-dynamic-out-counterfactual-action-augmentation-for-moving-object-manipulation",
+      "section": "quick",
+      "title_en": "Static In, Dynamic Out: Counterfactual Action Augmentation for Moving Object Manipulation",
+      "authors": "Woo Chul Shin, Zhenyang Chen, Alfred Cueva, Nadun Ranawaka Arachchige, Yingyan Celine Lin, Benjamin Joffe, Shreyas Kousik, Danfei Xu",
+      "date": "2026-07-30",
+      "pdf": "https://arxiv.org/pdf/2607.27890v1",
+      "score": "6.0",
+      "evidence": "针对移动物体操作的视觉运动策略",
+      "tldr": "引入一种反事实动作增强方法，使操作策略能够适应移动物体的任务。",
+      "tags": "query:dexop",
+      "abstract_en": "Visuomotor policies have advanced on manipulation tasks where the target object stays static during execution, but real deployments break this assumption: parts drift on conveyors and fruits sway in the wind. We introduce Static In, Dynamic Out (SIDO), a counterfactual action augmentation that enables a policy trained only on static object demonstrations to adapt to unseen object motion at test time. Our key idea is to factorize moving object manipulation into two sub-problems: predicting where the object will be, and reaching that predicted pose. SIDO displaces the object to a counterfactual future position and morphs the demonstrated action chunk to preserve the hand-object relative pose, yielding a goal-conditioned policy. At deployment an object pose predictor supplies the future position. Across three simulated tasks (Mug, Square, Stack) under five object motion patterns and two real-world tasks (Gantry, Peachtree), SIDO improves moving object success over the baselines while preserving static object performance. Project website: https://sido-staticindynamicout.github.io/.",
+      "source": "arxiv",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "errors": []
+}

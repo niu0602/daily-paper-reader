@@ -1,0 +1,140 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-02T21:06:36.111427+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2607.25918v1",
+      "source": "arxiv",
+      "title": "DC-WAM: Dynamic-Centric Visual Supervision and Reasoning for World-Action Models",
+      "abstract": "World-Action Models (WAMs) augment robot policies with future visual prediction, but it remains unclear what the visual modality should learn for control. While photorealistic future prediction provides dense supervision, it also incurs substantial computation and can allocate capacity to texture, illumination, and background variations that are only weakly related to action selection. Recent efficient WAM variants suggest that the main benefit of the video branch may not lie in the rendered future itself, but in the control-relevant visual representations induced during training. In this work, we revisit future video prediction from a dynamic-centric perspective and ask whether an existing RGB-based WAM can be redirected from appearance-dominated reconstruction toward interaction-induced visual dynamics without introducing additional modality-specific predictions or online inputs at deployment. We propose DC-WAM, a dynamic-centric WAM framework that redistributes supervision and computation in the RGB video branch. At the supervision level, DC-WAM combines temporal-difference flow matching with trajectory-guided weighting, emphasizing dense temporal changes and localized regions where the gripper, manipulated objects, and contact areas move. At the reasoning level, DynaRoute predicts token-wise dynamic relevance and converts it into an attention bias, guiding the model toward control-relevant future tokens. Experiments in simulation and on real-world manipulation tasks show that DC-WAM consistently improves policy performance, especially under out-of-distribution perturbations in lighting, object appearance, and background texture.",
+      "authors": [
+        "Haoyuan Ji",
+        "Lingxiang Fan",
+        "Shang Su",
+        "Yinqiao Lu",
+        "Mengkai Shi",
+        "Jun Gao",
+        "Shuo Feng"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-28T16:08:50+00:00",
+      "link": "https://arxiv.org/pdf/2607.25918v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "visual supervision and reasoning for world-action models in robot policies",
+      "llm_evidence_cn": "机器人策略中世界动作模型的视觉监督与推理",
+      "llm_evidence": "机器人策略中世界动作模型的视觉监督与推理",
+      "canonical_evidence": "机器人策略中世界动作模型的视觉监督与推理",
+      "llm_tldr_en": "Revisits future video prediction in world-action models to focus on control-relevant visual representations.",
+      "llm_tldr_cn": "重新审视世界动作模型中的未来视频预测，重点关注与控制相关的视觉表示。",
+      "llm_tldr": "重新审视世界动作模型中的未来视频预测，重点关注与控制相关的视觉表示。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2607.27511v1",
+      "source": "arxiv",
+      "title": "Failure Detection for Surgical Robot Imitation Policies via Flow-Matching World Modeling",
+      "abstract": "Imitation learning has shown increasing promise for autonomous robotic surgery, yet safe deployment remains challenging due to the safety-critical nature of surgical tasks and the complexity and variability of surgical environments. Failure detection is therefore an essential safeguard, but its development remains difficult due to the challenges of scarce failure data, highly variable manipulation dynamics, and the need to balance missed detections against disruptive false alarms. To address these challenges, we introduce FoMo-FD (Flow-Matching World Model for Failure Detection), a failure detection method that learns nominal short-horizon visual dynamics with an action-conditioned flow-matching world model. FoMo-FD scores the inverse-transport nonconformity of observed endpoint latents, enabling window-level detection of visual-action inconsistencies without requiring failure demonstrations. Detection thresholds are obtained by conformal calibration on successful executions, yielding task-specific alarms without assuming future failure types. We evaluate FoMo-FD on four surgically relevant manipulation tasks with twenty failure modes across simulation and real-world experiments using the da Vinci Research Kit (dVRK). Results show that FoMo-FD outperforms observation-level anomaly baselines and a prediction-error variant of the same world model, with the wrist-camera view achieving the strongest performance, including a 96.6% failure detection rate (FDR) at a 1.3% false alarm rate (FAR).",
+      "authors": [
+        "Zhefeng Huang",
+        "Yilin Cai",
+        "Ankit Patel",
+        "Mohammad Hajiha",
+        "Brendan Browne",
+        "Yue Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-29T22:55:54+00:00",
+      "link": "https://arxiv.org/pdf/2607.27511v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "addresses failure detection in surgical robot imitation policies",
+      "llm_evidence_cn": "解决手术机器人模仿策略中的故障检测问题",
+      "llm_evidence": "解决手术机器人模仿策略中的故障检测问题",
+      "canonical_evidence": "解决手术机器人模仿策略中的故障检测问题",
+      "llm_tldr_en": "FoMo-FD uses flow-matching world models for failure detection in complex surgical manipulation tasks.",
+      "llm_tldr_cn": "FoMo-FD 使用流匹配世界模型在复杂的手术操作任务中进行故障检测。",
+      "llm_tldr": "FoMo-FD 使用流匹配世界模型在复杂的手术操作任务中进行故障检测。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.27890v1",
+      "source": "arxiv",
+      "title": "Static In, Dynamic Out: Counterfactual Action Augmentation for Moving Object Manipulation",
+      "abstract": "Visuomotor policies have advanced on manipulation tasks where the target object stays static during execution, but real deployments break this assumption: parts drift on conveyors and fruits sway in the wind. We introduce Static In, Dynamic Out (SIDO), a counterfactual action augmentation that enables a policy trained only on static object demonstrations to adapt to unseen object motion at test time. Our key idea is to factorize moving object manipulation into two sub-problems: predicting where the object will be, and reaching that predicted pose. SIDO displaces the object to a counterfactual future position and morphs the demonstrated action chunk to preserve the hand-object relative pose, yielding a goal-conditioned policy. At deployment an object pose predictor supplies the future position. Across three simulated tasks (Mug, Square, Stack) under five object motion patterns and two real-world tasks (Gantry, Peachtree), SIDO improves moving object success over the baselines while preserving static object performance. Project website: https://sido-staticindynamicout.github.io/.",
+      "authors": [
+        "Woo Chul Shin",
+        "Zhenyang Chen",
+        "Alfred Cueva",
+        "Nadun Ranawaka Arachchige",
+        "Yingyan Celine Lin",
+        "Benjamin Joffe",
+        "Shreyas Kousik",
+        "Danfei Xu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-30T09:05:04+00:00",
+      "link": "https://arxiv.org/pdf/2607.27890v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "visuomotor policies for moving object manipulation",
+      "llm_evidence_cn": "针对移动物体操作的视觉运动策略",
+      "llm_evidence": "针对移动物体操作的视觉运动策略",
+      "canonical_evidence": "针对移动物体操作的视觉运动策略",
+      "llm_tldr_en": "Introduces a counterfactual action augmentation method for adapting manipulation policies to moving objects.",
+      "llm_tldr_cn": "引入一种反事实动作增强方法，使操作策略能够适应移动物体的任务。",
+      "llm_tldr": "引入一种反事实动作增强方法，使操作策略能够适应移动物体的任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

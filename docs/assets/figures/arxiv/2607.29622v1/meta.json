@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-001.webp",
+      "caption": "Table 1: Success rate (%) for each task in RoboCasa [43]. The models were evaluated over 50 episodes per task. Best results in the Default and Variant settings are highlighted in blue and green, respectively. ↑ indicates that a higher average success rate is better, while ↓ indicates that a lower performance drop between the default and variant settings is better.",
+      "page": 6,
+      "index": 1,
+      "width": 816,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-002.webp",
+      "caption": "Figure 4: Overview of real robot tasks",
+      "page": 15,
+      "index": 2,
+      "width": 790,
+      "height": 701
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-003.webp",
+      "caption": "Figure 2: RGB-variant and RayViT-cls success rates when applying the auxiliary cosine-similarity loss at different intermediate layers. Colored lines report mean success rate, with background bands indicating standard deviation. Left: Effect of auxiliary loss on the RGB variant. - denotes no auxiliary loss applied at an intermediate layer. Right: Influence of the auxiliary loss when injected into RayViT-cls layers 6−12.",
+      "page": 7,
+      "index": 3,
+      "width": 786,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-004.webp",
+      "caption": "Table 7: Task score metric details of real robot and evaluation standards.",
+      "page": 14,
+      "index": 4,
+      "width": 818,
+      "height": 367
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-005.webp",
+      "caption": "Table 6: Comparison of our methods with PMP [10] on RoboCasa [43]. All models were trained for 50 epochs using 50 human demonstrations per task and evaluated over 50 episodes per task.",
+      "page": 13,
+      "index": 5,
+      "width": 814,
+      "height": 457
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-006.webp",
+      "caption": "Figure 1: Overview of RayViT. Camera geometry is injected through a ray-map–conditioned class token and patch-aligned ray embeddings. An intermediate cross-view consistency loss regularizes the visual representation. Visual tokens, frozen CLIP [19] language tokens, and noisy action tokens are processed by a decoder-only xLSTM policy [41, 42].",
+      "page": 4,
+      "index": 6,
+      "width": 826,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-007.webp",
+      "caption": "Table 9: Hyperparameters Summary of RayViT.",
+      "page": 17,
+      "index": 7,
+      "width": 572,
+      "height": 452
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29622v1/fig-008.webp",
+      "caption": "Table 8: Hyperparameters Summary of Policy.",
+      "page": 16,
+      "index": 8,
+      "width": 594,
+      "height": 617
+    }
+  ]
+}

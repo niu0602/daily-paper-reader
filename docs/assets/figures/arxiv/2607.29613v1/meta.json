@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-001.webp",
+      "caption": "Table 4 Performance comparison under Sim IND, Sim OOD, and Real settings. The Sim OOD results are further broken down into vision, semantic, and execution dimensions. All methods are trained via RL on top of SFT initialization, and we report the best performance after 1,000 training steps. Bold denotes the best performance.",
+      "page": 15,
+      "index": 1,
+      "width": 818,
+      "height": 201
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-002.webp",
+      "caption": "Figure 12 WCM value curve in Maniskill.WCM exhibits strong discriminative capability between successful and failed trajectories. Because the motion planner in the simulation environment supplies ideal successful trajectories, the value estimates for successful trajectories are exceptionally smooth.",
+      "page": 21,
+      "index": 2,
+      "width": 986,
+      "height": 851
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-003.webp",
+      "caption": "Figure 1 Overview of the World Critic Model (WCM). Prior critic models are hindered by partial observability, and naïve multi-frame architectures remain inadequate due to sparse scalar supervision over high-dimensional observations. WCM proposes an end-to-end architecture that jointly predicts future and estimates value, effectively leveraging historical information. WCM achieves state-of-the-art performance in simulation and strong results in real-world RL training.",
+      "page": 2,
+      "index": 3,
+      "width": 984,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-004.webp",
+      "caption": "Table 1 Performance comparison on ManiSkill under IND and OOD settings. All methods are trained via RL on top of SFT initialization, with Δ denotes the performance improvement relative to the SFT baseline. “+WCM” denotes replacing the critic model with WCM on Flow-SDE or PPO.",
+      "page": 7,
+      "index": 4,
+      "width": 886,
+      "height": 550
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-005.webp",
+      "caption": "Figure 13 WCM value curve in the real world. Unlike simulation, real-world trajectories are not ideal: teleoperated trajectories are subject to various confounding factors, and both the environment and the camera introduce visual noise. Consequently, even successful trajectories show certain fluctuations. Nevertheless, the discriminability between successful and failed trajectories remains high.",
+      "page": 22,
+      "index": 5,
+      "width": 976,
+      "height": 785
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-006.webp",
+      "caption": "Figure 6 Effect of 𝜆 on IND and OOD performance. The plot shows the average success rate for both IND (blue) and OOD (red) across different values of 𝜆, with stars indicating the best performance for each metric.",
+      "page": 14,
+      "index": 6,
+      "width": 477,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-007.webp",
+      "caption": "Figure 9 Demonstration of the Real-Robot Experiment Environment.",
+      "page": 18,
+      "index": 7,
+      "width": 400,
+      "height": 469
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-008.webp",
+      "caption": "Figure 14 Heatmap of values predicted by the critic model at different coordinates within the robot’s reachable workspace. Warmer colors (red) indicate higher values.",
+      "page": 23,
+      "index": 8,
+      "width": 831,
+      "height": 931
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-009.webp",
+      "caption": "Table 2 Detailed performance on LIBERO-Plus. “One-SFT” is the SFT model seeing only one demonstration per task, while “Full-SFT” seeing 50. “+WCM” is initialized from One-SFT.",
+      "page": 8,
+      "index": 9,
+      "width": 872,
+      "height": 440
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-010.webp",
+      "caption": "Figure 2 Overview of the World Critic Model (WCM) method. (a) Architecture. An observation encoder first maps individual images from the past 𝐾 frames into sequential latent states. Concurrently, a predictor equipped with two decoder heads forecasts the next state and estimates the value respectively. (b) On-policy Pipeline: WCM estimates values from on-policy rollouts to compute GAE advantages for PPO/Flow-SDE updates. (c) Off-policy Pipeline: Unified data buffers (SFT + rollouts) are utilized to stably update both WCM and the policy via AWR/RECAP.",
+      "page": 4,
+      "index": 10,
+      "width": 982,
+      "height": 493
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-011.webp",
+      "caption": "Figure 8 Illustration of the rollout process. Starting from an observation 𝑜𝑡 partially revealing hidden state 𝑠𝑡 , the policy𝜋𝜃 generate action 𝑎𝑡 and the environment provides the transition and reward.",
+      "page": 17,
+      "index": 11,
+      "width": 444,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-012.webp",
+      "caption": "Figure 5 Ablation study on critic architectures and observation history lengths. WCM achieves the highest success rates across all configurations. MLP denotes the baseline critic in PPO/Flow-SDE; ViT represents WCM without world prediction (𝜆 = 0), which has temporal modeling capability.",
+      "page": 9,
+      "index": 12,
+      "width": 886,
+      "height": 237
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-013.webp",
+      "caption": "Table 3 Detailed real-world experiment results. “+WCM” denotes using WCM as critic model. Δ denotes improvement from SFT. Results are taken from the first 50 trajectories after test starts.",
+      "page": 9,
+      "index": 13,
+      "width": 894,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29613v1/fig-014.webp",
+      "caption": "Figure 11 Training curves across 8 different settings, plotted from the initial step (step 0) to the point where the optimal result (as reported in our work) is achieved. It is worth noting that for Maniskill-OOD and LIBERO-Plus, since the test settings differ from the training settings, there will be some numerical discrepancies.",
+      "page": 20,
+      "index": 14,
+      "width": 836,
+      "height": 339
+    }
+  ]
+}

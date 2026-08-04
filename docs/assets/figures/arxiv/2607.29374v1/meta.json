@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.29374v1/fig-001.webp",
+      "caption": "Figure 1. SAGP pipeline architecture. Starting from RGB-D perception and segmentation, the pipeline branches into three parallel processes: antipodal grasp sampling, coarse-zone decomposition via PCA and protrusion detection, and VLM-based zone affordance rating. The three streams converge at the semantic grasp scoring stage, where a fused five-component function re-ranks the candidates. The highest-ranked grasp is then executed.",
+      "page": 4,
+      "index": 1,
+      "width": 625,
+      "height": 291
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29374v1/fig-002.webp",
+      "caption": "Figure 2. Coarse-zone decomposition for three YCB objects. Vertical thirds (top: red, middle: green, bottom: blue) are combined with protrusion regions (yellow) detected via distance-based clustering. Handles and grips are identified without learned segmentation.",
+      "page": 6,
+      "index": 2,
+      "width": 625,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2607.29374v1/fig-003.webp",
+      "caption": "Figure 3. Qualitative grasp executions of SAGP in PyBullet on the cluttered YCB scene (Task 3). Subfig 1 shows the full workspace; subfigs 2-7 show three successful grasps (two execution instances each): the power drill at its grip (2-3), the banana at its middle (4-5), and the tomato can on its body (6-7). Despite distractors within a 15 cm radius, the gripper contacts the VLM-preferred zone without displacing neighbouring items.",
+      "page": 10,
+      "index": 3,
+      "width": 625,
+      "height": 202
+    }
+  ]
+}

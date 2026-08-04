@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-001.webp",
+      "caption": "Table 1: Peformance of generalization across tasks and objects. Using a single frozen human-derived prior, DexMani achieves the highest mean SR in all six task–split settings, including Turn Faucet, which is absent from human pretraining.",
+      "page": 6,
+      "index": 1,
+      "width": 1036,
+      "height": 210
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-002.webp",
+      "caption": "Figure 8: Human Dataset Visualization. Each pair shows the RGB observation and the corresponding tactile-pressure map.",
+      "page": 11,
+      "index": 2,
+      "width": 1022,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-003.webp",
+      "caption": "Table 11: Domain randomization settings.N and U denote Gaussian and uniform distributions, respectively.",
+      "page": 15,
+      "index": 3,
+      "width": 460,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-004.webp",
+      "caption": "Table 10: PPO training hyperparameters.",
+      "page": 15,
+      "index": 4,
+      "width": 366,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-005.webp",
+      "caption": "Figure 1: DexMani overview. Human visual–tactile rotation demonstrations are used to pretrain an energy-based prior over contact-conditioned manipulability evolution. The frozen prior then guides downstream reinforcement learning across rotation tasks and dexterous hand embodiments.",
+      "page": 2,
+      "index": 5,
+      "width": 1049,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-006.webp",
+      "caption": "Table 4: Quantitative comparison of execution quality and efficiency across three dexterous rotation tasks on the LEAP hand.",
+      "page": 7,
+      "index": 6,
+      "width": 1054,
+      "height": 193
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-007.webp",
+      "caption": "Figure 6: Hardware for human data collection. Left: the Juqiao tactile glove. Right: the Manus Quantum MetaGlove.",
+      "page": 10,
+      "index": 7,
+      "width": 424,
+      "height": 284
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-008.webp",
+      "caption": "Figure 7: Objects used for human demonstration collection.",
+      "page": 10,
+      "index": 8,
+      "width": 477,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-009.webp",
+      "caption": "Figure 12: VTA-E pretraining pipeline.",
+      "page": 14,
+      "index": 9,
+      "width": 494,
+      "height": 830
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-010.webp",
+      "caption": "Figure 11: VTA pretraining pipeline.",
+      "page": 14,
+      "index": 10,
+      "width": 494,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-011.webp",
+      "caption": "Figure 2: DexMani pipeline. DexMani learns a contact-conditioned manipulability-evolution energy prior from human visual– tactile demonstrations (left). During robot reinforcement learning, the frozen prior scores action-induced manipulability changes and provides hand-specific guidance to a residual policy (right).",
+      "page": 3,
+      "index": 11,
+      "width": 1050,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-012.webp",
+      "caption": "Table 7: Hyperparameters of visual–tactile pretraining.",
+      "page": 13,
+      "index": 12,
+      "width": 424,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-013.webp",
+      "caption": "Figure 9: VT pretraining pipeline.",
+      "page": 13,
+      "index": 13,
+      "width": 494,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-014.webp",
+      "caption": "Figure 10: VTM pretraining pipeline.",
+      "page": 13,
+      "index": 14,
+      "width": 494,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00554v1/fig-015.webp",
+      "caption": "Figure 17: Representative simulated rollouts. Six sequences illustrate sustained rotation through repeated contact transitions across the evaluated settings.",
+      "page": 16,
+      "index": 15,
+      "width": 491,
+      "height": 315
+    }
+  ]
+}

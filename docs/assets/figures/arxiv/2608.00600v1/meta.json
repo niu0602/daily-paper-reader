@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-001.webp",
+      "caption": "Fig. 3. The Grasp Distance Field on a Planar Toy System. To illustrate both fields and their trajectories on a system we can draw, we evaluate the construction on a planar two-candidate toy system. Our hard field (Definition IV.1) is non-smooth along the Voronoi ridges of the candidate set (left). Our softmin field (Definition IV.2) is smooth across these ridges and preserves each minimum, and its negative-gradient trajectories converge to whichever candidate lies nearest, the implicit selection of (8) (middle). A section through two candidates shows the softmin tracking the hard minimum within the logN/ρ gap of (7) (right).",
+      "page": 6,
+      "index": 1,
+      "width": 1021,
+      "height": 312
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-002.webp",
+      "caption": "TABLE III CONTROLLER PARAMETERS FOR THE VERIFICATION TRIALS",
+      "page": 14,
+      "index": 2,
+      "width": 445,
+      "height": 409
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-003.webp",
+      "caption": "Fig. 2. Plan-Free Grasp Execution Across Four Settings. To show a single stationary feedback law handling four obstacle settings, we picture the initial and final configuration of our field controller in each. In (a), a tabletop arm-hand system reaches an object behind a 50 cm obstacle pair. In (b), the same system avoids a column that moves across the approach path. In (c), a third obstacle blocks the approach and the same law stops short of the object without contacting it. In (d), a Unitree G1 humanoid reaches an object behind a 36 cm obstacle. A single planning-free, stationary feedback law with per-step barrier certificates produces all four.",
+      "page": 3,
+      "index": 3,
+      "width": 1014,
+      "height": 189
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-004.webp",
+      "caption": "Fig. 7. Field Execution Through Contact and Lift. To picture a single full execution, we plot the clearance field that the obstacle, wall, and object constraints induce over the workspace at the four mode transitions of a two-obstacle trial, with the executed palm path colored by our grasp field value dG. The band below plots the per-step series, the field decrease through REACH, the rise after the switch to the stored closure through CLOSE, the number of contacts with its return to CLOSE, and the minimum barrier constraint together with the obstacle constraints, nonnegative throughout apart from the single home-posture hull-overlap pair that the filter drives positive per Theorem V.1.",
+      "page": 13,
+      "index": 4,
+      "width": 1018,
+      "height": 627
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-005.webp",
+      "caption": "Fig. 4. Mode Band and Guards for Reach-Avoid-Stay Grasping. As a visual aid that captures the hybrid nature of the grasp execution problem, we graph several frames from a representative trial of the reach-avoid-stay grasping task, with each frame corresponding to a named element of the mode band we delineate in Section V-B and in the state transition system pictured below the scene row, comprising the REACH (step 60), CLOSE (step 111), HOLD (step 302), and LIFT (step 352) modes. The band states the guards of (13) on each transition. Notice that (13) admits only two exits from HOLD, the return to CLOSE through the hysteresis band, drawn as the curved arrow, and the transition to the terminal LIFT mode.",
+      "page": 8,
+      "index": 5,
+      "width": 1022,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v1/fig-006.webp",
+      "caption": "Fig. 6. Per-Step Margins from the Offline Evaluation. To follow the quality guarantee through time, we plot the realized risk-adjusted margin per control step for two executions, with the mode bands shaded. (a) On the cluttered tabletop scene, the margin enters HOLD at 4.06× 10−3 and never falls below 3.80× 10−3 at any control step through the lift, a worst deviation of 2.6× 10−4, 0.013 of the kwq = 0.02 tolerance of Proposition V.1. (b) On an object behind the column pair of Fig. 1(b), the realized margin falls during the hold on a contact change. The quality-neutral program proceeds through the drop and completes the lift at ε(β) = −0.013, below the closure certificate, while with our constraint enforced, the program turns infeasible at that drop, the transition to LIFT never occurs, and the trial stops in HOLD.",
+      "page": 12,
+      "index": 6,
+      "width": 1010,
+      "height": 363
+    }
+  ]
+}

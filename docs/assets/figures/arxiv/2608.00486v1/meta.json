@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-001.webp",
+      "caption": "Figure 4: Generalization beyond the training distribution. Scenes, objects and actions absent from every training corpus, rendered as in Fig. 3. Panel (a) is a video-game frame; (b–d) are phone photographs. Instructions abridged.",
+      "page": 6,
+      "index": 1,
+      "width": 1048,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-002.webp",
+      "caption": "Figure 3: Qualitative comparison. Each row is one clip, labelled with the instruction the model was given (abridged for space). Panels overlay 7 of the 13 predicted poses on the anchor frame, each outlined in green, with the dashed line tracing the object’s centre. Red marks error: a centroid off by more than the object’s own width, or an orientation off by more than 45◦. Methods marked † receive privileged input: ObjectForesight is given the first three poses as ground-truth context, so its overlay starts from the correct pose by construction. EgoScaler predicts over its native 2 s horizon, the other columns over the whole action.",
+      "page": 6,
+      "index": 2,
+      "width": 1036,
+      "height": 685
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-003.webp",
+      "caption": "Table 7: Reader optimisation. Identical across every arm of Table 4 in the main paper; the arms differ only in which conditioning signal is removed.",
+      "page": 11,
+      "index": 3,
+      "width": 360,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-004.webp",
+      "caption": "Figure 6: Readout step sweep. (a) permutation-controlled track margin against the recorded 2-D object track; (b) end-task ADE from retraining the Reader at each step. The shaded region is the backbone’s high-noise expert. The signal appears at the expert switch, not gradually.",
+      "page": 15,
+      "index": 4,
+      "width": 1048,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-005.webp",
+      "caption": "Table 1: Main comparison on held-out folds. Block (a) restricts to clips captured by a real sensor, so the reference trajectory is the dataset’s own 6-DoF annotation; block (b) is the full evaluation set, whose labels come from the extraction pipeline of Sec. 3.3. ADE/FDE in cm, rotation in degrees. Baselines marked † consume inputs DreamTraj does not (Sec. 5.1). Each baseline predicts on its own timestamps— EgoScaler a fixed 20-step trajectory, ObjectForesight a horizon fixed by its context requirement—so each is reported against DreamTraj evaluated at that baseline’s timestamps, and blocks are not comparable to one another.",
+      "page": 7,
+      "index": 5,
+      "width": 477,
+      "height": 514
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-006.webp",
+      "caption": "Table 5: Backbone and readout configuration.",
+      "page": 10,
+      "index": 6,
+      "width": 468,
+      "height": 460
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-007.webp",
+      "caption": "Table 6: Reader architecture.",
+      "page": 10,
+      "index": 7,
+      "width": 470,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-008.webp",
+      "caption": "Figure 5: Move statistics. (a) source corpus, (b) action verb, (c) object category, each split into recorded and generated trajectories; (d) joint distribution of per-clip translation and rotation magnitude over all 5,038 trajectories.",
+      "page": 14,
+      "index": 8,
+      "width": 1046,
+      "height": 694
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-009.webp",
+      "caption": "Figure 1: Trajectory extraction pipeline used to label generated videos (Sec. 3.3). Amber marks the two blocks that depart from RigVid and ObjectForesight: DA3 metric depth and a SAM 3D Objects mesh.",
+      "page": 3,
+      "index": 9,
+      "width": 492,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-010.webp",
+      "caption": "Figure 2: Overview of DreamTraj. One RGB frame and one instruction go in. The object is grounded once in that frame (GroundingDINO + SAM2) to give query points; a frozen Wan2.2-I2V-A14B is stopped at step 16 of 40, and from that latent we read q·k attention tracks (block 28, head 32) and anchor-pooled hidden states (blocks 0/19/39) as a 13× 132 sequence. A 7.1M-parameter flow-matching trainable Reader, turns it into 13 relative 9-D pose tokens, which, with a depth anchor z0 and the intrinsics K lift to metric 6-DoF.",
+      "page": 4,
+      "index": 10,
+      "width": 1049,
+      "height": 410
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-011.webp",
+      "caption": "Figure 8: Generalization beyond the training distribution. Scenes, objects and actions absent from every training corpus, rendered as in Fig. 7. The shampoo bottle panel is a video-game frame; the others are phone photographs. Instructions abridged.",
+      "page": 17,
+      "index": 11,
+      "width": 1054,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00486v1/fig-012.webp",
+      "caption": "Figure 7: Extended qualitative comparison. Each row is one clip, labelled with the instruction the model was given (abridged for space). Panels overlay 7 of the 13 predicted poses on the anchor frame, each outlined in green, with the dashed line tracing the object’s centre. Red marks error: a centroid off by more than the object’s own width, or an orientation off by more than 45◦. Methods marked † receive privileged input: ObjectForesight is given the first three poses as ground-truth context, so its overlay starts from the correct pose by construction. EgoScaler predicts over its native 2 s horizon, the other columns over the whole action.",
+      "page": 16,
+      "index": 12,
+      "width": 1034,
+      "height": 904
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-001.webp",
+      "caption": "Figure 1: The left examples compare detector and oracle rankings of the same grasp candidates. The right plots compare the two rankings across multiple ranking metrics on GraspNet-1Billion.",
+      "page": 1,
+      "index": 1,
+      "width": 498,
+      "height": 389
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-002.webp",
+      "caption": "Figure 5: Candidate ranking analysis using the same grasp candidates from the GraspNet-1Billion RealSense test set. Panels show (a) Discounted Success@K, (b) top-K frame success rate, (c) Average AP, and (d) top-1 outcome changes. Curves in panels (a) and (b) are macro-averaged over three detectors and all 23,040 test frames per detector.",
+      "page": 6,
+      "index": 2,
+      "width": 500,
+      "height": 479
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-003.webp",
+      "caption": "Figure 6: Qualitative ranking examples for GN and GraRe using the same candidate sets. Panels (a)–(d) show failure-tosuccess changes, and panels (e)–(f) show success-to-failure changes. Insets mark the top-ranked grasps, and colors show scores normalized within each panel.",
+      "page": 6,
+      "index": 3,
+      "width": 462,
+      "height": 756
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-004.webp",
+      "caption": "Table 7: Candidate and feature-construction hyperparameters.",
+      "page": 11,
+      "index": 4,
+      "width": 500,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-005.webp",
+      "caption": "Table 8: Network, objective, and re-ranking hyperparameters. A zero quality-head hidden dimension denotes a linear fquality; the Point-MAE adapter remains trainable.",
+      "page": 11,
+      "index": 5,
+      "width": 500,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-006.webp",
+      "caption": "Figure 9: Complete Average AP@µ profiles. Panels (a)–(e) show the five detector–camera settings, and panel (f) summarizes their Average AP gains. Each profile averages the Seen, Similar, and Novel splits. Solid blue lines denote the re-ranked order πR, dashed gray lines denote the detector order πD, and blue shading denotes the per-threshold gain. Curves use the reported checkpoints; seed variation is reported in Figure 10.",
+      "page": 11,
+      "index": 6,
+      "width": 491,
+      "height": 736
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-007.webp",
+      "caption": "Figure 17: RealSense scene-level Average AP gains over the detector order πD. Each point is one scene; boxes show the interquartile range and median. Labels report median gains, including negative values on some SBG and EG Similar scenes.",
+      "page": 15,
+      "index": 7,
+      "width": 493,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-008.webp",
+      "caption": "Table 12: Complete RealSense scene-bootstrap results for the seed-7 models, Average AP.",
+      "page": 15,
+      "index": 8,
+      "width": 500,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-009.webp",
+      "caption": "Figure 21: Closed-loop progressions on the three hard scenes using the paper scene numbering. Each group shows GraRe above the detector order for separate executions of the same scene specification. Five logged observations are sampled from the initial state to the terminal observation; column labels give the corresponding GraRe (R) and detector-order (D) cycle indices. GraRe clears all three scenes, while the detector-order terminal observations retain one or two objects.",
+      "page": 21,
+      "index": 9,
+      "width": 1032,
+      "height": 1066
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-010.webp",
+      "caption": "Figure 8: Real-robot evidence of re-ranking. Panel (a) compares the rank of each executed grasp under πD (horizontal) and πR (vertical), with points below the diagonal promoted by re-ranking. Panels (b)–(c) show the same executed grasp (green) moving from rank 20 to rank 2 within the unchanged EG candidate set. Panel (d) shows the observation after successful removal.",
+      "page": 7,
+      "index": 10,
+      "width": 500,
+      "height": 376
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-011.webp",
+      "caption": "Figure 24: Cycle-level rank of the grasp executed by GraReGN in Scene 4. Each vertical segment compares the same executed candidate under πD and πR; smaller ranks are better, and labels give the candidate count K.",
+      "page": 22,
+      "index": 11,
+      "width": 493,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-012.webp",
+      "caption": "Figure 25: Closed-loop trace for GN Scene 4. The first cycle starts from the RGB observation in (a). After eight sensorconfirmed transfers, the observation in (b) contains no segmented objects and starts the two-frame empty-scene confirmation. Panels (c) and (d) compare the unchanged candidates under the detector order and re-ranked order, respectively. Colors run from blue (low score) to red (high score) within each order.",
+      "page": 22,
+      "index": 12,
+      "width": 500,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-013.webp",
+      "caption": "Figure 22: Selected execution poses for GN Scene 4. Columns are cycles 1–8, with the GraRe order above the detector order. Green grippers show the poses selected after collision checking and planning. The detector-order cycle 7 uses motion-planning seed 5 after five failed seeds. Cycle 8 ends with a release-confirmation timeout.",
+      "page": 22,
+      "index": 13,
+      "width": 998,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-014.webp",
+      "caption": "Figure 23: Candidate-distribution loop for GN Scene 4. Columns are cycles 1–8, with the GraRe order above the detector order. Each panel renders up to 50 collision-free post-NMS candidates used by the successful planning seed. Candidates associated with the hand-camera gripper or lying within 20 mm of the fitted tabletop are omitted from the display. GraRe colors candidates by the re-ranking score, while GN uses detector confidence. Blue denotes a low score and red a high score within each panel. Later columns also reflect the scene states produced by the preceding executions in each closed-loop run.",
+      "page": 22,
+      "index": 14,
+      "width": 988,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-015.webp",
+      "caption": "Figure 15: Signed RealSense top-1 transition matrix over 23,040 frames per detector. Blue positive cells show failureto-success transitions, while red negative cells show successto-failure transitions; the negative sign is used only to distinguish direction. Color intensity and cell labels report transition magnitude. Theλ = 0 detector order has zero transitions and is omitted.",
+      "page": 14,
+      "index": 15,
+      "width": 489,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-016.webp",
+      "caption": "Figure 14: Original candidate-set size and retained candidate budget. (a) Mean candidates per frame in C, averaged over 90 test scenes. (b) Average AP under a strict top-M budget relative to all K original candidates. Solid lines denote RealSense and dashed lines denote Kinect; only evaluated budgets are connected.",
+      "page": 14,
+      "index": 16,
+      "width": 491,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-017.webp",
+      "caption": "Figure 13: Sensitivity and robustness. (a) Average AP gain over the detector order πD as λ varies; the star marks the RealSense EG maximum. (b) Average AP under a strict topM budget relative to all K original candidates; hollow red markers fall below the detector order. (c) Average AP change under the detector order, randomized targets, and binarysuccess targets.",
+      "page": 14,
+      "index": 17,
+      "width": 492,
+      "height": 813
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-018.webp",
+      "caption": "Figure 2: Overview of GraRe. (a) A frozen 6-DoF detector produces confidence-ranked grasp candidates. (b) GraRe encodes each candidate from its attributes, shell-stratified local geometry, and object context, then fuses the three representations to predict grasp quality. (c) The normalized predicted quality and detector confidence are combined to re-rank the unchanged grasp candidates. Dashed output heads are used only during training.",
+      "page": 3,
+      "index": 18,
+      "width": 496,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-019.webp",
+      "caption": "Table 19: Complete RealSense re-ranking statistics. Candidates is the mean number of candidates produced per frame, and ∆bi is the change in detector confidence from the topranked candidate under the detector order πD to that under the re-ranked order πR.",
+      "page": 18,
+      "index": 19,
+      "width": 500,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-020.webp",
+      "caption": "Table 20: Complete joint-training results on RealSense using the detector’s original candidate sets, Average AP (%). Each row reports all three official evaluations and their sample mean and SD.",
+      "page": 18,
+      "index": 20,
+      "width": 500,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-021.webp",
+      "caption": "Table 22: Training cost and validation-selected checkpoints for seed 7. Hours exclude official evaluation; VRAM is peak allocated GPU memory.",
+      "page": 18,
+      "index": 21,
+      "width": 500,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-022.webp",
+      "caption": "Figure 29: Candidate-distribution loop for GN Scene 9 using the same logged cycles as Fig. 28. Both rows retain dense candidate sets early in the run, but their score orderings select different execution poses as the scene state evolves.",
+      "page": 23,
+      "index": 22,
+      "width": 1052,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-023.webp",
+      "caption": "Figure 28: Selected execution-pose loop for GN Scene 9. GraRe completes the scene in eight successful attempts, while the detector-order run contains repeated failures and leaves one object.",
+      "page": 23,
+      "index": 23,
+      "width": 1052,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-024.webp",
+      "caption": "Figure 27: Candidate-distribution loop for SBG Scene 8 using the same logged cycles as Fig. 26. The candidate set contracts to three detector-order candidates while two objects remain; GraRe reaches an empty observation after its ninth executed cycle.",
+      "page": 23,
+      "index": 24,
+      "width": 1052,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-025.webp",
+      "caption": "Figure 26: Selected execution-pose loop for SBG Scene 8. The detector-order run ends with two objects remaining, whereas the GraRe run clears the scene.",
+      "page": 23,
+      "index": 25,
+      "width": 1052,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-026.webp",
+      "caption": "Figure 12: Local-alignment controls. The horizontal axis reports the Average AP gain over the detector order πD, whose Average AP appears in parentheses. The w/o Local and shuffled-local controls nearly coincide, whereas aligned full GraRe provides a further 1.76–4.33 AP.",
+      "page": 13,
+      "index": 26,
+      "width": 491,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-027.webp",
+      "caption": "Table 1: Comparison on GraspNet-1Billion. Each entry reports AP (%) as RealSense/Kinect. “-” denotes an unavailable result.",
+      "page": 4,
+      "index": 27,
+      "width": 500,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-028.webp",
+      "caption": "Figure 19: Scene-level completion outcomes for all 60 realrobot evaluations. Rows are detectors and columns use the paper scene numbering; vertical separators mark the easy, medium, and hard groups. Blue cells marked C denote cleared scenes, while pale cells denote incomplete runs. GraRe clears 29/30 detector–scene evaluations compared with 11/30 under the detector order.",
+      "page": 19,
+      "index": 28,
+      "width": 490,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-029.webp",
+      "caption": "Table 16: Controlled seed-7 candidate-budget analysis for the RealSense oracle ranking, Average AP (%). “All candidates” denotes the detector’s original candidate set.",
+      "page": 17,
+      "index": 29,
+      "width": 500,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-030.webp",
+      "caption": "Figure 11: Additional ablation studies. (a) Featuresufficiency controls. (b) Auxiliary-loss controls. Cells report the change in Average AP from the matched full GraRe model; panel (a) headers also report full-model Average AP. The panels use independent color scales. C/E denotes collision and empty-grasp supervision.",
+      "page": 12,
+      "index": 30,
+      "width": 488,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-031.webp",
+      "caption": "Figure 10: Training-seed stability. Points show seeds 7/11/13 centered by each detector–camera three-seed mean; pale segments span the observed range. Filled blue markers identify the checkpoints used in the main comparison, and right-hand labels report mean±sample SD over n = 3 runs.",
+      "page": 12,
+      "index": 31,
+      "width": 491,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-032.webp",
+      "caption": "Figure 31: Candidate-distribution loop for EG Scene 10 using the same logged cycles as Fig. 30. GraRe maintains a progressively smaller set of displayed candidates as objects are removed, while the detector-order row continues through a longer run with residual objects.",
+      "page": 24,
+      "index": 32,
+      "width": 1052,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-033.webp",
+      "caption": "Figure 30: Selected execution-pose loop for EG Scene 10. GraRe clears the scene in nine successful attempts; the detector-order run succeeds in five of twelve attempts and leaves two objects.",
+      "page": 24,
+      "index": 33,
+      "width": 1052,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-034.webp",
+      "caption": "Figure 32: Candidate-count evolution for the three hard-scene loops after the same visualization-only nuisance mask. Horizontal labels give the paired GraRe/detector-order cycle indices. Counts may exceed 50 because the loop panels display at most the first 50 retained candidates.",
+      "page": 24,
+      "index": 34,
+      "width": 1046,
+      "height": 262
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-035.webp",
+      "caption": "Figure 20: Additional successful real-robot rank-promotion cases. In GN Scene 9 cycle 2, the executed grasp moves from rank 60 under πD to rank 9 under πR; in SBG Scene 8 cycle 3, it moves from rank 12 to rank 1. Columns show the observation before execution, the closed gripper carrying the object, and the returned view after removal. The GraRe runs clear both scenes, whereas the corresponding detector-order runs leave one and two objects, respectively.",
+      "page": 20,
+      "index": 35,
+      "width": 709,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-036.webp",
+      "caption": "Table 3: Ablation results on the RealSense test set. Each cell reports Average AP (%) and its decrease from full GraRe. Concat Fusion is a capacity-matched variant that uses candidate and local geometric features and replaces FiLM and the feature fusion Transformer with concatenation and an MLP. Auxiliary losses include collision, empty-grasp, and objectclassification losses. Binary Loss replaces the continuous quality target with binary success supervision at τ = 0.6, and Random Labels permutes the continuous targets.",
+      "page": 5,
+      "index": 36,
+      "width": 500,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00946v1/fig-037.webp",
+      "caption": "Figure 18: Scene-level applicability using the complete 23,040-frame evaluation for each setting. (a) Each point is one scene and colors identify the Seen, Similar, and Novel splits. Short black lines mark medians, the dashed line marks zero gain, and right-hand labels give the fraction of scenes with positive ∆AP. (b) Change in precision at rank k under πR relative to πD. Lines show the mean over improved or degraded scenes, and shading shows the interquartile range across scenes; every scene value averages all frames and friction thresholds.",
+      "page": 16,
+      "index": 37,
+      "width": 491,
+      "height": 459
+    }
+  ]
+}

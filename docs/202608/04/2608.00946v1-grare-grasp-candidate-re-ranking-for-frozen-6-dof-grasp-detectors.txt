@@ -1,0 +1,1144 @@
+Title: GraRe: Grasp Candidate Re-Ranking for Frozen 6-DoF Grasp Detectors
+
+URL Source: https://arxiv.org/pdf/2608.00946v1
+
+Published Time: Tue, 04 Aug 2026 01:02:09 GMT
+
+Number of Pages: 24
+
+Markdown Content:
+# GraRe: Grasp Candidate Re-Ranking for Frozen 6-DoF Grasp Detectors 
+
+## Jibao Yuan 1, Yuhui Zhao 1, Yinzhen Lv 2, Chao Xu 1, Shun Li 1, Chenxi Deng 1, Shaofei Chen 1∗
+
+> 1
+
+College of Intelligence Science and Technology, National University of Defense Technology, Changsha, Hunan, China 
+
+> 2
+
+Department of Engineering and Information Technology, The University of Melbourne, Parkville, Victoria 3010, Australia 
+
+Abstract 
+
+Existing 6-DoF grasp detectors typically rank grasp can-didates by detector confidence. However, our analysis on GraspNet-1Billion shows that detector confidence is often poorly aligned with grasp quality, causing successful grasp candidates to be ranked too low during execution. Motivated by this observation, we formulate grasp candidate re-ranking as a separate task for frozen detectors, aiming to improve candidate ordering without changing the detector or its grasp candidates. We propose GraRe, which estimates grasp quality from candidate attributes, shell-stratified local geometry, and object context. Candidate attributes condition the local geo-metric and object-context representations, and a Transformer fuses all three feature types. The predicted quality is com-bined with detector confidence to produce the final ranking. Experiments on GraspNet-1Billion with three frozen detec-tors show consistent improvements, with gains of up to 13.60 points in Average AP. Real-robot experiments further demon-strate robust grasping in cluttered scenes. These results show that improving candidate ranking provides a practical way to enhance frozen 6-DoF grasp detectors. 
+
+## 1 Introduction 
+
+Grasping in cluttered scenes is fundamental to robotic ma-nipulation in real-world environments. This capability sup-ports applications such as industrial bin picking, warehouse automation, and household object manipulation [9, 8]. How-ever, in such scenes, occlusion reduces object visibility, while nearby objects increase the risk of gripper collisions [16, 35]. Under these conditions, traditional grasp detection methods that rely on predefined 3D object models are difficult to ap-ply [2]. With advances in depth sensing and deep learning, data-driven methods for 6-DoF grasp detection have shown strong performance in cluttered scenes [30, 3]. In general, data-driven 6-DoF grasp detection methods generate a set of grasp candidates from an RGB-D frame or point cloud. Each candidate contains a 6-DoF grasp pose, a gripper width, and an associated detector confidence. During execution, the robot attempts grasp candidates in descending order of detector confidence [10, 19, 36]. Therefore, grasping performance depends not only on the quality of candidate generation but also on the accuracy of candidate ranking. Grasping failures may arise for two reasons: a detector may fail to generate successful grasp candidates, or it may assign 
+
+> ∗
+
+Corresponding author. 
+
+Figure 1: The left examples compare detector and oracle rankings of the same grasp candidates. The right plots com-pare the two rankings across multiple ranking metrics on GraspNet-1Billion. low confidence to candidates that would succeed. To distin-guish these cases, we compare the confidence ranking with an oracle ranking that reorders the same grasp candidates using ground-truth labels (Fig. 1). Across multiple ranking metrics on GraspNet-1Billion [12], the oracle substantially outperforms the confidence ranking, showing that successful grasp candidates are often generated but not prioritized. This finding raises a key question: Can grasp candidates be ranked more accurately without modifying candidate generation? Motivated by this observation, we formulate grasp candi-date re-ranking as a separate task. Given the grasp candidates produced by a frozen detector, the task keeps all candidates unchanged and predicts a new ordering. Based on this for-mulation, we propose GraRe. Its key idea is to evaluate each candidate using three complementary types of information: candidate attributes, shell-stratified local geometry, and ob-ject context. The shell-stratified representation preserves ge-ometry across different distances from the gripper, while object context describes the candidate relative to the visible object. Candidate attributes condition both geometric rep-arXiv:2608.00946v1 [cs.RO] 2 Aug 2026 resentations before a Transformer fuses all three to predict grasp quality. GraRe combines the predicted quality with detector confidence for final ranking. Experiments on GraspNet-1Billion with three frozen de-tectors show consistent improvements, with gains of up to 13.60 points in Average AP. Ranking analysis shows that GraRe promotes successful grasp candidates, while real-robot experiments demonstrate robust grasping in cluttered scenes. The main contributions of this work are summarized as follows: 
+
+• We identify the misalignment between detector confi-dence and grasp quality and formulate grasp candidate re-ranking as a separate task for frozen 6-DoF grasp detec-tors. The task aims to improve candidate ordering while keeping the detector and its grasp candidates unchanged. 
+
+• We propose GraRe, which uses candidate attributes to condition shell-stratified local geometry and object con-text. A Transformer fuses the three representations to pre-dict grasp quality. The predicted quality is combined with detector confidence for final ranking. 
+
+• We evaluate GraRe with three frozen detectors on GraspNet-1Billion and conduct real-robot experiments. The results show Average AP gains of up to 13.60 points, improved ranking of successful grasp candidates, and ro-bust grasping in cluttered scenes. 
+
+## 2 Related Work 
+
+6-DoF grasp detection has evolved from analytical and model-based methods to data-driven methods that predict grasps from RGB-D frames or point clouds [1, 22]. GPD samples grasp candidates and evaluates them using lo-cal geometry, while PointNetGPD uses a point-set net-work for grasp quality estimation [31, 18]. 6-DoF Grasp-Net generates grasps through variational sampling, while S4G predicts grasps directly from point clouds [21, 27]. The GraspNet-1Billion benchmark provided dense grasp annotations and a standardized evaluation protocol, while subsequent methods improved 6-DoF grasp detection with region-based grasp networks, graspness, and scale-balanced learning [12, 41, 33, 19]. HGGD uses heatmap guidance, FlexLoG predicts grasps from local regions, and Region-Centric Grasp Detection provides a data-efficient solution for cluttered scenes [6, 37, 5]. Beyond grasp generation, candi-date ranking relies on grasp quality, which analytical meth-ods evaluate using force closure and grasp wrench space metrics [13, 29]. GtG 2.0 instead estimates grasp quality from a graph of points inside and around the gripper [20]. End-to-end detectors such as AnyGrasp, RNGNet, and Eco-nomicGrasp predict confidence for each grasp candidate and rank the candidates accordingly [11, 7, 36]. Existing meth-ods generally integrate grasp quality estimation or confidence prediction into specific detection pipelines, while grasp can-didate ranking has received less attention as a separate task. GraRe addresses this gap by combining predicted grasp qual-ity with detector confidence to re-rank grasp candidates from a frozen detector. Local geometry around the gripper describes possible fin-ger contacts and free space for gripper motion, while object context describes a grasp candidate relative to the visible ob-ject. Recent grasp detectors model geometry in point clouds using graph structures or serialization attention [39, 28, 14]. These representations are developed for grasp detection rather than for re-ranking candidates from frozen detectors. GraRe instead combines candidate attributes, shell-stratified local geometry, and object context to estimate grasp quality for grasp candidate re-ranking. 
+
+## 3 Problem Formulation 
+
+Let S be a scene point cloud and I its aligned RGB im-age. A frozen 6-DoF grasp detector D for a parallel-jaw gripper takes S as input and produces K grasp candi-dates, denoted by C = {ci}Ki=1 . Each candidate is rep-resented as ci = (pi, w i, b i). The 6-DoF grasp pose is 
+
+pi = ( Ri, t i) ∈ SE(3) . The rotation Ri ∈ SO(3) and translation ti ∈ R3 specify the gripper pose in the cam-era coordinate system. The scalar wi ∈ R+ is the gripper width, and bi ∈ R is the detector confidence. The detector ranks the candidates by bi. We denote this original order by 
+
+πD ∈ ΠK .Grasp candidate re-ranking keeps C unchanged and pre-dicts a new ordering of its elements. Let ΠK denote the set of all permutations of the K candidates. For any π ∈
+
+ΠK , E(C, π ) measures the quality of the resulting ranking. On GraspNet-1Billion, E is Average Precision (AP) under the official evaluation protocol, which uses multiple fric-tion coefficients [12]. The best possible ranking for C is 
+
+π⋆ = arg max π∈ΠK E(C, π ). A learned re-ranker predicts 
+
+πR. Its goal is to improve over the detector order, so that 
+
+E(C, π R) ≥ E (C, π D ). The detector and all grasp candidates remain unchanged. GraRe does not predict πR directly. Let Tθ denote GraRe with learnable parameters θ. For each candidate, it predicts a grasp quality ˆgi = Tθ (ci, S, I ) from the candidate, scene point cloud, and aligned RGB image. We combine ˆgi with the detector confidence bi to obtain the final ranking score 
+
+si. Sorting the candidates by si in descending order gives the re-ranked order πR.
+
+## 4 Method 
+
+GraRe re-ranks grasp candidates using candidate attributes, local geometry, and object context. It combines the predicted quality with detector confidence, and Figure 2 shows the overall architecture. 
+
+4.1 Feature Extraction 
+
+Given a grasp candidate ci = ( pi, w i, b i), the scene point cloud S, and its aligned RGB image I, GraRe extracts can-didate, local geometric, and object-context features. These features are fused to predict ˆgi = Tθ (ci, S, I ).
+
+Candidate Features. Candidate attributes provide infor-mation not contained in the geometric features. We encode the grasp pose pi, gripper width wi, and detector confidence 
+
+bi with an MLP: 
+
+hcandidate  
+
+> i
+
+= fcandidate ([ pi, w i, b i]) (1) Figure 2: Overview of GraRe. (a) A frozen 6-DoF detector produces confidence-ranked grasp candidates. (b) GraRe en-codes each candidate from its attributes, shell-stratified local geometry, and object context, then fuses the three represen-tations to predict grasp quality. (c) The normalized predicted quality and detector confidence are combined to re-rank the unchanged grasp candidates. Dashed output heads are used only during training. The output hcandidate  
+
+> i
+
+conditions the local geometric and object-context features and is later fused with them. 
+
+Local Geometric Features. Local geometry describes possible finger contacts and free space for gripper motion. Applying farthest point sampling (FPS) [26] to the full neigh-borhood may undersample some distance ranges. We there-fore transform scene points into the gripper coordinate sys-tem and partition them into radial shells with boundaries 
+
+r0 < r 1 < · · · < r J :
+
+Yi,j = R⊤ 
+
+> i
+
+(x − ti) | x ∈ S , ∥x − ti∥2 ∈ [rj−1, r j )
+
+(2) We apply FPS separately to each shell: 
+
+X local  
+
+> i,j
+
+= FPS κj (Yi,j ) (3) Here, κj is the sampling budget. The local point set is: 
+
+X local  
+
+> i
+
+= SJj=1 X local  
+
+> i,j
+
+(4) Each shell is encoded by a shared MLP ϕlocal and max pooling [25]. Let mi,j indicate whether shell j is nonempty: 
+
+ηi,j = max  
+
+> y∈X local
+> i,j
+
+ϕlocal (y), mi,j = 1 (5) Empty shells are excluded by the attention mask Mi. We add a learned embedding αj to retain the radial position of each shell: 
+
+eηi = [ ηi,j + αj ]Jj=1 (6) A pre-normalized Transformer models interactions among the shell features [32, 38]: 
+
+ ηi = eηi + MHA (LN( eηi); Mi)
+
+Glocal  
+
+> i
+
+= ηi + FFN (LN( ηi)) (7) Here, MHA is multi-head self-attention and FFN is a two-layer feed-forward network with GELU activation. We average the valid Transformer outputs and compute global max and mean features: 
+
+
+
+zshell  
+
+> i
+
+=   
+
+> PJj=1 mi,j Glocal
+> i,j
+> PJj=1 mi,j
+
+zmax  
+
+> i
+
+= max y∈X local  
+
+> i
+
+ϕlocal (y)
+
+zmean  
+
+> i
+
+= 1  
+
+> |X local
+> i|
+
+P 
+
+> y∈X local
+> i
+
+ϕlocal (y)
+
+(8) The three features are concatenated and projected to a local descriptor: 
+
+ulocal  
+
+> i
+
+= flocal 
+
+ [zshell  
+
+> i
+
+, z max  
+
+> i
+
+, z mean  
+
+> i
+
+] (9) Because local geometry must be interpreted with the candi-date attributes, feature-wise linear modulation (FiLM) [24] conditions the descriptor on hcandidate  
+
+> i
+
+:
+
+hlocal  
+
+> i
+
+= FiLM local 
+
+ ulocal  
+
+> i
+
+, h candidate 
+
+> i
+
+ (10) 
+
+Object-Context Features. Local features cover only the gripper neighborhood, so we use the visible shape of the associated object as context. We project the grasp center ti
+
+into the aligned RGB image and use the pixel as a prompt for MobileSAM [40]. The predicted mask selects 3D points from S, which are sampled by FPS to form X object  
+
+> i
+
+. The RGB image is used only for mask generation. Clutter and occlusion make X object  
+
+> i
+
+incomplete. We there-fore encode it with Point-MAE, whose masked-patch pre-training supports incomplete shape modeling [23]. Before encoding, we normalize the points to the unit sphere and group them into patches using FPS and k-nearest neighbors (kNN): 
+
+Gobject  
+
+> i
+
+= PointMAE 
+
+
+
+ν(X object  
+
+> i
+
+)
+
+
+
+(11) Here, ν denotes normalization and patch grouping. We freeze the Point-MAE backbone and map its mean- and max-pooled patch features through a trainable adapter: 
+
+uobject  
+
+> i
+
+= fobject 
+
+
+
+Pool mean ,max 
+
+
+
+Gobject 
+
+> i
+
+ 
+
+(12) Because one object can support grasps of different quality, FiLM conditions the object descriptor on hcandidate  
+
+> i
+
+:
+
+hobject  
+
+> i
+
+= FiLM object 
+
+
+
+uobject  
+
+> i
+
+, h candidate 
+
+> i
+
+
+
+(13) 
+
+4.2 Feature Fusion 
+
+Local geometry is interpreted with grasp pose and grip-per width. We fuse candidate, local geometric, and object-context features. Let R = {candidate , local , object } denote the three feature types. We add a learned type embedding er
+
+and use a pre-normalized Transformer: 
+
+
+
+Zi = [ hri + er ]r∈R 
+
+Hfusion  
+
+> i
+
+= TF fusion (Zi)
+
+hfusion  
+
+> i
+
+= ffusion 
+
+ 1
+
+> |R|
+
+P 
+
+> r∈R
+
+Hfusion 
+
+> i,r
+
+
+
+ˆgi = fquality 
+
+ hfusion 
+
+> i
+
+
+
+(14) 4.3 Training Objective 
+
+During training, the GraspNet evaluator uses annotated scene geometry to obtain the minimum friction coefficient μi re-quired for force closure [12]. It also provides the collision and empty-grasp labels ycoll  
+
+> i
+
+and yempty  
+
+> i
+
+. We define the analytical grasp-quality target as: 
+
+gi = τ − μi (15) Here, τ is the success threshold. We set μi = μworst for non-finite μi and μi = μi otherwise. Lower friction produces a higher target, preserving differences discarded by binary labels. Because gi does not identify the failure type, we add col-lision and empty-grasp classifiers. An object-classification head regularizes the object-context feature. The total loss is: 
+
+L = Lquality +ωcoll Lcoll +ωempty Lempty +ωobj Lobj (16) The quality loss is Smooth-ℓ1, the binary heads use binary cross-entropy, and the object head uses cross-entropy. The co-efficients ωcoll , ωempty , and ωobj weight the auxiliary losses. These losses are used only during training. 
+
+4.4 Score Fusion 
+
+The detector confidence bi and predicted quality ˆgi have different scales. We apply z-score normalization within each candidate set to obtain ebi and egi, then compute: 
+
+si = (1 − λ)ebi + λegi (17) where λ ∈ [0 , 1] controls the contribution of predicted qual-ity. Sorting si in descending order gives the final ranking. 
+
+## 5 Experiments 
+
+5.1 Benchmark, Baselines, and Metrics 
+
+Benchmark. The GraspNet-1Billion benchmark [12] con-tains 97,280 RGB-D images of 88 objects in 190 cluttered scenes, captured with RealSense and Kinect cameras. It pro-vides annotations for more than one billion 6-DoF grasp poses. We use the official split of 100 training scenes and 90 test scenes. The test set is divided into Seen, Similar, and Novel splits, each containing 30 scenes. 
+
+Baselines. The three frozen 6-DoF grasp detector baselines are GraspNet-Baseline [10], Scale-Balanced Grasp [19], and EconomicGrasp [36]. They cover different architectures and performance levels. For each detector and camera, GraRe re-ranks the detector’s original grasp candidates. The detector parameters and grasp poses remain unchanged. Unless oth-erwise stated, all experiments use a single λ = 1 for every detector and camera. 
+
+Metric. We follow the official GraspNet evaluation pro-tocol [12]. For each grasp, μi is the smallest coefficient in 
+
+{0.2, 0.4, 0.6, 0.8, 1.0, 1.2} that satisfies force closure, with 
+
+μi ≤ 0 indicating an invalid grasp. For each frame and threshold μ, precision is evaluated at k = 1 , . . . , 50 , counting a grasp as correct when 0 < μ i ≤ μ. AP averages precision over k, thresholds, frames, and scenes. We report AP for the Seen, Similar, and Novel splits and their mean, denoted as Average AP. The supplementary material provides complete experimental settings and hyperparameters.                                                                 
+
+> Method Seen Similar Novel Average
+> GPD 22.87/24.38 21.33/23.18 8.24/9.58 17.48/19.05 PNetGPD 25.96/27.59 22.68/24.38 9.23/10.66 19.29/20.88 S4G 25.71/-18.45/-9.04/-17.73/-GraNet 43.33/41.48 39.98/35.29 14.90/11.57 32.73/29.44 GSNet 65.70/61.19 53.75/47.39 23.98/19.01 47.81/42.53 HGGD 64.45/61.17 53.59/47.02 24.59/19.37 47.54/42.52 GtG 2.0 68.79/62.61 61.71/53.93 29.75/24.45 53.42/47.00 FlexLoG 72.81/69.44 65.21/59.01 30.04/23.67 56.02/50.67 RNGNet 75.20/72.23 66.62/58.43 32.38/26.05 58.06/52.24 GN 47.83/41.97 42.79/37.56 16.94/12.24 35.85/30.59
+> GraRe GN 64.48/53.94 58.78/46.39 25.10/16.04 49.45/38.79 SBG 62.27/-56.92/-23.80/-47.66/-
+> GraRe SBG 68.76/-62.64/-27.51/-52.97/-EG 69.30/63.75 61.50/52.43 25.28/19.61 52.02/45.26
+> GraRe EG 75.12/69.90 64.39/58.00 28.34/22.04 55.95/49.98
+
+Table 1: Comparison on GraspNet-1Billion. Each entry re-ports AP (%) as RealSense/Kinect. “-” denotes an unavail-able result. 
+
+Figure 3: Paired scene-bootstrap results for the seed-7 mod-els. Points show mean Average AP gains, intervals show 95% confidence intervals from 10,000 resamples, and the right column reports the percentage of scenes with positive gains. RS and K denote RealSense and Kinect. 
+
+5.2 Comparison with Existing Methods 
+
+Table 1 compares GraRe with GPD [31], PointNetGPD [18], S4G [27], GraNet [34], GSNet [33], HGGD [6], GtG 2.0 [20], FlexLoG [37], and RNGNet [7] on GraspNet-1Billion. We abbreviate GraspNet-Baseline [10], Scale-Balanced Grasp [19], and EconomicGrasp [36] as GN, SBG, and EG, and their GraRe variants as GraRe GN , GraRe SBG ,and GraRe EG . We report only published results without col-lision detection. GraRe improves AP in every reported setting. It raises Av-erage AP by 13.60/8.20 points for GN on RealSense/Kinect, 5.31 points for SBG on RealSense, and 3.93/4.72 points for EG on RealSense/Kinect. With EG, GraRe achieves an Aver-age AP of 55.95/49.98 on RealSense/Kinect, 0.07/0.69 points below FlexLoG. Across seeds 7, 11, and 13, the sample standard devia-tion of Average AP is at most 0.26 points, and the best-seed results in Table 1 exceed the corresponding means by at most 0.28 points. All five seed-7 paired scene-bootstrap 95% confidence intervals exclude zero, with positive gains in 92.2–100% of scenes (Fig. 3). Variant GN SBG EG             
+
+> Detector-specific 48.77 ±0.06 52.60 ±0.21 55.64 ±0.06 Joint 48.42 ±0.11 52.75 ±0.07 55.86 ±0.12 Joint w/o Identifier 48.20 ±0.16 52.60 ±0.17 54.47 ±0.29 Joint w/o Confidence 47.62 ±0.44 51.40 ±0.31 52.32 ±0.70
+
+Table 2: Joint training on RealSense. Values are mean Aver-age AP (%) ± sample SD over seeds 7/11/13. All variants use candidate features and local geometric features without object-context features, and Joint includes a learned detector identifier.                                  
+
+> Variant GN SBG EG
+> Detector 35.85/ ↓13.60 47.66/ ↓5.31 52.02/ ↓3.93 Full GraRe 49.45/– 52.97/– 55.95/– Concat Fusion 48.63/ ↓0.82 52.71/ ↓0.26 55.83/ ↓0.12 w/o Candidate 47.66/ ↓1.79 50.81/ ↓2.16 50.49/ ↓5.46 w/o Local 45.03/ ↓4.42 50.54/ ↓2.43 54.22/ ↓1.73 w/o Object 48.71/ ↓0.74 52.54/ ↓0.43 55.63/ ↓0.32 w/o Shell-wise FPS 48.27/ ↓1.19 52.54/ ↓0.43 55.41/ ↓0.54 w/o Aux. Losses 49.03/ ↓0.43 52.19/ ↓0.78 55.26/ ↓0.69 Binary Loss 48.94/ ↓0.51 52.33/ ↓0.64 55.08/ ↓0.87 Random Labels 37.05/ ↓12.41 40.85/ ↓12.12 39.76/ ↓16.19
+
+Table 3: Ablation results on the RealSense test set. Each cell reports Average AP (%) and its decrease from full GraRe. Concat Fusion is a capacity-matched variant that uses candi-date and local geometric features and replaces FiLM and the feature fusion Transformer with concatenation and an MLP. Auxiliary losses include collision, empty-grasp, and object-classification losses. Binary Loss replaces the continuous quality target with binary success supervision at τ = 0 .6,and Random Labels permutes the continuous targets. Table 2 evaluates parameter sharing across the three known detectors by jointly training one model on the Re-alSense candidate sets produced by GN, SBG, and EG. Joint training differs from the matched detector-specific models by at most 0.35 points in Average AP. The detector identifier improves EG by 1.39 points, and removing detector confidence lowers Average AP for all three detectors, with the largest decrease of 3.55 points on EG. Seed-level joint-training results and cross-detector transfer diagnostics are provided in the supplementary material. 
+
+5.3 Ablation Studies 
+
+Table 3 reports the ablation results on the RealSense test set. Candidate features contribute most to EG, whereas lo-cal features contribute most to GN and SBG. The capacity-matched Concat Fusion variant reduces Average AP across all three detectors, and the remaining components provide further consistent gains. Replacing the continuous target with binary supervision reduces Average AP by 0.51–0.87 points, while randomizing the targets reduces it by 12.12–16.19 points. The supplementary material reports expanded fea-ture, alignment, and target-supervision controls. Figure 4 shows detector-specific sensitivity to λ. GN im-
+
+Figure 4: Score-fusion sensitivity for the seed-7 RealSense models. Each cell reports mean ∆AP (top) and the number of scenes with positive gains out of 90 (bottom). Darker shading within each row indicates a larger gain, and the outlined cell marks the largest mean gain for that detector. proves as λ increases while remaining positive on all 90 scenes, whereas EG peaks at λ = 0 .75 with a 4.14-point mean gain and 89 positive scenes, indicating that retaining detector confidence benefits EG. 
+
+5.4 Candidate Ranking Analysis 
+
+We analyze whether failures arise because a candidate set contains no successful grasp or because a successful grasp is ranked too low. A grasp is successful if it is collision-free, nonempty, and satisfies force closure at μi ≤ 0.4. Discounted Success@K (DS@K) measures the rank-discounted percent-age of successful grasps among the top K candidates. Fol-lowing discounted cumulative gain (DCG) [15], a candidate at rank r is weighted by 1/ log 2(r + 1) . The top-K frame success rate measures the percentage of frames containing at least one successful grasp among the top K candidates. At 
+
+K = 1 , we also count changes from failure to success and from success to failure after re-ranking. We construct an oracle ranking without changing the grasp candidates or their poses. It places successful grasps first and orders them by increasing finite μi, with ties resolved by detector confidence and the original candidate order. Because the oracle uses ground-truth test labels, it is not deployable. Its AP represents the upper bound attainable by re-ranking the existing grasp candidates. Figure 5 shows that GraRe improves candidate ranking without changing the candidate sets. It exceeds the confi-dence ranking in DS@K at every evaluated K and raises DS@K at K = 1 from 49.35% to 59.97%, while the oracle reaches 98.95%. This oracle gap shows that successful can-didates are often available but ranked too low, and the larger frame-success gains at small K indicate that re-ranking pri-marily improves the top of the ranking. Across GN, SBG, and EG, GraRe closes 36.97%, 19.09%, and 10.73% of the oracle AP gaps and yields net top-1 gains of 20.23, 5.82, and 5.82 points, demonstrating consistent gains across all three detectors. Figure 6 shows how re-ranking changes the top-ranked grasp while keeping the candidate set unchanged. In pan-els (a)–(d), GraRe replaces GN’s colliding top choices with successful candidates from the same set, showing that re-ranking can recover successful candidates overlooked by de-tector confidence. In panels (e)–(f), GraRe instead promotes Figure 5: Candidate ranking analysis using the same grasp candidates from the GraspNet-1Billion RealSense test set. Panels show (a) Discounted Success@K, (b) top-K frame success rate, (c) Average AP, and (d) top-1 outcome changes. Curves in panels (a) and (b) are macro-averaged over three detectors and all 23,040 test frames per detector. candidates with μi = 0 .8 and μi = 0 .6 above GN’s suc-cessful choices. Both harmful cases are from the Novel split, indicating that unfamiliar geometry remains difficult to rank. 
+
+5.5 Real-Robot Experiments 
+
+Setup and Objects. We evaluate grasp candidate re-ranking on a UR3 robot equipped with a RealSense D435 camera and a Robotiq 2F-85 gripper. The workspace contains separate grasping and placement regions. Figure 7 shows the complete object collection, including objects from YCB or GraspNet-1Billion [4, 12] and objects outside these datasets. 
+
+Protocol, Metrics, and Results. We construct ten cluttered scenes by mixing objects from the collection in Fig. 7. Based on object count, occlusion, and stacking, we group Scenes 1–2 as easy, Scenes 3–7 as medium, and Scenes 8–10 as hard. Each scene is evaluated with GN, SBG, and EG using both the detector order πD and the corresponding GraRe order πR.Within each comparison, the hardware, detector, collision filtering, RRT* motion planning [17], and stopping condition remain unchanged, and only the candidate order changes. Grasp outcomes are manually verified from the recorded execution frames. Table 4 reports grasp success rate (GSR), completion rate (CR), maximum consecutive failures (MCF), and online inference latency (LAT). GraRe raises GSR by 15.5, 16.8, and 20.3 points and CR by 90, 60, and 30 points for GN, SBG, and EG, respectively, while reducing MCF to two attempts for all detectors. The gains transfer to closed-loop execution at the cost of 0.21– 0.39 seconds in mean online inference latency. 
+
+Figure 6: Qualitative ranking examples for GN and GraRe using the same candidate sets. Panels (a)–(d) show failure-to-success changes, and panels (e)–(f) show success-to-failure changes. Insets mark the top-ranked grasps, and colors show scores normalized within each panel. Across the 30 evaluations, πD clears 11 scenes, compared with 29 for πR. In medium and hard scenes, πR clears 23 of 24 evaluations, compared with 8 of 24 for πD , showing that the gains are not confined to easy scenes. Re-ranking converts 18 incomplete evaluations to complete, leaves one incomplete, causes no regressions, and reduces unsuccessful physical attempts from 73 to 28 (61.6%). Of the 237 grasps executed under πR, 160 (67.5%) rank higher than under πD , reducing the mean rank from 11.56 to 5.30 (Fig. 8(a)). Of the 37 grasps promoted from outside the top nine into the top three, 34 succeed, showing that GraRe improves physical execution by promoting successful grasp candidates ranked too low by detector confidence. In EG Scene 10, the successful grasp in Fig. 8(b)–(d) moves from rank 20 to rank 2. The resulting order clears the scene in nine attempts, whereas πD succeeds in five of 12 attempts and leaves two objects. Figure 7: Real-robot setup and test objects. Panel (a) shows the robot and workspace, and panel (b) shows the complete object collection.                 
+
+> Detector GSR CR MCF LAT
+> GN 73.4/88.9 10/100 4/2 1.06/1.45 SBG 70.4/87.2 30/90 6/2 0.95/1.21 EG 68.2/88.5 70/100 4/2 0.76/0.97
+
+Table 4: Real-robot results over ten mixed-object cluttered scenes. Each entry reports πD /πR. GSR and CR are percent-ages, MCF is the maximum number of consecutive failed grasp attempts in a scene, and LAT is the mean online infer-ence latency per selected execution in seconds. 
+
+Figure 8: Real-robot evidence of re-ranking. Panel (a) com-pares the rank of each executed grasp under πD (horizontal) and πR (vertical), with points below the diagonal promoted by re-ranking. Panels (b)–(c) show the same executed grasp (green) moving from rank 20 to rank 2 within the unchanged EG candidate set. Panel (d) shows the observation after suc-cessful removal. 
+
+## 6 Limitations 
+
+GraRe does not improve every test scene. Across the five detector and camera settings in Fig. 3, each evaluated on 90 scenes, it improves scene-level AP in 435 of 450 comparisons (96.7%), while 12 of the 15 decreases occur with EG. One limitation is that GraRe estimates the grasp quality of each candidate independently, although ranking depends on their relative quality. Consequently, it can promote an unsuccessful grasp above a successful one, as shown in Fig. 6(e)–(f). Future work could compare candidates within the same set during grasp quality estimation. 
+
+## 7 Conclusion 
+
+Existing 6-DoF grasp detectors can generate successful grasps but rank them too low. We address this problem with GraRe, which uses candidate features, local geometric fea-tures, and object-context features to re-rank existing grasp candidates while keeping detector parameters and grasp poses unchanged. GraRe improves the Average AP of three detectors on GraspNet-1Billion and increases grasp success and completion rates in real-robot experiments. These results show that existing detectors can be improved by refining can-didate ranking without changing grasp generation. References 
+
+[1] Bohg, J.; Morales, A.; Asfour, T.; and Kragic, D. 2014. Data-Driven Grasp Synthesis—A Survey. IEEE Transactions on Robotics , 30(2): 289–309. [2] Boularias, A.; Bagnell, J.; and Stentz, A. 2015. Learning to Manipulate Unknown Objects in Clutter by Reinforcement. In 
+
+Proceedings of the AAAI Conference on Artificial Intelligence ,volume 29. [3] Breyer, M.; Chung, J. J.; Ott, L.; Siegwart, R.; and Nieto, J. 2021. Volumetric Grasping Network: Real-time 6 DOF Grasp Detection in Clutter. In Kober, J.; Ramos, F.; and Tomlin, C., eds., Proceedings of the 2020 Conference on Robot Learning ,volume 155 of Proceedings of Machine Learning Research ,1602–1611. PMLR. [4] Calli, B.; Singh, A.; Walsman, A.; Srinivasa, S.; Abbeel, P.; and Dollar, A. M. 2015. The YCB Object and Model Set: Towards Common Benchmarks for Manipulation Research. In 
+
+2015 International Conference on Advanced Robotics (ICAR) ,510–517. [5] Chen, S.; Tang, W.; Xie, P.; Hu, D.; Yang, W.; and Wang, G. 2025. Region-Centric 6-DoF Grasp Detection: A Data-Efficient Solution for Cluttered Scenes. In 2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) , 13207–13214. [6] Chen, S.; Tang, W.; Xie, P.; Yang, W.; and Wang, G. 2023. Efficient Heatmap-Guided 6-DoF Grasp Detection in Clut-tered Scenes. IEEE Robotics and Automation Letters , 8(8): 4895–4902. [7] Chen, S.; Xie, P.; Tang, W.; Hu, D.; Dai, Y.; and Wang, G. 2024. Region-Aware Grasp Framework with Normalized Grasp Space for Efficient 6-DoF Grasping. In 8th Annual Conference on Robot Learning .[8] Ciocarlie, M.; Hsiao, K.; Jones, E. G.; Chitta, S.; Rusu, R. B.; and Şucan, I. A. 2014. Towards Reliable Grasping and Manipulation in Household Environments. In Experimental Robotics , 241–252. Springer Berlin Heidelberg. [9] D’Avella, S.; Bianchi, M.; Sundaram, A. M.; Avizzano, C. A.; Roa, M. A.; and Tripicchio, P. 2024. The Cluttered Environ-ment Picking Benchmark (CEPB) for Advanced Warehouse Automation: Evaluating the Perception, Planning, Control, and Grasping of Manipulation Systems. IEEE Robotics & Automation Magazine , 31(4): 45–58. [10] Fang, H.-S.; Gou, M.; Wang, C.; and Lu, C. 2023. Ro-bust grasping across diverse sensor qualities: The GraspNet-1Billion dataset. The International Journal of Robotics Re-search , 42(12): 1094–1103. [11] Fang, H.-S.; Wang, C.; Fang, H.; Gou, M.; Liu, J.; Yan, H.; Liu, W.; Xie, Y.; and Lu, C. 2023. AnyGrasp: Robust and Efficient Grasp Perception in Spatial and Temporal Domains. 
+
+IEEE Transactions on Robotics , 39(5): 3929–3945. [12] Fang, H.-S.; Wang, C.; Gou, M.; and Lu, C. 2020. GraspNet-1Billion: A Large-Scale Benchmark for General Object Grasping. In 2020 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) , 11441–11450. [13] Ferrari, C.; and Canny, J. 1992. Planning optimal grasps. In 
+
+Proceedings 1992 IEEE International Conference on Robotics and Automation , 2290–2295. [14] Gui, H.; Pang, S.; He, X.; Wang, T.; Qiao, S.; Wang, L.; and Yu, S. 2026. High-Performance Grasp Pose Detection via Point Cloud Serialization Attention. Pattern Recognition ,171: 112099. [15] Järvelin, K.; and Kekäläinen, J. 2002. Cumulated Gain-Based Evaluation of IR Techniques. ACM Transactions on Informa-tion Systems , 20(4): 422–446. [16] Jiang, Z.; Zhu, Y.; Svetlik, M.; Fang, K.; and Zhu, Y. 2021. Synergies Between Affordance and Geometry: 6-DoF Grasp Detection via Implicit Representations. In Robotics: Science and Systems XVII . Robotics: Science and Systems Foundation. [17] Karaman, S.; and Frazzoli, E. 2011. Sampling-Based Al-gorithms for Optimal Motion Planning. The International Journal of Robotics Research , 30(7): 846–894. [18] Liang, H.; Ma, X.; Li, S.; Görner, M.; Tang, S.; Fang, B.; Sun, F.; and Zhang, J. 2019. PointNetGPD: Detecting Grasp Con-figurations from Point Sets. In 2019 International Conference on Robotics and Automation (ICRA) .[19] Ma, H.; and Huang, D. 2023. Towards Scale Balanced 6-DoF Grasp Detection in Cluttered Scenes. In Liu, K.; Kulic, D.; and Ichnowski, J., eds., Proceedings of The 6th Conference on Robot Learning , volume 205 of Proceedings of Machine Learning Research , 2004–2013. PMLR. [20] Moghadam, A. R.; Rastegari, S.; Masouleh, M. T.; and Kalhor, A. 2025. Grasp the Graph (GtG) 2.0: Ensemble of Graph Neural Networks for High-Precision Grasp Pose Detection in Clutter. arXiv:2505.02664. [21] Mousavian, A.; Eppner, C.; and Fox, D. 2019. 6-DOF Grasp-Net: Variational Grasp Generation for Object Manipulation. In 2019 IEEE/CVF International Conference on Computer Vision (ICCV) , 2901–2910. [22] Newbury, R.; Gu, M.; Chumbley, L.; Mousavian, A.; Eppner, C.; Leitner, J.; Bohg, J.; Morales, A.; Asfour, T.; Kragic, D.; Fox, D.; and Cosgun, A. 2023. Deep Learning Approaches to Grasp Synthesis: A Review. IEEE Transactions on Robotics ,39(5): 3994–4015. [23] Pang, Y.; Wang, W.; Tay, F. E. H.; Liu, W.; Tian, Y.; and Yuan, L. 2022. Masked Autoencoders for Point Cloud Self-supervised Learning. In Computer Vision – ECCV 2022 ,604–621. Springer Nature Switzerland. [24] Perez, E.; Strub, F.; de Vries, H.; Dumoulin, V.; and Courville, A. 2018. FiLM: Visual Reasoning with a General Condition-ing Layer. In Proceedings of the AAAI Conference on Artificial Intelligence .[25] Qi, C. R.; Su, H.; Mo, K.; and Guibas, L. J. 2017. PointNet: Deep Learning on Point Sets for 3D Classification and Seg-mentation. In 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) , 77–85. [26] Qi, C. R.; Yi, L.; Su, H.; and Guibas, L. J. 2017. PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space. In Guyon, I.; Luxburg, U. V.; Bengio, S.; Wallach, H.; Fergus, R.; Vishwanathan, S.; and Garnett, R., eds., Advances in Neural Information Processing Systems 30 (NIPS 2017) ,5099–5108. Curran Associates, Inc. [27] Qin, Y.; Chen, R.; Zhu, H.; Song, M.; Xu, J.; and Su, H. 2020. S4G: Amodal Single-view Single-Shot SE(3) Grasp Detection in Cluttered Scenes. In Kaelbling, L. P.; Kragic, D.; and Sugiura, K., eds., Proceedings of the Conference on Robot Learning , volume 100 of Proceedings of Machine Learning Research , 53–65. PMLR. [28] Quan, M.; Wang, X.; Zhang, J.; and Wang, W. 2026. D2GNet: Efficient 6-DoF Grasp Detection in Cluttered Scenes via Density-Aware Dual-Dimensional Graph Networks. Journal of Field Robotics , 43(4): 2651–2670. [29] Sahbani, A.; El-Khoury, S.; and Bidaud, P. 2012. An Overview of 3D Object Grasp Synthesis Algorithms. Robotics and Au-tonomous Systems , 60(3): 326–336. [30] Sundermeyer, M.; Mousavian, A.; Triebel, R.; and Fox, D. 2021. Contact-GraspNet: Efficient 6-DoF Grasp Generation in Cluttered Scenes. In 2021 IEEE International Conference on Robotics and Automation (ICRA) , 13438–13444. [31] ten Pas, A.; Gualtieri, M.; Saenko, K.; and Platt, R. 2017. Grasp Pose Detection in Point Clouds. The International Journal of Robotics Research , 36(13–14): 1455–1473. [32] Vaswani, A.; Shazeer, N.; Parmar, N.; Uszkoreit, J.; Jones, L.; Gomez, A. N.; Kaiser, L.; and Polosukhin, I. 2017. Attention Is All You Need. In Guyon, I.; Luxburg, U. V.; Bengio, S.; Wallach, H.; Fergus, R.; Vishwanathan, S.; and Garnett, R., eds., Advances in Neural Information Processing Systems 30 (NIPS 2017) , 5998–6008. [33] Wang, C.; Fang, H.-S.; Gou, M.; Fang, H.; Gao, J.; and Lu, C. 2021. Graspness Discovery in Clutters for Fast and Accurate Grasp Detection. In 2021 IEEE/CVF International Confer-ence on Computer Vision (ICCV) , 15944–15953. [34] Wang, H.; Niu, W.; and Zhuang, C. 2023. GraNet: A Multi-Level Graph Network for 6-DoF Grasp Pose Generation in Cluttered Scenes. arXiv:2312.03345. [35] Wei, W.; Luo, Y.; Li, F.; Xu, G.; Zhong, J.; Li, W.; and Wang, P. 2021. GPR: Grasp Pose Refinement Network for Cluttered Scenes. In 2021 IEEE International Conference on Robotics and Automation (ICRA) , 4295–4302. [36] Wu, X.-M.; Cai, J.-F.; Jiang, J.-J.; Zheng, D.; Wei, Y.-L.; and Zheng, W.-S. 2024. An Economic Framework for 6-DoF Grasp Detection. In Computer Vision – ECCV 2024 , 357–375. [37] Xie, P.; Chen, S.; Tang, W.; Yang, K.; and Wang, G. 2026. Rethinking 6-DoF Grasp Detection: A Flexible Framework for High-Quality Grasping. Pattern Recognition , 170: 112088. [38] Xiong, R.; Yang, Y.; He, D.; Zheng, K.; Zheng, S.; Xing, C.; Zhang, H.; Lan, Y.; Wang, L.; and Liu, T.-Y. 2020. On Layer Normalization in the Transformer Architecture. In Pro-ceedings of the 37th International Conference on Machine Learning , volume 119 of Proceedings of Machine Learning Research , 10524–10533. PMLR. [39] Yu, S.; Zhai, D.-H.; and Xia, Y. 2026. GraphGrasp: Lightweight and Efficient Graph-Guided 6-DoF Robotic Grasp Pose Estimation Network. In Proceedings of the AAAI Conference on Artificial Intelligence , volume 40, 18719– 18727. [40] Zhang, C.; Han, D.; Qiao, Y.; Kim, J. U.; Bae, S.-H.; Lee, S.; and Hong, C. S. 2023. Faster Segment Any-thing: Towards Lightweight SAM for Mobile Applications. arXiv:2306.14289. [41] Zhao, B.; Zhang, H.; Lan, X.; Wang, H.; Tian, Z.; and Zheng, N. 2021. REGNet: REgion-based Grasp Network for End-to-end Grasp Detection in Point Clouds. In 2021 IEEE In-ternational Conference on Robotics and Automation (ICRA) ,13474–13480. Supplement Material 
+
+## A Supplementary Roadmap 
+
+The main paper reports the central benchmark and real-robot results. This supplement serves as an evidence map: it docu-ments the shared protocol, expands the quantitative analyses, and connects changes in candidate order to closed-loop exe-cution. It addresses four questions: 
+
+• Q1: Do the reported AP gains persist across friction thresholds, random seeds, cameras, and scenes? We pro-vide complete AP@ μ profiles, seed-level results, paired bootstrap intervals, and scene-level scope statistics. 
+
+• Q2: Which modeling and operating choices account for the gains? Feature, loss, and capacity-matched controls are complemented by sensitivity analyses for the candi-date budget and score-fusion weight. 
+
+• Q3: How does GraRe change the original candidate order, and how much oracle headroom remains? We analyze oracle ranking, top-K frame success, top-1 transitions, and re-ranking magnitude. 
+
+• Q4: What practical trade-offs arise in parameter sharing, training cost, closed-loop execution, and failure cases? We report joint training on known detectors, model size and training cost, real-robot execution traces and latency, and qualitative failure cases. The Experimental Setup, Hyperparameter Settings, and Evaluation Protocol sections document reproducibility. In every comparison, GraRe changes only the order of the de-tector’s original grasp candidates; their identities, poses, and widths remain unchanged. 
+
+## B Experimental Setup 
+
+Offline training and benchmark experiments are conducted on a Linux workstation equipped with eight NVIDIA GeForce RTX 5090 GPUs and two Intel Xeon Gold 6459C processors. Each processor has 32 physical cores and sup-ports two hardware threads per core, providing 64 physical cores and 128 logical CPUs in total. The workstation has 754 GiB of system memory. The software environment con-sists of Python 3.12.3, PyTorch 2.12.1, CUDA 13.0, and cuDNN 9.2. The real-robot experiments use a UR3 robot, an Intel Re-alSense D435 RGB-D camera, and a Robotiq 2F-85 parallel-jaw gripper. Online candidate generation, GraRe inference, and grasp candidate re-ranking are performed on a deploy-ment computer equipped with an NVIDIA GeForce RTX 2060 GPU, while the robot controller handles motion execu-tion and device communication. 
+
+## C Hyperparameter Settings 
+
+Unless stated otherwise, the same configuration is used for GN, SBG, and EG on both cameras. Configurations for each detector use its corresponding grasp candidates but do not change the GraRe architecture. Following the main paper, a frozen detector D produces the candidate set C = {ci}Ki=1 ,and GraRe keeps C unchanged during training and evaluation.                        
+
+> Setting Value
+> Optimizer AdamW Learning rate 2×10 −4
+> Weight decay 1×10 −4
+> Batch size 2,048 Gradient clipping 1.0 Validation split 10%, scene-level Validation split seed 7Epoch range 20–40 Early-stopping patience 10 epochs Selection metric Validation Lquality
+> LR schedule Reduce on plateau LR patience / factor 4 epochs / 0.7 Minimum learning rate 1×10 −5
+> Mixed precision Automatic Initialization seeds 7, 11, 13
+
+Table 5: Optimization and model-selection hyperparameters used by the default RealSense protocol and EG Kinect ex-periments. Test AP is not used for checkpoint selection.                         
+
+> Setting Default GN Kinect
+> Maximum epochs 40 80 Early-stop patience 10 15 Minimum optimizer steps 050,000 Minimum checkpoint steps 020,000 Checkpoint interval Disabled 5,000 Scheduler patience 48Scheduler warm-up 030,000 Minimum learning rate 10 −510 −6
+> Local-health batches 04Minimum local RMS 00.05 Minimum shuffle ratio 00.05
+
+Table 6: Training-schedule overrides for the GN Kinect local-aligned model. All other hyperparameters retain their default values. Multi-seed experiments use seeds 7, 11, and 13; controlled single-seed experiments use seed 7. The notation below fol-lows that of the main paper. 
+
+## D Evaluation Protocol 
+
+We use the official GraspNet-1Billion split: 100 scenes for training and 90 scenes for testing. The test set contains 30 Seen, 30 Similar, and 30 Novel scenes, with 256 RGB-D frames per scene. GN, SBG, and EG denote GraspNet-Baseline, Scale-Balanced Grasp, and EconomicGrasp, re-spectively. For every comparison, the detector and GraRe use the same candidate identities, poses, and widths; only their order changes. The official friction thresholds are 0.2, 0.4, 0.6, 0.8, 1.0, and 1.2. For each frame and threshold μ, the evaluator com-putes precision at k for k = 1 , . . . , 50 , where a grasp is correct if 0 < μ i ≤ μ. AP for each split is the mean pre-Setting Value 
+
+Retained candidates M M = K (all candidates in C)Outer shell boundary rJ 40 mm Voxel size 8 mm Shell edges (r0, . . . , r J ) (0 , 5, 15 , 25 , 40) mm Shell budgets (κ1, . . . , κ J ) (64 , 128 , 128 , 192) 
+
+Local point budget 512 Object point budget 512 Prompt cluster radius 30 mm Minimum mask area 200 pixels Maximum mask area 40% of image Object patch groups / size 32 / 32 points 
+
+Table 7: Candidate and feature-construction hyperparame-ters. 
+
+Setting Value 
+
+Candidate-feature input dimension 14 Feature dimension dim( hri ) 128 Shell Transformer layers / heads 1 / 4 Shell Transformer FFN expansion 2×
+
+TF fusion layers / heads 1 / 4 
+
+TF fusion FFN expansion 2×
+
+Quality-head hidden dimension 0Trainable Point-MAE blocks 0Dropout 0.1 Success threshold τ 0.4 Collision weight ωcoll 0.10 Empty-grasp weight ωempty 0.05 Object weight ωobj 0.05 Score-fusion weight λ 1.0 
+
+Table 8: Network, objective, and re-ranking hyperparame-ters. A zero quality-head hidden dimension denotes a linear 
+
+fquality ; the Point-MAE adapter remains trainable. cision over all values of k, friction thresholds, frames, and scenes. We report AP for the Seen, Similar, and Novel splits and their mean, denoted as Average AP. AP@ μ fixes the indi-cated friction threshold before averaging over ranks, frames, scenes, and splits. Main and controlled single-detector check-points are selected using held-out scene-level validation loss. The joint multi-detector models reported below instead use detector-balanced validation NDCG@50, as stated in their subsection. Test AP is never used to choose an epoch or an optimization hyperparameter. GN and EG are evaluated with both cameras. SBG is evaluated only with RealSense because a supported SBG Kinect detector checkpoint and its corresponding candidate set are unavailable. 
+
+## E Complete Benchmark Results (Q1) 
+
+The main paper reports AP averaged over all six friction thresholds. Figure 9 expands this comparison by visualizing Average AP@ μ at every official threshold and summarizing the corresponding Average AP gains. Across all five detector–camera settings, the re-ranked or-der remains above the detector order at every official friction 1.2 1.0 0.8 0.6 0.4 0.2                                      
+
+> 0
+> 20
+> 40
+> 60
+> 80
+> ↑13.60 AP
+> aRealSense · GN
+> 1.2 1.0 0.8 0.6 0.4 0.2
+> ↑5.31 AP
+> bRealSense · SBG
+> 1.2 1.0 0.8 0.6 0.4 0.2
+> 0
+> 20
+> 40
+> 60
+> 80
+> ↑3.93 AP
+> cRealSense · EG
+> 1.2 1.0 0.8 0.6 0.4 0.2
+> ↑8.20 AP
+> dKinect · GN
+> 1.2 1.0 0.8 0.6 0.4 0.2
+> 0
+> 20
+> 40
+> 60
+> 80
+> ↑4.72 AP
+> eKinect · EG
+> 0510 15
+> GraRe − detector (AP)
+> RealSense · GN
+> Kinect · GN
+> RealSense · SBG
+> Kinect · EG
+> RealSense · EG
+> +13.60
+> +8.20
+> +5.31
+> +4.72
+> +3.93
+> fAverage AP gain
+> Average AP@ μ (%)
+> Friction threshold μ
+> Detector GraRe Per-threshold gain
+
+Figure 9: Complete Average AP@ μ profiles. Panels (a)–(e) show the five detector–camera settings, and panel (f) sum-marizes their Average AP gains. Each profile averages the Seen, Similar, and Novel splits. Solid blue lines denote the re-ranked order πR, dashed gray lines denote the detector order πD , and blue shading denotes the per-threshold gain. Curves use the reported checkpoints; seed variation is re-ported in Figure 10. threshold. The gain varies with detector strength but does not arise from a single threshold, supporting the Average AP improvements reported in the main paper. 
+
+## F Training-Seed Stability (Q1) 
+
+Figure 10 tests whether the main gains depend on initializa-tion by reporting all completed main-model seeds. The main comparison uses the reported best-seed checkpoint for each detector–camera pair, while the figure shows all three runs and their dispersion. Across settings, sample SD is at most 0.26 AP and the minimum–maximum range is at most 0.51 AP, so the gains do not depend on an unstable initialization. Best-seed selection raises reported AP above the three-seed mean by only 0.14, 0.28, 0.17, 0.06, and 0.26 AP for RealSense GN/SBG/EG −0.30 −0.15 0 +0.15 +0.30    
+
+> Average AP change from three-seed mean
+> RealSense · GN
+> RealSense · SBG
+> RealSense · EG
+> Kinect · GN
+> Kinect · EG
+> +0.14
+> +0.28
+> +0.17
+> +0.06
+> +0.26
+> 49.31 ± 0.12
+> 52.69 ± 0.26
+> 55.78 ± 0.21
+> 38.73 ± 0.05
+> 49.73 ± 0.22
+> Mean ± SD
+> Seed 7 Seed 11 Seed 13 Reported
+
+Figure 10: Training-seed stability. Points show seeds 7/11/13 centered by each detector–camera three-seed mean; pale seg-ments span the observed range. Filled blue markers identify the checkpoints used in the main comparison, and right-hand labels report mean ±sample SD over n = 3 runs. and Kinect GN/EG, respectively. 
+
+## G Additional Ablation Studies (Q2) 
+
+G.1 Feature Sufficiency 
+
+Figure 11(a) expands the main ablation to both cameras and includes single-feature sufficiency tests. All comparisons use seed 7, keep C unchanged, and set λ = 1 . “Candidate only” retains only hcandidate  
+
+> i
+
+, while “Local only” retains only local geometric features. The dominant feature depends on the detector. Removing local geometric features has the largest effect for GN, while removing candidate features has the largest effect for EG. Object-context effects are smaller; in the matched seed-7 Re-alSense SBG comparison, removing object context changes Average AP by only 0.08 points. Candidate-only and local-only variants remain below full GraRe in every completed camera setting, indicating that candidate attributes and local geometry provide complementary evidence. 
+
+G.2 Auxiliary Losses 
+
+Figure 11(b) isolates the full auxiliary objective and its collision/empty-grasp and object-classification components. Removing all auxiliary losses lowers Average AP by 0.27– 0.81 across the five settings. The individual loss groups are less consistent: removing collision/empty supervision slightly improves RealSense SBG and EG by 0.07–0.08 AP, while the corresponding Kinect changes are negative. For Kinect, the 95% intervals for removing collision/empty su-pervision are [−0.15 , 0.23] AP for GN and [−0.12 , 0.51] for EG; the intervals for removing object-classification supervi-sion are [−0.15 , 0.31] and [−0.22 , 0.36] , respectively. The aggregate auxiliary objective provides a modest benefit, but the individual components do not show reliable effects in isolation. RealSense                                   
+
+> GN · 49.45
+> RealSense
+> SBG · 52.46
+> RealSense
+> EG · 55.95
+> Kinect
+> GN · 38.71
+> Kinect
+> EG · 49.98
+> w/o Candidate
+> w/o Local
+> w/o Object
+> Candidate only
+> Local only
+> -1.79 -1.65 -5.46 -1.69 -4.91
+> -4.42 -1.92 -1.73 -2.36 -1.75
+> -0.74 +0.08 -0.32 -0.77 -0.44
+> -6.91 -2.76 -2.35 -4.54 -2.69
+> -2.74 -2.12 -7.12 -1.64 -5.17
+> aFeature su ffi ciency
+> −7.5
+> 0.0
+> 7.5
+> ΔAP
+> RealSense
+> GN
+> RealSense
+> SBG
+> RealSense
+> EG
+> Kinect
+> GN
+> Kinect
+> EG
+> w/o Aux.
+> w/o C/E
+> w/o Object
+> -0.43 -0.27 -0.69 -0.43 -0.81
+> -0.21 +0.07 +0.08 -0.04 -0.19
+> -0.13 -0.46 -0.49 -0.09 -0.08
+> bAuxiliary losses
+> −0.9
+> 0.0
+> 0.9
+> ΔAP
+> Detector and camera
+
+Figure 11: Additional ablation studies. (a) Feature-sufficiency controls. (b) Auxiliary-loss controls. Cells re-port the change in Average AP from the matched full GraRe model; panel (a) headers also report full-model Average AP. The panels use independent color scales. C/E denotes colli-sion and empty-grasp supervision. 
+
+Camera Det. PointNet ShellAttn GraRe-PL 
+
+RealSense GN 45.80 ±4.21 48.83 ±0.19 48.77 ±0.06 RealSense SBG 52.40 ±0.16 52.54 ±0.18 52.60 ±0.21 
+
+RealSense EG 55.45 ±0.19 55.85 ±0.20 55.64 ±0.06 Kinect GN 38.00 ±0.11 38.01 ±0.10 38.04 ±0.12 
+
+Kinect EG 49.37 ±0.23 49.72 ±0.33 49.66 ±0.23 
+
+Table 9: Capacity-matched Average AP (%), reported as mean ±sample SD over seeds 7/11/13. 
+
+G.3 Capacity-Matched Controls 
+
+To test whether the gains can be explained by trainable pa-rameter count, we compare three candidate-plus-local mod-els over three seeds. PointNet+concat has 401,499 trainable parameters, ShellAttn+concat has 406,171, and GraRe-PL has 414,875; GraRe-PL is GraRe without object context. With comparable trainable parameter counts, Shel-lAttn+concat and GraRe-PL achieve closely matched AP across the five settings, differing by at most 0.21 points. This control shows that the gains cannot be attributed to parame-ter count alone. It characterizes two alternative shell-aware local-fusion implementations in the object-free setting; the full GraRe model additionally incorporates object context and joint three-feature fusion. 
+
+G.4 Ranking Baselines 
+
+To compare GraRe with alternative ranking objectives, we first evaluate ranking baselines under a capacity-matched Method GN SBG EG 
+
+PointNetGPD-style 45.88 ±0.40 35.69 ±1.35 44.84 ±0.77 Set score-only 35.89 ±0.04 47.61 ±0.03 45.45 ±1.28 RankNet PointNet-PL 48.18 ±0.10 52.66 ±0.29 47.94 ±0.11 ListMLE PointNet-PL 47.75 ±0.27 52.41 ±0.09 48.03 ±0.14 
+
+PointNet-PL 47.92 ±0.21 52.34 ±0.18 47.54 ±0.28 GraRe-PL 48.13 ±0.13 52.32 ±0.06 47.81 ±0.04 Score-only 35.85 ±0.00 47.65 ±0.00 46.30 ±0.02 Pose-score 42.60 ±0.15 49.57 ±0.04 47.29 ±0.11 
+
+Table 10: Capacity-matched ranking baselines, Average AP (%), under a 144-candidate budget. Bold marks the largest mean within each detector column; these comparisons use retained candidate subsets rather than all original candidates used in the main protocol. 
+
+Method AP/AP@ 0.8/AP@ 0.4 ∆AP vs. πD
+
+Detector order πD 52.02/61.91/44.25 —GraRe 55.95 /65.83 /48.08 +3.93 RankNet PointNet-PL 55.83/65.00/ 48.91 +3.81 ListMLE PointNet-PL 55.94/65.48/48.54 +3.92 RankNet GraRe-PL 55.70/64.81/48.88 +3.67 ListMLE GraRe-PL 55.58/65.16/48.05 +3.56 
+
+Table 11: EG native-candidate ranking controls. All learned models train and evaluate on the original K = 1 ,024 candi-dates in C, using seed 7. GraRe-PL denotes GraRe without object context. The evaluator uses the official top-50 proto-col. protocol. Each run uses a matched budget of 144 candidates per frame, three initialization seeds, and the same official evaluator. The table reports Average AP as mean ±sample SD over seeds 7/11/13. Under the 144-candidate budget, the largest mean depends on the detector: RankNet reaches 48.18 AP for GN and 52.66 AP for SBG, while ListMLE reaches 48.03 AP for EG. GraRe-PL remains close at 48.13, 52.32, and 47.81 AP, whereas the PointNetGPD-style, score-only, and pose-score controls are lower. Thus, within this restricted-budget con-trol, the ranking objective does not determine a consistent ordering across detectors. This setting is distinct from the all-candidate protocol used for the main results. We further evaluate EG at its native candidate scale: RankNet and ListMLE with both PointNet-PL and GraRe-PL train and evaluate on all K = 1 ,024 original candidates in C. Each triplet is AP/AP@ 0.8/AP@ 0.4.At the native EG scale, the PointNet-PL RankNet and ListMLE controls improve the detector order by 3.81 and 3.92 AP, respectively, reaching 55.83 and 55.94 AP. The corresponding GraRe-PL rank-loss controls reach 55.70 and 55.58 AP, or +3.67 and +3.56 AP over the detector order. Full GraRe gives the largest AP (55.95), while ListMLE PointNet-PL is within 0.01 AP and RankNet PointNet-PL attains the highest AP@ 0.4. Together with the restricted-budget comparison, these results show that the candidate-scale-consistent protocol supports several competitive rank-0 4 8 12        
+
+> Average AP gain over detector order
+> RealSense · GN (35.85)
+> RealSense · SBG (47.66)
+> RealSense · EG (52.02)
+> Kinect · GN (30.59)
+> Kinect · EG (45.26)
+> +9.18
+> +9.27
+> +13.60
+> +2.87
+> +2.68
+> +4.80
+> +2.19
+> +2.10
+> +3.93
+> +5.76
+> +5.71
+> +8.12
+> +2.98
+> +2.96
+> +4.72
+> Setting (detector Average AP)
+> w/o Local Shu ffl ed Full GraRe
+
+Figure 12: Local-alignment controls. The horizontal axis reports the Average AP gain over the detector order πD ,whose Average AP appears in parentheses. The w/o Local and shuffled-local controls nearly coincide, whereas aligned full GraRe provides a further 1.76–4.33 AP. ing objectives; full GraRe combines object context with joint candidate, local, and object-feature fusion. 
+
+G.5 Local-Alignment Controls 
+
+The shuffled-local control preserves the local encoder but de-terministically assigns each candidate another candidate’s lo-cal point cloud. It therefore tests whether aligned candidate– geometry correspondence matters. Shuffling local point sets closely matches removing them: the absolute difference is at most 0.20 AP. The aligned model exceeds the shuffled control by 1.76–4.33 AP across all five settings, indicating that local geometry is useful primarily when it remains associated with the correct grasp candidate. 
+
+## H Sensitivity and Robustness (Q2) 
+
+Figure 13 summarizes score fusion, candidate budget, and supervision controls under the matched seed-7 protocol. 
+
+H.1 Score-Fusion Weight 
+
+Figure 13(a) varies the score-fusion weight in si = (1 −
+
+λ)ebi + λegi without retraining. The unified setting is λ = 1 
+
+for all detectors and cameras. GN and SBG RealSense and both Kinect settings improve monotonically over the evaluated grid. RealSense EG peaks at λ = 0 .75 , 0.21 AP above λ = 1 . Unless otherwise stated, we use the detector-independent setting λ = 1 for every detector and camera. Figure 15 gives λ a direct behavioral interpretation. At 
+
+λ = 0, the score reduces to normalized detector confi-dence and exactly reproduces the detector order. Increasing λ
+
+changes more top-ranked candidates and raises both failure-to-success and success-to-failure transitions. At λ = 1,the top-ranked candidate changes on 96.71%, 89.67%, and 98.49% of GN, SBG, and EG frames, respectively. 0 0.25 0.5 0.75 1   
+
+> Score-fusion weight λ
+> 0
+> 4
+> 8
+> 12
+> ΔAP from  λ = 0
+> +0.21 vs λ= 1
+
+a Score fusion      
+
+> 50 100 200 400 800
+> Candidate budget M
+> 60
+> 80
+> 100
+> Average AP relative to all original candidates (%)
+
+b Candidate budget      
+
+> GN/SBG EG
+> Below detector order
+> −16 −12 −8 −4 0
+> Average AP change from full GraRe
+> GN
+> SBG
+> EG
+
+c Target and label controls 
+
+> Detector order
+> Random targets
+> Binary, 0.2
+> Binary, 0.6
+> RealSense GN
+> Kinect GN
+> RealSense SBG
+> Kinect EG
+> RealSense EG
+
+Figure 13: Sensitivity and robustness. (a) Average AP gain over the detector order πD as λ varies; the star marks the RealSense EG maximum. (b) Average AP under a strict top-
+
+M budget relative to all K original candidates; hollow red markers fall below the detector order. (c) Average AP change under the detector order, randomized targets, and binary-success targets. For GN, the net top-1 improvement increases monoton-ically with λ. For SBG, λ = 0 .75 gives a slightly larger net improvement than λ = 1 (6.25 versus 5.82 points), while their Average AP differs by only 0.09. For EG, λ = 0 .75 gives the highest Average AP, whereas λ = 1 gives the largest top-1 net improvement. Moving from λ = 0 .75 to 1 increases success-to-failure transitions by 3.43, 5.92, and 4.01 points for GN, SBG, and EG; their paired 10,000-resample scene-bootstrap 95% confidence intervals are [2.73, 4.16], [5.04, 6.80], and [2.95, 5.11], respectively. Thus, λ controls how conservatively GraRe departs from the detector order. The scene-level support follows the same tradeoff. Across the 270 RealSense detector–scene pairs, λ = 0 .25 , 0.50 ,128 256 512 1024 
+
+> Mean candidates / frame
+> RealSense · GN
+> RealSense · SBG
+> RealSense · EG
+> Kinect · GN
+> Kinect · EG
+> 165.4
+> 144.0
+> 1024
+> 100.3
+> 1024
+
+a     
+
+> 50 100 200 400 800
+> Candidate budget M
+> 40
+> 60
+> 80
+> 100
+> Average AP relative to all original candidates (%)
+
+b
+
+> RealSense GN
+> RealSense SBG
+> RealSense EG
+> Kinect GN
+> Kinect EG
+
+Figure 14: Original candidate-set size and retained candidate budget. (a) Mean candidates per frame in C, averaged over 90 test scenes. (b) Average AP under a strict top-M bud-get relative to all K original candidates. Solid lines denote RealSense and dashed lines denote Kinect; only evaluated budgets are connected. 0.25 0.50 0.75 1.00                              
+
+> Score-fusion weight λ
+> GN F → S
+> GN S → F
+> SBG F → S
+> SBG S → F
+> EG F → S
+> EG S → F
+> +5.82 +13.37 +22.14 +28.78
+> -1.34 -3.09 -5.12 -8.55
+> +3.39 +6.99 +11.51 +17.01
+> -1.13 -2.89 -5.27 -11.19
+> +4.53 +8.03 +12.25 +17.40
+> -2.41 -4.83 -7.57 -11.58
+> 30 S → F 15 015 30 F → S
+> Signed transition rate (% of frames)
+
+Figure 15: Signed RealSense top-1 transition matrix over 23,040 frames per detector. Blue positive cells show failure-to-success transitions, while red negative cells show success-to-failure transitions; the negative sign is used only to distin-guish direction. Color intensity and cell labels report transi-tion magnitude. The λ = 0 detector order has zero transitions and is omitted. 
+
+0.75 , and 1.00 improve Average AP on 270, 269, 269, and 262 pairs, respectively. Figure 16 shows that GN retains positive gains on all 90 scenes as its mean gain rises. For EG, λ =0.75 gives a 4.14-AP mean gain with 89/90 positive scenes, whereas λ = 1 gives a 3.93-AP gain with 83/90 positive scenes. Thus, increasing λ can widen the negative scene-level tail depending on the detector. 
+
+H.2 Candidate Budget 
+
+For a strict top-M evaluation with M ≤ K, candidates outside the detector’s original top M are removed be-fore re-ranking and official evaluation. Figure 13(b) reports 
+
+100 × AP( M )/AP( K), where K is the number of original candidates in C produced by the frozen detector. Figure 14 additionally relates this retention curve to the 2 4 6 8 10 12 14       
+
+> Mean scene-level Average AP gain
+> 92
+> 94
+> 96
+> 98
+> 100
+> Scenes with positive gain (%)  0.25
+> 1
+> 0.25
+> 10.25
+> 1
+> Trajectories: λ= 0.25 → 1 broader coverage ↑
+> GN SBG EG
+
+Figure 16: Score-fusion gain–coverage trajectories on Re-alSense. Each line connects λ = 0 .25 , 0.50 , 0.75 , and 1.00 
+
+over 90 scenes; arrows point toward λ = 1 . GN retains com-plete coverage, whereas EG moves left and downward from 
+
+λ = 0 .75 to 1.number of original candidates. RealSense GN and SBG pro-duce roughly 165 and 144 candidates per frame, whereas EG produces 1,024 candidates per frame with either camera; the latter therefore requires a substantially larger M to preserve the Average AP obtained using all original candidates. For GN and SBG, M = 200 is within 0.02 AP of the RealSense result using all original candidates; Kinect GN is equivalent at the displayed precision. EG requires a substan-tially larger budget: M = 200 is below the Average AP under the detector order on both cameras, while M = 800 is within 0.02 AP on RealSense and 0.09 AP on Kinect. Thus, the same retained candidate budget preserves different fractions of the detector’s original candidates across detectors. 
+
+H.3 Target and Label Controls 
+
+The score-only control uses only bi and reproduces each de-tector’s ordering exactly. We additionally permute the ana-lytical training targets while preserving their marginal distri-bution, and replace the continuous target with binary success labels at two thresholds. Figure 13(c) shows that random labels lower AP by 12.41– 16.19 points relative to the full model. GN remains 1.20 AP above its detector baseline, whereas SBG and EG fall below their baselines. Binary targets remain competitive but do not exceed the continuous-margin target in any detector setting. These controls show that the gain depends on meaningful continuous grasp-quality supervision; changing τ inside gi =
+
+τ − μi only adds a constant. 
+
+## I Statistical Analysis (Q1) 
+
+To test whether the aggregate gains persist across scenes, we perform 10,000 paired scene-level bootstrap resamples be-tween detector and GraRe AP. Each detector–camera com-parison uses all 90 test scenes and all 256 frames per scene, giving 23,040 frame evaluations without frame subsam-pling. Across the five detector–camera settings, this gives 115,200 detector–camera–frame evaluations, corresponding to 46,080 distinct camera frames because the same Re-alSense or Kinect frames are evaluated by multiple detectors. Each scene-level AP value averages all 256 frames, ranks Seen            
+
+> Similar
+> Novel
+> −10
+> 0
+> 10
+> 20
+> 30
+> Scene-level gain in Average AP
+> +16.5 +14.1 +7.2
+> aGN
+> Seen
+> Similar
+> Novel
+> +6.4 +4.9 +2.5
+> bSBG
+> Seen
+> Similar
+> Novel
+> +5.6 +3.9 +2.5
+> cEG
+> Seen Similar Novel
+
+Figure 17: RealSense scene-level Average AP gains over the detector order πD . Each point is one scene; boxes show the interquartile range and median. Labels report median gains, including negative values on some SBG and EG Similar scenes. 
+
+Det. Split ∆AP 95% CI Positive 
+
+GN Average 13.60 [12.39, 14.81] 100.0% Seen 16.65 [15.23, 18.13] 100.0% Similar 16.00 [14.43, 17.72] 100.0% Novel 8.16 [ 6.65, 10.04] 100.0% SBG Average 4.80 [ 4.23, 5.39] 98.9% Seen 5.99 [ 5.20, 6.75] 100.0% Similar 5.30 [ 4.18, 6.59] 96.7% Novel 3.10 [ 2.44, 3.86] 100.0% EG Average 3.93 [ 3.24, 4.57] 92.2% Seen 5.83 [ 4.88, 6.86] 100.0% Similar 2.89 [ 1.51, 4.15] 80.0% Novel 3.07 [ 2.29, 3.88] 96.7% 
+
+Table 12: Complete RealSense scene-bootstrap results for the seed-7 models, Average AP. 
+
+k = 1 , . . . , 50 , and the six official friction thresholds. The RealSense rows use seed 7 so that they match the controlled ablation protocol; the Kinect rows use their corresponding seed-7 models. These confidence intervals measure varia-tion across test scenes and are distinct from the training-seed variation in Figure 10. Figure 17 complements the bootstrap intervals with the underlying scene distribution. GN has the largest and most consistent per-scene gains, while the stronger EG detector has a smaller and more heterogeneous gain, especially on Similar scenes. The plotted points include all 30 scenes in each split, for 90 scenes per detector. Tables 12 and 13 provide the complete split-level Average AP analysis. Each row compares the same scenes under the detector order πD and re-ranked order πR; “Positive” is the fraction of scenes whose paired AP difference is greater than zero. All split-level confidence intervals exclude zero. The positive-scene fraction decreases as the detector becomes stronger, reaching 80.0% for RealSense EG Similar. Thus, the smaller EG gain is more scene-dependent than the GN gain, but it remains positive at the aggregate split level on Det. Split ∆AP 95% CI Positive 
+
+GN Average 8.12 [ 7.05, 9.14] 97.8% Seen 12.14 [10.83, 13.40] 100.0% Similar 8.52 [ 7.01, 10.08] 100.0% Novel 3.70 [ 2.56, 5.01] 93.3% EG Average 4.72 [ 3.96, 5.49] 94.4% Seen 6.16 [ 4.74, 7.62] 96.7% Similar 5.58 [ 4.33, 6.91] 93.3% Novel 2.43 [ 1.73, 3.18] 93.3% 
+
+Table 13: Complete Kinect scene-bootstrap results for the seed-7 models, Average AP. 
+
+Setting Imp. Deg. ≤ − 0.5 Min. ∆AP 
+
+RealSense GN 90 0 0 +2 .78 
+
+RealSense SBG 89 1 1 −0.57 
+
+RealSense EG 83 7 6 −9.03 
+
+Kinect GN 88 2 1 −1.20 
+
+Kinect EG 85 5 4 −1.46 
+
+All 435 15 12 −9.03 
+
+Table 14: Scene-level applicability over the complete test set. Imp./Deg. count improved/degraded scenes; “ ≤ − 0.5”counts decreases of at least 0.5 AP. Each setting contains 90 scenes and 23,040 frames. both cameras. 
+
+I.1 Scene-Level Scope 
+
+Table 14 summarizes the sign and lower tail of all 450 detector–camera–scene comparisons. A scene is improved or degraded according to the paired difference AP( πR) −
+
+AP( πD ) computed from its complete 256-frame evaluation. Overall, 435/450 detector–camera–scene pairs (96.7%) improve, and 248 improve by at least 5 AP. Of the 15 de-graded pairs, 12 decrease by at least 0.5 AP, six decrease by more than 1 AP, and one decreases by more than 5 AP. The Seen, Similar, and Novel splits contain 1/150, 9/150, and 5/150 degraded pairs, with mean gains of 9.35, 7.66, and 4.09 AP, respectively. Similar scenes therefore have the largest negative tail, concentrated in RealSense EG, whereas Novel scenes have the smallest mean benefit. EG accounts for 12 of the 15 degraded pairs. Only one scene is degraded for EG on both cameras; the remaining cases are specific to a detector–camera combination. Figure 18 visualizes both the scene-level distribution and its rank-wise origin. Panel (a) shows all 90 scenes in ev-ery detector–camera setting rather than only their aggregate mean. Panel (b) localizes the change within the official top-50 protocol. Positive scenes improve most strongly at the beginning of the re-ranked order and retain a positive gain through rank 50. For degraded scenes, the mean precision change is −7.96 points at rank 1 and −1.43 points at rank 20, approaches zero near rank 30, and reaches +1 .02 points at rank 50. Their AP decrease is therefore concentrated near the head of the ranking. −10 0 10 20 30          
+
+> Scene-level Average AP gain
+> RealSense · GN
+> RealSense · SBG
+> RealSense · EG
+> Kinect · GN
+> Kinect · EG
+> 100.0%
+> 98.9%
+> 92.2%
+> 97.8%
+> 94.4%
+> Positive
+> aSeen Similar Novel
+> 110 20 30 40 50
+> Rank k
+> −10
+> −5
+> 0
+> 5
+> 10
+> 15
+> Change in precision (points) b
+> Improved (435)
+> Degraded (15)
+
+Figure 18: Scene-level applicability using the complete 23,040-frame evaluation for each setting. (a) Each point is one scene and colors identify the Seen, Similar, and Novel splits. Short black lines mark medians, the dashed line marks zero gain, and right-hand labels give the fraction of scenes with positive ∆AP. (b) Change in precision at rank k under 
+
+πR relative to πD . Lines show the mean over improved or degraded scenes, and shading shows the interquartile range across scenes; every scene value averages all frames and fric-tion thresholds. The scene-level AP sign agrees with the top-1 Net sign in 14 of the 15 degraded pairs. However, 85 of the 435 improved pairs have a negative top-1 Net, because Average AP also measures deeper ranks and all six friction thresholds. The single degraded RealSense SBG scene illustrates the converse: its top-1 Net is +8 .59 points, but its precision changes at ranks 5 and 10 are −3.35 and −3.91 points, producing a −0.57 AP change. The negative cases also reveal two applicability limits. For the seven degraded RealSense EG scenes, the detector produces 1,024 candidates and the oracle top-1 success rate is 100%, but failure-to-success and success-to-failure transi-tions average 14.12% and 26.90%, respectively. The five de-graded Kinect EG scenes show the same ranking pattern, with 12.89% failure-to-success and 21.33% success-to-failure. In contrast, the two degraded Kinect GN Novel scenes aver-age only 61.7 candidates and 84.8% oracle top-1 success, compared with 101.2 candidates and 97.3% for its positive scenes. EG degradation therefore primarily reflects errors near the head of the re-ranked order, whereas the Kinect GN Novel cases also reflect limited coverage of the detector’s original candidates. Camera Det. Detector GraRe Oracle Gap closed                          
+
+> RealSense GN 35.85 49.45 72.64 36.97% RealSense SBG 47.66 52.97 75.48 19.09% RealSense EG 52.02 55.95 88.62 10.73% Kinect GN 30.59 38.79 58.70 29.17% Kinect EG 45.26 49.98 85.32 11.79%
+
+Table 15: Oracle-ranking analysis using the unchanged grasp candidate sets, Average AP (%).                                                  
+
+> Det. MDetector GraRe Oracle
+> GN 50 32.28 40.21 51.25 100 35.47 47.34 65.47 144 35.81 49.05 70.74 200 35.85 49.43 72.50 All candidates 35.85 49.45 72.64 SBG 50 40.80 43.78 55.40 100 46.79 51.19 70.51 144 47.57 52.33 74.65 All candidates 47.66 52.46 75.48 EG 50 29.40 30.62 37.39 100 37.32 39.10 49.88 144 41.51 43.70 57.25 200 45.01 47.59 64.13 All candidates 52.02 55.95 88.62
+
+Table 16: Controlled seed-7 candidate-budget analysis for the RealSense oracle ranking, Average AP (%). “All candidates” denotes the detector’s original candidate set. 
+
+## J Candidate Ranking Analysis (Q3) 
+
+J.1 Oracle Ranking 
+
+Following the main paper, the oracle ranking keeps the can-didate set C and grasp poses unchanged. It places successful grasps first and orders them by increasing finite μi; ties are resolved by detector confidence and the original candidate order. The oracle uses analytical test labels and is not deploy-able. Its AP is the upper bound attainable by re-ranking the detector’s original candidates. The fraction of the gap closed by GraRe is (AP GraRe − AP det )/(AP oracle − AP det ).GraRe closes 10.73–36.97% of the detector-to-oracle gap on RealSense and 11.79–29.17% on Kinect. The remaining gap is 32.67 AP for RealSense EG and 35.34 AP for Kinect EG, showing that substantial ranking headroom remains even for the stronger detector order. Table 16 applies the same official evaluator after restricting the detector’s original candidate set to its top M . GraRe and the oracle ranking operate on exactly the same retained can-didates as the corresponding detector order. GraRe improves the detector order at every evaluated budget. The oracle AP rises sharply as more candidates are retained, especially for EG, confirming that the larger EG original candidate set contains substantial ranking headroom rather than merely redundant proposals.                                            
+
+> Top-1 success rate Top-50 success rate Camera Det. Det. GraRe Oracle Det. GraRe Oracle
+> RealSense GN 38.32 58.55 98.58 95.36 97.37 98.58 RealSense SBG 54.29 60.11 98.80 96.96 97.60 98.80 RealSense EG 55.43 61.26 99.48 93.65 95.01 99.48 Kinect GN 36.56 48.79 96.99 94.77 95.95 96.99 Kinect EG 51.35 56.57 99.93 92.01 94.57 99.93
+
+Table 17: Top-K frame success rate (%) at μi ≤ 0.4, aver-aged over the Seen, Similar, and Novel splits.                 
+
+> Det. Frames Failure →success Success →failure Net
+> GN 23,040 28.78% 8.55% +20.23 SBG 23,040 17.01% 11.19% +5.82 EG 23,040 17.40% 11.58% +5.82
+
+Table 18: Complete RealSense top-1 transition statistics. 
+
+J.2 Top-K Frame Success Rate 
+
+The top-K frame success rate is the percentage of frames with at least one successful grasp among the first K can-didates. As in the main paper, a grasp is successful if it is collision-free, nonempty, and satisfies force closure at 
+
+μi ≤ 0.4. The oracle top-1 frame success rate equals the fraction of frames whose original candidate set contains at least one such grasp. The oracle top-1 frame success rate of 96.99–99.93% shows that almost every frame already contains at least one successful grasp candidate. GraRe provides its largest im-provement at rank 1; the improvement narrows by rank 50 because the detector order has more opportunities to include a successful candidate. 
+
+J.3 Top-1 Transitions 
+
+We count frame-level changes in the top-ranked outcome un-der the default λ = 1 RealSense protocol. Failure-to-success and success-to-failure denote changes in the binary success criterion defined above. The positive net transition is consistent with the Average AP and top-1 frame success-rate gains. GraRe replaces a successful detector top-ranked grasp with a failed grasp in 8.55–11.58% of frames. At λ = 1 , the success-to-failure rate is highest on Similar scenes for all three detectors: 10.72% for GN, 12.66% for SBG, and 16.05% for EG. 
+
+J.4 Re-Ranking Magnitude 
+
+Table 19 reports how often GraRe changes the detector’s top-ranked candidate and how much detector confidence is sacrificed by the selected replacement. Every comparison keeps the detector’s original candidate set unchanged. GraRe changes the top-ranked candidate in 86.07–99.34% of frames and consistently promotes candidates with lower original detector confidence. It therefore acts as a substan-tive re-ranker rather than a small perturbation of detector confidence. Because detector-confidence scales are model-specific, ∆bi is compared only within each detector. Det. Split Candidates Top-1 changed ∆bi                              
+
+> GN Seen 167.13 96.05% -0.635 Similar 178.08 97.06% -0.625 Novel 151.12 97.01% -0.519 SBG Seen 150.12 91.43% -0.410 Similar 152.70 91.50% -0.377 Novel 129.24 86.07% -0.248 EG Seen 1024.00 99.34% -5.766 Similar 1024.00 99.09% -5.035 Novel 1024.00 97.06% -3.571
+
+Table 19: Complete RealSense re-ranking statistics. Candi-dates is the mean number of candidates produced per frame, and ∆bi is the change in detector confidence from the top-ranked candidate under the detector order πD to that under the re-ranked order πR.                               
+
+> Joint model Det. Seeds 7/11/13 Mean ±SD
+> PointNet-PL/no ID GN 48.26/48.49/48.41 48.39 ±0.12 SBG 52.54/52.63/52.48 52.55 ±0.08 EG 54.65/54.78/54.84 54.76 ±0.10 GraRe-PL/no ID GN 48.39/48.14/48.09 48.20 ±0.16 SBG 52.78/52.44/52.58 52.60 ±0.17 EG 54.79/54.36/54.25 54.47 ±0.29 GraRe-PL/ID GN 48.35/48.37/48.54 48.42 ±0.11 SBG 52.82/52.73/52.69 52.75 ±0.07 EG 55.94/55.73/55.92 55.86 ±0.12 GraRe-PL/no conf. GN 47.30/48.12/47.44 47.62 ±0.44 SBG 51.13/51.74/51.32 51.40 ±0.31 EG 51.63/53.03/52.30 52.32 ±0.70
+
+Table 20: Complete joint-training results on RealSense using the detector’s original candidate sets, Average AP (%). Each row reports all three official evaluations and their sample mean and SD. 
+
+## K Joint Training on Known Detectors (Q4) 
+
+We train one model on the original candidate sets produced by GN, SBG, and EG. Detector-balanced sampling con-tributes two frames from each detector per optimization step. Checkpoints are selected by the mean held-out scene-level NDCG@50 across the three detectors; the test set is not used for model selection. “ID” adds a learned detector identifier, while “no conf.” removes detector confidence bi from the candidate representation. With detector identifiers, the joint model reaches 48.42, 52.75, and 55.86 AP on GN, SBG, and EG. These values differ from the matched detector-specific GraRe-PL three-seed means by at most 0.35 AP, and the SBG/EG values are slightly higher. Removing detector confidence lowers the joint ID model by 0.80, 1.35, and 3.55 AP, respectively, showing that bi remains particularly informative for EG. Joint training therefore supports parameter sharing across the known detectors when their identity is available.           
+
+> Variant Trainable parameters Total parameters
+> Full GraRe 0.547 M 22.372 M w/o Candidate 0.455 M 22.279 M w/o Local 0.306 M 22.130 M w/o Object 0.415 M 0.415 M
+
+Table 21: Model size. Total parameters include the frozen Point-MAE backbone when object context is active.                                                                             
+
+> Det. Variant Ep. hData (GB) VRAM (GB) AP
+> GN Full GraRe 39 0.962 38.59 9.736 49.45 GN w/o Cand. 35 0.954 32.58 9.722 47.66 GN w/o Local 37 0.707 32.58 0.502 45.03 GN w/o Obj. 32 0.954 26.54 9.642 48.71 SBG Full GraRe 39 0.797 31.79 9.736 52.46 SBG w/o Cand. 34 0.778 26.82 9.720 50.81 SBG w/o Local 36 0.244 26.82 0.501 50.54 SBG w/o Obj. 35 0.781 21.84 9.642 52.54 EG Full GraRe 36 5.546 202.25 19.321 55.95 EG w/o Cand. 38 5.516 202.25 19.290 50.49 EG w/o Local 37 1.510 202.25 0.855 54.22 EG w/o Obj. 38 5.512 164.75 19.215 55.63
+
+Table 22: Training cost and validation-selected checkpoints for seed 7. Hours exclude official evaluation; VRAM is peak allocated GPU memory. 
+
+## L Training Cost and Model Size (Q4) 
+
+L.1 Parameter Counts 
+
+We separate trainable parameters from the frozen Point-MAE backbone to identify the source of the model-size overhead. The object-context branch dominates total parameter count through its frozen backbone, but its trainable adapter is small. Removing object context reduces total size by more than 98%, while the Average AP changes in Figure 11(a) remain between +0 .08 and −0.77 across the controlled set-tings. 
+
+L.2 Training Resources and Checkpoints 
+
+Table 22 reports the validation-selected checkpoint, dataset size, and recorded training resources for the principal Re-alSense seed-7 runs. Best epoch is selected using held-out validation score loss; the final test AP is reported for refer-ence. EG requires substantially more training time and memory because of its larger candidate set. Removing local geomet-ric features reduces resource use but also lowers Average AP, while removing object context changes Average AP only modestly in the matched seed-7 runs. Together with Table 21, these results show that the frozen object-context backbone dominates total model size, whereas local feature construc-tion contributes more directly to the accuracy–resource trade-off. Det. Order GSR CR MCF LAT                               
+
+> GN πD73.4 (58/79) 10 (1/10) 41.06 GN πR88.9 (72/81) 100 (10/10) 21.45 SBG πD70.4 (57/81) 30 (3/10) 60.95 SBG πR87.2 (68/78) 90 (9/10) 21.21 EG πD68.2 (60/88) 70 (7/10) 40.76 EG πR88.5 (69/78) 100 (10/10) 20.97
+
+Table 23: Aggregate real-robot results. GSR and CR are percentages, with successful grasps/attempts and cleared scenes/ten in parentheses. MCF is the maximum number of consecutive failed grasp attempts in a scene. LAT is mean online inference latency per selected execution in seconds on an RTX 2060. 
+
+Det. Exec. Promoted Same Demoted Mean rank D/R
+
+GN 81 61 (75.3%) 4 16 16.59/7.38 SBG 78 54 (69.2%) 12 12 10.36/4.42 EG 78 45 (57.7%) 19 14 7.54/4.01 All 237 160 (67.5%) 35 42 11.56/5.30 
+
+Table 24: Detector-wise rank shifts for grasps executed under 
+
+πR. Each row compares the same executed candidate under the detector and GraRe orders. “Promoted” and “demoted” indicate lower and higher numerical ranks under πR, respec-tively. 
+
+## M Real-Robot Experiments (Q4) 
+
+We execute the protocol described in the main paper on ten mixed-object scenes using GN, SBG, and EG. Each detector is evaluated under its detector order πD and GraRe order 
+
+πR, yielding 60 detector–order–scene evaluations. Within each pair, the hardware, detector, collision filtering, the same motion-planning pipeline as in the main paper, and stop-ping condition remain unchanged. GraRe changes only the candidate order for each observation. Grasp outcomes and scene completion are manually verified from the recorded before-grasp, gripper-closed, and returned-to-view frames. GraRe raises GSR by 15.5, 16.8, and 20.3 percentage points for GN, SBG, and EG, respectively. CR rises by 90, 60, and 30 points, and MCF decreases to two attempts for every detector. The mean online inference overhead is 0.39, 0.26, and 0.21 s per selected execution. These aggregate re-sults show improved closed-loop reliability across all three detector pipelines at a modest inference cost. Using the scene groups defined in the main paper—Scenes 1–2 as easy, Scenes 3–7 as medium, and Scenes 8–10 as hard—the detector order clears 3/6, 7/15, and 1/9 evalua-tions, respectively. The corresponding GraRe order clears 6/6, 14/15, and 9/9 evaluations. Across the medium and hard scenes, completion increases from 8/24 to 23/24, showing that the aggregate gains are not driven only by easy scenes. GraRe promotes most executed grasps for every detector: 61/81 for GN, 54/78 for SBG, and 45/78 for EG. The detector-wise mean rank decreases from 16.59 to 7.38 for GN, from 10.36 to 4.42 for SBG, and from 7.54 to 4.01 for EG. The GN                                                                  
+
+> SBG
+> EG
+> –––C––––––
+> C–C––C––––
+> CCCCC–CC––
+> Easy Medium Hard
+> Detector order (D)
+> 12345678910
+> Paper scene number
+> GN
+> SBG
+> EG
+> CCCCCCCCCC
+> CCCCCC–CCC
+> CCCCCCCCCC
+> GraRe order (R)
+> C: cleared
+> –: incomplete
+
+Figure 19: Scene-level completion outcomes for all 60 real-robot evaluations. Rows are detectors and columns use the paper scene numbering; vertical separators mark the easy, medium, and hard groups. Blue cells marked C denote cleared scenes, while pale cells denote incomplete runs. GraRe clears 29/30 detector–scene evaluations compared with 11/30 under the detector order. physical rank promotion is therefore consistent across all three detector pipelines. 
+
+M.1 Hard-Scene Progressions 
+
+Figure 21 samples the complete logs for one detector on each hard scene. In SBG Scene 8, the detector order succeeds in 6/12 attempts and leaves two objects, whereas GraRe suc-ceeds in 7/9 attempts and clears the scene. In GN Scene 9, the corresponding outcomes are 7/12 with one object re-maining and 8/8 with the scene cleared. The largest con-trast occurs in EG Scene 10: the detector order succeeds in 5/12 attempts and leaves two objects, while GraRe clears the scene with 9/9 successful attempts. These progressions show that re-ranking reduces repeated failures and residual objects throughout the run, rather than producing only isolated suc-cessful rank changes. 
+
+M.2 Execution Trace 
+
+We additionally instrument GN Scene 4, an eight-object medium scene under the paper scene numbering, to examine how the two orders interact with downstream execution. For each RGB-D observation, the frozen GN detector produces the candidate set C. GraRe replaces the detector order πD
+
+with the re-ranked order πR before collision filtering and ex-ecution by the same motion-planning pipeline as in the main paper. The candidates themselves remain unchanged. A run terminates after at most 30 cycles or after two consecutive ob-servations contain no segmented objects. Figures 22 and 23 follow the selected execution pose and candidate-score dis-tribution through the logged cycles. GraRe changes the top-ranked candidate in the first six cycles. In these cycles, the candidates ultimately selected for execution move from detector-order ranks 21, 24, 12, 10, 20, and 11 to re-ranked positions 11, 3, 2, 4, 1, and 2, respec-tively. In the final two cycles, the candidate sets contain only Before Gripper closed Returned view GN, Scene 9 SBG, Scene 8 
+
+Figure 20: Additional successful real-robot rank-promotion cases. In GN Scene 9 cycle 2, the executed grasp moves from rank 60 under πD to rank 9 under πR; in SBG Scene 8 cycle 3, it moves from rank 12 to rank 1. Columns show the observation before execution, the closed gripper carrying the object, and the returned view after removal. The GraRe runs clear both scenes, whereas the corresponding detector-order runs leave one and two objects, respectively. three or four candidates and both orders retain the same top-ranked candidate. This trace shows that the ranking changes observed on the benchmark also occur during closed-loop robot execution. 
+
+M.3 Additional Hard-Scene Loops 
+
+The next six loops extend the execution trace to the three hard scenes. In every panel, GraRe is shown above the detector order; the column header reports the paired logged cycles as 
+
+R c i/D c j . Pose panels show the selected execution pose af-ter collision checking and planning. Candidate panels show up to 50 post-NMS candidates after the visualization-only removal of candidates associated with the hand-camera grip-per or lying within 20 mm of the fitted tabletop. Candidate colors are normalized within each panel, with blue denoting lower and red higher scores. Figure 32 shows that incomplete detector-order runs do not share a single late-stage candidate regime. At the final sampled detector-order cycle, SBG Scene 8 and EG Scene 10 retain only three and ten candidates while objects remain, in-dicating limited candidate coverage. In contrast, GN Scene 9 still retains 56 candidates around its final object, so its in-complete outcome cannot be attributed to a lack of generated choices. GraRe clears all three scenes across these distinct regimes. 
+
+M.4 Planning Trace 
+
+We use the instrumented Scene 4 run to compare how the two candidate orders affect downstream planning and sensor-confirmed cycle completion. The re-ranked run completes eight sensor-confirmed trans-fers and two empty confirmations without a failed plan or retry. The detector-order run completes seven return-to-view cycles, six of which are sensor-confirmed, and requires five planning retries. In cycle 7, motion-planning seeds 0–4 pro-duce no feasible path and seed 5 completes the cycle; cycle 8                  
+
+> Order Comp. Sens. Plans Fail. Retries End state
+> πR88800Cleared
+> πD7613 55Release timeout
+
+Table 25: Logged execution and planning events. Complete cycles return the robot to the observation view. Sensor counts complete cycles confirmed by the gripper state. Plans counts calls to the motion planner.           
+
+> Measurement πRπD
+> Complete timed cycles 87GraRe re-ranking (ms) 15.3 [11.7, 23.9] –Total compute (s) 0.825 [0.632, 1.249] 0.758 [0.616, 0.843] Robot execution (s) 33.38 [20.57, 51.16] 32.19 [21.86, 51.59]
+
+Table 26: Online RTX 2060 latency as mean [minimum, maximum]. Total compute excludes visualization, serializa-tion, and the incomplete detector-order cycle. reaches the release stage but ends with a gripper-open confir-mation timeout. The trace links the changed candidate order to fewer repeated planning failures and a cleared terminal state. 
+
+M.5 Online Latency 
+
+We time the same instrumented Scene 4 runs to separate GraRe computation from physical robot execution. CUDA-synchronized timing gives 15.3 ms for GraRe re-ranking on average, and total compute remains below one second for both orders. Robot motion exceeds 32 s per com-pleted cycle and dominates runtime, while five planning re-tries extend detector-order cycle 7 to 68.63 s. The re-ranking overhead is therefore small relative to physical execution and Figure 21: Closed-loop progressions on the three hard scenes using the paper scene numbering. Each group shows GraRe above the detector order for separate executions of the same scene specification. Five logged observations are sampled from the initial state to the terminal observation; column labels give the corresponding GraRe (R) and detector-order (D) cycle indices. GraRe clears all three scenes, while the detector-order terminal observations retain one or two objects. can be offset by avoiding repeated planning attempts. 
+
+## N Qualitative Failure Analysis (Q4) 
+
+The qualitative examples in the main paper are interpreted together with the transition statistics and feature ablations. In the illustrated beneficial cases, GraRe replaces a colliding de-tector top-ranked grasp with a candidate whose local points support contacts on both closing sides. Candidate features are particularly important for EG: removing them lowers Av-erage AP by 5.46/4.91 points on RealSense/Kinect. Harmful success-to-failure transitions are most frequent on Similar 1 2 3 4 5 6 7 8
+
+> GraRe GN
+
+Figure 22: Selected execution poses for GN Scene 4. Columns are cycles 1–8, with the GraRe order above the detector order. Green grippers show the poses selected after collision checking and planning. The detector-order cycle 7 uses motion-planning seed 5 after five failed seeds. Cycle 8 ends with a release-confirmation timeout.        
+
+> 12345678
+> GraRe GN
+
+Figure 23: Candidate-distribution loop for GN Scene 4. Columns are cycles 1–8, with the GraRe order above the detector order. Each panel renders up to 50 collision-free post-NMS candidates used by the successful planning seed. Candidates associated with the hand-camera gripper or lying within 20 mm of the fitted tabletop are omitted from the display. GraRe colors candidates by the re-ranking score, while GN uses detector confidence. Blue denotes a low score and red a high score within each panel. Later columns also reflect the scene states produced by the preceding executions in each closed-loop run. 1 2 3 4 5 6 7 8        
+
+> Logged cycle
+> 0
+> 5
+> 10
+> 15
+> 20
+> 25
+> Rank of executed candidate  K=71 K=46 K=45 K=18 K=20 K=12 K=3 K=4
+> Detector GraRe
+
+Figure 24: Cycle-level rank of the grasp executed by 
+
+GraRe GN in Scene 4. Each vertical segment compares the same executed candidate under πD and πR; smaller ranks are better, and labels give the candidate count K.scenes, while the Novel examples show GraRe promoting plausible candidates that require higher friction. GraRe there-fore often repairs detector-confidence misranking but can still overpromote geometrically plausible yet less robust grasps. 
+
+(a) Initial scene (b) Empty observation 
+
+(c) Detector order πD (d) Re-ranked order πR
+
+Figure 25: Closed-loop trace for GN Scene 4. The first cycle starts from the RGB observation in (a). After eight sensor-confirmed transfers, the observation in (b) contains no seg-mented objects and starts the two-frame empty-scene confir-mation. Panels (c) and (d) compare the unchanged candidates under the detector order and re-ranked order, respectively. Colors run from blue (low score) to red (high score) within each order. Figure 26: Selected execution-pose loop for SBG Scene 8. The detector-order run ends with two objects remaining, whereas the GraRe run clears the scene. 
+
+Figure 27: Candidate-distribution loop for SBG Scene 8 using the same logged cycles as Fig. 26. The candidate set contracts to three detector-order candidates while two objects remain; GraRe reaches an empty observation after its ninth executed cycle. 
+
+Figure 28: Selected execution-pose loop for GN Scene 9. GraRe completes the scene in eight successful attempts, while the detector-order run contains repeated failures and leaves one object. 
+
+Figure 29: Candidate-distribution loop for GN Scene 9 using the same logged cycles as Fig. 28. Both rows retain dense candidate sets early in the run, but their score orderings select different execution poses as the scene state evolves. Figure 30: Selected execution-pose loop for EG Scene 10. GraRe clears the scene in nine successful attempts; the detector-order run succeeds in five of twelve attempts and leaves two objects. 
+
+Figure 31: Candidate-distribution loop for EG Scene 10 using the same logged cycles as Fig. 30. GraRe maintains a progressively smaller set of displayed candidates as objects are removed, while the detector-order row continues through a longer run with residual objects. 1/1 2/2 3/4 4/5 5/7 6/9 8/11 9/12 
+
+> Sampled cycle (R/D)
+> 0
+> 20
+> 40
+> 60
+> 80
+> 100
+> Candidates retained for display
+> 14
+> 3
+
+SBG · Scene 8        
+
+> GraRe
+> Detector
+> 1/1 2/2 3/4 4/5 5/7 6/9 7/11 8/12
+> Sampled cycle (R/D)
+> 25
+> 56
+
+GN · Scene 9        
+
+> 1/1 2/2 3/4 4/5 5/7 6/9 8/11 9/12
+> Sampled cycle (R/D)
+> 23
+> 10
+
+EG · Scene 10 
+
+Figure 32: Candidate-count evolution for the three hard-scene loops after the same visualization-only nuisance mask. Horizontal labels give the paired GraRe/detector-order cycle indices. Counts may exceed 50 because the loop panels display at most the first 50 retained candidates.

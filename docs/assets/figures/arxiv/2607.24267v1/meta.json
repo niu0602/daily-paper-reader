@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.24267v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of FeelWorld. Left: multi-view visual observations, 3D tactile point clouds, and robot actions are encoded and fused to jointly predict future visual observations and hierarchical tactile states, including contact, 3D tactile latents, and slip. Right: contact-aware CEM planning consistently outperforms vision-only and naive visuo-tactile baselines across all tasks.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24267v1/fig-002.webp",
+      "caption": "Fig. 4. Qualitative visualizations of FeelWorld. The model predicts future visual observations together with three tactile states: contact state, 3D tactile latent, and slip state. These tactile states change according to the interaction context and robot action.",
+      "page": 6,
+      "index": 2,
+      "width": 1048,
+      "height": 316
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24267v1/fig-003.webp",
+      "caption": "Fig. 5. Long-horizon autoregressive visual prediction. At step 80, FeelWorld improves PSNR and SSIM over Vision Only by 6.70 dB and 0.115, while reducing LPIPS and MAE by 61% and 62%. The shaded region marks the long-horizon regime.",
+      "page": 7,
+      "index": 3,
+      "width": 499,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24267v1/fig-004.webp",
+      "caption": "TABLE III CONTACT AND SLIP STATE PREDICTION OVER ALL TEST FRAMES. ONSET AND OFFSET ERRORS ARE IN FRAMES AT 6 FPS.",
+      "page": 7,
+      "index": 4,
+      "width": 508,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2607.24267v1/fig-005.webp",
+      "caption": "Fig. 2. Architecture of FeelWorld. Visual observations, tactile observations, and actions are encoded into latent tokens. Hierarchical tactile modeling decomposes touch into explicitly supervised contact states, 3D tactile latents, and slip states. Contact-gated asymmetric attention preserves visual prediction before contact and enables joint visuo-tactile prediction during contact. Autoregressive rollout training with context noise injection improves long-horizon robustness.",
+      "page": 3,
+      "index": 5,
+      "width": 1051,
+      "height": 494
+    }
+  ]
+}

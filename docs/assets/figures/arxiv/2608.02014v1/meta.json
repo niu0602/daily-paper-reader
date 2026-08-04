@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.02014v1/fig-001.webp",
+      "caption": "Fig. 1. Overview of the proposed anisotropic interaction formulation for cross-embodiment dexterous grasping. By representing objects with geometry-oriented 3D Gaussian primitives and hands with keypoints, we use Mahalanobis fields to model keypoint–primitive interaction with low sensitivity to surface tangential motion and high sensitivity to surface normal motion. By learning such transferable interaction fields, our framework generalizes across seen hands and transfers zero-shot to an unseen hand.",
+      "page": 1,
+      "index": 1,
+      "width": 458,
+      "height": 472
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02014v1/fig-002.webp",
+      "caption": "Fig. 2. Method overview. The object mesh is converted into a fixed-budget set of surface-aligned, plate-like 3D Gaussian primitives G with outward normals. The primitives are then encoded by a stack of local attention blocks, operating on a KNN graph built over primitive centers, followed by global self-attention layers, yielding Object Features FO . In parallel, initial robot keypoints P0 e are encoded by a pretrained robot encoder into morpho-kinematic Robot Descriptors FR. The Interaction Fields Generator fuses both streams to generate the Mahalanobis fields M̂, which encode the interaction between each robot keypoint and each object primitive: the field value rises rapidly along the surface-normal direction and varies gently within the local tangent plane. The predicted fields then guide optimization from q0 to the final grasp q∗ under joint-limit constraints, penetration energy, and self-collision energy.",
+      "page": 4,
+      "index": 2,
+      "width": 1050,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02014v1/fig-003.webp",
+      "caption": "Fig. 3. Pretraining of morpho-kinematic robot descriptors. For two configurations q1 and q2 of the same embodiment, a robot encoder maps the corresponding keypoint sets P1 e and P2 e to point-wise descriptors Φ1 and Φ2. The Morphology-Identity Supervision aligns descriptors of the same physical keypoints across configurations while separating those of different keypoints. Kinematic-Awareness Supervision uses a robot decoder to reconstruct P̂ (2←1)",
+      "page": 5,
+      "index": 3,
+      "width": 510,
+      "height": 289
+    }
+  ]
+}

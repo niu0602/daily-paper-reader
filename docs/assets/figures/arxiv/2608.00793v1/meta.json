@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-001.webp",
+      "caption": "Figure 1: Motivation. Similar current frames can correspond to opposite target motions, while dual-path motion conditioning resolves this ambiguity using complementary historyflow and kinematic cues.",
+      "page": 1,
+      "index": 1,
+      "width": 496,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-002.webp",
+      "caption": "Figure 6: Real-world evaluation setup. Twelve tasks span three levels of target-motion complexity and two Franka Research 3 gripper configurations.",
+      "page": 6,
+      "index": 2,
+      "width": 498,
+      "height": 369
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-003.webp",
+      "caption": "Table 2: Real-world success rates (%). L1–L3 denote linear, circular, and compound target motion.",
+      "page": 6,
+      "index": 3,
+      "width": 504,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-004.webp",
+      "caption": "Table 5: DynamicWAM model configuration. The 139.6M action branch includes the kinematic-token module. Future latents are VAE encodings of eight future RGB frames.",
+      "page": 11,
+      "index": 4,
+      "width": 460,
+      "height": 379
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-005.webp",
+      "caption": "Table 9: Detailed per-task real-world success rates (%). L1–L3 denote linear, circular, and compound target motion, respectively. Each task is evaluated over 20 real-robot trials. The best result in each row is shown in bold; all tied best results are bolded.",
+      "page": 15,
+      "index": 5,
+      "width": 694,
+      "height": 533
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-006.webp",
+      "caption": "Table 10: Complete task-level success rates (%) on the four Level 1 tasks under visual appearance shifts. Each entry is evaluated over 20 real-robot trials. OOD Avg. averages the background, object-color, and lighting conditions.",
+      "page": 15,
+      "index": 6,
+      "width": 677,
+      "height": 447
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-007.webp",
+      "caption": "Figure 7: Representative real-world tasks. From top to bottom, the targets undergo linear, circular, and compound motion (Levels 1–3). Columns show execution from the initial observation at T to the completed grasp at T +N .",
+      "page": 7,
+      "index": 7,
+      "width": 992,
+      "height": 486
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-008.webp",
+      "caption": "Table 8: Detailed per-task results of DynamicWAM variants on DOMINO Level 1. Each variant is evaluated on 100 episodes per task. SR and MS denote success rate (%) and manipulation score, respectively. The best overall results are shown in bold. “w/o Flow” is the matched black-flow information-null control, which retains the motion-token path and input geometry.",
+      "page": 14,
+      "index": 8,
+      "width": 568,
+      "height": 1061
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-009.webp",
+      "caption": "Figure 2: Overview of Architecture. Temporally aligned history-flow frames are encoded with the current multi-view observation through a frozen pretrained video VAE to provide spatial motion cues, while kinematic descriptors of displacement, duration, velocity, and acceleration are injected into the action expert to provide metric scale and timing. The video and action experts interact through joint world–action attention for coupled future-video prediction and action generation. Training proceeds through video-expert distillation, action-expert pretraining, and joint refinement.",
+      "page": 3,
+      "index": 9,
+      "width": 990,
+      "height": 556
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-010.webp",
+      "caption": "Figure 9: Motion-conditioning visualization on Stage-3 DynamicWAM. For each task: observation (left), history-flow magnitude overlay (middle), and kinematic→condition attention on the head view (right).",
+      "page": 18,
+      "index": 10,
+      "width": 924,
+      "height": 885
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-011.webp",
+      "caption": "Figure 3: Dual-path motion conditioning. (a) Each history interval is converted into a masked optical-flow field Ûk and rendered as an RGB image Rk, providing spatial motion structure to the video pathway. (b) Statistics of the same masked flow field, together with the interval duration ∆τk, form a 12-D descriptor mk that is mapped to a kinematic token ek, providing motion magnitude and timing to the action pathway.",
+      "page": 4,
+      "index": 11,
+      "width": 496,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-012.webp",
+      "caption": "Figure 8: Stage-1 future-frame reconstruction on three DOMINO tasks. For each task, the top row shows ground-truth future frames and the bottom row shows Stage-1 predictions (eight frames at 192×160).",
+      "page": 17,
+      "index": 12,
+      "width": 926,
+      "height": 977
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-013.webp",
+      "caption": "Figure 5: t-SNE visualization of history-flow latents. Samples from five representative tasks exhibit locally coherent motion structures in the frozen video-VAE latent space.",
+      "page": 5,
+      "index": 13,
+      "width": 490,
+      "height": 313
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00793v1/fig-014.webp",
+      "caption": "Table 1: Performance on DOMINO Level 1 under the clean dynamic setting. Latency is measured per policy query; SR and MS denote success rate and manipulation score.",
+      "page": 5,
+      "index": 14,
+      "width": 474,
+      "height": 337
+    }
+  ]
+}

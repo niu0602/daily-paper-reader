@@ -6,74 +6,68 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-04
-- 运行时间：2026-08-04 21:47:40 UTC
+- 最新运行日期：2026-08-05
+- 运行时间：2026-08-05 21:39:53 UTC
 - 运行状态：成功
-- 本次总论文数：17
-- 精读区：6
+- 本次总论文数：15
+- 精读区：4
 - 速读区：11
 
 ### 今日简报（AI）
-- 今日共生成 17 篇推荐（精读 6 篇，速读 11 篇）
-- 精读：《DreamTraj: Generating 6-DoF Object Trajectories by Reading Unrendered Video Diffusion Latents》（9.5/10）, 《Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data》（9.5/10）
-- 速读：《TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning》（8.0/10）, 《Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies》（8.0/10）, 《Teleopit: A Full-Embodiment Humanoid Teleoperation System》（8.0/10）
+- 今日共生成 15 篇推荐（精读 4 篇，速读 11 篇）
+- 精读：《RoboReact: Agentic Skill Distillation from Generated Egocentric Videos for Generalizable Whole-Body Manipulation》（10.0/10）, 《Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer》（8.5/10）
+- 速读：《PhotoHOI: Synthesizing 3D Hand-Object Interactions from a Single RGB Photograph》（7.5/10）, 《EmbodiedVAE: Disentangled Video VAE for Efficient and Controllable Embodied Manipulation》（7.5/10）, 《FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/04/README](/202608/04/README)
+- 详情：[/202608/05/README](/202608/05/README)
 
 ### 精读区论文标签
-1. [DreamTraj: Generating 6-DoF Object Trajectories by Reading Unrendered Video Diffusion Latents](/202608/04/2608.00486v1-dreamtraj-generating-6-dof-object-trajectories-by-reading-unrendered-video-diffusion-latents)  
-   标签：评分：9.5/10、query:dexop
-   evidence：包含5038条以物体为中心的视角轨迹的MOVE数据集
-2. [Ego2Robot: Scalable Robot Data Synthesis from Egocentric Human Data](/202608/04/2608.02580v1-ego2robot-scalable-robot-data-synthesis-from-egocentric-human-data)  
-   标签：评分：9.5/10、query:dexop
-   evidence：将第一视角人类操作视频转换为机器人训练数据
-3. [DexMani: Human-Derived Manipulability Guidance for Dexterous Rotation](/202608/04/2608.00554v1-dexmani-human-derived-manipulability-guidance-for-dexterous-rotation)  
-   标签：评分：9.0/10、query:dexop
-   evidence：迁移人类演示以进行灵巧物体旋转
-4. [Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer](/202608/04/2607.28394v1-hand-object-interaction-in-the-age-of-large-foundation-modelsreconstruction-generation-and-embodied-transfer)  
+1. [RoboReact: Agentic Skill Distillation from Generated Egocentric Videos for Generalizable Whole-Body Manipulation](/202608/05/2608.03387v1-roboreact-agentic-skill-distillation-from-generated-egocentric-videos-for-generalizable-whole-body-manipulation)  
+   标签：评分：10.0/10、query:dexop
+   evidence：从生成的自我中心视频中提取灵巧操作技能
+2. [Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer](/202608/05/2607.28394v1-hand-object-interaction-in-the-age-of-large-foundation-modelsreconstruction-generation-and-embodied-transfer)  
    标签：评分：8.5/10、query:dexop
-   evidence：关于手物交互及使用大模型进行具身迁移的综述
-5. [MANGO-Grasp: Mahalanobis Fields over Geometry-Oriented 3D Gaussians for Cross-Embodiment Dexterous Grasping](/202608/04/2608.02014v1-mango-grasp-mahalanobis-fields-over-geometry-oriented-3d-gaussians-for-cross-embodiment-dexterous-grasping)  
+   evidence：关于手物交互建模及具身迁移的大模型综述
+3. [Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer](/202608/05/2607.28394v2-hand-object-interaction-in-the-age-of-large-foundation-modelsreconstruction-generation-and-embodied-transfer)  
    标签：评分：8.5/10、query:dexop
-   evidence：跨具身灵巧抓取与多指手操作
-6. [τ: Learning Touch-Augmented Vision-Language-Action Models from Future Visual Supervision](/202608/04/2607.24485v1--learning-touch-augmented-vision-language-action-models-from-future-visual-supervision)  
+   evidence：关于手物交互建模及具身迁移的大模型综述
+4. [Semantic Haptic Feedback Enhances Dexterous Robotic Teleoperation](/202608/05/2608.02780v1-semantic-haptic-feedback-enhances-dexterous-robotic-teleoperation)  
    标签：评分：8.0/10、query:dexop
-   evidence：用于接触密集型操作的触觉增强VLA框架
+   evidence：用于灵巧机器人遥操作和操作任务的触觉反馈
 
 ### 速读区论文标签
-1. [TWINS: A Tactile Wearable Isomorphic Arm Networked System for Contact-Rich Manipulation Learning](/202608/04/2608.01733v1-twins-a-tactile-wearable-isomorphic-arm-networked-system-for-contact-rich-manipulation-learning)  
-   标签：评分：8.0/10、query:dexop
-   evidence：用于触觉丰富操作学习的触觉可穿戴系统
-2. [Multi-View Unified Camera Fields: Geometry-Shaped Action-Facing Representations for RGB-Only Multi-Camera VLA Policies](/202608/04/2608.01826v1-multi-view-unified-camera-fields-geometry-shaped-action-facing-representations-for-rgb-only-multi-camera-vla-policies)  
-   标签：评分：8.0/10、query:dexop
-   evidence：用于操作中多摄像头 VLA 策略的多视图统一相机场
-3. [Teleopit: A Full-Embodiment Humanoid Teleoperation System](/202608/04/2608.01834v1-teleopit-a-full-embodiment-humanoid-teleoperation-system)  
-   标签：评分：8.0/10、query:dexop
-   evidence：连续灵巧手控制与类人机器人遥操作
-4. [FeelWorld: Visuo-Tactile World Model for Hierarchical Contact Prediction and Planning](/202608/04/2607.24267v1-feelworld-visuo-tactile-world-model-for-hierarchical-contact-prediction-and-planning)  
+1. [PhotoHOI: Synthesizing 3D Hand-Object Interactions from a Single RGB Photograph](/202608/05/2608.01905v1-photohoi-synthesizing-3d-hand-object-interactions-from-a-single-rgb-photograph)  
    标签：评分：7.5/10、query:dexop
-   evidence：用于接触密集型交互和规划的视触觉世界模型
-5. [TacWAM: Anchor-Guided World Action Model with Mechanics-Aware Tactile Prediction](/202608/04/2607.28391v1-tacwam-anchor-guided-world-action-model-with-mechanics-aware-tactile-prediction)  
+   evidence：为具身交互合成3D手物交互序列
+2. [EmbodiedVAE: Disentangled Video VAE for Efficient and Controllable Embodied Manipulation](/202608/05/2608.02990v1-embodiedvae-disentangled-video-vae-for-efficient-and-controllable-embodied-manipulation)  
    标签：评分：7.5/10、query:dexop
-   evidence：使用世界动作模型进行接触密集型操作的触觉预测。
-6. [Grasp Execution Without a Planner: Configuration-Space Grasp Distance Fields with Certified Safety & Guaranteed Quality](/202608/04/2608.00600v1-grasp-execution-without-a-planner-configuration-space-grasp-distance-fields-with-certified-safety--guaranteed-quality)  
-   标签：评分：7.5/10、query:dexop
-   evidence：多指抓取执行和臂手位形空间
-7. [ReTouch: Empowering Contact-Rich Dexterous Manipulation with Online-Refined Tactile Prediction](/202608/04/2608.01824v1-retouch-empowering-contact-rich-dexterous-manipulation-with-online-refined-tactile-prediction)  
-   标签：评分：7.5/10、query:dexop
-   evidence：使用触觉预测和VLA模型进行高接触灵巧操作
-8. [GraRe: Grasp Candidate Re-Ranking for Frozen 6-DoF Grasp Detectors](/202608/04/2608.00946v1-grare-grasp-candidate-re-ranking-for-frozen-6-dof-grasp-detectors)  
+   evidence：用于高效可控具身操作世界模型的视频VAE
+3. [FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation](/202608/05/2607.28596v1-fa-rdp-a-frequency-adaptive-reactive-diffusion-policy-for-contact-rich-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：机器人抓取任务的抓取候选重排序
-9. [P3: Probabilistic Policy Propagation for Stable VAE-Based Robot Learning](/202608/04/2607.25541v1-p3-probabilistic-policy-propagation-for-stable-vae-based-robot-learning)  
+   evidence：用于接触丰富操作任务的反应式扩散策略
+4. [CAAT: Contact-Aware Attention Scaling and Tactile Masking for Data-Efficient Contact-Rich Manipulation](/202608/05/2608.01102v1-caat-contact-aware-attention-scaling-and-tactile-masking-for-data-efficient-contact-rich-manipulation)  
+   标签：评分：7.0/10、query:dexop
+   evidence：使用视觉-触觉策略的丰富接触操作
+5. [Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them](/202608/05/2608.01402v1-demystifying-when-and-why-vlas-fail-in-contact-rich-tasks-and-how-to-fix-them)  
+   标签：评分：7.0/10、query:dexop
+   evidence：需要精确物理交互的接触密集型操作任务
+6. [EvoHIL: Self-Evolving Reward and Flow-Matched Policy Optimization for Robust Human-in-the-Loop Reinforcement Learning](/202608/05/2608.03872v1-evohil-self-evolving-reward-and-flow-matched-policy-optimization-for-robust-human-in-the-loop-reinforcement-learning)  
+   标签：评分：7.0/10、query:dexop
+   evidence：通过人在回路的交互学习接触丰富的操作任务
+7. [Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition](/202608/05/2608.00208v1-developing-combined-manipulation-and-locomotion-skills-with-interaction-representation-and-skill-composition)  
    标签：评分：6.5/10、query:dexop
-   evidence：针对基于 VAE 的机器人从噪声观测中学习的概率策略优化
-10. [Route by Kinematics, Act by Observation: Kinematics-Supervised Expert Routing in MoE-Augmented VLA](/202608/04/2607.26807v1-route-by-kinematics-act-by-observation-kinematics-supervised-expert-routing-in-moe-augmented-vla)  
+   evidence：学习类人机器人的全身触及与抓取策略
+8. [OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation](/202608/05/2608.01066v1-oc-vla-monocular-geometry-guided-cross-view-consistency-for-viewpoint-robust-robotic-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：针对操作任务的运动学监督专家路由
-11. [SAGP: Semantic Affordance-Guided Grasp Planning via Coarse-Zone VLM Reasoning](/202608/04/2607.29374v1-sagp-semantic-affordance-guided-grasp-planning-via-coarse-zone-vlm-reasoning)  
-   标签：评分：6.5/10、query:dexop
-   evidence：机器人操作中基于语义示能引导的抓取规划
+   evidence：专注于利用相机空间基准和跨视角一致性实现视角鲁棒的机器人操作。
+9. [DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation](/202608/05/2608.00793v1-dynamicwam-dual-path-motion-conditioning-for-world-action-models-in-dynamic-manipulation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：使用世界-动作模型的动态物体操作
+10. [Sparse Meets Dense: Correspondence Guided Robotic Manipulation with Rigid-Deformable Interactions](/202608/05/2608.01083v1-sparse-meets-dense-correspondence-guided-robotic-manipulation-with-rigid-deformable-interactions)  
+   标签：评分：6.0/10、query:dexop
+   evidence：具有刚性-柔性交互和多点接触的机器人操作
+11. [Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation](/202608/05/2608.02257v1-learning-panorama-aware-vla-for-mobile-manipulation-with-whole-body-teleoperation)  
+   标签：评分：6.0/10、query:dexop
+   evidence：利用全景感知VLA和遥操作的移动操作
 
 
 <div class="dpr-home-promo-card">

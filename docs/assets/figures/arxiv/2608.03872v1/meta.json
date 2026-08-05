@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-001.webp",
+      "caption": "Fig. 11. The ten ordered illumination conditions used for evaluation, spanning combinations of brightness, color temperature, shadow, and reflection changes. The percentage labels form a composite test index rather than calibrated lux changes.",
+      "page": 11,
+      "index": 1,
+      "width": 1076,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-002.webp",
+      "caption": "Fig. 1. Six real-robot manipulation tasks across two embodiments. A 7-DoF Franka FR3 performs RAM insertion, USB insertion, table wiping, and circuitbreaker operation; a low-cost SO-101 arm performs candy pushing and medicine-box stowing.",
+      "page": 2,
+      "index": 2,
+      "width": 1076,
+      "height": 675
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-003.webp",
+      "caption": "Fig. 8. Normalized-command smoothness over training for the flow policy and a Gaussian actor on candy push and medicine-box stow. D1 is the mean consecutive-action L2 change, D2 is the mean second difference, PHF is the power fraction above half the Nyquist frequency, and Ssmooth is the aggregate score defined in (19). Lower values of D1, D2, and PHF, and a higher value of Ssmooth, indicate greater temporal regularity. These single-run metrics do not measure physical jerk, safety, or human-perceived predictability.",
+      "page": 10,
+      "index": 3,
+      "width": 511,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-004.webp",
+      "caption": "Fig. 4. Camera placements for the six scenes. The FR3 tasks use wristmounted cameras (a side camera is added for table wiping); the SO-101 tasks use top and side cameras, with an added wrist camera for stowing.",
+      "page": 8,
+      "index": 4,
+      "width": 529,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-005.webp",
+      "caption": "Fig. 12. Composite illumination-shift sweep (0% to 100%): success rate, intervention rate, and mean recorded episode duration for EvoHIL and the baselines across six scenes. All EvoHIL results use the unified SER–AFS pipeline and its required retention-aware offline phase. Each point summarizes 30 rollouts of one selected policy and does not show training-run uncertainty. BC and ACT are omitted because complete condition-wise sweep logs were not retained; their 60% results are reported in Table IV.",
+      "page": 12,
+      "index": 5,
+      "width": 1026,
+      "height": 455
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-006.webp",
+      "caption": "TABLE V Appendix A: per-Task Setup and Hyperparameters; Demos, Tmax, and H/E Denote Initial Demonstrations, Maximum Episode Length, and Chunk/Execution Horizons",
+      "page": 12,
+      "index": 6,
+      "width": 1076,
+      "height": 255
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03872v1/fig-007.webp",
+      "caption": "Fig. 6. Sweep of the original-domain retention ratio α for SAC fine-tuning on USB insertion (FR3), with the best online Gaussian policy as a dashed reference, across success rate, intervention rate, and completion time. Both extremes perform poorly; the anchored objective is stable over a broad interior band and has its best observed result at α=0.75 in this run.",
+      "page": 9,
+      "index": 7,
+      "width": 512,
+      "height": 287
+    }
+  ]
+}

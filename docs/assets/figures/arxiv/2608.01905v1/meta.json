@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.01905v1/fig-001.webp",
+      "caption": "Figure 4: Qualitative ablation results of key components in PhotoHOI.",
+      "page": 7,
+      "index": 1,
+      "width": 1052,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01905v1/fig-002.webp",
+      "caption": "Figure 3: Qualitative results on real-world photograph inputs. PhotoHOI recovers task-relevant geometry, plans the object trajectory, and synthesizes the corresponding hand motion. Yellow hands indicate the approach stage, while purple hands indicate the manipulation stage.",
+      "page": 7,
+      "index": 2,
+      "width": 1004,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01905v1/fig-003.webp",
+      "caption": "Figure 2: Given a single RGB photograph and an instruction, PhotoHOI parses the task, recovers the task-relevant 3D scene, and plans a collision-aware object trajectory. It then predicts interaction priors and refines the grasp in a learned latent space. The resulting hand motion and object trajectory form a scene-grounded 3D hand-object interaction sequence.",
+      "page": 4,
+      "index": 3,
+      "width": 1052,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01905v1/fig-004.webp",
+      "caption": "Figure 1: Overview: Unlike existing methods that rely on known object geometry or given trajectories, PhotoHOI starts from a single RGB photograph and an open-vocabulary instruction to generate a 3D hand-object interaction sequence grounded in the recovered task-relevant scene.",
+      "page": 2,
+      "index": 4,
+      "width": 1052,
+      "height": 358
+    }
+  ]
+}

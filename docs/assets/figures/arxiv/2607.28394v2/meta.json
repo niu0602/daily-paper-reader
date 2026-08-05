@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-001.webp",
+      "caption": "Table 1: Comparison of existing HOI-related surveys. ✓ = systematic coverage; × = no systematic coverage.",
+      "page": 6,
+      "index": 1,
+      "width": 1036,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-002.webp",
+      "caption": "Figure 6: Injection mechanisms of visual priors for HOI.",
+      "page": 15,
+      "index": 2,
+      "width": 494,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-003.webp",
+      "caption": "Table 4: Benchmark datasets and pretraining sources used in HOI research. Panel A summarizes released observations, camera view, acquisition setting, ground-truth (GT) annotations, and use; Panel B summarizes supervision and use for large-scale pretraining corpora. Observation denotes raw sensor streams or released input assets rather than 3D annotations. View — ego: first-person; exo: external third-person; multi-view: synchronized camera rig; object: object-centric; N/A: no camera view. Setting — controlled, in-the-wild, synthetic, web, or mixed. “–” indicates unavailable annotations.",
+      "page": 21,
+      "index": 3,
+      "width": 1098,
+      "height": 1171
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-004.webp",
+      "caption": "Table 5: Common metric families in HOI evaluation.",
+      "page": 22,
+      "index": 4,
+      "width": 1036,
+      "height": 192
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-005.webp",
+      "caption": "Figure 4: Injection mechanisms of geometric priors for HOI.",
+      "page": 10,
+      "index": 5,
+      "width": 494,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-006.webp",
+      "caption": "Figure 5: Injection mechanisms of semantic priors for HOI.",
+      "page": 13,
+      "index": 6,
+      "width": 494,
+      "height": 349
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-007.webp",
+      "caption": "Table 2: Functional abstraction of typical HOI backbones and task heads across the six tasks.",
+      "page": 8,
+      "index": 7,
+      "width": 1036,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-008.webp",
+      "caption": "Figure 3: Residual HOI uncertainties and corresponding foundation-prior interventions.",
+      "page": 8,
+      "index": 8,
+      "width": 463,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-009.webp",
+      "caption": "Table 3: Representative foundation-model-prior methods for HOI. The tag before P identifies the sub-prior; P and A denote primary and auxiliary priors, respectively. The representation and operator columns describe P. Uncertainty↓ lists the HOI uncertainties mitigated by P: Sh = shape, Sp = spatial, Ph = physical, Se = semantic, and Dy = dynamic.",
+      "page": 9,
+      "index": 9,
+      "width": 1098,
+      "height": 1263
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28394v2/fig-010.webp",
+      "caption": "Figure 2: Taxonomy roadmap of this survey. Three foundation-model prior families are decomposed into section-level sub-priors and linked to the HOI reconstruction or generation tasks reviewed under each subsection.",
+      "page": 5,
+      "index": 10,
+      "width": 1098,
+      "height": 581
+    }
+  ]
+}

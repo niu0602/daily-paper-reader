@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-001.webp",
+      "caption": "Figure 5: Attention heatmap visualization. Panel (a) presents one representative real-world rollout, while panel (b) presents two representative simulated rollouts. Each rollout is arranged in two rows: the top row shows the raw observation frames, and the bottom row shows the corresponding attention heatmaps overlaid on the observations. The heatmaps visualize the modalityspecific cross-attention weights after contact-aware attention scaling, with brighter regions indicating tokens with larger scaled attention contributions.",
+      "page": 7,
+      "index": 1,
+      "width": 1052,
+      "height": 575
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-002.webp",
+      "caption": "Figure 2: Overview of CAAT. CAAT introduces contact-aware priors into Transformer-based visuo-tactile action prediction. Visual observations and robot states are encoded as modality-specific tokens, while tactile images are converted into patch tokens using a pretrained tactile encoder. CAAT first applies Dynamic Tactile Masking, which compares the current tactile tokens with a non-contact reference and suppresses unchanged background regions while retaining tokens that capture contact-induced deformations. The visual, masked tactile, and state tokens are then concatenated and processed by Transformer layers. For action decoding, CAAT computes modality-specific attention readouts and scales the visual and tactile contributions according to the estimated contact state: visual features are emphasized before contact, whereas tactile features are emphasized during contact. The resulting multimodal representation is passed to the action decoder to predict a sequence of future actions.",
+      "page": 3,
+      "index": 2,
+      "width": 1052,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-003.webp",
+      "caption": "Figure 6: Hardware design of the tactile gripper. The dexterous two-finger tactile device is used for both human-operated demonstration collection and robot policy deployment. Each fingertip is equipped with a PPTac tactile sensor, and five Dynamixel motors control the opening/closing and lateral motion of the fingers. During data collection, a Vive Tracker mounted on the gripper records its pose and motion. During deployment, the tracker is removed, and the robot executes the policy based on the end-effector pose.",
+      "page": 8,
+      "index": 3,
+      "width": 500,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-004.webp",
+      "caption": "Figure 4: Data efficiency on the UniVTAC benchmark. The curves report the average success rate across five simulation tasks under different numbers of training demonstrations. All methods use ACT as the policy backbone and apply Dynamic Tactile Masking. CAAT uses the fixed numerical scaling strategy.",
+      "page": 5,
+      "index": 4,
+      "width": 502,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-005.webp",
+      "caption": "Table 2: Success rates (%) of different visuo-tactile fusion methods across three backbones on real-world manipulation tasks.",
+      "page": 5,
+      "index": 5,
+      "width": 1026,
+      "height": 181
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01102v1/fig-006.webp",
+      "caption": "Figure 3: Evaluation settings and tasks. (a) Our proposed approach is evaluated on three real-world contact-rich manipulation tasks: Lift Bottle, Open Box, and Powerbank Extraction. (b) UniVTAC simulation environments used for evaluation.",
+      "page": 5,
+      "index": 6,
+      "width": 500,
+      "height": 464
+    }
+  ]
+}

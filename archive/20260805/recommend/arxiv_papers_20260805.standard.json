@@ -1,0 +1,639 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-05T21:34:33.214943+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 14,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.03387v1",
+      "source": "arxiv",
+      "title": "RoboReact: Agentic Skill Distillation from Generated Egocentric Videos for Generalizable Whole-Body Manipulation",
+      "abstract": "Humanoid robots have the potential to perform dexterous manipulation in human environments, yet acquiring diverse and generalizable skills remains costly due to expensive hardware data collection and labor-intensive annotation. Recent advances in video generative models provide a promising opportunity to synthesize rich manipulation experiences from visual observations, but transferring such imagined behaviors into executable whole-body humanoid skills remains largely unexplored. In this work, we present RoboReact, a framework that automatically synthesizes whole-body humanoid manipulation skills from a single egocentric RGB-D observation. RoboReact generates human manipulation videos, extracts geometry-preserving interaction keyframes through depth-aware 3D reconstruction, and retargets them to high-DoF humanoid platforms while preserving hand-object interaction geometry. To bridge the gap between imagined plans and physical execution, RoboReact performs online object-centric re-grounding and leverages a vision-language model-guided refinement loop to adapt skills under geometric mismatch and execution deviations. The refined skills are executed through a whole-body controller, enabling coordinated whole-body manipulation and dexterous interaction. Experiments on real humanoid robots demonstrate that RoboReact generalizes across diverse object configurations and robustly recovers from execution disturbances without requiring teleoperation or human demonstrations. These results highlight the potential of combining generative models, vision-language reasoning, and closed-loop control for scalable humanoid skill acquisition.",
+      "authors": [
+        "Shuliang He",
+        "Shuai Wang",
+        "Bo Yue",
+        "Junchi Teng",
+        "Changyu Wang",
+        "Guiliang Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-04T09:37:06+00:00",
+      "link": "https://arxiv.org/pdf/2608.03387v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "skill distillation from generated egocentric videos for dexterous manipulation",
+      "llm_evidence_cn": "从生成的自我中心视频中提取灵巧操作技能",
+      "llm_evidence": "从生成的自我中心视频中提取灵巧操作技能",
+      "canonical_evidence": "从生成的自我中心视频中提取灵巧操作技能",
+      "llm_tldr_en": "RoboReact synthesizes whole-body humanoid manipulation skills from a single egocentric RGB-D observation.",
+      "llm_tldr_cn": "RoboReact通过单次自我中心RGB-D观测合成全身类人机器人操作技能。",
+      "llm_tldr": "RoboReact通过单次自我中心RGB-D观测合成全身类人机器人操作技能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on imitation learning and representation learning methods for dexterous manipulation from first person data",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28394v1",
+      "source": "arxiv",
+      "title": "Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer",
+      "abstract": "Hand-object interaction (HOI) modeling remains challenging because it requires joint reasoning about hand articulation, object geometry, contact, semantics, and dynamics under severe visual uncertainty. Foundation models introduce transferable prior knowledge learned from large-scale cross-domain data, offering new ways to address these challenges beyond task-specific data and models. However, the rapidly growing literature remains fragmented, and existing studies typically describe these methods simply as ``using large models'' without systematically characterizing what knowledge is introduced, where it enters the HOI pipeline, or which HOI uncertainty it helps reduce. This survey presents the first systematic review of foundation-model priors for HOI. We organize the literature into six HOI tasks spanning reconstruction and generation. More importantly, we establish a taxonomy of eight foundation-model sub-priors grouped into geometric, semantic, and visual families. Geometric priors encompass shape retrieval, shape reconstruction, and spatial reconstruction; semantic priors include semantic grounding and language reasoning; and visual priors cover visual representation, image generation, and video generation. Based on this taxonomy, we systematically analyze how different priors are represented, injected, and adapted across HOI pipelines and tasks. Beyond how foundation models empower HOI, we further examine how HOI-derived knowledge is used in robot learning, including human-data pretraining, human-to-robot skill transfer, and HOI-to-robot data generation. Finally, we summarize datasets and evaluation protocols, and discuss limitations and future directions toward more generalizable HOI systems. To support long-term progress, we curate a live repository that continuously aggregates emerging methods and benchmarks.",
+      "authors": [
+        "Weiquan Lin",
+        "Yu Deng",
+        "Shiyang Liu",
+        "Luping Xiao",
+        "Xu Tang",
+        "Junzhi Yu",
+        "Jiaolong Yang",
+        "Lei Zhang",
+        "Xingyu Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-30T15:48:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.28394v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "Survey on hand-object interaction and embodied transfer using foundation models",
+      "llm_evidence_cn": "关于手物交互建模及具身迁移的大模型综述",
+      "llm_evidence": "关于手物交互建模及具身迁移的大模型综述",
+      "canonical_evidence": "关于手物交互建模及具身迁移的大模型综述",
+      "llm_tldr_en": "A systematic survey on hand-object interaction modeling and its transfer to embodied robotic tasks.",
+      "llm_tldr_cn": "系统综述了手物交互建模及其在具身机器人任务中的迁移应用。",
+      "llm_tldr": "系统综述了手物交互建模及其在具身机器人任务中的迁移应用。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.02780v1",
+      "source": "arxiv",
+      "title": "Semantic Haptic Feedback Enhances Dexterous Robotic Teleoperation",
+      "abstract": "In robot teleoperation, haptic feedback can be used to help human operators accomplish dexterous manipulation tasks. However, existing haptic feedback methods try to replicate high-fidelity sensory haptics that are felt in real world interactions, which are constrained by the sensing and feedback hardware capability and may lead to higher workload.   To addresses these limitations, this work introduces semantic haptics for teleoperation, which uses abstract haptic patterns to convey critical information about robot states. We categorize robot states into \"Confirmations\" and \"Exceptions\", implement a modular haptic rendering pipeline in robot simulation, and deliver semantic haptic feedback to operators through pneumatic and vibrotactile wristbands. This simplifies hardware requirements and enables one-to-many mappings between haptic patterns and robot states.   Through three evaluation studies, we identify the most effective semantic haptic design for a common pick and place teleoperation task and compare semantic haptics to other teleoperation feedback approaches including sensory haptics and visual feedback. Results suggest that while semantic haptics performs similarly as other feedback in unimanual tasks, it achieves superior performance in bimanual tasks, with reduced task workload, increased situational awareness, and overall preference.",
+      "authors": [
+        "Bingjian Huang",
+        "Sahar Aseeri",
+        "Jonas Schmidtler",
+        "Joseph Zhang",
+        "Sonny Chan",
+        "Andrew Doxon",
+        "Jom Preechayasomboon",
+        "Evan Pezent",
+        "Alberto Rigo",
+        "Amir Memar",
+        "Nicholas Colonnese",
+        "Chase Tymms"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.HC"
+      ],
+      "published": "2026-08-03T18:23:50+00:00",
+      "link": "https://arxiv.org/pdf/2608.02780v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "haptic feedback for dexterous robotic teleoperation and manipulation tasks",
+      "llm_evidence_cn": "用于灵巧机器人遥操作和操作任务的触觉反馈",
+      "llm_evidence": "用于灵巧机器人遥操作和操作任务的触觉反馈",
+      "canonical_evidence": "用于灵巧机器人遥操作和操作任务的触觉反馈",
+      "llm_tldr_en": "Enhances dexterous teleoperation by using semantic haptic patterns to convey critical robot states.",
+      "llm_tldr_cn": "通过使用语义触觉模式传达关键机器人状态，增强了灵巧的遥操作。",
+      "llm_tldr": "通过使用语义触觉模式传达关键机器人状态，增强了灵巧的遥操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2607.28394v2",
+      "source": "arxiv",
+      "title": "Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer",
+      "abstract": "Hand-object interaction (HOI) modeling remains challenging because it requires joint reasoning about hand articulation, object geometry, contact, semantics, and dynamics under severe visual uncertainty. Foundation models introduce transferable prior knowledge learned from large-scale cross-domain data, offering new ways to address these challenges beyond task-specific data and models. However, the rapidly growing literature remains fragmented, and existing studies typically describe these methods simply as ``using large models'' without systematically characterizing what knowledge is introduced, where it enters the HOI pipeline, or which HOI uncertainty it helps reduce. This survey presents the first systematic review of foundation-model priors for HOI. We organize the literature into six HOI tasks spanning reconstruction and generation. More importantly, we establish a taxonomy of eight foundation-model sub-priors grouped into geometric, semantic, and visual families. Geometric priors encompass shape retrieval, shape reconstruction, and spatial reconstruction; semantic priors include semantic grounding and language reasoning; and visual priors cover visual representation, image generation, and video generation. Based on this taxonomy, we systematically analyze how different priors are represented, injected, and adapted across HOI pipelines and tasks. Beyond how foundation models empower HOI, we further examine how HOI-derived knowledge is used in robot learning, including human-data pretraining, human-to-robot skill transfer, and HOI-to-robot data generation. Finally, we summarize datasets and evaluation protocols, and discuss limitations and future directions toward more generalizable HOI systems. To support long-term progress, we curate a live repository that continuously aggregates emerging methods and benchmarks.",
+      "authors": [
+        "Weiquan Lin",
+        "Yu Deng",
+        "Shiyang Liu",
+        "Luping Xiao",
+        "Xu Tang",
+        "Junzhi Yu",
+        "Jiaolong Yang",
+        "Lei Zhang",
+        "Xingyu Chen"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-07-30T15:48:16+00:00",
+      "link": "https://arxiv.org/pdf/2607.28394v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "Survey on hand-object interaction and embodied transfer using foundation models",
+      "llm_evidence_cn": "关于手物交互建模及具身迁移的大模型综述",
+      "llm_evidence": "关于手物交互建模及具身迁移的大模型综述",
+      "canonical_evidence": "关于手物交互建模及具身迁移的大模型综述",
+      "llm_tldr_en": "A systematic survey on hand-object interaction modeling and its transfer to embodied robotic tasks.",
+      "llm_tldr_cn": "系统综述了手物交互建模及其在具身机器人任务中的迁移应用。",
+      "llm_tldr": "系统综述了手物交互建模及其在具身机器人任务中的迁移应用。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.01905v1",
+      "source": "arxiv",
+      "title": "PhotoHOI: Synthesizing 3D Hand-Object Interactions from a Single RGB Photograph",
+      "abstract": "Hand-object interaction (HOI) is a fundamental human behavior with broad applications in AR/VR, digital humans, and embodied interaction. Existing methods typically require predefined object geometry, object trajectories, or task-specific conditions, limiting their use with natural real-world inputs. To address this, we study a more practical problem of synthesizing 3D hand-object interaction sequences from a single RGB photograph and an open-vocabulary language instruction, and introduce PhotoHOI. PhotoHOI first uses a vision-language model to parse the input image and instruction into a structured task specification, including the interaction object, target region, and spatial relation. It then recovers a compact task-relevant 3D scene and plans a smooth collision-aware object trajectory based on the recovered object states, support relations, and surrounding scene geometry. To synthesize hand motion that generalizes to real-world photographs and unseen objects, it learns transferable task-conditioned contact and contact-conditioned grasp priors from large-scale affordance and HOI data. The grasp is further refined in a learned latent space, constraining the optimization to a plausible hand-pose manifold. Experiments on GRAB and H2O demonstrate improved contact quality and reduced penetration over representative baselines. Results on real-world photographs further demonstrate higher task success and scene consistency, together with generalization to unseen objects and open-vocabulary instructions.",
+      "authors": [
+        "Zhenhao Zhang",
+        "Jiajun Zhang",
+        "Wei Min",
+        "Yebin Liu"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-03T08:39:31+00:00",
+      "link": "https://arxiv.org/pdf/2608.01905v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "Synthesizing 3D hand-object interactions for embodied interaction",
+      "llm_evidence_cn": "为具身交互合成3D手物交互序列",
+      "llm_evidence": "为具身交互合成3D手物交互序列",
+      "canonical_evidence": "为具身交互合成3D手物交互序列",
+      "llm_tldr_en": "A method to synthesize 3D hand-object interaction sequences from a single photograph and instruction.",
+      "llm_tldr_cn": "一种从单张照片和指令合成3D手物交互序列的方法。",
+      "llm_tldr": "一种从单张照片和指令合成3D手物交互序列的方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.00208v1",
+      "source": "arxiv",
+      "title": "Developing Combined Manipulation and Locomotion Skills with Interaction Representation and Skill Composition",
+      "abstract": "This paper addresses how to enable a humanoid robot to learn motion policies based on developmental principles and combine policies to create more sophisticated and useful behaviors. Specifically, we present an approach to (1) learning a whole-body reaching and grasping policy and (2) combining it and a standing-up and walking policy to compose a more complex policy of manipulation and locomotion: grasping, standing up, and walking.   In (1), our method draws inspiration from harmonic analysis and adopts cubic harmonics as weights to represent the hand-object spatial relationship via spatial convolution. Utilizing an intra-episode finger joint decoupling curriculum based on developmental principles, a robot can autonomously learn a generalizable grasping policy without relying on external datasets or pretrained models.   In (2), our method combines the grasping policy with a separately learned getting-up policy by providing both policies with their respective observation vectors and using hand-object interaction scores to determine when each policy should control which robot joints. Our results show a 93% zero-shot success rate for grasping unseen objects and a 96-100% success rate for standing up while holding the object. Our work also demonstrates that combining different policies is only effective if each policy learning happens on the same whole humanoid body even if a policy (such as for locomotion) does not seem to need all the body parts (such as fingers).",
+      "authors": [
+        "Fanxing Meng",
+        "Jing Xiao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-31T18:43:57+00:00",
+      "link": "https://arxiv.org/pdf/2608.00208v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Learning whole-body reaching and grasping policies for humanoid robots",
+      "llm_evidence_cn": "学习类人机器人的全身触及与抓取策略",
+      "llm_evidence": "学习类人机器人的全身触及与抓取策略",
+      "canonical_evidence": "学习类人机器人的全身触及与抓取策略",
+      "llm_tldr_en": "An approach for learning and combining manipulation and locomotion skills in humanoid robots.",
+      "llm_tldr_cn": "一种学习并组合类人机器人操作与移动技能的方法。",
+      "llm_tldr": "一种学习并组合类人机器人操作与移动技能的方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.02990v1",
+      "source": "arxiv",
+      "title": "EmbodiedVAE: Disentangled Video VAE for Efficient and Controllable Embodied Manipulation",
+      "abstract": "Latent diffusion models (LDMs) have recently significantly advanced embodied learning in constructing powerful embodied manipulation world models. However, despite the remarkable performance, existing LDMs predominantly rely on Variational Autoencoders (VAEs) optimized for natural scenes while failing to account for the unique characteristics of embodied manipulation scenarios, yielding latent representations that are neither compact nor controllable, thereby hindering efficient training of LDMs and precise robotic control. To solve this problem, we present EmbodiedVAE, a novel video VAE that provides compact yet controllable latent representations tailored for the robotic manipulation world models. Specifically, EmbodiedVAE adopts a dual-encoder, single-decoder architecture with an asymmetric spatio-temporal compression module, which automatically disentangles the robot arm's motion from background environment, resulting in overall compactness while providing explicit embodied latent to support fine-grained action control. To further preserve the temporal consistency of learned robotic motion latent, we introduce an optimal-transport-based consistency module that explicitly enforces motion fidelity and inter-frame coherence. Extensive experiments demonstrate that our proposed EmbodiedVAE achieves superior reconstruction quality with high compression rate, while enabling more precise action control in robotic manipulation scenarios with an average of 2dB PSNR improvement over state-of-the-art video VAEs.",
+      "authors": [
+        "Jiayi Luo",
+        "Hanxin Zhu",
+        "Chen Gao",
+        "Jiankun Wang",
+        "Cong Wang",
+        "Tianyu He",
+        "Jianxin Li",
+        "Zhibo Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-04T01:01:18+00:00",
+      "link": "https://arxiv.org/pdf/2608.02990v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "Video VAE for efficient and controllable embodied manipulation world models",
+      "llm_evidence_cn": "用于高效可控具身操作世界模型的视频VAE",
+      "llm_evidence": "用于高效可控具身操作世界模型的视频VAE",
+      "canonical_evidence": "用于高效可控具身操作世界模型的视频VAE",
+      "llm_tldr_en": "A novel video VAE providing compact latent representations for robotic manipulation world models.",
+      "llm_tldr_cn": "一种为机器人操作世界模型提供紧凑潜变量表示的新型视频VAE。",
+      "llm_tldr": "一种为机器人操作世界模型提供紧凑潜变量表示的新型视频VAE。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.01066v1",
+      "source": "arxiv",
+      "title": "OC-VLA++: Monocular Geometry-Guided Cross-View Consistency for Viewpoint-Robust Robotic Manipulation",
+      "abstract": "We propose OC-VLA++, an extension of OC-VLA for viewpoint generalization under limited camera coverage. While OC-VLA grounds robot actions in the camera coordinate system to align action supervision with visual observations, camera-space grounding alone can still overfit to the few viewpoints observed during training. OC-VLA++ addresses this limitation by introducing geometry-guided paired-view supervision and an explicit cross-view action-equivariance objective. Given paired observations of the same manipulation scene from geometrically related viewpoints, the model is trained such that their camera-space predictions correspond to the same robot-frame action. This objective explicitly supervises how action predictions should transform across viewpoints, rather than relying solely on image-level augmentation. Experiments demonstrate substantial improvements in unseen-view generalization under limited camera coverage, with performance degrading more gracefully under increasing camera displacement. These results establish cross-view action equivariance as an effective complement to observation-centric action grounding for robust real-world deployment.",
+      "authors": [
+        "Tianyi Zhang",
+        "Ziyang Gong",
+        "Zhenjie Yang",
+        "Zhe Qian",
+        "Haonan Duan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-02T08:06:20+00:00",
+      "link": "https://arxiv.org/pdf/2608.01066v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Focuses on viewpoint-robust robotic manipulation using camera-space grounding and cross-view consistency.",
+      "llm_evidence_cn": "专注于利用相机空间基准和跨视角一致性实现视角鲁棒的机器人操作。",
+      "llm_evidence": "专注于利用相机空间基准和跨视角一致性实现视角鲁棒的机器人操作。",
+      "canonical_evidence": "专注于利用相机空间基准和跨视角一致性实现视角鲁棒的机器人操作。",
+      "llm_tldr_en": "OC-VLA++ improves robotic manipulation robustness across different viewpoints using geometry-guided supervision.",
+      "llm_tldr_cn": "OC-VLA++通过几何引导的监督提高了机器人在不同视角下的操作鲁棒性。",
+      "llm_tldr": "OC-VLA++通过几何引导的监督提高了机器人在不同视角下的操作鲁棒性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2607.28596v1",
+      "source": "arxiv",
+      "title": "FA-RDP: A Frequency-Adaptive Reactive Diffusion Policy for Contact-Rich Manipulation",
+      "abstract": "In contact-rich manipulation, action multimodality and reactivity dominate different stages of a single episode. Before contact, multiple trajectories might be equally valid, making it important to preserve diverse action modes. After contact, geometric constraints and force limits narrow the solution space, while successful execution demands rapid responses to force feedback. However, standard diffusion policies use a fixed inference frequency and sampling steps throughout the episode, forcing a fundamental compromise: low-frequency, multi-step sampling better preserves pre-contact multimodality but responds slowly to force feedback, whereas high-frequency sampling improves reactivity but tends to collapse distinct pre-contact modes. To resolve this tradeoff, we present FA-RDP, a frequency-adaptive reactive diffusion policy. A shared multi-frequency visual-force Transformer predicts action chunks at both low and high frequencies, while a learned multimodality indicator dynamically selects multi-step low-frequency sampling before contact and one-step high-frequency sampling as action ambiguity decreases. We further introduce Manifold Consistency Distillation (MCD), which reparameterizes the diffusion network to predict actions on the robot action manifold while retaining DDPM-based residual supervision. Experiments on three contact-rich manipulation tasks show that FA-RDP achieves the highest success rate while preserving diverse pre-contact trajectory modes. Code and videos are available at https://fa-rdp.github.io.",
+      "authors": [
+        "Lifeng Zhuo",
+        "Wendi Chen",
+        "Han Xue",
+        "Shirun Tang",
+        "Jun Lv",
+        "Cewu Lu",
+        "Chuan Wen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-07-30T17:47:49+00:00",
+      "link": "https://arxiv.org/pdf/2607.28596v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Reactive diffusion policy for contact-rich manipulation tasks",
+      "llm_evidence_cn": "用于接触丰富操作任务的反应式扩散策略",
+      "llm_evidence": "用于接触丰富操作任务的反应式扩散策略",
+      "canonical_evidence": "用于接触丰富操作任务的反应式扩散策略",
+      "llm_tldr_en": "A frequency-adaptive diffusion policy that balances multimodality and reactivity in manipulation.",
+      "llm_tldr_cn": "一种在操作中平衡多模态与反应性的频率自适应扩散策略。",
+      "llm_tldr": "一种在操作中平衡多模态与反应性的频率自适应扩散策略。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.00793v1",
+      "source": "arxiv",
+      "title": "DynamicWAM: Dual-Path Motion Conditioning for World-Action Models in Dynamic Manipulation",
+      "abstract": "Dynamic manipulation requires robots to infer target motion and respond promptly, yet existing World-Action Models (WAMs) typically condition only on the current frame and execute large backbones synchronously, limiting motion awareness and responsive control in dynamic scenes. We propose DynamicWAM, a compact WAM for dynamic object manipulation with dual-path motion conditioning. DynamicWAM introduces history-flow conditioning, encoding temporally aligned optical-flow frames alongside the current observation through a frozen pretrained video VAE to preserve spatial motion structure, while injecting kinematic descriptors of displacement, duration, velocity, and acceleration into the action expert to provide motion magnitude and timing. The two complementary paths are fused through joint world-action attention. A distilled compact backbone and real-time chunking (RTC)-based asynchronous execution further enable responsive control. On DOMINO, DynamicWAM achieves a 38.2% success rate and a 53.2 manipulation score, outperforming all evaluated baselines. Across 12 real-world tasks spanning linear, circular, and compound target motion, it achieves a 46.7% average success rate, exceeding the strongest baseline by 22.9 percentage points.",
+      "authors": [
+        "Yunfan Lou",
+        "Hewen Gao",
+        "Xiyu Zhu",
+        "Zhuoran Qiao",
+        "Xuan Han",
+        "Yifan Yang",
+        "Yifan Ye",
+        "Boxian Yao",
+        "Zhibo Pang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-01T17:49:39+00:00",
+      "link": "https://arxiv.org/pdf/2608.00793v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "dynamic object manipulation with world-action models",
+      "llm_evidence_cn": "使用世界-动作模型的动态物体操作",
+      "llm_evidence": "使用世界-动作模型的动态物体操作",
+      "canonical_evidence": "使用世界-动作模型的动态物体操作",
+      "llm_tldr_en": "DynamicWAM enhances dynamic manipulation by conditioning world-action models on temporal optical flow.",
+      "llm_tldr_cn": "DynamicWAM通过在世界-动作模型中引入时序光流条件，增强了动态操作能力。",
+      "llm_tldr": "DynamicWAM通过在世界-动作模型中引入时序光流条件，增强了动态操作能力。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01102v1",
+      "source": "arxiv",
+      "title": "CAAT: Contact-Aware Attention Scaling and Tactile Masking for Data-Efficient Contact-Rich Manipulation",
+      "abstract": "In contact-rich manipulation, visual observations primarily guide motion in free space, whereas tactile observations become particularly informative during contact. However, standard Transformer-based visuo-tactile policies typically rely on either token concatenation or learnable gating. These approaches lack explicit contact-aware priors, making it difficult to efficiently learn effective cross-modal representations from demonstrations. To address this limitation, we propose CAAT, a lightweight contact-aware framework that explicitly incorporates contact priors through attention scaling and dynamic tactile masking. Specifically, CAAT emphasizes visual information before contact and tactile information during contact. It also suppresses static background tokens by comparing the current tactile observation with a non-contact reference. CAAT can be integrated into commonly used Transformer-based policies without modifying their action decoders. In simulation, integrating CAAT with ACT improves the average success rate by 18.0 percentage points over direct visuo-tactile fusion and by 10.0 percentage points over gated fusion. In real-world experiments using a visuo-tactile UMI platform, CAAT achieves an average success rate of 60.0% across ACT, Diffusion Policy, and $π_0$, outperforming the strongest baseline by an average of 21.1 percentage points. These results demonstrate that explicit contact priors and dynamic tactile masking are effective in improving visuo-tactile policy learning and task performance of diverse policy architectures. https://mrjiangjm.github.io/caat/",
+      "authors": [
+        "Jiaming Jiang",
+        "Yuzhe Huang",
+        "Hao Liang",
+        "Pei Lin",
+        "Shengcheng Luo",
+        "Fanrong Dong",
+        "Jiaping Wu",
+        "Chenxi Xiao",
+        "Wanlin Li",
+        "Ziyuan Jiao"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-02T09:04:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.01102v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "contact-rich manipulation using visuo-tactile policies",
+      "llm_evidence_cn": "使用视觉-触觉策略的丰富接触操作",
+      "llm_evidence": "使用视觉-触觉策略的丰富接触操作",
+      "canonical_evidence": "使用视觉-触觉策略的丰富接触操作",
+      "llm_tldr_en": "CAAT improves contact-rich manipulation by explicitly scaling attention between visual and tactile modalities.",
+      "llm_tldr_cn": "CAAT通过显式缩放视觉和触觉模态间的注意力，提升了接触密集型操作的效率。",
+      "llm_tldr": "CAAT通过显式缩放视觉和触觉模态间的注意力，提升了接触密集型操作的效率。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.01083v1",
+      "source": "arxiv",
+      "title": "Sparse Meets Dense: Correspondence Guided Robotic Manipulation with Rigid-Deformable Interactions",
+      "abstract": "Manipulation involving rigid-deformable interactions, such as hanging clothes or dressing humans, is common in daily life, making it essential for household robots. Compared to single-object manipulation or interactions between rigid bodies, these tasks are particularly challenging due to the rich multi-point contacts and the complex dynamics of the deformable bodies during interaction. Therefore, object-centric representations such as 6D poses or structural points without task-specific information become insufficient for these interactions. In this work, we propose a hybrid correspondence-based representation tailored for rigid-deformable interactions. First, to capture intricate interaction information, we introduce structure-, task-, and interaction-aware sparse keypoints. The keypoints are generated based on the global structures of both rigid and deformable objects, and filtered by their local interaction contacts. However, tracking these sparse keypoints through the interaction remains difficult due to the high-dimensional dynamics of deformable objects. Therefore, we further construct dense correspondences on the deformable objects for accurate keypoint tracking throughout the manipulation. This hybrid design combines the advantages of both representations: sparse keypoints encode rich, task-specific information for fine-grained manipulation, while dense correspondences ensure efficient tracking and generalization to novel deformations, shapes, and scenarios. Together, they enable one-shot transfer to new tasks with minimal demonstrations. Extensive experiments demonstrate the effectiveness and broad applicability of our method.",
+      "authors": [
+        "Ziyu Zhu",
+        "Yue Chen",
+        "Xirui Liang",
+        "Hojin Bae",
+        "Yuran Wang",
+        "Zhen Yuan",
+        "Ruihai Wu",
+        "Hao Dong"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-02T08:33:24+00:00",
+      "link": "https://arxiv.org/pdf/2608.01083v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "robotic manipulation with rigid-deformable interactions and multi-point contacts",
+      "llm_evidence_cn": "具有刚性-柔性交互和多点接触的机器人操作",
+      "llm_evidence": "具有刚性-柔性交互和多点接触的机器人操作",
+      "canonical_evidence": "具有刚性-柔性交互和多点接触的机器人操作",
+      "llm_tldr_en": "Proposes a hybrid correspondence representation for challenging rigid-deformable manipulation tasks.",
+      "llm_tldr_cn": "为具有挑战性的刚性-柔性操作任务提出了一种混合对应表示。",
+      "llm_tldr": "为具有挑战性的刚性-柔性操作任务提出了一种混合对应表示。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.01402v1",
+      "source": "arxiv",
+      "title": "Demystifying When and Why VLAs Fail in Contact-Rich Tasks and How to Fix Them",
+      "abstract": "We address the problem of understanding when and why Vision-Language-Action models struggle with contact-rich manipulation tasks that require precise physical interaction. Prior work has primarily focused on addressing contact failures through force-augmented architectures and training-time regularizers, yet the root causes of these failures remain underexplored. We identify two distinct failure modes underlying this gap. Precision failures are rooted in a flow-matching policy training mismatch, and force failures arise from the distinctive structure of force signals. We address each failure mode with a targeted mechanism and combine them into FACT, which achieves 66% average success rate across five contact-rich tasks against 41% for the best prior baseline, in an evaluation spanning almost 2,500 real-world rollouts.",
+      "authors": [
+        "Carlota Parés-Morlans",
+        "Nils Kuhn",
+        "Isabel Liu",
+        "Alberta Longhini",
+        "Jeannette Bohg"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-02T17:34:19+00:00",
+      "link": "https://arxiv.org/pdf/2608.01402v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "contact-rich manipulation tasks requiring precise physical interaction",
+      "llm_evidence_cn": "需要精确物理交互的接触密集型操作任务",
+      "llm_evidence": "需要精确物理交互的接触密集型操作任务",
+      "canonical_evidence": "需要精确物理交互的接触密集型操作任务",
+      "llm_tldr_en": "FACT addresses precision and force failures in Vision-Language-Action models for contact-rich manipulation.",
+      "llm_tldr_cn": "FACT解决了视觉语言动作模型在接触密集型操作中的精度和力反馈失效问题。",
+      "llm_tldr": "FACT解决了视觉语言动作模型在接触密集型操作中的精度和力反馈失效问题。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.02257v1",
+      "source": "arxiv",
+      "title": "Learning Panorama-Aware VLA for Mobile Manipulation with Whole-Body Teleoperation",
+      "abstract": "Mobile manipulation is a key capability for embodied intelligence, enabling robots to accomplish complex multi-stage tasks in open-world environments. However, mobile manipulation poses two key challenges for vision-language-action (VLA) policies: At the data level, the efficient collection of high-quality whole-body demonstrations demands the coordinated control of both the mobile base and the robotic arms; at the model level, existing VLA models predominantly rely on local camera observations, whose limited field of view hinders global spatial understanding. To address these challenges, we develop a whole-body teleoperation system and a panoramic-aware VLA policy. The system enables coordinated control of a wheeled bimanual robot through a single VR interface and supports the acquisition of a real-world mobile manipulation dataset comprising 5.5 hours of multimodal demonstrations. Building upon this dataset, we propose PanoVLA, a panorama-aware vision-language-action policy for mobile bimanual manipulation. Built upon a Mixture-of-Transformers architecture, PanoVLA introduces global spatial context through dedicated panorama encoding and fusion modules, enabling effective integration of panoramic observations with language instructions and robot states for action generation. Evaluation on four real-world mobile manipulation tasks demonstrates that PanoVLA achieves an average stage completion rate of 91.3\\% and an end-to-end success rate of 73.4\\%, substantially outperforming local-view baselines. These results demonstrate that incorporating panoramic spatial context improves spatial understanding and closed-loop manipulation performance in mobile robots.",
+      "authors": [
+        "Donglin Yang",
+        "Haoran Chen",
+        "Xingyu Chen",
+        "Lixing Liu",
+        "Manyi Li",
+        "Changhe Tu",
+        "Ke Xu",
+        "Xiaojian Ma",
+        "Si Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-03T14:03:26+00:00",
+      "link": "https://arxiv.org/pdf/2608.02257v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "mobile manipulation leveraging panoramic-aware VLA and teleoperation",
+      "llm_evidence_cn": "利用全景感知VLA和遥操作的移动操作",
+      "llm_evidence": "利用全景感知VLA和遥操作的移动操作",
+      "canonical_evidence": "利用全景感知VLA和遥操作的移动操作",
+      "llm_tldr_en": "This paper develops a whole-body teleoperation system and panoramic VLA policy for mobile manipulation.",
+      "llm_tldr_cn": "本文为移动操作开发了全身遥操作系统和全景感知VLA策略。",
+      "llm_tldr": "本文为移动操作开发了全身遥操作系统和全景感知VLA策略。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.03872v1",
+      "source": "arxiv",
+      "title": "EvoHIL: Self-Evolving Reward and Flow-Matched Policy Optimization for Robust Human-in-the-Loop Reinforcement Learning",
+      "abstract": "Human-in-the-loop reinforcement learning (HIL-RL) enables robots to learn contact-rich manipulation from limited real-world interaction, but deployment exposes three coupled limitations: static visual reward models fail under scene changes; independently sampled actions cause temporally inconsistent motion; and vision-based policies remain sensitive to appearance shifts. We present EvoHIL, a unified framework that adapts the reward model, action generator, and visual do main within a staged human-in-the-loop learning process. First, self-evolving reward (SER) adapts the success classifier from human-confirmed positives and provisional weak negatives. Second, Action Flow Stabilization (AFS) generates temporally coherent action chunks through flow matching, grounding policy updates in executed action prefixes and demonstrated behavior. Third, retention-aware offline fine-tuning replays relit interaction data while anchoring the AFS actor-critic to prior behavior, adapting the visual domain without additional robot interaction. Across six manipulation tasks on Franka FR3 and SO-101 arms under a controlled lighting shift, EvoHIL improves task success, agreement with human-confirmation labels, motion smoothness, and completion time relative to human-in-the-loop and imitation baselines.Project page: https://anonymous4366.github.io/EvoHIL/",
+      "authors": [
+        "Shuoqin Zhang",
+        "Tongtong Cheng",
+        "Xiru Gao",
+        "Jinzhuo Peng",
+        "Bin Zheng",
+        "Jiahao Tu",
+        "Ke Wang",
+        "Jia Pan",
+        "Zhe Hu",
+        "Kai Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-04T16:12:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.03872v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "Learning contact-rich manipulation from human-in-the-loop interaction",
+      "llm_evidence_cn": "通过人在回路的交互学习接触丰富的操作任务",
+      "llm_evidence": "通过人在回路的交互学习接触丰富的操作任务",
+      "canonical_evidence": "通过人在回路的交互学习接触丰富的操作任务",
+      "llm_tldr_en": "A framework for robust human-in-the-loop reinforcement learning for contact-rich manipulation.",
+      "llm_tldr_cn": "一种用于接触丰富操作任务的鲁棒人在回路强化学习框架。",
+      "llm_tldr": "一种用于接触丰富操作任务的鲁棒人在回路强化学习框架。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

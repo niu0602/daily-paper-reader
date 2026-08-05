@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-001.webp",
+      "caption": "Fig. 4: Dexterous manipulation tasks can be partitioned into action phases and subgoals of the overall task.",
+      "page": 6,
+      "index": 1,
+      "width": 529,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-002.webp",
+      "caption": "Fig. 6: Performance metrics and subjective ratings reported in the unimanual evaluation study. Sensory haptic feedback is mostly preferred by participants due to its high realism and average grasp force reduction.",
+      "page": 11,
+      "index": 2,
+      "width": 1062,
+      "height": 772
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-003.webp",
+      "caption": "Fig. 1: Semantic haptic feedback utilizes symbolic haptic patterns to communicate discrete, abstract information regarding critical robot and object states.",
+      "page": 2,
+      "index": 3,
+      "width": 968,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-004.webp",
+      "caption": "Fig. 7: Performance metrics and subjective ratings reported in the bimanual evaluation study. Semantic haptic feedback is found to be most effective by reducing physical demand and effort while improving state awareness and dexterity.",
+      "page": 14,
+      "index": 4,
+      "width": 1062,
+      "height": 762
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-005.webp",
+      "caption": "TABLE I: Tactile feedback modalities, input sensors, output devices, and mappings in robot arm teleoperation, grouped by modality. Papers spanning multiple modalities appear in each applicable row. The last row summarizes the semantic haptic approach proposed in this work.",
+      "page": 3,
+      "index": 5,
+      "width": 1102,
+      "height": 442
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-006.webp",
+      "caption": "Fig. 2: Semantic haptic teleoperation pipeline. Real-time physics engine feeds fingertip contact-rich information to state estimation algorithms to detect critical events of robot state changes. A semantic router maps the events into confirmation and exception messages sent to multimodal pneumatic and vibrotactile wristbands, with custom waveforms such as ramp-up and ”Geiger Effect”. A visual overlay on the gripper serves as a baseline.",
+      "page": 4,
+      "index": 6,
+      "width": 1070,
+      "height": 388
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-007.webp",
+      "caption": "Fig. 5: Performance metrics and subjective ratings reported in the semantic haptics comparison study. The combination of [Air+Vib] is unanimously preferred by participants, effectively reducing frustration and improving events and state awareness.",
+      "page": 9,
+      "index": 7,
+      "width": 1061,
+      "height": 776
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02780v1/fig-008.webp",
+      "caption": "Fig. 3: Teleoperation setup and interaction scenes built using the simulation environment for the evaluation studies.",
+      "page": 5,
+      "index": 8,
+      "width": 1076,
+      "height": 417
+    }
+  ]
+}

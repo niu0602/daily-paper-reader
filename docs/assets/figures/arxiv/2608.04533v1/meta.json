@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-001.webp",
+      "caption": "Figure 1: Task-oriented affordance formulation. A complex task unfolds as a sequence of state-dependent actions. Given the task goal and the current egocentric observation (purple box), the objective is to infer the remaining plan, and grounds three participating components of the next step at part level: the direct object being manipulated, the instrument used to act on it, and the destination receiving the object or transferred material.",
+      "page": 1,
+      "index": 1,
+      "width": 452,
+      "height": 474
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-002.webp",
+      "caption": "Table 1: Comparison on the full task. Bold and underlined entries indicate the best and second-best results, respectively. F.P. denotes Flash Preview. For VLM + SAM2 models, only the VLM names are provided for brevity. * marks models that do not reliably return all three role-specific masks in a single forward pass.",
+      "page": 6,
+      "index": 2,
+      "width": 506,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-003.webp",
+      "caption": "Figure 6: Qualitative comparisons between automatic annotations and human corrections.",
+      "page": 11,
+      "index": 3,
+      "width": 477,
+      "height": 404
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-004.webp",
+      "caption": "Figure 8: Semantic diversity of the generated EgoAfford corpus. The upper-left panel visualizes the action (orange) and object (blue) vocabularies; the upper-right panel shows their rank–frequency distributions. The lower-left panel reports action–object co-occurrence, with cell values giving observed counts and color indicating the within-action share. The lower-right panel shows how frequent object concepts are distributed across direct-object (O), instrument (I), and destination (D) roles.",
+      "page": 15,
+      "index": 4,
+      "width": 1002,
+      "height": 495
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-005.webp",
+      "caption": "Figure 9: Full prompt template used by EgoLens.",
+      "page": 15,
+      "index": 5,
+      "width": 1044,
+      "height": 639
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-006.webp",
+      "caption": "Figure 2: Overview of EgoAfford and EgoLens. EgoAfford constructs a dataset by decomposing complex tasks into action steps and generating corresponding semantically aligned images with part-level mask annotations. Given an egocentric observation and a complex task, EgoLens predicts the remaining plan and grounds the direct object, instrument, and destination of the next action at the part level.",
+      "page": 2,
+      "index": 6,
+      "width": 1002,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-007.webp",
+      "caption": "Figure 5: Qualitative comparisons between EgoLens and baseline methods. GT Candidate shows the ground-truth mask set selected by the multi-reference evaluation, together with its corresponding action description.",
+      "page": 7,
+      "index": 7,
+      "width": 492,
+      "height": 658
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-008.webp",
+      "caption": "Figure 16: Scene-by-scene visualization of a selected subset of the EgoAfford test split. The complete test split contains 100 scenes and 488 images; only selected scenes are shown for readability.",
+      "page": 22,
+      "index": 8,
+      "width": 994,
+      "height": 1285
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-009.webp",
+      "caption": "Figure 7: Dataset statistics. O, I , and D denote the direct object, instrument, and destination, respectively. Mask areas are computed over non-empty masks and normalized by image area.",
+      "page": 14,
+      "index": 9,
+      "width": 970,
+      "height": 349
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-010.webp",
+      "caption": "Figure 13: Full-task prompt template used by LENS.",
+      "page": 18,
+      "index": 10,
+      "width": 1044,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-011.webp",
+      "caption": "Figure 3: Generation and annotation pipeline. Left: LLMgenerated scenarios and objects are expanded into multi-step tasks and step-aligned images. Right: Grounded-SAM localizes objects, GPT-5.5 selects role-specific point prompts, and SAM2 produces part-level masks. All samples undergo human review.",
+      "page": 4,
+      "index": 11,
+      "width": 500,
+      "height": 577
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-012.webp",
+      "caption": "Figure 12: Full-task prompt template used by UniPixel.",
+      "page": 17,
+      "index": 12,
+      "width": 1044,
+      "height": 389
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-013.webp",
+      "caption": "Figure 11: Full-task prompt template used by Sa2VA.",
+      "page": 17,
+      "index": 13,
+      "width": 1044,
+      "height": 681
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-014.webp",
+      "caption": "Figure 15: Complete scene-by-scene visualization of EgoAfford-Real.",
+      "page": 20,
+      "index": 14,
+      "width": 994,
+      "height": 1288
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-015.webp",
+      "caption": "Figure 4: Architecture of EgoLens. Given a scene image and main task, the Qwen2.5-VL backbone jointly generates the remaining plan and textual predictions for the next action components. Learnable grounding queries are passed through three role-specific decoders, which condition SAM2 to predict part-level masks for the direct object (Mo), instrument (Ms), and destination (Md).",
+      "page": 5,
+      "index": 15,
+      "width": 498,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04533v1/fig-016.webp",
+      "caption": "Figure 10: Full prompt template used by the commercial-VLM–SAM2 pipelines.",
+      "page": 16,
+      "index": 16,
+      "width": 1044,
+      "height": 744
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.01381v1/fig-001.webp",
+      "caption": "Figure 1: Overview of DreamTrajectory. A trajectory-guided VLA jointly predicts a planned end-effector trajectory and an initial whole-body action chunk. At test time, the DreamTrajectory Refiner refines the initial action chunk before execution based on the planned trajectory.",
+      "page": 2,
+      "index": 1,
+      "width": 1052,
+      "height": 330
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01381v1/fig-002.webp",
+      "caption": "Table 1: Methodological comparison of trajectory-guided policies, action-conditioned world models, and DreamTrajectory. The comparison concerns methodology rather than quantitative performance.",
+      "page": 3,
+      "index": 2,
+      "width": 1053,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01381v1/fig-003.webp",
+      "caption": "Figure 2: Test-time action refinement in DreamTrajectory. Candidate actions are sampled around the initial action, and the trajectory world model predicts their induced trajectories. The candidates are ranked according to planned–induced trajectory consistency and action smoothness, and the highest-scoring candidate is executed.",
+      "page": 3,
+      "index": 3,
+      "width": 1052,
+      "height": 324
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01381v1/fig-004.webp",
+      "caption": "Table 2: Success rates (%) on the MS-HAB simulator. Each method is evaluated for 100 episodes per task.",
+      "page": 5,
+      "index": 4,
+      "width": 1002,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01381v1/fig-005.webp",
+      "caption": "Figure 3: Simulated and real-world mobile manipulation tasks. All tasks require coordinated base and arm motion.",
+      "page": 5,
+      "index": 5,
+      "width": 1054,
+      "height": 333
+    }
+  ]
+}

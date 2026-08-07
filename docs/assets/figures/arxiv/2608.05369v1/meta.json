@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-001.webp",
+      "caption": "Figure 6: Overview of the W2-CoT annotation pipeline. State-action transitions and synchronized visual context first define candidate trajectory segments. Each segment is grounded with physical and visual evidence before structured VLM proposal generation. Deterministic consistency checks enforce gripper-state consistency, release preconditions, wrist locality, and temporal consistency. The verified segment annotations are then languagenormalized and expanded into frame-level Subtask, Reasoning, and Wrist supervision.",
+      "page": 15,
+      "index": 1,
+      "width": 944,
+      "height": 471
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-002.webp",
+      "caption": "Figure 1: We propose W2-VLA, a vision-language-action model for fine-grained robot manipulation based on task-conditioned future wrist modeling. Conventional methods generate actions conditioned on current multi-view observations and a language instruction, whereas W2-VLA additionally predicts future wrist latents by combining a task-conditioned interface with wrist history.",
+      "page": 2,
+      "index": 2,
+      "width": 948,
+      "height": 517
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-003.webp",
+      "caption": "Figure 12: Efficiency comparison. Mean standard-condition success rate is plotted against generated actions per second, while bubble area represents the total number of model parameters. The generated-actions-per-second metric is computed as the action-chunk length divided by the latency for generating one complete chunk.",
+      "page": 22,
+      "index": 3,
+      "width": 546,
+      "height": 400
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-004.webp",
+      "caption": "Figure 11: Attention weights from latent modeling tokens to image tokens. We visualize how latent modeling tokens attend to main- and wrist-view image tokens over three task rollouts, and pair the maps with Subtask/Reasoning/Wrist descriptions decoded from the full VLM context for semantic interpretation. The maps use direct final-layer post-softmax weights averaged over all 32 heads and 16 latent modeling tokens; no gradients or attention rollout are used. Brighter regions indicate higher relative attention within each independently normalized panel.",
+      "page": 22,
+      "index": 4,
+      "width": 946,
+      "height": 488
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-005.webp",
+      "caption": "Figure 5: Latent modeling token attention over multi-view observations. Attention maps are shown over mainand wrist-view image tokens across manipulation stages. For semantic interpretation, the VLM language head decodes structured Subtask/Reasoning/Wrist descriptions; the CoT decoding is only for visualization.",
+      "page": 10,
+      "index": 5,
+      "width": 946,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-006.webp",
+      "caption": "Figure 8: Training and inference information-flow masks. During training, structured annotation targets provide auxiliary next-token prediction supervision, while prompt-formatting and annotation-target states are excluded from the DiT action context. The action head is conditioned on visual, instruction, and latent modeling states together with the future-aware wrist context produced by the adapter. At inference, no annotation sequence is decoded, and the same deployable action context is used.",
+      "page": 18,
+      "index": 6,
+      "width": 679,
+      "height": 476
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-007.webp",
+      "caption": "Figure 13: Rollout Examples in Real-World Tasks. We show three OOD settings: 1) Table Clutter, 2) Random Lighting Perturbations, and 3) Background Variations.",
+      "page": 23,
+      "index": 7,
+      "width": 945,
+      "height": 1015
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-008.webp",
+      "caption": "Figure 3: Real-world performance under standard and OOD conditions. Solid bars report success rates using the left axis, while hatched bars report average progress scores using the right axis. Higher values indicate better performance for both metrics shown in the figure.",
+      "page": 8,
+      "index": 8,
+      "width": 940,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-009.webp",
+      "caption": "Figure 2: Overview of W2-VLA. 1⃝ The VLM contextualizes latent modeling tokens using current multi-view observations and an instruction, forming a fixed-length task-conditioned interface jointly shaped by W2-CoT annotation supervision, future wrist prediction, and action generation objectives. 2⃝ Conditioned on this interface and wrist-history features encoded by V-JEPA 2.1, a predictor forecasts future wrist latents, which a lightweight adapter converts into future-aware wrist context for flow-matching action generation. Future wrist clips are encoded only to form training targets, and inference requires no W2-CoT decoding.",
+      "page": 4,
+      "index": 9,
+      "width": 943,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-010.webp",
+      "caption": "Figure 9: Real-world Experiments Setup.",
+      "page": 19,
+      "index": 10,
+      "width": 950,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-011.webp",
+      "caption": "Figure 4: Real-world task rollouts. #1 Table Cleaning requires long-horizon object collection and wiping. #2 Occluded Placement requires the robot to route around an obstacle before local grasping and placement. #3 Bimanual Plug Insertion requires fine-grained action, one arm to stabilize the power strip while the other aligns and inserts the plug.",
+      "page": 9,
+      "index": 11,
+      "width": 950,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-012.webp",
+      "caption": "Table 4: Ablation studies on LIBERO. (a) Component contributions. (b) Interface design and inference latency. (c) Future-view prediction targets. Average success is reported across four suites; bold denotes the best result in each panel.",
+      "page": 9,
+      "index": 12,
+      "width": 894,
+      "height": 587
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-013.webp",
+      "caption": "Figure 10: Effectiveness of the wrist predictor. Chunk-level latent prediction quality measured by cosine similarity and mean squared error.",
+      "page": 20,
+      "index": 13,
+      "width": 900,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05369v1/fig-014.webp",
+      "caption": "Figure 7: Word-cloud visualization of the W2-CoT annotations. Rows correspond to datasets, and columns correspond to Subtask, Reasoning, Wrist, and Full CoT. Word size is proportional to token frequency.",
+      "page": 16,
+      "index": 14,
+      "width": 933,
+      "height": 342
+    }
+  ]
+}

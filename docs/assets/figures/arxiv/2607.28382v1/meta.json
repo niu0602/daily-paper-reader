@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.28382v1/fig-001.webp",
+      "caption": "Fig. 3: Inner-Category Correspondence Visualization.",
+      "page": 5,
+      "index": 1,
+      "width": 525,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28382v1/fig-002.webp",
+      "caption": "Fig. 8: Correspondence visualizations for real-world objects.",
+      "page": 7,
+      "index": 2,
+      "width": 525,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28382v1/fig-003.webp",
+      "caption": "Fig. 7: Real-world manipulation visualization. From left to right: Task 1, 2, 3, 4, and 5. For each task, a manipulation demonstrated on a source object (left) is transferred to a target object (right) using the calculated dense correspondence, visualized in the second row; The remaining rows show key frames of the source demonstration and the transferred execution.",
+      "page": 7,
+      "index": 3,
+      "width": 1076,
+      "height": 503
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28382v1/fig-004.webp",
+      "caption": "Fig. 2: Overview of the proposed SemAnCorr framework. To capture rich semantic representations, SemAnCorr extracts semantic embeddings using pretrained models and lifts them into 3D, and then used to identify semantic clusters (Section IV-A, red box); Corresponding anchor regions are selected through joint semantic-geometric optimization (Section IV-B, green box), which constrain a functional map (Section IV-C, blue box) to produce smooth, dense correspondences.",
+      "page": 3,
+      "index": 4,
+      "width": 1076,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2607.28382v1/fig-005.webp",
+      "caption": "Fig. 5: Category-level anchor confidence scores. Withincategory pairs (diagonal) score highest, while functionallyrelated categories score higher than less similar categories.",
+      "page": 6,
+      "index": 5,
+      "width": 529,
+      "height": 287
+    }
+  ]
+}

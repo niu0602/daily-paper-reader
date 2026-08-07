@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.05215v1/fig-001.webp",
+      "caption": "Fig. 3. Visual affordance prediction results in the wild. We show visual affordance predictions from VLAff and baseline methods on diverse manipulation scenarios. VLAff demonstrates superior localization of interaction regions compared to existing methods.",
+      "page": 6,
+      "index": 1,
+      "width": 1045,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05215v1/fig-002.webp",
+      "caption": "Fig. 2. VLAff model architecture showing the integration of vision encoder, VLM, and specialized decoders for visual, grasp, and trajectory affordance prediction.",
+      "page": 4,
+      "index": 2,
+      "width": 1000,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05215v1/fig-003.webp",
+      "caption": "Fig. 1. We present VLAff, a Vision-Language-Affordance model that learns actionable affordances such as visual, grasp, trajectory from large-scale egocentric human videos to enable robot manipulation across diverse tasks.",
+      "page": 2,
+      "index": 3,
+      "width": 1052,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05215v1/fig-004.webp",
+      "caption": "TABLE I COMPARISON OF AFFORDANCE-RELATED DATASETS. OUR EGOAFFORDANCE DATASET UNIQUELY PROVIDES COMPREHENSIVE ACTIONABLE AFFORDANCES INCLUDING VISUAL AFFORDANCE MASKS, HAND POSE ANNOTATIONS, AND CAMERA TRAJECTORIES, EXTRACTED FROM LARGE-SCALE EGOCENTRIC HUMAN VIDEOS. FRAME INDICATES THE TOTAL NUMBER OF FRAMES, INST (ACT) DENOTES THE NUMBER OF INSTANCES OR ACTIONS, AND OBJ REPRESENTS THE NUMBER OF OBJECT CATEGORIES.",
+      "page": 2,
+      "index": 4,
+      "width": 1040,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05215v1/fig-005.webp",
+      "caption": "TABLE III ZERO-SHOT MANIPULATION PERFORMANCE. SUCCESS RATES AVERAGED OVER 10 TRIALS PER TASK. SIM (T01-T10): T01: OPEN HINGE CABINET, T02: OPEN SLIDE CABINET, T03: OPEN MICROWAVE, T04: CLOSE MICROWAVE, T05: PICK UP KETTLE, T06: OPEN DISH WASHER, T07: LIFT LID, T08: PULL DRAWER, T09: CLOSE HINGE CABINET, T10: TURN FAUCET. REAL (T11-T15): T11: OPEN DRAWER, T12: PICK UP BUCKET, T13: OPEN POT LID, T14: TAKE PAN, T15: PICK UP KETTLE.",
+      "page": 7,
+      "index": 5,
+      "width": 1031,
+      "height": 194
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-001.webp",
+      "caption": "Fig. 1. Existing VLA deployments execute actions in an open-loop manner and lack mechanisms for error handling, long horizon consistency, and domain generalization. ROBOBRIDGE wraps an action generating policy with modular perception, planning, monitoring, and robot interface components to close the loop with feedback and enable robust execution.",
+      "page": 1,
+      "index": 1,
+      "width": 462,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-002.webp",
+      "caption": "TABLE I PERFORMANCE COMPARISON IN LIBERO.",
+      "page": 6,
+      "index": 2,
+      "width": 508,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-003.webp",
+      "caption": "TABLE II PERFORMANCE COMPARISON IN ROBOCASA.",
+      "page": 6,
+      "index": 3,
+      "width": 508,
+      "height": 702
+    },
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-004.webp",
+      "caption": "Fig. 2. Overall framework of ROBOBRIDGE. The Perceptor updates an object centric scene state asynchronously, and the Planner generates reactive primitive skills with divergence triggered replanning. The Controller executes primitives with an action generating policy, while the Robot Interface abstracts robot specific APIs. A two-phase Monitor performs success checking and failure diagnosis, invoking hierarchical recovery such as retry, regenerate, replan, and re-perceive.",
+      "page": 2,
+      "index": 4,
+      "width": 1002,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-005.webp",
+      "caption": "Fig. 5. Real-world execution traces with ROBOBRIDGE (GR00T-N1.5 controller). Each task is shown in the training environment (top) and an unseen environment (bottom). The Monitor detects execution failures and triggers recovery during rollout (red boxes), enabling the agent to resume progress and complete the task (green boxes). The same monitoring and recovery behavior transfers across environment changes without additional adaptation.",
+      "page": 7,
+      "index": 5,
+      "width": 1002,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2607.27881v1/fig-006.webp",
+      "caption": "Fig. 6. Observation of two dominant failure modes (perception errors and unrecoverable manipulation failures) in simulation and real-world. These cases highlight the need to improve reliability by strengthening perception robustness under occlusion and introduction of explicit verification and validation for contact rich behaviors.",
+      "page": 7,
+      "index": 6,
+      "width": 512,
+      "height": 375
+    }
+  ]
+}

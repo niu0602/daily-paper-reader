@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04589v1/fig-001.webp",
+      "caption": "Figure 5. Overview of Reflective Dialogue [64]. Support examples are grouped by domain and question type and converted into multiturn conversations between a Teacher and a Solver. These dialogues contain correctness feedback, visual grounding explanations, and contrastive reflections on incorrect predictions. At inference time, the corresponding dialogue is retrieved and prepended to the test question as static context.",
+      "page": 6,
+      "index": 1,
+      "width": 1032,
+      "height": 560
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04589v1/fig-002.webp",
+      "caption": "Figure 1. EgoCross task examples. The challenge covers professional and non-daily egocentric domains, including surgery, industry, extreme sports, and animal perspectives, with each question categorized by its corresponding task type.",
+      "page": 2,
+      "index": 2,
+      "width": 1022,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04589v1/fig-003.webp",
+      "caption": "Figure 4. Overview of OmniEgo-R2 [62]. The framework transforms each egocentric VQA sample into a unified routed reasoning pipeline consisting of Temporal Evidence Normalization, Capability-Oriented Routing, Role-Decomposed Reasoning, and Boundary-Aware Option Verification. Domain-specific semantics are incorporated as interchangeable semantic bases within the shared reasoning architecture.",
+      "page": 5,
+      "index": 3,
+      "width": 1034,
+      "height": 364
+    }
+  ]
+}

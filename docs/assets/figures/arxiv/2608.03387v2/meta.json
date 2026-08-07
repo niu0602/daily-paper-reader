@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.03387v2/fig-001.webp",
+      "caption": "Figure 1: RoboReact distills a generated interaction video into an object-centric whole-body manipulation skill.",
+      "page": 1,
+      "index": 1,
+      "width": 496,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03387v2/fig-002.webp",
+      "caption": "Table 1: Quantitative comparisons across four long-horizon whole-body manipulation tasks. We report step-wise success rates, task success rates (SR), and the average completed task length (Avg. Len.). Bold entries denote the best-performing method.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 328
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03387v2/fig-003.webp",
+      "caption": "Figure 5: Each four-frame sequence shows contact with the lid, the fully opened box after releasing the lid, a stable object grasp, and release of the object inside the box.",
+      "page": 7,
+      "index": 3,
+      "width": 1052,
+      "height": 200
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03387v2/fig-004.webp",
+      "caption": "Figure 2: Overview of RoboReact. A VLM-selected generated video is compiled into an object-centric keyframe policy, refined from calibration rollouts, and executed through online object-pose re-grounding without test-time VLM access.",
+      "page": 3,
+      "index": 4,
+      "width": 1052,
+      "height": 469
+    }
+  ]
+}

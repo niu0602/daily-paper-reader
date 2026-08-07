@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-001.webp",
+      "caption": "Figure 3. Dynamic Affordance Trajectory. A diffusion model predicts future SE(3) poses (green) from the tracked pose history (blue). Propagating the anchor contact point through them, 𝑝𝑡+𝑘 = T𝑡+𝑘 𝑐𝑡𝑔𝑡 , yields the affordance trajectory 𝜏.",
+      "page": 6,
+      "index": 1,
+      "width": 448,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-002.webp",
+      "caption": "Table 3. Real-world results on UR7e. Success counts (out of 30 trials) on four manipulation tasks, comparing against DP3, AffordDP, and SPOT baselines. Avg. SR (%) reports the overall success rate across all 120 trials per method. Bold denotes our full method.",
+      "page": 11,
+      "index": 2,
+      "width": 781,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-003.webp",
+      "caption": "Figure 1. Overview of AffordTrajDP and comparison with previous methods. (a) Prior pipelines retrieve a static contact point that never updates as the object moves. (b) AffordTrajDP propagates it into a time-varying trajectory that continuously conditions the policy, yielding the best ManiSkill3 success rate (70.0% vs. 52.2–62.1%) and the largest real-world gains (76.7%/55.6% vs. 43.3%/26.7% for DP3 on seen/unseen instances), while generalizing across embodiments, precision insertion, and cluttered scenes.",
+      "page": 2,
+      "index": 3,
+      "width": 950,
+      "height": 439
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-004.webp",
+      "caption": "Figure 6. Per-episode-step error analysis (StackCube, 10 held-out trajectories). Top: pose-trajectory prediction error at each future step 𝑘 = 1, . . . , 4 under FoundationPose-estimated history, evaluated at every episode step 𝑡. Bottom: FoundationPose’s own tracking error at each episode step 𝑡.",
+      "page": 10,
+      "index": 4,
+      "width": 694,
+      "height": 484
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-005.webp",
+      "caption": "Table 1. Simulation results on ManiSkill3. Success rates (%, mean± std over 5 seeds × 30 trials) on six tabletop manipulation tasks. We use 30 demonstrations for PickCube, StackCube, PokeCube, and PushCube, and 50 for PegInsertion and PlugCharger. All methods share identical demonstrations and hyperparameters. Bold denotes the best result per column.",
+      "page": 8,
+      "index": 5,
+      "width": 966,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2608.01603v1/fig-006.webp",
+      "caption": "Figure 2. Pipeline. Overview. This figure illustrates how AffordTrajDP transfers a static affordance and propagates it into the future to obtain a dynamic affordance trajectory. Given an RGB-D observation, AffordTrajDP first retrieves the most similar object instance from the affordance memory and transfers its static affordance to the target object. In parallel, the pose trajectory generation module takes the current estimated 6D pose as input and predicts a future SE(3) pose trajectory. Then, we generate the dynamic affordance trajectory by propagating the transferred static affordance through the predicted pose trajectory via 6D rigid transformations, producing a dynamic affordance trajectory that conditions the downstream diffusion policy for action generation.",
+      "page": 4,
+      "index": 6,
+      "width": 950,
+      "height": 497
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.02545v1/fig-001.webp",
+      "caption": "Figure 1: Overview of the proposed pipeline. (1) Set-based training: an observation is mapped through the frozen vision encoder and bottleneck to a representation z. The calibrated bottleneck set Bϵ(z) = ⟨z, ϵIm⟩ is propagated through the Visionto-Action Flow Matching Policy (VITA) (Gao et al. 2026) variant to obtain an output zonotope enclosing the actions reachable from that set. The objective reduces the enclosure width while preserving imitation performance. (2) Calibration: the trained policy evaluates nominal and camera-pose-perturbed observations. Their rollout-level action deviations are calibrated using split conformal prediction to obtain the probabilistic reachable-action radius q. (3) Probabilistic reachable-action verification: for a new camera pose sampled from the prescribed distribution, q upper-bounds the rollout-level deviation from the nominal action block with finite-sample marginal coverage at least 1− α.",
+      "page": 2,
+      "index": 1,
+      "width": 890,
+      "height": 560
+    }
+  ]
+}

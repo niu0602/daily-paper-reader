@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00652v1/fig-001.webp",
+      "caption": "Fig. 5: Number of frames per scene. The number of frames within each scene.",
+      "page": 6,
+      "index": 1,
+      "width": 990,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00652v1/fig-002.webp",
+      "caption": "Fig. 1: Virtual placement. Examples from our benchmark combining all three placement tasks in a single visualization: (a) a synthetic scene and (b) a real one. The tasks include (1) 2D Panel Placement, (2) Sitting Suggestion, and (3) TV Placement. Both are annotated with binary placement maps (white = placeable, black = non-placeable), and a VLM generates per-frame text descriptions including object characteristics and positions.",
+      "page": 2,
+      "index": 2,
+      "width": 1054,
+      "height": 199
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00652v1/fig-003.webp",
+      "caption": "Fig. 2: Ground truth example. Each frame was annotated separately for each task. (a) The original RGB image. (b) The only plausible place to place a 2D-Panel is on the desk at the bottom left corner of the image. (c) A person would sit on the couch. (d) The TV should be placed high enough over the wall and in front of the couch to enable comfortable watching.",
+      "page": 4,
+      "index": 3,
+      "width": 910,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00652v1/fig-004.webp",
+      "caption": "Fig. 4: Example VP task prompts and scene description. The questions posed to LLaVA for the VP annotations and the text description of each frame.",
+      "page": 5,
+      "index": 4,
+      "width": 986,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00652v1/fig-005.webp",
+      "caption": "Fig. 3: Annotation examples. Each task is shown with 4 manually annotated frames (a), followed by one automatically generated annotation (b), and one 3D point cloud annotation (c) reprojected from the annotated frames. The manual annotations highlight the high quality and precision of the human tagging. The automatic tagging is a bit less precise, as it covers entire objects.",
+      "page": 5,
+      "index": 5,
+      "width": 1007,
+      "height": 518
+    }
+  ]
+}

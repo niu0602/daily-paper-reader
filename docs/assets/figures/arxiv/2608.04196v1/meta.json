@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04196v1/fig-001.webp",
+      "caption": "Table 1 Real-world evaluation on dexterous manipulation tasks (RQ1). Sub-task scores (0–1) are mean±std over 10 trials (2 rounds × 5). Total = composite score; Success Rate = Total / max×100%. Best in bold. ∆ = SiMDex − GR-Dexter [47], the identical model trained with an equal amount of randomly sampled human data.",
+      "page": 7,
+      "index": 1,
+      "width": 854,
+      "height": 438
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04196v1/fig-002.webp",
+      "caption": "Figure 3 Data scaling ablation (RQ2). (a) Overall SR vs. robot-data scale: SiMDex sustains a stable floor (∼57–58%) while the baseline drops sharply with less data (largest gain +17.2 at 0.5×). (b--d) Per-task SR (∆ above bars). Drill reverses sign—SiMDex helps under scarce robot data but trails when it is abundant. All results use a single round, so the 1× column differs slightly from Table 1 (two-round average).",
+      "page": 7,
+      "index": 2,
+      "width": 967,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04196v1/fig-003.webp",
+      "caption": "Figure 2 Overview of SiMDex evaluation tasks. We evaluate on three dexterous manipulation tasks: Task I: Drill (grasp, assemble, drill), Task II: Flick Wheel (grasp, twist, flick), and Task III: Pick & Place (grasp and place 4 objects with diverse geometries). Red annotations indicate key sub-task stages and target objects.",
+      "page": 6,
+      "index": 3,
+      "width": 982,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04196v1/fig-004.webp",
+      "caption": "Figure 1 Overview of the SiMDex pipeline. Given robot demonstrations (anchors, top) and a large-scale pool of egocentric human candidates (target, bottom), SiMDex retrieves similar human samples through a three-stage cascade of increasing computational cost (denoted by deepening shades). Stage I (Recall) broadly retrieves candidates via language and hand-pose similarity. Stage II (Ranking) scores candidates by fine-grained motion similarity—wrist trajectory (wrist position along the orange path), wrist rotation (purple arc), and finger trajectory (colored fingertip dots); its deduplicated output forms the mined subset used for VLA training. Stage III (Re-ranking) provides an embodiment-agnostic verification via optical flow. Red arrows denote candidate comparison.",
+      "page": 4,
+      "index": 4,
+      "width": 921,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04196v1/fig-005.webp",
+      "caption": "Figure 4 Qualitative visualization of the SiMDex three-stage retrieval pipeline.",
+      "page": 8,
+      "index": 5,
+      "width": 877,
+      "height": 499
+    }
+  ]
+}

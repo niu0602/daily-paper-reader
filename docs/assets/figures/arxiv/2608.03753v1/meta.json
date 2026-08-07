@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.03753v1/fig-001.webp",
+      "caption": "Fig. 1. GORDON, our object-centric reward learning framework. Raw-image rewards may be distracted by spurious visual cues and transfer poorly to reinforcement learning. Conversely, using object-centric graphs, our method focuses on task-relevant objects and relations, learns a subtask-aware reward that tracks semantic progress, and transfers effectively to policy learning.",
+      "page": 1,
+      "index": 1,
+      "width": 473,
+      "height": 302
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03753v1/fig-002.webp",
+      "caption": "TABLE I FULL-TASK SUCCESS RATE (%). VALUES ARE MEAN ± STD OVER FIVE SEEDS; † INDICATES ROBOHORIZON RESULTS REPORTED IN [21]. GREEN ∆ DENOTES AVERAGE LONG-HORIZON IMPROVEMENT OVER THE STRONGEST ALTERNATIVE.",
+      "page": 6,
+      "index": 2,
+      "width": 1076,
+      "height": 188
+    },
+    {
+      "url": "assets/figures/arxiv/2608.03753v1/fig-003.webp",
+      "caption": "Fig. 3. Automatic subtask discovery and sequential policy training for longhorizon tasks, using PUTSHOESINBOX as example task. The learned full-task reward is used to identify stage transitions and segment demonstrations into subtasks. Each segment is used to train a subtask-specific reward and policy, which are composed sequentially at deployment according to task progress.",
+      "page": 4,
+      "index": 3,
+      "width": 468,
+      "height": 489
+    }
+  ]
+}

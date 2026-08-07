@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.00600v2/fig-001.webp",
+      "caption": "Fig. 5. The Quality Ratio Across the Descriptor Set. We plot the executed risk-adjusted margin against the stored descriptor margin for every evaluated grasp, colored by class as in Table I, with the diagonal r = 1. Two grasps fall below the axis range, and we draw them at the bottom edge with their executed margins ε (β) exec labeled next to them.",
+      "page": 11,
+      "index": 1,
+      "width": 416,
+      "height": 397
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v2/fig-002.webp",
+      "caption": "Fig. 7. Field Execution Through Contact and Lift. We plot the clearance field that the obstacle, wall, and object constraints induce over the workspace at the four mode transitions of a two-obstacle trial, with the executed palm path colored by our grasp field value dG. The band below plots the per-step series, the field decrease through REACH, the rise after the switch to the stored closure through CLOSE, the number of contacts with its return to CLOSE, and the minimum barrier constraint together with the obstacle constraints, nonnegative throughout apart from the single home-posture hull-overlap pair that the filter drives positive per Theorem V.1.",
+      "page": 13,
+      "index": 2,
+      "width": 1070,
+      "height": 658
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v2/fig-003.webp",
+      "caption": "TABLE III CONTROLLER PARAMETERS FOR THE VERIFICATION TRIALS",
+      "page": 12,
+      "index": 3,
+      "width": 446,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2608.00600v2/fig-004.webp",
+      "caption": "Fig. 6. Per-Step Margins from the Offline Evaluation. We plot the realized risk-adjusted margin per control step for two executions, with the mode bands shaded. (a) On the cluttered tabletop scene, the margin enters HOLD at 4.06× 10−3 and never falls below 3.80× 10−3 at every control step through the lift, a worst deviation of 2.6× 10−4, 0.013 of the kwq = 0.02 tolerance of Proposition V.1. (b) On an object behind the column pair of Fig. 1(b), the realized margin falls during the hold on a contact change. The quality-neutral program proceeds through the drop and completes the lift at ε(β) = −0.013, below the closure certificate, while with our constraint enforced, the program turns infeasible at the drop, the transition to LIFT never occurs, and the trial stops in HOLD.",
+      "page": 12,
+      "index": 4,
+      "width": 1062,
+      "height": 376
+    }
+  ]
+}

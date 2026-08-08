@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-001.webp",
+      "caption": "Figure 1 We propose a paradigm that learns from heterogeneous cross-embodiment data. Our DyPES-VLA learns shared dynamics priors and embodiment-specific control. The former is supervised by a future generation head, and the latter is achieved by an MoE action head.",
+      "page": 2,
+      "index": 1,
+      "width": 475,
+      "height": 445
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-002.webp",
+      "caption": "Table 3 Per-suite success rates on LIBERO Liu et al. (2023) (%). Results are reported by the cited papers; “–” denotes a breakdown not reported in the source paper. Bold indicates the best result, and underline indicates the second best.",
+      "page": 7,
+      "index": 2,
+      "width": 986,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-003.webp",
+      "caption": "Table 1 Results on the RoboTwin 2.0 simulation benchmark Mu et al. (2025); Chen et al. (2025a) with a 14-DoF dual-arm robot. Clean and Randomized correspond to the benchmark’s Easy and Hard evaluation settings, respectively. Setting-wise results are reported by the cited papers, and Average is the arithmetic mean over both settings (%). Bold indicates the best result, and underline indicates the second best.",
+      "page": 7,
+      "index": 3,
+      "width": 986,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-004.webp",
+      "caption": "Table 2 Results on the RoboCasa-GR1 simulation benchmark Nasiriany et al. (2024); Bjorck et al. (2025) with a 29-DoF humanoid, averaged over 50 rollouts per task (%). Bold indicates the best result, and underline indicates the second best.",
+      "page": 7,
+      "index": 4,
+      "width": 986,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-005.webp",
+      "caption": "Table 6 Linear-probe decoding of future contact on LIBERO. We report threshold-free AUROC and AUPRC (%) for contact onset and release. We also report the probe’s class-weighted BCE, which is a loss value rather than a percentage. Future-prediction supervision improves every metric.",
+      "page": 10,
+      "index": 5,
+      "width": 986,
+      "height": 218
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-006.webp",
+      "caption": "Figure 2 Overview of our DyPES-VLA. (a) A pretrained Vision Language Model maps observations, instructions, embodiment metadata, and learnable query tokens into query states that carry the shared dynamics priors. A future generation head predicts the future frame from these states, and an embodiment-specific Mixture-of-Experts (MoE) action head decodes them into actions in each embodiment’s native action space. The action head shares attention layers across embodiments, while a static router selects the embodiment-specific encoder, feed-forward expert, and decoder. (b) Two-stage training: Dynamics Priors Pretraining on action-free videos, followed by Cross-Embodiment Co-Training on action-labeled robot demonstrations.",
+      "page": 3,
+      "index": 6,
+      "width": 986,
+      "height": 401
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-007.webp",
+      "caption": "Table 4 Real-world success rates (%) for three tasks across three physical embodiments, evaluated over 25 independent rollouts for each task on each embodiment. Bold indicates the best result.",
+      "page": 8,
+      "index": 7,
+      "width": 986,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-008.webp",
+      "caption": "Figure 3 Real-world rollouts of our DyPES-VLA using a single checkpoint jointly finetuned on demonstrations from three physical embodiments with distinct morphologies. Each row shows the hardware setup followed by six keyframes (left to right) of one representative task per platform: an FR3 single-arm robot (top), a COBOT Magic dual-arm robot (middle), and a G1 humanoid (bottom).",
+      "page": 8,
+      "index": 8,
+      "width": 976,
+      "height": 441
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06374v1/fig-009.webp",
+      "caption": "Table 5 Ablation study on the three core design choices of our DyPES-VLA. We report success rates (%) of a single co-trained checkpoint on all three benchmarks. Bold indicates the best result, and underline indicates the second best.",
+      "page": 9,
+      "index": 9,
+      "width": 986,
+      "height": 294
+    }
+  ]
+}

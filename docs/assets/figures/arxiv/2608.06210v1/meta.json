@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.06210v1/fig-001.webp",
+      "caption": "Fig. 4. Peak and mean interaction forces during successful trials of (a) Peg-inHole Insertion and (b) Pulley Assembly. While Stiff-DP provides the necessary tracking precision for these tasks, it generates high and unpredictable force spikes during rigid contact. By modulating stiffness based on the task’s physical constraints, VIDP keeps interaction forces within a significantly lower and narrower range, ensuring safer manipulation.",
+      "page": 7,
+      "index": 1,
+      "width": 486,
+      "height": 268
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06210v1/fig-002.webp",
+      "caption": "Fig. 3. Phase-wise analysis of one representative successful and failed trial per task. (Top) Snapshots of execution phases completed by VIDP and corresponding failed task phases by Stiff-DP for (a) and (b) and Compliant-DP for (c). (Middle) Cartesian stiffness profiles inferred by VIDP, dynamically modulated to accommodate task constraints. (Bottom) Interaction forces and tracking errors over time. Fixed-impedance baselines experience severe force spikes, causing jamming in (a) Peg-in-Hole Insertion and slipping in (b) Pulley Assembly, or large tracking errors causing workspace collisions in Cable Routing. In contrast, VIDP adapts its compliance to safely and precisely complete all task phases. Experiment trials can be found in the attached video.",
+      "page": 7,
+      "index": 2,
+      "width": 1026,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06210v1/fig-003.webp",
+      "caption": "TABLE I QUANTITATIVE EVALUATION OF CLUSTERING PERFORMANCE ON THREE CONTACT-RICH TASK 3D MOTION DATASETS. ↑ INDICATES HIGHER IS BETTER AND ↓ INDICATES LOWER IS BETTER. BEST RESULTS ARE BOLDED.",
+      "page": 6,
+      "index": 3,
+      "width": 1044,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06210v1/fig-004.webp",
+      "caption": "Fig. 1. Overview of VIDP. (Left) Diverse kinematic demonstrations are collected across varying spatial layouts. (Top Right) TP-DAMM extracts spatially and directionally consistent trajectory distributions. (Bottom Right) Their variances are mapped to stiffness profiles, enabling a Diffusion Policy to jointly predict pose actions and task compliance from real-time visual and state observations for deployment on a variable impedance controller.",
+      "page": 3,
+      "index": 4,
+      "width": 844,
+      "height": 331
+    }
+  ]
+}

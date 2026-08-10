@@ -6,38 +6,29 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-09
-- 运行时间：2026-08-09 20:09:08 UTC
+- 最新运行日期：2026-08-10
+- 运行时间：2026-08-10 21:01:04 UTC
 - 运行状态：成功
-- 本次总论文数：5
-- 精读区：0
-- 速读区：5
+- 本次总论文数：2
+- 精读区：2
+- 速读区：0
 
 ### 今日简报（AI）
-- 今日共生成 5 篇推荐（精读 0 篇，速读 5 篇）
-- 速读：《A Hierarchical Approach to Imitation Learning for Manipulation Tasks Requiring Time Varying Forces》（7.0/10）, 《BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation》（6.5/10）, 《GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation》（6.0/10）
+- 今日共生成 2 篇推荐（精读 2 篇，速读 0 篇）
+- 精读：《C2Dex: Contact-Consistent Reconstruction and Retargeting for Dexterous Manipulation from Monocular Video》（9.5/10）, 《AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models》（8.5/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/09/README](/202608/09/README)
+- 详情：[/202608/10/README](/202608/10/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [C2Dex: Contact-Consistent Reconstruction and Retargeting for Dexterous Manipulation from Monocular Video](/202608/10/2608.07045v1-c2dex-contact-consistent-reconstruction-and-retargeting-for-dexterous-manipulation-from-monocular-video)  
+   标签：评分：9.5/10、query:dexop
+   evidence：从单目人类视频中学习灵巧操作
+2. [AtlasVLA: Persistent World-Ego State Modeling for Vision-Language-Action Models](/202608/10/2608.06729v1-atlasvla-persistent-world-ego-state-modeling-for-vision-language-action-models)  
+   标签：评分：8.5/10、query:dexop
+   evidence：使用腕部摄像头和第一视角状态建模训练VLA模型
 
 ### 速读区论文标签
-1. [A Hierarchical Approach to Imitation Learning for Manipulation Tasks Requiring Time Varying Forces](/202608/09/2608.03103v1-a-hierarchical-approach-to-imitation-learning-for-manipulation-tasks-requiring-time-varying-forces)  
-   标签：评分：7.0/10、query:dexop
-   evidence：接触密集型操作任务的模仿学习
-2. [BridgeVLA++: A Data-Efficient, Generalizable, and Memory-Augmented Vision-Language-Action Framework for 3D Manipulation](/202608/09/2608.05042v1-bridgevla-a-data-efficient-generalizable-and-memory-augmented-vision-language-action-framework-for-3d-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于3D机器人操作的VLA框架
-3. [GORDON: Graph-based Object-centric Rewards for Decomposition of Long-Horizon Manipulation](/202608/09/2608.03753v1-gordon-graph-based-object-centric-rewards-for-decomposition-of-long-horizon-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：从无动作视频演示中学习操作奖励
-4. [SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation](/202608/09/2608.05970v1-skillmemo-expert-guided-skill-memory-framework-for-compositional-embodied-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于组合式具身操作的技能记忆框架
-5. [VIDP: Variable Impedance Diffusion Policy for Compliant Robot Manipulation from Diverse Demonstrations](/202608/09/2608.06210v1-vidp-variable-impedance-diffusion-policy-for-compliant-robot-manipulation-from-diverse-demonstrations)  
-   标签：评分：6.0/10、query:dexop
-   evidence：从多样化演示中学习顺从式机器人操作
+- 本次无速读推荐。
 
 
 <div class="dpr-home-promo-card">

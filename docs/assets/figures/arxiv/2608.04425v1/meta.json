@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-001.webp",
+      "caption": "Figure 4: Two illustrative out-of-scope cases surfaced by the consistency checker. Left (A1, task 0024): the robot hugs an oatmeal box between two open grippers without any close event, so no gripper signal places the acquire inside the annotated window and anomaly I3 fires. Right (A2, task 0030): at the end of the episode the lighter and the holder remain in the grippers, so the trajectory ends with a non-empty terminal state and anomaly I1 fires (a hold never matched by a release).",
+      "page": 15,
+      "index": 1,
+      "width": 764,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-002.webp",
+      "caption": "Table 9: Verb composition of the 134 disagreement cases that drive the trimmed-hard subset. The majority-arm distribution across the 134 cases is coop: 55 (41%), left: 41 (31%), right: 38 (28%); the dominant axis of ambiguity is single-arm versus coop.",
+      "page": 21,
+      "index": 2,
+      "width": 772,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-003.webp",
+      "caption": "Table 10: Representative tight-margin disagreements from one episode. The Cell column uses the short form st<i>.a<j>, where st<i> is the i-th subtask within the episode and a<j> is the j-th action within that subtask (zero-indexed); e.g. st1.a0 is the first action of subtask 1. Pool votes are counts across the 10 single-model verifiers (C = coop, L = left, R = right); Ref. is the reference acting arm.",
+      "page": 21,
+      "index": 3,
+      "width": 722,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-004.webp",
+      "caption": "Table 11: Tier 1 (top block) and Tier 2 (bottom block) under the 13-model VL production pool: cells solved by 0–2 of the 13 production models. Column codes: DB=dbao2p, G54=gpt54, G5m=gpt54mi, O4=o4mi, Q3=qwen3vlp, Q3f=qwen3vlf, QM=qwenvlx, GP=gem25p, GF=gem25f, KM=kimi25, G55=gpt55, G31=gem31p, G35=gem35f (⋆ marks the three models added in the second-stage pool extension). G: reference acting arm (C = coop, R = right, L = left, ? = unresolved). Src: hum = human override, vlM = original 10-model VL pool majority. ✓= the model solved the cell on a majority of its three runs. The row marked † (ep0 0034 st1 pick poster) has an unresolved reference arm (G=?) and is recorded for completeness but excluded from the per-model totals in Table 12.",
+      "page": 22,
+      "index": 4,
+      "width": 714,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-005.webp",
+      "caption": "Table 12: Tier 3 under the 13-model VL production pool: cells solved by 3–6 of the 13 production models (at most half the pool). Conventions follow Table 11. The bottom row reports each model’s total solve count across the 20 cells of Tables 11 and 12 combined, excluding the †-marked row in Table 11 whose reference arm is unresolved.",
+      "page": 22,
+      "index": 5,
+      "width": 736,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-006.webp",
+      "caption": "Table 4: Acquire transitions (gripper close).",
+      "page": 13,
+      "index": 6,
+      "width": 632,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-007.webp",
+      "caption": "Table 5: Release transitions (gripper open).",
+      "page": 13,
+      "index": 7,
+      "width": 744,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-008.webp",
+      "caption": "Table 3: Per-task anomaly breakdown for the annotated reference SSC over the 50-task evaluation set (3 episodes each). n/Ep. reports cell-level anomaly counts per episode (ep0/ep1/ep2); all rows sum to the headline 18 + 9 + 4 = 31. Verdict marks out-of-scope cases (the trajectory violates a framework assumption) and annotation faults (the GT label or interval is incorrect).",
+      "page": 8,
+      "index": 8,
+      "width": 822,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-009.webp",
+      "caption": "Figure 1: Per-subtask processing flow. For each subtask interval, SST construction parses the annotation and trajectory into an entry Sk with pending queries Qk; the cascade resolves Qk by Level 1 (trajectory inference), optionally Level 2 (annotation lookup) when dataset metadata supports it, and Level 3 (VL queries) for residual ambiguity; the consistency checker validates Sk against four statetransition invariants; the resolved after-state gk in Sk then becomes the before-state for Sk+1.",
+      "page": 4,
+      "index": 9,
+      "width": 795,
+      "height": 190
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-010.webp",
+      "caption": "Table 1: The seven scene-graph configurations. D? is the only configuration with unresolved state; the resolution cascade of Sec. 4.3 promotes D? to either Dd or S by a VL query.",
+      "page": 4,
+      "index": 10,
+      "width": 722,
+      "height": 191
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-011.webp",
+      "caption": "Table 14: Top-15 three-model ensembles on the 138-cell VL trimmed-hard subset. Div: Y = 3- provider-diverse (at most one model per provider), N = two of the three members share a provider. AVL T15: Y = trio appears in the top-15 of the AVL trimmed-hard leaderboard (56-cell denominator), N = not present. Provider abbreviations: B=ByteDance, O=OpenAI, A=Alibaba, G=Google, M=Moonshot.",
+      "page": 24,
+      "index": 11,
+      "width": 714,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-012.webp",
+      "caption": "Table 8: Preliminary per-model accuracy under our pipeline and prompt configuration on the 99-cell evaluation tier of an earlier annotated reference SSC (15 models, 3 runs, both modes). The rightmost column records whether the model was carried forward into the initial 10-model production pool, with a one-phrase reason for non-retention. The three new models added in the second-stage pool extension (gpt-5.5, gemini-3.1-pro-preview, gemini-3.5-flash) are absent from this preliminary panel because they were released after this evaluation cycle. These numbers reflect what this pipeline produced from each model under a single shared prompt set and should not be read as a characterisation of model capability.",
+      "page": 20,
+      "index": 12,
+      "width": 818,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04425v1/fig-013.webp",
+      "caption": "Table 7: Framework assumptions and their relaxation paths. Within these assumptions the transition logic of Appendix C is complete; outside them, the consistency-checking module of Sec. 4.4 raises a typed anomaly.",
+      "page": 16,
+      "index": 13,
+      "width": 810,
+      "height": 399
+    }
+  ]
+}

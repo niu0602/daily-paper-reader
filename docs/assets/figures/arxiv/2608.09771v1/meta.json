@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-001.webp",
+      "caption": "Figure 4: Overview of the evaluation settings. (a) Representative physical manipulation tasks used in the real-world evaluation. (b) LIBERO and LIBERO-Plus evaluate language-conditioned manipulation and robustness under controlled perturbations. (c) CALVIN ABC→D evaluates longhorizon task composition in an unseen environment.",
+      "page": 6,
+      "index": 1,
+      "width": 802,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-002.webp",
+      "caption": "Table 5: Original LIBERO baseline comparison. All numbers are success rates in percent. P.T. indicates additional embodied policy/world pretraining before target-suite training; generic visuallanguage or video backbone initialization alone is not counted.",
+      "page": 15,
+      "index": 2,
+      "width": 518,
+      "height": 378
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-003.webp",
+      "caption": "Table 1: Results on LIBERO and LIBERO-Plus (%). LIBERO reports the original-benchmark overall score, while LIBERO-Plus evaluates zero-shot robustness under seven perturbations. P.T. denotes additional embodied policy/world pretraining, excluding generic vision-language or video initialization.",
+      "page": 7,
+      "index": 3,
+      "width": 818,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-004.webp",
+      "caption": "Table 3: EMA target ablation and collapse diagnostics averaged over the final 20 Stage-1 evaluation probes. Higher effective rank and lower energy concentration/cosine indicate more diverse latent usage.",
+      "page": 10,
+      "index": 4,
+      "width": 815,
+      "height": 409
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-005.webp",
+      "caption": "Figure 11: Task-wise real-world progress under the nominal setting and the distractor, lighting, and background perturbations. Each panel reports all five tasks and their average over 10 trials per task.",
+      "page": 18,
+      "index": 5,
+      "width": 772,
+      "height": 536
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-006.webp",
+      "caption": "Table 2: Results on CALVIN ABC→D. Task 1–5 report sequential success rates (%), and Avg. Length is the primary metric. P.T. denotes additional embodied policy/world pretraining. Model sizes are reported in billions of parameters (B); “–” indicates unavailable data.",
+      "page": 8,
+      "index": 6,
+      "width": 606,
+      "height": 401
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-007.webp",
+      "caption": "Figure 2: Action-grounded masked trajectory prediction. (a) Inverse dynamics predicts the flow velocity of noised actions conditioned on current and future observations. (b) Forward dynamics predicts masked future observation latents from the current observation and clean actions, supervised by a stop-gradient EMA target. (c) Objective-specific attention masks control information flow. Auxiliary tokens are omitted for clarity.",
+      "page": 4,
+      "index": 7,
+      "width": 799,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-008.webp",
+      "caption": "Figure 9: Task-specific real-world evaluation settings. Columns show the nominal setup and the background, lighting, and distractor perturbations.",
+      "page": 17,
+      "index": 8,
+      "width": 396,
+      "height": 421
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-009.webp",
+      "caption": "Figure 10: Progress-score milestones for the five real-world tasks. Each row shows the initial state, partial completion (score 0.5), and full completion (score 1).",
+      "page": 17,
+      "index": 9,
+      "width": 399,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-010.webp",
+      "caption": "Figure 6: Average real-world progress by evaluation setting. Each setting averages the five tasks, and the final group averages all four settings. Task-wise results and scoring milestones are provided in Appendix A.6.",
+      "page": 9,
+      "index": 10,
+      "width": 739,
+      "height": 318
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09771v1/fig-011.webp",
+      "caption": "Figure 7: Ablations of the action-grounded masked-prediction pipeline. We compare Stage-2-only training against the full two-stage recipe, vary the IDM:FDM loss ratio, and evaluate the EMA target encoder on LIBERO-Plus and CALVIN.",
+      "page": 9,
+      "index": 11,
+      "width": 802,
+      "height": 260
+    }
+  ]
+}

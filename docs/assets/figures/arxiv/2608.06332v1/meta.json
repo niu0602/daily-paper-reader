@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-001.webp",
+      "caption": "Fig. 8. Teleoperation with the interactive world model. A human operator teleoperates the robot in real time based on the generated scene, while the model autoregressively generates the corresponding visual responses.",
+      "page": 6,
+      "index": 1,
+      "width": 463,
+      "height": 264
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-002.webp",
+      "caption": "Fig. 7. Correlation between policy performance in GeniWorld and the real world. (a) Joint evaluation of policy performance in in-domain scenarios and OOD scenes with visual distractions. Here, * denotes tasks with environmental distractions. (b) Comparison showing that our world simulator is more robust in OOD scenarios.",
+      "page": 6,
+      "index": 2,
+      "width": 488,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-003.webp",
+      "caption": "TABLE III PER-TASK REAL-WORLD POLICY SUCCESS RATES (%) WITH GENERATED TRAINING DATA. EACH TASK IS EVALUATED OVER 20 TRIALS IN EACH SETTING. MEAN AVERAGES THE FOUR TASKS, WHILE OVERALL AVERAGES THE FIVE EVALUATION SETTINGS.",
+      "page": 11,
+      "index": 3,
+      "width": 1058,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-004.webp",
+      "caption": "TABLE IV STAGE-WISE EXECUTION PROTOCOL FOR THE FOUR REAL-WORLD MANIPULATION TASKS. PROGRESS INDICATES THE AVERAGE NORMALIZED TEMPORAL POSITION AT WHICH EACH STAGE IS COMPLETED OVER SUCCESSFUL DEMONSTRATIONS, RATHER THAN ITS SUCCESS RATE.",
+      "page": 11,
+      "index": 4,
+      "width": 1052,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-005.webp",
+      "caption": "Fig. 15. More visualization of real-world policy rollouts.",
+      "page": 15,
+      "index": 5,
+      "width": 802,
+      "height": 1269
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-006.webp",
+      "caption": "Fig. 11. Performance of policies augmented with GeniWorldsynthesized data. Even with minimal collected real-world data, policies augmented with GeniWorld-synthesized data demonstrate superior performance across diverse OOD conditions.",
+      "page": 7,
+      "index": 6,
+      "width": 489,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-007.webp",
+      "caption": "Fig. 10. Data generation for real-world robot manipulation. We use image-editing models to modify the original scene images and create diverse, complex conditions. New manipulation trajectories are synthesized through action replay or teleoperation.",
+      "page": 7,
+      "index": 7,
+      "width": 506,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-008.webp",
+      "caption": "TABLE II IMPLEMENTATION AND HYPERPARAMETER DETAILS.",
+      "page": 10,
+      "index": 8,
+      "width": 512,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-009.webp",
+      "caption": "Fig. 14. Comparison of real-world policy rollouts. We visualize rollouts of π0 policies trained on real data alone and on real data augmented with GeniWorld-generated trajectories. We found that trained on both real and generated data, π0 shows a better performance on OOD scenarios such as distractors, novel instances, spatial rearrangement and lighting shift.",
+      "page": 14,
+      "index": 9,
+      "width": 802,
+      "height": 1268
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-010.webp",
+      "caption": "Fig. 2. Overview of the GeniWorld method. We convert robot actions into visual motions via URDF rendering. These motions are subsequently encoded into latent representations and concatenated with noisy video latents. The combined representation serves as input to a causal DiT that predicts future videos via flow matching. During inference, the initial scene image is provided as the first frame. Actions are passed through the URDF-based renderer to produce motion conditions, and the model predicts future observations while leveraging KV caching to maintain historical context.",
+      "page": 3,
+      "index": 10,
+      "width": 1052,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-011.webp",
+      "caption": "Fig. 13. Qualitative results of GeniWorld on in-domain real-world tasks. The predicted video sequences demonstrate accurate spatial trajectories, fine-grained object interaction, and strict visual temporal consistency aligned with ground-truth rollouts.",
+      "page": 13,
+      "index": 11,
+      "width": 996,
+      "height": 1233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-012.webp",
+      "caption": "TABLE I QUANTITATIVE EVALUATION OF WORLD-MODEL PERFORMANCE ON THE ROBOTWIN BENCHMARK ACROSS CLEAN-TO-CLEAN AND CLEAN-TO-RANDOM SETTINGS. ↑ (↓) INDICATES THAT HIGHER (LOWER) IS BETTER. BEST RESULTS ARE SHOWN IN BOLD.",
+      "page": 4,
+      "index": 12,
+      "width": 986,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-013.webp",
+      "caption": "Fig. 3. Qualitative Clean-to-Random world-modeling results. All models are trained on clean tabletop data and evaluated in unseen scenes. GeniWorld preserves the commanded robot motion and produces interaction outcomes that closely match the ground truth, whereas competing methods fail to generate the expected results in out-of-distribution (OOD) scenarios. Furthermore, the ablation results show that our dense visual actions enable more accurate interaction modeling.",
+      "page": 4,
+      "index": 13,
+      "width": 1050,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-014.webp",
+      "caption": "Fig. 17. Qualitative comparison of generation rollouts across different action representations.",
+      "page": 17,
+      "index": 14,
+      "width": 998,
+      "height": 1239
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-015.webp",
+      "caption": "Fig. 12. Real-world video rollouts under out-of-domain (OOD) conditions. GeniWorld maintains precise motion trajectories and realistic physical interactions even when exposed to unseen object instances, novel backgrounds, and complex environmental distractors.",
+      "page": 12,
+      "index": 15,
+      "width": 1008,
+      "height": 1127
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-016.webp",
+      "caption": "Fig. 5. Performance with different numbers of flow-matching sampling steps. We evaluate world-modeling quality using 50, 10, and 5 inference steps, where fewer steps correspond to faster inference. Visual action conditioning consistently maintains superior generation quality with fewer denoising steps than the other action representations.",
+      "page": 5,
+      "index": 16,
+      "width": 494,
+      "height": 530
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06332v1/fig-017.webp",
+      "caption": "Fig. 16. Qualitative visualizations of generated rollouts on RoboTwin. We show the predictions across Clean-to-Clean (in-domain) and Clean-toRandom (out-of-distribution) setups. GeniWorld maintains high visual fidelity and precise temporal consistency even under randomized environmental perturbations.",
+      "page": 16,
+      "index": 17,
+      "width": 999,
+      "height": 1183
+    }
+  ]
+}

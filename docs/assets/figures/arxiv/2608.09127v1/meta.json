@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-001.webp",
+      "caption": "Fig. 1: Our contributions enable straightforward, yet high quality reconstructions of human bathing demonstrations along with strategies for robot skill transfer.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-002.webp",
+      "caption": "Fig. 11: Illustrations of 8 representative contact trajectories, separated into (red) X, (green) Y, and (blue) Z channels. All positions are in world coordinates. Each band is comprised of 65 individual contact point trajectories. Inactive taxels are zeroed out.",
+      "page": 6,
+      "index": 2,
+      "width": 490,
+      "height": 282
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-003.webp",
+      "caption": "Fig. 10: Visualization of a bathing “stroke” from the (green) bottom to the (red) top of the back. The subject is stabilized by a contact distribution at the left shoulder during the stroke.",
+      "page": 6,
+      "index": 3,
+      "width": 526,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-004.webp",
+      "caption": "Fig. 12: Sample poses used to build Mϕ(S′). Active contacts in each pose (pink) are simulated by pressing against the hand.",
+      "page": 7,
+      "index": 4,
+      "width": 524,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-005.webp",
+      "caption": "Fig. 14: Overlaid plots of the (blue) original human, (orange) robot open loop, and (green) robot closed loop tactile glove pressures during a back bathing task. We provide (a) absolute sums, (b) normalized sums, and (c) median intensities calculated across the full taxel array per time step. Note that the spike in pressure at the start of closed loop data collection is due to initialization noise rather than a consequence of trajectory execution.",
+      "page": 7,
+      "index": 5,
+      "width": 522,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-006.webp",
+      "caption": "Fig. 13: Film strip of back bathing demonstration retargeted to the xArm 7 (top) in simulation using the clinician’s shapefitted hand as the end effector. The computed joint positions and pre-computed hand motor commands are (bottom) deployed on the real world setup. Orange and pink arrows illustrate subsequent movement directions.",
+      "page": 7,
+      "index": 6,
+      "width": 526,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-007.webp",
+      "caption": "Fig. 4: (a) The robot-assisted bathing setup, consisting of a robotic arm [35], DexKit robotic hand [36], and mannequin. (b) The DexKit hand is outfitted with a tactile sensing glove [15] with grip material [37] coating the palmar side to prevent slip and moisture damage.",
+      "page": 3,
+      "index": 7,
+      "width": 450,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-008.webp",
+      "caption": "Fig. 2: Overview of our pipeline. Starting with captures of motion and tactile forces from human bathing demonstrations, we digitally reconstruct time-synchronized data across shape, movement, and contact force with high accuracy. We then utilize these reconstructions to both design and control an anthropomorphic soft hand, as well as retarget results to a robot arm. We demonstrate the final system’s efficacy by replicating bathing tasks on a mannequin in the real world. A core contribution of this work is the systematic integration of contact distributions and force data throughout the entire pipeline. Pink and green partitions delineate steps performed in the real world and simulation respectively.",
+      "page": 3,
+      "index": 8,
+      "width": 1072,
+      "height": 600
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-009.webp",
+      "caption": "Fig. 3: Optical marker configurations used on (a) human subjects and (b) tactile force gloves. (c) Cameras are floor mounted and positioned in a semi-circle configuration.",
+      "page": 3,
+      "index": 9,
+      "width": 526,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-010.webp",
+      "caption": "Fig. 6: Visualizations of improved surface contact following hand pose correction, comparing the original (top) and corrected (bottom) states. In the first example (left), the red arrows highlight a significant increase in finger contact. In the second (right), the green arrows indicate the hand flattening against the table as the heel moves closer to the surface.",
+      "page": 4,
+      "index": 10,
+      "width": 529,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-011.webp",
+      "caption": "Fig. 15: Complete MAE loss curve over the parameter sweep of |S|.",
+      "page": 12,
+      "index": 11,
+      "width": 446,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-012.webp",
+      "caption": "Fig. 18: (a) xArm calibration poses collected in the real world are (b) superimposed for mannequin positioning in simulation.",
+      "page": 12,
+      "index": 12,
+      "width": 514,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09127v1/fig-013.webp",
+      "caption": "TABLE I: Distribution of all captures in our dataset segmented by body part, assistance level, and pressure intensity.",
+      "page": 5,
+      "index": 13,
+      "width": 490,
+      "height": 275
+    }
+  ]
+}

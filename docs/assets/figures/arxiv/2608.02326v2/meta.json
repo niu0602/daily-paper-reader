@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.02326v2/fig-001.webp",
+      "caption": "Figure 2: Overall query-transition architecture of ChainVLA. At query k, Progress Context combines live execution tokens from the recurrent Working State with event evidence retrieved from Sparse Event Memory. Motion Tail carries the preceding prediction’s unexecuted suffix into state construction and action generation. The decoder regenerates the full horizon under the latest query input; prefix execution then advances task progress, and the newly predicted suffix becomes uk+1 for the next query.",
+      "page": 3,
+      "index": 1,
+      "width": 962,
+      "height": 388
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02326v2/fig-002.webp",
+      "caption": "Table 1: Success rates (%) on RMBench and LIBERO. Comparison rows follow the cited references. Parenthetical parameter counts give the stated configuration size where directly available, the ‘+’ symbol separates components reported individually, and missing counts are not inferred. Best and second-best listed values are bold and underlined. RMBench averages are omitted for methods without complete five-task coverage on that benchmark.",
+      "page": 6,
+      "index": 2,
+      "width": 994,
+      "height": 317
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02326v2/fig-003.webp",
+      "caption": "Table 2: Ablations on RMBench (100 episodes per task). Best non-Full values are underlined. “w/o Stage Ann.” writes events every three queries instead. “w/o Both” keeps the current observation and executed actions. “FIFO Hist. + TE” replaces the carried state with fixed-length observation history and post-decoding temporal ensembling.",
+      "page": 6,
+      "index": 3,
+      "width": 479,
+      "height": 335
+    },
+    {
+      "url": "assets/figures/arxiv/2608.02326v2/fig-004.webp",
+      "caption": "Figure 1: Motivation and design of ChainVLA. (a) At each query boundary, earlier task evidence may be absent from the current view, while replanning discards the preceding prediction’s unexecuted continuation. (b) Human execution couples established task progress with a feedback-revised motor prediction, while executed motion shapes the observation stream used for subsequent progress estimation. (c) Inspired by this, ChainVLA carries both components across queries in a joint, revisable execution state comprising Progress Context gk and Motion Tail uk, which together condition each new action horizon.",
+      "page": 2,
+      "index": 4,
+      "width": 974,
+      "height": 508
+    }
+  ]
+}

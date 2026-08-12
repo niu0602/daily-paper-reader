@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09762v1/fig-001.webp",
+      "caption": "Fig. 1. Experimental tasks overview. (a) A pick-and-place tennis ball task with a custom manipulator; (b) A pick-and-place banana task with a custom manipulator and a compliant gripper; (c) A pot reset task with Franka arm; (d) A block relocation task with Unitree G1 and robotiq gripper",
+      "page": 1,
+      "index": 1,
+      "width": 460,
+      "height": 465
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09762v1/fig-002.webp",
+      "caption": "TABLE I HYPERPARAMETERS FOR RLPD AND HARC.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09762v1/fig-003.webp",
+      "caption": "Fig. 4. Learning curves for our method and HIL-SERL [13] across all tasks, showing 20-episode running averages of success rate, intervention rate, and episode duration. Success rates increase until convergence or the training-time limit, while intervention rates and episode durations decrease; intervention rates ultimately reach 0%.",
+      "page": 7,
+      "index": 3,
+      "width": 995,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09762v1/fig-004.webp",
+      "caption": "Fig. 5. Comparison of demo buffer transitions across tasks. Light green bars indicate the initial 20 episodes of teleoperated demonstrations, while purple and pink bars show additional human-intervention transitions collected during training. 2) Performance under large-scale randomization",
+      "page": 7,
+      "index": 4,
+      "width": 484,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09762v1/fig-005.webp",
+      "caption": "Fig. 2. Overview of training framework. Our online RL framework employs a reward-decomposed multi-head critic with multi-agent CTDE training. During training, a human expert provides demonstrations and corrective interventions via teleoperation, while intervened transitions replace the original policy actions and are stored alongside autonomous experience in a shared replay buffer. Training is asynchronous: a cloud-based learner continuously updates the actor–critic, and deployed actors periodically synchronize the latest policy parameters, following the training paradigm of SERL [12] and RLinf [10].",
+      "page": 3,
+      "index": 5,
+      "width": 1038,
+      "height": 406
+    }
+  ]
+}

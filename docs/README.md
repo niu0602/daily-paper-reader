@@ -6,65 +6,62 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-11
-- 运行时间：2026-08-11 21:22:49 UTC
+- 最新运行日期：2026-08-12
+- 运行时间：2026-08-12 21:06:17 UTC
 - 运行状态：成功
-- 本次总论文数：14
+- 本次总论文数：13
 - 精读区：3
-- 速读区：11
+- 速读区：10
 
 ### 今日简报（AI）
-- 今日共生成 14 篇推荐（精读 3 篇，速读 11 篇）
-- 精读：《AdaDexGrasp: Adaptive Dexterous Grasping via 3D Visuo-Tactile Representation Fusion》（9.5/10）, 《LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models》（8.0/10）
-- 速读：《PhotoHOI: Synthesizing 3D Hand-Object Interactions from a Single RGB Photograph》（7.5/10）, 《High Fidelity Capture, Reconstruction, and Transfer of Human Demonstrations for Robot-Assisted Bathing》（7.5/10）, 《EgoHieraLoc: A Cortically Inspired Hierarchical Segmentation-Guided Framework for Egocentric Visual Query Localization》（7.5/10）
+- 今日共生成 13 篇推荐（精读 3 篇，速读 10 篇）
+- 精读：《Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations》（9.0/10）, 《RoboSeg: Online Part-Level Semantic Reconstruction for Robotic Manipulation via a Single Eye-in-Hand Camera》（8.0/10）
+- 速读：《$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation》（7.0/10）, 《AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies》（7.0/10）, 《GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/11/README](/202608/11/README)
+- 详情：[/202608/12/README](/202608/12/README)
 
 ### 精读区论文标签
-1. [AdaDexGrasp: Adaptive Dexterous Grasping via 3D Visuo-Tactile Representation Fusion](/202608/11/2608.07600v1-adadexgrasp-adaptive-dexterous-grasping-via-3d-visuo-tactile-representation-fusion)  
-   标签：评分：9.5/10、query:dexop
-   evidence：通过视触觉表示融合实现自适应灵巧抓取
-2. [LAWM-3D: Learning 3D-Aware Latent Actions from Human Videos for Generalizable Robot World Models](/202608/11/2608.05706v1-lawm-3d-learning-3d-aware-latent-actions-from-human-videos-for-generalizable-robot-world-models)  
+1. [Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations](/202608/12/2608.10383v1-real-world-cooperative-bimanual-dexterous-grasp-of-large-objects-from-single-view-observations)  
+   标签：评分：9.0/10、query:dexop
+   evidence：使用视觉观测和多模态数据集的真实世界双臂灵巧抓取
+2. [RoboSeg: Online Part-Level Semantic Reconstruction for Robotic Manipulation via a Single Eye-in-Hand Camera](/202608/12/2608.09778v1-roboseg-online-part-level-semantic-reconstruction-for-robotic-manipulation-via-a-single-eye-in-hand-camera)  
    标签：评分：8.0/10、query:dexop
-   evidence：从人类视频中学习机器人世界模型的潜动作
-3. [EgoTrack3D: A Modular Framework for Egocentric 3D Object Tracking](/202608/11/2608.08016v1-egotrack3d-a-modular-framework-for-egocentric-3d-object-tracking)  
+   evidence：通过单手眼相机进行在线部件级语义重建
+3. [Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning](/202608/12/2608.11204v1-surgical-wam-a-world-action-model-for-data-efficient-surgical-robot-learning)  
    标签：评分：8.0/10、query:dexop
-   evidence：直接从机器人第一视角RGB视频中构建动态3D场景表示
+   evidence：用于学习手术操作世界模型的内窥镜视频
 
 ### 速读区论文标签
-1. [PhotoHOI: Synthesizing 3D Hand-Object Interactions from a Single RGB Photograph](/202608/11/2608.01905v2-photohoi-synthesizing-3d-hand-object-interactions-from-a-single-rgb-photograph)  
-   标签：评分：7.5/10、query:dexop
-   evidence：从单张照片中合成3D手物交互序列
-2. [High Fidelity Capture, Reconstruction, and Transfer of Human Demonstrations for Robot-Assisted Bathing](/202608/11/2608.09127v1-high-fidelity-capture-reconstruction-and-transfer-of-human-demonstrations-for-robot-assisted-bathing)  
-   标签：评分：7.5/10、query:dexop
-   evidence：接触丰富的机器人辅助沐浴的人类演示转移
-3. [EgoHieraLoc: A Cortically Inspired Hierarchical Segmentation-Guided Framework for Egocentric Visual Query Localization](/202608/11/2608.09656v1-egohieraloc-a-cortically-inspired-hierarchical-segmentation-guided-framework-for-egocentric-visual-query-localization)  
-   标签：评分：7.5/10、query:dexop
-   evidence：视频中的第一视角视觉查询定位
-4. [ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation](/202608/11/2608.02326v2-chainvla-chaining-vision-language-action-queries-through-a-unified-execution-state-for-long-horizon-manipulation)  
+1. [$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation](/202608/12/2608.06375v1--0-a-latent-predictive-world-action-model-for-concurrent-humanoid-loco-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：利用观测衍生的任务进度进行长程操作的VLA策略
-5. [GeniWorld: A Generalizable Interactive World Model for Robotic Manipulation via Visual Actions](/202608/11/2608.06332v1-geniworld-a-generalizable-interactive-world-model-for-robotic-manipulation-via-visual-actions)  
+   evidence：用于人形机器人并发移动操作的全身世界动作模型
+2. [AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies](/202608/12/2608.07065v1-autointervene-calibrated-intervention-for-action-chunking-imitation-learning-policies)  
    标签：评分：7.0/10、query:dexop
-   evidence：机器人操作的交互式世界模型
-6. [TEMPO: Semantic-Action Decoupled RL Post-Training for Vision-Language-Action Models](/202608/11/2608.07314v1-tempo-semantic-action-decoupled-rl-post-training-for-vision-language-action-models)  
+   evidence：针对动作分块模仿学习策略的校准干预
+3. [GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning](/202608/12/2608.07619v1-gwm-vla-geometry-aware-latent-world-modeling-for-vision-language-action-learning)  
    标签：评分：7.0/10、query:dexop
-   evidence：操作任务中视觉-语言-动作模型的强化学习后训练
-7. [SSC: A Verifiable Structured Representation for Bimanual Manipulation Labelling](/202608/11/2608.04425v1-ssc-a-verifiable-structured-representation-for-bimanual-manipulation-labelling)  
+   evidence：用于机器人操作的几何感知多视图状态编码
+4. [JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling](/202608/12/2608.09381v1-jepa-wam-learning-vision-language-action-policies-with-joint-embedding-world-modeling)  
+   标签：评分：7.0/10、query:dexop
+   evidence：用于视觉-语言-动作策略的潜空间世界动作模型
+5. [JEPA-WAM: Stage-Level Joint-Embedding Prediction for World-Action Models in Robot Manipulation](/202608/12/2608.10780v1-jepa-wam-stage-level-joint-embedding-prediction-for-world-action-models-in-robot-manipulation)  
    标签：评分：6.5/10、query:dexop
-   evidence：双手操作子任务标注的结构化表示
-8. [SpaceVLA: Spatially Grounded VLA for Robotic Manipulation with User-Authored Grasp and Place Anchors](/202608/11/2608.05730v1-spacevla-spatially-grounded-vla-for-robotic-manipulation-with-user-authored-grasp-and-place-anchors)  
-   标签：评分：6.5/10、query:dexop
-   evidence：使用基于XR的视觉叠加和VLA模型进行机器人操作
-9. [Trajectory Divergence Horizon Decision for Reliable Dual-Arm Surgical Subtask Manipulation](/202608/11/2608.09125v1-trajectory-divergence-horizon-decision-for-reliable-dual-arm-surgical-subtask-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：双臂手术子任务操作
-10. [JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling](/202608/11/2608.09381v1-jepa-wam-learning-vision-language-action-policies-with-joint-embedding-world-modeling)  
-   标签：评分：6.5/10、query:dexop
-   evidence：结合联合嵌入世界模型的视觉-语言-动作策略
-11. [SLIM-0.5B: Learning Action-Grounded Predictive Latents for Robot Manipulation](/202608/11/2608.09771v1-slim-05b-learning-action-grounded-predictive-latents-for-robot-manipulation)  
-   标签：评分：6.5/10、query:dexop
-   evidence：用于连续机器人操作的紧凑潜空间交互策略
+   evidence：使用多模态观测的机器人操作世界动作模型
+6. [CofactVLA: Deconfounding Vision-Language-Action Models via Counterfactual Intervention](/202608/12/2608.04396v1-cofactvla-deconfounding-vision-language-action-models-via-counterfactual-intervention)  
+   标签：评分：6.0/10、query:dexop
+   evidence：为机器人操作的视觉-语言-动作模型去混杂
+7. [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](/202608/12/2608.06756v1-capek-05-an-execution-centric-vision-language-model-for-embodied-intelligence)  
+   标签：评分：6.0/10、query:dexop
+   evidence：具身智能体的以执行为中心的视觉语言模型
+8. [SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning](/202608/12/2608.09138v1-speedtuning-speeding-up-policy-execution-with-lightweight-reinforcement-learning)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于提高操作策略速度的强化学习框架
+9. [VANE: Reliable Test-Time Training for Vision-Language-Action Models via Future Visual Representation Prediction](/202608/12/2608.09448v1-vane-reliable-test-time-training-for-vision-language-action-models-via-future-visual-representation-prediction)  
+   标签：评分：6.0/10、query:dexop
+   evidence：闭环操作中VLA策略的测试时训练
+10. [Efficient Real-World Online Reinforcement Learning for Robot Manipulation via Centralized Training and Critic Decomposition](/202608/12/2608.09762v1-efficient-real-world-online-reinforcement-learning-for-robot-manipulation-via-centralized-training-and-critic-decomposition)  
+   标签：评分：6.0/10、query:dexop
+   evidence：物理世界中机器人操作的在线强化学习
 
 
 <div class="dpr-home-promo-card">

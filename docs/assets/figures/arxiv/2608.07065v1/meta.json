@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-001.webp",
+      "caption": "Fig. 1: AutoIntervene transfers control between the autonomous policy and the operator, thereby guiding the collection of targeted intervention data. We evaluate the system across diverse manipulation tasks.",
+      "page": 1,
+      "index": 1,
+      "width": 508,
+      "height": 336
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-002.webp",
+      "caption": "TABLE II: Success (%) and recorded control-data time across seven tasks. Human and AutoIntervene use manually and automatically triggered interventions, respectively. R1 and R2 denote adaptation rounds. ∆t is cumulative additional operatorcontrol time, while Initial and Additional Full Data report total demonstration time.",
+      "page": 6,
+      "index": 2,
+      "width": 1002,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-003.webp",
+      "caption": "Fig. 7: One AutoIntervene rollout on Peg Disassembly containing two policy–operator–policy intervention cycles. Top: the four control switches. Bottom: the corresponding timeline, with policy control in grey and operator control in red.",
+      "page": 7,
+      "index": 3,
+      "width": 487,
+      "height": 382
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-004.webp",
+      "caption": "Fig. 2: Overview of AutoIntervene. During Stage I, the intervention loop sequentially (A) constructs a visual-action query from the current visual observations and policy-proposed action chunk, (B) evaluates visual-support and action-risk scores, and (C) selects control authority using calibrated acceptance criteria. The retained intervention segments are subsequently used to adapt the policy in Stage II, after which the updated policy is redeployed.",
+      "page": 3,
+      "index": 4,
+      "width": 512,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-005.webp",
+      "caption": "TABLE V: Controlled handoff comparison on Lidded Box Packing using 10 perturbed and 10 nominal rollouts per method, capped at five complete handoff cycles. Values are rates. N/A indicates an undefined denominator.",
+      "page": 8,
+      "index": 5,
+      "width": 498,
+      "height": 251
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-006.webp",
+      "caption": "Fig. 3: Memory construction and mode-specific retrieval. Rop,t uses all entries, whereas Rpol,t combines forward Bentry windows from J selected trajectories.",
+      "page": 4,
+      "index": 6,
+      "width": 512,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07065v1/fig-007.webp",
+      "caption": "TABLE I: Definitions of the evaluated tasks.",
+      "page": 5,
+      "index": 7,
+      "width": 508,
+      "height": 377
+    }
+  ]
+}

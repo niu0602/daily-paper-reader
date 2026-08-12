@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-001.webp",
+      "caption": "Table 1: LIBERO success rates (%). Bold and underlined values denote the best and second-best results, respectively.",
+      "page": 6,
+      "index": 1,
+      "width": 798,
+      "height": 333
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-002.webp",
+      "caption": "Table 2: LIBERO-Plus success rates (%). Bold and underlined values denote the best and second-best results, respectively.",
+      "page": 6,
+      "index": 2,
+      "width": 1002,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-003.webp",
+      "caption": "Figure 2: Overall architecture of GWM-VLA. A frozen VGGT-Ω encoder aggregates multi-view observations at each timestep. Shared latent-action tokens condition both next-step latent prediction and flow-matching action generation. Snowflakes denote frozen modules, and flames denote trainable modules.",
+      "page": 4,
+      "index": 3,
+      "width": 1043,
+      "height": 468
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-004.webp",
+      "caption": "Figure 4: Diagnostic ablations on LIBERO (spatial suite) for target-view selection and action conditioning.",
+      "page": 7,
+      "index": 4,
+      "width": 446,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-005.webp",
+      "caption": "Figure 5: Effect of VGGT-Ω representation depth on LIBERO (spatial suite).",
+      "page": 7,
+      "index": 5,
+      "width": 442,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-006.webp",
+      "caption": "Figure 6: Qualitative probing of predicted next-step latent states using a separately trained and frozen depth decoder and camera-coordinate point clouds.",
+      "page": 7,
+      "index": 6,
+      "width": 490,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2608.07619v1/fig-007.webp",
+      "caption": "Figure 1: Mechanism-level comparison between VLA-JEPA and GWM-VLA. GWM-VLA combines geometry-aware multi-view state encoding, global context-conditioned targetview prediction, and shared latent-action conditioning.",
+      "page": 2,
+      "index": 7,
+      "width": 469,
+      "height": 403
+    }
+  ]
+}

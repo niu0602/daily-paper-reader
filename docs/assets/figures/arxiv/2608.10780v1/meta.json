@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-001.webp",
+      "caption": "Table 1: RoboTwin 2.0 success rates (%) grouped by the dominant semantic manipulation skill. The number of tasks is shown in parentheses. Categories form a mutually exclusive partition of all 50 tasks, and each entry is the unweighted mean over its tasks. Baseline per-task results are reproduced from Motus (Bi et al. 2025); complete task-level results are provided in the supplementary appendix. Bold denotes the highest rate in each row and setting.",
+      "page": 6,
+      "index": 1,
+      "width": 790,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-002.webp",
+      "caption": "Figure 1: Comparison of future modeling in robot policies. (a) A vision-language-action policy directly predicts actions from the current observation and task instruction without explicitly modeling future observations. (b) A world-action model jointly predicts the short-term visual future and the corresponding actions. (c) JEPA-WAM predicts stage guidance from the current observation and task instruction, and uses it as an internal condition for short-term world-action prediction. The stage guidance represents the intended task progress rather than a generated future observation.",
+      "page": 2,
+      "index": 2,
+      "width": 1052,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-003.webp",
+      "caption": "Figure 4: Execution efficiency on RoboTwin 2.0. We report the average episode length over all evaluation rollouts and over successful rollouts only; lower is better.",
+      "page": 7,
+      "index": 3,
+      "width": 452,
+      "height": 309
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-004.webp",
+      "caption": "Figure 3: Qualitative case study of stage-guided execution. JEPA-WAM uses the predicted next-stage latent to guide local action generation and reaches the success condition with fewer executed steps. In contrast, Motus eventually succeeds only after a longer trajectory with repeated up-and-down motion of the manipulated object.",
+      "page": 7,
+      "index": 4,
+      "width": 948,
+      "height": 478
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-005.webp",
+      "caption": "Table 3: Task-progress scoring protocol for the LIFT2 realrobot tasks .",
+      "page": 10,
+      "index": 5,
+      "width": 446,
+      "height": 390
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-006.webp",
+      "caption": "Figure 7: Representative closed-loop JEPA-WAM rollout on the LIFT2 power-strip task. The panels show the policy progressing from the initial state, through approach, contact, alignment, and switch-pressing interaction, to the terminal task state.",
+      "page": 14,
+      "index": 6,
+      "width": 1052,
+      "height": 540
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-007.webp",
+      "caption": "Table 6: Appendix: full per-task evaluation on 50 RoboTwin 2.0 simulation tasks under clean and randomized settings. Baseline results are reproduced from Motus (Bi et al. 2025); their printed aggregate values are preserved in the final row. Each task–setting cell reports success over 100 closed-loop trials. Bold denotes the highest success rate in each row and setting, including ties.",
+      "page": 13,
+      "index": 7,
+      "width": 772,
+      "height": 1146
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-008.webp",
+      "caption": "Figure 2: Overview of JEPA-WAM. (a) JEPA-WAM injects frozen Stage-JEPA guidance into the video stream of a World Action Model, enabling the predicted next-stage latent tokens to condition short-term video-flow and action-chunk prediction. (b) Stage-pair construction uses frozen V-JEPA2 representation changes to infer stage boundaries from dense robot trajectories and pairs each current frame t with its next boundary bi+1. (c) Stage-JEPA is trained by encoding current and next-stage observation slices with frozen V-JEPA2 and aligning predicted next-stage tokens with target tokens using cosine loss.",
+      "page": 4,
+      "index": 8,
+      "width": 948,
+      "height": 566
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-009.webp",
+      "caption": "Figure 5: Real-robot task-stage visualization on the LIFT2 platform. The top row shows cube grasping, and the bottom row shows power-strip operation. For each task, the panels show the initial object state, the main interaction stage, and the terminal task state.",
+      "page": 12,
+      "index": 9,
+      "width": 1052,
+      "height": 541
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10780v1/fig-010.webp",
+      "caption": "Figure 6: Representative closed-loop JEPA-WAM rollout on the LIFT2 cube-grasping task. The panels show the policy progressing from the initial state, through approach, contact, lifting, and transfer, to the terminal task state.",
+      "page": 12,
+      "index": 10,
+      "width": 1052,
+      "height": 541
+    }
+  ]
+}

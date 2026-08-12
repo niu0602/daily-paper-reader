@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-001.webp",
+      "caption": "Figure 1: Average performance across capability domain. Results from Table 2 are averaged within five domains: Spatial Reasoning, Temporal Understanding, Action Guidance, State Verification, and General Capability. NaviTrace, VABench-trace, and ShareRobot-Trajectory are excluded from the Action Guidance average due to incompatible trajectory metrics. The results show that Capek 0.5-35B-A3B maintains strong and balanced performance across embodied and general capabilities.",
+      "page": 1,
+      "index": 1,
+      "width": 1045,
+      "height": 1327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-002.webp",
+      "caption": "Figure 4: Representative capability-aligned supervision. Each panel shows a source-traceable input paired with its reference target, rather than a model prediction. The examples cover spatial relation and metric reasoning, temporal reasoning and localization, action-oriented points, regions, and trajectories, as well as physical-state, task-state, and progress records. These examples are grouped into four specialist branches according to their primary execution roles; multiple output formats within one family do not define separate specialists.",
+      "page": 6,
+      "index": 2,
+      "width": 936,
+      "height": 512
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-003.webp",
+      "caption": "Table 1: Reward formulation for different output formats. Each output format combines binary format validity with one or more task-specific reward functions. The same scoring functions are reused whenever identical output types appear across specialists.",
+      "page": 11,
+      "index": 3,
+      "width": 939,
+      "height": 365
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-004.webp",
+      "caption": "Table 2: Benchmark results for the 35B-A3B variant, compared with A3B MoE and 7–9B dense models of comparable active compute.",
+      "page": 15,
+      "index": 4,
+      "width": 962,
+      "height": 821
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-005.webp",
+      "caption": "Table 11: Complete model action trace for the EmbodiedBench episode. Every step returns Last action executed successfully.",
+      "page": 30,
+      "index": 5,
+      "width": 950,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-006.webp",
+      "caption": "Figure 7: Task-critical EmbodiedBench keyframes. Each selected frame is paired with the model action executed at that step. The full action trace contains 20 successful steps with no invalid action.",
+      "page": 30,
+      "index": 6,
+      "width": 925,
+      "height": 267
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-007.webp",
+      "caption": "Figure 2: Execution-centric capability view. A BEHAVIOR-1K household manipulation trace [25] illustrates how Spatial, Temporal, Guidance, and State requirements recur and overlap across an observation–reasoning–action cycle rather than form mutually exclusive stages.",
+      "page": 3,
+      "index": 7,
+      "width": 950,
+      "height": 530
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-008.webp",
+      "caption": "Table 5: EmbodiedBench evaluation on EB-HAB and EB-ALF. All values are task success rates (%). Bold and underlined values denote the best and second-best results, respectively.",
+      "page": 18,
+      "index": 8,
+      "width": 946,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-009.webp",
+      "caption": "Figure 5: Execution-centric construction of State Verification supervision. Starting from one BEHAVIOR-1K trajectory and its global task instruction, we retain checkpoint-aligned evidence segments at two semantic levels. Physical-state verification uses a local transition window to verify an action-result predicate, whereas task-level supervision uses the causal observation prefix through the current checkpoint. The shared task prefix supports both explicit goal-condition verification and the compact progress-value estimation readout. Future observations are hidden from the model.",
+      "page": 8,
+      "index": 9,
+      "width": 937,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-010.webp",
+      "caption": "Table 6: VIGIL agentic evaluation. Overall columns report primary score (Score), world completion (W ), and benchmark success (B); the eight task-family columns report W /B. All values are percentages.",
+      "page": 19,
+      "index": 10,
+      "width": 946,
+      "height": 273
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-011.webp",
+      "caption": "Table 4: Capability specialization and consolidation on capability-specific 35B-A3B benchmark suites. All model variants are initialized from the same Qwen3.6-35B-A3B checkpoint and evaluated under a unified protocol with identical prompts, preprocessing, parsers, and scoring. Mix-RL denotes the data-mixing reinforcement learning baseline. All entries report the native benchmark metric; higher values indicate better performance except for VABench-trace, which reports trajectory RMSE (lower is better).",
+      "page": 17,
+      "index": 11,
+      "width": 935,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-012.webp",
+      "caption": "Table 7: Recorded 35B-A3B specialist GRPO settings. Affordance and trajectory are two optimization contracts within the Guidance expert.",
+      "page": 27,
+      "index": 12,
+      "width": 929,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-013.webp",
+      "caption": "Table 8: Prompt templates used for public benchmark evaluation. Braced terms are fields supplied by the dataset.",
+      "page": 27,
+      "index": 13,
+      "width": 908,
+      "height": 617
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-014.webp",
+      "caption": "Figure 6: Capability specialization and consolidation. Four specialists acquire complementary execution-facing capabilities from a shared backbone. TIES combines their task vectors to initialize a unified student, after which routed MOPD distills the responsible specialist on prefixes induced by that student. Specialists and routing are required only during consolidation; deployment uses one checkpoint.",
+      "page": 9,
+      "index": 14,
+      "width": 920,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-015.webp",
+      "caption": "Figure 8: Step-by-step VIGIL rollout. Each frame is paired with the exact model function call for that observation. The successful activation occurs at Step 8; Step 10 closes the episode with a matching success report.",
+      "page": 31,
+      "index": 15,
+      "width": 879,
+      "height": 602
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-016.webp",
+      "caption": "Figure 3: Audited candidate-data snapshot. The inner ring groups the four capability families, and the outer ring separates their principal supervision products. All slices are reported in train-side candidate view rows.",
+      "page": 5,
+      "index": 16,
+      "width": 893,
+      "height": 528
+    },
+    {
+      "url": "assets/figures/arxiv/2608.06756v1/fig-017.webp",
+      "caption": "Table 3: Benchmark results for the 2B variant, compared with models of at most 4B parameters.",
+      "page": 16,
+      "index": 17,
+      "width": 939,
+      "height": 800
+    }
+  ]
+}

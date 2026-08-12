@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09778v1/fig-001.webp",
+      "caption": "Fig. 3. Qualitative functional-part comparison. Columns show Big Pot, Double Handle Pot, Watering Can, Kitchen Knife, and Hammer. PartSLIP and PartField operate on clean mesh or processed complete geometry, while RoboSeg constructs part labels from robot-acquired online scans without mesh input. Red dashed boxes highlight manipulation-critical regions such as handles, spouts, blades, and tool heads.",
+      "page": 4,
+      "index": 1,
+      "width": 508,
+      "height": 422
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09778v1/fig-002.webp",
+      "caption": "Fig. 2. RoboSeg system architecture. A: VLM-guided functional part discovery converts the initial RGB observation into an object name and compact functional part prompts. B: Asynchronous online semantic reconstruction decouples high-frequency RGB-D odometry and TSDF fusion from keyframetriggered SAM3 part-mask prediction; projected masks are accumulated in a voxel-voting tensor to produce a stable part-labeled point cloud. C: Task-oriented grasping resolves a natural-language task to task-relevant part labels, assigns pretrained grasp-detector candidates to semantic parts, and executes the selected candidate.",
+      "page": 3,
+      "index": 2,
+      "width": 1052,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09778v1/fig-003.webp",
+      "caption": "Fig. 1. Problem setting contrast. Offline 3D part segmentation typically starts from known or precomputed complete object geometry, such as a mesh or complete point cloud, and then outputs part labels. RoboSeg targets an online manipulation setting: the robot observes an unknown object with an eye-in-hand RGB-D camera, discovers functional parts from the initial view, reconstructs geometry during scanning, and maintains a part-level map for grasp-candidate selection.",
+      "page": 1,
+      "index": 3,
+      "width": 512,
+      "height": 279
+    }
+  ]
+}

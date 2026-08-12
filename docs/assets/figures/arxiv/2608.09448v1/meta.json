@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09448v1/fig-001.webp",
+      "caption": "Table 1: Task-sharing diagnosis for state-grounded single-prompt Offline TTT on WidowX at a fixed checkpoint.",
+      "page": 6,
+      "index": 1,
+      "width": 740,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09448v1/fig-002.webp",
+      "caption": "Figure 2: Policy-internal cross-layer attention changes around interaction transitions. (a) RGB observations (upper row) and representative action-query-to-VLM image-patch attention maps (lower row) from a Stack Blocks rollout at a fixed checkpoint; all attention maps share one episode-level scale. (b) Temporal redistribution of the action-to-VLM attention distribution across all 36 DiT layers. (c) The corresponding layer-averaged attention-change trace. Pronounced redistribution occurs around contact/closure and the subsequent post-grasp transition.",
+      "page": 7,
+      "index": 2,
+      "width": 960,
+      "height": 650
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09448v1/fig-003.webp",
+      "caption": "Figure 1: Overview of VANE. (a) MoLP composes a context-dependent latent prompt from a shared prompt bank without requiring a task identifier. (b) The upper comparison contrasts two deployment-observable proxies: state grounding supplies an immediately available but same-time target, whereas WPI uses delayed observations to provide cross-time, action-conditioned supervision of interaction outcomes. The lower diagram instantiates WPI as future visual representation prediction for prompt-only TTT. (c) AGV-TTT uses cross-layer attention redistribution to propose a shadow update and commits it only after paired future validation.",
+      "page": 3,
+      "index": 3,
+      "width": 976,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09448v1/fig-004.webp",
+      "caption": "Table 4: Comparison with prior policies on three common Google Robot task families.",
+      "page": 9,
+      "index": 4,
+      "width": 978,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09448v1/fig-005.webp",
+      "caption": "Table 3: Comparison with prior policies on the SimplerEnv WidowX benchmark.",
+      "page": 9,
+      "index": 5,
+      "width": 977,
+      "height": 412
+    }
+  ]
+}

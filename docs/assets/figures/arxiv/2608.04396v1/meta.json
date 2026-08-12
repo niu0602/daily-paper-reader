@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-001.webp",
+      "caption": "Table 2: Zero-shot performance (%) of different VLA models on the LIBERO-Plus benchmark.",
+      "page": 6,
+      "index": 1,
+      "width": 823,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-002.webp",
+      "caption": "Figure 19: Failed results of our CofactVLA model on the LIBERO-Plus benchmark.",
+      "page": 25,
+      "index": 2,
+      "width": 742,
+      "height": 757
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-003.webp",
+      "caption": "Figure 20: Failed results of our CofactVLA model on the generalization experiment of real-world deployments.",
+      "page": 26,
+      "index": 3,
+      "width": 744,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-004.webp",
+      "caption": "Figure 13: Qualitative comparison between our CofactVLA model and π0.5 model on the LIBERO Benchmark.",
+      "page": 21,
+      "index": 4,
+      "width": 736,
+      "height": 706
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-005.webp",
+      "caption": "Figure 1: (a) Motivation: Visual modality inadvertently induces a spurious backdoor path (I 99K C → A). The visual confounder C acts as a shortcut that dictates the action A, overriding the true semantic intent T . (b) Our proposed Dual-path Deconfounding Graph: The red do-operator signifies Feature-Level Counterfactual Covariance Reduction (CCR), which explicitly suppresses the spurious visual confounder C. The blue do-operator signifies Action-Level Orthogonal Projection Guidance (OPG), which geometrically extracts and enhances the pure language intent T .",
+      "page": 2,
+      "index": 5,
+      "width": 744,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-006.webp",
+      "caption": "Figure 14: Qualitative results of our CofactVLA model on the Spatial suite of LIBERO-Plus Benchmark.",
+      "page": 22,
+      "index": 6,
+      "width": 700,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-007.webp",
+      "caption": "Figure 17: Qualitative results of our CofactVLA model on the Long suite of LIBERO-Plus Benchmark.",
+      "page": 23,
+      "index": 7,
+      "width": 725,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-008.webp",
+      "caption": "Figure 4: Sensitivity analyses of intervention intensities. Top row: action-level causal scale γ. Bottom row: feature-level intervention strength β.",
+      "page": 8,
+      "index": 8,
+      "width": 775,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-009.webp",
+      "caption": "Figure 2: The overall architecture of CofactVLA. (Left) Driven by the proposed Dual-path Deconfounding Graph (DDG), we propose an intervention framework to address the vision-override phenomenon. (Right) The framework consists of two core components dynamically built upon factual and counterfactual flows. To execute Language Intervention, Orthogonal Projection Guidance (OPG) geometrically extracts the pure semantic intent by projecting the factual flow Vf onto the counterfactual visual prior Vcf . To execute Vision Intervention, Contrastive Covariance Reduction (CCR) extracts the dominant visual confounder bias Ubias via the covariance difference of latent features to cleanse the features before feeding them to the action expert.",
+      "page": 4,
+      "index": 9,
+      "width": 786,
+      "height": 376
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-010.webp",
+      "caption": "Figure 11: Visualizations of the perturbation design for different tasks.",
+      "page": 19,
+      "index": 10,
+      "width": 748,
+      "height": 835
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-011.webp",
+      "caption": "Table 4: CofactVLA Training Configuration.",
+      "page": 17,
+      "index": 11,
+      "width": 656,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-012.webp",
+      "caption": "Figure 9: Example of dual-view sample collection for Task I and Task II. .",
+      "page": 17,
+      "index": 12,
+      "width": 744,
+      "height": 586
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-013.webp",
+      "caption": "Figure 6: Qualitative comparison of OOD generalization. While π0.5 succeeds on the standard background (left), it fails completely on the unseen checkered texture (right). In contrast, CofactVLA robustly completes the task by decoupling visual confounders.",
+      "page": 9,
+      "index": 13,
+      "width": 826,
+      "height": 220
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-014.webp",
+      "caption": "Figure 7: OOD generalization of CofactVLA: Visualizations from real-world experiments.",
+      "page": 9,
+      "index": 14,
+      "width": 826,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-015.webp",
+      "caption": "Figure 12: We report success rate (100 trials) for 9 skills (x-axis) and the average over all tasks (left inset), comparing OpenVLA, π0, π0.5, and Ours. Our method achieves the best overall performance (96.7% average) and reaches better performance on most tasks.",
+      "page": 20,
+      "index": 15,
+      "width": 817,
+      "height": 460
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04396v1/fig-016.webp",
+      "caption": "Figure 8: Our hardware platform for the real-world robot experiments.",
+      "page": 16,
+      "index": 16,
+      "width": 659,
+      "height": 603
+    }
+  ]
+}

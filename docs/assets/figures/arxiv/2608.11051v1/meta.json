@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-001.webp",
+      "caption": "Fig. 6. Diverse groups composition and behaviors. We show an external camera capturing the scene to make it easier for the reader to understand the group positions in front of the robot.",
+      "page": 11,
+      "index": 1,
+      "width": 1002,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-002.webp",
+      "caption": "Fig. 7. Diverse non-interacting individual behaviors. We show an external camera capturing the scene to make it easier for the reader to view the behavior of the passerby.",
+      "page": 11,
+      "index": 2,
+      "width": 1002,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-003.webp",
+      "caption": "Fig. 9. Using the convex hull instead of the raw segmented trashcan in SSUP-A to detect interactions based on masks intersections",
+      "page": 11,
+      "index": 3,
+      "width": 488,
+      "height": 250
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-004.webp",
+      "caption": "Fig. 1. Overview of the content of HUI360. The dataset comprises 4 310 tracks forming more than 1M detections over time, for each of them we provide a segmentation mask as well as detailed 2D Pose Keypoints, images are available on request for research purposes. The dataset is diverse (9 environments) and interaction are automatically annotated. Automatic tracking and interaction annotation is manually reviewed and corrected. Additional annotations enabling cross-dataset studies have been generated from the data of SSUP-HRI [1] using our automated pipeline.",
+      "page": 2,
+      "index": 4,
+      "width": 1052,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-005.webp",
+      "caption": "TABLE I COMPARISON OF HUMAN-ROBOT INTERACTION DATASETS. #FRAMES AND FOV ARE EITHER: REPORTED FROM THE ORIGINAL PUBLICATIONS, REPORTED FROM THE DOWNLOADED DATASET WHEN AVAILABLE OR ESTIMATED USING REPORTED DURATIONS AND FRAMERATE. WE ADDED THE UNLABELED DATASET OF [1] WITH NUMBERS REPORTED FROM THE ORIGINAL PUBLICATION ABOUT THE FIRST OF THEIR TWO FIELD SESSION. WE DENOTE SSUP-A THE SSUP-HRI DATA FROM BOTH FIELD SESSIONS AUGMENTED WITH OUR ANNOTATIONS. AVAILABLE DATASETS ARE EITHER PUBLIC [2], [10], [5], [11] OR CAN BE OBTAINED VIA A DEFINED PROCEDURE [8], [1].",
+      "page": 2,
+      "index": 5,
+      "width": 990,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-006.webp",
+      "caption": "Fig. 5. Temporal rationale of input labelling and sampling. On top an non",
+      "page": 7,
+      "index": 6,
+      "width": 512,
+      "height": 491
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-007.webp",
+      "caption": "Fig. 15. Predictions of an MLP classifier on 4 different segments of the same track",
+      "page": 14,
+      "index": 7,
+      "width": 1002,
+      "height": 827
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-008.webp",
+      "caption": "Fig. 14. ROC curves of classifiers (RF, MLP, LSTM) for cross-dataset evaluation using D3 and TADV = 15. Classifiers are trained on HUI360 Train or SSUP-A Train, and evaluated on HUI360 Test (left) or SSUP-A Test (right). In HUI360 Test, TP = 71 and TN = 377, in SSUP-A Test, TP = 154 and TN = 5080.",
+      "page": 14,
+      "index": 8,
+      "width": 1054,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-009.webp",
+      "caption": "Fig. 13. Using the mask size as a proxy for distance. Note that the scales used for mask and box sizes (in pixels) are logarithmic. All the illustrative overlayed masks have the same scale.",
+      "page": 13,
+      "index": 9,
+      "width": 1052,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-010.webp",
+      "caption": "Fig. 2. Detection and filtering process in equirectangular images: the process of detection uses 4 overlapping fixed regions of the image with wrapping. Filtering is done based on box size, mask size and number of valid keypoints.",
+      "page": 4,
+      "index": 10,
+      "width": 508,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-011.webp",
+      "caption": "TABLE II DESCRIPTION OF THE HUI360 AND SSUP-A DATASET. S: SETUPS, R: RECORDINGS, E: EPISODES, (B.I.) : BEFORE INTERACTING, #FRAMES REFERS TO THE NUMBER OF FRAMES WHERE AT LEAST ONE PERSON IS PRESENT. IN HUI360 OUT OF 71.3 HOURS OF RECORDING WE EXTRACTED 11.3H OF EPISODES AT 15FPS (612K FRAMES). ASTORPLACE AND ALBEESQUARE REFER TO THE TWO FIELD SESSIONS OF SSUP-HRI [1] EACH OF THEM SPANNING SEVERAL DAYS WITH A MOBILE (M) ROBOT. WE CREATE TRAIN AND VALIDATION SET FOR BOTH DATASET AND REFER TO THEM AS",
+      "page": 4,
+      "index": 11,
+      "width": 1020,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-012.webp",
+      "caption": "Fig. 12. Example of corrections made to automatic interaction detection in SSUP-A. Screenshots of the visualization/correction tool.",
+      "page": 12,
+      "index": 12,
+      "width": 488,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-013.webp",
+      "caption": "Fig. 11. False positives in SSUP-A when using intersection of persons masks with interaction zone convex hull under skewed viewpoint",
+      "page": 12,
+      "index": 13,
+      "width": 512,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-014.webp",
+      "caption": "Fig. 4. Heatmaps of the ankles position of all tracks in HUI360 (top two rows) and SSUP-A (bottom row). Note that data in SSUP-A are recorded with moving robots, the background images only serve as illustrations and are not geometric references.",
+      "page": 5,
+      "index": 14,
+      "width": 512,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11051v1/fig-015.webp",
+      "caption": "Fig. 3. Tracking and segmentation pipeline in equirectangular images: using SAM2 new tracks are instantiated from the filtered detections and processed using a mobile region of the image until it breaks or reaches the end of the episode - then the next track is instantiated from the next non-overlapping detection.",
+      "page": 5,
+      "index": 15,
+      "width": 1052,
+      "height": 318
+    }
+  ]
+}

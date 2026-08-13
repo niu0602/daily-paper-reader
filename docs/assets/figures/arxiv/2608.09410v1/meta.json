@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09410v1/fig-001.webp",
+      "caption": "Figure 1: Memory as code resolves history-dependent action ambiguity. Top: the required number of presses is specified by a card observed at the start of the episode. Bottom: at o2 the first press is complete and the arm has lifted, so the current observation alone supports two incompatible action modes: press again (a12) or lift and stop (a22). The Markovian VLA conditions on o2 only and cannot choose between them. HyMeS instead passes the interaction history to a coding agent that maintains symbolic memory in executable form, and selects the corresponding steering function. The gradient of that function guides action generation toward pressing again, using the same policy weights with no weight update.",
+      "page": 1,
+      "index": 1,
+      "width": 500,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09410v1/fig-002.webp",
+      "caption": "Table 1: Comparison of the fine-tuned π0.5 policy, PrediMem, and HyMeS on RoboMemArena. Rows group tasks by memory capability, while columns report Cumulative Success Rate (CSR), which measures average subgoal completion, and Task Success Rate (TSR), which measures full-task completion. Category-average rows summarize each task category, and the final row reports overall performance across all 160 evaluation episodes. HyMeS executes the best-performing heuristic selected during exploration and freezes it throughout evaluation, with code editing and reflection disabled. Bold denotes the best result.",
+      "page": 6,
+      "index": 2,
+      "width": 1052,
+      "height": 545
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09410v1/fig-003.webp",
+      "caption": "Figure 4: Interpretable failure modes on the SO-101. Across these examples, the symbolic memory and activated constraint are correct before execution. The failures instead arise from motor execution or stage-completion verification. Top: a lateral deviation at the pre-grasp pose (Aiming Deviation) makes the gripper close beside the remembered target (Missed Grasp). Bottom: on the button task, vertical jitter near the contact point causes an unintended second press (Extra Press), whereas an insufficient press depth (Insufficient Press Depth) is not recognized as completion by PACE.",
+      "page": 7,
+      "index": 3,
+      "width": 500,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09410v1/fig-004.webp",
+      "caption": "Figure 3: Memory-guided execution on the SO-101 (Observe-and-Pick-Up). Top: the target color is written on a card that is visible only at the start of the episode (Initial Cue) and is then removed from the workspace (Cue Disappears), so the current observation no longer identifies which block to pick. Bottom: without steering, the reactive π0.5 policy no longer has access to the cue and reaches indifferently toward either candidate block (Target Ambiguity). HyMeS retains the cue in executable memory and instantiates the corresponding constraint, which steers the same policy weights to the blue block (Memory Guided).",
+      "page": 7,
+      "index": 4,
+      "width": 500,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09410v1/fig-005.webp",
+      "caption": "Figure 2: Overview of the HyMeS within-episode execution loop. The instruction and the current observation are passed to the pretrained policy in weight space, whose weights stay fixed throughout. At initialization and after each verified stage transition, SAM and DINOv2 extract task-relevant keypoints; the coding agent (claude code / codex) combines them with the observation and the program P(n) refined over prior rollouts to instantiate a code-space memory holding an executable plan, the current stage, its verification rules, and a stage-specific constraint reward. The gradient of that reward is injected into action generation as guidance, so the executed action chunk at follows the current memory state without any weight update. PACE verifies progress using synchronized multi-frame visual and joint-state evidence, advancing the stage only when at least k of the most recent w completion queries pass.",
+      "page": 3,
+      "index": 5,
+      "width": 1073,
+      "height": 531
+    }
+  ]
+}

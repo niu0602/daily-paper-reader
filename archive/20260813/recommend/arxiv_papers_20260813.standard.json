@@ -1,0 +1,575 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-13T20:22:25.527737+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 2,
+    "deep_cap": 6,
+    "deep_selected": 2,
+    "quick_candidates": 11,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2608.12122v1",
+      "source": "arxiv",
+      "title": "HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing",
+      "abstract": "Robotic manipulation with dexterous hands is a cornerstone of Embodied AI, yet its progress is stifled by the high cost of collecting embodiment-aware teleoperation data. While abundant egocentric videos of human hands offer a scalable alternative, the profound discrepancies in appearance, articulation, and camera viewpoints between human and robotic data raise significant challenges for co-training. Though existing general image-editing models demonstrate strong capabilities, they lack necessary embodiment-specific priors to fully bridge this gap. In this work, we present HandEdit, a unified large-scale embodiment-aware image-editing dataset and benchmark specifically designed to transform human hands and arms into various dexterous robotic embodiments within egocentric frames. HandEdit comprises over 200M editing instances derived from five diverse source datasets, covering 26 distinct URDFs, including 13 hand-only and 13 hand-arm configurations. Alongside the dataset, we establish a unified benchmark protocol with two tracks: Hand-only and Hand-Arm, supporting URDF-conditioned evaluation. We conduct extensive evaluations of 11 representative image-editing baselines using a multi-dimensional metric suite, including generic similarity metrics, VLM-based judgment, and embodiment-aware metrics. HandEdit serves as a critical resource at the intersection of image editing and robotics: it advances embodiment-aware editing models while enabling scalable dexterous robotic learning from abundant human video data, paving the way for more generalizable Embodied AI.",
+      "authors": [
+        "Zhenjie Yang",
+        "Xingyu Jiao",
+        "Guopeng Zhong",
+        "Shuzhe Yang",
+        "Shi Che",
+        "Chao Wu",
+        "Chenyu Jiang",
+        "Dongjie Zhang",
+        "Yideng Zhang",
+        "Zheng Zhang",
+        "Muyun Jiang",
+        "Haisheng Su",
+        "Shuang Jin",
+        "Donghang Zhang",
+        "Chao Yang",
+        "Li Chen",
+        "Hongyang Li",
+        "Zuxuan Wu",
+        "Yu-Gang Jiang",
+        "Xiaosong Jia",
+        "Junchi Yan"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-08-12T14:41:53+00:00",
+      "link": "https://arxiv.org/pdf/2608.12122v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "Unified benchmark for egocentric human-to-robot dexterous hand image editing using egocentric videos",
+      "llm_evidence_cn": "使用第一视角视频进行第一视角人到机器人灵巧手图像编辑的统一基准",
+      "llm_evidence": "使用第一视角视频进行第一视角人到机器人灵巧手图像编辑的统一基准",
+      "canonical_evidence": "使用第一视角视频进行第一视角人到机器人灵巧手图像编辑的统一基准",
+      "llm_tldr_en": "HandEdit is a benchmark for transforming egocentric human hand videos into robotic dexterous hand data for training.",
+      "llm_tldr_cn": "HandEdit是一个将第一视角人手视频转换为机器人灵巧手数据以进行训练的基准。",
+      "llm_tldr": "HandEdit是一个将第一视角人手视频转换为机器人灵巧手数据以进行训练的基准。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10162v1",
+      "source": "arxiv",
+      "title": "MAD-HOI: Masked Autoregressive Diffusion for Generating Articulated Hand Object Interactions from Text",
+      "abstract": "Methods for text-based generation of hand-object interaction (HOI) sequences primarily focus on producing smooth, physically plausible trajectories. A truly utilitarian method should additionally support variable-length generation, composite motion sequences, motion completion and infilling, and reliable termination without compromising physical plausibility. Standard diffusion models for HOI generation are typically trained only for text-to-motion generation on atomic motions and require the motion length to be specified a-priori. Autoregressive (AR) methods provide greater sequence-level flexibility, but commonly depend on discrete motion codes, which can lose contact-sensitive motion detail. To address these key limitations, we present a model performing Masked Autoregression with Diffusion for HOI generation (MAD-HOI). Our method starts by encoding hand and object motions in a continuous latent space while keeping them disentangled to maintain stream-wise control. This is followed by a masked autoregressive transformer to predict context features that condition a flow-matching head. MAD-HOI is capable of motion generation for atomic and composite articulated sequences, conditioned motion completion and infilling, as well as EOM (End of Motion) prediction from a single training objective. We provide comprehensive evaluations for these capabilities and benchmark our method on the ARCTIC and GRAB datasets. Our experiments demonstrate that our method generates more diverse and physically plausible interactions compared to other open-sourced baseline methods.",
+      "authors": [
+        "Ananya Bal",
+        "Kartik Sharma",
+        "Ethan Lai",
+        "Samyak Tiwari",
+        "Liza Dahiya",
+        "Chaitanya Chawla",
+        "Laszlo A. Jeni"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-10T19:30:59+00:00",
+      "link": "https://arxiv.org/pdf/2608.10162v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Generating articulated hand object interactions (HOI) sequences",
+      "llm_evidence_cn": "生成关节式手物交互（HOI）序列",
+      "llm_evidence": "生成关节式手物交互（HOI）序列",
+      "canonical_evidence": "生成关节式手物交互（HOI）序列",
+      "llm_tldr_en": "MAD-HOI uses masked autoregressive diffusion to generate physically plausible hand-object interactions.",
+      "llm_tldr_cn": "MAD-HOI使用掩码自回归扩散生成物理上合理的灵巧手与物体交互序列。",
+      "llm_tldr": "MAD-HOI使用掩码自回归扩散生成物理上合理的灵巧手与物体交互序列。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.08558v1",
+      "source": "arxiv",
+      "title": "Vid2WAM: Distilling Video Diffusion Priors into World Action Models",
+      "abstract": "World Action Models (WAMs) improve robot policy learning by jointly modeling future visual dynamics and actions. However, their scalability and generalization remain constrained by their reliance on costly expert demonstrations. We challenge this by asking whether future supervision for WAMs must originate from target-task expert trajectories. In this paper, we propose Vid2WAM, an offline distillation framework that transfers visual diffusion priors from a large video foundation model into a compact WAM student. Given an observation and language instruction, Vid2WAM distills supervision through two complementary channels: task-conditioned future rollouts directly supervise the student's future prediction branch, while an inverse dynamics model recovers embodiment-specific pseudo-actions for action learning. To robustly integrate synthetic and real supervision, we introduce source-aware residual action adaptation that learns source-specific corrections around a shared action backbone and mitigates interference from noisy pseudo-actions. During inference, both the video teacher and inverse dynamics model are discarded, leaving only the WAM student for efficient deployment. Simulation and real-world experiments demonstrate that Vid2WAM improves novel-task generalization and data efficiency under limited expert demonstrations while preserving low-latency inference.",
+      "authors": [
+        "Chenhao Qiu",
+        "Ruixiang Wang",
+        "Runyi Zhao",
+        "Sixu Lin",
+        "Songen Gu",
+        "Shufeng Nan",
+        "Guiliang Liu",
+        "Kui Jia",
+        "Yanwei Fu",
+        "Simo Wu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-09T08:02:49+00:00",
+      "link": "https://arxiv.org/pdf/2608.08558v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "distilling video diffusion priors for robot policy learning",
+      "llm_evidence_cn": "将视频扩散先验蒸馏用于机器人策略学习",
+      "llm_evidence": "将视频扩散先验蒸馏用于机器人策略学习",
+      "canonical_evidence": "将视频扩散先验蒸馏用于机器人策略学习",
+      "llm_tldr_en": "Vid2WAM distills visual diffusion priors from video models into world action models for robot policy learning.",
+      "llm_tldr_cn": "Vid2WAM 将视频大模型的视觉扩散先验蒸馏到世界动作模型中，以改进机器人策略学习。",
+      "llm_tldr": "Vid2WAM 将视频大模型的视觉扩散先验蒸馏到世界动作模型中，以改进机器人策略学习。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.04404v1",
+      "source": "arxiv",
+      "title": "Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models",
+      "abstract": "World Action Models (WAMs) improve robot manipulation by learning how the environment evolves beyond the current observation. However, existing approaches face a fundamental dilemma: Joint-WAMs preserve future-aware representations during inference but incur prohibitive computation costs, while efficient alternatives remove future modeling at inference time and may lose the robustness benefits of temporal reasoning. In this work, we revisit the role of future representations in WAMs and show that inference-time future conditioning is critical for generalization under distribution shifts. This observation motivates Faster-WAM, an efficient future-conditioning WAM that preserves future representations while avoiding expensive video-action interaction. Faster-WAM introduces a sparse future-conditioning framework that computes future representations once and selectively reuses them throughout action denoising. Specifically, we propose SparseMoT to replace ubiquitous layer-wise fusion with selective video-action interaction at a compact subset of network stages, and Interval KV-Fusion to aggregate multi-depth future representations without increasing attention complexity. Experiments demonstrate that Faster-WAM achieves a substantially better performance-efficiency trade-off than existing WAMs. On the out-of-distribution LIBERO-Plus benchmark, Faster-WAM improves success rate from 49.14% to 73.57% compared with Fast-WAM, while running 2.21$\\times$ faster than Joint-WAM. It further achieves state-of-the-art performance on LIBERO and RoboTwin 2.0, while demonstrating strong robustness in real-world manipulation.",
+      "authors": [
+        "Weiheng Zhao",
+        "Haoyi Jiang",
+        "Xin Shi",
+        "Liu Liu",
+        "Fan Huang",
+        "Zhizhong Su",
+        "Wei Sui",
+        "Xinggang Wang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-05T03:18:58+00:00",
+      "link": "https://arxiv.org/pdf/2608.04404v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "improving robot manipulation via world action models and future representations",
+      "llm_evidence_cn": "通过世界动作模型和未来表示改进机器人操作",
+      "llm_evidence": "通过世界动作模型和未来表示改进机器人操作",
+      "canonical_evidence": "通过世界动作模型和未来表示改进机器人操作",
+      "llm_tldr_en": "Faster-WAM optimizes inference-time future conditioning in world action models for robust robot manipulation.",
+      "llm_tldr_cn": "Faster-WAM 优化了世界动作模型中的推理时未来条件，增强了机器人操作的鲁棒性。",
+      "llm_tldr": "Faster-WAM 优化了世界动作模型中的推理时未来条件，增强了机器人操作的鲁棒性。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.06965v1",
+      "source": "arxiv",
+      "title": "Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies",
+      "abstract": "Vision-language-action (VLA) policies fine-tuned from a fixed scene camera can fail when the camera is moved, even when the task, objects, language, and robot state are unchanged. We study scene-camera viewpoint robustness using only a scene RGB image, language, and proprioception, without camera labels, extrinsics, depth, or point-cloud inputs. The wrist stream is masked throughout to prevent an unperturbed visual shortcut from confounding attribution to scene-camera variation. For flow-based VLAs, we propose to regularize the action-flow velocity field, the quantity directly integrated to generate continuous action chunks. We construct action-equivalent view pairs by resetting original LIBERO demonstrations to the same MuJoCo state and rendering nominal and perturbed scene-camera views. Both views are supervised by flow matching, while a cross-view loss encourages their predicted action-flow velocities to agree at the same sampled flow coordinates. On the LIBERO-Plus camera-perturbation track, our method reaches 87.2$\\pm$0.4% (4,797 rollouts per seed across 3 training seeds), +7.4pp over flow-matching-only training on the same paired data (79.8$\\pm$0.8%, also 3 seeds) and +12.5pp over naive mixed-camera SFT, while maintaining nominal-camera ID performance (95.0$\\pm$0.8%; same-data FM-only: 95.0$\\pm$4.3%). A shuffled-pair control collapses to 25.8%, showing that the gain depends on action-equivalent pairing. On a real robot, we evaluate three tabletop tasks with 10 rollouts per task and camera placement; held-out-camera success improves from 53.3% to 74.4% under the same single-scene-RGB inference interface.",
+      "authors": [
+        "Bingqi Huang",
+        "Bingchuan Wei",
+        "Xuan Wang",
+        "Yingkai Cai",
+        "Zhaokui Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-07T08:41:31+00:00",
+      "link": "https://arxiv.org/pdf/2608.06965v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "camera-robust VLA policies using scene RGB and wrist stream masking",
+      "llm_evidence_cn": "使用场景RGB和手腕流遮蔽的相机鲁棒性VLA策略",
+      "llm_evidence": "使用场景RGB和手腕流遮蔽的相机鲁棒性VLA策略",
+      "canonical_evidence": "使用场景RGB和手腕流遮蔽的相机鲁棒性VLA策略",
+      "llm_tldr_en": "Proposes a regularization method to make vision-language-action policies robust to camera viewpoint changes.",
+      "llm_tldr_cn": "提出一种正则化方法，使视觉-语言-动作策略对相机视角变化具有鲁棒性。",
+      "llm_tldr": "提出一种正则化方法，使视觉-语言-动作策略对相机视角变化具有鲁棒性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.05903v2",
+      "source": "arxiv",
+      "title": "Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models",
+      "abstract": "Mainstream World-Action Models (WAMs) adapt pretrained video generation models (VGMs) for robot control, transferring their learned dynamics prior for action prediction. These VGMs are typically trained in a variational autoencoder (VAE) latent space. However, the VAE latent space is optimized for pixel reconstruction, which rewards fine appearance detail and leaves the action prediction fragile under visual shifts. Recent works build WAMs in semantic latent space, which are more robust to appearance shifts. However, these models cannot leverage the large-scale VGM pretraining that exists only in VAE space. To overcome this dilemma, we propose Robust-WAM, a general post-training method for video-generation-based WAMs that preserves the VAE-based generative path and adds a lightweight semantic foresight alignment objective on the action stream. This retains the large-scale VGM pretraining while grounding actions in appearance-invariant dynamics that stay reliable under illumination shifts and other visual out-of-distribution conditions. Specifically, we employ learnable query tokens to bring future-scene semantics into the action stream by aligning their output hidden states with the semantic foresight of future ground-truth frames. To establish the temporal correspondence between each query and the future step it describes, we give it the positional encoding of the matching action tokens. Experiments on out-of-distribution generalization simulation benchmarks and a real-robot setup show that our Robust-WAM consistently improves the success rates of multiple WAM baselines without sacrificing in-distribution performance.",
+      "authors": [
+        "Haodong Yan",
+        "Junfeng Li",
+        "Junjie He",
+        "Zhide Zhong",
+        "MingMing Yu",
+        "Wenxuan Song",
+        "Jiaguan Zhu",
+        "Yangyang Zheng",
+        "Yuqiao Du",
+        "Jiadi You",
+        "Yingjie Cai",
+        "Xu Yan",
+        "Guanyi Zhao",
+        "Bingbing Liu",
+        "Haoang Li"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-08-06T11:31:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.05903v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "video-generation-based world-action models for robot control",
+      "llm_evidence_cn": "基于视频生成的机器人控制世界动作模型",
+      "llm_evidence": "基于视频生成的机器人控制世界动作模型",
+      "canonical_evidence": "基于视频生成的机器人控制世界动作模型",
+      "llm_tldr_en": "Robust-WAM improves video-based robot control by bridging generative pretraining with semantic latent spaces.",
+      "llm_tldr_cn": "Robust-WAM通过将生成式预训练与语义潜空间相结合，改进了基于视频的机器人控制。",
+      "llm_tldr": "Robust-WAM通过将生成式预训练与语义潜空间相结合，改进了基于视频的机器人控制。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.09731v1",
+      "source": "arxiv",
+      "title": "TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation",
+      "abstract": "Wireless telerobotic manipulation relies on timely multi-view video feedback, but the available uplink bandwidth is often limited and dynamic. This paper presents Task-Aware Multi-View Adaptive Streaming (TAMS), a system that allocates video bitrate according to the current manipulation phase. TAMS infers task phase from lightweight robot-side signals and prioritizes the camera view most relevant to the operator while preserving baseline visibility for secondary views. Experiments on a six-degree-of-freedom (6-DoF) teleoperation testbed under three constrained network conditions show that TAMS improves primary view Structural Similarity Index (SSIM), reduces task completion time, and increases trial success rate compared with equal and static allocation baselines. Under the most constrained bandwidth condition, TAMS reduces mean completion time from 68.9 s to 43.9 s relative to equal allocation and increases trial success rate from 48% to 71%. Code is available at: https://github.com/Dzxx623/TAMS.",
+      "authors": [
+        "Zexin Deng",
+        "Zhenhui Yuan",
+        "Lu Tian",
+        "Subhash Lakshminarayana",
+        "Longhao Zou"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.MM"
+      ],
+      "published": "2026-08-10T15:30:51+00:00",
+      "link": "https://arxiv.org/pdf/2608.09731v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "prioritizing camera view relevant to operator in telerobotic manipulation",
+      "llm_evidence_cn": "在远程机器人操作中优先处理与操作员相关的相机视角",
+      "llm_evidence": "在远程机器人操作中优先处理与操作员相关的相机视角",
+      "canonical_evidence": "在远程机器人操作中优先处理与操作员相关的相机视角",
+      "llm_tldr_en": "TAMS optimizes multi-view video streaming for teleoperation by prioritizing task-relevant views.",
+      "llm_tldr_cn": "TAMS通过优先处理任务相关视角，优化了远程操作中的多视角视频流。",
+      "llm_tldr": "TAMS通过优先处理任务相关视角，优化了远程操作中的多视角视频流。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies leveraging egocentric vision for robotic dexterous skill learning",
+      "matched_requirement_id": "req-8",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.07619v1",
+      "source": "arxiv",
+      "title": "GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning",
+      "abstract": "Vision-Language-Action (VLA) models achieve strong robotic manipulation performance but often degrade under visual and environmental shifts. Latent world modeling offers a promising approach to improving robustness, yet existing methods commonly encode camera views independently and predict holistic scene dynamics without explicitly modeling their geometric relationships. We propose GWM-VLA, a geometry-aware latent world modeling framework for VLA learning. GWM-VLA combines geometry-aware multi-view state encoding, global context-conditioned target-view prediction, and shared latent-action representations grounded by robot-action supervision. Specifically, VGGT-$Ω$ jointly aggregates multi-view observations at each timestep to construct geometry-aware multi-view states. The latent world model predicts the next-step patch tokens of a selected target view using patch and register tokens obtained after multi-view aggregation, thereby retaining multi-view geometric information without predicting the complete multi-view state. We use the wrist view as the target in our experiments, placing greater emphasis on end-effector motion and local gripper-object interactions. Finally, the shared latent-action representations condition both the latent world model and the flow-matching action head, allowing latent-prediction supervision and ground-truth robot-action supervision to jointly shape the same latent-action representations. Experiments across both simulation and real-world environments demonstrate the effectiveness and robustness of GWM-VLA.",
+      "authors": [
+        "Yanping Zhao",
+        "Hang Yu",
+        "Yiwei Wang",
+        "Chen Ye",
+        "Siyu Tian",
+        "Di Zhang",
+        "Qingjun Wang",
+        "Qian Chen",
+        "Junqiao Zhao",
+        "Chen Ye",
+        "Guang Chen"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-07T06:41:51+00:00",
+      "link": "https://arxiv.org/pdf/2608.07619v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "Geometry-aware latent world modeling for robotic manipulation",
+      "llm_evidence_cn": "用于机器人操作的几何感知潜空间世界建模",
+      "llm_evidence": "用于机器人操作的几何感知潜空间世界建模",
+      "canonical_evidence": "用于机器人操作的几何感知潜空间世界建模",
+      "llm_tldr_en": "GWM-VLA improves robotic manipulation robustness through geometry-aware latent world modeling.",
+      "llm_tldr_cn": "GWM-VLA通过几何感知的潜空间世界建模提高了机器人操作的鲁棒性。",
+      "llm_tldr": "GWM-VLA通过几何感知的潜空间世界建模提高了机器人操作的鲁棒性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.09138v2",
+      "source": "arxiv",
+      "title": "SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning",
+      "abstract": "While learned robotic policies hold promise for advancing generalizable manipulation, their practical deployment is often hindered by suboptimal execution speeds. Imitation learning policies are inherently limited by hardware constraints and the speed of the operator during data collection. In addition, there are no established methods for accelerating policies learned via imitation, and the empirical relationship between execution speed and task success remains underexplored. To address these issues, we introduce SpeedTuning, a reinforcement learning framework specifically designed to enhance the speed of manipulation policies. SpeedTuning learns to predict the optimal execution speed for actions, thereby complementing a base policy without necessitating additional data collection. We provide empirical evidence that SpeedTuning achieves substantial improvements in execution speed, exceeding 2.4x speed-up, while preserving an adequate success rate compared to both the original task policy and straightforward speed-up methods such as linear interpolation at a fixed speed. We evaluate our approach across a diverse set of dynamic and precise tasks, including pouring, throwing, and picking, demonstrating its effectiveness and robustness in enhancing real-world robotic manipulation. Videos and code are available at https://daivdyuan.github.io/speed-tuning/",
+      "authors": [
+        "David D. Yuan",
+        "Tony Z. Zhao",
+        "Kaylee Burns",
+        "Chelsea Finn"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-10T05:31:41+00:00",
+      "link": "https://arxiv.org/pdf/2608.09138v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "reinforcement learning framework to enhance speed of manipulation policies",
+      "llm_evidence_cn": "增强操作策略速度的强化学习框架",
+      "llm_evidence": "增强操作策略速度的强化学习框架",
+      "canonical_evidence": "增强操作策略速度的强化学习框架",
+      "llm_tldr_en": "SpeedTuning uses RL to optimize execution speed for robotic manipulation policies learned via imitation.",
+      "llm_tldr_cn": "SpeedTuning使用强化学习来优化通过模仿学习获得的机器人操作策略的执行速度。",
+      "llm_tldr": "SpeedTuning使用强化学习来优化通过模仿学习获得的机器人操作策略的执行速度。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.09410v1",
+      "source": "arxiv",
+      "title": "Skills in Weights, Memory in Code: Hybrid Learning for Memory-Dependent Robot Manipulation",
+      "abstract": "Modern vision-language-action (VLA) policies have acquired broad manipulation skills, but typically generate each action chunk from the current observation or a short fixed-length history. However, real-world manipulation is often non-Markovian, requiring robots to retain and reason over task-relevant information from long-horizon interaction histories to determine the next action. To address this challenge, we propose HyMeS, a hybrid learning framework that leverages the reasoning and memory-management capabilities of coding agents to steer a Markovian VLA for memory-dependent manipulation. Specifically, HyMeS learns low-level motor skills through gradient-based imitation learning, while a coding agent acquires high-level memory-management strategies through heuristic learning by iteratively updating an executable heuristic system from rollout feedback. Furthermore, we close the loop between steering and execution through multimodal stage-completion verification, which updates memory using proprioceptive signals and multi-frame VLM judgments. Compared with end-to-end memory-augmented VLAs, HyMeS requires demonstrations only for reusable motor skills rather than for every history-dependent task configuration, enabling data-efficient compositional generalization. On RoboMemArena, HyMeS improves mean cumulative success from 52.5% to 66.2% and mean task success from 41.3% to 60.1% over pi0.5, while outperforming PrediMem by 4.5 points in cumulative success and 14.5 points in task success.",
+      "authors": [
+        "Yunhao Zhao",
+        "Zhenyang Ni",
+        "Haoyang Chen",
+        "Ruohan Zhang",
+        "Qi Zhu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-10T10:35:47+00:00",
+      "link": "https://arxiv.org/pdf/2608.09410v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "hybrid learning for memory-dependent robot manipulation",
+      "llm_evidence_cn": "依赖记忆的机器人操作的混合学习",
+      "llm_evidence": "依赖记忆的机器人操作的混合学习",
+      "canonical_evidence": "依赖记忆的机器人操作的混合学习",
+      "llm_tldr_en": "HyMeS combines coding agents with VLA policies to handle non-Markovian robotic manipulation tasks.",
+      "llm_tldr_cn": "HyMeS将编码智能体与VLA策略相结合，以处理非马尔可夫机器人操作任务。",
+      "llm_tldr": "HyMeS将编码智能体与VLA策略相结合，以处理非马尔可夫机器人操作任务。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.10600v1",
+      "source": "arxiv",
+      "title": "BooST: Bridging Semantics and Motions for Efficient Skill Transfer",
+      "abstract": "Skill abstraction---the process of learning reusable and temporally extended behaviors---has emerged as a key paradigm for improving sample efficiency and generalization in robot learning. For efficient skill transfer to real robots, learned skills must generalize across tasks and domains, remain robust to visual and dynamic perturbations, and be efficient enough for practical deployment. However, existing methods typically satisfy only a subset of these properties, as they capture either high-level semantic intent (what) or low-level motion dynamics (how). This incomplete skill transfer yields weak priors for policy learning, thereby demanding substantial in-domain data for downstream adaptation. To address these challenges, we introduce BooST, a two-stage framework that explicitly bridges semantics and motions to satisfy all three desiderata. BooST first leverages a cross-modal VQ-VAE to capture both semantic intent and motion dynamics, yielding a unified skill representation. It then distills this representation into a lightweight policy for efficient downstream adaptation to new tasks. Extensive experiments across simulation and real-robot settings demonstrate that BooST achieves superior few-shot adaptation, cross-domain skill transfer, and robustness to dynamic visual distractors, while maintaining a lightweight yet expressive design suitable for real-world deployment.",
+      "authors": [
+        "Jusuk Lee",
+        "Daesol Cho",
+        "Jonghun Shin",
+        "Seungyeon Yoo",
+        "Jonghae Park",
+        "Taekbeom Lee",
+        "H. Jin Kim"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-11T07:35:12+00:00",
+      "link": "https://arxiv.org/pdf/2608.10600v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "efficient skill transfer for robot learning and manipulation",
+      "llm_evidence_cn": "机器人学习和操作的高效技能迁移",
+      "llm_evidence": "机器人学习和操作的高效技能迁移",
+      "canonical_evidence": "机器人学习和操作的高效技能迁移",
+      "llm_tldr_en": "BooST improves robot skill transfer by bridging high-level semantics and low-level motion dynamics.",
+      "llm_tldr_cn": "BooST通过桥接高层语义和底层运动动力学，提升了机器人技能迁移的效率。",
+      "llm_tldr": "BooST通过桥接高层语义和底层运动动力学，提升了机器人技能迁移的效率。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.11051v1",
+      "source": "arxiv",
+      "title": "HUI360: A 360° Egocentric Dataset and Baselines for Human-Robot Interaction Anticipation",
+      "abstract": "As robots increasingly operate in human-populated environments, anticipating human intentions is essential for enabling proactive and socially aware behavior. Automatic anticipation of human-robot interactions is thus emerging as a crucial perception challenge for embodied agents. To this end, we introduce HUI360, the largest dataset for human-robot interaction anticipation in the wild and its set of baselines. The dataset was collected from a mobile robot, in the wild, over multiple days within a 3-month period, and in several environments, capturing natural, spontaneous behaviors from both passersby and users, and encompassing a diverse range of individuals. This variety enables evaluating and improving the generalization capabilities of interaction anticipation models. We designed a pipeline and share code for automatic interaction annotation in arbitrary 360-degree equirectangular videos, along with interfaces for manual refinement. Using this pipeline, we release the HUI360 open set of 1M pre-processed annotations, including detailed 2D poses, facial keypoints, and segmentation masks, obtained using state-of-the-art computer vision methods and manually curated to ensure high-quality tracking and interaction annotation. Additionally, we release the raw panoptic 360-degree images captured from the robot's egocentric viewpoint (on demand, for research purpose only in compliance with GDPR). Finally, we establish benchmark baselines for interaction anticipation, including the first cross-dataset evaluations for this task: to this end, we also release 6M annotations for another existing in-the-wild outdoor dataset collected from a mobile robot (SSUP-HRI). Dataset and code can be found at https://hucebot.github.io/hui360.",
+      "authors": [
+        "Raphael Lorenzo-Louis",
+        "Fabio Amadio",
+        "Bertrand Luvison",
+        "Serena Ivaldi"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "published": "2026-08-11T15:22:14+00:00",
+      "link": "https://arxiv.org/pdf/2608.11051v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "360 degree egocentric dataset for human-robot interaction",
+      "llm_evidence_cn": "用于人机交互的360度第一视角数据集",
+      "llm_evidence": "用于人机交互的360度第一视角数据集",
+      "canonical_evidence": "用于人机交互的360度第一视角数据集",
+      "llm_tldr_en": "Introduces HUI360, a large-scale egocentric dataset for anticipating human-robot interactions in the wild.",
+      "llm_tldr_cn": "介绍了HUI360，这是一个用于预测野外人机交互的大规模第一视角数据集。",
+      "llm_tldr": "介绍了HUI360，这是一个用于预测野外人机交互的大规模第一视角数据集。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.11671v1",
+      "source": "arxiv",
+      "title": "StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models can follow instructions and manipulate objects, but their performance often collapses out of distribution (OOD), when the scene, viewpoint, or object differs from training. Adapting to each new situation typically requires collecting more data and fine-tuning. We present StellaVLA, a framework that instead adapts at test time by conditioning on a single retrieved demonstration. The key idea is to move beyond imitating what an expert did and instead convey why: an automated offline pipeline converts each raw trajectory into a structured demonstration, e.g., a task plan, sub-goal descriptions, and verbalized 3D motion, at zero human-annotation cost. Provided as in-context guidance, this structured demonstration lets the policy reason about the task rather than mimic a pixel trajectory, which also makes it transferable across embodiments (real-robot, human-hand, or XR demonstrations). A parallel dual-training design internalizes this reasoning during training through a joint action-and-language objective, while inference uses the action expert alone, preserving real-time, high-frequency control with no added latency. On the VLA-Arena leaderboard(Aug 1, 2026), StellaVLA ranks first with an overall score of 0.63, versus 0.44 and 0.22 for the strong prior models ($π_{0.5}$ and LingBot-VLA), and it further leads on LIBERO with 98.8% average success rate and LIBERO-Plus with 85.1% success rate. Our real-robot benchmark demonstrates that StellaVLA can use both human/robot demos and human-to-robot (XR) demos as in-context structured demonstration to help VLA model adapt to OOD tasks.",
+      "authors": [
+        "Siyu Xu",
+        "Yunke Wang",
+        "Zijian Wang",
+        "Dihao Zhu",
+        "Chenghao Xia",
+        "Chengbin Du",
+        "Daochang Liu",
+        "Tao Huang",
+        "Chang Xu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-12T05:30:53+00:00",
+      "link": "https://arxiv.org/pdf/2608.11671v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "vision-language-action models for manipulating objects",
+      "llm_evidence_cn": "用于操作物体的视觉-语言-动作模型",
+      "llm_evidence": "用于操作物体的视觉-语言-动作模型",
+      "canonical_evidence": "用于操作物体的视觉-语言-动作模型",
+      "llm_tldr_en": "StellaVLA enables generalizable robotic manipulation by conditioning on structured in-context demonstrations.",
+      "llm_tldr_cn": "StellaVLA通过以结构化上下文演示为条件，实现了可泛化的机器人操作。",
+      "llm_tldr": "StellaVLA通过以结构化上下文演示为条件，实现了可泛化的机器人操作。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

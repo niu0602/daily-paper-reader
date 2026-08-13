@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.04404v1/fig-001.webp",
+      "caption": "Figure 4: Real-world OOD settings for Pick Strawberries under four conditions: V1, standard; V2, novel backgrounds; V3, altered lighting; and V4, unseen distractor objects. Bars from top to bottom show the success rates (%) of Joint-WAM, Fast-WAM, and Faster-WAM, respectively.",
+      "page": 6,
+      "index": 1,
+      "width": 498,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04404v1/fig-002.webp",
+      "caption": "Figure 3: Real-world success rates on four tasks: T1, Pick Strawberries; T2, Build Tower; T3, Store Boxes; and T4, Stack Plates. Bars from top to bottom show the success rates (%) of Joint-WAM, Fast-WAM, and Faster-WAM, respectively.",
+      "page": 6,
+      "index": 2,
+      "width": 498,
+      "height": 246
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04404v1/fig-003.webp",
+      "caption": "Table 5: Success rates (%) on LIBERO-Plus across seven distribution shifts. (a) Future conditioning ablation comparing FasterWAM with its current-only (C-O) counterpart and Fast-WAM. (b) Cumulative component ablation progressively removing Interval KV-Fusion, SparseMoT, and one-pass reusable future context. (c) Interaction-stride ablation comparing dense interaction with increasingly sparse video–action interaction.",
+      "page": 7,
+      "index": 3,
+      "width": 772,
+      "height": 473
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04404v1/fig-004.webp",
+      "caption": "Figure 2: Overview of Faster-WAM. (a) Overall framework of Faster-WAM, featuring SparseMoT for selective video–action interaction and Interval KV-Fusion for aggregating multi-level future representations. (b) Inference comparison between JointWAM and Faster-WAM, contrasting iterative dense coupling with one-pass future-context caching and sparse interaction.",
+      "page": 3,
+      "index": 4,
+      "width": 944,
+      "height": 389
+    },
+    {
+      "url": "assets/figures/arxiv/2608.04404v1/fig-005.webp",
+      "caption": "Table 3: Success rates (%) on LIBERO-Plus across seven distribution shifts. P.T. denotes embodied pretraining. The best and second-best average results are shown in bold and underlined, respectively.",
+      "page": 5,
+      "index": 5,
+      "width": 990,
+      "height": 213
+    }
+  ]
+}

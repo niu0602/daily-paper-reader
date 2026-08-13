@@ -1,0 +1,255 @@
+Title: TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation
+
+URL Source: https://arxiv.org/pdf/2608.09731v1
+
+Published Time: Tue, 11 Aug 2026 02:30:19 GMT
+
+Number of Pages: 6
+
+Markdown Content:
+# TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation 
+
+Zexin Deng 
+
+School of Engineering University of Warwick 
+
+Coventry, United Kingdom zexin.deng@warwick.ac.uk 
+
+Zhenhui Yuan 
+
+School of Engineering University of Warwick 
+
+Coventry, United Kingdom zhenhui.yuan@warwick.ac.uk 
+
+Lu Tian 
+
+School of Engineering University of Warwick 
+
+Coventry, United Kingdom lu.tian.2@warwick.ac.uk 
+
+Subhash Lakshminarayana 
+
+School of Engineering University of Warwick 
+
+Coventry, United Kingdom Subhash.Lakshminarayana@warwick.ac.uk 
+
+Longhao Zou 
+
+Pengcheng Laboratory & Southern Univ. of Sci. & Tech. 
+
+Shenzhen, China zoulh@pcl.ac.cn 
+
+Abstract —Wireless telerobotic manipulation relies on timely multi-view video feedback, but the available uplink bandwidth is often limited and dynamic. This paper presents Task-Aware Multi-View Adaptive Streaming (TAMS), a system that allocates video bitrate according to the current manipulation phase. TAMS infers task phase from lightweight robot-side signals and prioritizes the camera view most relevant to the operator while preserving baseline visibility for secondary views. Experiments on a six-degree-of-freedom (6-DoF) teleoperation testbed under three constrained network conditions show that TAMS improves primary view Structural Similarity Index (SSIM), reduces task completion time, and increases trial success rate compared with equal and static allocation baselines. Under the most constrained bandwidth condition, TAMS reduces mean completion time from 
+
+68 .9 s to 43 .9 s relative to equal allocation and increases trial success rate from 48 % to 71 %. Code is available at: https://github.com/Dzxx623/TAMS. 
+
+Index Terms —telerobotic manipulation, wireless telerobotics, multi-view video streaming, adaptive bitrate streaming, task-aware bandwidth allocation 
+
+I. I NTRODUCTION 
+
+Telerobotics enables a human operator to control a robotic system across physical distance, extending human perception, judgment, and manipulation capability to environments that are difficult, dangerous, or impractical for direct human ac-cess [1]. Representative applications include disaster response, industrial inspection, nuclear maintenance, space operations, and other remote intervention scenarios [2]. In telerobotic manipulation, the operator must close the loop between remote visual feedback and local control commands while estimat-ing object pose, gripper alignment, contact events, and task progress from transmitted video. The quality and timeliness of visual feedback therefore have a direct influence on manip-ulation accuracy, task efficiency, and operator workload. Practical wireless telerobotic manipulation is constrained by limited and dynamic uplink resources. In the mobile robot use cases specified by 3GPP TS 22.104, remote control with video feedback and real-time video streaming are treated as service requirements for cyber-physical control applications, with a communication service availability target above 99.9999% and an end-to-end latency range of 40–500 ms for mobile robot re-mote control with video feedback [3]. The challenge is ampli-fied when multiple task-relevant cameras must share the same wireless uplink under bandwidth fluctuation, latency variation, and packet impairments [4]. Recent work has explored haptic-enhanced teleoperation [5], while TeleSim and VISTA provide network-aware benchmarks for telerobotic systems and real-time teleoperation video streaming [6], [7]. These efforts motivate adaptive streaming policies that account for both network conditions and task-level teleoperation performance. Although adaptive bitrate streaming can react to network variation, conventional policies are usually driven by network performance measurements such as throughput, delay, and packet loss. They do not explicitly account for what the operator is trying to accomplish at a given manipulation phase. This is limiting in multi-view teleoperation, where the utility of each camera view is task-dependent. Global views are more useful for target localization, workspace awareness, coarse motion guidance, and collision avoidance, whereas a close-up end-effector view is more useful for gripper alignment, grasping, and release. Consequently, existing streaming poli-cies leave two issues unresolved: (1) bitrate adaptation is rarely guided by the operator’s current manipulation objective; and (2) uplink resources are rarely distributed according to the task-dependent utility of each camera view. To address this gap, we present TAMS (Task-Aware Multi-view Adaptive Streaming), a real-time multi-view streaming system for wireless telerobotic manipulation under dynamic uplink constraints. TAMS infers the current manipulation phase from lightweight robot-side signals, including end-effector kinematics and gripper events, and allocates bitrate accord-ing to the view utility of that phase. The policy increases the bitrate share of the view most relevant to the current phase while maintaining a minimum bitrate for secondary views, improving fine visual detail without eliminating global 979-8-3315-5021-9/26/$31.00 ©2026 IEEE arXiv:2608.09731v1 [cs.RO] 10 Aug 2026 situational awareness. Unlike methods that rely on semantic analysis of video frames, TAMS uses compact robot-state signals and a fixed mapping between task phases and cam-era views calibrated offline. This makes the runtime policy lightweight, interpretable, and suitable for deployment on resource-constrained robotic platforms. The main contributions of this paper are as follows: 1) A task-aware formulation of multi-view bitrate alloca-tion: We formulate wireless telerobotic video streaming as a task-dependent allocation problem in which camera view importance changes across manipulation phases. The formulation captures the need to improve the most useful view under dynamic uplink constraints while pre-serving minimum visibility for the remaining views. 2) A lightweight real-time streaming system for teler-obotic manipulation: We design and implement TAMS ,which combines online phase inference from end-effector kinematics and gripper events with bitrate allocation over three camera streams. The system avoids semantic analysis on video frames and maps directly to encoder bitrate control. 3) A human-in-the-loop evaluation under constrained wireless conditions: We evaluate TAMS on a 6-DoF teler-obotic manipulation testbed under three representative constrained uplink conditions, demonstrating improve-ments in the SSIM of the primary view, task completion time, and trial success rate. II. S YSTEM MODEL AND PROBLEM FORMULATION 
+
+We consider a wireless telerobotic manipulation system in which a robot-side workstation transmits multiple camera streams to a remote operator over a shared uplink. The operator performs a pick-and-place task consisting of six phases: Reach ,
+
+Align , Grasp , Transport , Pre-release , and Release . The cam-era views provide complementary information: global views support workspace awareness and coarse motion guidance, while close-range views support gripper alignment, contact observation, and placement confirmation. Thus, the value of each view changes with the manipulation phase, and a fixed or equal-priority allocation may be inefficient under limited bandwidth. Let V = {1, . . . , V } denote the set of camera streams and 
+
+P = {1, . . . , P } the set of manipulation phases. At time t, the system is in phase st ∈ P , and the available uplink budget is Bt. To encode phase-specific view importance, we define a normalized view weight matrix Wp,v , where Wp,v ∈ [0 , 1] and P 
+
+> v∈V
+
+Wp,v = 1 for each phase p. The quantity Wp,v specifies the desired bitrate share of view v in phase p.The objective is to compute target stream bitrates {bv,t }v∈V 
+
+such that X
+
+> v∈V
+
+bv,t ≤ Bt, (1) while preserving the visual quality of the most important view in the current phase. A uniform allocation may waste bitrate on less informative streams during fine manipulation, whereas an 
+
+> Fig. 1. TAMS platform: operator station and VR controller (left), Lite 6 robot and three-camera setup (right), and emulated uplink (top).
+
+overly concentrated allocation may degrade scene awareness. We therefore seek a real-time allocation policy that adapts to the current phase, prioritizes the most important stream, and maintains sufficient visual context from the remaining streams. III. TAMS D ESIGN 
+
+A. Overview of TAMS 
+
+TAMS is a real-time task-aware multi-view adaptive stream-ing system for wireless telerobotic manipulation. It allocates bitrate according to the available uplink budget and the current manipulation phase, prioritizing the most useful view while retaining baseline visibility for secondary views. The human-in-the-loop teleoperation platform used to im-plement and evaluate TAMS is shown in Fig. 1. The robot side consists of a UFACTORY Lite 6 manipulator equipped with a two-finger electric gripper and three camera views: an Eye-in-Hand (EIH) camera mounted near the end-effector, a Global-Top (GT) camera, and a Global-Side (GS) camera. The operator side uses an HTC VIVE Focus 3 headset and a tracked six-degree-of-freedom (6-DoF) controller. The headset provides immersive visual feedback, while the con-troller captures operator motion and button commands. The controller pose and button states are sampled at 120 Hz through the OpenVR API. The host workstation runs Robot Operating System 2 (ROS 2) [8], the robot control interface, the phase inference module, the video streaming modules, and the VR interface. Video decoding is accelerated by an NVIDIA RTX 4060 GPU. The control channel remains separate from the video uplink so that the streaming policy affects only visual feedback. The tracked controller is used as a motion input device for Cartesian teleoperation. At each control step, TAMS estimates translational and rotational controller velocities from succes-sive tracked poses, smooths them using exponential moving averages, transforms them into the robot control frame using a calibrated mapping matrix, and applies velocity limits and workspace bounds before sending Cartesian servo commands to the Lite 6 manipulator. This implementation follows the general design motivation of prior work showing the suitability of motion-tracked 6-DoF input for robot teleoperation [9], [10], while using direct Cartesian servo control rather than a RelaxedIK-based motion-synthesis backend. The controller trigger acts as a deadman switch and clutch-ing mechanism for motion control. The grip button switches between translation and orientation control, while the A and B buttons command gripper closing and opening. At runtime, TAMS operates through three coupled stages. First, it infers the current manipulation phase from robot-side kinematics and gripper events. Second, it obtains the phase-specific view weights from an offline-calibrated view weight matrix indexed by phase and view. Third, it allocates the available uplink budget across the EIH, GT, and GS streams according to the inferred phase and the corresponding view weights. Each camera view is implemented as an indepen-dent GStreamer pipeline. 1 In each sender pipeline, frames are injected through appsrc , converted, encoded by 
+
+x264enc [11], packetized into Real-time Transport Protocol (RTP) payloads, and sent over User Datagram Protocol (UDP):          
+
+> appsrc →videoconvert →x264enc
+> →h264parse →rtph264pay →udpsink
+
+The receiver performs the reverse operations:          
+
+> udpsrc →rtpjitterbuffer →rtph264depay
+> →avdec_h264 →videoconvert →autovideosink
+
+This structure is instantiated separately for the EIH, GT, and GS views. All streams use the same frame rate, resolution, transport protocol, and decoder configuration, while TAMS updates the H.264 target bitrate of each stream independently. Thus, bitrate allocation maps directly to encoder control rather than to a jointly encoded composite video. 
+
+B. Task Phase Inference 
+
+The first runtime component of TAMS is the online task phase inference module. The module estimates the current manipulation phase using lightweight robot-side signals that are already available from the robot control loop. Specifically, it uses the smoothed end-effector speed ¯vt, the smoothed vertical speed ¯vz,t , and the binary gripper state gt ∈ { 0, 1},where 0 denotes an open gripper and 1 denotes a closed gripper. The pick-and-place task is divided into six manipulation phases: Reach , Align , Grasp , Transport , Pre-release , and Re-lease . Gripper-state transitions provide high-confidence event cues for contact-related phases. An open-to-closed transition indicates G RASP , while a closed-to-open transition indicates RELEASE . When no gripper transition occurs, velocity-based conditions distinguish coarse motion phases from fine ma-nipulation phases. Sustained downward motion with an open gripper indicates A LIGN , whereas sustained downward motion 
+
+> 1GStreamer: https://gstreamer.freedesktop.org/
+
+Algorithm 1: Online Task Phase Inference                                                         
+
+> Input :Smoothed speed ¯vt, smoothed vertical speed ¯vz,t ,gripper state gt, previous gripper state gt−1,previous phase st−1, descending-motion timer
+> τdesc , control period ∆t
+> Output: Updated phase st
+> Parameters: velocity thresholds vϵ,vmin
+> zand dwell times
+> Talign ,Tpre
+> ∆g←gt−gt−1
+> if ∆g > 0then return GRASP
+> end if ∆g < 0then return RELEASE
+> end if ¯vt≤vϵthen return st−1
+> end if ¯vz,t <−vmin
+> zthen
+> τdesc ←τdesc + ∆ t
+> else
+> τdesc ←0
+> end if gt= 0 then if τdesc ≥Talign then return ALIGN
+> else return REACH
+> end else if τdesc ≥Tpre then return PRE -RELEASE
+> else return TRANSPORT
+> end end
+
+with a closed gripper indicates P RE -RELEASE . Otherwise, the system assigns R EACH when the gripper is open and TRANSPORT when the gripper is closed. Short operator pauses may occur within or between manipu-lation phases. TAMS does not treat these pauses as a separate phase. Instead, when the smoothed end-effector speed falls below a small threshold, the controller holds the most recently inferred phase. This prevents oscillatory bitrate reallocation during temporary stillness. The velocity thresholds and dwell times depend on the platform and were calibrated on the Lite 6 testbed and kept fixed across all experimental conditions. Algorithm 1 summarizes the resulting online phase inference procedure. 
+
+C. View Weight Determination 
+
+The second component of TAMS is the determination of phase-specific view weights. The online allocator relies on a fixed view weight matrix indexed by phase and view, Wp,v ,where p denotes the manipulation phase and v denotes the camera view. Each row of the matrix is normalized so that 
+
+X
+
+> v∈V
+
+Wp,v = 1 . (2) TABLE I PHASE -SPECIFIC VIEW WEIGHTS USED BY TAMS.                       
+
+> Phase EIH GT GS
+> Reach 0.23 0.50 0.27 Align 0.60 0.20 0.20 Grasp 0.60 0.20 0.20 Transport 0.25 0.30 0.45
+> Pre-release 0.55 0.25 0.20 Release 0.55 0.25 0.20
+> Note: Rows sum to 1.0; bold values indicate the primary view.
+
+The value Wp,v represents the desired relative importance of view v during phase p.This design is motivated by the fact that the utility of each camera view changes with the manipulation phase. During coarse motion phases, such as Reach and Transport , global views are more useful for target localization, workspace awareness, and collision avoidance. During fine manipulation phases, such as Align , Grasp , Pre-release , and Release , the EIH stream becomes more important because it provides local visual detail for gripper alignment, object contact, and place-ment confirmation. This follows the broader observation from task-oriented communication that the usefulness of transmitted information depends on the robot’s current task phase [12], and from multi-camera teleoperation studies that different viewpoints provide complementary visual cues for remote manipulation [13]. TAMS obtains Wp,v offline through a compact calibration procedure under unconstrained visual quality. A small cali-bration sample ( N = 8 ) performed the same pick-and-place task with all three views streamed at full quality. Afterward, participants reviewed clips segmented by task phase, rated the necessity of each camera view for each task phase, and identified the single most critical view per phase under an imagined severe bandwidth constraint. These ratings were used only to calibrate the streaming policy and were not treated as a separate user study contribution. The final matrix was constructed using a rule that assigns the largest share to a single dominant view per phase. For each phase, the view identified as most critical receives the largest bitrate share, while the remaining views retain nonzero shares to preserve situational awareness. The resulting phase-specific allocation weights are shown in Table I. The matrix is intentionally fixed during runtime. This avoids online user modelling, reduces computational overhead, and keeps the allocation policy interpretable. It also separates the estimation of view utility from the real-time communication controller, which is important for deployment on resource-constrained robotic platforms. 
+
+D. Bitrate Allocation 
+
+The third component of TAMS is the bitrate allocation module. Once the current phase st has been inferred, the allocator retrieves the available uplink budget Bt, estimated from outgoing RTP sender statistics over a sliding window. It then computes target bitrates for the three video streams using the row of Wp,v corresponding to the current phase. Without a minimum floor, the nominal allocation rule is 
+
+bnom  
+
+> v,t
+
+= Wst,v Bt, (3) where bnom  
+
+> v,t
+
+is the nominal target bitrate of view v at time t.This rule directly couples communication control to manipula-tion context. During fine manipulation phases, the EIH stream receives a larger share of the available budget. During coarse motion phases, bitrate is shifted toward the global view that provides the most useful spatial context. To prevent complete loss of secondary views under severe bandwidth pressure, TAMS enforces a minimum bitrate floor for each stream, denoted by bmin . When the current uplink budget is sufficient to satisfy the floor for all streams, the allo-cator first reserves the floor and then distributes the remaining budget according to the phase-specific weights: 
+
+btarget  
+
+> v,t
+
+= bmin + Wst,v (Bt − V b min ) , Bt ≥ V b min . (4) Here, V is the number of video streams. In our implementa-tion, V = 3 for the EIH, GT, and GS views. If the available budget falls below V b min , the floor cannot be satisfied for all views. In that case, all streams are degraded proportionally: 
+
+btarget  
+
+> v,t
+
+= Bt
+
+V , Bt < V b min . (5) The resulting allocation policy has three practical properties. First, it protects the most important view in the current manipulation phase. Second, it preserves minimum visibility for secondary views so that the operator does not lose global situational awareness. Third, it maps directly to independent encoder controls for the three RTP video streams, allowing TAMS to operate in real time without requiring semantic analysis of video frames or jointly encoded multi-view video. IV. E XPERIMENTAL METHODOLOGY 
+
+A. Experimental Use Case and Task 
+
+We evaluate TAMS in a wireless telerobotic pick-and-place use case. In each trial, the operator guided the robot end-effector to a target block, aligned the gripper, closed the gripper to grasp the block, transported the block to a container, and released it. This task was selected because it contains both coarse motion phases, where global spatial context is important, and fine manipulation phases, where EIH visual detail is critical. Trials were limited to 120 s; success required correct placement within 90 s and no more than two drops. The experiment used a 3 × 3 within-subjects design with two factors: Streaming Strategy and Network Condition . The three streaming strategies were equal allocation, static allocation, and TAMS. Equal allocation assigns the same bitrate share to all three views; static allocation assigns fixed weights of 
+
+(0 .50 , 0.25 , 0.25) to EIH, GT, and GS across the whole task; TAMS uses phase-specific view weights. The three network conditions were S1, S2, and S3, corresponding to progressively more constrained wireless uplink conditions. Each partici-pant completed all nine conditions with three repetitions per condition, yielding 432 trials in total. Condition order was counterbalanced using a Balanced Latin Square. TABLE II NETWORK EMULATION PARAMETERS .
+
+Parameter S1: High S2: Medium S3: Low 
+
+One-way latency 15 ms 40 ms 80 ms Jitter 2 ms 8 ms 15 ms Packet loss 0.01% 0.3% 1.0% Video bandwidth 12 Mbps 6 Mbps 3 Mbps 0123        
+
+> Mbps
+> Eye-in-Hand (EIH)
+> 0123
+> Mbps
+> Global-Top (GT)
+> 0818 20 33 40 42
+> Time (s)
+> 0123
+> Mbps
+> Global-Side (GS)
+> Target bitrate Measured bitrate
+> Fig. 2. Target and measured bitrate traces for the three RTP/H.264 streams during a representative six-phase trial under the 6 Mbps network condition. Vertical dashed lines indicate task phase transitions.
+
+B. Participants 
+
+Sixteen participants ( N = 16 , aged 21–30, M = 24 .5,
+
+SD = 3 .2; 10 male, 6 female) were recruited from a local university community. Eligibility required normal or corrected-to-normal vision. Most participants were novice teleoperators. None of the participants took part in the offline weight calibration described in Section III-C. 
+
+C. Streaming Conditions, Measures, and Analysis 
+
+All strategies used the same capture resolution, frame rate, transport protocol, and encoder stack, differing only in how the available video bandwidth was allocated across the three streams. Each camera stream was captured at 640 ×480 and 30 fps, encoded using H.264, and transmitted over RTP/UDP. The video bandwidth in Table II denotes the compressed H.264 bandwidth shared by the three streams, rather than the uncompressed raw camera data rate. A safety factor of 0.92 was applied before computing encoder target bitrates. Network emulation was applied using Linux tc on the video uplink path only, while the control channel remained unconstrained. Table II summarizes the three network condi-tions. V. R ESULTS 
+
+A. Bitrate Tracking 
+
+As shown in Fig. 2, the encoder bitrate follows the tar-gets conditioned on the current phase. Under the 6 Mbps condition, TAMS shifts bitrate to the EIH stream during 
+
+Align , Grasp , Pre-release , and Release , and to the global streams during Reach and Transport . The measured RTP/UDP traces follow the same pattern, with only short transients after phase changes. This confirms that the allocation rule is both computed by the controller and realized by the video pipeline. 
+
+B. Visual Fidelity 
+
+For each received frame, we compute Structural Similarity Index (SSIM) against the reference frame at the sender and report the SSIM of the primary view , defined as the view with the largest phase-specific weight in Table I. SSIM is used because it better reflects perceptual quality than PSNR [14]. As shown in Fig. 3(a)–(c), TAMS achieves the highest primary view SSIM in nearly all phase and network combi-nations. Averaged over the six phases, TAMS reaches 0.968 ,
+
+0.904 , and 0.794 under S1, S2, and S3, respectively, compared with 0.951 , 0.879 , 0.778 for Static and 0.944 , 0.862 , 0.764 for Equal. The advantage becomes more pronounced under S2 and S3, where bandwidth is limited. Static allocation can degrade performance when the primary view is not the EIH stream. For example, under S1 during Reach , primary view SSIM is 0.940 
+
+for Equal, 0.918 for Static, and 0.960 for TAMS. This shows that fixed prioritization improves views for fine manipulation at the expense of global context. TAMS avoids this tradeoff by adapting the primary stream to the manipulation phase. 
+
+C. Task Performance 
+
+We next evaluate whether improvements in visual fidelity translate into better task outcomes. Completion time is mea-sured from the first deadman switch activation to the gripper opening event. Trial success is defined using the criterion in Section IV. As shown in Fig. 4, completion time increases as the network degrades, but less so under TAMS. Mean completion times for TAMS, Static, and Equal are 23 .5, 23 .4, and 24 .7 sunder S1; 28 .1, 31 .7, and 34 .8 s under S2; and 43 .9, 52 .1,and 68 .9 s under S3. A linear mixed-effects model reveals a significant TAMS ×S3 interaction ( ˆβ = −23 .47 s, SE = 3 .22 ,
+
+p < . 001 ). Effect sizes are large under constrained conditions (d = −1.38 for S3, d = −0.72 for S2), while S1 shows no significant difference. A consistent pattern for success rate is shown in Fig. 5. Under S1, all strategies are near ceiling ( 90 –92 %). Under S2, success is 73 % for Equal, 79 % for Static, and 88 % for TAMS. Under S3, the gap widens to 48 %, 60 %, and 71 %, respectively. TAMS thus improves success by 23 percentage points over Equal and 11 over Static under the most constrained condition. VI. C ONCLUSION 
+
+This paper presented TAMS, a task-aware multi-view adap-tive streaming system for wireless telerobotic manipulation. By inferring the current manipulation phase from lightweight robot-side signals, TAMS allocates more bitrate to the camera view most relevant to the operator while preserving baseline visibility for secondary views. Experiments on a 6-DoF teleop-eration testbed show that TAMS realizes the intended phase-specific allocation at the streaming layer, improves primary Reach Align Grasp Transport Pre-release Release 0.850 0.875 0.900 0.925 0.950 0.975 1.000   
+
+> Primary-view SSIM
+> Equal Static TAMS
+
+(a) S1: 12 Mbps / 15 ms Reach Align Grasp Transport Pre-release Release 0.70 0.75 0.80 0.85 0.90 0.95    
+
+> Primary-view SSIM
+> Equal Static TAMS
+
+(b) S2: 6 Mbps / 40 ms Reach Align Grasp Transport Pre-release Release 0.55 0.60 0.65 0.70 0.75 0.80 0.85    
+
+> Primary-view SSIM
+> Equal Static TAMS
+
+(c) S3: 3 Mbps / 80 ms Fig. 3. Primary view SSIM across the six manipulation phases under the three network conditions. Error bars show 95% confidence intervals. S1 S2 S3   
+
+> Network condition
+> 020 40 60 80 100 120 140
+> Task completion time (s)
+> ns *** ***
+> Equal Static TAMS
+
+Fig. 4. Task completion time across the three streaming strategies and three network conditions. Box edges denote interquartile range, central line denotes median, whiskers extend to the 5th–95th percentile, and individual trials are overlaid as jittered dots. Significance markers indicate the results of Welch’s 
+
+t-test between TAMS and Equal: ns and *** p < . 001 .S1 S2 S3    
+
+> Network condition
+> 020 40 60 80 100
+> Trial success rate (%)  90 73 48 92 79 60 92 88 71
+> Equal Static TAMS
+
+Fig. 5. Trial success rate across the three streaming strategies and three network conditions. Numeric labels above each bar denote the corresponding percentage. 
+
+view SSIM, reduces completion time, and increases trial success rate, especially under constrained uplink conditions. These results show that the utility of teleoperation video is task dependent. Future work will extend TAMS to online adaptation of view weights, richer task inference, real mobile network traces, and larger user studies. REFERENCES [1] G. Niemeyer, C. Preusche, and G. Hirzinger, “Telerobotics,” in Springer Handbook of Robotics , B. Siciliano and O. Khatib, Eds. Berlin, Heidelberg: Springer, 2008, pp. 741–757. [2] S. Hong, G. Park, Y. Lee, W. Lee, B. Choi, O. Sim, and J.-H. Oh, “Development of a tele-operated rescue robot for a disaster response,” 
+
+International Journal of Humanoid Robotics , vol. 15, no. 4, p. 1850008, 2018. [Online]. Available: https://doi.org/10.1142/S0219843618500081 [3] “Service requirements for cyber-physical control applications in vertical domains; Stage 1,” 3GPP, Technical Specification TS 22.104, 2022, release 17, Version 17.7.0. [4] D. G. Black, D. Andjelic, and S. E. Salcudean, “Evaluation of communication and human response latency for (human) teleoperation,” 
+
+IEEE Transactions on Medical Robotics and Bionics , vol. 6, no. 1, pp. 53–63, 2024. [Online]. Available: https://doi.org/10.1109/TMRB.2024. 3349612 [5] M. Huang, R. Feng, K. Hu, X. Yu, L. Zou, J. Xie, Z. Deng, and Z. Yuan, “Multi-sensory digital twin teleoperation system with haptic glove-based tactile feedback for robotic grasping,” in 2025 IEEE Conference on Telepresence , Leiden, Netherlands, 2025, pp. 235–238. [Online]. Available: https://doi.org/10.1109/Telepresence66096.2025.11521525 [6] Z. Deng, Z. Yuan, and L. Zou, “Telesim: A network-aware testbed and benchmark dataset for telerobotic applications,” in 2025 IEEE Conference on Telepresence , Leiden, Netherlands, 2025, pp. 225– 228. [Online]. Available: https://doi.org/10.1109/Telepresence66096. 2025.11521191 [7] Z. Deng, Z. Yuan, L. Tian, G. Li, M. Huang, and L. Zou, “VISTA: A benchmark for real-time video streaming under network impairments in surgical teleoperation,” in Connected Autonomous Robotic Systems Workshop at the 2026 IEEE International Conference on Robotics and Automation (ICRA) , Vienna, Austria, Jun. 2026, presented on June 1, 2026. [8] S. Macenski, T. Foote, B. Gerkey, C. Lalancette, and W. Woodall, “Robot operating system 2: Design, architecture, and uses in the wild,” Science Robotics , vol. 7, no. 66, p. eabm6074, 2022. [9] D. Rakita, B. Mutlu, and M. Gleicher, “A motion retargeting method for effective mimicry-based teleoperation of robot arms,” in Proceedings of the 2017 ACM/IEEE International Conference on Human-Robot Interaction , 2017, pp. 361–370. [10] D. Whitney, E. Rosen, E. Phillips, G. Konidaris, and S. Tellex, “Com-paring robot grasping teleoperation across desktop and virtual reality with ros reality,” in Robotics research: the 18th international symposium ISRR . Springer, 2019, pp. 335–350. [11] VideoLAN Organization, “x264 – a free H.264/AVC encoder,” [On-line]. Available: https://www.videolan.org/developers/x264.html, ac-cessed: Mar. 14, 2026. [12] S. Chen, E. Spyrakos-Papastavridis, Y. Jin, and Y. Deng, “Goal-oriented semantic communication for robot arm reconstruction in digital twin: Feature and temporal selections,” IEEE Journal on Selected Areas in Communications , vol. 43, no. 9, pp. 3072–3087, 2025. [13] P. Praveena, L. Molina, Y. Wang, E. Senft, B. Mutlu, and M. Gleicher, “Understanding control frames in multi-camera robot telemanipulation,” in Proceedings of the 17th ACM/IEEE International Conference on Human-Robot Interaction , 2022, pp. 432–440. [14] Z. Wang, A. C. Bovik, H. R. Sheikh, and E. P. Simoncelli, “Image quality assessment: From error visibility to structural similarity,” IEEE Transactions on Image Processing , vol. 13, no. 4, pp. 600–612, 2004.

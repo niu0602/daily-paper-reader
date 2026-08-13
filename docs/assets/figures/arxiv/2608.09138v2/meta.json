@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-001.webp",
+      "caption": "Fig. 6: Ablation study on task policy, speed rewards, and frame skip values. All configurations are evaluated over 2000 episodes on Simulated Tea Bag Transfer.",
+      "page": 6,
+      "index": 1,
+      "width": 1025,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-002.webp",
+      "caption": "Fig. 12: Image-encoder ablation: acceleration (left) and success rate (right).",
+      "page": 10,
+      "index": 2,
+      "width": 652,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-003.webp",
+      "caption": "Fig. 11: Frame-skip ablation: acceleration (left) and success rate (right). The main experiments use fs = 10.",
+      "page": 10,
+      "index": 3,
+      "width": 652,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-004.webp",
+      "caption": "Fig. 10: Speed-reward ablation: acceleration (left) and success rate (right). The main experiments use β = 2.",
+      "page": 10,
+      "index": 4,
+      "width": 652,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-005.webp",
+      "caption": "Fig. 3: Initialization and key actions for three real-world tasks (top to bottom): Tea Bag Disposal, Food Preparation, and Almond Pouring.",
+      "page": 4,
+      "index": 5,
+      "width": 1022,
+      "height": 493
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-006.webp",
+      "caption": "Fig. 8: Base-policy ablation: acceleration (left) and success rate (right). Learned ACT is compared with an open-loop scripted policy.",
+      "page": 9,
+      "index": 6,
+      "width": 652,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-007.webp",
+      "caption": "Fig. 7: Representative SPEEDTUNING rollouts in simulation. Rows show Cube Transfer, Peg Insertion, and Tea Bag Transfer; columns show the initial state followed by four successive task stages.",
+      "page": 9,
+      "index": 7,
+      "width": 822,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-008.webp",
+      "caption": "Fig. 9: Visual-observation ablation: acceleration (left) and success rate (right). Both variants retain proprioception.",
+      "page": 9,
+      "index": 8,
+      "width": 652,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-009.webp",
+      "caption": "Fig. 4: Results showing the SPEEDTUNING policy on simulated (top row) and real world (bottom row) tasks. For simulated tasks, the baseline curve is obtained by evaluating 100 episodes across various speeds at 0.1 intervals, while the distribution and mean of the SPEEDTUNING policy is calculated over 2000 episodes. For the real-world tasks, the baseline curve is obtained by evaluating 20 episodes across various speeds at 0.25 intervals, while the mean and error of the SPEEDTUNING policy is calculated over 20 episodes. Due to the sample efficiency constraints of reinforcement learning in real-world settings, the policy was not trained to full convergence, which may account for the slightly lower observed success rate.",
+      "page": 5,
+      "index": 9,
+      "width": 964,
+      "height": 475
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09138v2/fig-010.webp",
+      "caption": "Fig. 5: Comparison of the SPEEDTUNING and vanilla ACT policy trajectories for the Almond Pouring task, featuring key action captures and speed-up values throughout the task. The results highlight SPEEDTUNING’s task understanding, significantly accelerating overall execution by 2.5x (200 time steps vs. 500 time steps), while deliberately slowing down during the critical, dynamic pouring phase.",
+      "page": 5,
+      "index": 10,
+      "width": 941,
+      "height": 379
+    }
+  ]
+}

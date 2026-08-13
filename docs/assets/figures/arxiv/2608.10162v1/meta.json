@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-001.webp",
+      "caption": "Table 3: Geometric and physical-plausibility metrics (defined in Sec. 5). ↓ lower / ↑ higher is better; best non-GT value per column in bold, second-best underlined.",
+      "page": 6,
+      "index": 1,
+      "width": 508,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-002.webp",
+      "caption": "Figure 8: Comparison of time-progressing grasps with baselines. Right hand visualized in blue; Left hand visualized in red.",
+      "page": 15,
+      "index": 2,
+      "width": 1010,
+      "height": 571
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-003.webp",
+      "caption": "Figure 3: Qualitative results showcasing all capabilities of MAD-HOI.",
+      "page": 7,
+      "index": 3,
+      "width": 814,
+      "height": 581
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-004.webp",
+      "caption": "Figure 7: VAE vs VQ-VAE Reconstruction Jitter for GRAB: Jerk Analysis for Smoothness Comparison. We plot jerk magnitude for ground truth, VAE-reconstructed, and VQ-VAE-reconstructed trajectories of the MANO hand wrist joints and object centers.",
+      "page": 13,
+      "index": 4,
+      "width": 948,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-005.webp",
+      "caption": "Figure 4: Comparison of time-progressing grasps with baselines. One frame is visualized with a zoom-in to highlight contact and penetration in generations across all methods.",
+      "page": 8,
+      "index": 5,
+      "width": 896,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-006.webp",
+      "caption": "Figure 2: MAD-HOI architecture. Left: Our cascaded VAE builds continuous motion latents for object and hand trajectories. Right: Our generation model consists of a masked autoregressive transformer that predicts conditioning signals for a flow-matching head. This module generates motion latents for masked tokens, enabling smooth, text-based HOI generation, completion, infilling and termination.",
+      "page": 4,
+      "index": 6,
+      "width": 886,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-007.webp",
+      "caption": "Figure 6: VAE vs VQ-VAE Reconstruction Jitter for ARCTIC: Jerk Analysis for Smoothness Comparison. We plot jerk magnitude for ground truth, VAE-reconstructed, and VQ-VAE-reconstructed trajectories of the MANO hand wrist joints and object centers.",
+      "page": 12,
+      "index": 7,
+      "width": 948,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10162v1/fig-008.webp",
+      "caption": "Table 2: Retrieval and generation metrics on ARCTIC and GRAB. ↓ indicates lower is better, ↑ indicates higher is better, and → indicates closer to ground truth is better. Best non-GT result per metric is in bold.",
+      "page": 5,
+      "index": 8,
+      "width": 400,
+      "height": 623
+    }
+  ]
+}

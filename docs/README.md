@@ -6,62 +6,62 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-12
-- 运行时间：2026-08-12 21:06:17 UTC
+- 最新运行日期：2026-08-13
+- 运行时间：2026-08-13 20:30:22 UTC
 - 运行状态：成功
 - 本次总论文数：13
-- 精读区：3
-- 速读区：10
+- 精读区：2
+- 速读区：11
 
 ### 今日简报（AI）
-- 今日共生成 13 篇推荐（精读 3 篇，速读 10 篇）
-- 精读：《Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations》（9.0/10）, 《RoboSeg: Online Part-Level Semantic Reconstruction for Robotic Manipulation via a Single Eye-in-Hand Camera》（8.0/10）
-- 速读：《$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation》（7.0/10）, 《AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies》（7.0/10）, 《GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning》（7.0/10）
+- 今日共生成 13 篇推荐（精读 2 篇，速读 11 篇）
+- 精读：《HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing》（10.0/10）, 《MAD-HOI: Masked Autoregressive Diffusion for Generating Articulated Hand Object Interactions from Text》（8.0/10）
+- 速读：《Vid2WAM: Distilling Video Diffusion Priors into World Action Models》（7.5/10）, 《Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies》（7.0/10）, 《TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation》（7.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/12/README](/202608/12/README)
+- 详情：[/202608/13/README](/202608/13/README)
 
 ### 精读区论文标签
-1. [Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations](/202608/12/2608.10383v1-real-world-cooperative-bimanual-dexterous-grasp-of-large-objects-from-single-view-observations)  
-   标签：评分：9.0/10、query:dexop
-   evidence：使用视觉观测和多模态数据集的真实世界双臂灵巧抓取
-2. [RoboSeg: Online Part-Level Semantic Reconstruction for Robotic Manipulation via a Single Eye-in-Hand Camera](/202608/12/2608.09778v1-roboseg-online-part-level-semantic-reconstruction-for-robotic-manipulation-via-a-single-eye-in-hand-camera)  
+1. [HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing](/202608/13/2608.12122v1-handedit-a-unified-benchmark-for-egocentric-human-to-robot-dexterous-hand-image-editing)  
+   标签：评分：10.0/10、query:dexop
+   evidence：使用第一视角视频进行第一视角人到机器人灵巧手图像编辑的统一基准
+2. [MAD-HOI: Masked Autoregressive Diffusion for Generating Articulated Hand Object Interactions from Text](/202608/13/2608.10162v1-mad-hoi-masked-autoregressive-diffusion-for-generating-articulated-hand-object-interactions-from-text)  
    标签：评分：8.0/10、query:dexop
-   evidence：通过单手眼相机进行在线部件级语义重建
-3. [Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning](/202608/12/2608.11204v1-surgical-wam-a-world-action-model-for-data-efficient-surgical-robot-learning)  
-   标签：评分：8.0/10、query:dexop
-   evidence：用于学习手术操作世界模型的内窥镜视频
+   evidence：生成关节式手物交互（HOI）序列
 
 ### 速读区论文标签
-1. [$ω$-0: A Latent Predictive World Action Model for Concurrent Humanoid Loco-Manipulation](/202608/12/2608.06375v1--0-a-latent-predictive-world-action-model-for-concurrent-humanoid-loco-manipulation)  
+1. [Vid2WAM: Distilling Video Diffusion Priors into World Action Models](/202608/13/2608.08558v1-vid2wam-distilling-video-diffusion-priors-into-world-action-models)  
+   标签：评分：7.5/10、query:dexop
+   evidence：将视频扩散先验蒸馏用于机器人策略学习
+2. [Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies](/202608/13/2608.06965v1-cross-view-action-consistency-for-camera-robust-vision-language-action-policies)  
    标签：评分：7.0/10、query:dexop
-   evidence：用于人形机器人并发移动操作的全身世界动作模型
-2. [AutoIntervene: Calibrated Intervention for Action-Chunking Imitation Learning Policies](/202608/12/2608.07065v1-autointervene-calibrated-intervention-for-action-chunking-imitation-learning-policies)  
+   evidence：使用场景RGB和手腕流遮蔽的相机鲁棒性VLA策略
+3. [TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation](/202608/13/2608.09731v1-tams-task-aware-multi-view-adaptive-streaming-for-wireless-telerobotic-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：针对动作分块模仿学习策略的校准干预
-3. [GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning](/202608/12/2608.07619v1-gwm-vla-geometry-aware-latent-world-modeling-for-vision-language-action-learning)  
-   标签：评分：7.0/10、query:dexop
-   evidence：用于机器人操作的几何感知多视图状态编码
-4. [JEPA-WAM: Learning Vision-Language-Action Policies with Joint-Embedding World Modeling](/202608/12/2608.09381v1-jepa-wam-learning-vision-language-action-policies-with-joint-embedding-world-modeling)  
-   标签：评分：7.0/10、query:dexop
-   evidence：用于视觉-语言-动作策略的潜空间世界动作模型
-5. [JEPA-WAM: Stage-Level Joint-Embedding Prediction for World-Action Models in Robot Manipulation](/202608/12/2608.10780v1-jepa-wam-stage-level-joint-embedding-prediction-for-world-action-models-in-robot-manipulation)  
+   evidence：在远程机器人操作中优先处理与操作员相关的相机视角
+4. [Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models](/202608/13/2608.04404v1-faster-wam-efficient-inference-time-future-conditioning-for-robust-world-action-models)  
    标签：评分：6.5/10、query:dexop
-   evidence：使用多模态观测的机器人操作世界动作模型
-6. [CofactVLA: Deconfounding Vision-Language-Action Models via Counterfactual Intervention](/202608/12/2608.04396v1-cofactvla-deconfounding-vision-language-action-models-via-counterfactual-intervention)  
+   evidence：通过世界动作模型和未来表示改进机器人操作
+5. [Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models](/202608/13/2608.05903v2-robust-wam-bridging-generative-pretraining-and-semantic-foresight-in-world-action-models)  
+   标签：评分：6.5/10、query:dexop
+   evidence：基于视频生成的机器人控制世界动作模型
+6. [GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning](/202608/13/2608.07619v1-gwm-vla-geometry-aware-latent-world-modeling-for-vision-language-action-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：为机器人操作的视觉-语言-动作模型去混杂
-7. [Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence](/202608/12/2608.06756v1-capek-05-an-execution-centric-vision-language-model-for-embodied-intelligence)  
+   evidence：用于机器人操作的几何感知潜空间世界建模
+7. [SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning](/202608/13/2608.09138v2-speedtuning-speeding-up-policy-execution-with-lightweight-reinforcement-learning)  
    标签：评分：6.0/10、query:dexop
-   evidence：具身智能体的以执行为中心的视觉语言模型
-8. [SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning](/202608/12/2608.09138v1-speedtuning-speeding-up-policy-execution-with-lightweight-reinforcement-learning)  
+   evidence：增强操作策略速度的强化学习框架
+8. [Skills in Weights, Memory in Code: Hybrid Learning for Memory-Dependent Robot Manipulation](/202608/13/2608.09410v1-skills-in-weights-memory-in-code-hybrid-learning-for-memory-dependent-robot-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于提高操作策略速度的强化学习框架
-9. [VANE: Reliable Test-Time Training for Vision-Language-Action Models via Future Visual Representation Prediction](/202608/12/2608.09448v1-vane-reliable-test-time-training-for-vision-language-action-models-via-future-visual-representation-prediction)  
+   evidence：依赖记忆的机器人操作的混合学习
+9. [BooST: Bridging Semantics and Motions for Efficient Skill Transfer](/202608/13/2608.10600v1-boost-bridging-semantics-and-motions-for-efficient-skill-transfer)  
    标签：评分：6.0/10、query:dexop
-   evidence：闭环操作中VLA策略的测试时训练
-10. [Efficient Real-World Online Reinforcement Learning for Robot Manipulation via Centralized Training and Critic Decomposition](/202608/12/2608.09762v1-efficient-real-world-online-reinforcement-learning-for-robot-manipulation-via-centralized-training-and-critic-decomposition)  
+   evidence：机器人学习和操作的高效技能迁移
+10. [HUI360: A 360° Egocentric Dataset and Baselines for Human-Robot Interaction Anticipation](/202608/13/2608.11051v1-hui360-a-360-egocentric-dataset-and-baselines-for-human-robot-interaction-anticipation)  
    标签：评分：6.0/10、query:dexop
-   evidence：物理世界中机器人操作的在线强化学习
+   evidence：用于人机交互的360度第一视角数据集
+11. [StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models](/202608/13/2608.11671v1-stellavla-in-context-structured-demonstration-for-generalizable-vision-language-action-models)  
+   标签：评分：6.0/10、query:dexop
+   evidence：用于操作物体的视觉-语言-动作模型
 
 
 <div class="dpr-home-promo-card">

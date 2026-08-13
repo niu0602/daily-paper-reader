@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-001.webp",
+      "caption": "Table 2. Overview of the Source Datasets in HandEdit.",
+      "page": 6,
+      "index": 1,
+      "width": 968,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-002.webp",
+      "caption": "Table 5. Hand-Arm Generic Similarity. PSNR/SSIM/LPIPS are reported on full images, background regions, and ROI crops. FID is reported on full images and ROI crops. Best and second-best model scores are bolded and underlined, respectively.",
+      "page": 11,
+      "index": 2,
+      "width": 975,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-003.webp",
+      "caption": "Table 6. Hand-Arm Embodiment-Aware Metrics and VLM Judgment. Best and second-best model scores are bolded and underlined, respectively.",
+      "page": 11,
+      "index": 3,
+      "width": 972,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-004.webp",
+      "caption": "Figure 3. Common Failures of Existing Models in URDF-conditioned Hand. Existing image editing models struggle to faithfully replace human hands with the target URDF-specified robot hand while preserving the original scene and interaction. Failures include residual human-hand artifacts, embodiment mismatch, interaction failure, incorrect viewpoint, and background inconsistency.",
+      "page": 7,
+      "index": 4,
+      "width": 932,
+      "height": 331
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-005.webp",
+      "caption": "Table 4. Hand-only Embodiment-Aware Metrics and VLM Judgment. Best and second-best model scores are bolded and underlined, respectively.",
+      "page": 10,
+      "index": 5,
+      "width": 972,
+      "height": 427
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-006.webp",
+      "caption": "Table 3. Hand-only Generic Similarity. PSNR/SSIM/LPIPS are reported on full images, background regions, and ROI crops. FID is reported on full images and ROI crops. Best and second-best model scores are bolded and underlined, respectively.",
+      "page": 10,
+      "index": 6,
+      "width": 975,
+      "height": 360
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-007.webp",
+      "caption": "Table 1. Comparison with Representative Editing Benchmarks and Datasets. HandEdit is the only benchmark that supports embodiment-conditional image-editing. “Dexterous Hand“ indicates whether the benchmark explicitly involves hand-centric or hand-object editing. “#Embod.” denotes the number of supported URDF-specified robotic embodiments for editing.",
+      "page": 3,
+      "index": 7,
+      "width": 980,
+      "height": 467
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-008.webp",
+      "caption": "Figure 4. VLM-based Judgment. Given source image, target URDF render, text instruction, and edited result, the VLM evaluates the edit from two complementary perspectives: Semantic Consistency (SC), measuring embodiment correctness, human-hand removal, interaction preservation, and scene consistency; and Perceptual Quality (PQ), which assesses identity naturalness, artifact absence, and local coherence. The final VLM score is computed by the normalized SC and PQ scores.",
+      "page": 8,
+      "index": 8,
+      "width": 882,
+      "height": 604
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12122v1/fig-009.webp",
+      "caption": "Figure 2. Data Curation Pipeline. For the egocentric hand-object clips, HandEdit removes the human hand, recovers the occluded background, retargets the source interaction to a target URDF, and composites the rendered robot embodiment back into the scene. The composite is then harmonized to produce the final pseudo-GT target.",
+      "page": 4,
+      "index": 9,
+      "width": 974,
+      "height": 456
+    }
+  ]
+}

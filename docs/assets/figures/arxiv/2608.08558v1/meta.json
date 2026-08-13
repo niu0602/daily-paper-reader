@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-001.webp",
+      "caption": "Figure 5: Vid2WAM real-world executions for representative seen and novel tasks. Frames progress left to right.",
+      "page": 6,
+      "index": 1,
+      "width": 1052,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-002.webp",
+      "caption": "Table 3: Average task success rates (%) across the four LIBERO suites under the low-data and novel regimes.",
+      "page": 6,
+      "index": 2,
+      "width": 442,
+      "height": 286
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-003.webp",
+      "caption": "Table 2: Average task success rates (%) on LIBERO-Plus under the low-data and novel regimes, evaluated across four suites and seven perturbation types.",
+      "page": 6,
+      "index": 3,
+      "width": 1009,
+      "height": 210
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-004.webp",
+      "caption": "Figure 2: Overview of Vid2WAM. Vid2WAM distills future prediction priors from a pretrained video diffusion model into a compact World Action Model (WAM). During training, the teacher generates future videos and IDM-derived pseudo actions supervise the student WAM, while only the student is used for deployment. At inference, a single current-frame pass through the shared video backbone produces latent world features for direct action prediction.",
+      "page": 4,
+      "index": 4,
+      "width": 991,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-005.webp",
+      "caption": "Figure 4: Success rates on representative novel RoboTwin tasks. Vid2WAM consistently outperforms Fast-WAM under clean and randomized evaluation.",
+      "page": 5,
+      "index": 5,
+      "width": 911,
+      "height": 248
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08558v1/fig-006.webp",
+      "caption": "Figure 3: Qualitative future-video predictions for novel tasks. For each task, Fast-WAM (top) and Vid2WAM (bottom) receive the same initial observation and language instruction; frames progress from left to right. Fast-WAM often fails to predict coherent task progression, whereas Vid2WAM predicts future motions that more consistently reach the instructed outcome.",
+      "page": 5,
+      "index": 6,
+      "width": 1054,
+      "height": 302
+    }
+  ]
+}

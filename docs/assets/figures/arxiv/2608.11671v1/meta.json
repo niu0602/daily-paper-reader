@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-001.webp",
+      "caption": "Table 3 Zero-shot robustness on LIBERO-Plus [10]; all models are trained on standard LIBERO and tested on the perturbed tasks without retraining. Avg. is the task-count-weighted mean over the seven perturbation categories, excluding Orig. Best per column in bold.",
+      "page": 11,
+      "index": 1,
+      "width": 822,
+      "height": 303
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-002.webp",
+      "caption": "Figure 1 Overview of StellaVLA, which conditions a VLA policy on in-context structured demonstrations. We convert diverse human and robot demonstrations into structured examples. Each example comprises high-level semantic rationales (sub-goals) and fine-grained kinematic rationales (movements), which are retrieved to prompt a visionlanguage-action model for manipulation tasks. During training, an auxiliary spatial-language expert supervises these rationales so the policy grounds its actions in the underlying reasoning rather than only imitating the observed motions. At inference this expert is removed and only the action expert is used, preserving real-time control. The resulting model generalizes more robustly to unseen tasks and environments in both simulation and real-world experiments.",
+      "page": 2,
+      "index": 2,
+      "width": 979,
+      "height": 444
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-003.webp",
+      "caption": "Table 2 Success rate on VLA-Arena across 3 difficulty levels: L0 (in-distribution), L1 (intermediate generalization), and L2 (hardest). Rows are the 11 task suites grouped into four categories (Safety, Distractor, Extrapolation, Long Horizon). Scores are fractions in [0, 1]. Baseline results are from the VLA-Arena leaderboard [53]. Best per column in bold.",
+      "page": 10,
+      "index": 3,
+      "width": 979,
+      "height": 462
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-004.webp",
+      "caption": "Figure 5 Real-robot evaluation scenes. Top: the four in-distribution tasks. Bottom: their out-of-distribution variants. OOD-L1 substitutes both colour and object identity for pen→cup but colour alone for carrot→bowl, which is why L1 is comparable within a task rather than across tasks; OOD-L2 redirects the blocks from the second drawer to the first, a task for which no real-robot training episode exists.",
+      "page": 13,
+      "index": 4,
+      "width": 957,
+      "height": 391
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-005.webp",
+      "caption": "Figure 3 The three simulation benchmarks. Top: the four standard LIBERO suites. Middle: LIBERO-Plus perturbation axes, e.g., camera viewpoint, lighting, sensor noise and background texture. Bottom: VLA-Arena, which changes the task, adding safety constraints, distractors, extrapolation to unseen objects, and long-horizon composition.",
+      "page": 8,
+      "index": 5,
+      "width": 972,
+      "height": 743
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-006.webp",
+      "caption": "Figure 4 Real-robot evaluation on the AgileX Piper. Top: in-distribution success rate on the four tasks. Bottom left: OOD-L1, which perturbs object attributes and is comparable within a task rather than across tasks. Bottom right: OOD-L2, an unseen task placing the blocks in the first drawer. Scenes are shown in Figure 5.",
+      "page": 12,
+      "index": 6,
+      "width": 961,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-007.webp",
+      "caption": "Table 1 In-distribution success rate (%) on the standard LIBERO benchmark [30]. Each suite is evaluated over 500 rollouts; baseline numbers are as reported in the original papers, except our matched demonstration-free control StarVLA-OFT [42]. Best per column in bold.",
+      "page": 9,
+      "index": 7,
+      "width": 802,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11671v1/fig-008.webp",
+      "caption": "Figure 2 Overview of StellaVLA. Top left: a retrieved context demonstration is represented as a task plan and a sequence of subgoals, each containing a keyframe, robot state, 2D trace, and 3D motion. Right: these annotations are generated automatically offline from VLM reasoning and robot trajectories, without human labeling. Bottom left: the vision-language model encodes the demonstration together with the current observation and instruction into a shared representation, which is consumed by an action expert for action prediction and a spatial-language expert for auxiliary supervision during training only. The spatial-language expert is removed at inference, requiring only a single forward pass.",
+      "page": 5,
+      "index": 8,
+      "width": 975,
+      "height": 382
+    }
+  ]
+}

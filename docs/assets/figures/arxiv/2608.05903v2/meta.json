@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.05903v2/fig-001.webp",
+      "caption": "Figure 1 (a) VAE-latent WAMs inherit the dynamics priors of large-scale VGM pretraining, but their latents move with appearance and the policy breaks under visual shifts. (b) Semantic-latent world models are robust to visual shifts, but cannot leverage the pretrained dynamics priors. (c) Our Robust-WAM keeps the VAE generative path and injects semantic priors into the action stream, obtaining both.",
+      "page": 2,
+      "index": 1,
+      "width": 479,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05903v2/fig-002.webp",
+      "caption": "Table 1 Comparison on Clean LIBERO Liu et al. (2023) and LIBERO-Plus Fei et al. (2026). Average success rate (%) over all evaluation trials. Bold indicates the best result.",
+      "page": 7,
+      "index": 2,
+      "width": 498,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05903v2/fig-003.webp",
+      "caption": "Figure 2 Overview of Robust-WAM. (a) We inherit the video branch of the original WAM as it is. The Video DiT keeps denoising the VAE latents of the future frames under its own flow-matching loss, so the large-scale VAE-space pretraining is retained. (b) The upper part is the semantic alignment. For each future step and camera view we prepend a learnable query token to the noised action tokens, and after the Action DiT processes the whole sequence we align the output of each query with the frozen DINOv3 CLS embedding of the corresponding ground-truth future frame, which is an appearance-invariant summary of the scene content. The lower part is the shared positional encoding (PE). Each query reuses the positional encoding of the action tokens at the step it describes, which tells the model how far into the future that query is looking. The teacher and the alignment head are only needed during training, so at inference they are dropped and only the queries stay in the sequence.",
+      "page": 3,
+      "index": 3,
+      "width": 981,
+      "height": 462
+    },
+    {
+      "url": "assets/figures/arxiv/2608.05903v2/fig-004.webp",
+      "caption": "Figure 3 Real-world tasks under illumination shifts. Three tabletop manipulation tasks on a Franka Research 3 arm observed by a fixed third-person camera and a wrist camera. We train under standard illumination and evaluate under two unseen illumination conditions, purple and cyan.",
+      "page": 9,
+      "index": 4,
+      "width": 982,
+      "height": 379
+    }
+  ]
+}

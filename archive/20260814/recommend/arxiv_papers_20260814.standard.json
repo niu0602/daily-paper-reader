@@ -1,0 +1,312 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-14T20:09:54.244270+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 4,
+    "deep_cap": 6,
+    "deep_selected": 4,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2608.13049v1",
+      "source": "arxiv",
+      "title": "H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models",
+      "abstract": "Large-scale manipulation data is essential for robot learning, yet collecting robot demonstrations remains expensive and difficult to scale. Meanwhile, abundant egocentric human manipulation videos provide rich behavioral experiences, but transferring them across embodiments remains challenging due to differences between human hands and robotic end-effectors. Recent advances in video world models offer a promising pathway to synthesize robot-centric manipulation videos from human observations, while their cross-embodiment transfer capability remains largely unexplored. Therefore, we introduce H2R-Bench, a benchmark for evaluating cross-embodiment human-to-robot manipulation video generation, where models transform egocentric human demonstrations into robot manipulation videos under specified embodiments. Each benchmark instance contains a human demonstration video, target embodiment constraints, and source-grounded annotations covering task goals, action events, functional contacts, and object responses. H2R-Bench evaluates generated videos through five dimensions, including goal-state completion, action-event completion, functional contact transfer, embodiment correctness, and general video quality. We benchmark eleven state-of-the-art video generation models across six manipulation families and two robot embodiments. Our evaluation reveals that current video world models remain limited in human-to-robot manipulation transfer: even leading models often fail in embodiment consistency, functional interaction, and task execution. H2R-Bench provides a systematic diagnostic framework for evaluating whether video world models can bridge the human-to-robot embodiment gap and convert human manipulation observations into robot-centric training resources.",
+      "authors": [
+        "Dingyi Rong",
+        "Yue Shi",
+        "Chaofan Ma",
+        "Jiezhang Cao",
+        "Zongrui Wang",
+        "Zeyu Zhang",
+        "Yao Mu",
+        "Guangtao Zhai",
+        "Ning Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-08-13T10:14:33+00:00",
+      "link": "https://arxiv.org/pdf/2608.13049v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.5,
+      "llm_evidence_en": "benchmark for human-to-robot manipulation using egocentric human videos",
+      "llm_evidence_cn": "使用第一视角人类视频的人到机器人操作基准",
+      "llm_evidence": "使用第一视角人类视频的人到机器人操作基准",
+      "canonical_evidence": "使用第一视角人类视频的人到机器人操作基准",
+      "llm_tldr_en": "H2R-Bench evaluates cross-embodiment video generation from egocentric human manipulation data.",
+      "llm_tldr_cn": "H2R-Bench评估了从第一视角人类操作数据进行跨具身视频生成的性能。",
+      "llm_tldr": "H2R-Bench评估了从第一视角人类操作数据进行跨具身视频生成的性能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13014v1",
+      "source": "arxiv",
+      "title": "EgoPHI: Estimating Contact and Force from Egocentric Vision",
+      "abstract": "Understanding hand-object interaction from egocentric vision is essential for modeling how people physically engage with the surrounding world. Yet reasoning about physically grounded interaction requires estimating the forces acting on hands and objects, beyond localizing contact. We present EgoPHI, the first method that jointly estimates dense contact maps and 3D force distributions on hand and object meshes from a single monocular RGB image and object geometry. To address the lack of scalable ground-truth force annotations, we introduce a physics-based simulation pipeline that augments existing hand-object datasets with dense per-vertex force supervision. EgoPHI then learns dense 3D contact and force on interacting hand and articulated object meshes, extending vision-based force estimation beyond image-space or planar settings. Our evaluation on in-distribution and out-of-distribution benchmarks shows that EgoPHI improves force estimation over existing approaches while generalizing to unseen datasets. To evaluate sim-to-real transfer, we constructed two physical objects that capture dense object contact and force magnitude and used them to record a dataset of interactions from eight participants across diverse touch and grasp types. Our results demonstrate that EgoPHI recovers meaningful 3D contact and force distributions in simulated, out-of-distribution, and real-world settings, advancing egocentric hand-object understanding from contact localization toward physically grounded interaction reasoning.",
+      "authors": [
+        "Andela Ilic",
+        "Rachel Schuchert",
+        "Yijing Jiang",
+        "Christian Holz"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.GR",
+        "cs.HC",
+        "cs.RO"
+      ],
+      "published": "2026-08-13T09:34:08+00:00",
+      "link": "https://arxiv.org/pdf/2608.13014v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "estimating contact and force from egocentric vision for hand-object interaction",
+      "llm_evidence_cn": "从第一视角视觉中估计手物交互的接触和力量",
+      "llm_evidence": "从第一视角视觉中估计手物交互的接触和力量",
+      "canonical_evidence": "从第一视角视觉中估计手物交互的接触和力量",
+      "llm_tldr_en": "EgoPHI estimates 3D force and contact from egocentric images to model physical hand-object interactions.",
+      "llm_tldr_cn": "EgoPHI从第一视角图像中估计3D力量和接触，以建模物理手物交互。",
+      "llm_tldr": "EgoPHI从第一视角图像中估计3D力量和接触，以建模物理手物交互。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on using first-person visual or sensory data for dexterous manipulation learning",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.13362v1",
+      "source": "arxiv",
+      "title": "NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation",
+      "abstract": "Dexterous manipulation promises substantially richer robot interaction with the physical world, but learning these behaviours remains constrained by the difficulty of collecting consistent, complete-task demonstrations. Unlike parallel-jaw manipulation, dexterous tasks require the operator to coordinate arm motion with precise, contact-rich finger behaviour throughout the task. We introduce NestDex, a nested policy-learning framework that reduces this burden by using learned hand skills to assist demonstration collection. The operator controls the arm and regulates the active hand skill through a single-DoF clutch, rather than directly specifying the full finger trajectory. The inner hand policy adapts its motion from the latest proprioceptive history, while a vision-language selector activates the appropriate skill for each task stage. The resulting demonstrations train a separate outer visuomotor policy that controls both the arm and hand without the inner policies at deployment. A hand-action variational autoencoder provides compact hand-action targets while retaining arm commands in joint space. Across real-world dexterous manipulation experiments, NestDex improves demonstration reliability and efficiency, and the resulting empirical evaluations support effective autonomous policy learning. Video Demo are available at project website https://aus.bot/research/nestdex.",
+      "authors": [
+        "James Zhao",
+        "Jinhe Tang",
+        "Mingyuan Ba",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-13T15:25:39+00:00",
+      "link": "https://arxiv.org/pdf/2608.13362v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "policy learning framework for dexterous manipulation tasks",
+      "llm_evidence_cn": "针对灵巧操作任务的策略学习框架",
+      "llm_evidence": "针对灵巧操作任务的策略学习框架",
+      "canonical_evidence": "针对灵巧操作任务的策略学习框架",
+      "llm_tldr_en": "NestDex uses learned hand skills to assist teleoperation for efficient dexterous manipulation learning.",
+      "llm_tldr_cn": "NestDex利用学习到的手部技能辅助远程操作，从而实现高效的灵巧操作学习。",
+      "llm_tldr": "NestDex利用学习到的手部技能辅助远程操作，从而实现高效的灵巧操作学习。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2608.10383v2",
+      "source": "arxiv",
+      "title": "Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations",
+      "abstract": "Bimanual dexterous grasping of large objects is a critical challenge in robotic manipulation. However, most existing studies focus on sequential manipulation rather than cooperative grasping, and methods addressing such bimanual tasks have largely been limited to simulation. These limitations stem from the difficulty of acquiring full 3D object models and generating physically plausible grasping actions. To fill this gap, we propose a real-world bimanual grasping framework that includes: a multimodal dataset capturing joint angles, visual observations and force signals; a Denoising Diffusion Probabilistic Model (DDPM)-based module that generates joint-level grasp configurations from segmented point clouds; and an execution strategy that integrates motion planning with online grasp refinement to ensure physical stability and feasibility. Our approach enables the synthesis of executable bimanual grasps from single-view inputs, reducing dependence on complete 3D object models and ensuring stable real-world performance. Experiments on a dual-arm robot demonstrate high success rates across unseen objects with varying geometries and poses, and ablation studies confirm the contributions of key components of our system.",
+      "authors": [
+        "Ziming Li",
+        "Mingxuan Wu",
+        "Jiaqi Zhang",
+        "Hongfei Li",
+        "Yan Gan",
+        "Deqiang Ouyang",
+        "Ning Wang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-11T02:24:27+00:00",
+      "link": "https://arxiv.org/pdf/2608.10383v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "real-world bimanual dexterous grasping framework and multimodal dataset",
+      "llm_evidence_cn": "真实世界双灵巧手抓取框架及多模态数据集",
+      "llm_evidence": "真实世界双灵巧手抓取框架及多模态数据集",
+      "canonical_evidence": "真实世界双灵巧手抓取框架及多模态数据集",
+      "llm_tldr_en": "Presents a framework and dataset for real-world cooperative bimanual dexterous grasping of large objects.",
+      "llm_tldr_cn": "提出一个用于真实世界大物体协作双灵巧手抓取的框架和数据集。",
+      "llm_tldr": "提出一个用于真实世界大物体协作双灵巧手抓取的框架和数据集。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.10756v1",
+      "source": "arxiv",
+      "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+      "abstract": "Embodied mobile manipulation requires language, visual observations, three-dimensional scene structure, and action feasibility to be aligned before execution. We study open-vocabulary target grounding with few-shot manipulation in local household workspaces and present an embodied multimodal grounding framework that integrates active multi-view Semantic 3D Gaussian Splatting (Semantic-3DGS), reachability-aware base positioning, and a diffusion-based vision-language-action policy. A task-driven local Semantic-3DGS serves as a shared interface across active sensing, language-conditioned 3D localization, obstacle-aware scene reasoning, base preparation, and semantic conditioning of the action model. To preserve pretrained action priors, the 3D semantic cues are injected only into the late action-expert blocks. In expanded 50-trial real-robot evaluations against representative vision-language-action (VLA) approaches, the full system achieves 60% long-horizon success compared with 40% for PointVLA and 28% for DexVLA, and reaches 74% success in heavily cluttered manipulation compared with 52% for the single-view variant and 46% for PointVLA. It also maintains 75% success under a 75 cm height shift and eliminates photo-induced false grasps. These results indicate that explicit, refreshable 3D semantic grounding can improve robustness under clutter, occlusion, viewpoint variation, and embodiment constraints.",
+      "authors": [
+        "Huosen Ou",
+        "Dongni Song",
+        "Yuncong Wang",
+        "Tao Zhou",
+        "Yiding Ji"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.CV"
+      ],
+      "published": "2026-08-11T10:16:30+00:00",
+      "link": "https://arxiv.org/pdf/2608.10756v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "mobile manipulation via active multi-view sensing and VLA policy",
+      "llm_evidence_cn": "通过主动多视图感知和VLA策略进行移动操作",
+      "llm_evidence": "通过主动多视图感知和VLA策略进行移动操作",
+      "canonical_evidence": "通过主动多视图感知和VLA策略进行移动操作",
+      "llm_tldr_en": "Integrates 3D Gaussian Splatting and VLA policies for open-vocabulary mobile manipulation.",
+      "llm_tldr_cn": "结合3D高斯泼溅和VLA策略，实现开放词汇的移动机器人操作。",
+      "llm_tldr": "结合3D高斯泼溅和VLA策略，实现开放词汇的移动机器人操作。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.08557v1",
+      "source": "arxiv",
+      "title": "OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories",
+      "abstract": "Visual tool use has emerged as a fundamental capability for multimodal agents to actively acquire evidence beyond a fixed image encoding. The prevailing recipe learns this capability from teacher-generated trajectories filtered for answer correctness, implicitly assuming that every successful demonstration provides effective supervision. We argue this assumption is flawed: a strong teacher often reaches the correct answer without needing its tool calls, and imitating such trajectories teaches a student that tool calls accompany correct answers, not that tool observations ground them. We present OpenVisTool, an open framework for constructing instructive visual tool-use trajectories that provide effective supervision for tool learning. The key insight is that a trajectory should be retained only if its answer is correct (outcome validity) and its tool observations causally contribute to that answer (causal utility). The framework operates in three stages: difficulty screening to select queries that are not reliably answerable without tools, domain-specific trajectory synthesis to elicit coherent tool-use trajectories, and supervision verification to jointly test both conditions. Rather than encouraging models to imitate tool calls, the resulting supervision teaches when and how visual evidence should be acquired. Using this framework, we construct OpenVisTool-42K, a dataset spanning five visual reasoning domains, together with OpenVisTool-Bench, a benchmark covering the same domains. Across four backbones (4B-27B), fine-tuning on OpenVisTool-42K consistently improves visual tool-use performance and yields gains on two out-of-distribution benchmarks; the larger models approach leading closed-source systems. The evidence suggests that effective visual tool use is learned from causally grounded supervision rather than tool-calling patterns.",
+      "authors": [
+        "Changhao Xiang",
+        "Shilin Zhang",
+        "Zheng Ma",
+        "Kanzhi Cheng",
+        "Ruize Ma",
+        "Yi Feng",
+        "Jianbing Zhang",
+        "Zhi Wang",
+        "Zhen Wu",
+        "Xinyu Dai",
+        "Lewei Lu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-09T08:01:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.08557v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "synthesizing instructive visual tool-use trajectories",
+      "llm_evidence_cn": "合成具有指导意义的视觉工具使用轨迹",
+      "llm_evidence": "合成具有指导意义的视觉工具使用轨迹",
+      "canonical_evidence": "合成具有指导意义的视觉工具使用轨迹",
+      "llm_tldr_en": "OpenVisTool synthesizes instructive visual trajectories to improve tool-use learning in multimodal agents.",
+      "llm_tldr_cn": "OpenVisTool通过合成指导性视觉轨迹，提升多模态智能体的工具使用学习效果。",
+      "llm_tldr": "OpenVisTool通过合成指导性视觉轨迹，提升多模态智能体的工具使用学习效果。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.08557v2",
+      "source": "arxiv",
+      "title": "OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories",
+      "abstract": "Visual tool use has emerged as a fundamental capability for multimodal agents to actively acquire evidence beyond a fixed image encoding. The prevailing recipe learns this capability from teacher-generated trajectories filtered for answer correctness, implicitly assuming that every successful demonstration provides effective supervision. We argue this assumption is flawed: a strong teacher often reaches the correct answer without needing its tool calls, and imitating such trajectories teaches a student that tool calls accompany correct answers, not that tool observations ground them. We present OpenVisTool, an open framework for constructing instructive visual tool-use trajectories that provide effective supervision for tool learning. The key insight is that a trajectory should be retained only if its answer is correct (outcome validity) and its tool observations causally contribute to that answer (causal utility). The framework operates in three stages: difficulty screening to select queries that are not reliably answerable without tools, domain-specific trajectory synthesis to elicit coherent tool-use trajectories, and supervision verification to jointly test both conditions. Rather than encouraging models to imitate tool calls, the resulting supervision teaches when and how visual evidence should be acquired. Using this framework, we construct OpenVisTool-42K, a dataset spanning five visual reasoning domains, together with OpenVisTool-Bench, a benchmark covering the same domains. Across four backbones (4B-27B), fine-tuning on OpenVisTool-42K consistently improves visual tool-use performance and yields gains on two out-of-distribution benchmarks; the larger models approach leading closed-source systems. The evidence suggests that effective visual tool use is learned from causally grounded supervision rather than tool-calling patterns.",
+      "authors": [
+        "Changhao Xiang",
+        "Shilin Zhang",
+        "Zheng Ma",
+        "Kanzhi Cheng",
+        "Ruize Ma",
+        "Yi Feng",
+        "Jianbing Zhang",
+        "Zhi Wang",
+        "Zhen Wu",
+        "Xinyu Dai",
+        "Lewei Lu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "published": "2026-08-09T08:01:05+00:00",
+      "link": "https://arxiv.org/pdf/2608.08557v2",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "synthesizing instructive visual tool-use trajectories",
+      "llm_evidence_cn": "合成具有指导意义的视觉工具使用轨迹",
+      "llm_evidence": "合成具有指导意义的视觉工具使用轨迹",
+      "canonical_evidence": "合成具有指导意义的视觉工具使用轨迹",
+      "llm_tldr_en": "OpenVisTool synthesizes instructive visual trajectories to improve tool-use learning in multimodal agents.",
+      "llm_tldr_cn": "OpenVisTool通过合成指导性视觉轨迹，提升多模态智能体的工具使用学习效果。",
+      "llm_tldr": "OpenVisTool通过合成指导性视觉轨迹，提升多模态智能体的工具使用学习效果。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "robotic manipulation research leveraging first-person datasets",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

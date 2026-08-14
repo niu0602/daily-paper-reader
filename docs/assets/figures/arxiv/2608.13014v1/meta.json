@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13014v1/fig-001.webp",
+      "caption": "Fig. 3: (a) Activation of collision detection: pink lines show line-line contact, blue lines show point-line contact, yellow lines show point-point contact, and red lines represent constraints. (b) Simulated forces before and after applying contact masks.",
+      "page": 6,
+      "index": 1,
+      "width": 611,
+      "height": 213
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13014v1/fig-002.webp",
+      "caption": "Fig. 4: EgoPHI estimates dense per-vertex force and contact for both hands and objects and outperforms the hand-only HACO baseline. EgoPHI’s projected 2D force distributions outperform PressureVision and align better with the egocentric image.",
+      "page": 10,
+      "index": 2,
+      "width": 723,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13014v1/fig-003.webp",
+      "caption": "Fig. 6: (a) Apparatus of our real-world contact and force evaluation. Participants touched and grasped these two objects, which we constructed such that touch force corresponds to light intensity on the fingers and hands. (b) Qualitative results on real-world force recordings. While our experimental apparatus recorded ground-truth contact and force on the object only, we additionally show the estimated contact and force maps on the hands for visual comparison.",
+      "page": 13,
+      "index": 3,
+      "width": 722,
+      "height": 229
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13014v1/fig-004.webp",
+      "caption": "Fig. 5: Error-isolation analysis with ground-truth poses.",
+      "page": 12,
+      "index": 4,
+      "width": 725,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13014v1/fig-005.webp",
+      "caption": "Fig. 2: EgoPHI’s 3-stage pipeline: (1) visual & geometric feature extraction with crossmodal fusion, (2) object pose estimation, and (3) contact and force estimation. Our novel Graph-Based Interaction Blocks perform the core 3D reasoning by encoding intramesh structure and inter-mesh relationships between the hands and object. These blocks represent the 3D pose and spatial configuration of each mesh relative to the others. We thus explicitly model proximity and geometric interaction, which is critical for inferring physically grounded forces.",
+      "page": 5,
+      "index": 5,
+      "width": 725,
+      "height": 287
+    }
+  ]
+}

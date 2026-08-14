@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-001.webp",
+      "caption": "Figure 1: Comparison between existing evaluation and H2RBench. Given a human demonstration and a target embodiment instruction, video world models generate robot manipulation videos. Existing video benchmarks such as WorldModelBench (Li et al. 2026a) assess overall video plausibility, rates both videos highly, whereas our H2R-Bench diagnoses transfer through goal, action, contact, and embodiment.",
+      "page": 1,
+      "index": 1,
+      "width": 490,
+      "height": 470
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-002.webp",
+      "caption": "Figure 4: VBench Video Quality versus H2RCore. Unlike VBench, H2RCore better differentiates the models.",
+      "page": 6,
+      "index": 2,
+      "width": 478,
+      "height": 439
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-003.webp",
+      "caption": "Table 4: Effects of target-robot reference images for three video-conditioned models. “No” and “Yes” indicate generation without and with a target-robot reference image.",
+      "page": 6,
+      "index": 3,
+      "width": 500,
+      "height": 371
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-004.webp",
+      "caption": "Figure 5: Qualitative H2R transfer results with the shared source video and prompt. The unscored top row is the human source; the generated rows show representative stages of each output. Metric strips report per-video M1–M5 and H2RCore.",
+      "page": 7,
+      "index": 4,
+      "width": 1042,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-005.webp",
+      "caption": "Figure 2: Overview of H2R-Bench. The benchmark curates egocentric human manipulation demonstrations, conditions video generators on each model’s supported source interface and target embodiment, and evaluates the resulting robot videos with transfer-aware metrics. The lower panels summarize task coverage and model capability profiles across both target embodiments.",
+      "page": 3,
+      "index": 5,
+      "width": 1032,
+      "height": 550
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13049v1/fig-006.webp",
+      "caption": "Table 2: Main-evaluation results by target embodiment. M1–M5 measure goal completion, action completion, contact transfer, embodiment correctness, and Video Quality; H2RCore aggregates all five metrics on a 0–100 scale. Rows are ordered by the sum of the two H2RCore scores within each conditioning group. Bold and underlined entries indicate the best and second-best result in each column.",
+      "page": 5,
+      "index": 6,
+      "width": 1032,
+      "height": 296
+    }
+  ]
+}

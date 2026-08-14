@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-001.webp",
+      "caption": "Fig. 1: Overview of the capabilities evaluated with NestDex. Top left: autonomous outer-policy rollouts for Tongs Transfer and Dual-Object Transfer. Top right: one reusable inner policy produces coordinated hand configurations across varied items. Bottom: copilot assisted collection of bimanual Binder Filing and Toast Preparation demonstrations.",
+      "page": 1,
+      "index": 1,
+      "width": 514,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-002.webp",
+      "caption": "Fig. 9: Closure-aligned whole-hand effort across the 30 bottle-grasp trials. Successes and failures remain separate within each execution condition. Thin curves show trials, thick curves show the median, and shaded regions show the interquartile range when more than one trial is available. The grey interval marks 0.5 to 5.5 s after full closure.",
+      "page": 7,
+      "index": 2,
+      "width": 982,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-003.webp",
+      "caption": "Fig. 2: NestDex system overview and inner-policy data collection. Left: retargeted hand-skill demonstrations train inner policies that assist complete-task teleoperation; the collected demonstrations then train an outer policy. Right: multi-view human-hand observations are retargeted to coordinated robot-hand configurations for inner-policy training.",
+      "page": 3,
+      "index": 3,
+      "width": 1052,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-004.webp",
+      "caption": "Fig. 3: The inner policy produces different contact configurations across its four training objects: (a) green scallion toy, (b) water bottle, (c) radish toy, and (d) paper cup. The policy receives hand joint positions and efforts without object images or identities.",
+      "page": 3,
+      "index": 4,
+      "width": 512,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-005.webp",
+      "caption": "Fig. 4: Copilot assisted teleoperation sequences for Toast Preparation and Binder Filing. Coloured borders and labels identify the active inner policy, while switch markers indicate automatic reselection after the preceding policy returns to zero execution index. Each sequence returns to a previously used policy when the corresponding hand skill is needed again.",
+      "page": 4,
+      "index": 5,
+      "width": 1046,
+      "height": 239
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-006.webp",
+      "caption": "Fig. 5: Hand action compression and outer-policy learning. (a) H-VAE encodes each 20-DoF hand joint-position command as a compact hand latent action and reconstructs the complete hand command through its decoder. (b) The outer policy predicts action chunks containing arm commands and hand latent actions; during deployment, the decoder converts each predicted hand latent action back to a follower-hand joint-position command.",
+      "page": 4,
+      "index": 6,
+      "width": 514,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-007.webp",
+      "caption": "Fig. 6: Autonomous outer-policy behaviours learned from copilot-collected demonstrations. The policies deploy independently of the inner policies used during collection. (a) The policy extracts the tongs, grasps the carrot with the tool, and transfers it to the pan. (b) The policy uses separate finger groups to grasp two blocks simultaneously and transfers both to the bin. Numbers indicate temporal order.",
+      "page": 5,
+      "index": 7,
+      "width": 1054,
+      "height": 358
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13362v1/fig-008.webp",
+      "caption": "Fig. 7: Temporal ensembling ablation during bottle-grasp closure. Panels (a) and (b) show trial-level executed-command and pre-limit P95 jerk; black bars mark medians. Panel (c) shows the median ratio of Closed-loop, no ensemble to Closed-loop, temporal ensemble across filter windows. Lower values indicate smoother commands.",
+      "page": 5,
+      "index": 8,
+      "width": 512,
+      "height": 392
+    }
+  ]
+}

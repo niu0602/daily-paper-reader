@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-001.webp",
+      "caption": "Figure 1: Correct tool-use trajectories are not always instructive. (Top) Illustration of tool-unnecessary and tool-necessary trajectories. (Bottom) Tool-necessity distributions for Thyme2round and our OpenVisTool-42K, computed over 1,000 instances by re-querying the corresponding teacher model without tool access. Trajectories with correct no-tool answers are labeled tool-unnecessary.",
+      "page": 1,
+      "index": 1,
+      "width": 490,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-002.webp",
+      "caption": "Table 2: Out-of-distribution results on Agentic-MME and VTC-Bench. Base models are evaluated without tools, while models trained on OpenVisTool-42K are evaluated with tools. Green suffixes show absolute gains over the corresponding no-tool backbone.",
+      "page": 6,
+      "index": 2,
+      "width": 500,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-003.webp",
+      "caption": "Table 4: Cross-domain transfer analysis on OpenVisTool-Bench with Qwen3.5-9B as base model. We fine-tune the model on either the full OpenVisTool-42K mixture or an individual domain slice and evaluate all fine-tuned variants with tools across the five domains. Bold and underlined entries indicate the best and second-best results in each column, respectively.",
+      "page": 7,
+      "index": 3,
+      "width": 840,
+      "height": 254
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-004.webp",
+      "caption": "Table 8: Complete toolset. General-purpose tools are shared across all task domains, while visual tools are grouped by functionality.",
+      "page": 14,
+      "index": 4,
+      "width": 1017,
+      "height": 908
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-005.webp",
+      "caption": "Figure 2: Overview of the three-stage OpenVisTool data pipeline. Difficulty Screening identifies queries that the probe model cannot reliably solve from the original image alone. Domain-Specific Trajectory Synthesis uses domain-specific tool-use patterns to guide a stronger teacher in acquiring evidence that addresses each domain’s visual bottleneck. Supervision Verification determines whether each trajectory is instructive: it must achieve a valid outcome, and its tool observations must causally improve the probe model’s answer reliability. Only trajectories satisfying both criteria are retained.",
+      "page": 3,
+      "index": 5,
+      "width": 1010,
+      "height": 468
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-006.webp",
+      "caption": "Figure 5: A retained Chart trajectory. Three clean color-range calls separate the low-, moderate-, and high-calorie segments of every stacked bar. Their returned bounding boxes provide the measurements used in the final script. This evidence raises the probe’s avg@4 success from 0.50 to 0.75.",
+      "page": 18,
+      "index": 6,
+      "width": 1054,
+      "height": 1102
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-007.webp",
+      "caption": "Table 5: Results on the complete, unfiltered Chart and Table source benchmarks. The setting indicates whether the model is trained with tool-use trajectories; tool invocation is disabled at inference time for all models.",
+      "page": 13,
+      "index": 7,
+      "width": 844,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-008.webp",
+      "caption": "Table 6: Shared training settings for all four backbones.",
+      "page": 13,
+      "index": 8,
+      "width": 500,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-009.webp",
+      "caption": "Figure 4: Domain distributions of OpenVisTool-42K and OpenVisTool-Bench. The 42,048 retained training trajectories reflect the natural yield of the shared filtering pipeline (left), while the 559 evaluation instances are approximately balanced across the same five domains (right).",
+      "page": 12,
+      "index": 9,
+      "width": 947,
+      "height": 244
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-010.webp",
+      "caption": "Figure 7: An outcome-correct trajectory removed by causal-utility filtering. The tool calls look superficially relevant, but the actual observations are uninformative or mislocalized and provide no counterfactual benefit. This case illustrates why correctness-only filtering would retain spurious process supervision: the answer is correct, yet the tool trace decreases rather than improves the probe’s success rate.",
+      "page": 20,
+      "index": 10,
+      "width": 1054,
+      "height": 548
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-011.webp",
+      "caption": "Table 1: Main results on OpenVisTool-Bench under the avg@4 evaluation protocol. “w/o tool” and “with tool” denote evaluation without and with access to the corresponding visual tool environment, respectively. Rows marked with +OpenVisTool-42K denote models fine-tuned on our training data, and green +x suffixes report absolute gains over the “w/o tool” result of the same backbone. Bold and underlined entries indicate the best and second-best results in each column, respectively.",
+      "page": 5,
+      "index": 11,
+      "width": 1052,
+      "height": 564
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08557v1/fig-012.webp",
+      "caption": "Table 11: Domain-specific teacher-rollout prompt for Visual Search.",
+      "page": 16,
+      "index": 12,
+      "width": 1057,
+      "height": 318
+    }
+  ]
+}

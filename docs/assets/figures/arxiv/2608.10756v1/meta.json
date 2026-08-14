@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-001.webp",
+      "caption": "Figure 4: Semantic-3DGS-conditioned VLA manipulation. A lightweight semantic injector conditions the final five frozen action-expert blocks through trainable adapters while preserving pretrained action priors.",
+      "page": 6,
+      "index": 1,
+      "width": 1056,
+      "height": 602
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-002.webp",
+      "caption": "Figure 5: Few-shot multi-task manipulation scenarios. Test objects are unseen instances in task-specific fine-tuning, while semantically related object families may appear in the few-shot demonstrations.",
+      "page": 6,
+      "index": 2,
+      "width": 898,
+      "height": 344
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-003.webp",
+      "caption": "Figure 8: Success rates on the few-shot multi-task manipulation benchmark. (1) Place the banana on the book. (2) Place the bottle into the basket. (3) Place the stuffed toy, banana, and bottle into the bowl in the specified order.",
+      "page": 7,
+      "index": 3,
+      "width": 531,
+      "height": 418
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-004.webp",
+      "caption": "Figure 6: Height-adaptation settings. Targets are placed at different platform heights to test stance selection and reachabilityaware manipulation.",
+      "page": 7,
+      "index": 4,
+      "width": 1056,
+      "height": 321
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-005.webp",
+      "caption": "Figure 7: Long-horizon manipulation sequence. The robot opens the top drawer, retrieves the banana, closes the drawer, navigates to the target area, and places the banana on the black chair.",
+      "page": 7,
+      "index": 5,
+      "width": 1056,
+      "height": 225
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-006.webp",
+      "caption": "Figure 9: Photo-deception setup. The robot should manipulate the real object while rejecting a photo-realistic distractor on a flat screen.",
+      "page": 7,
+      "index": 6,
+      "width": 506,
+      "height": 241
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-007.webp",
+      "caption": "Figure 1: Overview of the proposed system. The robot patrols by waypoint navigation, switches to task mode after receiving instruction 𝑙 , actively acquires four local wrist-camera views, constructs a local Semantic-3DGS, estimates the target pose𝑊𝑇obj, repositions the base to a feasible stance (𝑥★, 𝑦★,𝜓★, ℎ★), and executes a semantics-conditioned VLA manipulation policy.",
+      "page": 3,
+      "index": 7,
+      "width": 1056,
+      "height": 684
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-008.webp",
+      "caption": "Figure 11: Block sensitivity analysis for semantic-3DGS injection: late-block conditioning provides a better success– efficiency trade-off than injecting semantic cues into earlier or broader portions of the action expert.",
+      "page": 8,
+      "index": 8,
+      "width": 506,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2608.10756v1/fig-009.webp",
+      "caption": "Figure 3: Active multi-view Semantic-3DGS for language grounding. Target-driven view acquisition builds a compact local semantic 3D representation from four wrist-camera images.",
+      "page": 4,
+      "index": 9,
+      "width": 1056,
+      "height": 598
+    }
+  ]
+}

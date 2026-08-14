@@ -6,62 +6,44 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-13
-- 运行时间：2026-08-13 20:30:22 UTC
+- 最新运行日期：2026-08-14
+- 运行时间：2026-08-14 20:17:24 UTC
 - 运行状态：成功
-- 本次总论文数：13
-- 精读区：2
-- 速读区：11
+- 本次总论文数：7
+- 精读区：4
+- 速读区：3
 
 ### 今日简报（AI）
-- 今日共生成 13 篇推荐（精读 2 篇，速读 11 篇）
-- 精读：《HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing》（10.0/10）, 《MAD-HOI: Masked Autoregressive Diffusion for Generating Articulated Hand Object Interactions from Text》（8.0/10）
-- 速读：《Vid2WAM: Distilling Video Diffusion Priors into World Action Models》（7.5/10）, 《Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies》（7.0/10）, 《TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation》（7.0/10）
+- 今日共生成 7 篇推荐（精读 4 篇，速读 3 篇）
+- 精读：《H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models》（9.5/10）, 《EgoPHI: Estimating Contact and Force from Egocentric Vision》（9.0/10）
+- 速读：《Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting》（7.0/10）, 《OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories》（6.0/10）, 《OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories》（6.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/13/README](/202608/13/README)
+- 详情：[/202608/14/README](/202608/14/README)
 
 ### 精读区论文标签
-1. [HandEdit: A Unified Benchmark for Egocentric Human-to-Robot Dexterous Hand Image Editing](/202608/13/2608.12122v1-handedit-a-unified-benchmark-for-egocentric-human-to-robot-dexterous-hand-image-editing)  
-   标签：评分：10.0/10、query:dexop
-   evidence：使用第一视角视频进行第一视角人到机器人灵巧手图像编辑的统一基准
-2. [MAD-HOI: Masked Autoregressive Diffusion for Generating Articulated Hand Object Interactions from Text](/202608/13/2608.10162v1-mad-hoi-masked-autoregressive-diffusion-for-generating-articulated-hand-object-interactions-from-text)  
+1. [H2R-Bench: Benchmarking Human-to-Robot Manipulation Video Generation in World Models](/202608/14/2608.13049v1-h2r-bench-benchmarking-human-to-robot-manipulation-video-generation-in-world-models)  
+   标签：评分：9.5/10、query:dexop
+   evidence：使用第一视角人类视频的人到机器人操作基准
+2. [EgoPHI: Estimating Contact and Force from Egocentric Vision](/202608/14/2608.13014v1-egophi-estimating-contact-and-force-from-egocentric-vision)  
+   标签：评分：9.0/10、query:dexop
+   evidence：从第一视角视觉中估计手物交互的接触和力量
+3. [NestDex: Nested Policy Learning with Copilot Assisted Teleoperation for Dexterous Manipulation](/202608/14/2608.13362v1-nestdex-nested-policy-learning-with-copilot-assisted-teleoperation-for-dexterous-manipulation)  
+   标签：评分：9.0/10、query:dexop
+   evidence：针对灵巧操作任务的策略学习框架
+4. [Real-World Cooperative Bimanual Dexterous Grasp of Large Objects from Single-View Observations](/202608/14/2608.10383v2-real-world-cooperative-bimanual-dexterous-grasp-of-large-objects-from-single-view-observations)  
    标签：评分：8.0/10、query:dexop
-   evidence：生成关节式手物交互（HOI）序列
+   evidence：真实世界双灵巧手抓取框架及多模态数据集
 
 ### 速读区论文标签
-1. [Vid2WAM: Distilling Video Diffusion Priors into World Action Models](/202608/13/2608.08558v1-vid2wam-distilling-video-diffusion-priors-into-world-action-models)  
-   标签：评分：7.5/10、query:dexop
-   evidence：将视频扩散先验蒸馏用于机器人策略学习
-2. [Cross-View Action Consistency for Camera-Robust Vision-Language-Action Policies](/202608/13/2608.06965v1-cross-view-action-consistency-for-camera-robust-vision-language-action-policies)  
+1. [Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting](/202608/14/2608.10756v1-embodied-multimodal-grounding-for-open-vocabulary-mobile-manipulation-via-semantic-3d-gaussian-splatting)  
    标签：评分：7.0/10、query:dexop
-   evidence：使用场景RGB和手腕流遮蔽的相机鲁棒性VLA策略
-3. [TAMS: Task-Aware Multi-View Adaptive Streaming for Wireless Telerobotic Manipulation](/202608/13/2608.09731v1-tams-task-aware-multi-view-adaptive-streaming-for-wireless-telerobotic-manipulation)  
-   标签：评分：7.0/10、query:dexop
-   evidence：在远程机器人操作中优先处理与操作员相关的相机视角
-4. [Faster-WAM: Efficient Inference-Time Future Conditioning for Robust World Action Models](/202608/13/2608.04404v1-faster-wam-efficient-inference-time-future-conditioning-for-robust-world-action-models)  
-   标签：评分：6.5/10、query:dexop
-   evidence：通过世界动作模型和未来表示改进机器人操作
-5. [Robust-WAM: Bridging Generative Pretraining and Semantic Foresight in World-Action Models](/202608/13/2608.05903v2-robust-wam-bridging-generative-pretraining-and-semantic-foresight-in-world-action-models)  
-   标签：评分：6.5/10、query:dexop
-   evidence：基于视频生成的机器人控制世界动作模型
-6. [GWM-VLA: Geometry-Aware Latent World Modeling for Vision-Language-Action Learning](/202608/13/2608.07619v1-gwm-vla-geometry-aware-latent-world-modeling-for-vision-language-action-learning)  
+   evidence：通过主动多视图感知和VLA策略进行移动操作
+2. [OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories](/202608/14/2608.08557v1-openvistool-an-open-recipe-for-synthesizing-instructive-visual-tool-use-trajectories)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于机器人操作的几何感知潜空间世界建模
-7. [SpeedTuning: Speeding Up Policy Execution with Lightweight Reinforcement Learning](/202608/13/2608.09138v2-speedtuning-speeding-up-policy-execution-with-lightweight-reinforcement-learning)  
+   evidence：合成具有指导意义的视觉工具使用轨迹
+3. [OpenVisTool: An Open Recipe for Synthesizing Instructive Visual Tool-Use Trajectories](/202608/14/2608.08557v2-openvistool-an-open-recipe-for-synthesizing-instructive-visual-tool-use-trajectories)  
    标签：评分：6.0/10、query:dexop
-   evidence：增强操作策略速度的强化学习框架
-8. [Skills in Weights, Memory in Code: Hybrid Learning for Memory-Dependent Robot Manipulation](/202608/13/2608.09410v1-skills-in-weights-memory-in-code-hybrid-learning-for-memory-dependent-robot-manipulation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：依赖记忆的机器人操作的混合学习
-9. [BooST: Bridging Semantics and Motions for Efficient Skill Transfer](/202608/13/2608.10600v1-boost-bridging-semantics-and-motions-for-efficient-skill-transfer)  
-   标签：评分：6.0/10、query:dexop
-   evidence：机器人学习和操作的高效技能迁移
-10. [HUI360: A 360° Egocentric Dataset and Baselines for Human-Robot Interaction Anticipation](/202608/13/2608.11051v1-hui360-a-360-egocentric-dataset-and-baselines-for-human-robot-interaction-anticipation)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于人机交互的360度第一视角数据集
-11. [StellaVLA: In-Context Structured Demonstration for Generalizable Vision-Language-Action Models](/202608/13/2608.11671v1-stellavla-in-context-structured-demonstration-for-generalizable-vision-language-action-models)  
-   标签：评分：6.0/10、query:dexop
-   evidence：用于操作物体的视觉-语言-动作模型
+   evidence：合成具有指导意义的视觉工具使用轨迹
 
 
 <div class="dpr-home-promo-card">

@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-001.webp",
+      "caption": "Fig. 5. Targeted pose augmentation around the right real configuration. (a) Enlarged PCA projection of the local initial-state region. The two red diamonds denote additional collection poses placed on either side of right real along PC1. (b) Robot configurations images corresponding to right real pc1 minus and right real pc1 plus. (c) Success rate at right real for A1 trained with the original eight-pose dataset and the augmented tenpose dataset.",
+      "page": 6,
+      "index": 1,
+      "width": 504,
+      "height": 289
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-002.webp",
+      "caption": "Fig. 7. Joint-level counterfactual interventions. The A2 intervention between teleop default and right sim swaps Rarm,3 and Rarm,5, while the control swaps Rarm,0 and Rarm,6. The broader pose08–teleop default intervention swaps the four arm joints with the largest absolute position differences. Arrow labels indicate the swapped arm and joint indices using zero-based indexing.",
+      "page": 7,
+      "index": 2,
+      "width": 500,
+      "height": 256
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-003.webp",
+      "caption": "TABLE I TRAINING DATASETS AND OBSERVATION CONFIGURATIONS",
+      "page": 4,
+      "index": 3,
+      "width": 512,
+      "height": 235
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-004.webp",
+      "caption": "TABLE II TRAINING CONFIGURATIONS USED IN THE COMPARATIVE EXPERIMENTS.",
+      "page": 4,
+      "index": 4,
+      "width": 514,
+      "height": 274
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-005.webp",
+      "caption": "Fig. 2. Task success of initial-pose and policy dependence (left) and early hand preference during the initial decision window (right). (a) PickApple success rate for each initial-pose—policy pair. (b) Residual directional bias H (T ) prior after averaging across the left and right target conditions. (c) Target-location responsiveness H (T ) target. The hand-prior metrics are computed using an initial decision window of T=120. Rows denote initial robot pose and columns denote policy variants; the last row and column in (a) report the corresponding averages.",
+      "page": 5,
+      "index": 5,
+      "width": 1048,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2608.11769v1/fig-006.webp",
+      "caption": "Fig. 3. PCA projection of evaluation initial poses and task-level distributions. Blue diamonds denote 8 diversified PickApple training poses, while blue circles denote the remaining evaluation initial configurations. Yellow and gray circles respectively represent the task-level initial-state means of the pick-type and non-pick real-robot datasets.",
+      "page": 5,
+      "index": 6,
+      "width": 619,
+      "height": 360
+    }
+  ]
+}

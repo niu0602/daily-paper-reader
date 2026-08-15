@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-001.webp",
+      "caption": "Figure 3: Visualizations of the realistic environments (upper row) and their corresponding simulated environments (lower row) across the three task categories: entry-level (green background), mid-level (blue background), and high-level (red background).",
+      "page": 6,
+      "index": 1,
+      "width": 748,
+      "height": 493
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-002.webp",
+      "caption": "Table 4: Summary of simulated data randomization parameters.",
+      "page": 11,
+      "index": 2,
+      "width": 822,
+      "height": 354
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-003.webp",
+      "caption": "Figure 4: The demonstration showcases our backup hardware, which shares the same robot configurations and setup. This ensures that real-world evaluations can be conducted reliably and at scale.",
+      "page": 11,
+      "index": 3,
+      "width": 748,
+      "height": 423
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-004.webp",
+      "caption": "Figure 1: The pipeline of RoboSynChallenge, which provides a comprehensive data generation framework for synthesizing manipulation trials within a simulated environment (in orange background), thereby expanding the training datasets. These synthetic data, together with a smaller amount of static real-world data collected through teleoperation (in blue background), can be used for simulation-to-real co-training. This approach helps mitigate the limitations of scarce real data when deploying trained manipulation policies in the real world (in green background).",
+      "page": 2,
+      "index": 4,
+      "width": 824,
+      "height": 353
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-005.webp",
+      "caption": "Table 2: Experimental Results of Baselines: Success Rate (x/20 or %), Action Steps (max 1000), and Real Time (s).",
+      "page": 7,
+      "index": 5,
+      "width": 822,
+      "height": 616
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-006.webp",
+      "caption": "Table 1: The comparison to other competition and benchmarks for dexterous manipulation.",
+      "page": 3,
+      "index": 6,
+      "width": 824,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-007.webp",
+      "caption": "Table 5: Summary of Task Descriptions, Steps, and Success Criteria",
+      "page": 12,
+      "index": 7,
+      "width": 822,
+      "height": 833
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12416v1/fig-008.webp",
+      "caption": "Figure 2: Real-world manipulation setup: The physical platform consists of a dual-arm robot, cameras, lighting, and various objects, enabling evaluation of all tasks included in the benchmark. To facilitate multiple rounds of real-world testing in a reliable and efficient manner, we have prepared three sets of backup workstations, each configured identically to the primary setup (Figure 4).",
+      "page": 5,
+      "index": 8,
+      "width": 826,
+      "height": 354
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-001.webp",
+      "caption": "Figure 4: Real-robot qualitative examples on the pick-and-place tasks. Each panel shows a live rollout that our monitor classifies correctly: top row is the grasping arm’s wrist camera, bottom row the middle-view camera, with columns showing the pre-grasp, grasp, and post-grasp frames.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-002.webp",
+      "caption": "Figure 3: Evaluated tasks. Each panel shows a representative successful rollout from the middle camera, with columns showing the pre-grasp, grasp, and post-grasp phases.",
+      "page": 6,
+      "index": 2,
+      "width": 802,
+      "height": 222
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-003.webp",
+      "caption": "Figure 1: Pre-contact online monitoring via action-conditioned latent world models. While a visuomotor policy executes an action chunk, ContactGuard conditions a frozen latent world model on the same planned chunk at an anchor k steps before the planned gripper closure Tg . It rolls the model forward h steps and scores the predicted future latent with a lightweight classifier. If P (fail) > τ , execution is aborted before contact: the decision is made at Tg−k and targets the post-contact moment Tg−k+h, so foreseen failures can be prevented rather than merely detected. At deployment, ContactGuard runs alongside an existing chunked visuomotor policy as a policydecoupled predictive verifier. The deployed policy is treated as a black-box proposer: ContactGuard consumes only the current observation and the concrete action chunk already emitted by the policy, without accessing policy internals or requiring joint training. It scans the upcoming chunk for an imminent contact event, anchors prediction shortly before that event, rolls the independently trained latent world model forward under the proposed actions, and applies the frozen probe to the predicted post-contact latent. The system aborts before contact if that specific chunk is likely to lead to failure; otherwise the policy continues unchanged.",
+      "page": 2,
+      "index": 3,
+      "width": 744,
+      "height": 310
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-004.webp",
+      "caption": "Table 1: We report precision, recall, false-abort rate (FAR= FP/(FP+TN); lower is better), ROC AUC, and balanced accuracy over realized P (fail) scores from N=50 monitored rollouts per grasp setting.",
+      "page": 7,
+      "index": 4,
+      "width": 540,
+      "height": 296
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-005.webp",
+      "caption": "Table 8: Per-task deployment operating points on real-robot rollouts. For each monitor we report the class counts (N+/N−), the deployment threshold τ , the full confusion matrix (TP/FP/TN/FN), recall, the false-abort rate (FAR=FP/(FP+TN)), balanced accuracy, precision, and ROC AUC. The positive class denotes an imminent failed grasp, so TP is a correctly vetoed failure, FP a false abort, TN a correctly allowed success, and FN a missed failure. Ours is ContactGuard with multiview action-conditioned JEPA rollout and a linear failure probe; LeWM is the single-view worldmodel baseline; Direct-linear is the linear classifier on the anchor latent and planned action chunk.",
+      "page": 14,
+      "index": 5,
+      "width": 760,
+      "height": 326
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-006.webp",
+      "caption": "Table 6: Supplementary offline classifier comparison on the per-task split. Each row reports test ROC AUC and test balanced accuracy, with thresholds selected by Youden-J on the validation split. Direct-linear and Direct-MLP variants share ContactGuard’s frozen multi-view encoder but bypass the world-model rollout, classifying directly from the anchor latent zt and planned action chunk; “small” and “large” denote the validation-selected 2- and 3-layer MLPs. This supplementary split is separate from the live real-robot rollout set in Table 8; values are therefore not expected to match the deployment-table AUCs exactly.",
+      "page": 13,
+      "index": 6,
+      "width": 477,
+      "height": 494
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13438v1/fig-007.webp",
+      "caption": "Figure 2: ContactGuard overview. A shared multi-view encoder maps camera observations to a latent context. An action-conditioned predictor rolls this context forward under the policy’s planned action chunk to produce future latents ẑt+1:t+K . A lightweight probe is trained offline on labelled pre-contact clips and used online to score the predicted post-contact latent ẑt+K . If the predicted failure probability exceeds threshold τ , execution is aborted before contact. Training uses teacherforced next-latent prediction; inference uses autoregressive rollout.",
+      "page": 4,
+      "index": 7,
+      "width": 826,
+      "height": 222
+    }
+  ]
+}

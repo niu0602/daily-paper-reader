@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-001.webp",
+      "caption": "Figure 3: Background Robustness and Guided Augmentation. (a) Light bars use original-background training, solid bars use 25 randomized-background training, and diamonds show in-domain mean success from the main benchmark. We compare MirrorAug, RAVEN+Overlay, RVT2-Crop, and Seeker-Guided augmentation. (b) Seeker-guided augmentation examples and evaluation environments.",
+      "page": 6,
+      "index": 1,
+      "width": 812,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-002.webp",
+      "caption": "Figure A.1: Per-frame head overlays and corresponding gating weights for two tasks.",
+      "page": 11,
+      "index": 2,
+      "width": 814,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-003.webp",
+      "caption": "Figure 5: Real-world Setup and Visual Diagnostics. (a) Start and goal configurations for the three real-world tasks. (b) OOD evaluation conditions with background and lighting shifts. (c) Seeker ROIs remain focused on predicted control-relevant regions under appearance changes. (d) Heuristic crops can produce ghost keyframes or miss interaction-relevant continuous-motion cues without reliable gripper-state anchors.",
+      "page": 7,
+      "index": 3,
+      "width": 805,
+      "height": 196
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-004.webp",
+      "caption": "Figure 1: Seeker Overview. (a) A state-conditioned query is iteratively refined over frozen DINOv3 patch tokens, producing a compact visual context together with attention maps and head scores. (b) Head-score-weighted attention is converted into a mask and bounding box using a top p mass criterion. (c) The visual context is trained through a diffusion action-prediction loss, allowing the ROI to emerge without spatial supervision.",
+      "page": 3,
+      "index": 4,
+      "width": 760,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-005.webp",
+      "caption": "Figure 2: Simulation setup and Seeker visualization. (a) MimicGen [24] task overview. (b) In Coffee Preparation, Seeker ROIs shift with task progress; selected frames correspond to peaks in pairwise context-feature distance. (c) RVT2-style heuristic ROI stress cases: missed continuous-motion cues, noisy gripper-triggered keyframes, and tool-contact regions offset from the TCP proxy. (d) Seeker crops and masks across tasks.",
+      "page": 4,
+      "index": 5,
+      "width": 818,
+      "height": 372
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-006.webp",
+      "caption": "Figure A.7: Seeker-selected Keyframes for Real-world Tasks. Predicted ROIs, crops, and masks are aligned with peaks in pairwise cosine distance from Seeker’s context feature.",
+      "page": 17,
+      "index": 6,
+      "width": 818,
+      "height": 439
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13422v1/fig-007.webp",
+      "caption": "Table 1: Data Efficiency on MimicGen with 100 Demos. Success rate (%) averaged over three seeds; stds in App. D.1. Gray cells mark the strongest non-Seeker input-level baseline. Seeker improves average success by 20 points over this baseline (62.6 vs. 42.6), with a mean task-wise relative gain of +52.8%. It also exceeds external full-policy SOTA RAVEN (62.6 vs. 52.1) and remains within 1.6 points of the privileged Oracle ROI. ∗The oracle provides stage-aware affordance ROIs. †Pick & Place uses strict episode success with all baselines rerun.",
+      "page": 5,
+      "index": 7,
+      "width": 826,
+      "height": 267
+    }
+  ]
+}

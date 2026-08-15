@@ -1,0 +1,185 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-15T20:26:35.592097+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 1,
+    "deep_cap": 6,
+    "deep_selected": 1,
+    "quick_candidates": 3,
+    "quick_skim_target": 11,
+    "quick_selected": 3
+  },
+  "deep_dive": [
+    {
+      "id": "2608.12416v1",
+      "source": "arxiv",
+      "title": "RoboSynChallenge: Mastering Real-World Dexterity via Generalizing Synthesized Manipulation Skills",
+      "abstract": "Achieving generalizable robotic manipulation remains a central challenge in embodied intelligence. Despite rapid advances in model architectures and learning algorithms, progress is often limited by the scarcity and narrow diversity of real-world data. The RoboSynChallenge competition introduces a unified benchmark to evaluate and advance the generalizability of manipulation policies across a spectrum of tasks, environments, and difficulty levels. To alleviate the shortage of realistic data, the challenge integrates large-scale synthetic data generation with standardized real-world robotic evaluation. Participants are encouraged to leverage synthesized state-action trials to improve general-purpose policy learning, while final assessments are conducted exclusively on unseen real-world manipulation environments. Baseline implementations, including Transformer-, Diffusion-, Vision-Language-Action, and World-Action-Model-based policies, are provided to ensure reproducibility and comparability. By coupling scalable simulation-based training with rigorous real-world validation, RoboSynChallenge aims to foster the development of broadly capable, data-efficient, and adaptable manipulation systems, thereby paving the way toward truly general robotic intelligence.",
+      "authors": [
+        "Runyi Zhao",
+        "Ruixin Wu",
+        "Chengkun Li",
+        "Hongrui Zhang",
+        "Ang Li",
+        "Ruixing Jin",
+        "Yueci Deng",
+        "Yingying Guo",
+        "Lihe Ding",
+        "Shaocong Dong",
+        "Tianfan Xue",
+        "Yanjun Gao",
+        "Yudong Luo",
+        "Pascal Poupart",
+        "Simo Wu",
+        "Kui Jia",
+        "Wei-shi Zheng",
+        "Guiliang Liu"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-12T04:29:00+00:00",
+      "link": "https://arxiv.org/pdf/2608.12416v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "benchmark to evaluate and advance the generalizability of dexterous manipulation policies",
+      "llm_evidence_cn": "评估和推进灵巧操作策略泛化能力的基准测试",
+      "llm_evidence": "评估和推进灵巧操作策略泛化能力的基准测试",
+      "canonical_evidence": "评估和推进灵巧操作策略泛化能力的基准测试",
+      "llm_tldr_en": "RoboSynChallenge provides a benchmark and synthetic data to improve generalizable robotic dexterity.",
+      "llm_tldr_cn": "RoboSynChallenge提供基准和合成数据，以提升通用机器人灵巧操作能力。",
+      "llm_tldr": "RoboSynChallenge提供基准和合成数据，以提升通用机器人灵巧操作能力。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2608.11769v1",
+      "source": "arxiv",
+      "title": "Policy-Induced Hand Priors in Humanoid Dual-Arm Manipulation: Diagnosing and Mitigating Initial-Pose Dependence",
+      "abstract": "Vision-language-action (VLA) policies are expected to operate robustly across variations in the robot's initial configuration, yet aggregate task success can conceal pose-specific failures and inappropriate hand selection. This work investigates initial-pose dependence in VLA-based humanoid dual-arm manipulation. We characterize the initial-condition-dependent early hand preference as a policy-induced hand prior and quantify it using HandPriorScore, residual hand bias, and target responsiveness. Evaluations across multiple policies and 17 initial configurations reveal strong initial-pose--policy interactions: the same pose produces substantially different success rates across policies, while a single policy exhibits large performance variation across poses. Specific initial arm configurations can suppress or induce an asymmetric hand preference, with the resulting effect varying in direction and strength across policies. Wrist-camera observations also influence hand selection and task performance. Expanding initial-pose coverage in the training dataset substantially improves robustness, while targeted augmentation around a low-performing configuration increases its success rate. Comparisons across training configurations show that sufficient exposure to the target simulation task is beneficial, whereas the effect of real or auxiliary data depends on pose coverage, simulation ratio, and observation availability. These findings characterize a pose-conditioned hand prior, identify a localized initial arm configuration as a causal handle on hand-selection behavior, and demonstrate how data coverage and training composition affect initial-pose robustness.",
+      "authors": [
+        "Chaeyeon Jung",
+        "Juyoun Park"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-12T08:13:44+00:00",
+      "link": "https://arxiv.org/pdf/2608.11769v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "humanoid dual-arm manipulation and hand selection priors",
+      "llm_evidence_cn": "人形双臂操作及手部选择先验",
+      "llm_evidence": "人形双臂操作及手部选择先验",
+      "canonical_evidence": "人形双臂操作及手部选择先验",
+      "llm_tldr_en": "Investigates initial-pose dependence and hand priors in humanoid dual-arm manipulation policies.",
+      "llm_tldr_cn": "研究人形双臂操作策略中的初始姿态依赖性和手部先验。",
+      "llm_tldr": "研究人形双臂操作策略中的初始姿态依赖性和手部先验。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.13422v1",
+      "source": "arxiv",
+      "title": "Attention from Action, for Action: Emergent Visual Bottlenecks for Policy Learning",
+      "abstract": "Visual bottlenecks that focus policy inputs on regions of interest (ROIs) can improve data-efficient visuomotor learning by separating where to look from how to act. Many ROI interfaces rely on external spatial labels, such as gaze, object classes, or affordance annotations. Label-free alternatives often derive crops from trajectories by detecting gripper or motion events and centering a fixed crop at the projected end-effector. Such action-derived crops are useful spatial priors that require no additional labels, but they encode fixed choices about event timing, proxy points, and crop scale. When the visual evidence needed for control lies away from the end-effector or changes continuously with task progress, these crops can become misaligned. We propose Seeker, a task- and state-conditioned readout that learns attention from action. Starting from frozen DINOv3 features, Seeker iteratively updates a query with gathered visual evidence, producing progression-aware ROIs solely from action supervision. The learned ROI serves as a spatial interface for RGB cropping, mask-guided background augmentation, and point-cloud filtering. In simulation and the real world, Seeker improves data efficiency and robustness over no-crop, augmentation, and action-derived crop baselines. On real robots, Seeker raises average in-domain success from the best baseline's 48.3% to 76.7% and success under lighting/background shifts from 20.0% to 60.0%.",
+      "authors": [
+        "Zheyu Zhuang",
+        "Ruiyu Wang",
+        "Nick Heppert",
+        "Johannes Fabian Hahn",
+        "Abhinav Valada",
+        "Florian T. Pokorny",
+        "Danica Kragic"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "published": "2026-08-13T16:14:07+00:00",
+      "link": "https://arxiv.org/pdf/2608.13422v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "visual bottlenecks for policy learning from trajectories",
+      "llm_evidence_cn": "用于轨迹策略学习的视觉瓶颈技术",
+      "llm_evidence": "用于轨迹策略学习的视觉瓶颈技术",
+      "canonical_evidence": "用于轨迹策略学习的视觉瓶颈技术",
+      "llm_tldr_en": "Introduces visual bottlenecks to improve data-efficient visuomotor learning by focusing on regions of interest.",
+      "llm_tldr_cn": "引入视觉瓶颈技术，通过关注感兴趣区域来提高视觉运动学习的数据效率。",
+      "llm_tldr": "引入视觉瓶颈技术，通过关注感兴趣区域来提高视觉运动学习的数据效率。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "policy learning methods for dexterous manipulation using first-person observations",
+      "matched_requirement_id": "req-6",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.13438v1",
+      "source": "arxiv",
+      "title": "ContactGuard: Pre-Contact Execution Monitoring with Action-Conditioned Latent World Models",
+      "abstract": "Contact-rich manipulation failures are often detected only after the robot has committed to contact. This is especially limiting in wrist-camera setups: close gripper--object views help observe contact, but a poor approach may already push, miss, slip, or disturb the object before conventional detectors react. We introduce \\emph{ContactGuard}, a pre-contact execution monitor for chunked visuomotor policies. Given the policy's planned action chunk, ContactGuard predicts its short-horizon consequence in latent visual space and aborts if the predicted future latent indicates likely failure. Its latent world model is trained from unlabelled robot trajectories to predict compact multi-view visual embeddings under planned actions, avoiding pixel-level video prediction. A lightweight failure probe is then trained from a small labelled set of pre-contact clips. At deployment, ContactGuard anchors prediction before an imminent contact event, rolls the model forward under the policy's own actions, and verifies the predicted post-contact latent. Across real-world contact-rich manipulation tasks, ContactGuard predicts failure more accurately than direct and corrupted-action ablations, and transfers to live robot as a pre-contact abort signal without modifying the underlying policy.",
+      "authors": [
+        "Gehan Zheng",
+        "Matthew Johnson-Roberson",
+        "Weiming Zhi"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "published": "2026-08-13T16:25:54+00:00",
+      "link": "https://arxiv.org/pdf/2608.13438v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "specifically addresses wrist-camera setups for contact-rich manipulation monitoring",
+      "llm_evidence_cn": "专门针对触觉丰富操作监控中的手腕相机设置",
+      "llm_evidence": "专门针对触觉丰富操作监控中的手腕相机设置",
+      "canonical_evidence": "专门针对触觉丰富操作监控中的手腕相机设置",
+      "llm_tldr_en": "A pre-contact execution monitor for visuomotor policies using latent world models in wrist-camera setups.",
+      "llm_tldr_cn": "一种利用手腕相机设置中的潜空间世界模型，为视觉运动策略提供触碰前执行监控的方法。",
+      "llm_tldr": "一种利用手腕相机设置中的潜空间世界模型，为视觉运动策略提供触碰前执行监控的方法。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "research on egocentric vision for robotic manipulation training",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}

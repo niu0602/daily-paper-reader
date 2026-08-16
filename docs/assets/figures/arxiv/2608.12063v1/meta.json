@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-001.webp",
+      "caption": "Figure 4: Training performance of our framework on different tasks. We show the success rate of our policy over time in increasingly complex tasks. Our framework reliably reaches success rates close to 100% in simulation without any reward shaping. Without adding expert SMPC data, learning complex loco-manipulation policies from sparse rewards fails to learn anything. Statistics are averaged over five seeds, with the shaded area representing the standard deviation.",
+      "page": 6,
+      "index": 1,
+      "width": 822,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-002.webp",
+      "caption": "Table 2: Hyperparameters for the SMPC expert.",
+      "page": 15,
+      "index": 2,
+      "width": 828,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-003.webp",
+      "caption": "Figure 5: We compare the performance of policies trained on sparse rewards (pink) and the SMPC used to generate the offline dataset on all tasks (blue). Our trained policies consistently finish the tasks faster than the SMPC experts. SMPC statistics are computed over the complete dataset of 4M samples, policy statistics are averaged over 50k simulated episodes without exploration noise.",
+      "page": 7,
+      "index": 3,
+      "width": 814,
+      "height": 203
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-004.webp",
+      "caption": "Figure 6: Training performance with different SMPC dataset sizes. For simple tasks (i.e., navigation), reducing the number of samples has little effect. As tasks get more complex, the minimum required dataset size increases. On our most difficult task, agents require four million samples collected within 4 GPU hours to converge.",
+      "page": 7,
+      "index": 4,
+      "width": 822,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-005.webp",
+      "caption": "Figure 7: Performance under varying data quality. We reduce the number of sampling environments per tile during data generation and train policies on the resulting datasets. Most tasks are robust to lower-quality data, whereas tasks that require high coordination are sensitive.",
+      "page": 7,
+      "index": 5,
+      "width": 822,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-006.webp",
+      "caption": "Table 1: Hyperparameters for the sparse TD3 training.",
+      "page": 14,
+      "index": 6,
+      "width": 486,
+      "height": 326
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-007.webp",
+      "caption": "Figure 2: Real-world deployment of our tasks. Our framework learns complex loco-manipulation skills across different embodiments (Spot and G1), objects (boxes and tires), and skills (pushing, rolling, or lifting). From left to right, top to bottom: Spot reach, box pushing, tire uprighting, tire rolling, and G1 box pushing.",
+      "page": 3,
+      "index": 7,
+      "width": 829,
+      "height": 461
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-008.webp",
+      "caption": "Figure 11: Ablations on the phase-out threshold. Keeping the offline SMPC data in the buffer for too long harms training performance.",
+      "page": 13,
+      "index": 8,
+      "width": 822,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-009.webp",
+      "caption": "Figure 9: We ablate the influence of the fraction of expert data in the buffer on training. Most tasks are robust to the choice of the expert data ratio. The exception is tire rolling, which greatly benefits from more expert data initially and collapses below 50% expert data. Note that all runs additionally use the phase-out threshold of 0.1, so the expert data ratio only directly influences the initial training phase.",
+      "page": 12,
+      "index": 9,
+      "width": 822,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12063v1/fig-010.webp",
+      "caption": "Figure 10: Bounded critics stabilize the training (here Spot box pushing). In parameter ranges at the edges of what is still stable, bounded critics are still well-behaved (pink), whereas unbounded critics start to exhibit sharp drops in performance (blue).",
+      "page": 12,
+      "index": 10,
+      "width": 822,
+      "height": 282
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-08-16T19:41:10.656505+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 0,
+    "deep_cap": 6,
+    "deep_selected": 0,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [],
+  "quick_skim": [
+    {
+      "id": "2608.13489v1",
+      "source": "arxiv",
+      "title": "DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation",
+      "abstract": "We present \\textbf{DreamX-Phi 1.0}, an action-conditioned video world model for robotic manipulation that, given an observed frame, a language instruction, and a prescribed action sequence comprising end-effector poses and gripper states, predicts the resulting future observations. Yet realism alone does not guarantee faithfulness: a convincing rollout can still move the wrong arm or lose the manipulated object. To ensure the prediction respects each arm's commanded path, we inject per-arm $\\mathrm{SE}(3)$ transformations into attention via \\textbf{PRoPE-style geometric encoding}, preserving arm identity and rigid-motion structure. Action control alone does not fully constrain scene geometry or the evolution of small manipulated objects. We therefore add a lightweight \\textbf{depth branch} for scene-level geometry and use \\textbf{SAM3 masks} with a frozen \\textbf{V-JEPA teacher} to maintain object consistency throughout grasping. We further distill the multi-step generator into a few-step student via distribution-matching distillation for efficient deployment. At the time of writing, \\model{} achieves first place on Track~1 and second place on Track~2 of the WorldArena~2.0 Challenge. Our model and code will be publicly available.",
+      "authors": [
+        "DreamX Team",
+        "Rui Chen",
+        "Xiangxiang Chu",
+        "Geng Li",
+        "Jifan Li",
+        "Qingfeng Shi",
+        "Datao Tang",
+        "Jing Tang",
+        "Jun Wang",
+        "Pengfei Zhang"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-08-13T17:18:09+00:00",
+      "link": "https://arxiv.org/pdf/2608.13489v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "action-conditioned video world model for robotic manipulation",
+      "llm_evidence_cn": "用于机器人操作的动作条件视频世界模型",
+      "llm_evidence": "用于机器人操作的动作条件视频世界模型",
+      "canonical_evidence": "用于机器人操作的动作条件视频世界模型",
+      "llm_tldr_en": "Introduces a video world model for robotic manipulation that predicts future observations from actions.",
+      "llm_tldr_cn": "引入了一种机器人操作视频世界模型，可根据动作预测未来观测结果。",
+      "llm_tldr": "引入了一种机器人操作视频世界模型，可根据动作预测未来观测结果。",
+      "llm_tags": [
+        "query:dexop:composite"
+      ],
+      "matched_query_tag": "query:dexop:composite",
+      "matched_query_text": "Papers central to 查询使用第一视角数据训练灵巧操作的相关论文, especially work that connects or combines: research on using first-person visual or sensory data for dexterous manipulation learning; studies focusing on dexterous robotic or hand manipulation tasks; research on egocentric vision for robotic manipulation training; robotic manipulation research leveraging first-person datasets; benchmark datasets containing first-person recordings for manipulation learning; policy learning methods for dexterous manipulation using first-person observations; papers on training dexterous manipulation using first person or egocentric data; studies leveraging egocentric vision for robotic dexterous skill learning; research on imitation learning and representation learning methods for dexterous manipulation from first person data.",
+      "matched_requirement_id": "req-composite-dexop",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.12063v1",
+      "source": "arxiv",
+      "title": "Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL",
+      "abstract": "Integrating locomotion and manipulation is essential for robot autonomy, but scaling standard Reinforcement Learning (RL) to complex tasks is severely bottlenecked by the slow, manual process of dense reward shaping. To bypass this limitation, we leverage Sample-based Model Predictive Control (SMPC) entirely in simulation as an automated, rapidly tunable expert to generate massive offline datasets. Because this data solves the fundamental exploration problem, we can train an off-policy RL agent using purely sparse task rewards, drastically reducing the time required to learn new skills and eliminating the need for manual tuning. Integrating this high-level agent with a low-level dynamic stability controller yields more optimal behaviors that strictly align with true task objectives, ultimately allowing the learned policies to surpass the original optimal control teacher. We validate the robustness of this sim-to-real framework by successfully deploying complex loco-manipulation skills across different morphologies, including an arm-equipped Spot quadruped and a G1 humanoid.",
+      "authors": [
+        "Martin Schuck",
+        "Maks Sorokin",
+        "Simone Manni",
+        "Duy Ta",
+        "Angela P. Schoellig",
+        "Marco Hutter",
+        "Simon Le Cleac'H",
+        "Jan Brüdigam"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "published": "2026-08-12T13:48:56+00:00",
+      "link": "https://arxiv.org/pdf/2608.12063v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "integrating locomotion and manipulation for robot autonomy",
+      "llm_evidence_cn": "整合移动与操作以实现机器人自主性",
+      "llm_evidence": "整合移动与操作以实现机器人自主性",
+      "canonical_evidence": "整合移动与操作以实现机器人自主性",
+      "llm_tldr_en": "Learns loco-manipulation skills from SMPC demonstrations using sparse offline-to-online reinforcement learning.",
+      "llm_tldr_cn": "利用稀疏离线到在线强化学习，从SMPC演示中学习移动操作技能。",
+      "llm_tldr": "利用稀疏离线到在线强化学习，从SMPC演示中学习移动操作技能。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2608.09303v1",
+      "source": "arxiv",
+      "title": "SAFE-CHEM: Uncertainty-Aware Policy Switching for Robust Robotic Chemistry",
+      "abstract": "The deployment of autonomous robotic systems in chemistry laboratories is accelerating experimental workflows and providing the foundational data for AI-driven scientific discovery. However, despite the success of data-driven methods in acquiring dexterous skills, safety remains a primary barrier to their deployment in high-risk domains, such as early-stage materials chemistry experiments. Specifically, learning-based policies frequently struggle to distinguish between safe and unsafe actions, leading to overconfident extrapolation and potentially catastrophic failures. To mitigate these safety risks, we propose SAFE-CHEM, an uncertainty-aware framework designed for robust, learning-based robotic chemists. Our approach leverages an ensemble of recurrent neural network-based imitation learning policies to quantify epistemic uncertainty online through the variance of action predictions. By characterising the success-conditioned density of this variance using kernel density estimation, we introduce a hybrid control architecture that autonomously switches from the learned policy to a deterministic, rule-based backup controller when uncertainty exceeds a calibrated safety threshold. We evaluate SAFE-CHEM across three fundamental laboratory manipulation tasks, where our empirical results demonstrate that this hybrid strategy improves overall task success rates and reduces critical safety violations compared to traditional single-policy baselines. Finally, we demonstrate the practical viability of the framework through zero-shot sim-to-real transfer onto a physical Franka Production 3 robot manipulator.",
+      "authors": [
+        "Laura Jones",
+        "Shazil Shahzad",
+        "Ayesha Sana",
+        "Gabriella Pizzuto"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "published": "2026-08-10T08:51:43+00:00",
+      "link": "https://arxiv.org/pdf/2608.09303v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "acquiring dexterous skills for robotic chemistry",
+      "llm_evidence_cn": "获取机器人化学实验的灵巧技能",
+      "llm_evidence": "获取机器人化学实验的灵巧技能",
+      "canonical_evidence": "获取机器人化学实验的灵巧技能",
+      "llm_tldr_en": "Proposes SAFE-CHEM, an uncertainty-aware framework for robust and safe dexterous robotic chemistry.",
+      "llm_tldr_cn": "提出SAFE-CHEM框架，通过不确定性感知确保机器人化学实验中灵巧操作的安全性。",
+      "llm_tldr": "提出SAFE-CHEM框架，通过不确定性感知确保机器人化学实验中灵巧操作的安全性。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "studies focusing on dexterous robotic or hand manipulation tasks",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2608.13028v1",
+      "source": "arxiv",
+      "title": "RGB-D Video Generation for Improving Human-to-Robot Object Handover Prediction",
+      "abstract": "Human-to-robot (H2R) object handover is a fundamental capability for human-robot collaboration, yet progress is hindered by the scarcity of large-scale, human-centric datasets and the significant sim-to-real gap. To address these challenges, we introduce Hand2Bot, an RGB-D video dataset that provides rich contextual information such as body posture and facial expressions, specifically collected for handover scenarios with real-world noise patterns. We further propose PassGen, a generative pipeline that leverages stable video diffusion and an Intention-Aware Temporal Face Encoder to synthesize realistic handover sequences while ensuring hand-object consistency. To bridge the sim-to-real gap, we implement a morphology-based depth editing strategy that replicates realistic sensor noise found in physical depth maps. Experimental evaluations demonstrate that our framework achieves high intention identification accuracy and low false trigger rates in both ablation studies and real-world deployment on a physical robot platform. Our results confirm that training on PassGen allows for robust zero-shot transfer and earlier intention anticipation compared to traditional hand-centric baselines, effectively enabling socially aware robotic behavior in shared workspaces.",
+      "authors": [
+        "Tianyu Sun",
+        "Zhoujie Fu",
+        "Zihui Gao",
+        "Bang Zhang",
+        "Guosheng Lin"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "published": "2026-08-13T09:55:59+00:00",
+      "link": "https://arxiv.org/pdf/2608.13028v1",
+      "tags": [
+        "keyword:DexOp",
+        "query:DexOp"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "RGB-D video dataset for human-to-robot object handover",
+      "llm_evidence_cn": "人机物体交接的RGB-D视频数据集",
+      "llm_evidence": "人机物体交接的RGB-D视频数据集",
+      "canonical_evidence": "人机物体交接的RGB-D视频数据集",
+      "llm_tldr_en": "Presents a new dataset and generative pipeline for human-to-robot object handover prediction.",
+      "llm_tldr_cn": "提出了一个用于人机物体交接预测的新数据集和生成流水线。",
+      "llm_tldr": "提出了一个用于人机物体交接预测的新数据集和生成流水线。",
+      "llm_tags": [
+        "query:dexop"
+      ],
+      "matched_query_tag": "query:dexop",
+      "matched_query_text": "benchmark datasets containing first-person recordings for manipulation learning",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.09303v1/fig-001.webp",
+      "caption": "Fig. 1: An overview of our method SAFE-CHEM, which consists of four stages: (1) training an ensemble-based imitation learning policy (πL) in simulation for robotic chemistry manipulation tasks; (2) estimating the epistemic uncertainty σ through ensemble variance; (3) action selection that monitors σ to gate control between πL and a fail-safe rule-based backup robot controller (πB); and (4) real-world demonstration on a robotic system using zero-shot task transfer.",
+      "page": 1,
+      "index": 1,
+      "width": 488,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09303v1/fig-002.webp",
+      "caption": "Fig. 4: Confidence thresholds calculated at the θ0.90, θ0.95 and θ0.99 bounds.",
+      "page": 6,
+      "index": 2,
+      "width": 520,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09303v1/fig-003.webp",
+      "caption": "TABLE II: Peak detection algorithm performance across a range of window sizes w and peak counts npeaks.",
+      "page": 6,
+      "index": 3,
+      "width": 529,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2608.09303v1/fig-004.webp",
+      "caption": "Fig. 2: Overall system block diagram. Our framework demonstrates how a learned ensemble of RNN-based policies provide real-time action predictions (alearned) and epistemic uncertainty quantification (σ). A deterministic state-machine-based backup controller (πB) uses an explainable state machine for safe task completion. The switching logic autonomously selects the appropriate control signal (asafe) based on a calibrated uncertainty threshold.",
+      "page": 3,
+      "index": 4,
+      "width": 968,
+      "height": 379
+    }
+  ]
+}

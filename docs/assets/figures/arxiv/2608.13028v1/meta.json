@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-001.webp",
+      "caption": "Table 2: Animation Results on Hand2Bot-Real Dataset. Red marks the best algorithm, and blue marks the second-best.",
+      "page": 6,
+      "index": 1,
+      "width": 764,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-002.webp",
+      "caption": "Figure 1: Existing bottlenecks in current H2R handover datasets. (a1) and (a2) compare a noisy real-world depth map against a clean synthetic depth map. (b1) and (b2) demonstrate the restricted, hand-centric field of view in mainstream benchmarks.",
+      "page": 2,
+      "index": 2,
+      "width": 477,
+      "height": 325
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-003.webp",
+      "caption": "Figure 4: Qualitative results on Hand2Bot-Real dataset. We compare our method with other SOTA human video generation algorithms on different reference images and video frames from our Hand2Bot-Real dataset. Our PassGen shows a promising and stable performance compared with other SOTA methods. We mark the artifacts of the previous methods with red boxes.",
+      "page": 7,
+      "index": 3,
+      "width": 818,
+      "height": 370
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-004.webp",
+      "caption": "Table 5: Real-World Handover Performance: intention reliability and safety evaluation on realworld scenarios.",
+      "page": 10,
+      "index": 4,
+      "width": 536,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-005.webp",
+      "caption": "Figure 5: Qualitative comparison of generative RGB-D sequences. Our PassGen pipeline effectively reconstructs human-object interaction geometry from sparse L515 inputs while maintaining realistic sensor noise patterns compared to over-smoothed baselines like DepthCrafter [14].",
+      "page": 8,
+      "index": 5,
+      "width": 822,
+      "height": 204
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-006.webp",
+      "caption": "Table 1: Statistical comparison. Noise? represents whether the depth information in the dataset considers real-world noise. Scope stands for the field of view for the data. Paradigm represents the task setting, where A indicates that the giver/receiver can be anything. #Realistic Video is the number of realistic RGB(-D) videos. Note that the dataset name in [22] is not specified.",
+      "page": 4,
+      "index": 6,
+      "width": 828,
+      "height": 215
+    },
+    {
+      "url": "assets/figures/arxiv/2608.13028v1/fig-007.webp",
+      "caption": "Figure 3: Pipeline of our PassGen. Our method is based on an SVD backbone, with two branches of networks. Given a pair of reference images Iref and video Vref , the appearance feature from Iref and the temporal feature from Vref are operated by corresponding modules separately. We also elaborate on the structures of TFE and Pose Guidance (PG) blocks in the bottom right corner.",
+      "page": 5,
+      "index": 7,
+      "width": 829,
+      "height": 465
+    }
+  ]
+}

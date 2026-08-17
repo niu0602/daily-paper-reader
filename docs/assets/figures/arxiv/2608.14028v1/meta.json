@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.14028v1/fig-001.webp",
+      "caption": "Figure 1: AdvDex. A unified Vision-Language-Action framework for scalable cross-embodiment dexterous manipulation. By aligning hardware kinematics through a shared action space and reducing embodiment-specific visual information through domain-adversarial learning, AdvDex supports zero-shot generalization to novel objects and unseen environments.",
+      "page": 2,
+      "index": 1,
+      "width": 822,
+      "height": 424
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14028v1/fig-002.webp",
+      "caption": "Table 3: Success rates on real-world robot dexterous manipulation tasks (in %).",
+      "page": 7,
+      "index": 2,
+      "width": 818,
+      "height": 242
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14028v1/fig-003.webp",
+      "caption": "Figure 4: Overview of the Domain-Adversarial VLA. A domain discriminator connected to the Vision-Language Model through a Gradient Reversal Layer encourages the extracted cognition tokens to become more domain-invariant before they condition the Diffusion Transformer for joint-aligned action prediction.",
+      "page": 5,
+      "index": 3,
+      "width": 814,
+      "height": 280
+    }
+  ]
+}

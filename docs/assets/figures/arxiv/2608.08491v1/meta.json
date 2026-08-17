@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-001.webp",
+      "caption": "Figure 1: Calibration of score labels using POISE with pair preference signals corrects inconsistencies. Spearman’s ρ > 0.5 indicates strong positive correlation between LLM and human expert rankings. Pairwise scores align better with human preferences than pointwise scores. Gemini, GPT, Claude, and Qwen denote Gemini 3.1 Pro, GPT-5-mini, Claude Opus 4.6, and Qwen3-VL-32B respectively.",
+      "page": 2,
+      "index": 1,
+      "width": 816,
+      "height": 194
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-002.webp",
+      "caption": "Table 6: Hyperparameters for Supervised Fine-Tuning (SFT) and Group Relative Policy Optimization (GRPO) stages. Both Qwen3-VL-4B and 8B backbones share identical training configurations unless otherwise specified.",
+      "page": 18,
+      "index": 2,
+      "width": 827,
+      "height": 914
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-003.webp",
+      "caption": "Table 1: Main comparison on the four sub-tasks. “–” denotes that the corresponding stage is skipped, and all trained rows use 3 epochs for each stage that is run.",
+      "page": 8,
+      "index": 3,
+      "width": 827,
+      "height": 280
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-004.webp",
+      "caption": "Table 7: PAIBench-G robot reward-guided optimization training hyperparameters. Both reward-model variants use the same configuration.",
+      "page": 19,
+      "index": 4,
+      "width": 827,
+      "height": 486
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-005.webp",
+      "caption": "Figure 4: Case study comparison between our method and RoboReward on the task of picking up the pot and placing it on the right side. Our method achieves accurate grasping and stable placement, whereas the RoboReward baseline fails due to reward misalignment and unstable manipulation.",
+      "page": 17,
+      "index": 5,
+      "width": 808,
+      "height": 562
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-006.webp",
+      "caption": "Figure 2: Spearman ρ between reward-model judgments and human annotations, broken down by output format. Dashed line: conventional strongcorrelation threshold ρ=0.50. Higher is better.",
+      "page": 9,
+      "index": 6,
+      "width": 402,
+      "height": 425
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-007.webp",
+      "caption": "Table 4: Subset-level generalization across RoboReward test subsets. (a) maps each subset ID to its corresponding RoboReward test subset and sample count. (b) reports Overall and per-subset scores for the nine main-table configurations. Colors in (b) are normalized globally over all displayed values, with warmer colors indicating higher performance.",
+      "page": 16,
+      "index": 7,
+      "width": 829,
+      "height": 201
+    },
+    {
+      "url": "assets/figures/arxiv/2608.08491v1/fig-008.webp",
+      "caption": "Figure 3: Qualitative case study across four reward-supervision views. We show representative examples from pointwise scoring and pairwise comparison tasks.",
+      "page": 16,
+      "index": 8,
+      "width": 832,
+      "height": 501
+    }
+  ]
+}

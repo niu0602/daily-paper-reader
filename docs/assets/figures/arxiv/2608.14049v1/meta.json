@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-001.webp",
+      "caption": "Table 3. Comparison of Simulation Platforms for Robotic Manipulation. Columns indicate support for flat objects (rigid R / deformable D), automated data collection, demonstration data, multiple camera views (m-Camera), multiple action primitives (m-Action), and policy execution. FlatLab is the only platform providing high-fidelity simulation of both rigid and deformable flat objects with automated multi-modal data collection, demonstrations, and full action-policy integration.",
+      "page": 15,
+      "index": 1,
+      "width": 1010,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-002.webp",
+      "caption": "Figure 1. Overview of FlatLab: a comprehensive simulation platform for robotic flat object manipulation. The platform offers high-fidelity physical simulation of over 100 flat objects and configurable manipulation scenarios. It includes our unified manipulation framework and supports automated multi-modal data collection, standardized task definitions, unified evaluation protocols, and turnkey deployment scripts. All functionalities are fully reconfigurable and extensible, facilitating ongoing research in flat object manipulation.",
+      "page": 2,
+      "index": 2,
+      "width": 1017,
+      "height": 456
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-003.webp",
+      "caption": "Figure 10. Visualization of various manipulation scenarios in FlatLab.",
+      "page": 14,
+      "index": 3,
+      "width": 1017,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-004.webp",
+      "caption": "Figure 9. Visualization of all flat object assets in FlatLab.",
+      "page": 13,
+      "index": 4,
+      "width": 1017,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-005.webp",
+      "caption": "Figure 6. Robotic Grasping Evaluation. Our method adaptively selects strategies to enable the grasping of flat objects of various shapes and materials, demonstrating significant generalizability.",
+      "page": 8,
+      "index": 5,
+      "width": 492,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-006.webp",
+      "caption": "Table 1. Quantitative Comparison Results. Our method consistently outperforms all baselines on both training and test sets.",
+      "page": 8,
+      "index": 6,
+      "width": 488,
+      "height": 271
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-007.webp",
+      "caption": "Figure 3. Unified Robotic Flat Object Manipulation Framework. The Manipulation Strategy Generator takes point clouds of flat objects as input, embeds their features into a strategy-centric representation via multi-view consistency contrastive learning, and then predicts the manipulation strategy. The predicted strategy and the scene point cloud are fed to the Robot Action Execution Module. This module decomposes long-horizon manipulation into reusable action primitives, learns position-dependent poses rather than object-specific features, and then sequences the primitives to produce smooth trajectories.",
+      "page": 4,
+      "index": 7,
+      "width": 1017,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-008.webp",
+      "caption": "Table 4. Statistical analysis of experimental results on quantitative grasping of flat objects in a simulated environment. The results are recorded as “Number of successes / Total trials”. “(S)” indicates strategy discrimination, and “(G)” indicates grasping success.",
+      "page": 17,
+      "index": 8,
+      "width": 962,
+      "height": 361
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-009.webp",
+      "caption": "Figure 7. Real-World Experimental Scenario Setup. The experimental setup consists of a Baxter dual-arm robot, a table positioned directly in front of the robot, and an Intel RealSense D455 camera.",
+      "page": 9,
+      "index": 9,
+      "width": 492,
+      "height": 370
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-010.webp",
+      "caption": "Table 6. Comparison of quantitative experimental results for grasping evaluation in FlatLab across various baselines.",
+      "page": 20,
+      "index": 10,
+      "width": 919,
+      "height": 975
+    },
+    {
+      "url": "assets/figures/arxiv/2608.14049v1/fig-011.webp",
+      "caption": "Figure 11. Dataset partitioning for all flat object assets in FlatLab.",
+      "page": 16,
+      "index": 11,
+      "width": 1017,
+      "height": 738
+    }
+  ]
+}

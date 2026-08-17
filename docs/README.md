@@ -6,35 +6,41 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-16
-- 运行时间：2026-08-16 19:41:58 UTC
+- 最新运行日期：2026-08-17
+- 运行时间：2026-08-17 19:34:07 UTC
 - 运行状态：成功
-- 本次总论文数：4
-- 精读区：0
-- 速读区：4
+- 本次总论文数：6
+- 精读区：1
+- 速读区：5
 
 ### 今日简报（AI）
-- 今日共生成 4 篇推荐（精读 0 篇，速读 4 篇）
-- 速读：《DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation》（7.5/10）, 《SAFE-CHEM: Uncertainty-Aware Policy Switching for Robust Robotic Chemistry》（7.0/10）, 《Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL》（6.0/10）
+- 今日共生成 6 篇推荐（精读 1 篇，速读 5 篇）
+- 精读：《AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning》（10.0/10）
+- 速读：《Vid2WAM: Distilling Video Diffusion Priors into World Action Models》（7.5/10）, 《JEPA-WAM: Stage-Level Joint-Embedding Prediction for World-Action Models in Robot Manipulation》（7.0/10）, 《TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models》（6.5/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/16/README](/202608/16/README)
+- 详情：[/202608/17/README](/202608/17/README)
 
 ### 精读区论文标签
-- 本次无精读推荐。
+1. [AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning](/202608/17/2608.14028v1-advdex-learning-dexterous-manipulation-from-human-demonstrations-via-joint-aligned-actions-and-adversarial-learning)  
+   标签：评分：10.0/10、query:dexop
+   evidence：从人类演示中学习灵巧操作，并引入了一个大规模多模态数据集。
 
 ### 速读区论文标签
-1. [DreamX-Phi 1.0: Action-Conditioned Video World Model for Robotic Manipulation](/202608/16/2608.13489v1-dreamx-phi-10-action-conditioned-video-world-model-for-robotic-manipulation)  
+1. [Vid2WAM: Distilling Video Diffusion Priors into World Action Models](/202608/17/2608.08558v1-vid2wam-distilling-video-diffusion-priors-into-world-action-models)  
    标签：评分：7.5/10、query:dexop
-   evidence：用于机器人操作的动作条件视频世界模型
-2. [SAFE-CHEM: Uncertainty-Aware Policy Switching for Robust Robotic Chemistry](/202608/16/2608.09303v1-safe-chem-uncertainty-aware-policy-switching-for-robust-robotic-chemistry)  
+   evidence：将视频扩散先验蒸馏到世界动作模型中用于机器人策略学习
+2. [JEPA-WAM: Stage-Level Joint-Embedding Prediction for World-Action Models in Robot Manipulation](/202608/17/2608.10780v2-jepa-wam-stage-level-joint-embedding-prediction-for-world-action-models-in-robot-manipulation)  
    标签：评分：7.0/10、query:dexop
-   evidence：获取机器人化学实验的灵巧技能
-3. [Learning Loco-Manipulation From SMPC Demonstrations With Sparse Offline-to-Online RL](/202608/16/2608.12063v1-learning-loco-manipulation-from-smpc-demonstrations-with-sparse-offline-to-online-rl)  
+   evidence：代表阶段级语义未来的机器人操作世界动作模型
+3. [TrustRoboReward: Preference-Ordered Isotonic Score Editing for Multi-Paradigm Robot Reward Models](/202608/17/2608.08491v1-trustroboreward-preference-ordered-isotonic-score-editing-for-multi-paradigm-robot-reward-models)  
+   标签：评分：6.5/10、query:dexop
+   evidence：使用视觉反馈的长程机器人操作奖励模型
+4. [BooST: Bridging Semantics and Motions for Efficient Skill Transfer](/202608/17/2608.10600v1-boost-bridging-semantics-and-motions-for-efficient-skill-transfer)  
    标签：评分：6.0/10、query:dexop
-   evidence：整合移动与操作以实现机器人自主性
-4. [RGB-D Video Generation for Improving Human-to-Robot Object Handover Prediction](/202608/16/2608.13028v1-rgb-d-video-generation-for-improving-human-to-robot-object-handover-prediction)  
+   evidence：机器人学习和跨任务操作的高效技能迁移。
+5. [FlatLab: A Unified Methodology Framework and Simulation-Based Benchmark for Robotic Manipulation of Flat Objects](/202608/17/2608.14049v1-flatlab-a-unified-methodology-framework-and-simulation-based-benchmark-for-robotic-manipulation-of-flat-objects)  
    标签：评分：6.0/10、query:dexop
-   evidence：人机物体交接的RGB-D视频数据集
+   evidence：扁平物体机器人操作的框架和基准
 
 
 <div class="dpr-home-promo-card">

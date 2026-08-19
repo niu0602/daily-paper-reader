@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.16058v1/fig-001.webp",
+      "caption": "Figure 3: Experimental Setup. The evaluation was conducted on a dVRK-Si robot system, with an additional wrist camera mounted on the surgical instrument.",
+      "page": 5,
+      "index": 1,
+      "width": 640,
+      "height": 211
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16058v1/fig-002.webp",
+      "caption": "Figure 2: Flow chart for the dataset preparation, dual-source policy training and evaluation",
+      "page": 4,
+      "index": 2,
+      "width": 932,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16058v1/fig-003.webp",
+      "caption": "Figure 1: Overview of SurgVIL. The proposed framework combines accurately labeled in-house dataset collected in phantom settings with visually diverse open-source surgical videos. The trained policies are evaluated on real-tissue surgical tasks to assess generalization beyond the phantom.",
+      "page": 2,
+      "index": 3,
+      "width": 979,
+      "height": 294
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16058v1/fig-004.webp",
+      "caption": "Figure 4: Needle task results on (a) Suture pad, (b) Porcine liver and gallbladder, and (c) Chicken breast with fake blood. The results are also listed as table in the Appendix.",
+      "page": 7,
+      "index": 4,
+      "width": 736,
+      "height": 327
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16058v1/fig-005.webp",
+      "caption": "Figure 5: Chole task results on (a) Phantom, (b) Normal ex vivo tissue, and (c) abnormal ex vivo tissue. The results are also listed as table in the Appendix.",
+      "page": 7,
+      "index": 5,
+      "width": 686,
+      "height": 190
+    }
+  ]
+}

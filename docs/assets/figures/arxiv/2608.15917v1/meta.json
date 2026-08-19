@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-001.webp",
+      "caption": "Figure 4: Autonomous rollouts of five tasks. (A) plate racking: lifting plates and racking them in a dish rack; (B) mug hanging: hanging a mug on a mug tree after a bimanual handover; (C) jenga playing: pushing a block out of the tower with one hand, pulling it free with the other, and placing it on top; (D) cup stacking: unstacking nested cups and building a pyramid; (E) bottles in bin: tossing bottles into a bin.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-002.webp",
+      "caption": "Table 2: spd-75h dataset statistics. Per-task episode counts and durations, grouped by scene. Spelling variants are merged into a single SPELLING task, and tasks with fewer than ten episodes are omitted. Durations are reported in minutes at 30 Hz.",
+      "page": 15,
+      "index": 2,
+      "width": 572,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-003.webp",
+      "caption": "Figure 1: Simulation pre-training for dexterity. Top: 75 hours of teleoperated simulation data spanning six scenes and hundreds of object instances, covering contact-rich low-level dexterous behavior. Bottom: the pre-trained policy adapts to the real-world dexterous tasks shown, with 1 hour of real demonstrations.",
+      "page": 2,
+      "index": 3,
+      "width": 818,
+      "height": 662
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-004.webp",
+      "caption": "Figure 5: Simulation pre-training improves real-world dexterity. We evaluate five bimanual dexterous tasks on the real robot, comparing SPD pre-trained checkpoints to those trained from scratch (BC). In (A-E), we report the fraction of trials that reach each successive manipulation stage and plot training loss curves. In (F), we plot average task progress; error bars show standard error.",
+      "page": 7,
+      "index": 4,
+      "width": 817,
+      "height": 691
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-005.webp",
+      "caption": "Figure 6: Ablations on history conditioning and chunk size. Visualization of the average task progress in Table 1, for policies pre-trained with SPD (left) and trained from scratch (right).",
+      "page": 8,
+      "index": 5,
+      "width": 644,
+      "height": 323
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-006.webp",
+      "caption": "Table 1: Average task progress for all variants. Progress (%) for every sliding-window (w) and action-chunk (c) combination, with the best variant per task bolded within each training regime. w = 32, c = 8 is the chosen configuration.",
+      "page": 8,
+      "index": 6,
+      "width": 618,
+      "height": 261
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-007.webp",
+      "caption": "Figure 2: Diverse operator strategies on open-ended simulation tasks. Each pair of frames shows two distinct strategies the same operator pool produced on a single long-horizon task: (a) spelling a target word from a pile of letter blocks, (b) stacking blocks into a Jenga tower, and (c) arranging dominoes into a chain.",
+      "page": 4,
+      "index": 7,
+      "width": 782,
+      "height": 509
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-008.webp",
+      "caption": "Table 4: Pre-training hyperparameters.",
+      "page": 17,
+      "index": 8,
+      "width": 577,
+      "height": 458
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-009.webp",
+      "caption": "Figure 3: Policy Architecture. Our policy is a diffusion transformer that consumes a sequence of proprioception (o), action (a), multi-view images, and noised action chunks as interleaved tokens. In training, the model denoises all action chunks simultaneously with a causal mask, amortizing its sequence length. We additionally use sliding window attention in training, with a matched rolling KV cache for efficient inference.",
+      "page": 5,
+      "index": 9,
+      "width": 820,
+      "height": 477
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15917v1/fig-010.webp",
+      "caption": "Table 3: Evaluation task rubrics. Max score is the maximum achievable score for the task; reported progress is the achieved score normalized by this maximum.",
+      "page": 16,
+      "index": 10,
+      "width": 834,
+      "height": 254
+    }
+  ]
+}

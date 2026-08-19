@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.12515v1/fig-001.webp",
+      "caption": "Table 1: Overall performance by model and fine-tuning stage (averaged over prompt strategies).",
+      "page": 6,
+      "index": 1,
+      "width": 454,
+      "height": 265
+    },
+    {
+      "url": "assets/figures/arxiv/2608.12515v1/fig-002.webp",
+      "caption": "Table 4: Per-class metrics for the two best Qwen configurations. Precision (P), recall (R), F1-score (F1), and mean IoU (grounding accuracy on that class) are reported for each class.",
+      "page": 7,
+      "index": 2,
+      "width": 504,
+      "height": 242
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-001.webp",
+      "caption": "Figure 4: Attention maps from EgoTac. Across casual in-the-wild videos, EgoTac emphasizes hand-object interaction regions that are informative for tactile prediction.",
+      "page": 6,
+      "index": 1,
+      "width": 826,
+      "height": 189
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-002.webp",
+      "caption": "Figure 1: Overview of EgoTac. EgoTac unifies self-collected tactile data with contact-labeled egocentric hand-object interaction datasets into a shared MANO-aligned representation, and learns a vision-to-tactile model that predicts dense force and contact from egocentric RGB videos. The learned mapping enables zero-shot tactile labeling of vast in-the-wild human video corpora, providing scalable physical supervision for robot learning and beyond.",
+      "page": 2,
+      "index": 2,
+      "width": 822,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-003.webp",
+      "caption": "Table 1: Comparison of egocentric hand-object interaction datasets. We summarize the key properties of existing representative egocentric datasets and our newly collected EgoTac-SC dataset.",
+      "page": 3,
+      "index": 3,
+      "width": 826,
+      "height": 359
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-004.webp",
+      "caption": "Table 4: Out-of-domain contact evaluation. Results are averaged across timestamps on OAKINK2 [44] and FPHA [12]. EgoTac yields superior performance compared with previous methods.",
+      "page": 8,
+      "index": 4,
+      "width": 625,
+      "height": 224
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-005.webp",
+      "caption": "Figure 2: Dataset overview. (a) We aggregate mixed-source hand-object interaction datasets containing real tactile measurements or mesh-based contact labels, all unified under a shared MANO topology. (b) The largest portion of our corpus is the self-collected EgoTac-SC dataset, which utilizes a custom tactile sensing hardware setup to capture diverse long-horizon manipulation data.",
+      "page": 4,
+      "index": 5,
+      "width": 826,
+      "height": 322
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-006.webp",
+      "caption": "Figure 7: Qualitative results in diverse, in-the-wild scenes. We visualize zero-shot tactile prediction results for both hands on clips from multiple egocentric datasets, including EgoDex [18], EPICKITCHENS [5], Ego4D [16], and EgoPAT3D [27]. EgoTac produces spatially coherent tactile patterns and smooth temporal transitions.",
+      "page": 9,
+      "index": 6,
+      "width": 818,
+      "height": 342
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15060v1/fig-007.webp",
+      "caption": "Figure 3: Model architecture of EgoTac. Given a short history of egocentric RGB frames, a pretrained vision encoder computes spatial-semantic tokens, and a temporal fusion module aggregates global context over time. An AdaLN-based tactile decoder then jointly conducts dense force regression and contact classification on the shared MANO hand topology.",
+      "page": 5,
+      "index": 7,
+      "width": 826,
+      "height": 320
+    }
+  ]
+}

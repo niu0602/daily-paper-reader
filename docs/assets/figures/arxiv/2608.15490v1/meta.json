@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-001.webp",
+      "caption": "TABLE III COMPARISON OF GENERAL-PURPOSE TACTILE LEARNING MODELS AND FOUNDATION POLICIES. ’T’, ’V’, ’L’, ’AU’, AND ’AC’ DENOTE TOUCH, VISION, LANGUAGE, AUDIO, AND ACTION MODALITIES, RESPECTIVELY.",
+      "page": 11,
+      "index": 1,
+      "width": 1044,
+      "height": 613
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-002.webp",
+      "caption": "Fig. 1. Organizational framework of this survey.",
+      "page": 2,
+      "index": 2,
+      "width": 860,
+      "height": 727
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-003.webp",
+      "caption": "Fig. 2. Structure and working principle of a vision-based tactile sensor. (a) A representative VBTS consists of a deformable elastomer, illumination subsystem, imaging optics, and one or more image sensors, with the illumination and imaging components forming the optical system. (b) Contact deforms the elastomer, produces an optical response, and generates tactile images from which contact-related physical quantities are inferred.",
+      "page": 3,
+      "index": 3,
+      "width": 529,
+      "height": 285
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-004.webp",
+      "caption": "Fig. 5. Chronological overview of representative datasets, simulation platforms and benchmarks, and foundation models in vision-based tactile sensing research. Entries are arranged by publication year along the horizontal axis, with entries from 2022 or earlier grouped under ≤2022, and by the number of supported modalities along the vertical axis. Each entry shows an affiliation logo, the resource or model name, and its supported modalities in parentheses. The circle border color encodes the category: green denotes datasets, blue denotes simulation platforms and benchmarks, and red denotes foundation models. T, V, L, F, Ac, and Au denote tactile, vision, language, force, action, and audio, respectively.",
+      "page": 13,
+      "index": 4,
+      "width": 1022,
+      "height": 490
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-005.webp",
+      "caption": "Fig. 4. Hierarchical view of AI-based tactile perception and learning for VBTSs. Raw tactile images or event streams are transformed into representations for physical dynamics estimation, geometry and pose reconstruction, recognition and property inference, multimodal fusion, task-oriented manipulation, and generalizable tactile learning. The side columns indicate representative inputs and outputs at each layer.",
+      "page": 8,
+      "index": 5,
+      "width": 1076,
+      "height": 848
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-006.webp",
+      "caption": "TABLE I COMPARISON OF OPTICAL TRANSDUCTION MECHANISMS IN VISION-BASED TACTILE SENSORS.",
+      "page": 4,
+      "index": 6,
+      "width": 1052,
+      "height": 215
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-007.webp",
+      "caption": "TABLE II HARDWARE TAXONOMY OF VISION-BASED TACTILE SENSORS, CATEGORIZING REPRESENTATIVE SENSORS BY DESIGN DIMENSION AND SUMMARIZING THE MAIN FOCUS OF EACH DESIGN CATEGORY.",
+      "page": 4,
+      "index": 7,
+      "width": 1048,
+      "height": 633
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-008.webp",
+      "caption": "TABLE IV TACTILE SIMULATION PLATFORMS AND DATASETS.",
+      "page": 12,
+      "index": 8,
+      "width": 998,
+      "height": 620
+    },
+    {
+      "url": "assets/figures/arxiv/2608.15490v1/fig-009.webp",
+      "caption": "Fig. 3. Categorical overview of representative vision-based tactile sensors, grouped by hardware design dimension and category to clarify the design choices within each. Each sensor is shown as a block containing an image, sensor name, and publication year; when no explicit sensor name is reported, the first author’s surname is given in parentheses. The color of a block’s border encodes the publication year, while the border style indicates the sensor’s role in that category: a solid border marks the category corresponding to the sensor’s main contribution, and a dashed border marks a secondary contribution. A sensor that spans several categories therefore appears once with a solid border in its primary category and again with dashed borders in its secondary categories.",
+      "page": 5,
+      "index": 9,
+      "width": 1022,
+      "height": 1260
+    }
+  ]
+}

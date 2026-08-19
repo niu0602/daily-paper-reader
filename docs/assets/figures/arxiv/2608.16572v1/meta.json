@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-001.webp",
+      "caption": "Fig. 1. Hardware overview and control architecture of ViHaTeleop. (a) The system consists of two bimanual wrist and hand configuration tracking modules. Each module uses a VSLAM+IMU tracker (HTC Vive Ultimate) for wrist pose tracking and a fisheye camera for hand configuration detection in real-time. LRA rings on the operator’s thumb, index, and middle fingers provide vibrational haptic feedback. (b) The captured wrist and hand configurations are mapped and retargeted to control a robotic arm (Franka) with a dexterous hand (LEAP Hand). Tactile sensors (9DTact) on the robot fingertips provide touch sensory feedback to the operator. quantified under matched with/without-haptic conditions. In our 9-participant study, haptic feedback produced descriptive success-rate gains across all tasks, while completion-time effects were task-dependent. As a secondary objective, we evaluate whether demonstrations collected with this system are usable for downstream visual-tactile imitation learning.",
+      "page": 1,
+      "index": 1,
+      "width": 512,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-002.webp",
+      "caption": "Fig. 6. User study experimental setup and subjective ratings. (a) Experimental snapshots showing teleoperation in real-world (top) and simulation (bottom) environments. (b) Subjective ratings comparing without and with haptic feedback across nine participants. Error bars indicate standard deviation. Statistical comparisons use two-tailed Wilcoxon signed-rank tests; detailed values are reported in Sec. IV-D.",
+      "page": 6,
+      "index": 2,
+      "width": 1054,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-003.webp",
+      "caption": "Fig. 7. Dual-purpose tactile proxy pipeline in simulation. A depth camera on each fingertip approximates 9DTact deformation. Top path (blue): the signal drives real-time haptic feedback to the operator via max-deformation extraction and PWM mapping. Bottom path (beige): the same depth data is converted to tactile point clouds and fused with visual observations into a synchronized multi-modal demonstration dataset for downstream policy learning.",
+      "page": 6,
+      "index": 3,
+      "width": 512,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-004.webp",
+      "caption": "Fig. 2. Hardware Components.",
+      "page": 3,
+      "index": 4,
+      "width": 512,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-005.webp",
+      "caption": "Fig. 3. Comparison of standard DexPilot retargeting vs. our tactileaware extension on two manipulation tasks. (a) Soft tube grasping, (b) Egg grasping. Standard retargeting (left column) produces edge contact with negligible sensor signals, while our constraint (right column) enforces parallel fingertip alignment, enabling effective tactile sensing. Blue insets show tactile sensor heatmaps from thumb and index fingertips.",
+      "page": 4,
+      "index": 5,
+      "width": 438,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16572v1/fig-006.webp",
+      "caption": "Fig. 5. Experimental tasks for user study. Numbers indicate key stages in task progression. Real-world: (a) egg transfer to bowl, (b) fragile chip grasping. Simulation: (c) peg-in-hole insertion, (d) three-cube stacking, (e) fruit pick-and-place, (f) bimanual bottle handover.",
+      "page": 5,
+      "index": 6,
+      "width": 1054,
+      "height": 383
+    }
+  ]
+}

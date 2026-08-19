@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-001.webp",
+      "caption": "Fig. 1: Motivation of arm-aware dexterous grasp generation. Real-world grasp execution requires considering arm-related constraints, yet conventional methods rely on rejection sampling to discard even near-feasible hand poses, leading to low efficiency. Our approach guides pretrained arm-agnostic models with these constraints at inference, greatly improving sampling efficiency.",
+      "page": 1,
+      "index": 1,
+      "width": 529,
+      "height": 315
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-002.webp",
+      "caption": "Table III: Performance of reachable grasp generation near workspace boundaries",
+      "page": 6,
+      "index": 2,
+      "width": 516,
+      "height": 243
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-003.webp",
+      "caption": "Table VIII: Inference-Time Breakdown of Major Components",
+      "page": 11,
+      "index": 3,
+      "width": 400,
+      "height": 311
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-004.webp",
+      "caption": "Fig. 14: Illustration of guided grasp generation for continuously regrasping with the Joint Proximity constraint. The reference initial grasp and the four final grasps are displayed from left to right, with additional grasps omitted for brevity. Please refer to the attached video for the complete grasp sequence.",
+      "page": 11,
+      "index": 4,
+      "width": 529,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-005.webp",
+      "caption": "Fig. 13: Comparison of grasp generation near the arm’s workspace boundary. The top right figure shows a planned grasp that the robotic arm cannot reach.",
+      "page": 11,
+      "index": 5,
+      "width": 526,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-006.webp",
+      "caption": "Table IV: Performance of grasp generation with reference joint configuration",
+      "page": 7,
+      "index": 6,
+      "width": 516,
+      "height": 249
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-007.webp",
+      "caption": "Table V: Comparison with other representative diffusion-based constraint-aware grasp generation methods (UR5)",
+      "page": 7,
+      "index": 7,
+      "width": 522,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-008.webp",
+      "caption": "Fig. 5: Snapshots of real-world constrained grasping demonstrating the practical effectiveness of the proposed method. Top: the initial configurations. Bottom: the final grasping configurations. (a) Grasping behind obstacles. (b) Grasping in deep containers. (c) Bi-manual handover grasping.",
+      "page": 7,
+      "index": 8,
+      "width": 527,
+      "height": 260
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-009.webp",
+      "caption": "Fig. 12: The average inference time per successful grasp under different batch size on UR5 and Franka in the Narrow Corridor scenario.",
+      "page": 10,
+      "index": 9,
+      "width": 529,
+      "height": 292
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-010.webp",
+      "caption": "Fig. 10: Effect of different joint weights λs.",
+      "page": 10,
+      "index": 10,
+      "width": 572,
+      "height": 215
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-011.webp",
+      "caption": "Fig. 15: Failure cases in real-world experiments. (a–b) The quality of a small subset of generated grasps is degraded by the guidance, leading to unstable grasps holding only the object’s edge. (c) The dexterous hand unintentionally contacts the object due to open-loop execution. (d) The object shifts in hand because of inaccurate mass parameter estimation or insufficient friction.",
+      "page": 12,
+      "index": 11,
+      "width": 524,
+      "height": 406
+    },
+    {
+      "url": "assets/figures/arxiv/2608.16351v1/fig-012.webp",
+      "caption": "Fig. 16: Architecture of the grasp generation and evaluation networks.",
+      "page": 12,
+      "index": 12,
+      "width": 517,
+      "height": 234
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-001.webp",
+      "caption": "Figure 1: Action flow as a shared control interface. Top: Hydra-0 learns from diverse interaction videos featuring egocentric human demonstrations, handheld UMI grippers, bimanual robot arms, and single-arm robots. Middle: Visible embodiment motion is represented as image-plane flow trajectories, placing heterogeneous interactions in a common, pixel-aligned action flow space independent of embodiment-specific joint or end-effector coordinates. This unified interface enables a single generalist world model to learn from multi-embodiment data and transfer across interaction settings. Bottom: In forward mode, provided gripper flow conditions future scene prediction, whose rollouts support open-loop policy evaluation; in inverse mode, desired object flow elicits compatible robot motion that a supervised readout converts into executable actions.",
+      "page": 1,
+      "index": 1,
+      "width": 1058,
+      "height": 1248
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-002.webp",
+      "caption": "Figure 7: Data Efficiency on IWS Tasks. Each task reports LPIPS, object-flow endpoint error (EPE), and FVD versus the percentage of task-specific training data. For all metrics, lower is better. Ours (PT) starts from the original Wan2.2 weights, whereas Ours (MT) starts from our multi-embodiment mid-trained checkpoint. Wan-Move and ATI are evaluated zero-shot.",
+      "page": 11,
+      "index": 2,
+      "width": 971,
+      "height": 540
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-003.webp",
+      "caption": "Table 1: Multi-Embodiment Training Corpus. Episodes and windows are counted on the annotated camera streams after resampling to 480p at 16 fps; a window spans 81 consecutive frames (≈5 s), and windows are non-overlapping within a camera stream. Source-specific filtering removes static windows, frozen-gripper windows, and DROID episodes with contentless language annotations (see text).",
+      "page": 7,
+      "index": 3,
+      "width": 954,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-004.webp",
+      "caption": "Figure 11: Additional Qualitative Evaluation on DROID. The full-size Action Flow row provides the conditioning input, while the Ours row shows the corresponding clean generated rollout without a flow overlay. All rows show the same matched validation sample at the same six synchronized timestamps.",
+      "page": 22,
+      "index": 4,
+      "width": 983,
+      "height": 498
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-005.webp",
+      "caption": "Figure 6: Wrist-Camera Egomotion Prediction. The first and last synchronized snapshots show frames 0 and 16 of the 17-frame generated clip, corresponding to 0.0 and 1.0 seconds of physical time.",
+      "page": 10,
+      "index": 5,
+      "width": 477,
+      "height": 398
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-006.webp",
+      "caption": "Figure 2: Overview of Hydra-0. During offline training (top), we recover action flow from interaction videos by tracking both the embodiment and the manipulated object, as detailed in Section 2.1. The future video is encoded to construct the flow-matching training target. During online deployment (bottom), Isaac Lab executes a candidate command sequence a0:𝐻−1 through the robot controller and physics simulation, producing robot link transforms over the prediction horizon. Using these transforms, we propagate visible robot-surface points and project them through the calibrated camera following Equation (1), producing embodiment action flow that conditions the causal autoregressive model to predict the command sequence’s real-world consequence.",
+      "page": 3,
+      "index": 6,
+      "width": 981,
+      "height": 252
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-007.webp",
+      "caption": "Figure 5: Qualitative Evaluation on XVLA-Soft-Fold and Deform360. Each dataset-specific panel shows six synchronized snapshots over the full five-second horizon. From top to bottom, the rows show Wan-Move, fine-tuned Cosmos 2.5, the action-flow conditioning input, our clean generated output, and the matched ground truth. Additional results appear in the appendix.",
+      "page": 8,
+      "index": 7,
+      "width": 983,
+      "height": 1148
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-008.webp",
+      "caption": "Figure 8: Open-Loop Policy Evaluation with Hydra-0. Each point aggregates 10 trials; dashed lines show least-squares fits. We evaluate 𝜋0 [6], 𝜋0.5 [25], GR00T N1.7 [33], Cosmos-3 Edge, and Cosmos-3 Nano [35] in RoboLab. Legend abbreviations: GR00T denotes GR00T N1.7; C-3 Edge and C-3 Nano denote Cosmos-3 Edge and Cosmos-3 Nano.",
+      "page": 12,
+      "index": 8,
+      "width": 473,
+      "height": 341
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-009.webp",
+      "caption": "Figure 9: Real-World Open-Loop Policy Evaluation. Qualitative cloth-folding rollouts show the recorded reference trajectory and the corresponding open-loop prediction conditioned on the recorded robot motion.",
+      "page": 12,
+      "index": 9,
+      "width": 468,
+      "height": 476
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-010.webp",
+      "caption": "Table 2: Evaluation on Multi-Embodiment Datasets. All methods use the same 100 validation clips per dataset across five held-out sets. PSNR and SSIM measure full-reference fidelity; object and gripper EPE measure tracked-point motion error in pixels; FID and FVD measure frame and video distribution quality; VLM is scored on a 1–5 scale. Average is the unweighted mean across available dataset strata. Best results within each dataset and the Average block are bold. Gray rows denote zero-shot baselines. DROID object EPE is omitted because reliable manipulated-object masks cannot be obtained in its cluttered scenes.",
+      "page": 9,
+      "index": 10,
+      "width": 933,
+      "height": 792
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18077v1/fig-011.webp",
+      "caption": "Figure 4: Action Flow as Visual Conditioning. Action-flow trajectories propagate first-frame latent features through time to form the motion-aware visual condition 𝐶motion. This condition is concatenated with the noisy video latent 𝑍𝑡 before DiT patch embedding.",
+      "page": 5,
+      "index": 11,
+      "width": 983,
+      "height": 196
+    }
+  ]
+}

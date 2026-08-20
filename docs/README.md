@@ -6,56 +6,50 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-08-19
-- 运行时间：2026-08-19 20:40:40 UTC
+- 最新运行日期：2026-08-20
+- 运行时间：2026-08-20 21:06:48 UTC
 - 运行状态：成功
-- 本次总论文数：11
+- 本次总论文数：9
 - 精读区：6
-- 速读区：5
+- 速读区：3
 
 ### 今日简报（AI）
-- 今日共生成 11 篇推荐（精读 6 篇，速读 5 篇）
-- 精读：《AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning》（10.0/10）, 《ViHaTeleop: A Low-Cost, Lightweight Visual-Haptic Teleoperation System for Dexterous Manipulation Learning》（10.0/10）
-- 速读：《Arm-Aware Guided Dexterous Grasp Generation with Arm-Agnostic Grasp Models》（7.5/10）, 《SurgVIL: Scaling Surgical Robot Imitation Learning with Open-source Surgical Videos》（7.0/10）, 《Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?》（6.0/10）
+- 今日共生成 9 篇推荐（精读 6 篇，速读 3 篇）
+- 精读：《AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning》（9.5/10）, 《LabDex: A Hierarchical Benchmark for Dexterous Manipulation in Laboratories》（9.0/10）
+- 速读：《FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences》（7.0/10）, 《AlloEgo-VLM: Disambiguating Allocentric and Egocentric Reference Frames in Vision-Language Models》（6.0/10）, 《MANIGUARD: A Benchmark and Data Suite for Specification-Grounded Safety Evaluation and Improvement of Robotic Manipulation》（6.0/10）
 - 这些结果覆盖了当下较热的方向，建议先看精读区论文的关键问题与方法。
-- 详情：[/202608/19/README](/202608/19/README)
+- 详情：[/202608/20/README](/202608/20/README)
 
 ### 精读区论文标签
-1. [AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning](/202608/19/2608.14028v1-advdex-learning-dexterous-manipulation-from-human-demonstrations-via-joint-aligned-actions-and-adversarial-learning)  
-   标签：评分：10.0/10、query:dexop
-   evidence：通过关节对齐动作从人类演示中学习灵巧操作
-2. [ViHaTeleop: A Low-Cost, Lightweight Visual-Haptic Teleoperation System for Dexterous Manipulation Learning](/202608/19/2608.16572v1-vihateleop-a-low-cost-lightweight-visual-haptic-teleoperation-system-for-dexterous-manipulation-learning)  
-   标签：评分：10.0/10、query:dexop
-   evidence：带有手部摄像头的灵巧操作学习视触觉遥操作系统的
-3. [EgoTac: In-the-wild Tactile Prediction from Egocentric Vision](/202608/19/2608.15060v1-egotac-in-the-wild-tactile-prediction-from-egocentric-vision)  
+1. [AdvDex: Learning Dexterous Manipulation from Human Demonstrations via Joint-Aligned Actions and Adversarial Learning](/202608/20/2608.14028v1-advdex-learning-dexterous-manipulation-from-human-demonstrations-via-joint-aligned-actions-and-adversarial-learning)  
    标签：评分：9.5/10、query:dexop
-   evidence：直接从第一视角人类视频中预测丰富的触觉信息
-4. [Pre-training Visual Dexterity in Simulation](/202608/19/2608.15917v1-pre-training-visual-dexterity-in-simulation)  
-   标签：评分：9.5/10、query:dexop
-   evidence：使用VR头显数据进行灵巧操作的预训练框架
-5. [ReForce: Learning Force-aware Retargeting for Dexterous Manipulation](/202608/19/2608.15560v1-reforce-learning-force-aware-retargeting-for-dexterous-manipulation)  
+   evidence：从人类演示和多模态数据集中学习灵巧操作
+2. [LabDex: A Hierarchical Benchmark for Dexterous Manipulation in Laboratories](/202608/20/2608.18618v1-labdex-a-hierarchical-benchmark-for-dexterous-manipulation-in-laboratories)  
    标签：评分：9.0/10、query:dexop
-   evidence：从人类演示中学习灵巧操作的力感知重定向方法
-6. [EATR-Stereo: Embodiment-Aware Routing of Paired Stereo Evidence for Humanoid Vision-Language-Action Control](/202608/19/2608.17453v1-eatr-stereo-embodiment-aware-routing-of-paired-stereo-evidence-for-humanoid-vision-language-action-control)  
+   evidence：大规模真实世界灵巧操作数据集和基准
+3. [RoboEdit: Turning Human Manipulation Videos into Scalable Robot Experience](/202608/20/2608.18948v1-roboedit-turning-human-manipulation-videos-into-scalable-robot-experience)  
+   标签：评分：9.0/10、query:dexop
+   evidence：将人类操作视频转换为具有对齐3D手部状态的机器人经验
+4. [ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning](/202608/20/2608.19182v1-adept-accelerating-dexterity-via-pre-training-and-post-training-using-reinforcement-learning)  
+   标签：评分：9.0/10、query:dexop
+   evidence：用于在高度自由度机器人具身上学习仿真到现实可迁移灵巧性的强化学习框架。
+5. [EATR-Stereo: Embodiment-Aware Token Routing of Paired Stereo Evidence for Humanoid Vision-Language-Action Control](/202608/20/2608.17453v2-eatr-stereo-embodiment-aware-token-routing-of-paired-stereo-evidence-for-humanoid-vision-language-action-control)  
    标签：评分：8.0/10、query:dexop
-   evidence：使用头戴式立体摄像机进行第一视角视觉的类人机器人VLA控制
+   evidence：使用头戴式立体相机的类人机器人VLA控制
+6. [Vision-Language Models for Egocentric Video: From Hand-Object Interaction to Embodied AI](/202608/20/2608.18671v1-vision-language-models-for-egocentric-video-from-hand-object-interaction-to-embodied-ai)  
+   标签：评分：8.0/10、query:dexop
+   evidence：第一视角视频视觉语言模型综述，涵盖手物交互与具身智能
 
 ### 速读区论文标签
-1. [Arm-Aware Guided Dexterous Grasp Generation with Arm-Agnostic Grasp Models](/202608/19/2608.16351v1-arm-aware-guided-dexterous-grasp-generation-with-arm-agnostic-grasp-models)  
-   标签：评分：7.5/10、query:dexop
-   evidence：考虑手臂约束的灵巧抓取生成框架
-2. [SurgVIL: Scaling Surgical Robot Imitation Learning with Open-source Surgical Videos](/202608/19/2608.16058v1-surgvil-scaling-surgical-robot-imitation-learning-with-open-source-surgical-videos)  
+1. [FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences](/202608/20/2608.17027v1-fetchman-learning-visual-humanoid-loco-manipulation-policies-from-simulated-experiences)  
    标签：评分：7.0/10、query:dexop
-   evidence：利用开源手术视频扩展手术机器人模仿学习
-3. [Can Vision-Language Models Assess Proxemic Risk from Egocentric Robot Images?](/202608/19/2608.12515v1-can-vision-language-models-assess-proxemic-risk-from-egocentric-robot-images)  
+   evidence：学习视觉人形机器人移动操作策略
+2. [AlloEgo-VLM: Disambiguating Allocentric and Egocentric Reference Frames in Vision-Language Models](/202608/20/2608.15605v1-alloego-vlm-disambiguating-allocentric-and-egocentric-reference-frames-in-vision-language-models)  
    标签：评分：6.0/10、query:dexop
-   evidence：使用视觉语言模型从机器人第一视角图像评估风险
-4. [Vision-Based Tactile Intelligence for Robotics: Sensing, Learning, and Embodied Manipulation](/202608/19/2608.15490v1-vision-based-tactile-intelligence-for-robotics-sensing-learning-and-embodied-manipulation)  
+   evidence：为具身人工智能机器人构建的包含分配视角和第一视角的物体关系数据集。
+3. [MANIGUARD: A Benchmark and Data Suite for Specification-Grounded Safety Evaluation and Improvement of Robotic Manipulation](/202608/20/2608.17386v1-maniguard-a-benchmark-and-data-suite-for-specification-grounded-safety-evaluation-and-improvement-of-robotic-manipulation)  
    标签：评分：6.0/10、query:dexop
-   evidence：用于复杂机器人感知和交互的视觉触觉传感器
-5. [Hydra-0: Action Flow for Generalist World Modeling and Control](/202608/19/2608.18077v1-hydra-0-action-flow-for-generalist-world-modeling-and-control)  
-   标签：评分：6.0/10、query:dexop
-   evidence：跨具身和任务的通用机器人控制世界模型
+   evidence：机器人操作任务安全评估基准
 
 
 <div class="dpr-home-promo-card">

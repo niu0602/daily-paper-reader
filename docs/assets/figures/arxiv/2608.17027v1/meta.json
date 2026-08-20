@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-001.webp",
+      "caption": "Figure 1: FETCHMAN learns visual humanoid loco-manipulation entirely in simulation and deploys it zero-shot to a real Unitree G1. The resulting policy walks up to and grasps objects across diverse, unseen real-world scenes, with no real-world data or per-scene tuning.",
+      "page": 1,
+      "index": 1,
+      "width": 1029,
+      "height": 874
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-002.webp",
+      "caption": "Figure 4: Policy architecture. The head and wrist RGB streams are encoded by a frozen DINOv3 backbone into per-patch image tokens, while the proprioceptive vector (ht, rt, pt, q upper",
+      "page": 6,
+      "index": 2,
+      "width": 884,
+      "height": 350
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-003.webp",
+      "caption": "Figure 8: Multi-object rollouts. Head-camera views from the text-conditioned policy grasping different target objects, one episode per row, with the prompted object name shown at left.",
+      "page": 11,
+      "index": 3,
+      "width": 888,
+      "height": 263
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-004.webp",
+      "caption": "Figure 5: Two-stage training pipeline. Stage 1 (Imitation Pretraining). The task sampler instantiates diverse simulated environments in which the scripted G1 staged policy generates demonstration trajectories, and the resulting frozen dataset trains the loco-manipulation policy π by behavior cloning. Stage 2 (Online GRPO Refinement). The same sampler resets groups of environments to identical tasks (group size × number of groups), π collects on-policy trajectories that differ only in sampled action noise, and a group-relative GRPO update refines π in place.",
+      "page": 7,
+      "index": 4,
+      "width": 883,
+      "height": 247
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-005.webp",
+      "caption": "Figure 6: Real-world rollouts and the effect of RL refinement. Left. Representative zero-shot rollouts of FetchMan on the Unitree G1 across diverse, unseen scenes, where the policy navigates to the target bowl and grasps it from head- and wrist-camera observations alone. Right. The locomotion-to-manipulation handoff before and after Flow-GRPO refinement, on a fixed initialization. The behavior-cloned policy grasps as soon as the target is nearby and misses from too far, while after RL it walks in until the object is within reach and only then grasps.",
+      "page": 8,
+      "index": 5,
+      "width": 890,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-006.webp",
+      "caption": "Figure 2: Simulated observations. Example frames of the head-fisheye and wrist streams the policy receives, across scenes randomized in texture, lighting, and camera intrinsics and extrinsics.",
+      "page": 4,
+      "index": 6,
+      "width": 882,
+      "height": 214
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-007.webp",
+      "caption": "Figure 7: Behavior cloning saturates, RL breaks through. Left. Single-object loco-manipulation SR (%) on the 100-scene validation set. The first segment scales BC demonstrations (5k–150k) and plateaus after 50k, while the second continues the 150k checkpoint with GRPO, which pushes past the imitation ceiling. A second run applies the same refinement to the 5k checkpoint and does not improve comparably. Right. The text-conditioned multi-object policy, whose BC success rate peaks near 40% before GRPO lifts it to roughly 62%. Time in GPU hours.",
+      "page": 9,
+      "index": 7,
+      "width": 890,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2608.17027v1/fig-008.webp",
+      "caption": "Figure 3: Synthetic data generation pipeline. Each episode samples (1) a house from MolmoSpaces, (2) a pickable target object within it, (3) a contact-free start and grasp-standoff goal pose connected by a planned path the scripted controller follows, and (4) domain randomization applied independently per episode.",
+      "page": 5,
+      "index": 8,
+      "width": 876,
+      "height": 227
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-001.webp",
+      "caption": "Figure 8: Training curves on FMB peg insertion comparing (1) training from scratch, (2) direct PPO finetuning of the pretrained reposing teacher, and (3) ADEPT post-training. Blue inset: success-rate collapse for (2) during transfer.",
+      "page": 26,
+      "index": 1,
+      "width": 731,
+      "height": 305
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-002.webp",
+      "caption": "Figure 9: Training curves across different seeds for training from scratch. ADEPT post-training reliably converges to a solution while most seeds for training from scratch either plateau or take a very long time to train for a fixed compute budget.",
+      "page": 26,
+      "index": 2,
+      "width": 738,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-003.webp",
+      "caption": "Figure 10: Real-world camera views for (a) Kuka-Allegro and (b) Flexiv-Sharpa setups.",
+      "page": 26,
+      "index": 3,
+      "width": 824,
+      "height": 209
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-004.webp",
+      "caption": "Figure 6: 16 primitive objects used during pre-training reposing task. The scale and physical properties of the objects are randomized during pre-training.",
+      "page": 15,
+      "index": 4,
+      "width": 829,
+      "height": 416
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-005.webp",
+      "caption": "Table 8: Domain randomization parameters used during teacher–student distillation. Per-env ranges are sampled uniformly at episode reset; ADR-annealed ranges advance from the lower bound to the upper bound over training as the running success rate exceeds the ADR threshold; per-step noise is added at every control step; per-frame randomization is applied at each camera render.",
+      "page": 30,
+      "index": 5,
+      "width": 656,
+      "height": 784
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-006.webp",
+      "caption": "Figure 11: A sample 16x16 grid of visual randomizations on the left camera of the FMB training scene for distillation.",
+      "page": 29,
+      "index": 6,
+      "width": 826,
+      "height": 622
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-007.webp",
+      "caption": "Figure 5: Reposing Task. Visualizes the out-of-bound range in red, the goal sampling range in green, and the object spawn range in orange. (a) visualizes a frame of the initial grasp of the object and (b) visualizes a frame where the robot has completed the task by reaching the target pose frame. The object point clouds can be seen in green spheres, which are on the object.",
+      "page": 14,
+      "index": 7,
+      "width": 660,
+      "height": 266
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-008.webp",
+      "caption": "Table 3: Post-training component ablations on KUKA-Allegro FMB peg insertion; 5 independent non-PBT seeds per row, all from one pretrained checkpoint. ADR50 counts seeds reaching the final ADR level; time is averaged over seeds that reached it. Train SR is the instantaneous training success rate over parallel environments.",
+      "page": 8,
+      "index": 8,
+      "width": 810,
+      "height": 275
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-009.webp",
+      "caption": "Figure 2: ADEPT Overview. (1) Pre-train (πpre, Vpre) via PPO on a generic reposing task. (2) Post-train into (πpost, Vpost) for the downstream contact-rich task via BC distillation, frozen actor critic warm-up, and conservative PPO. (3) Distill πpost into a stereo RGB student πstudent. (4) Deploy πstudent zero-shot on the real robot.",
+      "page": 4,
+      "index": 9,
+      "width": 826,
+      "height": 206
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-010.webp",
+      "caption": "Table 6: Observation fields consumed at each pipeline stage in the current Cspace-mode codebase. Stage 1 = reposing pretraining (PPO, actor + asymmetric critic); Stage 2 = FMB post-training (PPO, actor + asymmetric critic); Stage 3 = two-camera RGB vision distillation, where a student network is supervised by the Stage 2 actor (treated as the teacher) via behavior cloning. Actor and student rows read the noisy variant of each proprioceptive field; the critic reads the corresponding clean variant. Each cell shows the dimensionality of the field when it is consumed at that stage; ✗ means the field is not consumed at that stage, and “image” denotes an image-tensor input. Rows newly introduced",
+      "page": 19,
+      "index": 10,
+      "width": 836,
+      "height": 888
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-011.webp",
+      "caption": "Figure 4: Real-world setup. (A) The 23 DoF Kuka-Allegro and 29 DoF Flexiv-Sharpa platforms, each with two RealSense RGB cameras (left and center). (B) FMB pegs and boards, plates, and dish rack. (C) Diverse initial states and lighting used in real-world testing.",
+      "page": 9,
+      "index": 11,
+      "width": 826,
+      "height": 223
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-012.webp",
+      "caption": "Figure 12: Comparison of grasp behaviors. (a, b, c, d) Downstream-task teacher trained from scratch at ADR level 50, with grasps that lack the natural finger gaits emerging from reposing pretraining. (e, f) Pretrained reposing teacher applied zero-shot to FMB peg insertion at ADR level 20, occasionally producing undesirable grasps (e.g., bottom-end, upside-down) that solve the reposing segment but fail at insertion. (g, h) Downstream-task teacher trained with ADEPT at ADR level 50, with natural grasps where the fingers wrap around the peg and caging.",
+      "page": 31,
+      "index": 12,
+      "width": 826,
+      "height": 431
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-013.webp",
+      "caption": "Table 7: Flexiv–Sharpa (29 DoF). Observation fields consumed by the Rizon–Sharpa Cspace pipeline. Stage 1 uses the reposing PBT actor and asymmetric critic; Stage 2 uses the FMB bootstrap teacher; Stage 3 distills that state-based teacher into the stereo RGB + five-fingertip TacMap student. The entries and dimensions follow the checked-in agent configurations. “Image” denotes a tensor encoded outside the flat low-dimensional input.",
+      "page": 20,
+      "index": 13,
+      "width": 718,
+      "height": 660
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-014.webp",
+      "caption": "Table 5: PPO hyperparameter comparison between reposing pretraining and FMB post-training. The actor learning rate is reduced by 100× and the PPO clip is tightened by 4× during posttraining, while the critic learning rate is held constant. The actor learning-rate schedule changes from KL-adaptive (pretraining, with target KL = Actor KL threshold) to linear decay over Max epochs (post-training); the Actor KL threshold is logged but not used during post-training under the linear schedule.",
+      "page": 16,
+      "index": 14,
+      "width": 672,
+      "height": 437
+    },
+    {
+      "url": "assets/figures/arxiv/2608.19182v1/fig-015.webp",
+      "caption": "Figure 7: Downstream FMB Task. Visualizes the peg (orange) and board (sky blue) spawn ranges, object keypoints and goal pose keypoints. Grey keypoints represent the path set by the ADR level (denoted goal path annealing). At ADR 0, the goal is set to where the light blue sphere is placed and at ADR 50, the goal is set to the insertion goal where the light green sphere is placed. (a) shows sample initialization of the scene where the peg is dropped on to the table. In (b), we show how the reposing teacher reaches the goal at ADR 20, which is above the board. In (c), we visualize a sample policy rollout that inserts the peg into the board successfully where the keypoints align by the matching colors. The object point clouds in green spheres can be seen on the peg.",
+      "page": 16,
+      "index": 15,
+      "width": 826,
+      "height": 217
+    }
+  ]
+}

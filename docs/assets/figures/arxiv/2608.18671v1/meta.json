@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-001.webp",
+      "caption": "Figure 7: Egocentric Action Scene Graph (EASG). An interaction is represented as a temporally evolving graph rooted at the camera-wearer node. Verb (action) nodes connect to direct objects, while the manipulated object is linked via active edges to the acting hands. Peripheral objects provide contextual relations. The graph is grounded by bounding boxes on the pre-condition, pointof-no-return (PNR), and post-condition frames, capturing both spatial hand–object relations and their evolution over time. Illustration inspired by [118].",
+      "page": 30,
+      "index": 1,
+      "width": 814,
+      "height": 485
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-002.webp",
+      "caption": "Table 2: The five canonical egocentric video-understanding tasks (Section 2.2): what each is and its defining first-person difficulty.",
+      "page": 7,
+      "index": 2,
+      "width": 494,
+      "height": 396
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-003.webp",
+      "caption": "Table 5: Comparison of representative egocentric vision-language models and relevant multimodal or embodied extensions discussed in Section 5.2. “EK-100 MIR” denotes EPIC-KITCHENS-100 multi-instance retrieval; “cls.” denotes classification.",
+      "page": 22,
+      "index": 3,
+      "width": 898,
+      "height": 746
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-004.webp",
+      "caption": "Table 4: The three classical (pre-transformer) video-understanding families: what each generation contributed and the gap it left for egocentric vision-language understanding (Section 4.1).",
+      "page": 14,
+      "index": 4,
+      "width": 898,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-005.webp",
+      "caption": "Table 8: Summary of open challenges and future directions (Section 11). Each row pairs a diagnosed failure with its supporting evidence and the most promising line of attack.",
+      "page": 46,
+      "index": 5,
+      "width": 898,
+      "height": 637
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-006.webp",
+      "caption": "Table 7: Egocentric video–text semantic alignment approaches (Section 9.2) and the weakness each targets.",
+      "page": 40,
+      "index": 6,
+      "width": 468,
+      "height": 550
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-007.webp",
+      "caption": "Table 1: Coverage of representative recent surveys versus this one (Section 1.5). ✓ = covered in depth, ∼ = partial/incidental, × = not covered. “Graph/rel.” denotes scene-graph, hand–objectinteraction-graph, or relational structure used as an organizing lens—the axis on which this survey is distinctive.",
+      "page": 4,
+      "index": 7,
+      "width": 898,
+      "height": 185
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-008.webp",
+      "caption": "Figure 5: The EgoHOIBench diagnostic. A model must select the correct caption from candidates that differ by only a single verb or noun, scoring a trial correct only when both are right; egocentric video-language models exhibit a large verb–noun accuracy gap, revealing only superficial hand– object interaction understanding. Illustration inspired by [11].",
+      "page": 19,
+      "index": 8,
+      "width": 814,
+      "height": 498
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-009.webp",
+      "caption": "Figure 4: The EgoVLP framework: the EgoClip pretraining set curated from Ego4D, a spacetime video-language model trained with the EgoNCE objective, and the EgoMCQ development benchmark, with transfer to egocentric downstream tasks. Illustration inspired by [6].",
+      "page": 17,
+      "index": 9,
+      "width": 814,
+      "height": 442
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-010.webp",
+      "caption": "Figure 8: Interaction-aware temporal modeling in egocentric video. Hand–object interaction tracklets extracted from long videos are organized into a structured active memory indexed by interaction events and locations. This representation supports efficient temporal reasoning—including sequencing, concurrency, temporal grounding, and retrieval—without reprocessing the full video. Interaction-aware representations and graph-guided frame selection further improve long-horizon reasoning by using hand–object structure as the scaffold for temporal understanding. Illustration inspired by [122].",
+      "page": 32,
+      "index": 10,
+      "width": 814,
+      "height": 487
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-011.webp",
+      "caption": "Figure 2: Evolution of video understanding models (Section 4). Three eras, read left to right, each inheriting representational machinery from the preceding era while changing its temporal modeling and supervision strategy. Classical models hand-engineer temporal structure through spatiotemporal convolutions, recurrent aggregation, and parallel appearance–motion streams (Section 4.1). Transformer models replace those inductive biases with factorized space-time attention, made trainable at video scale by masked pretraining (Section 4.2). Vision-language models replace the fixed label space itself with natural-language supervision, a lineage running CLIP → VideoCLIP → Frozenin-Time → EgoVLP. Red boxes mark the gap each era left open and the next set out to close; the horizontal dashed links mark what each era inherited rather than replaced—image pretraining and convolutional backbones carried into the transformer era, and transformer space-time encoders carried into egocentric video-language pretraining.",
+      "page": 12,
+      "index": 11,
+      "width": 902,
+      "height": 564
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-012.webp",
+      "caption": "Table 6: Comparison of representative hand–object interaction methods and resources, spanning hand recovery, manipulated-object reasoning, and interaction datasets (Section 6).",
+      "page": 27,
+      "index": 12,
+      "width": 904,
+      "height": 577
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-013.webp",
+      "caption": "Figure 6: The 100DOH hand-object detector. For each hand it jointly predicts a bounding box, side (left/right), contact state (none, self, other-person, portable, or non-portable), and a link to the box of the object in contact, recovering the active object among many distractors. Illustration inspired by [26].",
+      "page": 24,
+      "index": 13,
+      "width": 814,
+      "height": 448
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-014.webp",
+      "caption": "Figure 1: Roadmap of this survey. The paper is organized as a single trajectory from hand–object interaction to embodied AI. Foundations and datasets (Sec. 2–3) supply the substrate; the model lineage advances from classical and transformer architectures to egocentric vision-language models (Sec. 4–5); interaction and reasoning form the conceptual core, spanning hand–object interaction, spatiotemporal reasoning, graph-based reasoning, and prompting and semantic alignment (Sec. 6– 9); and these converge on applications toward embodied intelligence (Sec. 10). Open challenges (Sec. 11) cut across every stage, shown by the dashed feedback links.",
+      "page": 5,
+      "index": 14,
+      "width": 902,
+      "height": 500
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18671v1/fig-015.webp",
+      "caption": "Figure 3: The CLIP framework. (Left) Contrastive pretraining jointly aligns an image encoder and a text encoder over batches of image-text pairs; (right) zero-shot prediction constructs a classifier from natural-language prompts. Illustration inspired by [5].",
+      "page": 16,
+      "index": 15,
+      "width": 814,
+      "height": 494
+    }
+  ]
+}

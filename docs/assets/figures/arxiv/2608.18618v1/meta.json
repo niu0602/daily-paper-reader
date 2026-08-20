@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-001.webp",
+      "caption": "Table 3: Performance of compositional skills. Each task is evaluated over 50 trials for every model.",
+      "page": 6,
+      "index": 1,
+      "width": 1052,
+      "height": 932
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-002.webp",
+      "caption": "Table 9: Performance of atomic skills. Each task is evaluated over 50 trials for every model.",
+      "page": 11,
+      "index": 2,
+      "width": 1052,
+      "height": 934
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-003.webp",
+      "caption": "Table 10: Performance of atomic skills in simulation. Each task evaluated over 50 trials for every model.",
+      "page": 11,
+      "index": 3,
+      "width": 1052,
+      "height": 228
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-004.webp",
+      "caption": "Table 1: Comparison with existing datasets and benchmarks.",
+      "page": 2,
+      "index": 4,
+      "width": 1026,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-005.webp",
+      "caption": "Table 4: Performance of long-horizon laboratory workflows. Each task is evaluated over 50 trials for every model.",
+      "page": 7,
+      "index": 5,
+      "width": 1052,
+      "height": 240
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-006.webp",
+      "caption": "Table 5: Performance of compositional skills in simulation. Each task is evaluated over 50 trials for every model.",
+      "page": 7,
+      "index": 6,
+      "width": 1052,
+      "height": 227
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-007.webp",
+      "caption": "Figure 1: Overview of LabDex. LabDex is a hierarchical benchmark built on unified real-world and simulation platforms. It contains three task levels: Atomic Skills, Compositional Skills, and Long-Horizon Laboratory Workflows. The dataset is collected using a Franka Research 3 robot arm equipped with an XHand dexterous hand and covers a diverse set of laboratory objects.",
+      "page": 3,
+      "index": 7,
+      "width": 1049,
+      "height": 658
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-008.webp",
+      "caption": "Figure 3: Examples of selected atomic skills.",
+      "page": 13,
+      "index": 8,
+      "width": 1054,
+      "height": 633
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-009.webp",
+      "caption": "Figure 2: Real-world and simulation data collection pipeline.",
+      "page": 4,
+      "index": 9,
+      "width": 1045,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2608.18618v1/fig-010.webp",
+      "caption": "Table 2: Average performance of atomic skill categories. We evaluate a total of 26 atomic skill instances, with each task evaluated over 50 trials for every model. Complete results for all atomic skills are provided in Appendix B.",
+      "page": 5,
+      "index": 10,
+      "width": 500,
+      "height": 250
+    }
+  ]
+}
